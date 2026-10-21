@@ -20,5 +20,3 @@ Die Datumsangaben stammen aus `download-data.js`. Jede ZIP-Datei liegt im Versio
 ## Herkunft
 
 Die Originaldateien stammen aus dem lokalen Downloadbestand von `smstark-projekt.de` und sind nach der Zuordnung in `download-data.js` geordnet.
-
-Die vier bereits zuvor im Repository vorhandenen ZIP-Dateien bleiben im Wurzelverzeichnis erhalten, damit bestehende Links weiter funktionieren. Darunter ist `Images260708.zip`; dieses Archiv steht nicht in `download-data.js` und wurde daher keiner Version zugeordnet.
