@@ -1,0 +1,444 @@
+{
+  "batch": 19,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "Q4C4000",
+      "name": "Rapsölmargarine Vollfett, angereichert mit Vitaminen",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg",
+      "fluid": 90
+    },
+    {
+      "code": "Q4C5000",
+      "name": "Mischfett mit überwiegend Pflanzenfett, ungesalzen, angereichert mit Vitaminen",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q400000",
+      "name": "Pflanzenmargarine Vollfett, angereichert mit Vitaminen",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q440000",
+      "name": "Pflanzenmargarine Halbfett, angereichert mit Vitaminen",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q4C1000",
+      "name": "Pflanzliches Streichfett mit > 62 - < 80 % Fett, angereichert mit Vitaminen",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q4C3000",
+      "name": "Pflanzliches Streichfett mit < 39 % Fett, angereichert mit Vitaminen",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q482000",
+      "name": "Ziehmargarine",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q481000",
+      "name": "Backmargarine",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q570000",
+      "name": "Palmkernfett/Palmkernöl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Pflanzenfett/Palmfett als aktueller Spezialfett-Vergleichsanker, niedrigster klar belegbarer Preisanker 5,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "S330000",
+      "name": "Weichkaramelle",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 8.32,
+      "sourceProduct": "Eigenmarken-Toffee/Süßware im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 8,32 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/schokolade/k/1588161425467171",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S671000",
+      "name": "Zartbitter-/Halbbitter-Kuvertüre",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 9.9,
+      "sourceProduct": "CHOCEUR Schokolade bzw. Pralinen als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 9,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/schokolade/k/1588161425467171",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T118100",
+      "name": "Schildmakrele/Stöcker, roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Günstiges Fischfilet bzw. Tiefkühlfisch im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T200100",
+      "name": "Grenadier roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Günstiges Fischfilet bzw. Tiefkühlfisch im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T403100",
+      "name": "Bachsaibling roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Günstiges weißes Fischfilet bzw. Tiefkühlfisch im Supermarkt, niedrigster ausgewiesener Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/sb-fisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U216100",
+      "name": "Rind Filetsteak roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 29.99,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 29,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U333100",
+      "name": "Kalb Filetsteak, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 29.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 29,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U070100",
+      "name": "Rind Tatar/Schabefleisch, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "FAIR&GUT/MEINE METZGEREI Rinderhack als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U411100",
+      "name": "Kalb Filet/Lende, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 29.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 29,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U221100",
+      "name": "Rind Roastbeef (Rücken) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 18.72,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 18,72 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U432100",
+      "name": "Kalb Hals/Nacken/Kamm, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U351100",
+      "name": "Kalb Gulasch (Bug) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U371100",
+      "name": "Kalb Bratenfleisch (Bug) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V212100",
+      "name": "Hirsch Fleisch, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 20,
+      "sourceProduct": "Wildfleisch Tharandt als aktueller Wildfleisch-Preisanker, niedrigster klar belegbarer Preisanker 20,00 EUR/kg",
+      "sourceUrl": "https://wildfleisch-tharandt.de/wild-produkte.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V311100",
+      "name": "Fasan Fleisch, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 17.5,
+      "sourceProduct": "Wildfleisch Berlin Fasan im Stück als aktueller Preisanker, niedrigster klar belegbarer Preisanker 17,50 EUR/kg",
+      "sourceUrl": "https://wildfleisch-berlin.de/wp-content/uploads/2026/01/Preisliste-08.01.2026.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V463000",
+      "name": "Ente Fleisch, ohne Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Entenfleisch/Entenbrust als aktueller Geflügelanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V474100",
+      "name": "Gans Fleisch, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Gänsefleisch/Gänseschenkel als aktueller Geflügelanker, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V481000",
+      "name": "Pute Fleisch, ohne Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "W561000",
+      "name": "Putenbrust, Kochpökelware, geräuchert",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 8.66,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 8,66 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V465100",
+      "name": "Ente Schenkel, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Entenfleisch/Entenbrust als aktueller Geflügelanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V475100",
+      "name": "Gans Schenkel, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Gänsefleisch/Gänseschenkel als aktueller Geflügelanker, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    }
+  ]
+}

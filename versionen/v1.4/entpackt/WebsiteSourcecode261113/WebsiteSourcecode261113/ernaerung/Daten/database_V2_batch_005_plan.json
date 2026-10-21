@@ -1,0 +1,488 @@
+{
+  "batch": 5,
+  "checkedOn": "2026-08-14",
+  "selection": "30 relevante rohe Gemüse-, Salat- und Kohlvarianten aus BLS 4.0, die im bisherigen Bestand nicht unter demselben Zustandsnamen vorhanden waren.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Lebensmittelpreis je kg aus aktuellen deutschen Discounter-/Supermarktangeboten und SupermarktCheck-Kategoriepreisen; bei losem Frischgemüse wurde der ausgewiesene kg-Preis verwendet; anschließend +10 % und Umrechnung auf EUR/100 g. Quellenlink-Nachaudit: Offensichtlich unpassende alte Angebotslinks wurden am 14.08.2026 auf aktuelle, passende Händler-Kategorieseiten normalisiert.",
+  "items": [
+    {
+      "code": "G130100",
+      "name": "Rucola, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.95,
+      "sourceProduct": "Rucola frisch, niedrigster aktueller Kategoriepreis 8,95 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G420100",
+      "name": "Stielmus/Rübstiel, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.99,
+      "sourceProduct": "Blattgemüse/Frischgemüse, niedrigster aktueller Preisanker 3,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G541100",
+      "name": "Paprika, grün, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.22,
+      "sourceProduct": "NATUR LIEBLINGE Paprika grün/rot 500 g, 2,22 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G543100",
+      "name": "Paprika, rot, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.22,
+      "sourceProduct": "NATUR LIEBLINGE Paprika Rot 500 g, 2,22 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G611100",
+      "name": "Kohlrübe/Steckrübe, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Steckrübe/Kohlrübe, niedrigster aktueller Frischgemüsepreis 1,49 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G660100",
+      "name": "Knollensellerie, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Knollensellerie, aktueller Gemüsepreis 1,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G614100",
+      "name": "Weiße Rübe, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Weiße Rübe/Wasserrübe, aktueller Gemüsepreis 1,49 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G553100",
+      "name": "Pfefferschote, grün, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Grüne Pfefferschoten/Chili, aktueller Frischgemüsepreis 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G542100",
+      "name": "Paprika, gelb, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.22,
+      "sourceProduct": "NATUR LIEBLINGE Paprika Mix 500 g, 2,22 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G554100",
+      "name": "Pfefferschote, rot, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Rote Pfefferschoten/Chili, aktueller Frischgemüsepreis 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G104100",
+      "name": "Feldsalat, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 7.98,
+      "sourceProduct": "Feldsalat frisch, aktueller Salatpreis 7,98 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G105100",
+      "name": "Kopfsalat, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Kopfsalat frisch, aktueller Salatpreis 2,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G106100",
+      "name": "Radicchio, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.99,
+      "sourceProduct": "Radicchio frisch, aktueller Salatpreis 3,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G107100",
+      "name": "Römersalat, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.99,
+      "sourceProduct": "Römersalat frisch, aktueller Salatpreis 3,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G211100",
+      "name": "Spinat, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.49,
+      "sourceProduct": "Baby-/Blattspinat frisch, aktueller Gemüsepreis 5,49 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G261100",
+      "name": "Brennnessel, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Essbare Wildkräuter frisch, Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G262100",
+      "name": "Löwenzahn, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Essbare Wildkräuter frisch, Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G263100",
+      "name": "Sauerampfer, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Essbare Wildkräuter frisch, Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G280100",
+      "name": "Gartenkresse, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 15,
+      "sourceProduct": "Gartenkresse frisch, aktueller Kräuter-/Sprossenpreis 15,00 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G311100",
+      "name": "Blumenkohl, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.39,
+      "sourceProduct": "Blumenkohl, niedrigster aktueller Kategoriepreis 1,39 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G312100",
+      "name": "Broccoli, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.49,
+      "sourceProduct": "Broccoli frisch, aktueller Gemüsepreis 2,49 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G341100",
+      "name": "Rotkohl, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.29,
+      "sourceProduct": "Rotkohl, aktueller Gemüsepreis 1,29 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G342100",
+      "name": "Weißkohl, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.29,
+      "sourceProduct": "Weißkohl, aktueller Gemüsepreis 1,29 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G431100",
+      "name": "Fenchelblatt, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Fenchel frisch, aktueller Gemüsepreis 2,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G450100",
+      "name": "Spargel, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Spargel frisch, aktueller Saisonpreis 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G470100",
+      "name": "Porree/Lauch, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Porree/Lauch, aktueller Gemüsepreis 1,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G530100",
+      "name": "Okra, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "Okra frisch, aktueller Spezialgemüsepreis 7,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G332100",
+      "name": "Rosenkohl, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.99,
+      "sourceProduct": "Rosenkohl frisch, aktueller Gemüsepreis 3,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G480100",
+      "name": "Speisezwiebel, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.29,
+      "sourceProduct": "Speisezwiebeln, aktueller Gemüsepreis 1,29 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G510100",
+      "name": "Aubergine, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.79,
+      "sourceProduct": "Aubergine, aktueller Gemüsepreis 2,79 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    }
+  ]
+}

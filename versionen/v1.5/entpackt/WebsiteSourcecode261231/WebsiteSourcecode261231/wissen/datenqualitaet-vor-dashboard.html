@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="index, follow">
+  <title>Datenqualität vor dem Dashboard: Was muss stimmen?</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Datenqualität vor dem Dashboard prüfen: Herkunft, Einheiten, Duplikate, fehlende Werte und Kennzahlen sauber definieren.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/wissen/datenqualitaet-vor-dashboard">
+  <meta property="og:title" content="Datenqualität vor dem Dashboard: Was muss stimmen?">
+  <meta property="og:description" content="Datenqualität vor dem Dashboard prüfen: Herkunft, Einheiten, Duplikate, fehlende Werte und Kennzahlen sauber definieren.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://smstark-projekt.de/wissen/datenqualitaet-vor-dashboard">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Datenqualität vor dem Dashboard: Was muss stimmen?",
+    "description": "Datenqualität vor dem Dashboard prüfen: Herkunft, Einheiten, Duplikate, fehlende Werte und Kennzahlen sauber definieren.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://smstark-projekt.de/#person",
+      "name": "Simon Stark",
+      "url": "https://smstark-projekt.de/",
+      "sameAs": ["https://github.com/simons-0427"],
+      "knowsAbout": ["Finanzen", "Datenanalyse", "Dashboards"]
+    },
+    "publisher": { "@id": "https://smstark-projekt.de/#person" },
+    "datePublished": "2026-09-11",
+    "dateModified": "2026-09-07",
+    "image": "https://smstark-projekt.de/images/website-home-menu.png",
+    "mainEntityOfPage": "https://smstark-projekt.de/wissen/datenqualitaet-vor-dashboard",
+    "inLanguage": "de-DE"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smstark-projekt.de/" },
+      { "@type": "ListItem", "position": 2, "name": "Wissen", "item": "https://smstark-projekt.de/wissen/" },
+      { "@type": "ListItem", "position": 3, "name": "Datenanalyse", "item": "https://smstark-projekt.de/wissen/#datenanalyse" },
+      { "@type": "ListItem", "position": 4, "name": "Datenqualität vor dem Dashboard: Was muss stimmen?" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0c0c0f; --surface:#13131a; --border:#1e1e2e; --accent:#6ee7b7; --accent2:#818cf8; --text:#e2e8f0; --muted:#64748b; --card:#16161f; --nav-h:68px; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; scroll-padding-top:var(--nav-h); scrollbar-width:none; overflow-x:hidden; }
+    html::-webkit-scrollbar { display:none; }
+    body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; overflow-x:hidden; }
+    a { color:inherit; }
+    .main-nav { position:fixed; top:0; left:0; right:0; height:var(--nav-h); background:rgba(12,12,15,.95); backdrop-filter:blur(18px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:center; padding:0 clamp(1.5rem,5vw,4rem); z-index:100; gap:2.2rem; }
+    .nav-logo { position:absolute; left:clamp(1.5rem,5vw,4rem); font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:-.02em; color:var(--text); text-decoration:none; }
+    .nav-logo span, .main-nav .nav-links a:hover, .main-nav .nav-links a.active { color:var(--accent); }
+    .nav-links { display:flex; gap:2.2rem; list-style:none; }
+    .main-nav .nav-links a { font-size:.9rem; font-weight:500; color:var(--text); text-decoration:none; letter-spacing:.03em; transition:color .2s; }
+    .nav-github { position:absolute; right:clamp(1.5rem,5vw,4rem); display:inline-flex; align-items:center; gap:.5rem; font-size:.82rem; font-weight:500; color:var(--text); text-decoration:none; border:1px solid var(--text); padding:.4rem .9rem; border-radius:8px; }
+    .nav-github svg, .mobile-menu .mobile-github svg { width:15px; height:15px; }
+    .nav-toggle { display:none; position:absolute; right:1rem; width:44px; height:44px; flex-direction:column; justify-content:center; align-items:center; gap:5px; background:transparent; border:1px solid var(--border); border-radius:8px; cursor:pointer; }
+    .nav-toggle span { display:block; width:18px; height:2px; background:var(--text); border-radius:2px; transition:transform .25s ease, opacity .2s ease; }
+    .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity:0; }
+    .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display:none; position:fixed; top:var(--nav-h); left:0; right:0; background:rgba(12,12,15,.98); backdrop-filter:blur(18px); border-bottom:1px solid var(--border); z-index:102; max-height:0; overflow:hidden; transition:max-height .3s ease; }
+    .mobile-menu.open { max-height:calc(100vh - var(--nav-h)); overflow-y:auto; }
+    .mobile-menu ul { list-style:none; padding:.4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top:1px solid var(--border); }
+    .mobile-menu a { display:flex; align-items:center; gap:.6rem; padding:.95rem .2rem; color:var(--text); text-decoration:none; font-size:1rem; font-weight:500; }
+    .mobile-menu .mobile-github { color:var(--accent); }
+    #article-hero { padding:calc(var(--nav-h) + 3rem) clamp(1.5rem,5vw,4rem) 3.5rem; max-width:1040px; margin:0 auto; }
+    .breadcrumb { font-size:.78rem; color:var(--muted); margin-bottom:1.4rem; }
+    .breadcrumb a { color:var(--muted); text-decoration:none; }
+    .article-eyebrow, .section-label { font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:1rem; }
+    .article-title { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.1rem,5vw,3.4rem); line-height:1.08; letter-spacing:-.03em; margin-bottom:1.4rem; }
+    .article-lead { font-size:1.1rem; font-weight:300; color:var(--muted); max-width:76ch; line-height:1.75; }
+    .article-meta { display:flex; gap:1.2rem; margin-top:1.6rem; font-size:.78rem; color:var(--muted); flex-wrap:wrap; }
+    hr.divider { border:0; border-top:1px solid var(--border); }
+    section { padding:3.5rem clamp(1.5rem,5vw,4rem); }
+    .bg-surface { background:var(--surface); }
+    .chapter-grid { display:grid; grid-template-columns:80px 1fr; gap:0 2.5rem; align-items:start; max-width:960px; margin:0 auto; }
+    .ch-num { font-family:'Syne',sans-serif; font-size:.68rem; font-weight:800; letter-spacing:.2em; color:var(--border); text-transform:uppercase; padding-top:.35rem; position:sticky; top:calc(var(--nav-h) + 2rem); }
+    .ch-text { font-size:1.02rem; font-weight:300; color:var(--muted); line-height:1.85; max-width:76ch; }
+    .ch-text + .ch-text { margin-top:1.3rem; }
+    .ch-text strong, .ch-list strong, .flow-list strong, .note-box strong { color:var(--text); font-weight:500; }
+    .ch-text a, .ch-list a, .note-box a { color:var(--accent); }
+    .ch-text code, .ch-list code, .flow-list code { color:var(--accent); background:var(--card); padding:.1rem .4rem; border-radius:4px; font-size:.85em; }
+    .ch-list { margin-top:1rem; padding-left:1.2rem; color:var(--muted); }
+    .ch-list li { margin-bottom:.6rem; line-height:1.7; }
+    .formula-box { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.4rem 1.6rem; margin-top:1.2rem; max-width:72ch; font-family:'Courier New',monospace; font-size:.88rem; color:var(--accent); line-height:1.65; white-space:pre-wrap; }
+    .formula-box span { display:block; font-family:'DM Sans',sans-serif; font-size:.78rem; color:var(--muted); margin-top:.75rem; font-weight:400; white-space:normal; }
+    .note-box { margin-top:1.3rem; padding:1.15rem 1.3rem; border:1px solid rgba(129,140,248,.28); border-left:3px solid var(--accent2); border-radius:10px; background:rgba(129,140,248,.06); color:var(--muted); font-size:.9rem; line-height:1.7; max-width:76ch; }
+    .article-table-wrap { margin-top:1.4rem; overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--border); border-radius:12px; width:100%; max-width:100%; }
+    .article-table { width:100%; min-width:650px; border-collapse:collapse; background:var(--card); font-size:.84rem; }
+    .article-table th, .article-table td { padding:.9rem 1rem; border-bottom:1px solid var(--border); border-right:1px solid var(--border); text-align:left; vertical-align:top; }
+    .article-table th:last-child, .article-table td:last-child { border-right:0; }
+    .article-table tr:last-child td { border-bottom:0; }
+    .article-table th { background:var(--surface); color:var(--text); font-family:'Syne',sans-serif; font-size:.72rem; letter-spacing:.04em; }
+    .article-table td { color:var(--muted); line-height:1.55; }
+    .article-table strong { color:var(--text); }
+    .flow-list { display:grid; gap:.75rem; margin-top:1.3rem; list-style:none; counter-reset:flow; }
+    .flow-list li { counter-increment:flow; display:grid; grid-template-columns:34px 1fr; gap:.8rem; align-items:start; color:var(--muted); line-height:1.65; }
+    .flow-list li::before { content:counter(flow); display:grid; place-items:center; width:30px; height:30px; border:1px solid var(--border); border-radius:50%; color:var(--accent); font-family:'Syne',sans-serif; font-size:.72rem; font-weight:700; }
+    .cta-box { background:var(--card); border:1px solid rgba(110,231,183,.25); border-radius:16px; padding:2.2rem clamp(1.5rem,4vw,2.6rem); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; max-width:960px; margin:0 auto; }
+    .cta-box h3 { font-family:'Syne',sans-serif; font-size:1.3rem; margin-bottom:.5rem; }
+    .cta-box p { color:var(--muted); font-size:.92rem; max-width:44ch; }
+    .cta-actions { display:flex; flex-direction:column; align-items:flex-start; gap:.7rem; }
+    .btn { display:inline-flex; align-items:center; gap:.55rem; padding:.8rem 1.8rem; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:.9rem; font-weight:500; text-decoration:none; border:0; }
+    .btn-primary { background:var(--accent); color:#0c0c0f; }
+    .cta-secondary { font-size:.82rem; color:var(--muted); text-decoration:none; border-bottom:1px solid var(--border); padding-bottom:1px; }
+    .related-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:1rem; max-width:960px; margin:1rem auto 0; }
+    .related-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.3rem; text-decoration:none; color:inherit; display:block; }
+    .related-card span { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); font-weight:700; }
+    .related-card h4 { font-family:'Syne',sans-serif; font-size:1rem; margin-top:.5rem; line-height:1.3; }
+    .article-trust { max-width:760px; margin:1.25rem auto 0; padding:.9rem 1rem; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; background:rgba(110,231,183,.06); color:var(--muted); font-size:.82rem; line-height:1.6; }
+    .article-trust p { margin:0; }
+    footer { background:var(--surface); border-top:1px solid var(--border); padding:3.5rem clamp(1.5rem,8vw,8rem) 2rem; color:var(--muted); font-size:.82rem; }
+    .footer-inner { display:grid; grid-template-columns:1.7fr 1fr 1fr; gap:3rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border); }
+    .footer-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:var(--text); text-decoration:none; display:inline-block; margin-bottom:.9rem; }
+    .footer-logo span { color:var(--accent); }
+    .footer-brand p { max-width:34ch; line-height:1.6; }
+    .footer-col h5 { font-family:'Syne',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--text); margin-bottom:1rem; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:.65rem; }
+    footer a { color:var(--muted); text-decoration:none; }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; padding-top:1.6rem; flex-wrap:wrap; gap:.6rem; }
+    .fade-in { opacity:0; transform:translateY(12px); transition:opacity .65s ease, transform .65s ease; }
+    .fade-in.visible { opacity:1; transform:none; }
+    @media (max-width:980px) { .main-nav .nav-links, .main-nav .nav-github { display:none; } .main-nav { justify-content:flex-start; padding:0 1rem; } .nav-logo { position:static; } .nav-toggle { display:flex; } .mobile-menu { display:block; } section { padding:3rem 1.15rem; } .chapter-grid { grid-template-columns:1fr; gap:1rem; max-width:760px; } .ch-num { position:static; padding-top:0; } }
+    @media (max-width:768px) { #article-hero { padding-top:calc(var(--nav-h) + 2rem); } .article-title { font-size:clamp(1.65rem,8vw,2.4rem); } .article-lead { font-size:1rem; } .article-meta { gap:.55rem 1rem; } .section-title { font-size:clamp(1.4rem,6.5vw,1.95rem); } .cta-box { flex-direction:column; align-items:flex-start; padding:1.5rem 1.15rem; } .cta-actions { width:100%; } .btn { min-height:48px; justify-content:center; } .formula-box { padding:1.1rem 1.15rem; font-size:.98rem; overflow-x:auto; } .article-table { min-width:560px; } .footer-inner { grid-template-columns:1fr; gap:1.75rem; } .footer-bottom { flex-direction:column; text-align:center; } footer { padding:2.25rem 1.15rem 1.75rem; } }
+    @media (prefers-reduced-motion:reduce) { *, *::before, *::after { scroll-behavior:auto !important; transition-duration:.01ms !important; } .fade-in { opacity:1; transform:none; } }
+  </style>
+  <link rel="stylesheet" href="article-responsive.css">
+  <link rel="stylesheet" href="../assets/site-header.css">
+  <script src="../assets/site-header.js" defer></script>
+</head>
+<body>
+  <nav class="main-nav">
+    <a href="/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="../projekte/">Projekte</a></li>
+      <li><a href="../downloads">Downloads</a></li>
+      <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../vision">Vision</a></li>
+      <li><a href="./" class="active">Wissen</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/en/knowledge/data-quality-before-dashboard" data-language-file-target="../en/knowledge/data-quality-before-dashboard.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="nav-github">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="../projekte/">Projekte</a></li>
+      <li><a href="../downloads">Downloads</a></li>
+      <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../vision">Vision</a></li>
+      <li><a href="./">Wissen</a></li>
+      <li class="mobile-language-row">
+  <span class="mobile-language-label">Sprache</span>
+  <button type="button" class="language-switch" data-language-target="/en/knowledge/data-quality-before-dashboard" data-language-file-target="../en/knowledge/data-quality-before-dashboard.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+</li>
+<li><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483-.237-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398-.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub</a></li>
+    </ul>
+  </div>
+
+  <section id="article-hero">
+    <p class="breadcrumb fade-in"><a href="/">Home</a> / <a href="./">Wissen</a> / <a href="./#datenanalyse">Datenanalyse</a> / Datenqualität vor dem Dashboard</p>
+    <p class="article-eyebrow fade-in">Datenanalyse</p>
+    <h1 class="article-title fade-in">Datenqualität vor dem Dashboard:<br>Was muss stimmen?</h1>
+    <p class="article-lead fade-in">
+      Ein Dashboard kann sauber aussehen und trotzdem falsche Antworten liefern. Vor dem ersten Diagramm müssen Herkunft, Struktur, Einheiten, Zeiträume und Kennzahlen feststehen. Dieser Leitfaden zeigt die Prüfungen, die ich vor Auswertungen in meinen Datenanalyse-Projekten mache.
+    </p>
+    <div class="article-meta fade-in">
+      <span>Simon Stark</span>
+      <span>|</span>
+      <span>Veröffentlicht 11. September 2026</span>
+      <span>|</span>
+      <span>ca. 13 Min. Lesezeit</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">01</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Die Frage</p>
+        <h2 class="section-title fade-in">Ein Dashboard beantwortet nur eine sauber definierte Frage</h2>
+        <p class="ch-text fade-in">
+          Das Diagramm kommt spät. Vorher muss feststehen, was eine Kennzahl überhaupt messen soll. „Wie entwickelt sich mein Portfolio?“ kann den Kontostand, die Wertentwicklung der Anlagen, den Depotwert inklusive Einzahlungen oder die reale Rendite nach Inflation meinen. Jede dieser Größen kann korrekt berechnet werden und trotzdem eine andere Antwort liefern.
+        </p>
+        <p class="ch-text fade-in">
+          Deshalb schreibe ich vor der Auswertung mindestens vier Dinge auf: Beobachtung, Zeitraum, Einheit und Regel. Eine monatliche Portfolio-Zeitreihe braucht zum Beispiel eine Definition dafür, ob <code>2026-01</code> den Monatsanfang, den Monatsendstand oder eine über den Monat gemittelte Zahl meint.
+        </p>
+        <div class="article-table-wrap fade-in">
+          <table class="article-table">
+            <thead><tr><th>Zielgröße</th><th>Was ist eine Beobachtung?</th><th>Einheit</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Portfolio-Wert</strong></td><td>Wert des Depots an einem festgelegten Stichtag</td><td>EUR</td></tr>
+              <tr><td><strong>Periodenrendite</strong></td><td>Veränderung zwischen zwei aufeinanderfolgenden Stichtagen</td><td>intern als Dezimalwert, z. B. 0,05</td></tr>
+              <tr><td><strong>Kumulierte Rendite</strong></td><td>Veränderung vom ersten bis zum letzten Wert</td><td>Prozent</td></tr>
+              <tr><td><strong>Einzahlung</strong></td><td>Geldfluss, der von außen in das Portfolio kommt</td><td>EUR</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box fade-in"><strong>Erster Check:</strong> Wenn du die Frage nicht in einem Satz mit Zeitraum und Einheit beschreiben kannst, ist die Auswertung noch nicht bereit für ein Dashboard.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">02</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Kontext</p>
+        <h2 class="section-title fade-in">Jede Zahl braucht Herkunft und Bezugsgröße</h2>
+        <p class="ch-text fade-in">
+          Der Wert allein reicht selten. Zu einer Beobachtung gehören Quelle, Abrufzeitpunkt, Datum oder Zeitraum, Zeitzone, Einheit, Kennung und die Regel, mit der sie entstanden ist. Ohne diesen Kontext sieht eine Zahl im Export vollständig aus, lässt sich später aber nicht mehr sicher einordnen.
+        </p>
+        <div class="article-table-wrap fade-in">
+          <table class="article-table">
+            <thead><tr><th>Prüfung</th><th>Frage vor der Auswertung</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Quelle</strong></td><td>Wer liefert den Wert, und ist es eine Originalreihe, ein Proxy oder eine eigene Schätzung?</td></tr>
+              <tr><td><strong>Zeit</strong></td><td>Welches Datum gilt, welche Zeitzone wird verwendet und ist der Wert Tages-, Monats- oder Quartalsdaten zugeordnet?</td></tr>
+              <tr><td><strong>Granularität</strong></td><td>Repräsentiert eine Zeile genau einen Tag, einen Monat, ein Wertpapier oder bereits eine Summe?</td></tr>
+              <tr><td><strong>Einheit</strong></td><td>Steht der Wert für EUR, USD, Prozent, Prozentpunkte, Stück, Gramm oder einen Indexstand?</td></tr>
+              <tr><td><strong>Definition</strong></td><td>Ist es ein Preis, eine Rendite, ein Preisindex, ein Total-Return-Wert oder ein Forecast?</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ch-text fade-in">
+          Eine Zeile pro Tag lässt sich nicht automatisch mit einer Zeile pro Monat vergleichen. Wenn du die Daten zusammenführst, brauchst du eine bewusste Aggregation. Ein Monatsendstand, ein Monatsdurchschnitt und die Summe der täglichen Renditen sind drei verschiedene Größen.
+        </p>
+        <p class="ch-text fade-in">
+          Im <a href="assetklassen-backtester-rendite-risiko">Assetklassen-Backtester</a> wird deshalb für jede Reihe festgelegt, was genau verglichen wird. S&amp;P 500, Bitcoin und Gold klingen im Gespräch eindeutig. Im Modell sind es aber konkrete Datenreihen mit eigener Währung, eigenem Handelskalender und eigener Datenquelle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">03</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Datenpipeline</p>
+        <h2 class="section-title fade-in">Rohdaten bleiben unverändert</h2>
+        <p class="ch-text fade-in">
+          Ich trenne Rohdaten von der bereinigten Arbeitsdatei. Die Rohdatei bleibt so erhalten, wie sie geliefert wurde. In der bereinigten Datei stehen einheitliche Datumsformate, Spaltennamen und Zahlenformate. So lässt sich später unterscheiden, ob ein Fehler aus der Quelle kam oder bei der Umwandlung entstanden ist.
+        </p>
+        <ol class="flow-list fade-in">
+          <li><div><strong>Abrufen:</strong> Antwort, Status, Inhaltstyp und Abrufzeitpunkt speichern. Eine erfolgreiche Verbindung ist noch kein gültiger Datenimport.</div></li>
+          <li><div><strong>Sichern:</strong> Die Rohdatei nicht nachträglich überschreiben. Bei einer neuen Version bleibt die alte Lieferung nachvollziehbar.</div></li>
+          <li><div><strong>Parsen:</strong> Erwartete Spalten, Datentypen und Trennzeichen prüfen. Eine CSV-Datei mit HTML-Inhalt ist keine CSV-Datei.</div></li>
+          <li><div><strong>Normalisieren:</strong> Datumswerte, Dezimaltrennzeichen, Währungen und Prozentdarstellung in eine definierte interne Form bringen.</div></li>
+          <li><div><strong>Protokollieren:</strong> Abgewiesene Zeilen, Lücken, Quellenwechsel und Warnungen festhalten, statt sie still zu entfernen.</div></li>
+          <li><div><strong>Auswerten:</strong> Diagramme und Kennzahlen nur aus dem geprüften Bestand bauen.</div></li>
+        </ol>
+        <p class="ch-text fade-in">
+          Ein konkretes Beispiel aus der Datenarbeit hinter meinem Backtester: Einige vermeintliche CSV-Abrufe lieferten zwar den HTTP-Status 200, im Inhalt steckte aber eine HTML-Seite. Wer nur den Statuscode prüft, meldet den Download als erfolgreich und schiebt den Fehler erst später in den Parser oder ins Dashboard.
+        </p>
+        <div class="note-box fade-in"><strong>Praktische Regel:</strong> Speichere neben dem Wert auch seine Quelle und den Qualitätsstatus. Dann kann eine einzelne Kurve später bis zum ursprünglichen Abruf zurückverfolgt werden.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">04</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Einheiten</p>
+        <h2 class="section-title fade-in">0,05 und 5 sind beide richtige Zahlen</h2>
+        <p class="ch-text fade-in">
+          Der häufigste Fehler ist nicht die Formel, sondern die Darstellung davor. Eine Rendite von 5 Prozent kann in einer Tabelle als <code>0,05</code> gespeichert und im Dashboard als <code>5,0 %</code> angezeigt werden. Beide Schreibweisen beschreiben denselben Wert, aber nur eine davon darf an die jeweilige Rechenfunktion gehen.
+        </p>
+        <div class="formula-box fade-in">r = 0,05
+V<sub>neu</sub> = V<sub>alt</sub> × (1 + r)
+10.000 € × 1,05 = 10.500 €<span>Wenn die Funktion an dieser Stelle die Zahl 5 erwartet, entstehen 60.000 € statt 10.500 €. Die Rechnung läuft technisch, die Eingabe ist fachlich falsch.</span></div>
+        <div class="article-table-wrap fade-in">
+          <table class="article-table">
+            <thead><tr><th>Feld</th><th>Interne Darstellung</th><th>Anzeige</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Rendite</strong></td><td>0,05</td><td>5,0 %</td></tr>
+              <tr><td><strong>Anteil</strong></td><td>0,25</td><td>25 %</td></tr>
+              <tr><td><strong>Preis</strong></td><td>123,45</td><td>123,45 €</td></tr>
+              <tr><td><strong>Wechselkurs</strong></td><td>1,08</td><td>1,08 USD je EUR</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ch-text fade-in">
+          Dazu kommen Prozentpunkte, Basispunkte, Preis und Rendite, nominale und reale Werte sowie verschiedene Währungen. Ein Feld sollte deshalb eine eindeutige Definition haben. Prozentzeichen gehören in die Anzeige, nicht ungeprüft in eine Spalte, deren Parser eine reine Zahl erwartet.
+        </p>
+        <p class="ch-text fade-in">
+          Der schnellste Gegencheck ist ein bekannter Datensatz. Nimm einen Wert, rechne ihn von der Rohdatei bis zur Anzeige durch und vergleiche jeden Zwischenschritt. Ein einzelner Testfall findet Dezimalfehler oft früher als ein vollständiger Dashboard-Screenshot.
+      </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">05</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Fehlende Werte</p>
+        <h2 class="section-title fade-in">Leer ist nicht null</h2>
+        <p class="ch-text fade-in">
+          Eine echte Null ist eine Beobachtung. Ein leerer Wert bedeutet meist, dass keine Beobachtung vorliegt. Diese beiden Fälle dürfen nicht dieselbe Bedeutung bekommen.
+        </p>
+        <p class="ch-text fade-in">
+          Angenommen, ein Portfolio steht im Januar bei 10.000 € und im Februar bei 10.500 €. Für März fehlt der Datenpunkt. Setzt du die Lücke auf 0 % Rendite, sieht der März wie ein stabiler Monat aus. Setzt du den Wert auf den letzten Stand von 10.500 €, wirkt der Chart vollständig, obwohl für März keine neue Beobachtung existiert. Beide Ersatzwerte verändern die Auswertung.
+        </p>
+        <ul class="ch-list fade-in">
+          <li><strong>0 % Rendite:</strong> Es gab eine gültige Beobachtung ohne Veränderung.</li>
+          <li><strong>Leerer Wert:</strong> Es gibt für den erwarteten Zeitraum keine verwertbare Beobachtung.</li>
+          <li><strong>Letzten Wert fortschreiben:</strong> Kann für eine gemeinsame Darstellungsachse sinnvoll sein, erzeugt aber keine neue Renditebeobachtung.</li>
+          <li><strong>Interpolieren:</strong> Nur mit fachlicher Begründung und sichtbarer Kennzeichnung. Eine Lücke wird nicht durch eine plausible Zahl wahr.</li>
+        </ul>
+        <p class="ch-text fade-in">
+          Diese Trennung ist im Assetklassen-Backtester zentral. Börsen haben am Wochenende geschlossen, Bitcoin handelt durchgehend. Für den gemeinsamen Chart wird der letzte bekannte Wert dargestellt. Die Risikokennzahlen verwenden dagegen echte Beobachtungen, damit Wochenenden nicht als zusätzliche Tage mit 0 % Rendite in die Volatilität eingehen. <a href="assetklassen-backtester-rendite-risiko">Die Methodik ist dort ausführlich beschrieben.</a>
+        </p>
+        <div class="note-box fade-in"><strong>Vor der Berechnung:</strong> Ermittle erwartete Perioden, vorhandene Perioden, Lücken und den letzten echten Datenpunkt. Ein Chart darf diese Informationen sichtbar machen, statt sie hinter einer glatten Linie zu verstecken.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">06</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Eindeutigkeit</p>
+        <h2 class="section-title fade-in">Duplikate und Reihenfolge verändern die Kennzahl</h2>
+        <p class="ch-text fade-in">
+          Eine Zeile mit Datum und Wert ist noch keine eindeutige Beobachtung. Der Schlüssel muss zum Modell passen. Bei einer täglichen Kursreihe kann er aus <code>Reihe + Datum</code> bestehen. Bei einem Portfolio mit mehreren Konten gehört die Konto-ID dazu. Bei Monatswerten muss klar sein, ob eine nachträgliche Quellenrevision den alten Wert ersetzt oder als neue Version gespeichert wird.
+        </p>
+        <div class="article-table-wrap fade-in">
+          <table class="article-table">
+            <thead><tr><th>Fehler</th><th>Mögliche Wirkung</th><th>Saubere Reaktion</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Doppeltes Datum</strong></td><td>Ein Monat oder Tag zählt doppelt und bekommt zu viel Gewicht.</td><td>Schlüssel prüfen, Revision entscheiden, Abweichung protokollieren.</td></tr>
+              <tr><td><strong>Absteigende Zeit</strong></td><td>Renditen werden in umgekehrter Reihenfolge berechnet.</td><td>Datum parsen und vor der Kennzahl aufsteigend sortieren.</td></tr>
+              <tr><td><strong>Locale-Fehler</strong></td><td>1.234,56 wird als 1,23456 oder 123456 gelesen.</td><td>Dezimal- und Tausendertrennzeichen für die Quelle festlegen.</td></tr>
+              <tr><td><strong>Quellenrevision</strong></td><td>Alte und neue Version stehen gleichzeitig in der Reihe.</td><td>Version markieren und genau eine gültige Beobachtung auswählen.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ch-text fade-in">
+          Zwei unterschiedliche Werte für denselben Tag werden nicht automatisch gemittelt. Das wäre eine neue fachliche Regel und kann einen Fehler verdecken. Zuerst muss geklärt werden, ob eine Quelle korrigiert wurde, ob zwei Handelsplätze zusammengefallen sind oder ob das Datum falsch zugeordnet wurde.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">07</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Plausibilität</p>
+        <h2 class="section-title fade-in">Plausible Daten können fachlich falsch sein</h2>
+        <p class="ch-text fade-in">
+          Ein Wert kann als Zahl parsebar, positiv und im üblichen Bereich sein und trotzdem die falsche Bedeutung haben. Plausibilitätsprüfungen brauchen deshalb zwei Ebenen: technische Fehler, die den Import stoppen, und fachliche Warnungen, die eine Kontrolle verlangen.
+        </p>
+        <div class="article-table-wrap fade-in">
+          <table class="article-table">
+            <thead><tr><th>Prüfung</th><th>Beispiel</th><th>Entscheidung</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Technisch ungültig</strong></td><td>Datum nicht lesbar, Pflichtspalte fehlt, Inhaltstyp passt nicht.</td><td>Import stoppen und Fehler melden.</td></tr>
+              <tr><td><strong>Strukturell ungültig</strong></td><td>Doppelter Schlüssel ohne geklärte Revision.</td><td>Datensatz zurückhalten, nicht still mitteln.</td></tr>
+              <tr><td><strong>Fachliche Warnung</strong></td><td>Ungewöhnlicher Sprung, lange Lücke oder veralteter letzter Datenpunkt.</td><td>Markieren und prüfen; echte Sprünge nicht automatisch überschreiben.</td></tr>
+              <tr><td><strong>Definition prüfen</strong></td><td>Forecast steht in derselben Reihe wie historische Ist-Werte.</td><td>Trennen und im Dashboard sichtbar kennzeichnen.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ch-text fade-in">
+          Grenzwerte sind Hinweise, keine Wahrheiten. Ein Kurs kann an einem Tag stark steigen. Ein Nährstoffwert kann außerhalb des erwarteten Bereichs liegen, weil ein neues Produkt erfasst wurde. Die Prüfung soll den Blick auf die Stelle lenken. Sie soll keine Daten passend machen.
+        </p>
+        <div class="note-box fade-in"><strong>Gute Warnung:</strong> „Wert am 14.03. liegt 48 % über der letzten Beobachtung; Quelle und Einheit prüfen.“ Schlechte Bereinigung: „Wert begrenzen, damit die Kurve ruhig aussieht.“</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">08</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Kennzahlen</p>
+        <h2 class="section-title fade-in">Die Formel kann korrekt sein und trotzdem die falsche Frage beantworten</h2>
+        <p class="ch-text fade-in">
+          Bei einer monatlichen Portfolio-Zeitreihe reicht der Durchschnitt der Monatsrenditen nicht automatisch als Jahresrendite. Renditen werden über den Weg des Portfolios miteinander verknüpft. Die Kennzahl muss außerdem wissen, ob Einzahlungen und Entnahmen enthalten sind.
+        </p>
+        <div class="formula-box fade-in">Endwert = Startwert × ∏ (1 + r<sub>t</sub>)
+Gesamtrendite = Endwert / Startwert − 1
+Annualisierte Rendite = (Endwert / Startwert)<sup>12 / n</sup> − 1<span>Hier steht n für die tatsächlich berücksichtigten monatlichen Perioden. Bei Einzahlungen brauchst du zusätzlich eine cashflow-bewusste Definition.</span></div>
+        <p class="ch-text fade-in">
+          Ein kleines Beispiel zeigt den Unterschied: Auf einen Monat mit +10 % folgt ein Monat mit −10 %. Das arithmetische Mittel ist 0 %. Der Wertpfad ist trotzdem kleiner geworden: <code>1,10 × 0,90 − 1 = −1 %</code>. Das Dashboard muss benennen, welche dieser Größen es zeigt.
+        </p>
+        <p class="ch-text fade-in">
+          Wenn in der Reihe zusätzlich 1.000 € eingezahlt werden, misst <code>Endwert / Startwert − 1</code> die Mischung aus Anlageergebnis und Einzahlung. Für eine Renditeauswertung brauchst du dann eine Definition, die Cashflows berücksichtigt, etwa eine zeitgewichtete oder geldgewichtete Rendite. Die Formel ist kein Ersatz für diese Entscheidung.
+        </p>
+        <ul class="ch-list fade-in">
+          <li><strong>Preis:</strong> Wert eines Instruments zu einem Zeitpunkt.</li>
+          <li><strong>Periodenrendite:</strong> Veränderung zwischen zwei echten Beobachtungen.</li>
+          <li><strong>Kumulierte Rendite:</strong> Zusammengesetzte Veränderung über den gesamten Zeitraum.</li>
+          <li><strong>Forecast:</strong> Annahme oder Projektion, die im Datenmodell von Ist-Werten getrennt bleiben sollte.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">09</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Vor dem Chart</p>
+        <h2 class="section-title fade-in">Eine kurze Prüfung, die vor jeder Auswertung funktioniert</h2>
+        <ol class="flow-list fade-in">
+          <li><div><strong>Frage festhalten:</strong> Was soll die Kennzahl beantworten, für wen und über welchen Zeitraum?</div></li>
+          <li><div><strong>Rohdaten sichern:</strong> Quelle, Abrufzeitpunkt, Originaldatei und Antwortstatus aufbewahren.</div></li>
+          <li><div><strong>Struktur lesen:</strong> Spalten, Datentypen, Granularität, Schlüssel und Zeitzone prüfen.</div></li>
+          <li><div><strong>Darstellung normieren:</strong> Datumsformat, Dezimaltrennzeichen, Währung und Prozentdarstellung festlegen.</div></li>
+          <li><div><strong>Vollständigkeit messen:</strong> Fehlende Werte, Duplikate, Reihenfolge und letzten echten Datenpunkt ausgeben.</div></li>
+          <li><div><strong>Plausibilität prüfen:</strong> Harte Fehler stoppen; Sprünge, Lücken und Quellenwechsel als Warnung markieren.</div></li>
+          <li><div><strong>Eine Zeile nachrechnen:</strong> Einen bekannten Fall von der Rohzahl bis zur Dashboard-Anzeige manuell kontrollieren.</div></li>
+          <li><div><strong>Kennzahl benennen:</strong> Formel, Einheit, Datenbasis und Ausschlüsse direkt an der Auswertung dokumentieren.</div></li>
+        </ol>
+        <p class="ch-text fade-in">
+          Für ein kleines Dashboard reicht dafür oft eine Prüfseite oder ein Protokoll mit wenigen klaren Feldern. Es muss kein großes Data-Quality-System entstehen. Entscheidend ist, dass ein fehlerhafter Import sichtbar wird, bevor er als bunte Grafik weitergereicht wird.
+        </p>
+        <div class="note-box fade-in"><strong>Meine Freigabegrenze:</strong> Eine rote Prüfung blockiert die Kennzahl. Eine gelbe Prüfung lässt die Auswertung nur mit sichtbarer Warnung zu. Eine grüne Prüfung bedeutet, dass die definierte technische und fachliche Prüfung bestanden wurde.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">10</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Meine Projekte</p>
+        <h2 class="section-title fade-in">Dasselbe Prinzip gilt für Backtester und Solver</h2>
+        <p class="ch-text fade-in">
+          Im Assetklassen-Backtester beginnt die Arbeit vor der Kurve: konkrete Datenreihe auswählen, Währung und Wechselkurs festlegen, Handelskalender berücksichtigen, fehlende Beobachtungen trennen und den Datenstand offenlegen. Der Chart zeigt am Ende nur, was diese Regeln zulassen. Er kann keine unklare Reihe nachträglich eindeutig machen.
+        </p>
+        <p class="ch-text fade-in">
+          Im <a href="../ernaerung/">Ernährungsrechner</a> liegt der Fehler an einer anderen Stelle, die Regel ist aber dieselbe. Preis und Nährwerte beziehen sich auf eine definierte Referenz. Funktionen wie <code>foodPrice(f)</code>, <code>UNIT_META</code> und <code>buildModel()</code> bauen darauf auf. Wenn ein Wert pro 100 g gespeichert ist, der Solver ihn aber als Packung interpretiert, kann er einen mathematisch zulässigen Plan finden, der fachlich nicht stimmt.
+        </p>
+        <p class="ch-text fade-in">
+          Ein Dashboard und ein Solver sehen verschieden aus. Beide brauchen vor der Berechnung eine klare Antwort auf dieselben Fragen: Was bedeutet eine Zeile? Welche Einheit hat der Wert? Welche Beobachtungen fehlen? Welche Regel entscheidet über eine Abweichung? Erst danach lohnt sich die Frage, wie das Ergebnis angezeigt wird.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="cta-box fade-in">
+      <div>
+        <h3>Datenbasis im Backtester selbst prüfen</h3>
+        <p>Wähle Zeitraum und Anlageklassen und lies Datenreihe, Endwert und Risiko gemeinsam mit der Methodik.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="../dashboards/backtester/" class="btn btn-primary">Zum Assetklassen-Backtester <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="../projekte/backtester" class="cta-secondary">Technische Projektseite ansehen →</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <p class="section-label fade-in">Weiterlesen</p>
+    <h2 class="section-title fade-in">Verwandte Inhalte</h2>
+    <div class="related-grid">
+      <a href="assetklassen-backtester-rendite-risiko" class="related-card fade-in">
+        <span>Assetklassen &amp; Risiko</span>
+        <h4>Assetklassen vergleichen: Rendite, Risiko und Backtests verstehen</h4>
+      </a>
+      <a href="minimalprinzip-berechnen" class="related-card fade-in">
+        <span>Datenanalyse</span>
+        <h4>Wie berechne ich das Minimalprinzip?</h4>
+      </a>
+      <a href="../dashboards/backtester/" class="related-card fade-in">
+        <span>Dashboard</span>
+        <h4>Assetklassen-Backtester öffnen</h4>
+      </a>
+    </div>
+  </section>
+
+  <section class="article-notes-section">
+    <aside class="article-trust" aria-label="Methodische Einordnung">
+      <p><strong>Methodische Einordnung:</strong> Ich beschreibe hier Prüfungen und Beispiele aus meinen Datenanalyse-Projekten. Kennzahlen hängen von Datenstand, Definitionen und Annahmen ab. Die Finanzbeispiele sind keine individuelle Finanz- oder Anlageberatung.</p>
+    </aside>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">sms<span>.</span></a>
+        <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="../projekte/">Projekte</a></li>
+          <li><a href="../downloads">Downloads</a></li>
+          <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+          <li><a href="../vision">Vision</a></li>
+          <li><a href="./">Wissen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="../impressum">Impressum</a></li>
+          <li><a href="../#info">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(element => observer.observe(element));
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Menü öffnen');
+      }));
+    }
+  </script>
+</body>
+</html>

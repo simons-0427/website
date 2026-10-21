@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Nutrition calculator | Build a low-cost meal plan</title>
+  <link rel="icon" type="image/svg+xml" href="../../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Build a cost-aware meal plan in the browser using nutrition data, daily targets and a solver that finds an affordable combination of foods.">
+  <link rel="canonical" href="https://smstark-projekt.de/en/projects/nutrition-calculator">
+  <script type="application/ld+json">
+  {
+      "@context":  "https://schema.org",
+      "@type":  "WebPage",
+      "@id":  "https://smstark-projekt.de/en/projects/nutrition-calculator#webpage",
+      "name":  "Nutrition calculator | Build a low-cost meal plan",
+      "url":  "https://smstark-projekt.de/en/projects/nutrition-calculator",
+      "description":  "Project page for a cost-aware meal planner with nutrition data and a solver.",
+      "author":  {
+                     "@type":  "Person",
+                     "name":  "Simon Stark",
+                      "url":  "https://smstark-projekt.de/en/"
+                 },
+      "isPartOf":  {
+                       "@type":  "WebSite",
+                        "url":  "https://smstark-projekt.de/en/",
+                        "name":  "SMStark Project"
+                   }
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://smstark-projekt.de/en/projects/nutrition-calculator">
+  <meta property="og:title" content="Nutrition calculator | Build a low-cost meal plan">
+  <meta property="og:description" content="Build a cost-aware meal plan in the browser using nutrition data, daily targets and a solver that finds an affordable combination of foods.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+      --content: 720px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      min-height: 100vh; overflow-x: hidden; max-width: 100%; width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+   position: fixed; top: 0; left: 0; right: 0;
+   height: var(--nav-h);
+   background: rgba(12,12,15,.85);
+   backdrop-filter: blur(18px);
+   border-bottom: 1px solid var(--border);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0 clamp(1.5rem,5vw,4rem);
+   z-index: 100;
+   gap: 2.2rem;
+}
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      margin-right: auto;
+      position: absolute;
+      left: clamp(1.5rem,5vw,4rem);
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: .875rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      letter-spacing: .03em; transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .nav-github {
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      border: 1px solid var(--text);
+      padding: .4rem .9rem; border-radius: 8px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+    .nav-language { position:absolute; right:clamp(8.5rem,13vw,11rem); display:inline-flex; gap:.25rem; font-size:.72rem; letter-spacing:.08em; color:var(--muted); text-decoration:none; }
+    .nav-language span { color:var(--text); }
+    .nav-language:hover { color:var(--accent); }
+
+    /* ── HAMBURGER (mobil) ─────────────────────── */
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      width: 40px; height: 40px;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 101;
+      transition: border-color .2s;
+    }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span {
+      display: block; width: 18px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobiles Dropdown-Menü */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(12,12,15,.98);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      z-index: 102;
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .95rem .2rem;
+      color: var(--text); text-decoration: none;
+      font-size: 1rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+
+    /* ── HERO ── */
+    .hero {
+      margin-top: var(--nav-h);
+      padding: 5rem clamp(1.5rem,8vw,8rem) 4rem;
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 80% 40%, rgba(110,231,183,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 5%  80%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    .hero-inner { max-width: var(--content); }
+    .breadcrumb {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .78rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb svg { width:12px; height:12px; }
+
+    .project-tag {
+      font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .9rem;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 800; letter-spacing: -.03em;
+      line-height: 1.05; margin-bottom: 1.2rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-desc {
+      font-size: 1.05rem; color: var(--muted);
+      font-weight: 300; max-width: 58ch;
+      margin-bottom: 2rem; line-height: 1.7;
+    }
+
+    /* Meta row */
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+      align-items: center;
+    }
+    .tag {
+      font-size: .72rem; font-weight: 600;
+      padding: .25rem .7rem; border-radius: 5px;
+    }
+    .tag.gaming { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .tag.finance { background: rgba(110,231,183,.12); color: var(--accent); }
+    .tag.tools  { background: rgba(251,191,36,.1);   color: #fbbf24; }
+    .tag.data   { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .tag.web-development { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .version-badge {
+      font-size: .72rem; font-weight: 700;
+      padding: .25rem .7rem; border-radius: 5px;
+      background: rgba(110,231,183,.1); color: var(--accent);
+      border: 1px solid rgba(110,231,183,.2);
+    }
+    .meta-date {
+      font-size: .78rem; color: var(--muted);
+      display: flex; align-items: center; gap: .3rem;
+    }
+    .meta-date svg { width:12px; height:12px; }
+    .meta-divider { width:1px; height:14px; background: var(--border); }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 4rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 4rem clamp(1.5rem,5vw,4rem);
+      align-items: start;
+      box-sizing: border-box;
+    }
+
+    /* ── ARTICLE / BLOG CONTENT ── */
+    article { max-width: var(--content); }
+
+    /* Section headings */
+    .section-label {
+      font-size: .68rem; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .6rem; margin-top: 3rem;
+    }
+    article h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem; font-weight: 800;
+      letter-spacing: -.02em; margin-bottom: 1rem;
+      margin-top: .3rem;
+    }
+    article h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      margin-top: 2rem; margin-bottom: .6rem;
+    }
+    article p {
+      font-size: .975rem; color: var(--muted);
+      margin-bottom: 1.1rem; line-height: 1.8;
+    }
+    article p strong { color: var(--text); font-weight: 600; }
+    article a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(110,231,183,.35);
+      transition: border-color .2s, color .2s;
+    }
+    article a:hover { border-bottom-color: var(--accent); }
+
+    /* Divider */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* Image block */
+    .img-block { margin: 2rem 0; }
+    .img-block img {
+      width: 100%; border-radius: 12px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+    .img-caption {
+      font-size: .78rem; color: var(--muted);
+      margin-top: .6rem; text-align: center;
+      font-style: italic;
+    }
+
+    /* Image grid (2 columns) */
+    .img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin: 2rem 0;
+    }
+    .img-grid img {
+      width: 100%; border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    /* Info/highlight box */
+    .info-box {
+      background: rgba(110,231,183,.05);
+      border: 1px solid rgba(110,231,183,.15);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 1.1rem 1.4rem;
+      margin: 1.5rem 0;
+      font-size: .9rem; color: var(--text);
+    }
+    .info-box strong { color: var(--accent); }
+
+    /* Feature list */
+    .feature-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: .55rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .feature-list li {
+      display: flex; align-items: flex-start; gap: .7rem;
+      font-size: .9rem; color: var(--muted);
+    }
+    .feature-list li::before {
+      content: '→';
+      color: var(--accent); font-weight: 700;
+      flex-shrink: 0; margin-top: .05rem;
+    }
+    .feature-list li strong { color: var(--text); }
+
+    /* Code snippet */
+    .code-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      font-family: 'Courier New', monospace;
+      font-size: .82rem; color: var(--accent);
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      line-height: 1.6;
+    }
+
+    /* Version timeline */
+    .timeline { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+    .tl-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-version {
+      font-family: 'Syne', sans-serif;
+      font-size: .82rem; font-weight: 700;
+      color: var(--accent); padding-top: .1rem;
+    }
+    .tl-date { font-size: .72rem; color: var(--muted); margin-top: .2rem; }
+    .tl-content { font-size: .875rem; color: var(--muted); }
+    .tl-content strong { color: var(--text); display: block; margin-bottom: .2rem; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1rem; }
+    .sidebar-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+    }
+    .sidebar-card h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: .85rem; font-weight: 700;
+      margin-bottom: 1rem; color: var(--text);
+    }
+    .info-row {
+      display: flex; justify-content: space-between;
+      font-size: .82rem; padding: .5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-row span:first-child { color: var(--muted); }
+    .info-row span:last-child { color: var(--text); font-weight: 500; }
+
+    .dl-btn {
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      width: 100%; padding: .75rem 1rem; border-radius: 10px;
+      font-size: .875rem; font-weight: 500;
+      text-decoration: none; margin-top: .6rem;
+      transition: all .2s;
+    }
+    .dl-btn.primary {
+      background: var(--accent); color: #0c0c0f;
+    }
+    .dl-btn.primary:hover { box-shadow: 0 6px 20px rgba(110,231,183,.3); transform: translateY(-1px); }
+    .dl-btn.ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .dl-btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .dl-btn svg { width:14px; height:14px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem;
+      font-size: .85rem; color: var(--muted);
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      display: inline-block; margin-bottom: .9rem;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: .78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem;
+    }
+    .footer-bottom a {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .5rem 1rem; border-radius: 8px;
+      border: 1px solid var(--border);
+      font-weight: 500; transition: all .2s;
+    }
+    .footer-bottom a:hover { border-color: var(--accent); color: var(--accent); }
+    .footer-bottom a svg { width:14px; height:14px; }
+
+/* ── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 768px) {
+      .page-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .sidebar { order: -1; }
+      .img-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0 1.5rem;
+        gap: 1.5rem;
+      }
+      nav::-webkit-scrollbar { display: none; }
+      .nav-logo, .nav-github {
+        position: static;
+        flex-shrink: 0;
+        margin-right: 0;
+      }
+      nav .nav-links {
+        display: flex;
+        gap: 1.3rem;
+        overflow-x: visible;
+        padding: 0;
+        width: auto;
+        align-items: center;
+      }
+      nav .nav-links a { font-size: .8rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* ── RESPONSIVE: NAV → HAMBURGER ───────────── */
+    @media (max-width: 960px) {
+      nav {
+        justify-content: flex-start;
+        padding: 0 1.5rem;
+      }
+      nav .nav-links,
+      nav .nav-github,
+      nav .nav-language { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+    }
+  </style>
+  <link rel="stylesheet" href="project-responsive.css">
+
+  <link rel="stylesheet" href="../../assets/site-header.css">
+  <script src="../../assets/site-header.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="main-nav">
+  <a href="/en/" class="nav-logo">sms<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/en/">Home</a></li>
+    <li><a href="/en/projects/" class="active">Projects</a></li>
+    <li><a href="/en/downloads">Downloads</a></li>
+    <li><a href="/en/project-pipeline">Project pipeline</a></li>
+    <li><a href="/en/vision">Vision</a></li>
+    <li><a href="/en/knowledge/">Knowledge</a></li>
+  </ul>
+<div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/projekte/ernaehrungsrechner" data-language-file-target="../../projekte/ernaehrungsrechner.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    GitHub
+  </a>
+    </div>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="/en/">Home</a></li>
+    <li><a href="/en/projects/" class="active">Projects</a></li>
+    <li><a href="/en/downloads">Downloads</a></li>
+    <li><a href="/en/project-pipeline">Project pipeline</a></li>
+    <li><a href="/en/vision">Vision</a></li>
+    <li><a href="/en/knowledge/">Knowledge</a></li>
+    <li class="mobile-language-row">
+  <span class="mobile-language-label">Language</span>
+  <button type="button" class="language-switch" data-language-target="/projekte/ernaehrungsrechner" data-language-file-target="../../projekte/ernaehrungsrechner.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+</li>
+    <li>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="/en/projects/">Projects</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      Nutrition calculator
+    </div>
+    <p class="project-tag">Data analysis | Web tool</p>
+    <h1>Nutrition <em>calculator</em></h1>
+    <p class="hero-desc">
+      Daily targets, food prices and nutrition values in one model. The calculator searches for the least expensive plan that stays within the chosen limits. It runs locally in the browser.
+    </p>
+    <div class="meta-row">
+      <span class="tag data">Data analysis</span>
+      <span class="tag tools">Tool</span>
+      <span class="version-badge">v1.3</span>
+      <span class="meta-divider"></span>
+      <span class="meta-date">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        6 December 2026
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="page-wrap">
+
+  <!-- ARTICLE -->
+  <article>
+
+    <!-- Über das Projekt -->
+    <p class="section-label">About the project</p>
+    <h2>Why this tool exists</h2>
+    <p>
+      I am heading into a year when money will be tight as a student. At the same time, I do not want to get by on noodles and toast. Eating well on a budget sounds simple. In practice, it means juggling nutrients, prices and portion sizes in your head.
+    </p>
+    <p>
+      Lists and meal-prep tips were not enough for me. I wanted to know <strong>which amounts of which foods</strong> cover a daily target and what that <strong>costs per day</strong>. So I turned the problem into data and an optimisation model instead of relying on guesswork.
+    </p>
+
+    <div class="info-box">
+      <strong>Stack:</strong> HTML, CSS, JavaScript | Data: JSON | Calculations in the browser, no account required
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Features -->
+    <p class="section-label">Features</p>
+    <h2>What the calculator can do</h2>
+    <ul class="feature-list">
+      <li><strong>Food database:</strong> Prices and nutrition values per 100&nbsp;g, 100&nbsp;ml or piece. Search, filter, edit and save locally in the browser.</li>
+      <li><strong>Profile:</strong> Body data, activity, goal and dietary style shape the daily target and the food pool used for the plan.</li>
+      <li><strong>Requirements:</strong> Minimum and maximum values for each nutrient. Profile suggestions can be overridden manually.</li>
+      <li><strong>Optimised plan:</strong> A solver finds the least expensive combination that satisfies every limit.</li>
+      <li><strong>Dietary style:</strong> Filters for vegan, vegetarian, pescatarian and more.</li>
+      <li><strong>Food properties:</strong> Filters for whole food, lactose-free, gluten-free, processed, supplement and more.</li>
+      <li><strong>Contaminants:</strong> The optimal plan can exclude foods with defined contaminants.</li>
+      <li><strong>Fluids:</strong> The calculator also accounts for fluid requirements.</li>
+      <li><strong>Protein quality:</strong> The calculator derives an amino-acid score.</li>
+      <li><strong>Private by default:</strong> No server login. Changes stay on the device.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <!-- Technisches -->
+    <p class="section-label">Technical details</p>
+    <h2>How the calculation works</h2>
+    <p>
+      The question is simple: <strong>which amounts of which foods cover my daily target at the lowest possible cost?</strong> The tool solves it in five steps.
+    </p>
+
+    <h3>1. Every food has numbers</h3>
+    <p>
+      Each database entry contains a price and nutrition values such as calories, protein and iron. Everything is expressed per 100&nbsp;g, 100&nbsp;ml or one piece. The calculator later multiplies amount × nutrient value and amount × price. If the reference unit is wrong, the whole plan is wrong.
+    </p>
+
+    <h3>2. Your daily target becomes a set of limits</h3>
+    <p>
+      The profile provides suggestions such as “at least this much protein, at most this many calories”. These are <strong>constraints</strong>: a lower and/or upper limit for each nutrient. You can adjust them. An empty field means that limit is not applied.
+    </p>
+
+    <h3>3. The food pool gets smaller</h3>
+    <p>
+      Only foods that match your dietary style and filters, such as vegan or lactose-free, enter the calculation. Everything else is removed. Fewer candidates mean less computation, and the plan fits your kitchen better.
+    </p>
+
+    <h3>4. The solver finds the cheapest mix</h3>
+    <p>
+      For every food in the pool, the solver asks: “How much of it per day?” The total cost should be as small as possible. At the same time, the nutrients from all selected amounts must satisfy every limit.
+    </p>
+    <p>
+       In formulas, that looks like:
+    </p>
+
+    <div class="code-block">
+      Goal: spend as little money as possible<br>
+&nbsp;&nbsp;= Price₁×Amount₁ + Price₂×Amount₂ + …<br>
+<br>
+      For every nutrient:<br>
+&nbsp;&nbsp;Lower bound ≤ sum of all foods ≤ upper bound<br>
+<br>
+      Amounts are ≥ 0<br>
+      (optional: whole grams / pieces only)
+    </div>
+
+    <p>
+      Mathematically, this is a linear programme: linear costs, linear nutrient totals and fixed limits. The solver runs in the browser, often in a worker so the page stays responsive, and searches for a feasible solution at minimum cost. If there is none, it reports which limits block the plan.
+    </p>
+
+    <h3>5. What you get back</h3>
+    <p>
+      A list of foods, amounts and their share of the cost, plus the daily nutrient totals. The <strong>limiting factor</strong>, often shown with a blue line in the UI, is the nutrient putting the most pressure on the plan: barely reaching its lower limit or sitting close to its upper limit. That is where it is worth checking the database or constraints.
+    </p>
+
+    <div class="info-box">
+      <strong>In short:</strong> price and nutrition table → profile limits → filters → “the cheapest amounts that satisfy every limit” → plan and the constraint that is binding.
+    </div>
+
+    <p>
+      The app is a static page under <code style="color:var(--accent);background:var(--card);padding:.1rem .4rem;border-radius:4px;font-size:.85em">/en/nutrition/</code> (HTML/JS with JSON data). Changes are stored locally by the browser. No server performs the calculations.
+    </p>
+
+    <hr class="section-divider">
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Download Card -->
+    <div class="sidebar-card">
+      <h4>⬇️ Download</h4>
+       <a href="/data/v1.3_Ernaehrungsrechner.zip" class="dl-btn primary" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+         Download .zip
+      </a>
+    </div>
+
+    <!-- Projektinfos -->
+    <div class="sidebar-card">
+       <h4>📋 Project details</h4>
+      <div class="info-row"><span>Version</span><span>v1.3</span></div>
+      <div class="info-row"><span>Language</span><span>JavaScript</span></div>
+      <div class="info-row"><span>Plattform</span><span>Browser</span></div>
+       <div class="info-row"><span>Status</span><span style="color:var(--accent)">✅ Complete</span></div>
+       <div class="info-row"><span>Published</span><span>6 December 2026</span></div>
+    </div>
+
+    <!-- Links -->
+    <div class="sidebar-card">
+      <h4>🔗 Links</h4>
+       <a href="/en/nutrition/" class="dl-btn primary">
+         Open in browser →
+      </a>
+      <a href="https://github.com/simons-0427" target="_blank" class="dl-btn ghost">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+         View on GitHub
+      </a>
+    </div>
+
+    <div class="sidebar-card">
+       <h4>📖 Further reading</h4>
+       <a href="/en/knowledge/what-is-the-minimum-principle" class="dl-btn ghost">What is the minimum principle? →</a>
+       <a href="/en/knowledge/calculate-minimum-principle" class="dl-btn ghost" style="margin-top:.3rem">How do I calculate the minimum principle? →</a>
+    </div>
+  </aside>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+       <a href="/en/" class="footer-logo">sms<span>.</span></a>
+       <p>Personal finance tools, dashboards and coding projects by Simon Stark. Always a work in progress.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+         <li><a href="/en/projects/">Projects</a></li>
+         <li><a href="/en/downloads">Downloads</a></li>
+         <li><a href="/en/project-pipeline">Project pipeline</a></li>
+         <li><a href="/en/vision">Vision</a></li>
+         <li><a href="/en/knowledge/">Knowledge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+       <h5>Legal</h5>
+        <ul>
+         <li><a href="/en/legal-notice">Legal notice</a></li>
+         <li><a href="/en/privacy">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        github.com/simons-0427
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile hamburger menu
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+       navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      // Menü nach Klick auf einen Link schließen
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+       navToggle.setAttribute('aria-label', 'Open menu');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>

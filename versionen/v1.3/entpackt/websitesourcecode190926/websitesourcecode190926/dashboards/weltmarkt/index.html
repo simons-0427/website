@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Market Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Interaktives Dashboard zu Makroökonomie und globalen Märkten mit simulierten Daten zu Indizes, Rohstoffen und Wirtschaftsindikatoren.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/weltmarkt/">
+  <meta property="og:title" content="Global Market Dashboard">
+  <meta property="og:description" content="Interaktives Dashboard zu Makroökonomie und globalen Märkten mit simulierten Daten zu Indizes, Rohstoffen und Wirtschaftsindikatoren.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="data/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="data/favicon-96x96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+      --green:   #4ade80;
+      --red:     #f87171;
+      --orange:  #fb923c;
+      --yellow:  #fbbf24;
+      --pink:    #f472b6;
+      --sky:     #38bdf8;
+      --purple:  #c084fc;
+      --c0: #6ee7b7;
+      --c1: #818cf8;
+      --c2: #fb923c;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; min-height:100vh; }
+
+    /* ── NAV ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; height:var(--nav-h);
+      background:rgba(12,12,15,.88); backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--border);
+      display:flex; justify-content:center; align-items:center;
+      padding:0 clamp(1.5rem,5vw,4rem); z-index:100; gap:2.2rem;
+    }
+    .nav-logo { position:absolute; left:clamp(1.5rem,5vw,4rem); font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:-.02em; color:var(--text); text-decoration:none; }
+    .nav-logo span { color:var(--accent); }
+    .nav-links { display:flex; gap:2.2rem; list-style:none; }
+    .nav-links a { font-size:.875rem; font-weight:500; color:var(--text); text-decoration:none; letter-spacing:.03em; transition:color .2s; }
+    .nav-links a:hover { color:var(--accent); }
+    .nav-github { position:absolute; right:clamp(1.5rem,5vw,4rem); display:inline-flex; align-items:center; gap:.5rem; font-size:.82rem; font-weight:500; color:var(--text); text-decoration:none; border:1px solid var(--text); padding:.4rem .9rem; border-radius:8px; transition:border-color .2s,color .2s; }
+    .nav-github:hover { border-color:var(--accent); color:var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+
+    /* ── HERO ── */
+    .hero-strip { margin-top:var(--nav-h); padding:3rem clamp(1.5rem,8vw,8rem) 2.5rem; position:relative; overflow:hidden; border-bottom:1px solid var(--border); }
+    .hero-strip::before { content:''; position:absolute; inset:0; pointer-events:none; background: radial-gradient(ellipse 55% 70% at 80% 50%,rgba(110,231,183,.06) 0%,transparent 65%), radial-gradient(ellipse 40% 60% at 5% 80%,rgba(129,140,248,.05) 0%,transparent 60%); }
+    .page-tag { font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:.6rem; }
+    .page-title { font-family:'Syne',sans-serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:800; letter-spacing:-.03em; line-height:1.05; margin-bottom:.6rem; }
+    .page-title em { font-style:normal; color:var(--accent); }
+    .page-sub { color:var(--muted); font-weight:300; font-size:.95rem; max-width:58ch; }
+    .hero-bottom { display:flex; align-items:center; gap:1rem; margin-top:1.2rem; flex-wrap:wrap; }
+    .live-badge { display:inline-flex; align-items:center; gap:.4rem; font-size:.75rem; font-weight:600; padding:.25rem .7rem; border-radius:999px; background:rgba(248,113,113,.1); border:1px solid rgba(248,113,113,.2); color:var(--red); }
+    .live-badge.live { background:rgba(74,222,128,.1); border-color:rgba(74,222,128,.2); color:var(--green); }
+    .live-dot { width:6px; height:6px; border-radius:50%; background:currentColor; animation:pulse 1.8s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.3} }
+    .refresh-btn { display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .9rem; border-radius:8px; background:rgba(110,231,183,.08); border:1px solid rgba(110,231,183,.2); color:var(--accent); font-size:.78rem; font-weight:600; cursor:pointer; transition:all .2s; font-family:'DM Sans',sans-serif; }
+    .refresh-btn:hover { background:rgba(110,231,183,.15); }
+    .refresh-btn svg { width:12px; height:12px; }
+    .refresh-btn.load-btn { padding:.55rem 1.4rem; font-size:.88rem; background:rgba(110,231,183,.18); border:1.5px solid rgba(110,231,183,.55); box-shadow:0 0 14px rgba(110,231,183,.18); letter-spacing:.02em; animation:load-btn-pulse 2.2s ease-in-out infinite; }
+    .refresh-btn.load-btn:hover { background:rgba(110,231,183,.3); box-shadow:0 0 22px rgba(110,231,183,.3); animation:none; }
+    .refresh-btn.load-btn svg { width:15px; height:15px; }
+    @keyframes load-btn-pulse { 0%,100%{box-shadow:0 0 10px rgba(110,231,183,.15)} 50%{box-shadow:0 0 22px rgba(110,231,183,.35)} }
+    #no-data-hint { font-size:.78rem; color:var(--muted); opacity:.8; margin:0; }
+    .last-update { font-size:.75rem; color:var(--muted); }
+
+    /* ── MAIN ── */
+    .main { max-width:1500px; margin:0 auto; padding:2rem clamp(1rem,4vw,2.5rem) 5rem; }
+
+    /* ── CONTROLS ── */
+    .controls-bar { display:flex; align-items:center; gap:.8rem; flex-wrap:wrap; margin-bottom:1.6rem; padding:.9rem 1.2rem; background:var(--card); border:1px solid var(--border); border-radius:12px; }
+    .control-group { display:flex; align-items:center; gap:.5rem; }
+    .control-label { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+    .seg-ctrl { display:flex; background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+    .seg-btn { padding:.38rem .9rem; font-family:'DM Sans',sans-serif; font-size:.8rem; font-weight:600; background:transparent; color:var(--muted); border:none; cursor:pointer; transition:all .15s; white-space:nowrap; }
+    .seg-btn.active { background:var(--accent); color:#0c0c0f; }
+    .seg-btn:not(.active):hover { color:var(--text); }
+    .ctrl-divider { width:1px; height:22px; background:var(--border); }
+    .csv-sel { background:var(--surface); border:1px solid var(--border); border-radius:8px; color:var(--text); font-family:'DM Sans',sans-serif; font-size:.8rem; font-weight:500; padding:.38rem .8rem; outline:none; cursor:pointer; }
+    .export-btn { display:inline-flex; align-items:center; gap:.4rem; padding:.4rem 1.1rem; border-radius:8px; background:rgba(110,231,183,.1); color:var(--accent); border:1px solid rgba(110,231,183,.25); font-family:'DM Sans',sans-serif; font-size:.8rem; font-weight:700; cursor:pointer; transition:all .2s; margin-left:auto; }
+    .export-btn:hover { background:rgba(110,231,183,.18); border-color:var(--accent); }
+    .export-btn svg { width:13px; height:13px; }
+
+    /* ── MASTER CHART ── */
+    .chart-section { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.6rem; margin-bottom:1.6rem; }
+    .chart-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1.2rem; flex-wrap:wrap; gap:.8rem; }
+    .chart-left .chart-meta { font-size:.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; margin-bottom:.2rem; }
+    .chart-left .chart-name { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; }
+    .chart-left .chart-unit { font-size:.75rem; color:var(--muted); margin-top:.1rem; }
+    .chart-right { text-align:right; }
+    .chart-val { font-family:'Syne',sans-serif; font-size:2.2rem; font-weight:800; line-height:1; transition:color .3s; }
+    .chart-change { display:inline-flex; align-items:center; gap:.3rem; font-size:.82rem; font-weight:700; padding:.2rem .6rem; border-radius:5px; margin-top:.3rem; }
+    .chart-change.pos { background:rgba(74,222,128,.1); color:var(--green); }
+    .chart-change.neg { background:rgba(248,113,113,.1); color:var(--red); }
+    .chart-change.neu { background:rgba(100,116,139,.1); color:var(--muted); }
+    .chart-status { font-size:.7rem; color:var(--muted); margin-top:.3rem; }
+    #master-chart { max-height:300px; }
+
+    /* ── CATEGORY TABS ── */
+    .cat-tabs { display:flex; gap:.5rem; margin-bottom:1.2rem; overflow-x:auto; padding-bottom:.3rem; }
+    .cat-tab { display:inline-flex; align-items:center; gap:.4rem; padding:.5rem 1.2rem; border-radius:10px; border:1px solid var(--border); background:transparent; color:var(--muted); font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:600; cursor:pointer; white-space:nowrap; transition:all .15s; }
+    .cat-tab[data-cat="0"].active { background:rgba(110,231,183,.1); border-color:var(--c0); color:var(--c0); }
+    .cat-tab[data-cat="1"].active { background:rgba(129,140,248,.1); border-color:var(--c1); color:var(--c1); }
+    .cat-tab[data-cat="2"].active { background:rgba(251,146,60,.1); border-color:var(--c2); color:var(--c2); }
+    .cat-tab:not(.active):hover { color:var(--text); border-color:var(--border); background:rgba(255,255,255,.03); }
+
+    /* ── SECTION GROUPS ── */
+    .section-group { margin-bottom:1.8rem; }
+    .section-title { display:flex; align-items:center; gap:.6rem; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:.8rem; padding-bottom:.5rem; border-bottom:1px solid var(--border); }
+    .section-title .sline { flex:1; height:1px; background:var(--border); }
+    .section-color-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+    /* ── METRIC CARDS ── */
+    .metrics-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(195px,1fr)); gap:.85rem; }
+    .metric-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.2rem; cursor:pointer; transition:border-color .2s,transform .15s,box-shadow .15s; position:relative; overflow:hidden; }
+    .metric-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:currentColor; opacity:.6; }
+    .metric-card:hover { transform:translateY(-1px); box-shadow:0 4px 20px rgba(0,0,0,.25); }
+    .metric-card.active { border-color:rgba(110,231,183,.5); box-shadow:0 0 0 1px rgba(110,231,183,.3); }
+    .metric-card-status { position:absolute; top:.6rem; right:.7rem; width:6px; height:6px; border-radius:50%; background:var(--muted); }
+    .metric-card-status.live { background:var(--green); animation:pulse 1.8s infinite; }
+    .m-section { font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:.4rem; }
+    .m-name { font-size:.78rem; font-weight:500; color:var(--muted); margin-bottom:.4rem; line-height:1.3; }
+    .m-val { font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:800; line-height:1.1; margin-bottom:.3rem; }
+    .m-change { font-size:.73rem; font-weight:700; display:inline-flex; align-items:center; gap:.2rem; }
+    .m-change.pos { color:var(--green); }
+    .m-change.neg { color:var(--red); }
+    .m-change.neu { color:var(--muted); }
+    .m-unit { font-size:.65rem; color:var(--muted); margin-top:.1rem; }
+
+    /* ── FOOTER ── */
+    footer { background:var(--surface); border-top:1px solid var(--border); padding:2rem clamp(1.5rem,8vw,8rem); display:flex; align-items:center; justify-content:space-between; font-size:.82rem; color:var(--muted); }
+    footer a { color:var(--muted); text-decoration:none; transition:color .2s; }
+    footer a:hover { color:var(--accent); }
+
+    @media(max-width:768px) {
+      .nav-links { display:none; }
+      .chart-val { font-size:1.6rem; }
+      .controls-bar { gap:.5rem; }
+      .export-btn { margin-left:0; }
+    }
+    @media(max-width:500px) {
+      .metrics-grid { grid-template-columns:1fr 1fr; }
+      .url-grid { grid-template-columns:1fr; }
+      .url-row { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="...de/index" class="nav-logo">sms<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="../projekte">Projekte</a></li>
+    <li><a href="../downloads">Downloads</a></li>
+    <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+    <li><a href="../Vision">Vision</a></li>
+  </ul>
+  <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    GitHub
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero-strip">
+  <p class="page-tag">Dashboard | Makroökonomie & Märkte</p>
+  <h1 class="page-title">Global Market <em>Intelligence</em></h1>
+  <p class="page-sub">Makroökonomische Indikatoren, Geldpolitik und Finanzmärkte: simulierte Zeitreihendaten mit CSV-Export. Live-URLs lassen sich jederzeit einbinden.</p>
+  <div class="hero-bottom">
+    <span class="live-badge" id="live-badge"><span class="live-dot"></span>Simuliert</span>
+    <button class="refresh-btn load-btn" onclick="refreshAll()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+      Daten laden
+    </button>
+    <span class="last-update" id="last-update">Letzte Aktualisierung: —</span>
+    <p id="no-data-hint">Daten werden geladen …</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- CONTROLS -->
+  <div class="controls-bar">
+    <div class="control-group">
+      <span class="control-label">Kategorie</span>
+      <div class="seg-ctrl">
+        <button class="seg-btn active" id="cat-btn-0" onclick="setCategory(0)">📊 Makro</button>
+        <button class="seg-btn" id="cat-btn-1" onclick="setCategory(1)">🏦 Geldpolitik</button>
+        <button class="seg-btn" id="cat-btn-2" onclick="setCategory(2)">📈 Märkte</button>
+      </div>
+    </div>
+    <div class="ctrl-divider"></div>
+    <div class="control-group">
+      <span class="control-label">CSV-Format</span>
+      <select class="csv-sel" id="csv-format">
+        <option value="anglo">Angelsächsisch (,/.)</option>
+        <option value="european">Europäisch (;/,)</option>
+      </select>
+    </div>
+    <button class="export-btn" onclick="exportCSV()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      CSV Export
+    </button>
+  </div>
+
+  <!-- METRICS GRID -->
+  <div id="metrics-wrap"></div>
+  
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+<span>© 2026 sms. | Global Market Dashboard | Daten: simuliert (Live-URLs konfigurierbar)</span>
+  <a href="projekte.html">← Alle Projekte</a>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// SEEDED PRNG — deterministic mock data
+// ═══════════════════════════════════════════════════════════════════
+function seededRand(seed) {
+  let s = seed;
+  return () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+}
+
+function genH(endVal, vol, trend, seed) {
+  const rng = seededRand(seed);
+  const vals = [];
+  let v = endVal - trend * 22 - (rng() - 0.5) * vol * 3;
+  for (let i = 0; i < 24; i++) {
+    v += trend + (rng() - 0.5) * vol;
+    vals.push(+v.toFixed(4));
+  }
+  vals[23] = endVal;
+  return vals;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// DATE LABELS — 24 months, Jan 2023 – Dec 2024
+// ═══════════════════════════════════════════════════════════════════
+const DATES = [
+  '2023-01-31','2023-02-28','2023-03-31','2023-04-30','2023-05-31','2023-06-30',
+  '2023-07-31','2023-08-31','2023-09-30','2023-10-31','2023-11-30','2023-12-31',
+  '2024-01-31','2024-02-29','2024-03-31','2024-04-30','2024-05-31','2024-06-30',
+  '2024-07-31','2024-08-31','2024-09-30','2024-10-31','2024-11-30','2024-12-31'
+];
+const DATE_LABELS = DATES.map(d => {
+  const dt = new Date(d);
+  return dt.toLocaleDateString('de-DE',{month:'short',year:'2-digit'});
+});
+
+// ═══════════════════════════════════════════════════════════════════
+// FORMAT HELPERS
+// ═══════════════════════════════════════════════════════════════════
+const pct1  = v => (v > 0 ? '' : '') + v.toFixed(1) + '%';
+const pct2  = v => v.toFixed(2) + '%';
+const fix1  = v => v.toFixed(1);
+const fix2  = v => v.toFixed(2);
+const big   = v => v >= 10000 ? v.toLocaleString('de-DE',{maximumFractionDigits:0}) : v.toLocaleString('de-DE',{maximumFractionDigits:1});
+const thou  = v => v.toLocaleString('de-DE',{maximumFractionDigits:0}) + ' K';
+const bio   = v => v.toFixed(1) + ' Bio.';
+const bp    = v => (v >= 0 ? '+' : '') + v.toFixed(0) + ' BP';
+
+// ═══════════════════════════════════════════════════════════════════
+// SECTIONS DEFINITION
+// ═══════════════════════════════════════════════════════════════════
+const SECTIONS = {
+  gdp:        { cat:0, label:'BIP-Wachstum',                 color:'#6ee7b7' },
+  pmi:        { cat:0, label:'Einkaufsmanagerindizes (PMI)', color:'#4ade80' },
+  labor:      { cat:0, label:'Arbeitsmarkt',                  color:'#34d399' },
+  consumption:{ cat:0, label:'Konsum',                        color:'#2dd4bf' },
+  industry:   { cat:0, label:'Industrie',                     color:'#22d3ee' },
+  realestate: { cat:0, label:'Immobilien',                    color:'#38bdf8' },
+  inflation:  { cat:1, label:'Inflation',                     color:'#f87171' },
+  rates:      { cat:1, label:'Leitzinsen',                    color:'#fb923c' },
+  cb_balance: { cat:1, label:'Zentralbank-Bilanzen',          color:'#fbbf24' },
+  yields:     { cat:1, label:'Staatsanleihen (Sovereign Yields)',color:'#a78bfa'},
+  spreads:    { cat:1, label:'Zinskurven-Spreads',            color:'#818cf8' },
+  indices:    { cat:2, label:'Aktienindizes',                 color:'#fb923c' },
+  sectors:    { cat:2, label:'Sektoren (GICS)',               color:'#fbbf24' },
+  valuation:  { cat:2, label:'Valuation Multiples',           color:'#f7931a' },
+  volatility: { cat:2, label:'Volatilitätsindizes',           color:'#f472b6' },
+  fx:         { cat:2, label:'Devisen (FX)',                  color:'#c084fc' },
+};
+
+// ═══════════════════════════════════════════════════════════════════
+// METRICS — full definition
+// ═══════════════════════════════════════════════════════════════════
+const METRICS = [
+  // ── GDP ──────────────────────────────────────────────────────────
+  { id:'us_nom_gdp',  sec:'gdp',  name:'US Nominales BIP',      unit:'Bio. $',adj:'NSA', csvId:'US_MACRO_GDP_NOMINAL_BUSDf',     val:28.2,   prev:27.8,   fmt:bio,    url:null, h:genH(28.2,0.3,0.02,7)   },
+  { id:'cn_nom_gdp',  sec:'gdp',  name:'China Nominales BIP',      unit:'Bio. $',adj:'NSA', csvId:'US_MACRO_GDP_NOMINAL_BUSD',     val:28.2,   prev:27.8,   fmt:bio,    url:null, h:genH(28.2,0.3,0.02,7)   },
+  { id:'jp_nom_gdp',  sec:'gdp',  name:'Japan Nominales BIP',      unit:'Bio. $',adj:'NSA', csvId:'US_MACRO_GDP_NOMINAL_BUSD',     val:28.2,   prev:27.8,   fmt:bio,    url:null, h:genH(28.2,0.3,0.02,7)   },
+  { id:'gr_nom_gdp',  sec:'gdp',  name:'Deutschland Nominales BIP',      unit:'Bio. $',adj:'NSA', csvId:'US_MACRO_GDP_NOMINAL_BUSD',     val:28.2,   prev:27.8,   fmt:bio,    url:null, h:genH(28.2,0.3,0.02,7)   },
+  { id:'ez_nom_gdp',  sec:'gdp',  name:'Eurozone Nominales BIP',      unit:'Bio. $',adj:'NSA', csvId:'US_MACRO_GDP_NOMINAL_BUSD',     val:28.2,   prev:27.8,   fmt:bio,    url:null, h:genH(28.2,0.3,0.02,7)   },
+  { id:'us_gdp_yoy',  sec:'gdp',  name:'US BIP (YoY)',          unit:'%',     adj:'SA',  csvId:'US_MACRO_GDP_YOY',              val:2.8,    prev:2.5,    fmt:pct1,   url:null, h:genH(2.8,0.5,0.012,1)   },
+  { id:'cn_gdp_yoy',  sec:'gdp',  name:'China BIP (YoY)',       unit:'%',     adj:'SA',  csvId:'CN_MACRO_GDP_YOY',              val:4.8,    prev:5.0,    fmt:pct1,   url:null, h:genH(4.8,0.4,-0.008,5)  },
+  { id:'jp_gdp_yoy',  sec:'gdp',  name:'Japan BIP (YoY)',       unit:'%',     adj:'SA',  csvId:'JP_MACRO_GDP_YOY',              val:2.1,    prev:2.0,    fmt:pct1,   url:null, h:genH(2.1,0.3,0.005,4)   },
+  { id:'gr_gdp_yoy',  sec:'gdp',  name:'Deutschland BIP (YoY)',       unit:'%',     adj:'SA',  csvId:'GR_MACRO_GDP_YOY',              val:1.8,    prev:1.6,    fmt:pct1,   url:null, h:genH(1.8,0.3,0.005,4)   },
+  { id:'ez_gdp_yoy',  sec:'gdp',  name:'EZ BIP (YoY)',          unit:'%',     adj:'SA',  csvId:'EZ_MACRO_GDP_YOY',              val:0.9,    prev:0.6,    fmt:pct1,   url:null, h:genH(0.9,0.35,0.01,3)   },
+
+  // ── PMI ──────────────────────────────────────────────────────────
+  { id:'us_pmi_mfg',  sec:'pmi',  name:'US PMI Industrie',      unit:'Punkte',adj:'NSA', csvId:'US_MACRO_PMI_MFG',              val:48.4,   prev:48.7,   fmt:fix1,   url:null, h:genH(48.4,2.2,-0.01,10) },
+  { id:'us_pmi_svc',  sec:'pmi',  name:'US PMI Dienstleistung', unit:'Punkte',adj:'NSA', csvId:'US_MACRO_PMI_SVC',              val:54.4,   prev:55.3,   fmt:fix1,   url:null, h:genH(54.4,2.5,0.018,11) },
+  { id:'us_pmi_comp', sec:'pmi',  name:'US PMI Composite',      unit:'Punkte',adj:'NSA', csvId:'US_MACRO_PMI_COMP',             val:54.3,   prev:54.1,   fmt:fix1,   url:null, h:genH(54.3,2.0,0.016,12) },
+  { id:'ez_pmi_mfg',  sec:'pmi',  name:'EZ PMI Industrie',      unit:'Punkte',adj:'NSA', csvId:'EZ_MACRO_PMI_MFG',              val:45.2,   prev:44.8,   fmt:fix1,   url:null, h:genH(45.2,2.5,-0.018,13)},
+  { id:'ez_pmi_svc',  sec:'pmi',  name:'EZ PMI Dienstleistung', unit:'Punkte',adj:'NSA', csvId:'EZ_MACRO_PMI_SVC',              val:51.6,   prev:52.0,   fmt:fix1,   url:null, h:genH(51.6,2.0,0.01,14)  },
+  { id:'ez_pmi_comp', sec:'pmi',  name:'EZ PMI Composite',      unit:'Punkte',adj:'NSA', csvId:'EZ_MACRO_PMI_COMP',             val:49.5,   prev:49.2,   fmt:fix1,   url:null, h:genH(49.5,2.0,-0.005,15)},
+  { id:'cn_pmi_mfg',  sec:'pmi',  name:'China PMI Industrie',   unit:'Punkte',adj:'NSA', csvId:'CN_MACRO_PMI_MFG',              val:50.3,   prev:49.8,   fmt:fix1,   url:null, h:genH(50.3,1.5,0.008,16) },
+  { id:'cn_pmi_svc',  sec:'pmi',  name:'China PMI Dienstl.',    unit:'Punkte',adj:'NSA', csvId:'CN_MACRO_PMI_SVC',              val:52.0,   prev:51.5,   fmt:fix1,   url:null, h:genH(52.0,1.8,0.01,17)  },
+  { id:'jp_pmi_mfg',  sec:'pmi',  name:'Japan PMI Industrie',   unit:'Punkte',adj:'NSA', csvId:'JP_MACRO_PMI_MFG',              val:49.6,   prev:49.2,   fmt:fix1,   url:null, h:genH(49.6,2.0,-0.01,18) },
+  { id:'jp_pmi_svc',  sec:'pmi',  name:'Japan PMI Dienstl.',    unit:'Punkte',adj:'NSA', csvId:'JP_MACRO_PMI_SVC',              val:51.2,   prev:50.8,   fmt:fix1,   url:null, h:genH(51.2,1.8,0.008,19) },
+  { id:'uk_pmi_mfg',  sec:'pmi',  name:'UK PMI Industrie',      unit:'Punkte',adj:'NSA', csvId:'UK_MACRO_PMI_MFG',              val:48.0,   prev:47.3,   fmt:fix1,   url:null, h:genH(48.0,2.5,-0.012,20)},
+  { id:'uk_pmi_svc',  sec:'pmi',  name:'UK PMI Dienstleistung', unit:'Punkte',adj:'NSA', csvId:'UK_MACRO_PMI_SVC',              val:52.4,   prev:52.8,   fmt:fix1,   url:null, h:genH(52.4,2.2,0.01,21)  },
+
+  // ── LABOR ────────────────────────────────────────────────────────
+  { id:'us_unemp',    sec:'labor', name:'US Arbeitslosenquote',  unit:'%',     adj:'SA',  csvId:'US_MACRO_UNEMP_RATE',           val:4.2,    prev:4.1,    fmt:pct1,   url:null, h:genH(4.2,0.2,0.009,30)  },
+  { id:'ez_unemp',    sec:'labor', name:'EZ Arbeitslosenquote',  unit:'%',     adj:'SA',  csvId:'EZ_MACRO_UNEMP_RATE',           val:6.3,    prev:6.4,    fmt:pct1,   url:null, h:genH(6.3,0.25,-0.008,31)},
+  { id:'cn_unemp',    sec:'labor', name:'China Arbeitslosenq.',  unit:'%',     adj:'NSA', csvId:'CN_MACRO_UNEMP_RATE',           val:5.0,    prev:5.1,    fmt:pct1,   url:null, h:genH(5.0,0.2,-0.007,32) },
+  { id:'jp_unemp',    sec:'labor', name:'Japan Arbeitslosenq.',  unit:'%',     adj:'SA',  csvId:'JP_MACRO_UNEMP_RATE',           val:2.5,    prev:2.6,    fmt:pct1,   url:null, h:genH(2.5,0.15,-0.005,33)},
+  { id:'uk_unemp',    sec:'labor', name:'UK Arbeitslosenquote',  unit:'%',     adj:'SA',  csvId:'UK_MACRO_UNEMP_RATE',           val:4.4,    prev:4.3,    fmt:pct1,   url:null, h:genH(4.4,0.2,0.007,34)  },
+  { id:'us_lfpr',     sec:'labor', name:'US Erwerbsquote',       unit:'%',     adj:'SA',  csvId:'US_MACRO_LABOR_FORCE_RATIO',    val:62.7,   prev:62.8,   fmt:pct1,   url:null, h:genH(62.7,0.2,0.0,35)   },
+  { id:'us_nfp',      sec:'labor', name:'US Non-Farm Payrolls',  unit:'Tsd.',  adj:'SA',  csvId:'US_MACRO_NFP_THOU',             val:227,    prev:195,    fmt:thou,   url:null, h:genH(227,70,1.2,36)     },
+  { id:'us_wages',    sec:'labor', name:'US Stundenlöhne (YoY)', unit:'%',     adj:'SA',  csvId:'US_MACRO_AVG_HOURLY_WAGES_YOY', val:3.9,    prev:4.1,    fmt:pct1,   url:null, h:genH(3.9,0.3,-0.015,37) },
+
+  // ── CONSUMPTION ──────────────────────────────────────────────────
+  { id:'us_retail',   sec:'consumption', name:'US Einzelhandel (YoY)', unit:'%', adj:'SA', csvId:'US_MACRO_RETAIL_SALES_YOY', val:2.8, prev:2.1, fmt:pct1, url:null, h:genH(2.8,1.5,0.01,40) },
+  { id:'ez_retail',   sec:'consumption', name:'EZ Einzelhandel (YoY)', unit:'%', adj:'SA', csvId:'EZ_MACRO_RETAIL_SALES_YOY', val:0.5, prev:-0.3,fmt:pct1, url:null, h:genH(0.5,1.2,0.015,41) },
+  { id:'us_umich',    sec:'consumption', name:'Univ. Michigan Sentiment',unit:'Punkte',adj:'NSA',csvId:'US_MACRO_UMICH_SENTIMENT', val:73.0, prev:71.8, fmt:fix1, url:null, h:genH(73.0,4.5,0.08,42) },
+  { id:'ez_cci',      sec:'consumption', name:'EZ Verbrauchervertrauen', unit:'Index', adj:'NSA',csvId:'EZ_MACRO_CONSUMER_CONF',  val:-13.7,prev:-14.5,fmt:fix1, url:null, h:genH(-13.7,2.5,0.05,43) },
+
+  // ── INDUSTRY ─────────────────────────────────────────────────────
+  { id:'us_indpro',   sec:'industry', name:'US Industrieproduktion (YoY)',unit:'%',adj:'SA',csvId:'US_MACRO_INDPRO_YOY', val:0.4,  prev:-0.5,fmt:pct1, url:null, h:genH(0.4,1.5,0.018,50) },
+  { id:'ez_indpro',   sec:'industry', name:'EZ Industrieproduktion (YoY)',unit:'%',adj:'SA',csvId:'EZ_MACRO_INDPRO_YOY', val:-2.0, prev:-3.2,fmt:pct1, url:null, h:genH(-2.0,1.8,0.015,51) },
+  { id:'us_capu',     sec:'industry', name:'US Kapazitätsauslastung',    unit:'%',adj:'SA',csvId:'US_MACRO_CAPU_RATE',   val:77.1, prev:77.5,fmt:pct1, url:null, h:genH(77.1,0.8,-0.008,52) },
+  { id:'us_durable',  sec:'industry', name:'US Auftragseingänge (MoM)', unit:'%', adj:'NSA',csvId:'US_MACRO_DURABLE_GOODS_MOM', val:0.3, prev:-0.8, fmt:pct1, url:null, h:genH(0.3,3.0,0.008,53) },
+
+  // ── REAL ESTATE ──────────────────────────────────────────────────
+  { id:'us_permits',  sec:'realestate', name:'US Baugenehmigungen',      unit:'Tsd.',adj:'SA',csvId:'US_MACRO_BUILDING_PERMITS_THOU', val:1475, prev:1430, fmt:thou, url:null, h:genH(1475,85,1.5,60) },
+  { id:'us_starts',   sec:'realestate', name:'US Baubeginne',            unit:'Tsd.',adj:'SA',csvId:'US_MACRO_HOUSING_STARTS_THOU',   val:1358, prev:1312, fmt:thou, url:null, h:genH(1358,90,1.2,61) },
+  { id:'cn_rei',      sec:'realestate', name:'China Real Estate Index',  unit:'Punkte',adj:'NSA',csvId:'CN_MACRO_REAL_ESTATE_INDEX',  val:94.2, prev:96.8, fmt:fix1, url:null, h:genH(94.2,2.5,-0.08,62) },
+
+  // ── INFLATION ────────────────────────────────────────────────────
+  { id:'us_cpi',      sec:'inflation', name:'US CPI (YoY)',              unit:'%',adj:'NSA',csvId:'US_MACRO_HEADLINE_CPI_YOY',  val:3.2,  prev:3.5, fmt:pct1, url:null, h:genH(3.2,0.5,-0.018,70) },
+  { id:'us_core_cpi', sec:'inflation', name:'US Core CPI (YoY)',         unit:'%',adj:'NSA',csvId:'US_MACRO_CORE_CPI_YOY',       val:3.3,  prev:3.6, fmt:pct1, url:null, h:genH(3.3,0.4,-0.016,71) },
+  { id:'us_pce',      sec:'inflation', name:'US PCE-Deflator (YoY)',     unit:'%',adj:'SA', csvId:'US_MACRO_PCE_YOY',              val:2.3,  prev:2.5, fmt:pct1, url:null, h:genH(2.3,0.4,-0.015,72) },
+  { id:'us_ppi',      sec:'inflation', name:'US PPI (YoY)',              unit:'%',adj:'NSA',csvId:'US_MACRO_PPI_YOY',              val:1.8,  prev:2.2, fmt:pct1, url:null, h:genH(1.8,0.8,-0.018,73) },
+  { id:'ez_cpi',      sec:'inflation', name:'EZ Inflation (YoY)',        unit:'%',adj:'NSA',csvId:'EZ_MACRO_HEADLINE_CPI_YOY',   val:2.3,  prev:2.6, fmt:pct1, url:null, h:genH(2.3,0.5,-0.025,74) },
+  { id:'uk_cpi',      sec:'inflation', name:'UK Inflation (YoY)',        unit:'%',adj:'NSA',csvId:'UK_MACRO_HEADLINE_CPI_YOY',   val:2.3,  prev:2.6, fmt:pct1, url:null, h:genH(2.3,0.6,-0.03,75)  },
+  { id:'jp_cpi',      sec:'inflation', name:'Japan Inflation (YoY)',     unit:'%',adj:'NSA',csvId:'JP_MACRO_HEADLINE_CPI_YOY',   val:2.3,  prev:2.8, fmt:pct1, url:null, h:genH(2.3,0.5,-0.02,76)  },
+  { id:'cn_cpi',      sec:'inflation', name:'China Inflation (YoY)',     unit:'%',adj:'NSA',csvId:'CN_MACRO_HEADLINE_CPI_YOY',   val:0.3,  prev:0.6, fmt:pct1, url:null, h:genH(0.3,0.35,-0.015,77)},
+
+  // ── RATES ────────────────────────────────────────────────────────
+  { id:'fed_rate',    sec:'rates', name:'US Fed Funds Rate',             unit:'%',adj:'NSA',csvId:'US_MONETARY_FED_FUNDS_RATE',  val:4.75, prev:5.00,fmt:pct2, url:null, h:genH(4.75,0.2,-0.01,80)  },
+  { id:'ecb_rate',    sec:'rates', name:'EZB Hauptrefinanzierung',       unit:'%',adj:'NSA',csvId:'EZ_MONETARY_ECB_RATE',        val:3.65, prev:4.50,fmt:pct2, url:null, h:genH(3.65,0.3,-0.04,81)  },
+  { id:'boe_rate',    sec:'rates', name:'Bank of England Rate',          unit:'%',adj:'NSA',csvId:'UK_MONETARY_BOE_RATE',        val:5.00, prev:5.25,fmt:pct2, url:null, h:genH(5.00,0.2,-0.012,82) },
+  { id:'boj_rate',    sec:'rates', name:'Bank of Japan Rate',            unit:'%',adj:'NSA',csvId:'JP_MONETARY_BOJ_RATE',        val:0.25, prev:0.10,fmt:pct2, url:null, h:genH(0.25,0.07,0.008,83) },
+  { id:'pboc_rate',   sec:'rates', name:'PBoC Loan Prime Rate',          unit:'%',adj:'NSA',csvId:'CN_MONETARY_PBOC_LPR',        val:3.45, prev:3.55,fmt:pct2, url:null, h:genH(3.45,0.08,-0.006,84)},
+
+  // ── CB BALANCE SHEETS ────────────────────────────────────────────
+  { id:'fed_bs',      sec:'cb_balance', name:'Fed Bilanz',               unit:'Bio. $',adj:'NSA',csvId:'US_MONETARY_FED_BALANCE_TNUSD', val:7.1,  prev:7.3,  fmt:bio,  url:null, h:genH(7.1,0.12,-0.01,90) },
+  { id:'ecb_bs',      sec:'cb_balance', name:'EZB Bilanz',               unit:'Bio. €',adj:'NSA',csvId:'EZ_MONETARY_ECB_BALANCE_TNEUR', val:6.6,  prev:7.0,  fmt:bio,  url:null, h:genH(6.6,0.12,-0.02,91) },
+  { id:'boj_bs',      sec:'cb_balance', name:'BoJ Bilanz',               unit:'Bio. ¥',adj:'NSA',csvId:'JP_MONETARY_BOJ_BALANCE_TNJPY', val:760,  prev:740,  fmt:v=>v.toFixed(0)+' Bio. ¥', url:null, h:genH(760,7,0.5,92) },
+
+  // ── YIELDS ───────────────────────────────────────────────────────
+  { id:'us_1m',       sec:'yields', name:'US Treasury 1M',               unit:'%',adj:'NSA',csvId:'US_RATES_TREASURY_1M',  val:4.65, prev:5.30,fmt:pct2, url:null, h:genH(4.65,0.22,-0.025,100) },
+  { id:'us_3m',       sec:'yields', name:'US Treasury 3M',               unit:'%',adj:'NSA',csvId:'US_RATES_TREASURY_3M',  val:4.60, prev:5.35,fmt:pct2, url:null, h:genH(4.60,0.2,-0.025,101)  },
+  { id:'us_2y',       sec:'yields', name:'US Treasury 2Y',               unit:'%',adj:'NSA',csvId:'US_RATES_TREASURY_2Y',  val:4.15, prev:4.70,fmt:pct2, url:null, h:genH(4.15,0.25,-0.022,102) },
+  { id:'us_5y',       sec:'yields', name:'US Treasury 5Y',               unit:'%',adj:'NSA',csvId:'US_RATES_TREASURY_5Y',  val:4.20, prev:4.65,fmt:pct2, url:null, h:genH(4.20,0.25,-0.02,103)  },
+  { id:'us_10y',      sec:'yields', name:'US Treasury 10Y',              unit:'%',adj:'NSA',csvId:'US_RATES_TREASURY_10Y', val:4.35, prev:4.80,fmt:pct2, url:null, h:genH(4.35,0.25,-0.018,104) },
+  { id:'us_30y',      sec:'yields', name:'US Treasury 30Y',              unit:'%',adj:'NSA',csvId:'US_RATES_TREASURY_30Y', val:4.55, prev:4.95,fmt:pct2, url:null, h:genH(4.55,0.2,-0.018,105)  },
+  { id:'de_2y',       sec:'yields', name:'Bund 2Y',                      unit:'%',adj:'NSA',csvId:'DE_RATES_BUND_2Y',      val:2.15, prev:2.90,fmt:pct2, url:null, h:genH(2.15,0.2,-0.03,106)   },
+  { id:'de_10y',      sec:'yields', name:'Bund 10Y',                     unit:'%',adj:'NSA',csvId:'DE_RATES_BUND_10Y',     val:2.35, prev:2.80,fmt:pct2, url:null, h:genH(2.35,0.2,-0.02,107)   },
+  { id:'de_30y',      sec:'yields', name:'Bund 30Y',                     unit:'%',adj:'NSA',csvId:'DE_RATES_BUND_30Y',     val:2.55, prev:2.95,fmt:pct2, url:null, h:genH(2.55,0.2,-0.018,108)  },
+  { id:'jp_10y',      sec:'yields', name:'JGB 10Y',                      unit:'%',adj:'NSA',csvId:'JP_RATES_JGB_10Y',      val:0.95, prev:0.72,fmt:pct2, url:null, h:genH(0.95,0.1,0.01,109)    },
+
+  // ── SPREADS ──────────────────────────────────────────────────────
+  { id:'us_10y2y',    sec:'spreads', name:'US 10Y–2Y Spread',            unit:'BP',adj:'NSA',csvId:'US_RATES_SPREAD_10Y2Y_BP',  val:20,  prev:10,  fmt:bp, url:null, h:genH(20,15,0.4,115)  },
+  { id:'us_10y3m',    sec:'spreads', name:'US 10Y–3M Spread',            unit:'BP',adj:'NSA',csvId:'US_RATES_SPREAD_10Y3M_BP',  val:-25, prev:-45, fmt:bp, url:null, h:genH(-25,18,0.7,116) },
+  { id:'de_10y2y',    sec:'spreads', name:'DE 10Y–2Y Spread',            unit:'BP',adj:'NSA',csvId:'DE_RATES_SPREAD_10Y2Y_BP',  val:20,  prev:5,   fmt:bp, url:null, h:genH(20,12,0.5,117)  },
+
+  // ── INDICES ──────────────────────────────────────────────────────
+  { id:'msci_world',  sec:'indices', name:'MSCI World',                  unit:'Punkte',adj:'NSA',csvId:'GL_EQUITY_MSCI_WORLD',     val:3752,  prev:3685, fmt:big, url:null, h:genH(3752,80,3.5,120)   },
+  { id:'msci_em',     sec:'indices', name:'MSCI Emerging Markets',       unit:'Punkte',adj:'NSA',csvId:'EM_EQUITY_MSCI_EM',         val:1085,  prev:1020, fmt:big, url:null, h:genH(1085,40,1.2,121)   },
+  { id:'sp500',       sec:'indices', name:'S&P 500',                     unit:'Punkte',adj:'NSA',csvId:'US_EQUITY_SP500',           val:6050,  prev:5900, fmt:big, url:null, h:genH(6050,150,5.5,122)  },
+  { id:'ndx',         sec:'indices', name:'Nasdaq 100',                  unit:'Punkte',adj:'NSA',csvId:'US_EQUITY_NDX',             val:21200, prev:20800,fmt:big, url:null, h:genH(21200,500,15,123)  },
+  { id:'djia',        sec:'indices', name:'Dow Jones Industrial',        unit:'Punkte',adj:'NSA',csvId:'US_EQUITY_DJIA',            val:44500, prev:43800,fmt:big, url:null, h:genH(44500,800,30,124)  },
+  { id:'stoxx50',     sec:'indices', name:'Euro Stoxx 50',               unit:'Punkte',adj:'NSA',csvId:'EZ_EQUITY_STOXX50',         val:4850,  prev:4900, fmt:big, url:null, h:genH(4850,120,2,125)    },
+  { id:'dax40',       sec:'indices', name:'DAX 40',                      unit:'Punkte',adj:'NSA',csvId:'DE_EQUITY_DAX40',           val:19800, prev:19500,fmt:big, url:null, h:genH(19800,400,10,126)  },
+  { id:'nikkei',      sec:'indices', name:'Nikkei 225',                  unit:'Punkte',adj:'NSA',csvId:'JP_EQUITY_NIKKEI225',       val:39800, prev:38500,fmt:big, url:null, h:genH(39800,800,18,127)  },
+  { id:'ssec',        sec:'indices', name:'Shanghai Composite',          unit:'Punkte',adj:'NSA',csvId:'CN_EQUITY_SSEC',            val:3350,  prev:2950, fmt:big, url:null, h:genH(3350,150,4,128)    },
+
+  // ── SECTORS ──────────────────────────────────────────────────────
+  { id:'sec_tech',    sec:'sectors', name:'Technologie (YTD)',           unit:'%',adj:'NSA',csvId:'US_SECTOR_TECH_YTD',        val:28.5, prev:18.2,fmt:pct1, url:null, h:genH(28.5,5,0.55,130)  },
+  { id:'sec_fin',     sec:'sectors', name:'Finanzwesen (YTD)',           unit:'%',adj:'NSA',csvId:'US_SECTOR_FIN_YTD',         val:18.2, prev:12.5,fmt:pct1, url:null, h:genH(18.2,4,0.4,131)   },
+  { id:'sec_health',  sec:'sectors', name:'Gesundheit (YTD)',            unit:'%',adj:'NSA',csvId:'US_SECTOR_HEALTH_YTD',      val:8.5,  prev:5.2, fmt:pct1, url:null, h:genH(8.5,3,0.28,132)   },
+  { id:'sec_energy',  sec:'sectors', name:'Energie (YTD)',               unit:'%',adj:'NSA',csvId:'US_SECTOR_ENERGY_YTD',      val:5.2,  prev:-2.3,fmt:pct1, url:null, h:genH(5.2,5,0.3,133)    },
+  { id:'sec_cons',    sec:'sectors', name:'Zyklischer Konsum (YTD)',     unit:'%',adj:'NSA',csvId:'US_SECTOR_CONS_DISC_YTD',   val:12.8, prev:8.5, fmt:pct1, url:null, h:genH(12.8,4,0.32,134)  },
+  { id:'sec_mater',   sec:'sectors', name:'Rohstoffe (YTD)',             unit:'%',adj:'NSA',csvId:'US_SECTOR_MATERIALS_YTD',   val:4.5,  prev:2.1, fmt:pct1, url:null, h:genH(4.5,3,0.22,135)   },
+  { id:'sec_util',    sec:'sectors', name:'Versorger (YTD)',             unit:'%',adj:'NSA',csvId:'US_SECTOR_UTILITIES_YTD',   val:22.5, prev:15.8,fmt:pct1, url:null, h:genH(22.5,3,0.42,136)  },
+
+  // ── VALUATION ────────────────────────────────────────────────────
+  { id:'sp_pe',       sec:'valuation', name:'S&P 500 KGV (P/E)',         unit:'x',adj:'NSA',csvId:'US_EQUITY_SP500_PE_RATIO',   val:25.8, prev:23.5,fmt:v=>v.toFixed(1)+'x', url:null, h:genH(25.8,1.5,0.05,140)  },
+  { id:'sp_cape',     sec:'valuation', name:'Shiller CAPE',              unit:'x',adj:'NSA',csvId:'US_EQUITY_SHILLER_CAPE',      val:36.5, prev:33.2,fmt:v=>v.toFixed(1)+'x', url:null, h:genH(36.5,1.5,0.08,141)  },
+  { id:'sp_pb',       sec:'valuation', name:'S&P 500 KBV (P/B)',         unit:'x',adj:'NSA',csvId:'US_EQUITY_SP500_PB_RATIO',    val:4.82, prev:4.50,fmt:v=>v.toFixed(2)+'x', url:null, h:genH(4.82,0.2,0.012,142) },
+  { id:'sp_div',      sec:'valuation', name:'S&P 500 Dividendenrendite', unit:'%',adj:'NSA',csvId:'US_EQUITY_SP500_DIV_YIELD',   val:1.35, prev:1.45,fmt:pct2, url:null, h:genH(1.35,0.1,-0.004,143) },
+
+  // ── VOLATILITY ───────────────────────────────────────────────────
+  { id:'vix',         sec:'volatility', name:'VIX (US-Aktien)',           unit:'Punkte',adj:'NSA',csvId:'US_VOL_VIX_INDEX',  val:15.8, prev:17.5,fmt:fix1, url:null, h:genH(15.8,3,-0.02,150)  },
+  { id:'vxn',         sec:'volatility', name:'VXN (Nasdaq)',              unit:'Punkte',adj:'NSA',csvId:'US_VOL_VXN_INDEX',  val:19.2, prev:21.5,fmt:fix1, url:null, h:genH(19.2,3.5,-0.03,151)},
+  { id:'v2tx',        sec:'volatility', name:'V2TX (Europa)',             unit:'Punkte',adj:'NSA',csvId:'EZ_VOL_V2TX_INDEX', val:16.5, prev:18.2,fmt:fix1, url:null, h:genH(16.5,2.5,-0.02,152)},
+  { id:'move',        sec:'volatility', name:'MOVE-Index (Anleihen)',     unit:'Punkte',adj:'NSA',csvId:'US_VOL_MOVE_INDEX', val:98.5, prev:115, fmt:fix1, url:null, h:genH(98.5,12,-0.3,153)  },
+
+  // ── FX ───────────────────────────────────────────────────────────
+  { id:'eurusd',      sec:'fx', name:'EUR/USD',                          unit:'Rate',adj:'NSA',csvId:'FX_EURUSD_RATE', val:1.0540,prev:1.0850,fmt:v=>v.toFixed(4), url:null, h:genH(1.054,0.015,-0.001,160) },
+  { id:'usdjpy',      sec:'fx', name:'USD/JPY',                          unit:'Rate',adj:'NSA',csvId:'FX_USDJPY_RATE', val:152.5, prev:148.2,fmt:v=>v.toFixed(2),  url:null, h:genH(152.5,3,0.1,161)        },
+  { id:'gbpusd',      sec:'fx', name:'GBP/USD',                          unit:'Rate',adj:'NSA',csvId:'FX_GBPUSD_RATE', val:1.2680,prev:1.2950,fmt:v=>v.toFixed(4), url:null, h:genH(1.268,0.02,-0.001,162)  },
+  { id:'usdcny',      sec:'fx', name:'USD/CNY',                          unit:'Rate',adj:'NSA',csvId:'FX_USDCNY_RATE', val:7.245, prev:7.110,fmt:v=>v.toFixed(3),  url:null, h:genH(7.245,0.08,0.005,163)   },
+  { id:'dxy',         sec:'fx', name:'US Dollar Index (DXY)',            unit:'Punkte',adj:'NSA',csvId:'FX_DXY_INDEX', val:107.2, prev:104.5,fmt:fix1,             url:null, h:genH(107.2,1.5,0.1,164)      },
+];
+
+// ═══════════════════════════════════════════════════════════════════
+// LIVE DATA SOURCES — add your API URLs here
+// ═══════════════════════════════════════════════════════════════════
+const _LIVE_IDS = [
+  // Märkte
+  'sp500','ndx','djia','stoxx50','dax40','nikkei','ssec','msci_world','msci_em',
+  'eurusd','usdjpy','gbpusd','usdcny','dxy',
+  // Volatility
+  'vix','vxn','v2tx',
+  // Geldpolitik — Yields (Yahoo: ^IRX/^FVX/^TNX/^TYX in %)
+  'us_3m','us_5y','us_10y','us_30y','jp_10y','move',
+  // Makro & Geldpolitik via FRED
+  'us_nom_gdp','us_gdp_yoy','us_unemp','us_lfpr','us_nfp','us_wages',
+  'us_retail','us_umich','us_indpro','us_capu','us_durable','us_permits','us_starts',
+  'us_cpi','us_core_cpi','us_pce','us_ppi','ez_cpi','ez_unemp',
+  'fed_rate','fed_bs','ecb_rate','ecb_bs','us_1m','us_2y','us_10y2y','us_10y3m',
+];
+const LIVE_URLS = {
+  // ── Aktienindizes ─────────────────────────────────────────────────
+  sp500:      "market-proxy.php?symbol=%5EGSPC",
+  ndx:        "market-proxy.php?symbol=%5ENDX",
+  djia:       "market-proxy.php?symbol=%5EDJI",
+  stoxx50:    "market-proxy.php?symbol=%5ESTOXX50E",
+  dax40:      "market-proxy.php?symbol=%5EGDAXI",
+  nikkei:     "market-proxy.php?symbol=%5EN225",
+  ssec:       "market-proxy.php?symbol=000001.SS",
+  msci_world: "market-proxy.php?symbol=URTH",
+  msci_em:    "market-proxy.php?symbol=EEM",
+  // ── FX ───────────────────────────────────────────────────────────
+  eurusd:     "market-proxy.php?symbol=EURUSD%3DX",
+  usdjpy:     "market-proxy.php?symbol=JPY%3DX",
+  gbpusd:     "market-proxy.php?symbol=GBPUSD%3DX",
+  usdcny:     "market-proxy.php?symbol=CNY%3DX",
+  dxy:        "market-proxy.php?symbol=DX-Y.NYB",
+  // ── Volatilität ──────────────────────────────────────────────────
+  vix:        "market-proxy.php?symbol=%5EVIX",
+  vxn:        "market-proxy.php?symbol=%5EVXN",
+  v2tx:       "market-proxy.php?symbol=%5EV2TX",
+  // ── Geldpolitik: Staatsanleihen-Renditen (Yahoo in %) ────────────
+  // US Treasuries — Yahoo returns yield in %, matches pct2 formatter
+  us_3m:      "market-proxy.php?symbol=%5EIRX",   // ^IRX ≈ 13-week T-bill
+  us_5y:      "market-proxy.php?symbol=%5EFVX",   // ^FVX = 5Y Treasury
+  us_10y:     "market-proxy.php?symbol=%5ETNX",   // ^TNX = 10Y Treasury
+  us_30y:     "market-proxy.php?symbol=%5ETYX",   // ^TYX = 30Y Treasury
+  jp_10y:     "market-proxy.php?symbol=%5EJTNX",  // ^JTNX = JGB 10Y
+  move:       "market-proxy.php?symbol=%5EMOVE",  // MOVE-Index (Anleihen-Vola)
+  // ── Makro & Geldpolitik via FRED (API-Key in market-proxy.php!) ──
+  // units=pc1 → % ggü. Vorjahr, pch → % ggü. Vorperiode, chg → Differenz
+  us_nom_gdp:  "market-proxy.php?fred=GDP&scale=0.001",           // Mrd.→Bio. $
+  us_gdp_yoy:  "market-proxy.php?fred=GDPC1&units=pc1",           // reales BIP YoY
+  us_unemp:    "market-proxy.php?fred=UNRATE",
+  us_lfpr:     "market-proxy.php?fred=CIVPART",
+  us_nfp:      "market-proxy.php?fred=PAYEMS&units=chg",          // Δ Tsd. Stellen
+  us_wages:    "market-proxy.php?fred=CES0500000003&units=pc1",
+  us_retail:   "market-proxy.php?fred=RSAFS&units=pc1",
+  us_umich:    "market-proxy.php?fred=UMCSENT",
+  us_indpro:   "market-proxy.php?fred=INDPRO&units=pc1",
+  us_capu:     "market-proxy.php?fred=TCU",
+  us_durable:  "market-proxy.php?fred=DGORDER&units=pch",         // MoM %
+  us_permits:  "market-proxy.php?fred=PERMIT",                    // Tsd. SAAR
+  us_starts:   "market-proxy.php?fred=HOUST",
+  us_cpi:      "market-proxy.php?fred=CPIAUCSL&units=pc1",
+  us_core_cpi: "market-proxy.php?fred=CPILFESL&units=pc1",
+  us_pce:      "market-proxy.php?fred=PCEPI&units=pc1",
+  us_ppi:      "market-proxy.php?fred=PPIFIS&units=pc1",
+  ez_cpi:      "market-proxy.php?fred=CP0000EZ19M086NEST&units=pc1", // HICP
+  ez_unemp:    "market-proxy.php?fred=LRHUTTTTEZM156S",
+  fed_rate:    "market-proxy.php?fred=DFF",
+  fed_bs:      "market-proxy.php?fred=WALCL&scale=0.000001",      // Mio.→Bio. $
+  ecb_rate:    "market-proxy.php?fred=ECBMRRFR",
+  ecb_bs:      "market-proxy.php?fred=ECBASSETSW&scale=0.000001", // Mio.→Bio. €
+  us_1m:       "market-proxy.php?fred=DGS1MO",
+  us_2y:       "market-proxy.php?fred=DGS2",
+  us_10y2y:    "market-proxy.php?fred=T10Y2Y&scale=100",          // % → BP
+  us_10y3m:    "market-proxy.php?fred=T10Y3M&scale=100",
+  // ── Rest bleibt simuliert ─────────────────────────────────────────
+  // PMIs (S&P Global/ISM: lizenzpflichtig), BoE/BoJ/PBoC-Zinsen, BoJ-Bilanz,
+  // Bund-Renditen, CN/JP/UK-Makro, Sektoren-YTD, Valuation (KGV/CAPE)
+  // → keine verlässliche kostenlose API
+  ...Object.fromEntries(METRICS.filter(m => !_LIVE_IDS.includes(m.id)).map(m => [m.id, null])),
+};
+
+// ═══════════════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════════════
+let activeCategory      = 0;
+let activeMetricId      = 'us_gdp_yoy';
+let masterChart         = null;
+let lastRefreshTimestamp = null;
+let dataLoaded = false;
+
+// ═══════════════════════════════════════════════════════════════════
+// DATA FETCH (with live URL support)
+// ═══════════════════════════════════════════════════════════════════
+async function fetchMetric(metric, attempt = 1) {
+  const url = LIVE_URLS[metric.id];
+  if (!url) return false;
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 12000); // 12s hard timeout
+
+  try {
+    // cache-bust so F5 never serves a stale proxy response
+    const bust = (url.includes('?') ? '&' : '?') + '_t=' + Date.now();
+    const resp = await fetch(url + bust, { signal: controller.signal, cache: 'no-store' });
+    clearTimeout(timer);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const json = await resp.json();
+    if (json.error) throw new Error(json.error);
+    metric.val  = json.price;
+    metric.prev = json.prev;
+    metric.live = true;
+    return true;
+  } catch(e) {
+    clearTimeout(timer);
+    // Retry once — Yahoo's first (cold) request through the proxy often fails
+    if (attempt < 2) {
+      await new Promise(r => setTimeout(r, 600));
+      return fetchMetric(metric, attempt + 1);
+    }
+    console.warn('[Dashboard]', metric.id, ':', e.message);
+    metric.live = false;
+    return false;
+  }
+}
+
+async function refreshAll() {
+  const btn = document.querySelector('.refresh-btn');
+  if (btn) btn.textContent = '⏳ Lade Daten…';
+
+  try {
+    const targets = METRICS.filter(m => LIVE_URLS[m.id]);
+    const results = await Promise.allSettled(targets.map(m => fetchMetric(m)));
+    const liveCount = results.filter(r => r.status === 'fulfilled' && r.value === true).length;
+
+    lastRefreshTimestamp = new Date();
+    document.getElementById('last-update').textContent =
+      'Letzte Aktualisierung: ' + lastRefreshTimestamp.toLocaleTimeString('de-DE');
+
+    const badge = document.getElementById('live-badge');
+    if (liveCount > 0) {
+      badge.className = 'live-badge live';
+      badge.innerHTML = '<span class="live-dot"></span>' + liveCount + ' Live';
+    }
+
+    dataLoaded = true;
+    renderAll();
+  } finally {
+    const hint = document.getElementById('no-data-hint');
+    if (hint) hint.style.display = 'none';
+    if (btn) {
+      btn.classList.remove('load-btn');
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> Aktualisieren';
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════════════════════════════
+function setCategory(i) {
+  activeCategory = i;
+  [0,1,2].forEach(n => {
+    document.getElementById('cat-btn-'+n).classList.toggle('active', n === i);
+    const tab = document.querySelector(`.cat-tab[data-cat="${n}"]`);
+    if (tab) tab.classList.toggle('active', n === i);
+  });
+  renderCards();
+}
+
+function getMetric(id) { return METRICS.find(m => m.id === id); }
+
+function renderCards() {
+  const wrap = document.getElementById('metrics-wrap');
+  const catSections = Object.entries(SECTIONS).filter(([,s]) => s.cat === activeCategory);
+
+  wrap.innerHTML = catSections.map(([secId, sec]) => {
+    const mets = METRICS.filter(m => m.sec === secId);
+    if (!mets.length) return '';
+
+    const cards = mets.map(m => {
+      const chg = m.prev !== 0 ? ((m.val - m.prev) / Math.abs(m.prev)) * 100 : 0;
+      const isPos = chg >= 0;
+      const isActive = m.id === activeMetricId;
+      return `<div class="metric-card${isActive?' active':''}" style="color:${sec.color}" onclick="selectMetric('${m.id}')">
+        <div class="metric-card-status${m.live?' live':''}"></div>
+        <div class="m-section">${sec.label}</div>
+        <div class="m-name">${m.name}</div>
+        <div class="m-val" style="color:${sec.color}">${dataLoaded ? m.fmt(m.val) : '—'}</div>
+        <div class="m-change ${isPos?'pos':'neg'}">${dataLoaded ? (isPos?'▲':'▼') + ' ' + Math.abs(chg).toFixed(2) + '%' : '—'}</div>
+<div class="m-unit">${m.unit} | ${m.adj}</div>
+      </div>`;
+    }).join('');
+
+    return `<div class="section-group">
+      <div class="section-title">
+        <span class="section-color-dot" style="background:${sec.color}"></span>
+        ${sec.label}
+        <span class="sline"></span>
+        <span style="font-size:.65rem">${mets.length} Indikatoren</span>
+      </div>
+      <div class="metrics-grid">${cards}</div>
+    </div>`;
+  }).join('');
+}
+
+function selectMetric(id) {
+  activeMetricId = id;
+  // Switch category if needed
+  const m = getMetric(id);
+  if (m) {
+    const sec = SECTIONS[m.sec];
+    if (sec && sec.cat !== activeCategory) setCategory(sec.cat);
+  }
+  renderCards();
+  updateChart();
+}
+
+function renderAll() { renderCards(); updateChart(); }
+
+// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
+// CSV EXPORT — alle Live-Metriken, aktueller Stand mit Zeitstempel
+// ═══════════════════════════════════════════════════════════════════
+function exportCSV() {
+  const live = METRICS.filter(m => m.live === true);
+  if (live.length === 0) {
+    alert('Keine Live-Daten vorhanden. Bitte zuerst auf "Aktualisieren" klicken.');
+    return;
+  }
+
+  const fmt = document.getElementById('csv-format').value;
+  const sep = fmt === 'european' ? ';' : ',';
+  const dec = fmt === 'european' ? ',' : '.';
+  const q   = '"';
+  const ts  = lastRefreshTimestamp || new Date();
+
+  const fmtNum = v => {
+    if (v === null || v === undefined) return '';
+    return dec === ',' ? String(v).replace('.', ',') : String(v);
+  };
+
+  const catLabels = { 0: 'Makro', 1: 'Geldpolitik', 2: 'Märkte' };
+  const tsDE  = ts.toLocaleDateString('de-DE') + ' ' + ts.toLocaleTimeString('de-DE');
+  const tsISO = ts.toISOString();
+
+  const lines = [
+    q + 'Stand' + q + sep + q + tsDE + q,
+    '',
+    [q+'Kategorie'+q, q+'Sektion'+q, q+'Indikator'+q, q+'ID'+q,
+     q+'Wert'+q, q+'Vorwert'+q, q+'Änderung %'+q, q+'Einheit'+q, q+'Adj'+q].join(sep),
+    ...live.map(m => {
+      const sec    = SECTIONS[m.sec];
+      const chgPct = (m.val != null && m.prev && m.prev !== 0)
+        ? fmtNum(((m.val - m.prev) / Math.abs(m.prev) * 100).toFixed(2))
+        : '';
+      return [
+        q + (catLabels[sec?.cat] ?? '') + q,
+        q + (sec?.label ?? m.sec) + q,
+        q + m.name + q,
+        q + m.csvId + q,
+        fmtNum(m.val),
+        fmtNum(m.prev),
+        chgPct,
+        q + m.unit + q,
+        q + m.adj + q,
+      ].join(sep);
+    }),
+  ];
+
+  const csv  = lines.join('\n');
+  const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'live-export_' + tsISO.replace(/[:.]/g, '-').slice(0, 19) + '.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// INIT
+// ═══════════════════════════════════════════════════════════════════
+renderCards();
+updateChart();
+document.getElementById('last-update').textContent = 'Letzte Aktualisierung: ' + new Date().toLocaleTimeString('de-DE');
+refreshAll();                          // lädt Daten automatisch beim Seitenaufruf
+setInterval(refreshAll, 5 * 60 * 1000); // danach alle 5 Minuten
+</script>
+</body>
+</html>

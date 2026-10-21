@@ -1,0 +1,487 @@
+{
+  "batch": 14,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "M820500",
+      "name": "Frischkäsezubereitung Natur, mind. 40 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M827300",
+      "name": "Frischkäsezubereitung mind. 20 % Fett i. Tr., mit Gemüse/Kräutern",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M780300",
+      "name": "Kochkäse mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M780500",
+      "name": "Kochkäse mind. 40 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M810400",
+      "name": "Schmelzkäsezubereitung mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M827100",
+      "name": "Frischkäsezubereitung < 10 % Fett i. Tr., mit Gemüse/Kräutern",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "N310300",
+      "name": "Orangenlimonade",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "N330000",
+      "name": "Colagetränk koffeinhaltig",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "N120000",
+      "name": "Natürliches Mineralwasser",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.19,
+      "sourceProduct": "QUELLBRUNN Natürliches Mineralwasser bei ALDI SÜD, niedrigster klar belegbarer Preisanker 0,19 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/mineralwasser/k/1588161425467192",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "N323000",
+      "name": "Brause",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "N311000",
+      "name": "Limonade mit Süßungsmitteln",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "N321000",
+      "name": "Brause mit Zucker und Süßungsmitteln",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "N316000",
+      "name": "Limonade mit Gewürzauszügen und Süßungsmitteln",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "N710000",
+      "name": "Früchtetee (Getränk)",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "N721000",
+      "name": "Pfefferminztee (Getränk)",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P163110",
+      "name": "Pilsner Bier, 0,0 % vol",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.47,
+      "sourceProduct": "KARLSKRONE Bier im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,47 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P166000",
+      "name": "Export dunkel",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.47,
+      "sourceProduct": "KARLSKRONE Bier im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,47 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P273100",
+      "name": "Rotling trocken",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 3.05,
+      "sourceProduct": "ALDI Dornfelder/Roséwein 0,75 l als aktueller Rotwein-Preisanker, niedrigster klar belegbarer Preisanker 3,05 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P341600",
+      "name": "Wermutwein süß",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.99,
+      "sourceProduct": "Günstiger Wermut-/Sherry-/Madeira-Preisanker im Supermarkt, niedrigster klar belegbarer Preisanker 6,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P432000",
+      "name": "Madeirawein",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.99,
+      "sourceProduct": "Günstiger Wermut-/Sherry-/Madeira-Preisanker im Supermarkt, niedrigster klar belegbarer Preisanker 6,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P464000",
+      "name": "Sherry sweet",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.99,
+      "sourceProduct": "Günstiger Wermut-/Sherry-/Madeira-Preisanker im Supermarkt, niedrigster klar belegbarer Preisanker 6,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P530000",
+      "name": "Fruchtaromalikör",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Eigenmarken-Likör bzw. Mischgetränk im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 8,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P510000",
+      "name": "Fruchtsaftlikör",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Eigenmarken-Likör bzw. Mischgetränk im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 8,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P461000",
+      "name": "Sherry dry",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.99,
+      "sourceProduct": "Günstiger Wermut-/Sherry-/Madeira-Preisanker im Supermarkt, niedrigster klar belegbarer Preisanker 6,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P463000",
+      "name": "Sherry cream",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.99,
+      "sourceProduct": "Günstiger Wermut-/Sherry-/Madeira-Preisanker im Supermarkt, niedrigster klar belegbarer Preisanker 6,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "Q340000",
+      "name": "Distelöl/Safloröl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 6.6,
+      "sourceProduct": "Spezialöl als aktueller Öl-Vergleichsanker, niedrigster klar belegbarer Preisanker 6,60 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "Q170000",
+      "name": "Hanföl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 6.6,
+      "sourceProduct": "Spezialöl als aktueller Öl-Vergleichsanker, niedrigster klar belegbarer Preisanker 6,60 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "Q220000",
+      "name": "Weizenkeimöl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 6.6,
+      "sourceProduct": "Spezialöl als aktueller Öl-Vergleichsanker, niedrigster klar belegbarer Preisanker 6,60 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "Q350000",
+      "name": "Mohnöl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 6.6,
+      "sourceProduct": "Spezialöl als aktueller Öl-Vergleichsanker, niedrigster klar belegbarer Preisanker 6,60 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "Q940000",
+      "name": "Bratöl/Frittieröl, pflanzlich",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.78,
+      "sourceProduct": "BELLASAN Rapsöl als niedrigster aktueller Pflanzenöl-Preisanker, niedrigster klar belegbarer Preisanker 2,78 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "L",
+      "fluid": 90
+    }
+  ]
+}

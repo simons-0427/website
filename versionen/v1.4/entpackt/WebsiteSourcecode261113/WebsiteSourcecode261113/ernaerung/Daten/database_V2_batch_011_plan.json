@@ -1,0 +1,487 @@
+{
+  "batch": 11,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "C211100",
+      "name": "Weizen Vollkornschrot",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Eigenmarken-Getreide-/Mehlprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/teigwaren-mehl-reis/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C113000",
+      "name": "Weizen Flocken",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.38,
+      "sourceProduct": "Kölln Flocken 500 g als aktueller Flockenanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 2,38 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkt/koelln-flocken-500-g-kernig-000000000183227001",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C219100",
+      "name": "Hartweizen Vollkorngrieß",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Eigenmarken-Getreide-/Mehlprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/teigwaren-mehl-reis/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C219200",
+      "name": "Hartweizen ganzes Korn, roh",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Eigenmarken-Getreide-/Mehlprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/teigwaren-mehl-reis/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C119100",
+      "name": "Bulgur (Hartweizen) roh",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.58,
+      "sourceProduct": "EDEKA-/Eigenmarken-Bulgur bzw. Couscous als aktueller Preisanker, niedrigster klar belegbarer Preisanker 2,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C119200",
+      "name": "Couscous (Hartweizen) roh",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.58,
+      "sourceProduct": "EDEKA-/Eigenmarken-Bulgur bzw. Couscous als aktueller Preisanker, niedrigster klar belegbarer Preisanker 2,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C117000",
+      "name": "Weizen Grütze",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Eigenmarken-Getreide-/Mehlprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/teigwaren-mehl-reis/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C121000",
+      "name": "Roggen ganzes Korn, roh",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Eigenmarken-Getreide-/Mehlprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/teigwaren-mehl-reis/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C236100",
+      "name": "Dinkel Flocken",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.38,
+      "sourceProduct": "Kölln Flocken 500 g als aktueller Flockenanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 2,38 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkt/koelln-flocken-500-g-kernig-000000000183227001",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C457000",
+      "name": "Reis Kleie",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.79,
+      "sourceProduct": "Eigenmarken-Reis-/Getreideprodukt als aktueller Preisanker, niedrigster klar belegbarer Preisanker 1,79 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C240100",
+      "name": "Emmer ganzes Korn, roh",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.9,
+      "sourceProduct": "Spezialgetreide aus dem aktuellen Mühlen-/Bio-Sortiment, niedrigster klar belegbarer Preisanker 3,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C240200",
+      "name": "Emmer Flocken",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.38,
+      "sourceProduct": "Kölln Flocken 500 g als aktueller Flockenanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 2,38 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkt/koelln-flocken-500-g-kernig-000000000183227001",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C241200",
+      "name": "Einkorn Flocken",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.38,
+      "sourceProduct": "Kölln Flocken 500 g als aktueller Flockenanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 2,38 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkt/koelln-flocken-500-g-kernig-000000000183227001",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C241100",
+      "name": "Einkorn ganzes Korn, roh",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.9,
+      "sourceProduct": "Spezialgetreide aus dem aktuellen Mühlen-/Bio-Sortiment, niedrigster klar belegbarer Preisanker 3,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C413000",
+      "name": "Grünkern Vollkornmehl",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.9,
+      "sourceProduct": "Spezialgetreide aus dem aktuellen Mühlen-/Bio-Sortiment, niedrigster klar belegbarer Preisanker 3,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C412000",
+      "name": "Grünkern Vollkornschrot",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.9,
+      "sourceProduct": "Spezialgetreide aus dem aktuellen Mühlen-/Bio-Sortiment, niedrigster klar belegbarer Preisanker 3,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C317000",
+      "name": "Grünkern Grütze",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.9,
+      "sourceProduct": "Spezialgetreide aus dem aktuellen Mühlen-/Bio-Sortiment, niedrigster klar belegbarer Preisanker 3,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C326000",
+      "name": "Buchweizen Grieß",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.9,
+      "sourceProduct": "Spezialgetreide aus dem aktuellen Mühlen-/Bio-Sortiment, niedrigster klar belegbarer Preisanker 3,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C433100",
+      "name": "Braunhirse Mehl",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.9,
+      "sourceProduct": "Spezialgetreide aus dem aktuellen Mühlen-/Bio-Sortiment, niedrigster klar belegbarer Preisanker 3,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C534200",
+      "name": "Cerealien extrudiert, gesüßt, ungefüllt, mit Zimtgeschmack, angereichert mit Vitaminen und Mineralstoffen",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.38,
+      "sourceProduct": "Flocken/Cerealien als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 2,38 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "E131100",
+      "name": "Entenei roh",
+      "category": "eier",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 6.65,
+      "sourceProduct": "GUT BIO Eier bei ALDI SÜD, auf kg umgerechneter Packungspreis, niedrigster klar belegbarer Preisanker 6,65 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F225100",
+      "name": "Reineclaude roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.79,
+      "sourceProduct": "Frische Zwetschgen/Pflaumen als saisonaler Steinobst-Preisanker, niedrigster klar belegbarer Preisanker 1,79 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F224100",
+      "name": "Mirabelle roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.79,
+      "sourceProduct": "Frische Zwetschgen/Pflaumen als saisonaler Steinobst-Preisanker, niedrigster klar belegbarer Preisanker 1,79 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F601100",
+      "name": "Zitrone roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Zitrusfrüchte beim Discounter, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/obst-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F605100",
+      "name": "Pampelmuse/Pomelo, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Zitrusfrüchte beim Discounter, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/obst-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F607100",
+      "name": "Clementine roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Zitrusfrüchte beim Discounter, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/obst-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F604100",
+      "name": "Grapefruit roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Zitrusfrüchte beim Discounter, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/obst-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F606100",
+      "name": "Mandarine roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Zitrusfrüchte beim Discounter, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/obst-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F522100",
+      "name": "Lulo/Naranjilla, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "Exotisches Frischobst im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 4,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G109100",
+      "name": "Zuckerhutsalat roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Frischer Salat im Supermarkt, niedrigster klar belegbarer Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    }
+  ]
+}

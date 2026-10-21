@@ -1,0 +1,506 @@
+{
+  "batch": 4,
+  "checkedOn": "2026-08-14",
+  "selection": "30 weitere BLS-Fruchtvarianten: getrocknete Früchte, Fruchtmischung sowie nicht bereits vorhandene Fruchtsäfte, Nektare und Smoothies.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis eines aktuellen Lebensmittelangebots je kg bzw. Liter aus SupermarktCheck-, Idealo- und ALDI-SÜD-Produkt-/Sortimentsseiten; bei gefriergetrockneten BLS-Fruchtzuständen wurde der günstigste passend ausgewiesene Lebensmittelpreis verwendet; anschließend +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Quellenlink-Nachaudit: Offensichtlich unpassende alte Angebotslinks wurden am 14.08.2026 auf aktuelle, passende Händler-Kategorieseiten normalisiert.",
+  "items": [
+    {
+      "code": "F110400",
+      "name": "Äpfel, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.45,
+      "sourceProduct": "Apfelchips/Apfelstücke, niedrigster aktueller Trockenfruchtpreis 8,45 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F120400",
+      "name": "Äpfel, geschält, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.45,
+      "sourceProduct": "Apfelchips/Apfelstücke, niedrigster aktueller Trockenfruchtpreis 8,45 EUR/kg; geschälter BLS-Zustand",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F203400",
+      "name": "Pfirsiche, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.95,
+      "sourceProduct": "Getrocknete Pfirsichscheiben, aktueller Lebensmittelpreis 9,95 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F301400",
+      "name": "Erdbeeren, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 59.09,
+      "sourceProduct": "Buxtrade gefriergetrocknete Erdbeerscheiben 1 kg, niedrigster gelisteter Lebensmittelpreis",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F302400",
+      "name": "Himbeeren, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 88.36,
+      "sourceProduct": "Buxtrade gefriergetrocknete Himbeeren 250 g, niedrigster gelisteter Lebensmittelpreis",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F303400",
+      "name": "Brombeeren, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 60.5,
+      "sourceProduct": "Diana Brombeeren ganz gefriergetrocknet 500 g, niedrigster gelisteter Lebensmittelpreis",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F503400",
+      "name": "Bananen, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 34.6,
+      "sourceProduct": "Diana Bananenscheiben gefriergetrocknet 500 g, niedrigster gelisteter Lebensmittelpreis",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F516400",
+      "name": "Mangos, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 40.55,
+      "sourceProduct": "Diana Mangoscheiben gefriergetrocknet 1 kg, niedrigster gelisteter Lebensmittelpreis",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F517400",
+      "name": "Papaya, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 15.79,
+      "sourceProduct": "Getrocknete Fruchtstücke 1 kg, niedrigster gelisteter Trockenfruchtpreis der geprüften Vergleichskategorie",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F840300",
+      "name": "Korinthen, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 11.92,
+      "sourceProduct": "EDEKA Herzstücke Fruchtige Korinthen 125 g, 11,92 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F501400",
+      "name": "Ananas, getrocknet",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 54.14,
+      "sourceProduct": "Fair-Handel Ananas getrocknet 70 g, niedrigster ausgewiesener Verbraucherpreis",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F090400",
+      "name": "Trockenfrucht-Mix",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.45,
+      "sourceProduct": "Trockenfrüchte/Mischobst, niedrigster aktueller Kategoriepreis 8,45 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/nuesse-trockenfruechte/k/1588161425467168",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F112600",
+      "name": "Apfelsaft, mit Vitamin C angereichert",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.29,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Apfelsaft Direktsaft 1 L, 1,29 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F310600",
+      "name": "Traubensaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Traubendirektsaft 1 L, 1,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F312600",
+      "name": "Traubensaft, weiß, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Traubendirektsaft 1 L, 1,49 EUR/L; BLS-Farbvariante weiß",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F311600",
+      "name": "Traubensaft, rot, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Traubendirektsaft 1 L, 1,49 EUR/L; BLS-Farbvariante rot",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F501600",
+      "name": "Ananassaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.45,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Premium Direktsaft Ananas 1 L, 2,45 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F508600",
+      "name": "Maracujasaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RAUCH Fruchtsaft Happy Day Maracuja 1 L, aktueller Angebotspreis 1,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkt/rauch-fruchtsaft-happy-day-1-l-maracuja-000000000290349001"
+    },
+    {
+      "code": "F604600",
+      "name": "Grapefruitsaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Grapefruit-/Blutorangendirektsaft 1 L, aktueller Preisanker 2,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F606600",
+      "name": "Mandarinensaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Orangendirektsaft 1 L, aktueller Zitrussaft-Preisanker 2,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F016600",
+      "name": "Mehrfruchtsaft, vitaminangereichert",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Fruchtsaft Multivitamin 2 L, 1,00 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F020600",
+      "name": "Roter Mehrfruchtsaft",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Fruchtsaft Multivitamin 2 L, 1,00 EUR/L; BLS-Variante roter Mehrfruchtsaft",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F032600",
+      "name": "Smoothie purpur",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.16,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Smoothie 250 ml, 5,16 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F302600",
+      "name": "Himbeersaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Fruchtsaft Himbeere, aktueller 1-Liter-Lebensmittelpreis 2,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F303600",
+      "name": "Brombeersaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Fruchtsaft Beere, aktueller 1-Liter-Lebensmittelpreis 2,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F516600",
+      "name": "Mangosaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RAUCH Fruchtsaft Happy Day Mango 1 L, aktueller Angebotspreis 1,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkt/rauch-fruchtsaft-happy-day-1-l-maracuja-000000000290349001"
+    },
+    {
+      "code": "F603700",
+      "name": "Orangennektar",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.13,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Orangennektar 1,5 L, 1,13 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F609600",
+      "name": "Tangerinensaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "RIO D'ORO Orangendirektsaft 1 L, aktueller Zitrussaft-Preisanker 2,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F601600",
+      "name": "Zitronensaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Zitronensaft 1 L, aktueller Saftpreis 1,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    },
+    {
+      "code": "F602600",
+      "name": "Limettensaft, 100%",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.49,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Limettensaft 1 L, aktueller Saftpreis 1,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/saft-nektar-smoothies/k/1588161425467196"
+    }
+  ]
+}

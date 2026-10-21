@@ -1,0 +1,495 @@
+{
+  "batch": 7,
+  "checkedOn": "2026-08-14",
+  "selection": "30 relevante BLS-4.0-Datensätze aus Hülsenfrüchten, pflanzlichen Alternativen, Kartoffelprodukten, Pilzen und Milchprodukten. Bereits in früheren Batches verwendete BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Bei Produktvarianten ohne exakt identisches Handelsprodukt wurde nur ein klar gekennzeichneter, aktueller Preisanker derselben Produktart verwendet; keine Nährwertschätzung. Kritischer Nachaudit: besonders niedrige historische Preisanker wurden mit aktuellen Händlerseiten vom 14.08.2026 abgeglichen.",
+  "items": [
+    {
+      "code": "K762400",
+      "name": "Hefe Flocken/Nährhefe",
+      "category": "supplements",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "supplement",
+        "verarbeitet"
+      ],
+      "basePerKg": 14.19,
+      "sourceProduct": "Buxtrade Hefeflocken 1 kg, niedrigstes aktuelles Vergleichsangebot 14,19 EUR/kg",
+      "sourceUrl": "https://www.idealo.de/preisvergleich/OffersOfProduct/210868202_-hefeflocken-1kg-buxtrade.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "H725100",
+      "name": "Linse reif",
+      "category": "huelsenfruechte",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.98,
+      "sourceProduct": "Tellerlinsen trocken, niedrigster ausgewiesener Discounterpreis 1,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/aldi-sued/sortiment/huelsenfruechte-getrocknet/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G760400",
+      "name": "Erbse reif",
+      "category": "huelsenfruechte",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.98,
+      "sourceProduct": "Getrocknete grüne Erbsen, 500-g-Packung zu 0,99 EUR = 1,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/lidl/sortiment/huelsenfruechte-getrocknet/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G750400",
+      "name": "Sojabohne reif",
+      "category": "huelsenfruechte",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.98,
+      "sourceProduct": "Rapunzel Sojabohnen trocken, 500 g mit 5,98 EUR/kg",
+      "sourceUrl": "https://shop.rapunzel.de/700130/Sojabohnen/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G770400",
+      "name": "Kichererbse reif",
+      "category": "huelsenfruechte",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.78,
+      "sourceProduct": "Getrocknete Kichererbsen, niedrigster ausgewiesener kg-Preis 3,78 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/huelsenfruechte-getrocknet/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "H800100",
+      "name": "Mandeldrink ungesüßt, angereichert mit Vitaminen und Calcium",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 3.06,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Alpro Mandeldrink ohne Zucker, mit Calcium und Vitaminen, 3,06 EUR/L",
+      "sourceUrl": "https://www.idealo.de/preisvergleich/OffersOfProduct/6361339_-mandeldrink-ohne-zucker-1l-alpro-soja.html"
+    },
+    {
+      "code": "H843300",
+      "name": "Dessert/Puddingalternative, pflanzlich, angereichert mit Vitaminen und Calcium",
+      "category": "milch",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.38,
+      "sourceProduct": "Alpro Soya Dessert dunkle Schokolade, 4 x 125 g zu 2,19 EUR = 4,38 EUR/kg; mit Calcium und Vitaminen",
+      "sourceUrl": "https://www.idealo.de/preisvergleich/OffersOfProduct/7005065_-soya-dessert-dunkle-schokolade-4x125g-alpro-soja.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K130492",
+      "name": "Pommes frites tiefgefroren, frittiert",
+      "category": "verarbeitet",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 2.39,
+      "sourceProduct": "McCain 1.2.3 Frites Original, niedrigster ausgewiesener kg-Preis 2,39 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/pommes-frites/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K120100",
+      "name": "Kartoffel ungeschält, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.39,
+      "sourceProduct": "Speisekartoffeln als aktueller ALDI-Frischeanker, niedrigster klar belegbarer Preisanker 1,39 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K130262",
+      "name": "Pommes frites tiefgefroren, gebacken",
+      "category": "verarbeitet",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 1.79,
+      "sourceProduct": "Gut & Günstig Backofen-Frites, ausgewiesener kg-Preis 1,79 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/pommes-frites/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K130200",
+      "name": "Pommes frites tiefgefroren",
+      "category": "verarbeitet",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 1.63,
+      "sourceProduct": "Harvest Basket Jumbo Fries, ausgewiesener kg-Preis 1,63 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/pommes-frites/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K290100",
+      "name": "Kartoffelchips energiereduziert",
+      "category": "verarbeitet",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 4.95,
+      "sourceProduct": "Kartoffelchips, niedrigster aktuell ausgewiesener Vergleichspreis 4,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/kartoffel-chips/produkte/?page=1",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K280200",
+      "name": "Kartoffelsticks",
+      "category": "verarbeitet",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6,
+      "sourceProduct": "REWE Kartoffelsticks, niedrigster ausgewiesener kg-Preis 6,00 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/kartoffelsticks/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K718100",
+      "name": "Steinpilz roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 26.63,
+      "sourceProduct": "Niklas Frische Steinpilze bei Marktkauf, 300 g für 7,99 EUR = 26,63 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/marktkauf/sortiment/pilze-frisch/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M111100",
+      "name": "Milch entrahmt, frisch, höchstens 0,1 % Fett, pasteurisiert",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.85,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "MILSANI Frischmilch als aktueller ALDI-Milchanker, niedrigster klar belegbarer Preisanker 0,85 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/milch/k/1588161425467094"
+    },
+    {
+      "code": "M114200",
+      "name": "Milch fettarm, 1,5 % Fett, laktosefrei, pasteurisiert",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.79,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Frische fettarme laktosefreie Milch 1,5 %, Landkorb-Preis ab vier Litern 1,79 EUR/L",
+      "sourceUrl": "https://www.landkorb.de/produkt/1080306/Frische-fettarme-Milch-l%C3%A4nger-haltbar%2C-laktosefrei%2C-1%2C5Proz.-Fett"
+    },
+    {
+      "code": "M117700",
+      "name": "Sahneersatz (Mischung aus pflanzlichen Fetten und Milch)",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet",
+        "laktose"
+      ],
+      "basePerKg": 3.96,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Rama Cremefine zum Kochen 15 %, Aldi Süd, 0,99 EUR je 250 ml = 3,96 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkt/rama-cremefine-250-ml-15-000000000202454002"
+    },
+    {
+      "code": "M114300",
+      "name": "Vollmilch 3,5 % Fett, laktosefrei, pasteurisiert",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "MinusL Bio H-Vollmilch laktosefrei 3,5 %, zuletzt 1,99 EUR/L bei EDEKA",
+      "sourceUrl": "https://www.supermarktcheck.de/product/222396-minusl-bio-h-vollmilch-laktosefrei-35-1l"
+    },
+    {
+      "code": "M021000",
+      "name": "Ziegenmilch mind. 3 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 1.99,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Ziegenmilch, niedrigster aktuell ausgewiesener kg-/Literpreis 1,99 EUR/L",
+      "sourceUrl": "https://www.supermarktcheck.de/ziegenmilch/produkte/"
+    },
+    {
+      "code": "M011000",
+      "name": "Schafmilch mind. 4,5 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 3.29,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Schafsmilch, niedrigster aktuell ausgewiesener Literpreis 3,29 EUR/L",
+      "sourceUrl": "https://www.supermarktcheck.de/schafsmilch/produkte/"
+    },
+    {
+      "code": "M141200",
+      "name": "Joghurt fettarm, mind. 1,5 % bis max. 1,8 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "MILSANI Fettarmer Joghurt als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,79 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M1A5200",
+      "name": "H-Milch fettarm, 1,5 % Fett, laktosefrei, ultrahocherhitzt",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.65,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "Berchtesgadener Land H-fettarme Milch laktosefrei 1,5 %, dm 1,65 EUR/L",
+      "sourceUrl": "https://www.dm.de/p/d/1507718/berchtesgadener-land-milch-haltbare-alpenmilch-1-5-prozent-fett-laktosefrei"
+    },
+    {
+      "code": "M1A7300",
+      "name": "H-Vollmilch 3,5 % Fett, laktosefrei, ultrahocherhitzt",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.05,
+      "priceUnit": "L",
+      "fluid": 90,
+      "sourceProduct": "MinusL laktosefreie H-Vollmilch 3,5 %, niedrigster aktueller Vergleichspreis 2,05 EUR/L",
+      "sourceUrl": "https://www.idealo.de/preisvergleich/OffersOfProduct/200815154_-laktosefreie-h-vollmilch-3-5-fett-minusl.html"
+    },
+    {
+      "code": "M182300",
+      "name": "Kondensmilch teilentrahmt, mind. 1 % bis < 7,5 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet",
+        "laktose"
+      ],
+      "basePerKg": 2.5,
+      "sourceProduct": "Teilentrahmte Kondensmilch 4 %, niedrigster ausgewiesener Preis 2,50 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/kondensmilch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M141500",
+      "name": "Sahnejoghurt mind. 10 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 1.69,
+      "sourceProduct": "LYTTOS Sahnejoghurt 10 % als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 1,69 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M130300",
+      "name": "Kefir mind. 3,5 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 1.5,
+      "sourceProduct": "Kefir natur 3,5 %, niedrigster aktuell ausgewiesener kg-Preis 1,50 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/kefir-natur/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M148300",
+      "name": "Joghurt mind. 3,5 % Fett, mit Magermilchpulverzusatz",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.89,
+      "sourceProduct": "MILSANI Joghurt 3,5 % als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,89 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M1E3300",
+      "name": "Joghurt mind. 3,5 % Fett, laktosefrei",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.38,
+      "sourceProduct": "LAC Joghurt mild 3,5 % laktosefrei, niedrigster gemeldeter Preis 3,38 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/product/232862-lac-joghurt-mild-35-fett-laktosefrei",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M121300",
+      "name": "Dickmilch/Sauermilch, mind. 3,5 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 2.58,
+      "sourceProduct": "Schwälbchen Frische Dickmilch 3,5 %, 500 g für 1,29 EUR = 2,58 EUR/kg",
+      "sourceUrl": "https://www.foodexpress-ab.de/Schwaelbchen-Frische-Dickmilch-3-5-frisch-500g/453771",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M182400",
+      "name": "Kondensmilch mind. 7,5 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet",
+        "laktose"
+      ],
+      "basePerKg": 2.32,
+      "sourceProduct": "ja! Kondensmilch 7,5 %, zuletzt 0,79 EUR je 340 g = 2,32 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/product/290502-ja-kondensmilch-",
+      "priceUnit": "kg"
+    }
+  ]
+}

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>FIRE-Rechner | Projektübersicht</title>
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Projektbeschreibung des FIRE-Rechners: Hintergrund, Funktionen und Technik hinter dem Tool zur Berechnung finanzieller Unabhängigkeit.">
+  <link rel="canonical" href="https://smstark-projekt.de/projekte/firekalkulator">
+  <script type="application/ld+json">
+  {
+      "@context":  "https://schema.org",
+      "@type":  "WebPage",
+      "@id":  "https://smstark-projekt.de/projekte/firekalkulator#webpage",
+      "name":  "FIRE-Rechner | Projektübersicht",
+      "url":  "https://smstark-projekt.de/projekte/firekalkulator",
+      "description":  "Projektbeschreibung des FIRE-Rechners mit Funktionen, Modellannahmen und technischer Umsetzung.",
+      "author":  {
+                     "@type":  "Person",
+                     "name":  "Simon Stark",
+                     "url":  "https://smstark-projekt.de/"
+                 },
+      "isPartOf":  {
+                       "@type":  "WebSite",
+                       "url":  "https://smstark-projekt.de/",
+                       "name":  "SMStark Projekt"
+                   }
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/projekte/firekalkulator">
+  <meta property="og:title" content="FIRE-Rechner | Projektübersicht | Simon Stark">
+  <meta property="og:description" content="Projektbeschreibung des FIRE-Rechners: Hintergrund, Funktionen und Technik hinter dem Tool zur Berechnung finanzieller Unabhängigkeit.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/fire-kalkulator-preview1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+      --content: 720px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      min-height: 100vh; overflow-x: hidden; max-width: 100%; width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+   position: fixed; top: 0; left: 0; right: 0;
+   height: var(--nav-h);
+   background: rgba(12,12,15,.85);
+   backdrop-filter: blur(18px);
+   border-bottom: 1px solid var(--border);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0 clamp(1.5rem,5vw,4rem);
+   z-index: 100;
+   gap: 2.2rem;
+}
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      margin-right: auto;
+      position: absolute;
+      left: clamp(1.5rem,5vw,4rem);
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: .875rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      letter-spacing: .03em; transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .nav-github {
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      border: 1px solid var(--text);
+      padding: .4rem .9rem; border-radius: 8px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+
+    /* ── HAMBURGER (mobil) ─────────────────────── */
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      width: 40px; height: 40px;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 101;
+      transition: border-color .2s;
+    }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span {
+      display: block; width: 18px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobiles Dropdown-Menü */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(12,12,15,.98);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      z-index: 102;
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .95rem .2rem;
+      color: var(--text); text-decoration: none;
+      font-size: 1rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+
+    /* ── HERO ── */
+    .hero {
+      margin-top: var(--nav-h);
+      padding: 5rem clamp(1.5rem,8vw,8rem) 4rem;
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 80% 40%, rgba(110,231,183,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 5%  80%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    .hero-inner { max-width: var(--content); }
+    .breadcrumb {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .78rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb svg { width:12px; height:12px; }
+
+    .project-tag {
+      font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .9rem;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 800; letter-spacing: -.03em;
+      line-height: 1.05; margin-bottom: 1.2rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-desc {
+      font-size: 1.05rem; color: var(--muted);
+      font-weight: 300; max-width: 58ch;
+      margin-bottom: 2rem; line-height: 1.7;
+    }
+
+    /* Meta row */
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+      align-items: center;
+    }
+    .tag {
+      font-size: .72rem; font-weight: 600;
+      padding: .25rem .7rem; border-radius: 5px;
+    }
+    .tag.gaming { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .tag.finance { background: rgba(110,231,183,.12); color: var(--accent); }
+    .tag.tools  { background: rgba(251,191,36,.1);   color: #fbbf24; }
+    .tag.data   { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .tag.web-development { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .version-badge {
+      font-size: .72rem; font-weight: 700;
+      padding: .25rem .7rem; border-radius: 5px;
+      background: rgba(110,231,183,.1); color: var(--accent);
+      border: 1px solid rgba(110,231,183,.2);
+    }
+    .meta-date {
+      font-size: .78rem; color: var(--muted);
+      display: flex; align-items: center; gap: .3rem;
+    }
+    .meta-date svg { width:12px; height:12px; }
+    .meta-divider { width:1px; height:14px; background: var(--border); }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 4rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 4rem clamp(1.5rem,5vw,4rem);
+      align-items: start;
+      box-sizing: border-box;
+    }
+
+    /* ── ARTICLE / BLOG CONTENT ── */
+    article { max-width: var(--content); }
+
+    /* Section headings */
+    .section-label {
+      font-size: .68rem; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .6rem; margin-top: 3rem;
+    }
+    article h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem; font-weight: 800;
+      letter-spacing: -.02em; margin-bottom: 1rem;
+      margin-top: .3rem;
+    }
+    article h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      margin-top: 2rem; margin-bottom: .6rem;
+    }
+    article p {
+      font-size: .975rem; color: var(--muted);
+      margin-bottom: 1.1rem; line-height: 1.8;
+    }
+    article p strong { color: var(--text); font-weight: 600; }
+
+    /* Divider */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* Image block */
+    .img-block { margin: 2rem 0; }
+    .img-block img {
+      width: 100%; border-radius: 12px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+    .img-caption {
+      font-size: .78rem; color: var(--muted);
+      margin-top: .6rem; text-align: center;
+      font-style: italic;
+    }
+
+    /* Image grid (2 columns) */
+    .img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin: 2rem 0;
+    }
+    .img-grid img {
+      width: 100%; border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    /* Info/highlight box */
+    .info-box {
+      background: rgba(110,231,183,.05);
+      border: 1px solid rgba(110,231,183,.15);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 1.1rem 1.4rem;
+      margin: 1.5rem 0;
+      font-size: .9rem; color: var(--text);
+    }
+    .info-box strong { color: var(--accent); }
+
+    /* Feature list */
+    .feature-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: .55rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .feature-list li {
+      display: flex; align-items: flex-start; gap: .7rem;
+      font-size: .9rem; color: var(--muted);
+    }
+    .feature-list li::before {
+      content: '→';
+      color: var(--accent); font-weight: 700;
+      flex-shrink: 0; margin-top: .05rem;
+    }
+    .feature-list li strong { color: var(--text); }
+
+    /* Code snippet */
+    .code-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      font-family: 'Courier New', monospace;
+      font-size: .82rem; color: var(--accent);
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      line-height: 1.6;
+    }
+
+    /* Version timeline */
+    .timeline { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+    .tl-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-version {
+      font-family: 'Syne', sans-serif;
+      font-size: .82rem; font-weight: 700;
+      color: var(--accent); padding-top: .1rem;
+    }
+    .tl-date { font-size: .72rem; color: var(--muted); margin-top: .2rem; }
+    .tl-content { font-size: .875rem; color: var(--muted); }
+    .tl-content strong { color: var(--text); display: block; margin-bottom: .2rem; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1rem; }
+    .sidebar-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+    }
+    .sidebar-card h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: .85rem; font-weight: 700;
+      margin-bottom: 1rem; color: var(--text);
+    }
+    .info-row {
+      display: flex; justify-content: space-between;
+      font-size: .82rem; padding: .5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-row span:first-child { color: var(--muted); }
+    .info-row span:last-child { color: var(--text); font-weight: 500; }
+
+    .dl-btn {
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      width: 100%; padding: .75rem 1rem; border-radius: 10px;
+      font-size: .875rem; font-weight: 500;
+      text-decoration: none; margin-top: .6rem;
+      transition: all .2s;
+    }
+    .dl-btn.primary {
+      background: var(--accent); color: #0c0c0f;
+    }
+    .dl-btn.primary:hover { box-shadow: 0 6px 20px rgba(110,231,183,.3); transform: translateY(-1px); }
+    .dl-btn.ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .dl-btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .dl-btn svg { width:14px; height:14px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      display: inline-block; margin-bottom: .9rem;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: .78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem;
+    }
+    .footer-bottom a {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .5rem 1rem; border-radius: 8px;
+      border: 1px solid var(--border);
+      font-weight: 500; transition: all .2s;
+    }
+    .footer-bottom a:hover { border-color: var(--accent); color: var(--accent); }
+    .footer-bottom a svg { width:14px; height:14px; }
+
+/* ── RESPONSIVE: NAV → HAMBURGER ───────────── */
+    @media (max-width: 960px) {
+      nav {
+        justify-content: flex-start;
+        padding: 0 1.5rem;
+      }
+      nav .nav-links,
+      nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+    }
+
+/* ── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 768px) {
+      .page-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .sidebar { order: -1; }
+      .img-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+  <link rel="stylesheet" href="project-responsive.css">
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">sms<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="../projekte/" class="active">Projekte</a></li>
+    <li><a href="../downloads">Downloads</a></li>
+    <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+    <li><a href="../vision">Vision</a></li>
+    <li><a href="../wissen">Wissen</a></li>
+  </ul>
+  <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    GitHub
+  </a>
+  <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="../projekte/" class="active">Projekte</a></li>
+    <li><a href="../downloads">Downloads</a></li>
+    <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+    <li><a href="../vision">Vision</a></li>
+    <li><a href="../wissen">Wissen</a></li>
+    <li>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="../projekte/">Projekte</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      FIRE-Rechner
+    </div>
+    <p class="project-tag">Finanzplanung | Web-App</p>
+    <h1>FIRE-<em>Rechner</em></h1>
+    <p class="hero-desc">
+      Ein Rechner, der mir zeigt, wann ich finanziell frei sein könnte. Er rechnet mit echtem 
+      Zinseszins, deutscher Kapitalertragsteuer und einer Monte-Carlo-Simulation. Die Simulation 
+      zeigt auch, wenn die Annahmen nicht aufgehen.
+    </p>
+    <div class="meta-row">
+      <span class="tag finance">💰 Finanzplanung</span>
+      <span class="meta-divider"></span>
+      <span class="meta-date">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        10. Juli. 2026
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="page-wrap">
+
+  <!-- ARTICLE -->
+  <article>
+
+    <!-- Titelbild -->
+    <div class="img-block">
+      <img src="../images/fire-kalkulator-preview1.png" alt="FIRE-Rechner Übersicht" width="1222" height="683">
+      <img src="../images/fire-kalkulator-preview2.png" alt="FIRE-Rechner Übersicht" width="1536" height="432">
+      <p class="img-caption">Die Startansicht mit den wichtigsten Kennzahlen auf einen Blick</p>
+    </div>
+
+    <!-- Über das Projekt -->
+    <p class="section-label">Über das Projekt</p>
+    <h2>Warum ich das gebaut habe</h2>
+    <p>
+      Angefangen hat alles mit einer ziemlich langweiligen Excel-Tabelle, in der ich 
+      Sparrate, Rendite und Jahre gegeneinander verrechnet habe, um ein Gefühl dafür zu 
+      bekommen, wann ich eigentlich aufhören könnte, für Geld arbeiten zu müssen. Das 
+      Problem war, dass jede Änderung ein neuer Rechenschritt war und ich nie so richtig 
+      gesehen habe, wie sich die einzelnen Stellschrauben gegenseitig beeinflussen.
+    </p>
+    <p>
+      Also habe ich mir überlegt, das Ganze als kleine Web-App zu bauen, bei der jeder 
+      Regler sofort etwas verändert – die Charts, die Tabelle, die Steuerlast, sogar die 
+      Wahrscheinlichkeit, dass mir das Geld am Ende doch ausgeht. Je tiefer ich reingegangen 
+      bin, desto klarer wurde mir, dass die berühmte 4 %-Regel allein zu wenig erzählt. 
+      Ohne eine Vorstellung von Streuung und ohne die deutsche Steuer mitzurechnen, wirkt 
+      jede FIRE-Zahl deutlich sicherer, als sie eigentlich ist.
+    </p>
+
+    <div class="info-box">
+      <strong>Umsetzung:</strong> Reines HTML, CSS und JavaScript mit Chart.js für die 
+      Diagramme | läuft komplett im Browser, ohne Server oder Backend
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Features -->
+    <p class="section-label">Features</p>
+    <h2>Was der Rechner kann</h2>
+    <ul class="feature-list">
+      <li><strong>Sparphase mit echtem Zinseszins:</strong> Startkapital, monatliche Sparrate, erwartete Rendite, ETF-Kosten und Inflation fließen getrennt ein. Die Ergebnisse zeigen die reale Kaufkraft nach Kosten und Inflation.</li>
+      <li><strong>FIRE-Ziel & 4 %-Regel:</strong> Das Zielkapital ergibt sich aus der Wunschentnahme geteilt durch die Entnahmerate. Die Rate lässt sich verstellen, um ihre Auswirkungen auf Kapitalbedarf und Risiko zu sehen.</li>
+      <li><strong>Entnahmephase in drei Szenarien:</strong> Optimistisch, realistisch und pessimistisch laufen parallel im selben Chart. Die Entnahme wird an die Inflation angepasst und bis zum Ende des jeweiligen Szenarios berechnet.</li>
+      <li><strong>Deutsche Steuer:</strong> Der Experten-Modus berücksichtigt Abgeltungssteuer, Soli, Kirchensteuer, Sparerpauschbetrag und Teilfreistellung je nach Fondstyp.</li>
+      <li><strong>Monte-Carlo-Simulation:</strong> Der Rechner erzeugt hunderte mögliche Verläufe mit einstellbarer Volatilität. Ein P10/P50/P90-Fächer und das Pleiterisiko zeigen die Ergebnisse.</li>
+      <li><strong>Live-Charts & Jahrestabelle:</strong> Wachstum, Entnahme und Simulation erscheinen als interaktive Charts. Eine Jahr-für-Jahr-Tabelle ergänzt die Werte, und jeder Regler löst eine neue Berechnung aus.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <!-- Screenshots -->
+    <p class="section-label">Screenshots</p>
+    <h2>Einblicke in den Rechner</h2>
+
+    <div class="img-grid">
+      <img src="../images/fire-kalkulator-charts.png" alt="Wachstums- und Entnahmecharts" width="1535" height="782">
+      <img src="../images/fire-kalkulator-montecarlo.png" alt="Monte-Carlo-Simulation" width="1282" height="703">
+    </div>
+    <p class="img-caption" style="margin-top:-.5rem">Links: Kapitalverlauf über Spar- und Entnahmephase | Rechts: Monte-Carlo-Fächer mit Pleiterisiko</p>
+
+    <hr class="section-divider">
+
+    <!-- Technisches -->
+    <p class="section-label">Technisches</p>
+    <h2>Wie es unter der Haube funktioniert</h2>
+    <p>
+      Der Rechner ist bewusst ohne Backend gebaut. Alles, was eingegeben wird, landet direkt 
+      in JavaScript-Variablen, und bei jeder Änderung eines Reglers wird die komplette 
+      Projektion neu berechnet – Monat für Monat für die Sparphase, Jahr für Jahr für die 
+      Entnahmephase. Für die Darstellung übernimmt <strong>Chart.js</strong> die Wachstums-, 
+      Entnahme- und Simulationscharts, während Design und Farben aus demselben Design-System 
+      stammen wie meine anderen Projekte (dunkler Hintergrund, Grün und Violett als Akzente).
+    </p>
+    <p>
+      <strong>Die Monte-Carlo-Simulation</strong> zieht pro Durchlauf und Jahr eine zufällige 
+      Rendite, die um die eingestellte Erwartung herum streut, und wiederholt das je nach 
+      gewählter Anzahl an Simulationen mehrere hundert Mal. Damit die Charts nicht bei jedem 
+      Reglerklick unruhig flackern, nutzt die Zufallsziehung einen festen Seed – erst ein 
+      bewusster Klick auf den Chart würfelt neu.
+    </p>
+    <p>
+      <strong>Die Steuerberechnung</strong> läuft am FIRE-Zeitpunkt einmal komplett durch: 
+      Bruttogewinn, Teilfreistellung nach Fondstyp, Sparerpauschbetrag, und darauf 
+      Abgeltungssteuer, Soli und optional Kirchensteuer. Im Experten-Modus lässt sich das 
+      Portfolio zusätzlich aus mehreren Fondstypen mischen, die dann gewichtet nach ihrer 
+      jeweiligen Teilfreistellung versteuert werden.
+    </p>
+
+    <hr class="section-divider">
+
+    <!-- Was ich gelernt habe -->
+    <p class="section-label">Rückblick</p>
+    <h2>Was ich dabei gelernt habe</h2>
+    <p>
+      Am meisten hat mich überrascht, wie sehr sich das Bild ändert, sobald man von einer 
+      einzelnen, glatten Renditeannahme zu echter Streuung wechselt. Neun Prozent 
+      Bruttorendite klingen erstmal komfortabel, aber nach Inflation, Kosten und dem 
+      sogenannten Volatilitäts-Drag bleibt real deutlich weniger übrig. Dadurch wurde der Unterschied zwischen 
+      einem deterministischen Modell und einer stochastischen Simulation deutlich.
+    </p>
+    <p>
+      Beim Steuerteil habe ich gemerkt, wie kleinteilig das deutsche Kapitalertragsteuerrecht 
+      tatsächlich ist – Teilfreistellung, Sparerpauschbetrag, Soli und Kirchensteuer greifen 
+      alle an unterschiedlichen Stellen ineinander, und die richtige Reihenfolge der 
+      Berechnung war komplizierter, als ich anfangs gedacht hätte.
+    </p>
+    <p>
+      Bei der UI musste ich Unsicherheit verständlich darstellen, ohne den Nutzer mit Zahlen zu 
+      überladen. Ein Perzentil-Fächer und eine Pleiterisiko-Prozentzahl zeigen mehr als eine 
+      einzelne Zahl.
+    </p>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Projektinfos -->
+    <div class="sidebar-card">
+      <h4>📋 Projektinfos</h4>
+      <div class="info-row"><span>Typ</span><span>Web-App</span></div>
+      <div class="info-row"><span>Sprache</span><span>HTML / CSS / JS</span></div>
+      <div class="info-row"><span>Bibliothek</span><span>Chart.js</span></div>
+      <div class="info-row"><span>Status</span><span style="color:var(--accent)">🟢 Live</span></div>
+      <div class="info-row"><span>Stand</span><span>10. Juli. 2026</span></div>
+    </div>
+
+    <!-- GitHub -->
+    <div class="sidebar-card">
+      <h4>🌐 Links</h4>
+      <a href="../dashboards/fire" class="dl-btn primary">
+        Zum FIRE-Rechner →
+      </a>
+      <a href="https://github.com/simons-0427" target="_blank" class="dl-btn ghost">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub ansehen
+      </a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🔗 Download</h4>
+      <a href="../data/fire.zip" class="dl-btn ghost" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        .zip herunterladen
+      </a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>📖 Hintergrundwissen</h4>
+      <a href="../wissen/wie-viel-geld-fuer-finanzielle-unabhaengigkeit" class="dl-btn ghost">Wie viel Geld brauche ich für FIRE? →</a>
+      <a href="../wissen/pleiterisiko-rente-monte-carlo-simulation" class="dl-btn ghost" style="margin-top:.3rem">Pleiterisiko in der Rente →</a>
+    </div>
+  </aside>
+
+  </div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">sms<span>.</span></a>
+      <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="../projekte/">Projekte</a></li>
+        <li><a href="../downloads">Downloads</a></li>
+        <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+        <li><a href="../vision">Vision</a></li>
+        <li><a href="../wissen">Wissen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <ul>
+        <li><a href="../impressum">Impressum</a></li>
+        <li><a href="../#info">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Simon Stark</span>
+    <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Menü öffnen');
+      });
+    });
+  }
+</script>
+
+</body>
+</html>

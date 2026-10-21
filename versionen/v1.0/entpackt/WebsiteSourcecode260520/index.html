@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #0c0c0f;
+      --surface:   #13131a;
+      --border:    #1e1e2e;
+      --accent:    #6ee7b7;
+      --accent2:   #818cf8;
+      --text:      #e2e8f0;
+      --muted:     #64748b;
+      --card:      #16161f;
+      --nav-h:     68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ───────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,12,15,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: space-between; /* Teilt die beiden Listen links und rechts auf */
+      padding: 0 clamp(1.5rem,5vw,4rem);
+      z-index: 100;
+    }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: .03em;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ──────────────────────────────────── */
+    #home {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: calc(var(--nav-h) + 4rem) clamp(1.5rem,8vw,8rem) 6rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(110,231,183,.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    .hero-tag {
+      font-size: .75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.4rem;
+    }
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-bottom: 1.6rem;
+      max-width: 14ch;
+    }
+    .hero-title em { font-style: normal; color: var(--accent); }
+    .hero-sub {
+      max-width: 48ch;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 3rem;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding: .8rem 1.8rem;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform .15s, box-shadow .15s, background .2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0c0c0f;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,231,183,.3); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      margin-left: .8rem;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* ── SECTION WRAPPER ───────────────────────── */
+    section {
+      padding: 6rem clamp(1.5rem,8vw,8rem);
+    }
+    .section-label {
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: .8rem;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -.025em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 54ch;
+      margin-bottom: 3.5rem;
+      font-size: 1rem;
+    }
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── ABOUT ─────────────────────────────────── */
+    #about { background: var(--surface); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p + p { margin-top: 1.1rem; color: var(--muted); }
+    .about-text p:first-child { color: var(--text); font-size: 1.05rem; }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
+    .chip {
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: .8rem;
+      color: var(--muted);
+      font-weight: 500;
+      transition: border-color .2s, color .2s;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label { font-size: .8rem; color: var(--muted); margin-top: .3rem; }
+
+    /* ── PROJECTS ──────────────────────────────── */
+    #projects {}
+    .project-tabs { display: flex; gap: 1rem; margin-bottom: 2.5rem; }
+    .tab-btn {
+      padding: .55rem 1.4rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--accent);
+      color: #0c0c0f;
+      border-color: var(--accent);
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      transition: border-color .2s, transform .2s;
+      display: none;
+    }
+    .project-card.visible { display: flex; flex-direction: column; }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .project-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .project-icon.gaming { background: rgba(129,140,248,.15); }
+    .project-icon.finance { background: rgba(110,231,183,.12); }
+    .project-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    .project-card p { font-size: .875rem; color: var(--muted); flex: 1; }
+    .project-footer { display: flex; gap: .8rem; margin-top: 1.4rem; flex-wrap: wrap; }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .5rem 1rem;
+      border-radius: 7px;
+      font-size: .82rem;
+      font-weight: 500;
+      text-decoration: none;
+      background: var(--border);
+      color: var(--text);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+    .dl-btn:hover { background: rgba(110,231,183,.12); border-color: var(--accent); color: var(--accent); }
+    .dl-btn svg { width:14px; height:14px; }
+    .badge {
+      display: inline-block;
+      padding: .2rem .6rem;
+      border-radius: 5px;
+      font-size: .72rem;
+      font-weight: 600;
+      background: rgba(110,231,183,.1);
+      color: var(--accent);
+      margin-bottom: .9rem;
+      align-self: flex-start;
+    }
+
+    /* ── DASHBOARDS ────────────────────────────── */
+    #dashboards { background: var(--surface); }
+    .dash-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .dash-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .dash-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
+    .dash-preview {
+      height: 170px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      position: relative; overflow: hidden;
+    }
+    .dash-preview.blue  { background: linear-gradient(135deg,#1e1b4b,#312e81); }
+    .dash-preview.green { background: linear-gradient(135deg,#064e3b,#065f46); }
+    .dash-preview.purple{ background: linear-gradient(135deg,#2e1065,#4c1d95); }
+    .dash-preview.yellow{ background: linear-gradient(135deg,#f59e0b,#d97706); }
+    .dash-preview::after {
+      content:'';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .dash-body { padding: 1.4rem 1.6rem 1.6rem; }
+    .dash-body h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+    .dash-body p { font-size: .85rem; color: var(--muted); margin-bottom: 1.1rem; }
+    .dash-link {
+      font-size: .83rem;
+      font-weight: 500;
+      color: var(--accent2);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: .3rem;
+    }
+    .dash-link:hover { text-decoration: underline; }
+
+    /* ── CONTACT ───────────────────────────────── */
+    #contact {}
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-info p { color: var(--muted); margin-bottom: 2rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: .8rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color .2s;
+    }
+    .contact-item:hover { border-color: var(--accent); }
+    .contact-icon {
+      width:38px; height:38px;
+      border-radius: 10px;
+      background: rgba(110,231,183,.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-label { font-size: .78rem; color: var(--muted); }
+    .contact-val { font-size: .9rem; font-weight: 500; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: .82rem; font-weight: 500; color: var(--muted); margin-bottom: .5rem; }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .75rem 1rem;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .2s;
+      resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+    .form-group textarea { min-height: 120px; }
+
+    /* ── FOOTER ────────────────────────────────── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem clamp(1.5rem,8vw,8rem);
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: .82rem; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+
+    /* ── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 768px) {
+      .about-grid, .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links { gap: 1.3rem; }
+      .nav-links a { font-size: .8rem; }
+      footer { flex-direction: column; gap: .6rem; text-align: center; }
+    }
+    @media (max-width: 500px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projekte.html">Projekte</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="projekt-pipeline.html">Projekt-Pipeline</a></li>
+    </ul>
+
+    <ul class="nav-links">
+      <li><a href="#home">Start</a></li>
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#files">Dateien</a></li>
+      <li><a href="#dashboards">Dashboards</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-glow"></div>
+    <p class="hero-tag fade-in">Willkommen auf meiner Website</p>
+    <h1 class="hero-title fade-in">Hallo, ich bin <em>Simon.</em></h1>
+    <p class="hero-sub fade-in">
+      Das ist meine persönliche Website. Hier teile ich Projekte, die ich selbst erstellt habe, zum Beispiel 
+      interaktive Dashboards, Programme und vieles mehr. Noch ist alles im Aufbau, aber es geht stetig voran.
+    </p>
+    <div class="fade-in">
+      <a href="#files" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Projekte ansehen
+      </a>
+      <a href="#contact" class="btn btn-ghost">Kontakt</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label fade-in">Über mich</p>
+    <h2 class="section-title fade-in">Wer steckt dahinter?</h2>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>
+          Ich bin Simon, und auf dieser Seite lade ich meine Projekte hoch. Ich interessiere mich für Physik, Datenanalyse, sowie Technik allgemein. 
+          Besonders faszinieren mich aber Wirtschaft und Finanzen und ich versuche, diese Themen mit selbstgebauten Tools, Projekten und Dashboards
+          zu verstehen und mein Know-how zu teilen.
+        </p>
+        <p>
+          C und C++ waren meine ersten Programmiersprachen, mit welchen ich kleine Spiele entwickelt habe. Um diese Projekte im Web zu veröffentlichen, lernte ich HTML, 
+          CSS und etwas JavaScript um eine Website zu erstellen. Die Seite wächst mit jedem neuen Projekt.
+        </p>
+        <p>
+          Ich analysiere Daten und entwickle eigene Tools, um Zusammenhänge besser zu verstehen und Komplexes greifbarer zu machen, für mich und potenziell auch für andere.
+        </p>
+        <div class="skill-chips">
+          <span class="chip">HTML & CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Excel / Sheets</span>
+          <span class="chip">Datenanalyse</span>
+          <span class="chip">Spieleentwicklung</span>
+          <span class="chip">Finanzen</span>
+          <span class="chip">C / C++</span>
+          <span class="chip">Web-Development</span>
+        </div>
+      </div>
+      <div class="stat-grid fade-in">
+        <div class="stat-card">
+          <div class="stat-num">01</div>
+          <div class="stat-label">Website in Entwicklung</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Projekte in der Pipeline</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Themenbereiche</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Selbst gebaut</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PROJECTS -->
+  <section id="files">
+    <p class="section-label fade-in">Tools, Spiele & Dateien</p>
+    <h2 class="section-title fade-in">Fertige Projekte zum Download</h2>
+    <p class="section-sub fade-in">
+      Kleine Tools, Tracker und Dateien zum Download, sortiert nach Bereich.
+    </p>
+
+    <div class="project-tabs fade-in">
+      <button class="tab-btn active" onclick="filterProjects('all')">Alle</button>
+      <button class="tab-btn" onclick="filterProjects('spieleentwicklung')">🎮 Spieleentwicklung</button>
+      <button class="tab-btn" onclick="filterProjects('finance')">📈 Finanzen</button>
+    </div>
+
+    <div class="project-grid">
+
+        <!-- Finance Projekt 1 -->
+      <div class="project-card visible" data-cat="finance">
+        <div class="project-icon finance">📊</div>
+        <span class="badge" style="background:rgba(129,140,248,.12);color:var(--accent2);">Finanzen</span>
+        <h3>Immobilien-Kostenkalkulation</h3>
+        <p>Immobilien-Tool welches die Kaufnebenkosten und Finanzierung für ein Immobilienprojekt berechnet. Es liefert die exakte Mietrendite, 
+        den monatlichen Cashflow und steuerliche Effekte für sichere Kaufentscheidungen.</p>
+        <div class="project-footer">
+          <a href="data/Immobilien_Kalkulationstool_Pro.xlsx" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            .xlsx herunterladen
+          </a>
+        </div>
+      </div>
+
+      <!-- Finance Projekt 2 -->
+      <div class="project-card visible" data-cat="finance">
+        <div class="project-icon finance">💰</div>
+        <span class="badge" style="background:rgba(129,140,248,.12);color:var(--accent2);">Finanzen</span>
+        <h3>Discounted-Cashflow-Tool</h3>
+        <p>Excel-Tool für Investitionsprojekte, um den aktuellen Wert zukünftiger Cashflows zu berechnen und fundierte Investitionsentscheidungen zu treffen.</p>
+        <div class="project-footer">
+          <a href="data/DCFtool.xlsx" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            .xlsx herunterladen
+          </a>
+        </div>
+      </div>
+
+      <!-- Gaming Projekt 1 -->
+      <div class="project-card visible" data-cat="spieleentwicklung">
+        <div class="project-icon Spieleentwicklung">🎮</div>
+        <span class="badge">Spieleentwicklung</span>
+        <h3>Dungeon Crawler</h3>
+        <p>Eine einfaches Arcade-Spiel, in welchem Spieler vor Feinden weglaufen, Schätze und Münzen suchen und möglichst viele Runden überleben.</p>
+        <div class="project-footer">
+          <a href="data/DungeonCrawler.zip" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            .zip herunterladen
+</a>
+<a href="data/DungeonCrawler.c" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            .c herunterladen
+          </a>
+        </div>
+      </div>
+
+      <!-- Gaming Projekt 2 -->
+      <div class="project-card visible" data-cat="spieleentwicklung">
+        <div class="project-icon Spieleentwicklung">🕹️</div>
+        <span class="badge">Spieleentwicklung</span>
+        <h3>RPG-Menu</h3>
+        <p>Ein Menü, in welchem man Klassen, Stats, Attribute, Quests und vieles mehr festlegen und verwalten kann.</p>
+        <div class="project-footer">
+          <a href="data/RPG-Menu.zip" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            .zip herunterladen
+          </a>
+<a href="data/RPG-Menu.c" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            .c herunterladen
+</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- DASHBOARDS -->
+  <section id="dashboards">
+    <p class="section-label fade-in">Dashboards</p>
+    <h2 class="section-title fade-in">Interaktive Auswertungen</h2>
+    <p class="section-sub fade-in">
+      Live-Dashboards und Visualisierungen zu verschiedenen Themen.
+    </p>
+    <div class="dash-grid">
+
+      <div class="dash-card fade-in">
+        <div class="dash-preview blue">📈</div>
+        <div class="dash-body">
+          <h3>(Bald verfügbar)</h3>
+          <p>Dashboard mit relevantesten Informationen über den Weltmarkt.</p>
+          <a href="#" class="dash-link">
+            Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="dash-card fade-in">
+        <div class="dash-preview green">🎮</div>
+        <div class="dash-body">
+          <h3>(Bald verfügbar)</h3>
+          <p> Kelly Kriterium Simulator</p>
+          <a href="#" class="dash-link">
+            Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="dash-card fade-in">
+        <div class="dash-preview purple">💸</div>
+        <div class="dash-body">
+          <h3>(Bald verfügbar)</h3>
+          <p>Bitcoin Dashboard mit allen relevanten Informationen.</p>
+          <a href="#" class="dash-link">
+            Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="dash-card fade-in">
+        <div class="dash-preview yellow">💰</div>
+        <div class="dash-body">
+          <h3>(Bald verfügbar)</h3>
+          <p> DCF-Dashboard</p>
+          <a href="#" class="dash-link">
+            Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CONTACT -->
+ <section id="contact">
+  <p class="section-label fade-in">Kontakt</p>
+  <h2 class="section-title fade-in">Schreib mir!</h2>
+  <div class="contact-wrap">
+    <div class="contact-info fade-in">
+      <p>Du hast Fragen oder willst Hallo sagen? Ich freue mich über jede Nachricht.</p>
+      <a href="mailto:simonmstark@outlook.com" class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">E-Mail</div>
+          <div class="contact-val">simonmstark@outlook.com</div>
+        </div>
+      </a>
+      <a href="https://github.com/simons-0427" target="_blank" class="contact-item">
+        <div class="contact-icon">💻</div>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-val">github.com/simons-0427</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="fade-in">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="541c51c3-9844-407f-aa6c-45c752ac5ec2">
+        <input type="hidden" name="subject" value="Neue Nachricht über Portfolio">
+        <input type="hidden" name="from_name" value="Portfolio Website">
+        <div class="form-group">
+          <label>Dein Name</label>
+          <input type="text" name="name" placeholder="Max Mustermann" required>
+        </div>
+        <div class="form-group">
+          <label>E-Mail</label>
+          <input type="email" name="email" placeholder="max@beispiel.de" required>
+        </div>
+        <div class="form-group">
+          <label>Nachricht</label>
+          <textarea name="message" placeholder="Hallo Simon, …" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+          Nachricht senden
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+        </button>
+      </form>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:.8rem;text-align:center;">
+        Oder direkt per <a href="mailto:simonmstark@outlook.com">E-Mail kontaktieren</a>
+      </p>
+    </div>
+  </div>
+ </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Simon · Selbst gebaut mit HTML & CSS</span>
+  </footer>
+
+  <script>
+    // Tabs
+    function filterProjects(cat) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.querySelectorAll('.project-card').forEach(c => {
+        const show = cat === 'all' || c.dataset.cat === cat;
+        c.classList.toggle('visible', show);
+      });
+    }
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smstark-projekt.de/sitemap.xml

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="index, follow">
+  <title>Assetklassen-Backtester: Rendite und Risiko vergleichen</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Assetklassen-Backtester erklärt: S&amp;P 500, Bitcoin und Gold mit Datenquellen, Rendite-, Risiko- und Drawdown-Kennzahlen vergleichen.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/wissen/assetklassen-backtester-rendite-risiko">
+  <meta property="og:title" content="Assetklassen-Backtester: Rendite und Risiko vergleichen">
+  <meta property="og:description" content="Assetklassen-Backtester mit Datenquellen, Berechnung, Rendite-, Risiko- und Drawdown-Kennzahlen verständlich erklärt.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/og-backtester.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://smstark-projekt.de/wissen/assetklassen-backtester-rendite-risiko">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Assetklassen vergleichen: Rendite, Risiko und Backtests verstehen",
+    "description": "Wie der Assetklassen-Backtester S&P 500, Bitcoin und Gold auf gemeinsamer EUR-Basis vergleicht und wie Rendite- und Risikokennzahlen zu lesen sind.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://smstark-projekt.de/#person",
+      "name": "Simon Stark",
+      "url": "https://smstark-projekt.de/",
+      "sameAs": ["https://github.com/simons-0427"],
+      "knowsAbout": ["Finanzen", "Datenanalyse", "Webentwicklung"]
+    },
+    "publisher": { "@id": "https://smstark-projekt.de/#person" },
+    "datePublished": "2026-08-08",
+    "dateModified": "2026-08-08",
+    "image": "https://smstark-projekt.de/images/og-backtester.png",
+    "mainEntityOfPage": "https://smstark-projekt.de/wissen/assetklassen-backtester-rendite-risiko",
+    "inLanguage": "de-DE"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smstark-projekt.de/" },
+      { "@type": "ListItem", "position": 2, "name": "Wissen", "item": "https://smstark-projekt.de/wissen/" },
+      { "@type": "ListItem", "position": 3, "name": "Assetklassen & Risiko", "item": "https://smstark-projekt.de/wissen/#finanzielle-grundlagen" },
+      { "@type": "ListItem", "position": 4, "name": "Assetklassen vergleichen: Rendite, Risiko und Backtests verstehen" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0f; --surface: #13131a; --border: #1e1e2e;
+      --accent: #6ee7b7; --accent2: #818cf8; --text: #e2e8f0;
+      --muted: #64748b; --card: #16161f; --nav-h: 68px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); scrollbar-width: none; -ms-overflow-style: none; max-width: 100%; overflow-x: hidden; }
+    html::-webkit-scrollbar { display: none; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; max-width: 100%; width: 100%; }
+
+    .main-nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(12,12,15,.95); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 0 clamp(1.5rem,5vw,4rem); z-index: 100; gap: 2.2rem; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-github { position: absolute; right: clamp(1.5rem,5vw,4rem); display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 500; color: var(--text); text-decoration: none; border: 1px solid var(--text); padding: .4rem .9rem; border-radius: 8px; transition: border-color .2s, color .2s; }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; position: absolute; left: clamp(1.5rem,5vw,4rem); }
+    .nav-logo span { color: var(--accent); }
+    .main-nav .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: .03em; transition: color .2s; }
+    .main-nav .nav-links a:hover, .main-nav .nav-links a.active { color: var(--accent); }
+    .nav-toggle { display: none; position: absolute; right: clamp(1.5rem,5vw,4rem); width: 40px; height: 40px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; z-index: 101; transition: border-color .2s; }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(12,12,15,.98); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); z-index: 102; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a { display: flex; align-items: center; gap: .6rem; padding: .95rem .2rem; color: var(--text); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color .2s; }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+    @media (max-width: 960px) {
+      .main-nav { justify-content: flex-start; padding: 0 1rem; width: 100%; max-width: 100%; box-sizing: border-box; }
+      .main-nav .nav-links, .main-nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; right: 1rem; width: 44px; height: 44px; }
+      .mobile-menu { display: block; width: 100%; max-width: 100%; }
+    }
+
+    .progress-bar { position: fixed; top: 0; left: 0; height: 2px; width: 0; background: linear-gradient(to right, var(--accent), var(--accent2)); z-index: 200; transition: width .08s linear; }
+
+    hr.divider { border: none; border-top: 1px solid var(--border); }
+
+    .btn { display: inline-flex; align-items: center; gap: .55rem; padding: .8rem 1.8rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 500; text-decoration: none; cursor: pointer; border: none; transition: transform .15s, box-shadow .15s, background .2s; }
+    .btn-primary { background: var(--accent); color: #0c0c0f; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,231,183,.3); }
+
+    #article-hero { padding: calc(var(--nav-h) + 3rem) clamp(1.5rem,5vw,4rem) 3.5rem; max-width: 1040px; margin: 0 auto; }
+    .breadcrumb { font-size: .78rem; color: var(--muted); margin-bottom: 1.4rem; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; } .breadcrumb a:hover { color: var(--accent); }
+    .article-eyebrow { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .article-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.08; letter-spacing: -.03em; margin-bottom: 1.4rem; }
+    .article-lead { font-size: 1.1rem; font-weight: 300; color: var(--muted); max-width: 76ch; line-height: 1.75; }
+    .article-meta { display: flex; gap: 1.2rem; margin-top: 1.6rem; font-size: .78rem; color: var(--muted); }
+
+    section { padding: 3.5rem clamp(1.5rem,5vw,4rem); }
+    .section-label { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: .8rem; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; letter-spacing: -.025em; line-height: 1.15; margin-bottom: 1rem; }
+
+    .chapter-grid { display: grid; grid-template-columns: 80px 1fr; gap: 0 2.5rem; align-items: start; max-width: 960px; margin: 0 auto; }
+    .ch-num { font-family: 'Syne', sans-serif; font-size: .68rem; font-weight: 800; letter-spacing: .2em; color: var(--border); text-transform: uppercase; padding-top: .35rem; position: sticky; top: calc(var(--nav-h) + 2rem); user-select: none; }
+    .ch-text { font-size: 1.02rem; font-weight: 300; color: var(--muted); line-height: 1.85; max-width: 76ch; }
+    .ch-text + .ch-text { margin-top: 1.3rem; }
+    .ch-text strong { color: var(--text); font-weight: 500; }
+    .ch-text a { color: var(--accent); }
+    .ch-list { margin-top: 1rem; padding-left: 1.2rem; color: var(--muted); }
+    .ch-list li { margin-bottom: .6rem; line-height: 1.7; }
+    .ch-list strong { color: var(--text); }
+    .formula-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; margin-top: 1.2rem; max-width: 68ch; font-family: 'Syne', sans-serif; font-size: 1.1rem; color: var(--accent); }
+    .formula-box span { display: block; font-family: 'DM Sans', sans-serif; font-size: .78rem; color: var(--muted); margin-top: .5rem; font-weight: 400; }
+
+    .metric-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.4rem; width: 100%; max-width: 100%; min-width: 0; }
+    .metric-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.35rem; }
+    .metric-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; line-height: 1.3; margin-bottom: .45rem; }
+    .metric-card p { color: var(--muted); font-size: .88rem; line-height: 1.65; }
+    .metric-card code { display: inline-block; margin-top: .7rem; color: var(--accent); font-size: .75rem; }
+    .note-box { margin-top: 1.3rem; padding: 1.15rem 1.3rem; border: 1px solid rgba(129,140,248,.28); border-left: 3px solid var(--accent2); border-radius: 10px; background: rgba(129,140,248,.06); color: var(--muted); font-size: .9rem; line-height: 1.7; }
+    .note-box strong { color: var(--text); }
+    .article-table-wrap { margin-top: 1.4rem; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 100%; min-width: 0; display: block; }
+    .article-table { width: 100%; min-width: 720px; border-collapse: collapse; background: var(--card); font-size: .84rem; }
+    .article-table th, .article-table td { padding: .9rem 1rem; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); text-align: left; vertical-align: top; }
+    .article-table th:last-child, .article-table td:last-child { border-right: 0; }
+    .article-table tr:last-child td { border-bottom: 0; }
+    .article-table th { background: var(--surface); color: var(--text); font-family: 'Syne', sans-serif; font-size: .72rem; letter-spacing: .04em; }
+    .article-table td { color: var(--muted); line-height: 1.55; }
+    .article-table strong { color: var(--text); }
+    .flow-list { display: grid; gap: .75rem; margin-top: 1.3rem; list-style: none; counter-reset: flow; }
+    .flow-list li { counter-increment: flow; display: grid; grid-template-columns: 34px 1fr; gap: .8rem; align-items: start; color: var(--muted); line-height: 1.65; }
+    .flow-list li::before { content: counter(flow); display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 50%; color: var(--accent); font-family: 'Syne', sans-serif; font-size: .72rem; font-weight: 700; }
+    .flow-list strong { color: var(--text); }
+    .source-list { margin-top: 1.2rem; list-style: none; display: grid; gap: .7rem; }
+    .source-list a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(110,231,183,.3); }
+    .source-list a:hover { border-color: var(--accent); }
+    .source-list span { display: block; color: var(--muted); font-size: .82rem; margin-top: .15rem; }
+
+    .bg-surface { background: var(--surface); }
+
+    .cta-box { background: var(--card); border: 1px solid rgba(110,231,183,.25); border-radius: 16px; padding: 2.2rem clamp(1.5rem,4vw,2.6rem); display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; max-width: 960px; margin-left: auto; margin-right: auto; }
+    .cta-box h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; margin-bottom: .5rem; }
+    .cta-box p { color: var(--muted); font-size: .92rem; max-width: 44ch; }
+    .cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; }
+    .cta-secondary { font-size: .82rem; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: color .2s, border-color .2s; }
+    .cta-secondary:hover { color: var(--accent); border-color: var(--accent); }
+
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1rem; max-width: 960px; margin-left: auto; margin-right: auto; margin-top: 1rem; width: 100%; box-sizing: border-box; }
+    .related-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.3rem; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; display: block; }
+    .related-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .related-card span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+    .related-card h4 { font-family: 'Syne', sans-serif; font-size: 1rem; margin-top: .5rem; line-height: 1.3; }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem; color: var(--muted); font-size: .82rem; }
+    .footer-inner { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; display: inline-block; margin-bottom: .9rem; }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 { font-family: 'Syne', sans-serif; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--text); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem; }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } .footer-bottom { flex-direction: column; text-align: center; } }
+
+    @media (max-width: 980px) {
+      section { padding: 3rem clamp(1.25rem, 5vw, 3rem); }
+      .chapter-grid { grid-template-columns: 1fr; gap: 1rem; max-width: 760px; }
+      .ch-num { position: static; padding-top: 0; }
+    }
+    @media (max-width: 768px) {
+      #article-hero { padding-top: calc(var(--nav-h) + 2rem); }
+      .cta-box { flex-direction: column; align-items: flex-start; }
+      .metric-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: .6rem; text-align: center; }
+    }
+  </style>
+  <link rel="stylesheet" href="article-responsive.css">
+
+  <style>
+    .article-trust {
+      max-width: 760px;
+      margin: 1.25rem auto 0;
+      padding: .9rem 1rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      background: rgba(110, 231, 183, .06);
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+    .article-trust p { margin: 0; }
+    .article-trust p + p { margin-top: .7rem; }
+    .article-trust a { color: #60a5fa; text-decoration: underline; text-underline-offset: .15em; }
+    .article-trust a:hover { color: #93c5fd; }
+    .article-notes-section { padding-top: 2.5rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="../projekte/">Projekte</a></li>
+      <li><a href="../downloads">Downloads</a></li>
+      <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../vision">Vision</a></li>
+      <li><a href="./" class="active">Wissen</a></li>
+    </ul>
+    <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="../projekte/">Projekte</a></li>
+      <li><a href="../downloads">Downloads</a></li>
+      <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../vision">Vision</a></li>
+      <li><a href="./">Wissen</a></li>
+      <li><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub</a></li>
+    </ul>
+  </div>
+
+  <section id="article-hero">
+    <p class="breadcrumb fade-in"><a href="/">Home</a> / <a href="./">Wissen</a> / <a href="./#finanzielle-grundlagen">Assetklassen &amp; Risiko</a> / Assetklassen-Backtester</p>
+    <p class="article-eyebrow fade-in">Assetklassen &amp; Risiko</p>
+    <h1 class="article-title fade-in">Assetklassen vergleichen:<br>Rendite, Risiko und Backtests verstehen</h1>
+    <p class="article-lead fade-in">
+      Der Assetklassen-Backtester stellt S&amp;P 500, Bitcoin und Gold auf dieselbe Euro-Basis. Dieser Leitfaden erklärt, welche Daten dahinterstehen, wie die Kennzahlen berechnet werden und an welchen Stellen ein historischer Vergleich leicht zu viel verspricht.
+    </p>
+    <div class="article-meta fade-in">
+      <span>Simon Stark</span>
+      <span>|</span>
+      <span>Veröffentlicht 08. August 2026</span>
+      <span>|</span>
+      <span>ca. 15 Min. Lesezeit</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">01</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Die Frage</p>
+        <h2 class="section-title fade-in">Was wäre aus demselben Startkapital geworden?</h2>
+        <p class="ch-text fade-in">
+          Drei Kurscharts nebeneinander beantworten wenig. Der S&amp;P 500 steht in Indexpunkten, Bitcoin in einer Währung je Coin und Gold in diesem Projekt als Kurs einer GLD-Aktie. Ihre absoluten Werte sind nicht vergleichbar. Der Backtester setzt deshalb jede Reihe am gewählten Starttag auf dasselbe Startkapital und verfolgt anschließend, wie sich dieser Betrag entwickelt hätte.
+        </p>
+        <p class="ch-text fade-in">
+          Du wählst Zeitraum, Anlageklassen und Startbetrag. Das Ergebnis zeigt historische Pfade, Endwerte und Risikokennzahlen. Es enthält keine Kaufempfehlung und keine Prognose. Die sinnvolle Frage lautet: <strong>Wie unterschiedlich verliefen Rendite und Risiko unter denselben zeitlichen Bedingungen?</strong>
+        </p>
+        <div class="note-box fade-in"><strong>Warum das nützlich ist:</strong> Eine Anlageklasse kann am Ende vorne liegen und zwischendurch trotzdem einen Verlust erlebt haben, den du praktisch kaum ausgehalten hättest. Endwert, Schwankung und Drawdown gehören deshalb zusammen.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">02</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Gemeinsame Basis</p>
+        <h2 class="section-title fade-in">Gleicher Zeitraum, gleiche Währung, gleiches Kapital</h2>
+        <p class="ch-text fade-in">
+          Ein fairer historischer Vergleich braucht drei gemeinsame Nenner. Erstens beginnen alle ausgewählten Reihen am selben Kalendertag. Zweitens rechnet der Backtester sämtliche Werte in Euro. Drittens startet jede Reihe mit demselben Betrag. So stammt der Unterschied im Endwert aus der jeweiligen Kursentwicklung und nicht aus verschiedenen Einheiten.
+        </p>
+        <div class="formula-box fade-in">
+          Portfoliowert(t) = Startkapital × Wert(t) / Wert(Start)
+          <span>Der Backtester kauft rechnerisch Bruchstücke der jeweiligen Anlageklasse. Ein reales Depot, Gebühren oder Steuern werden dabei nicht simuliert.</span>
+        </div>
+        <p class="ch-text fade-in">
+          Der Startwert ist die letzte echte Beobachtung am oder vor dem gewählten Startdatum. Das ist vor allem an Wochenenden und Feiertagen relevant. Beginnt dein Zeitraum an einem Sonntag, verwendet eine börsengehandelte Reihe normalerweise den Schlusswert vom Freitag. Bitcoin kann dagegen auch am Wochenende einen echten Tageswert haben.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">03</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Die Reihen</p>
+        <h2 class="section-title fade-in">Was hier genau miteinander verglichen wird</h2>
+        <p class="ch-text fade-in">
+          Namen wie „S&amp;P 500“ oder „Gold“ klingen eindeutiger, als sie sind. Ein Preisindex, ein ETF, ein Spotpreis und ein Total-Return-Index können sich sichtbar unterscheiden. Das Projekt legt deshalb für jede Anlageklasse eine konkrete Reihe fest und zeigt diese Definition direkt im Dashboard.
+        </p>
+        <div class="article-table-wrap fade-in">
+          <table class="article-table">
+            <thead><tr><th>Anlageklasse</th><th>Reihe im Backtester</th><th>Währungsweg</th><th>Was du beachten musst</th></tr></thead>
+            <tbody>
+              <tr><td><strong>S&amp;P 500</strong></td><td>FRED-Reihe SP500, täglicher Schlussstand des Preisindex</td><td>USD-Wert geteilt durch USD je EUR der EZB</td><td>Der Preisindex enthält keine Dividenden. Er entspricht deshalb nicht der Gesamtrendite eines thesaurierenden S&amp;P-500-Fonds.</td></tr>
+              <tr><td><strong>Bitcoin</strong></td><td>Zehnjährige BTC/USD-Historie aus Minutenwerten, laufend BTC/EUR über CoinGecko</td><td>Historie über EZB-Kurse umgerechnet, laufende Werte direkt in EUR</td><td>Am 03.08.2026 wechselt die Datenquelle. Dieser Wechsel ist in der Methodik offengelegt.</td></tr>
+              <tr><td><strong>Gold</strong></td><td>SPDR Gold Shares (GLD), historisch aus dem SPDR-Archiv und laufend über Alpha Vantage</td><td>USD-Schlusskurs geteilt durch USD je EUR der EZB</td><td>GLD bildet Goldbarren abzüglich Fondskosten ab. Der Börsenkurs ist kein reiner Gold-Spotpreis.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ch-text fade-in">
+          Diese Festlegung macht das Ergebnis reproduzierbar. Sie begrenzt aber auch seine Aussage. Wer einen Total-Return-Index, einen anderen Gold-ETC oder einen einzelnen Bitcoin-Handelsplatz erwartet, vergleicht eine andere Reihe.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">04</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Datenpipeline</p>
+        <h2 class="section-title fade-in">Vom Anbieter bis zur Kurve im Browser</h2>
+        <p class="ch-text fade-in">
+          Die Website rechnet nicht bei jedem Seitenaufruf direkt mit fremden APIs. Ein täglicher Prozess holt neue Werte, prüft sie und speichert sie in MySQL. Der öffentliche Backtest liest anschließend aus dieser eigenen Historie. Das hält Ergebnisse reproduzierbar und verhindert, dass ein kurzfristiger Ausfall eines Datenanbieters die komplette Seite unbrauchbar macht.
+        </p>
+        <ol class="flow-list fade-in">
+          <li><div><strong>Abrufen:</strong> FRED liefert SP500, Alpha Vantage den GLD-Schlusskurs, CoinGecko den laufenden Bitcoin-Wert und die EZB den USD/EUR-Referenzkurs.</div></li>
+          <li><div><strong>Normieren:</strong> Jeder Datenpunkt erhält Datum, Rohwert, Rohwährung, Quellenrevision und Qualitätsstatus.</div></li>
+          <li><div><strong>In Euro umrechnen:</strong> USD-Reihen werden durch den EZB-Kurs „USD je EUR“ desselben Tages geteilt. Fehlt an einem Börsentag ein neuer EZB-Kurs, gilt der zuletzt zuvor veröffentlichte Referenzkurs.</div></li>
+          <li><div><strong>Validieren:</strong> Ungültige Werte, doppelte Tage, falsche Währungen und unerwartete Sprünge werden abgewiesen oder gekennzeichnet.</div></li>
+          <li><div><strong>Speichern:</strong> Ein Upsert ergänzt neue Tage und markiert nachträglich veränderte Werte als Revision. Sperren verhindern parallele Schreibläufe.</div></li>
+          <li><div><strong>Berechnen:</strong> Die API baut für den angefragten Zeitraum die gemeinsame Kalenderachse, normiert das Startkapital und berechnet alle Kennzahlen.</div></li>
+        </ol>
+        <div class="note-box fade-in"><strong>Nachvollziehbarkeit in der Datenbank:</strong> Neben dem Euro-Wert bleiben Rohwert, Rohwährung, verwendeter Wechselkurs und FX-Datum erhalten. Eine spätere Kontrolle kann dadurch den Rechenweg eines einzelnen Tages rekonstruieren.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">05</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Fehlende Tage</p>
+        <h2 class="section-title fade-in">Warum eine glatte Kalenderachse keine erfundenen Kurse braucht</h2>
+        <p class="ch-text fade-in">
+          Börsen schließen an Wochenenden und Feiertagen. Bitcoin handelt durchgehend. Würde das Diagramm nur echte Datenpunkte zeigen, lägen die drei Reihen auf unterschiedlichen Datumsachsen. Der Backtester führt deshalb für die Darstellung den letzten bekannten Wert fort. In der Datenbank entsteht dabei kein künstlicher Kurs.
+        </p>
+        <p class="ch-text fade-in">
+          Für die neuen Risikokennzahlen ist diese Trennung nötig. Fortgeschriebene Tage zählen dort nicht als zusätzliche Tage mit 0 % Rendite. Die Volatilität von S&amp;P 500 oder Gold würde sonst allein durch Wochenenden niedriger erscheinen. Bester Tag, schwächster Tag, positive Tage und Sharpe-Wert verwenden nur Änderungen zwischen echten Beobachtungen.
+        </p>
+        <div class="note-box fade-in"><strong>Ein Detail beim Lesen:</strong> Die Veränderung vom Freitag zum Montag gilt als eine beobachtete Tagesänderung. Sie kann Informationen aus dem gesamten Wochenende enthalten. Der Backtester zerlegt sie nicht künstlich auf Samstag, Sonntag und Montag.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">06</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Ergebniskennzahlen</p>
+        <h2 class="section-title fade-in">Was Endwert, Rendite und CAGR aussagen</h2>
+        <p class="ch-text fade-in">
+          Der Endwert übersetzt die Kursbewegung in einen Betrag. Aus 10.000 € werden beispielsweise 14.000 €, wenn die Reihe im gewählten Zeitraum um 40 % steigt. Gewinn oder Verlust ist dieselbe Information als Euro-Differenz. Beide hängen vom eingestellten Startkapital ab.
+        </p>
+        <div class="formula-box fade-in">
+          Gesamtrendite = Schlusswert / Startwert − 1
+          <span>Die Gesamtrendite beschreibt die gesamte Veränderung zwischen Beginn und Ende. Sie sagt nicht, wie ruhig oder unruhig der Weg war.</span>
+        </div>
+        <p class="ch-text fade-in">
+          Die CAGR rechnet die Gesamtentwicklung auf eine konstante Jahresrate um. Zwei unterschiedlich lange Zeiträume lassen sich damit leichter einordnen. Der Backtester verwendet die tatsächliche Zahl der Kalendertage und teilt sie durch 365,2425. Bei kurzen Zeiträumen kann diese Hochrechnung extrem wirken. Eine starke Woche ist noch keine belastbare Jahresrendite.
+        </p>
+        <div class="formula-box fade-in">
+          CAGR = (Schlusswert / Startwert)<sup>1 / Jahre</sup> − 1
+          <span>Die CAGR ist eine geglättete Rate. Sie behauptet nicht, dass das Vermögen in jedem einzelnen Jahr genau so gewachsen ist.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">07</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Risikokennzahlen</p>
+        <h2 class="section-title fade-in">Volatilität, Drawdown, Sharpe und Calmar</h2>
+        <p class="ch-text fade-in">
+          Risiko hat mehrere Seiten. Volatilität misst die Streuung der beobachteten Tagesrenditen. Der maximale Drawdown misst den tiefsten Verlust vom jeweils vorherigen Höchststand. Sharpe und Calmar setzen Rendite zu einem dieser Risikomaße ins Verhältnis. Keine einzelne Zahl ersetzt die anderen.
+        </p>
+        <div class="metric-grid fade-in">
+          <article class="metric-card"><h3>Volatilität p.a.</h3><p>Der Backtester berechnet die Stichproben-Standardabweichung der echten Tagesrenditen und annualisiert sie. Er verwendet 252 Perioden für S&amp;P 500 und Gold sowie 365,2425 für Bitcoin.</p><code>σ<sub>Jahr</sub> = σ<sub>Tag</sub> × √N</code></article>
+          <article class="metric-card"><h3>Maximaler Drawdown</h3><p>Der stärkste prozentuale Rückgang von einem bisherigen Hoch zu einem späteren Tief. Ein Drawdown von −50 % braucht anschließend +100 %, um wieder den Ausgangswert zu erreichen.</p><code>Drawdown(t) = Wert(t) / bisheriges Hoch − 1</code></article>
+          <article class="metric-card"><h3>Sharpe-Wert (0 %)</h3><p>Durchschnittliche Tagesrendite geteilt durch ihre Standardabweichung, anschließend annualisiert. Der Backtester setzt den risikofreien Zins bewusst auf 0 %. Werte aus anderen Quellen können eine andere Basis verwenden.</p><code>Sharpe = Ø Tagesrendite / σ<sub>Tag</sub> × √N</code></article>
+          <article class="metric-card"><h3>Calmar-Verhältnis</h3><p>CAGR geteilt durch den Betrag des maximalen Drawdowns. Die Kennzahl belohnt hohe annualisierte Rendite bei kleinerem historischen Einbruch. Ohne Drawdown wird kein Wert ausgegeben.</p><code>Calmar = CAGR / |max. Drawdown|</code></article>
+          <article class="metric-card"><h3>Bester und schwächster Tag</h3><p>Die größte positive und negative Veränderung zwischen zwei echten Beobachtungen, jeweils mit Datum. Ausreißer werden damit sichtbar, auch wenn der Endwert harmlos aussieht.</p><code>r(t) = Wert(t) / Wert(t−1) − 1</code></article>
+          <article class="metric-card"><h3>Positive Tage</h3><p>Der Anteil beobachteter Tagesänderungen über 0 %. Eine hohe Quote kann mit kleinen Gewinnen und wenigen großen Verlusten einhergehen. Die Kennzahl braucht deshalb den schwächsten Tag und den Drawdown als Gegenstück.</p><code>positive Änderungen / alle Änderungen</code></article>
+        </div>
+        <p class="ch-text fade-in">
+          Sharpe- und Calmar-Werte werden im Dashboard ohne Gütesiegel dargestellt. „Höher“ ist innerhalb derselben Methodik meist günstiger, aber kurze Zeiträume, Ausreißer und unterschiedliche Renditeverteilungen können beide Kennzahlen stark verschieben.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">08</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Gemeinsam lesen</p>
+        <h2 class="section-title fade-in">Eine hohe Rendite reicht für den Vergleich nicht</h2>
+        <p class="ch-text fade-in">
+          Angenommen, Reihe A erreicht 12 % CAGR bei 16 % Volatilität und −25 % maximalem Drawdown. Reihe B erreicht 18 % CAGR bei 60 % Volatilität und −70 % Drawdown. Reihe B war im Rückblick ertragreicher. Sie verlangte aber deutlich mehr Geduld, Risikotoleranz und Vertrauen in eine spätere Erholung.
+        </p>
+        <p class="ch-text fade-in">
+          Der Sharpe-Wert hilft bei der Frage, wie viel durchschnittliche Rendite für die laufende Schwankung erzielt wurde. Calmar richtet den Blick stärker auf den schlimmsten historischen Einbruch. Bester und schwächster Tag zeigen, ob einzelne Sprünge einen großen Teil des Ergebnisses tragen. Der Anteil positiver Tage beschreibt, wie häufig der Pfad überhaupt nach oben ging.
+        </p>
+        <ul class="ch-list fade-in">
+          <li><strong>Endwert und Gesamtrendite</strong> beantworten, was im gewählten Fenster herauskam.</li>
+          <li><strong>CAGR</strong> macht verschieden lange Zeiträume grob vergleichbar.</li>
+          <li><strong>Volatilität</strong> beschreibt die laufende Unruhe der echten Tagesänderungen.</li>
+          <li><strong>Maximaler Drawdown</strong> zeigt den härtesten historischen Belastungstest innerhalb des Fensters.</li>
+          <li><strong>Sharpe und Calmar</strong> verbinden Rendite mit zwei unterschiedlichen Risikoperspektiven.</li>
+        </ul>
+        <div class="note-box fade-in"><strong>Praktische Lesereihenfolge:</strong> Prüfe zuerst Zeitraum und Datenreihe, dann Drawdown und Volatilität, danach Rendite und Verhältniszahlen. So entscheidet nicht der größte Endwert allein über deinen Eindruck.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">09</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Grenzen</p>
+        <h2 class="section-title fade-in">Was der Backtest bewusst nicht abbildet</h2>
+        <p class="ch-text fade-in">
+          Der Rechner beantwortet eine klar abgegrenzte historische Frage. Sobald du daraus eine reale Anlagestrategie ableitest, fehlen mehrere Faktoren. Einige würden das Ergebnis senken, andere verändern die Vergleichsbasis.
+        </p>
+        <ul class="ch-list fade-in">
+          <li><strong>Keine Kosten und Steuern:</strong> Kaufkosten, Spreads, Depotentgelte, Steuern und persönliche Freibeträge fehlen.</li>
+          <li><strong>Keine Inflation:</strong> Sämtliche Werte sind nominal. Ein Euro am Ende des Zeitraums hat nicht dieselbe Kaufkraft wie ein Euro am Anfang.</li>
+          <li><strong>Keine Dividenden im S&amp;P 500:</strong> Die FRED-Reihe SP500 ist ein Preisindex. Ausschüttungen und deren Wiederanlage fehlen.</li>
+          <li><strong>Gold über GLD:</strong> Der Backtester verwendet einen börsengehandelten Gold-Proxy. Fondskosten und Abweichungen zum Spotpreis stecken in dieser Reihe.</li>
+          <li><strong>Einmalanlage statt Sparplan:</strong> Einzahlungen, Entnahmen und Rebalancing werden nicht simuliert.</li>
+          <li><strong>Kein Portfolioeffekt:</strong> Die Anlageklassen laufen getrennt. Korrelationen und die Wirkung einer Mischung werden noch nicht berechnet.</li>
+          <li><strong>Währungswirkung bleibt enthalten:</strong> Ein deutscher Anleger erlebt neben der USD-Kursbewegung auch Veränderungen des USD/EUR-Kurses. Das ist Absicht, kann aber vom Ergebnis in US-Dollar abweichen.</li>
+          <li><strong>Historisches Fenster:</strong> Ein anderer Starttag kann Rangfolge, Drawdown und risikobereinigte Kennzahlen deutlich verändern.</li>
+        </ul>
+        <p class="ch-text fade-in">
+          Auch ein Zehnjahresfenster bleibt ein einzelner Ausschnitt. Der Backtester zeigt deshalb mehrere feste Zeiträume und erlaubt einen individuellen Bereich.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">10</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Anwendung</p>
+        <h2 class="section-title fade-in">So bekommst du aus dem Vergleich brauchbare Antworten</h2>
+        <ol class="flow-list fade-in">
+          <li><div><strong>Beginne mit „Max“:</strong> Dadurch startet der Vergleich am spätesten gemeinsamen Datenbeginn und vermeidet unterschiedliche Historien.</div></li>
+          <li><div><strong>Wechsle danach die Fenster:</strong> Vergleiche 1 Jahr, 3 Jahre, 5 Jahre und 10 Jahre. Eine Rangfolge, die bei jedem Fenster gleich bleibt, ist aussagekräftiger als ein einzelner Sieg.</div></li>
+          <li><div><strong>Prüfe den Datenstand:</strong> Der letzte echte Wert zeigt, ob ein Wochenende, Feiertag oder fehlgeschlagener Abruf am Ende fortgeführt wurde.</div></li>
+          <li><div><strong>Lies Risiko vor Rendite:</strong> Maximaler Drawdown, schwächster Tag und Volatilität geben dir eine Vorstellung davon, was zwischen Start und Ende passiert ist.</div></li>
+          <li><div><strong>Vergleiche Kennzahlen nur auf derselben Basis:</strong> Der Sharpe-Wert dieses Projekts verwendet 0 % risikofreien Zins. Eine Kennzahl aus einem Fondsbericht kann anders berechnet sein.</div></li>
+          <li><div><strong>Formuliere eine engere Folgefrage:</strong> Soll Dividendenwiederanlage hinein? Möchtest du reale Inflation, Sparraten oder eine Mischung der Anlageklassen sehen? Dann brauchst du ein erweitertes Modell.</div></li>
+        </ol>
+        <p class="ch-text fade-in">
+          Nutze den Rechner vor allem, um Annahmen zu prüfen. Er zeigt schnell, ob eine Aussage wie „Asset X war klar besser“ nur für einen günstigen Startpunkt gilt oder auch unter anderen Zeitfenstern Bestand hat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="cta-box fade-in">
+      <div>
+        <h3>Den Vergleich mit einem eigenen Zeitraum prüfen</h3>
+        <p>Wähle S&amp;P 500, Bitcoin und Gold, ändere Startkapital und Zeitraum und lies Rendite- und Risikokennzahlen gemeinsam.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="../dashboards/backtester/" class="btn btn-primary">
+          Zum Assetklassen-Backtester
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="../projekte/backtester" class="cta-secondary">Technische Projektseite ansehen →</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">11</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Quellen und Definitionen</p>
+        <h2 class="section-title fade-in">Woher Daten und Methodik stammen</h2>
+        <p class="ch-text fade-in">
+          Die öffentliche Methodik des Dashboards nennt Quelle, Symbol, Währung und Datenstand für jede Reihe. Die folgenden Primärquellen dokumentieren die verwendeten Endpunkte und Definitionen. Schriftliche Nutzungsrechte für die importierten historischen Dateien werden getrennt vom Webroot aufbewahrt.
+        </p>
+        <ul class="source-list fade-in">
+          <li><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener noreferrer">FRED: S&amp;P 500 (SP500)</a><span>Täglicher Schlussstand des Preisindex; laut Serienhinweis ohne Dividenden.</span></li>
+          <li><a href="https://data.ecb.europa.eu/data/datasets/EXR/EXR.D.USD.EUR.SP00.A" target="_blank" rel="noopener noreferrer">EZB: EXR.D.USD.EUR.SP00.A</a><span>Täglicher Referenzkurs für US-Dollar je Euro.</span></li>
+          <li><a href="https://www.alphavantage.co/documentation/" target="_blank" rel="noopener noreferrer">Alpha Vantage: TIME_SERIES_DAILY</a><span>Unbereinigte tägliche OHLCV-Reihe für die laufenden GLD-Schlusswerte.</span></li>
+          <li><a href="https://www.ssga.com/us/en/individual/etfs/spdr-gold-shares-gld" target="_blank" rel="noopener noreferrer">State Street: SPDR Gold Shares (GLD)</a><span>Produktziel, Eigenschaften und laufende Informationen zum verwendeten Gold-Proxy.</span></li>
+          <li><a href="https://docs.coingecko.com/reference/coins-id-market-chart-range" target="_blank" rel="noopener noreferrer">CoinGecko: market_chart/range</a><span>Historische Preiswerte nach Coin-ID und Zielwährung für die laufende Bitcoin-Aktualisierung.</span></li>
+          <li><a href="https://web.stanford.edu/~wfsharpe/art/sr/SR.htm" target="_blank" rel="noopener noreferrer">William F. Sharpe: The Sharpe Ratio</a><span>Originale Einordnung des Reward-to-Variability-Maßes und seiner Varianten.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <p class="section-label fade-in">Weiterlesen</p>
+    <h2 class="section-title fade-in">Verwandte Artikel</h2>
+    <div class="related-grid">
+      <a href="wie-viel-geld-fuer-finanzielle-unabhaengigkeit" class="related-card fade-in">
+        <span>Finanzielle Unabhängigkeit</span>
+        <h4>Wie viel Geld brauche ich für finanzielle Unabhängigkeit?</h4>
+      </a>
+      <a href="pleiterisiko-rente-monte-carlo-simulation" class="related-card fade-in">
+        <span>Finanzielle Unabhängigkeit</span>
+        <h4>Pleiterisiko in der Rente mit Monte Carlo abschätzen</h4>
+      </a>
+      <a href="kelly-kriterium-einfach-erklaert" class="related-card fade-in">
+        <span>Einsatzgröße &amp; Risiko</span>
+        <h4>Das Kelly-Kriterium einfach erklärt</h4>
+      </a>
+    </div>
+  </section>
+
+  <section class="article-notes-section">
+    <aside class="article-trust" aria-label="Methodische Einordnung">
+      <p><strong>Methodische Einordnung:</strong> Ich dokumentiere hier eine persönliche Modellrechnung bzw. Rechenmethode. Ergebnisse hängen von Datenstand und Annahmen ab und ersetzen keine individuelle Finanz- oder Anlageberatung.</p>
+    </aside>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">sms<span>.</span></a>
+        <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="../projekte/">Projekte</a></li>
+          <li><a href="../downloads">Downloads</a></li>
+          <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+          <li><a href="../vision">Vision</a></li>
+          <li><a href="./">Wissen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="../impressum">Impressum</a></li>
+          <li><a href="../#info">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

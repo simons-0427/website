@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="index, follow">
+  <title>Die DCF-Methode einfach erklärt</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Die Discounted-Cashflow-Methode einfach erklärt: wie du einen Unternehmenswert berechnest, was der Barwert bedeutet und welche Bausteine dafür nötig sind.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/wissen/dcf-methode-einfach-erklaert">
+  <meta property="og:title" content="Die DCF-Methode einfach erklärt">
+  <meta property="og:description" content="Die Discounted-Cashflow-Methode einfach erklärt: wie du einen Unternehmenswert berechnest, was der Barwert bedeutet und welche Bausteine dafür nötig sind.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/dcf-tool-dashboard.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://smstark-projekt.de/wissen/dcf-methode-einfach-erklaert">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Die DCF-Methode einfach erklärt",
+    "description": "Die Discounted-Cashflow-Methode einfach erklärt: wie du einen Unternehmenswert berechnest, was der Barwert bedeutet und welche Bausteine dafür nötig sind.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://smstark-projekt.de/#person",
+      "name": "Simon Stark",
+      "url": "https://smstark-projekt.de/",
+      "sameAs": ["https://github.com/simons-0427"],
+      "knowsAbout": ["Finanzen", "Datenanalyse", "Webentwicklung"]
+    },
+    "publisher": { "@id": "https://smstark-projekt.de/#person" },
+  "datePublished": "2026-06-25",
+  "dateModified": "2026-08-10",
+    "image": "https://smstark-projekt.de/images/dcf-tool-dashboard.png",
+    "mainEntityOfPage": "https://smstark-projekt.de/wissen/dcf-methode-einfach-erklaert",
+    "inLanguage": "de-DE"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smstark-projekt.de/" },
+      { "@type": "ListItem", "position": 2, "name": "Wissen", "item": "https://smstark-projekt.de/wissen/" },
+      { "@type": "ListItem", "position": 3, "name": "Unternehmensbewertung", "item": "https://smstark-projekt.de/wissen/#unternehmensbewertung" },
+      { "@type": "ListItem", "position": 4, "name": "Die DCF-Methode einfach erklärt" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0f; --surface: #13131a; --border: #1e1e2e;
+      --accent: #6ee7b7; --accent2: #818cf8; --text: #e2e8f0;
+      --muted: #64748b; --card: #16161f; --nav-h: 68px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); scrollbar-width: none; -ms-overflow-style: none; max-width: 100%; overflow-x: hidden; }
+    html::-webkit-scrollbar { display: none; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; max-width: 100%; width: 100%; }
+
+    .main-nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(12,12,15,.95); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 0 clamp(1.5rem,5vw,4rem); z-index: 100; gap: 2.2rem; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-github { position: absolute; right: clamp(1.5rem,5vw,4rem); display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 500; color: var(--text); text-decoration: none; border: 1px solid var(--text); padding: .4rem .9rem; border-radius: 8px; transition: border-color .2s, color .2s; }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; position: absolute; left: clamp(1.5rem,5vw,4rem); }
+    .nav-logo span { color: var(--accent); }
+    .main-nav .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: .03em; transition: color .2s; }
+    .main-nav .nav-links a:hover, .main-nav .nav-links a.active { color: var(--accent); }
+    .nav-toggle { display: none; position: absolute; right: clamp(1.5rem,5vw,4rem); width: 40px; height: 40px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; z-index: 101; transition: border-color .2s; }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(12,12,15,.98); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); z-index: 102; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a { display: flex; align-items: center; gap: .6rem; padding: .95rem .2rem; color: var(--text); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color .2s; }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+    @media (max-width: 960px) {
+      .main-nav { justify-content: flex-start; padding: 0 1rem; width: 100%; max-width: 100%; box-sizing: border-box; }
+      .main-nav .nav-links, .main-nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; right: 1rem; width: 44px; height: 44px; }
+      .mobile-menu { display: block; width: 100%; max-width: 100%; }
+    }
+
+    .progress-bar { position: fixed; top: 0; left: 0; height: 2px; width: 0; background: linear-gradient(to right, var(--accent), var(--accent2)); z-index: 200; transition: width .08s linear; }
+
+    hr.divider { border: none; border-top: 1px solid var(--border); }
+
+    .btn { display: inline-flex; align-items: center; gap: .55rem; padding: .8rem 1.8rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 500; text-decoration: none; cursor: pointer; border: none; transition: transform .15s, box-shadow .15s, background .2s; }
+    .btn-primary { background: var(--accent); color: #0c0c0f; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,231,183,.3); }
+
+    #article-hero { padding: calc(var(--nav-h) + 3rem) clamp(1.5rem,5vw,4rem) 3.5rem; max-width: 1040px; margin: 0 auto; }
+    .breadcrumb { font-size: .78rem; color: var(--muted); margin-bottom: 1.4rem; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; } .breadcrumb a:hover { color: var(--accent); }
+    .article-eyebrow { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .article-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.08; letter-spacing: -.03em; margin-bottom: 1.4rem; }
+    .article-lead { font-size: 1.1rem; font-weight: 300; color: var(--muted); max-width: 76ch; line-height: 1.75; }
+    .article-meta { display: flex; gap: 1.2rem; margin-top: 1.6rem; font-size: .78rem; color: var(--muted); }
+
+    section { padding: 3.5rem clamp(1.5rem,5vw,4rem); }
+    .section-label { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: .8rem; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; letter-spacing: -.025em; line-height: 1.15; margin-bottom: 1rem; }
+
+    .chapter-grid { display: grid; grid-template-columns: 80px 1fr; gap: 0 2.5rem; align-items: start; max-width: 960px; margin: 0 auto; }
+    .ch-num { font-family: 'Syne', sans-serif; font-size: .68rem; font-weight: 800; letter-spacing: .2em; color: var(--border); text-transform: uppercase; padding-top: .35rem; position: sticky; top: calc(var(--nav-h) + 2rem); user-select: none; }
+    .ch-text { font-size: 1.02rem; font-weight: 300; color: var(--muted); line-height: 1.85; max-width: 76ch; }
+    .ch-text + .ch-text { margin-top: 1.3rem; }
+    .ch-text strong { color: var(--text); font-weight: 500; }
+    .ch-text a { color: var(--accent); }
+    .ch-list { margin-top: 1rem; padding-left: 1.2rem; color: var(--muted); }
+    .ch-list li { margin-bottom: .6rem; line-height: 1.7; }
+    .ch-list strong { color: var(--text); }
+    .formula-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; margin-top: 1.2rem; max-width: 68ch; font-family: 'Syne', sans-serif; font-size: 1.05rem; color: var(--accent); }
+    .formula-box span { display: block; font-family: 'DM Sans', sans-serif; font-size: .78rem; color: var(--muted); margin-top: .5rem; font-weight: 400; }
+
+    .bg-surface { background: var(--surface); }
+
+    .cta-box { background: var(--card); border: 1px solid rgba(110,231,183,.25); border-radius: 16px; padding: 2.2rem clamp(1.5rem,4vw,2.6rem); display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; max-width: 960px; margin-left: auto; margin-right: auto; }
+    .cta-box h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; margin-bottom: .5rem; }
+    .cta-box p { color: var(--muted); font-size: .92rem; max-width: 44ch; }
+
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1rem; max-width: 960px; margin-left: auto; margin-right: auto; margin-top: 1rem; width: 100%; box-sizing: border-box; }
+    .related-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.3rem; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; display: block; }
+    .related-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .related-card span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+    .related-card h4 { font-family: 'Syne', sans-serif; font-size: 1rem; margin-top: .5rem; line-height: 1.3; }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem; color: var(--muted); font-size: .82rem; }
+    .footer-inner { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; display: inline-block; margin-bottom: .9rem; }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 { font-family: 'Syne', sans-serif; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--text); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem; }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } .footer-bottom { flex-direction: column; text-align: center; } }
+
+    @media (max-width: 980px) {
+      section { padding: 3rem clamp(1.25rem, 5vw, 3rem); }
+      .chapter-grid { grid-template-columns: 1fr; gap: 1rem; max-width: 760px; }
+      .ch-num { position: static; padding-top: 0; }
+    }
+    @media (max-width: 768px) {
+      #article-hero { padding-top: calc(var(--nav-h) + 2rem); }
+      .cta-box { flex-direction: column; align-items: flex-start; }
+      footer { flex-direction: column; gap: .6rem; text-align: center; }
+    }
+  </style>
+  <link rel="stylesheet" href="article-responsive.css">
+
+  <style>
+    .article-trust {
+      max-width: 760px;
+      margin: 1.25rem auto 0;
+      padding: .9rem 1rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      background: rgba(110, 231, 183, .06);
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+    .article-trust p { margin: 0; }
+    .article-trust p + p { margin-top: .7rem; }
+    .article-trust a { color: #60a5fa; text-decoration: underline; text-underline-offset: .15em; }
+    .article-trust a:hover { color: #93c5fd; }
+    .article-notes-section { padding-top: 2.5rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="../projekte/">Projekte</a></li>
+      <li><a href="../downloads">Downloads</a></li>
+      <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../vision">Vision</a></li>
+      <li><a href="./" class="active">Wissen</a></li>
+    </ul>
+    <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="../projekte/">Projekte</a></li>
+      <li><a href="../downloads">Downloads</a></li>
+      <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../vision">Vision</a></li>
+      <li><a href="./">Wissen</a></li>
+      <li><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub</a></li>
+    </ul>
+  </div>
+
+  <section id="article-hero">
+    <p class="breadcrumb fade-in"><a href="/">Home</a> / <a href="./">Wissen</a> / <a href="./#unternehmensbewertung">Unternehmensbewertung</a> / Die DCF-Methode einfach erklärt</p>
+    <p class="article-eyebrow fade-in">Unternehmensbewertung</p>
+    <h1 class="article-title fade-in">Die DCF-Methode<br>einfach erklärt</h1>
+    <p class="article-lead fade-in">
+        Wie viel ist ein Unternehmen wert? Die Discounted-Cashflow-Methode beantwortet diese Frage anhand künftiger Cashflows und rechnet sie auf ihren heutigen Wert zurück.
+    </p>
+    <div class="article-meta fade-in">
+      <span>Simon Stark</span>
+      <span>|</span>
+      <span>Veröffentlicht 25. Juni 2026</span>
+      <span>|</span>
+      <span>ca. 7 Min. Lesezeit</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">01</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Grundidee</p>
+        <h2 class="section-title fade-in">Ein Unternehmen ist wert, was es künftig einbringt</h2>
+        <p class="ch-text fade-in">
+          Die <strong>Discounted-Cash-Flow-Methode (DCF)</strong> geht davon aus, dass der Wert eines Unternehmens der Summe aller zukünftigen freien Cashflows entspricht, die es erwirtschaften wird, umgerechnet auf ihren heutigen Wert. Ein Euro in fünf Jahren ist wegen Zinseffekten und Risiko weniger wert als ein Euro heute, deshalb wird jeder zukünftige Cashflow mit einem Abzinsungsfaktor auf den heutigen Barwert reduziert.
+        </p>
+        <p class="ch-text fade-in">
+          Dieses Prinzip, ein Vermögenswert ist wert, was er künftig einbringt, gilt genauso bei anderen Kapitalanlagen. Wie sich das etwa bei einer vermieteten Immobilie in konkreten Kennzahlen niederschlägt, zeige ich im Artikel <a href="immobilie-als-kapitalanlage-kennzahlen">Immobilie als Kapitalanlage bewerten</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">02</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Die Formel</p>
+        <h2 class="section-title fade-in">Barwert zukünftiger Cashflows</h2>
+        <div class="formula-box fade-in">
+          Unternehmenswert = Σ [ FCF<sub>t</sub> / (1 + WACC)<sup>t</sup> ] + Terminal Value
+              <span>FCF = Free Cashflow im Jahr t | WACC = gewichteter Kapitalkostensatz | Terminal Value = Unternehmenswert nach dem Prognosezeitraum</span>
+        </div>
+        <p class="ch-text fade-in">
+          Drei Bausteine sind dafür nötig: eine Prognose der zukünftigen freien Cashflows, ein Abzinsungssatz (der WACC), und ein Terminal Value für die Zeit nach dem expliziten Prognosezeitraum, meist 3 bis 10 Jahre.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">03</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Die drei Bausteine</p>
+        <h2 class="section-title fade-in">Woraus sich der Wert zusammensetzt</h2>
+        <ul class="ch-list fade-in">
+          <li><strong>Historie als Basis:</strong> Vergangene Bilanz- und GuV-Daten liefern die fundamentale Ausgangslage für realistische Annahmen.</li>
+          <li><strong>Forecast:</strong> Darauf aufbauend werden Umsatzentwicklung, Margen und Investitionsbedarf (CapEx) für die nächsten Jahre projiziert.</li>
+          <li><strong>WACC:</strong> Der gewichtete Kapitalkostensatz aus Eigen- und Fremdkapitalkosten bestimmt, wie stark zukünftige Cashflows abgezinst werden, dazu mehr im Artikel <a href="unternehmenswert-berechnen-wacc">Wie der WACC wirkt</a>.</li>
+          <li><strong>Terminal Value:</strong> Da ein Unternehmen theoretisch unendlich fortbesteht, wird der Wert nach dem Prognosezeitraum über eine vereinfachte Wachstumsformel abgebildet.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-num fade-in">04</div>
+      <div class="ch-body">
+        <p class="section-label fade-in">Einordnung</p>
+        <h2 class="section-title fade-in">Wie Annahmen den Wert beeinflussen</h2>
+        <p class="ch-text fade-in">
+        Die DCF-Methode ist mathematisch präzise, aber nur so gut wie ihre Eingaben. Schon kleine Änderungen am WACC oder an der langfristigen Wachstumsrate verschieben den errechneten Unternehmenswert spürbar. Eine Sensitivitätsanalyse zeigt, wie stark das Ergebnis von diesen Annahmen abhängt.
+        </p>
+        <p class="ch-text fade-in">
+          Ein durchgerechnetes Beispiel mit Forecast und Terminal Value findest du im Artikel <a href="discounted-cashflow-beispiel-terminal-value">Discounted Cashflow Beispiel: Vom Forecast zum Terminal Value</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-body">
+        <p class="section-label fade-in">Was wirklich gezählt wird</p>
+        <h2 class="section-title fade-in">Gewinn ist nicht automatisch freier Cashflow</h2>
+        <p class="ch-text fade-in">
+          Für eine DCF-Bewertung brauchst du nicht einfach den Jahresüberschuss aus der Gewinn- und Verlustrechnung. Der Jahresüberschuss enthält Aufwendungen, die nicht im selben Jahr zu einer Zahlung führen, und lässt Investitionen nicht so sichtbar werden, wie sie für den Cashflow wichtig sind. Der freie Cashflow soll zeigen, was nach dem laufenden Geschäft und den notwendigen Investitionen für Kapitalgeber übrig bleibt.
+        </p>
+        <p class="ch-text fade-in">
+          Vereinfacht startest du beim operativen Ergebnis nach Steuern, addierst nicht zahlungswirksame Aufwendungen wie Abschreibungen wieder hinzu und ziehst die Investitionen sowie die Veränderung des operativen Working Capital ab. Je nach Modell wird zwischen Free Cashflow to Firm und Free Cashflow to Equity unterschieden. Entscheidend ist, dass der gewählte Cashflow zum verwendeten Diskontierungssatz passt.
+        </p>
+        <div class="note-box fade-in">
+          <strong>Prüffrage:</strong> Wenn der Gewinn steigt, der freie Cashflow aber dauerhaft negativ bleibt, solltest du zuerst verstehen, wohin das Geld fließt. Ein wachsendes Unternehmen kann viel investieren. Das macht die Bewertung nicht automatisch falsch, aber die Finanzierung muss sichtbar sein.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-body">
+        <p class="section-label fade-in">Ablauf</p>
+        <h2 class="section-title fade-in">So baust du eine DCF-Bewertung Schritt für Schritt</h2>
+        <p class="ch-text fade-in">
+          Eine DCF-Bewertung wird übersichtlicher, wenn du sie nicht sofort als große Formel behandelst. Starte mit der Historie und prüfe Umsatz, operative Marge, Steuern, Investitionen und Working Capital über mehrere Jahre. Danach trennst du echte operative Veränderungen von einmaligen Effekten. Ein außergewöhnlich starkes oder schwaches Jahr sollte nicht ungeprüft als Ausgangspunkt für die nächsten zehn Jahre dienen.
+        </p>
+        <ol class="ch-list fade-in">
+          <li><strong>Historie normalisieren:</strong> Einmalige Gewinne, Restrukturierungskosten oder außergewöhnliche Margen gehören separat markiert.</li>
+          <li><strong>Forecast erstellen:</strong> Umsatz, Marge und Investitionen werden nicht einzeln geraten, sondern sollten zusammen ein nachvollziehbares Geschäftsmodell ergeben.</li>
+          <li><strong>Cashflows abzinsen:</strong> Jeder prognostizierte Cashflow wird mit dem WACC auf den Bewertungsstichtag zurückgerechnet.</li>
+          <li><strong>Terminal Value berechnen:</strong> Der Wert nach dem Forecast wird separat ausgewiesen, damit du siehst, wie viel der Gesamtwert davon abhängt.</li>
+          <li><strong>Ergebnis prüfen:</strong> Eine Sensitivität für WACC und langfristiges Wachstum zeigt, ob der Wert stabil oder extrem annahmeabhängig ist.</li>
+        </ol>
+        <p class="ch-text fade-in">
+          Erst danach vergleichst du den errechneten Wert mit dem Marktpreis. Die DCF-Rechnung soll nicht beweisen, dass eine Aktie billig oder teuer ist. Sie soll zeigen, welche Erwartungen im Preis stecken.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid">
+      <div class="ch-body">
+        <p class="section-label fade-in">Sensitivität</p>
+        <h2 class="section-title fade-in">Der DCF-Wert ist eine Bandbreite</h2>
+        <p class="ch-text fade-in">
+          Ein einzelner Unternehmenswert wirkt angenehm eindeutig. Er versteckt aber, dass schon kleine Änderungen am WACC, an der langfristigen Wachstumsrate oder an der Zielmarge große Folgen haben können. Besonders kritisch ist der Terminal Value, weil er häufig einen großen Teil des Gesamtwerts ausmacht und weit in der Zukunft liegt.
+        </p>
+        <div class="formula-box fade-in">
+          Wertspanne = Bear Case, Base Case und Bull Case
+          <span>Die Szenarien verändern nur klar benannte Annahmen. Sie sind keine drei verschiedenen Wahrheiten, sondern drei prüfbare Bedingungen.</span>
+        </div>
+        <p class="ch-text fade-in">
+          Im Bear Case kannst du zum Beispiel langsameres Wachstum, eine niedrigere Marge und einen höheren WACC verwenden. Im Bull Case gelten die Annahmen nur dann, wenn du erklären kannst, wodurch sie eintreten sollen. Wenn der aktuelle Marktpreis sogar im Bull Case kaum Luft lässt, ist das ein anderes Signal, als wenn er bereits im Base Case deutlich unterschritten wird.
+        </p>
+        <p class="ch-text fade-in">
+          Genau deshalb ist die Dokumentation der Annahmen wichtiger als eine scheinbar präzise Zahl mit zwei Nachkommastellen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid">
+      <div class="ch-body">
+        <p class="section-label fade-in">Wert und Preis</p>
+        <h2 class="section-title fade-in">Die DCF-Rechnung erklärt Erwartungen im Marktpreis</h2>
+        <p class="ch-text fade-in">
+          Der errechnete Unternehmenswert ist nicht dasselbe wie der aktuelle Aktienkurs. Der Kurs entsteht aus Angebot und Nachfrage. Die DCF-Rechnung zeigt dir dagegen, welche Cashflows, Margen, Wachstumsraten und Kapitalkosten zusammenpassen müssten, damit der heutige Preis gerechtfertigt ist.
+        </p>
+        <p class="ch-text fade-in">
+          Liegt dein Base Case deutlich über dem Marktpreis, kann die Aktie günstig wirken. Das Ergebnis ist aber erst interessant, wenn du erklären kannst, warum der Markt die höheren Cashflows nicht bereits einpreist. Vielleicht hast du eine Information besser verstanden. Vielleicht ist deine Annahme zu optimistisch. Der Vergleich mit dem Preis ist der Anfang der Prüfung, nicht das Ende.
+        </p>
+        <p class="ch-text fade-in">
+          Ein gutes Modell macht diese Diskussion konkreter. Du kannst die Annahmen verändern, die Wirkung sehen und anschließend prüfen, ob die Geschichte zum Unternehmen, zur Branche und zur Finanzierung passt.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="cta-box fade-in">
+      <div>
+        <h3>DCF-Tool herunterladen</h3>
+        <p>Vollständiges Excel-Modell mit Historie, Forecast, WACC-Rechner und Sensitivitätsanalyse.</p>
+      </div>
+      <a href="../projekte/discounted-cashflow" class="btn btn-primary">
+        Zum DCF-Tool
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <p class="section-label fade-in">Weiterlesen</p>
+    <h2 class="section-title fade-in">Verwandte Artikel</h2>
+    <div class="related-grid">
+      <a href="unternehmenswert-berechnen-wacc" class="related-card fade-in">
+        <span>Unternehmensbewertung</span>
+        <h4>Unternehmenswert berechnen: Wie der WACC wirkt</h4>
+      </a>
+      <a href="discounted-cashflow-beispiel-terminal-value" class="related-card fade-in">
+        <span>Unternehmensbewertung</span>
+        <h4>Discounted Cashflow Beispiel: Vom Forecast zum Terminal Value</h4>
+      </a>
+    </div>
+  </section>
+
+  <section class="article-notes-section">
+    <aside class="article-trust" aria-label="Methodische Einordnung und weiterführende Referenzen">
+      <p><strong>Methodische Einordnung:</strong> Ich dokumentiere hier eine persönliche Modellrechnung bzw. Rechenmethode. Ergebnisse hängen von Datenstand und Annahmen ab und ersetzen keine individuelle Finanz- oder Anlageberatung.</p>
+      <p><strong>Weiterführende Referenz:</strong> <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/lectures/val.html" target="_blank" rel="noopener noreferrer">Aswath Damodaran: Discounted Cash Flow Valuation</a>.</p>
+    </aside>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">sms<span>.</span></a>
+        <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="../projekte/">Projekte</a></li>
+          <li><a href="../downloads">Downloads</a></li>
+          <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+          <li><a href="../vision">Vision</a></li>
+          <li><a href="./">Wissen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="../impressum">Impressum</a></li>
+          <li><a href="../#info">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+    </div>
+  </footer>
+
+  </script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

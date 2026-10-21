@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="index, follow">
+  <title>Downloads | Tools, Code & Vorlagen | Simon Stark</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Kostenlose Downloads von Simon Stark: Finance-Tools, Quellcode und Vorlagen für Datenanalyse, Gaming und eigene Projekte übersichtlich gebündelt.">
+  <link rel="canonical" href="https://smstark-projekt.de/downloads">
+  <script type="application/ld+json">
+  {
+      "@context":  "https://schema.org",
+      "@type":  "CollectionPage",
+      "@id":  "https://smstark-projekt.de/downloads#webpage",
+      "name":  "Downloads | Tools, Code und Vorlagen | Simon Stark",
+      "url":  "https://smstark-projekt.de/downloads",
+      "description":  "Kostenlose Downloads von Simon Stark: Finance-Tools, Quellcode und Vorlagen für Datenanalyse, Gaming und eigene Projekte.",
+      "author":  {
+                     "@type":  "Person",
+                     "name":  "Simon Stark",
+                     "url":  "https://smstark-projekt.de/"
+                 },
+      "isPartOf":  {
+                       "@type":  "WebSite",
+                       "url":  "https://smstark-projekt.de/",
+                       "name":  "SMStark Projekt"
+                   }
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/downloads">
+  <meta property="og:title" content="Downloads | Tools, Code & Vorlagen | Simon Stark">
+  <meta property="og:description" content="Kostenlose Downloads von Simon Stark: Finance-Tools, Quellcode und Vorlagen für Datenanalyse, Gaming und eigene Projekte übersichtlich gebündelt.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+      max-width: 100%;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: clip;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    /* ── NAV ── */
+   nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,12,15,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: center;
+      padding: 0 clamp(1.5rem,5vw,4rem);
+      z-index: 100;
+      gap: 3rem;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      margin-right: auto;
+      position: absolute;
+      left: clamp(1.5rem,5vw,4rem);
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none;}
+    .nav-links a {
+      font-size: .875rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      letter-spacing: .03em; transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .nav-back:hover { color: var(--accent); }
+    .nav-back svg { width:15px; height:15px; }
+   .nav-github {
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      border: 1px solid var(--text);
+      padding: .4rem .9rem; border-radius: 8px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+
+    /* ── HERO ── */
+    .hero-strip {
+      margin-top: var(--nav-h);
+      padding: 5rem clamp(1.5rem,8vw,8rem) 3.5rem;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-strip::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 80% 50%, rgba(110,231,183,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    .page-tag {
+      font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .9rem;
+    }
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800; letter-spacing: -.03em;
+      line-height: 1.05; margin-bottom: 1rem;
+    }
+    .page-title em { font-style: normal; color: var(--accent); }
+    .page-sub { color: var(--muted); font-weight: 300; font-size: 1rem; max-width: 52ch; }
+
+    /* ── STATS ROW ── */
+    .stats-row {
+      display: flex; gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-pill {
+      flex: 1; padding: 1.1rem clamp(1rem,3vw,2.5rem);
+      background: var(--surface);
+      display: flex; align-items: center; gap: .9rem;
+    }
+    .stat-icon { font-size: 1.2rem; }
+    .stat-count {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.5rem; line-height: 1;
+    }
+    .stat-lbl { font-size: .75rem; color: var(--muted); margin-top: .1rem; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      min-height: calc(100vh - var(--nav-h));
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /* ── SIDEBAR ── */
+    aside {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+    }
+    .sidebar-label {
+      font-size: .68rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted);
+      font-weight: 600; margin-bottom: .8rem; margin-top: 1.4rem;
+    }
+    .sidebar-label:first-child { margin-top: 0; }
+    .filter-btn {
+      display: flex; align-items: center; gap: .6rem;
+      width: 100%; padding: .55rem .8rem;
+      border-radius: 8px; border: none;
+      background: transparent; color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .875rem; font-weight: 500;
+      cursor: pointer; text-align: left;
+      transition: background .15s, color .15s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: rgba(110,231,183,.08); color: var(--text);
+    }
+    .filter-btn.active { color: var(--accent); }
+    .filter-count {
+      margin-left: auto; font-size: .7rem;
+      background: var(--border); padding: .1rem .45rem;
+      border-radius: 999px; color: var(--muted);
+    }
+    .sort-list {
+      display: flex;
+      flex-direction: column;
+      gap: .2rem;
+    }
+    .sort-btn .sort-dir {
+      margin-left: auto;
+      font-size: .72rem;
+      font-variant-numeric: tabular-nums;
+      opacity: .85;
+    }
+    .sort-btn .sort-dir[hidden] { display: none !important; }
+
+    /* ── LIST AREA ── */
+    .list-wrap {
+      padding: 2rem clamp(1.5rem,4vw,3rem);
+      min-width: 0;
+      max-width: 100%;
+    }
+    .list-controls {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.8rem; flex-wrap: wrap;
+    }
+    .search-box {
+      flex: 1; min-width: 200px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; display: flex; align-items: center;
+      gap: .6rem; padding: 0 .9rem;
+    }
+    .search-box svg { width:15px; height:15px; color: var(--muted); flex-shrink:0; }
+    .search-box input {
+      background: transparent; border: none; color: var(--text);
+      font-family: 'DM Sans', sans-serif; font-size: .875rem;
+      padding: .65rem 0; outline: none; width: 100%;
+    }
+    .search-box input::placeholder { color: var(--muted); }
+
+    /* ── TABLE HEADER ── */
+    .table-header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr minmax(190px, auto);
+      gap: 1rem;
+      padding: .5rem 1.2rem;
+      font-size: .7rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted);
+      font-weight: 600; margin-bottom: .4rem;
+    }
+
+    /* ── DOWNLOAD ROWS ── */
+    #dl-container { display: flex; flex-direction: column; gap: .5rem; }
+    .dl-group { margin-bottom: .5rem; }
+
+    /* Project header row */
+    .project-header {
+      display: flex; align-items: center; gap: .8rem;
+      padding: .55rem 1.2rem;
+      background: rgba(110,231,183,.04);
+      border: 1px solid var(--border);
+      border-radius: 10px 10px 0 0;
+      cursor: pointer;
+      user-select: none;
+      transition: background .15s;
+    }
+    .project-header:hover { background: rgba(110,231,183,.08); }
+    .project-header-icon { font-size: 1rem; }
+    .project-header-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700; font-size: .9rem; flex: 1;
+    }
+    .project-header-count {
+      font-size: .72rem; color: var(--muted);
+      background: var(--border); padding: .1rem .5rem;
+      border-radius: 999px;
+    }
+    .project-header-chevron {
+      width: 16px; height: 16px; color: var(--muted);
+      transition: transform .2s;
+    }
+    .project-header.collapsed .project-header-chevron { transform: rotate(-90deg); }
+
+    /* File rows */
+    .file-rows { display: flex; flex-direction: column; gap: 0; }
+    .file-rows.hidden { display: none; }
+
+    .dl-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr minmax(190px, auto);
+      gap: 1rem; align-items: center;
+      padding: .85rem 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: none;
+      transition: background .15s;
+      animation: rowIn .25s ease both;
+    }
+    .dl-row:last-child { border-radius: 0 0 10px 10px; }
+    .dl-row:hover { background: rgba(255,255,255,.025); }
+
+    @keyframes rowIn {
+      from { opacity:0; transform: translateY(6px); }
+      to   { opacity:1; transform: none; }
+    }
+
+    /* Standalone row */
+    .dl-row.standalone {
+      border-radius: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .dl-name { font-size: .9rem; font-weight: 500; }
+    .dl-version { font-size: .8rem; color: var(--muted); margin-top: .1rem; }
+
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: .3rem; }
+    .tag {
+      font-size: .68rem; font-weight: 600;
+      padding: .18rem .55rem; border-radius: 4px;
+    }
+    .tag.gaming          { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .tag.finance         { background: rgba(110,231,183,.12); color: var(--accent); }
+    .tag.tools           { background: rgba(251,191,36,.1);   color: #fbbf24; }
+    .tag.data            { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .tag.web-development { background: rgba(129,140,248,.13); color: var(--accent2); }
+
+    /* File type badges — styles for all prepared types; filters only show types present in data */
+    .filetype-list { display: flex; flex-wrap: wrap; gap: .3rem; }
+    .ft-badge {
+      font-size: .7rem; font-weight: 700;
+      padding: .2rem .55rem; border-radius: 5px;
+      font-family: 'DM Sans', sans-serif; letter-spacing: .03em;
+      background: rgba(148,163,184,.12); color: #94a3b8;
+    }
+    .ft-badge.zip  { background: rgba(251,191,36,.12); color: #fbbf24; }
+    .ft-badge.xlsx { background: rgba(110,231,183,.12); color: var(--accent); }
+    .ft-badge.xls  { background: rgba(110,231,183,.12); color: var(--accent); }
+    .ft-badge.c    { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .ft-badge.h    { background: rgba(129,140,248,.1);  color: #a5b4fc; }
+    .ft-badge.cpp  { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .ft-badge.pdf  { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .ft-badge.py   { background: rgba(251,191,36,.1);   color: #fbbf24; }
+    .ft-badge.exe  { background: rgba(100,116,139,.12); color: #94a3b8; }
+    .ft-badge.apk  { background: rgba(167,139,250,.14); color: #a78bfa; }
+    .ft-badge.html { background: rgba(251,146,60,.12);  color: #fb923c; }
+    .ft-badge.css  { background: rgba(56,189,248,.12);  color: #38bdf8; }
+    .ft-badge.js   { background: rgba(250,204,21,.12);  color: #facc15; }
+    .ft-badge.json { background: rgba(167,139,250,.12); color: #a78bfa; }
+    .ft-badge.txt  { background: rgba(148,163,184,.12); color: #94a3b8; }
+    .ft-badge.md   { background: rgba(148,163,184,.12); color: #cbd5e1; }
+    .ft-badge.csv  { background: rgba(52,211,153,.1);   color: #34d399; }
+    .ft-badge.png  { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .ft-badge.jpg,
+    .ft-badge.jpeg { background: rgba(244,114,182,.1);  color: #f9a8d4; }
+    .ft-badge.svg  { background: rgba(56,189,248,.1);   color: #7dd3fc; }
+    .ft-badge.docx { background: rgba(96,165,250,.12);  color: #60a5fa; }
+    .ft-badge.doc  { background: rgba(96,165,250,.12);  color: #60a5fa; }
+
+    /* Date */
+    .dl-date { font-size: .8rem; color: var(--muted); }
+
+    /* Download buttons — multiple types stay side-by-side in the Download column */
+    .dl-btns {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: .4rem;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: .35rem;
+      padding: .4rem .7rem; border-radius: 7px;
+      font-size: .78rem; font-weight: 500;
+      text-decoration: none; cursor: pointer;
+      background: var(--border); color: var(--text);
+      border: 1px solid transparent;
+      transition: background .2s, border-color .2s, color .2s;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+    .dl-btn:hover { background: rgba(110,231,183,.12); border-color: var(--accent); color: var(--accent); }
+    .dl-btn svg { width:12px; height:12px; flex-shrink: 0; }
+
+    /* Row structure helpers (desktop shows columns; mobile uses meta stack) */
+    .dl-main { min-width: 0; }
+    .dl-meta-top { display: none; }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center; padding: 5rem 2rem;
+      color: var(--muted); display: none;
+    }
+    .empty-state svg { width:48px; height:48px; margin: 0 auto 1rem; opacity:.3; display:block; }
+
+    /* ── MOBILE FILTER UI (hidden on desktop) ── */
+    .mobile-toolbar { display: none; }
+    .chip-rail { display: none; }
+    .filter-sheet-backdrop { display: none; }
+    .filter-sheet { display: none; }
+    .results-meta { display: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      display: inline-block; margin-bottom: .9rem;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: .78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem;
+    }
+
+    /* ── HAMBURGER ── */
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      width: 44px; height: 44px;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 101;
+      transition: border-color .2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span {
+      display: block; width: 18px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(12,12,15,.98);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      z-index: 102;
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .95rem .2rem;
+      min-height: 48px;
+      color: var(--text); text-decoration: none;
+      font-size: 1rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+
+    @media (max-width: 960px) {
+      /* Hard width lock — verhindert abgeschnittene / horizontal überlaufende Seite */
+      html, body {
+        overflow-x: clip;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      nav {
+        justify-content: flex-start;
+        padding: 0 1rem;
+        width: 100%;
+        max-width: 100%;
+      }
+      nav .nav-links,
+      nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; right: 1rem; }
+      .mobile-menu { display: block; }
+
+      .hero-strip {
+        padding: 1.5rem 1rem 1.25rem;
+        max-width: 100%;
+      }
+      .page-tag { margin-bottom: .55rem; font-size: .68rem; }
+      .page-title {
+        font-size: clamp(1.65rem, 7.5vw, 2.25rem);
+        margin-bottom: .55rem;
+      }
+      .page-sub { font-size: .9rem; max-width: none; }
+
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        max-width: 100%;
+      }
+      .stat-pill {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .3rem;
+        padding: .7rem .65rem;
+        min-width: 0;
+      }
+      .stat-count { font-size: 1.1rem; }
+      .stat-lbl {
+        font-size: .62rem;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+      }
+      .stat-icon { font-size: .95rem; }
+
+      .main-wrap {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-height: 0;
+        min-width: 0;
+      }
+
+      aside.desktop-filters {
+        display: none !important;
+      }
+
+      .list-wrap {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 0 0 2.5rem;
+        overflow-x: clip;
+      }
+      .list-controls { display: none !important; }
+      .table-header { display: none !important; }
+
+      /* Sticky control stack: volle Viewport-Breite, kein Negativ-Margin-Overflow */
+      .mobile-toolbar {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        position: sticky;
+        top: var(--nav-h);
+        z-index: 40;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        background: rgba(12,12,15,.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border);
+        padding: .55rem .85rem;
+        margin: 0;
+      }
+      .mobile-toolbar .search-box {
+        flex: 1 1 auto;
+        min-width: 0;
+        min-height: 42px;
+        width: auto;
+      }
+      .mobile-toolbar .search-box input {
+        font-size: 16px;
+        padding: .6rem 0;
+        min-width: 0;
+        width: 100%;
+      }
+      .filter-open-btn {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: .35rem;
+        min-width: 42px;
+        min-height: 42px;
+        padding: 0 .7rem;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--text);
+        font-family: 'DM Sans', sans-serif;
+        font-size: .8rem;
+        font-weight: 600;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: border-color .2s, color .2s, background .2s;
+      }
+      .filter-open-btn:active {
+        background: rgba(110,231,183,.1);
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .filter-open-btn.has-filters {
+        border-color: rgba(110,231,183,.45);
+        color: var(--accent);
+        background: rgba(110,231,183,.08);
+      }
+      .filter-open-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+      .filter-badge {
+        display: none;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 .35rem;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #0c0c0f;
+        font-size: .65rem;
+        font-weight: 700;
+        line-height: 18px;
+        text-align: center;
+      }
+      .filter-open-btn.has-filters .filter-badge { display: inline-block; }
+
+      .chip-rail {
+        display: flex;
+        gap: .45rem;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: .65rem .85rem .2rem;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .chip-rail::-webkit-scrollbar { display: none; }
+      .chip {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        gap: .3rem;
+        min-height: 36px;
+        padding: .35rem .75rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--muted);
+        font-family: 'DM Sans', sans-serif;
+        font-size: .76rem;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+        -webkit-tap-highlight-color: transparent;
+        transition: background .15s, color .15s, border-color .15s;
+      }
+      .chip.active {
+        background: rgba(110,231,183,.12);
+        border-color: rgba(110,231,183,.4);
+        color: var(--accent);
+      }
+      .chip .chip-count {
+        font-size: .65rem;
+        opacity: .75;
+        background: rgba(255,255,255,.06);
+        padding: .05rem .35rem;
+        border-radius: 999px;
+      }
+      .chip.active .chip-count { background: rgba(110,231,183,.15); }
+
+      .results-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        margin: .5rem .85rem .75rem;
+        font-size: .76rem;
+        color: var(--muted);
+        max-width: 100%;
+      }
+      .results-meta strong { color: var(--text); font-weight: 600; }
+      .clear-filters {
+        border: none;
+        background: transparent;
+        color: var(--accent);
+        font-family: 'DM Sans', sans-serif;
+        font-size: .76rem;
+        font-weight: 600;
+        cursor: pointer;
+        padding: .3rem .1rem;
+        min-height: 32px;
+        -webkit-tap-highlight-color: transparent;
+        flex-shrink: 0;
+      }
+      .clear-filters[hidden] { display: none; }
+
+      #dl-container {
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 0 .85rem;
+        box-sizing: border-box;
+      }
+      .empty-state { padding: 3rem 1rem; }
+
+      .dl-row,
+      .dl-row.standalone {
+        display: flex !important;
+        flex-direction: column;
+        align-items: stretch;
+        gap: .65rem;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: .95rem .95rem 1rem;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        border-top: 1px solid var(--border);
+        background: var(--card);
+        box-sizing: border-box;
+        grid-template-columns: none;
+      }
+      .dl-row:last-child { border-radius: 14px; }
+      .dl-row:hover { background: var(--card); }
+      .dl-row:active { background: rgba(255,255,255,.03); }
+
+      .col-tags,
+      .col-types,
+      .col-date { display: none !important; }
+
+      .dl-main {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .dl-meta-top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .4rem .55rem;
+        min-width: 0;
+        max-width: 100%;
+      }
+      .dl-name {
+        font-size: .98rem;
+        font-weight: 600;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+      .dl-version {
+        font-size: .78rem;
+        overflow-wrap: anywhere;
+      }
+      .dl-date { font-size: .76rem; }
+
+      .tag-list, .filetype-list {
+        gap: .3rem;
+        max-width: 100%;
+      }
+      .tag { font-size: .68rem; padding: .2rem .5rem; }
+      .ft-badge { font-size: .7rem; padding: .2rem .5rem; }
+
+      .dl-btns {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: .45rem;
+        justify-content: stretch;
+        margin-top: .1rem;
+        padding-top: .7rem;
+        border-top: 1px solid var(--border);
+        width: 100%;
+        max-width: 100%;
+      }
+      .dl-btn {
+        justify-content: center;
+        min-height: 44px;
+        min-width: 0;
+        flex: 1 1 0;
+        padding: .6rem .55rem;
+        font-size: .82rem;
+        font-weight: 600;
+        border-radius: 10px;
+        background: rgba(110,231,183,.1);
+        border: 1px solid rgba(110,231,183,.28);
+        color: var(--accent);
+        max-width: 100%;
+      }
+      .dl-btn:active { background: rgba(110,231,183,.18); }
+      .dl-btn svg { width: 14px; height: 14px; }
+
+      .project-header {
+        padding: .8rem .95rem;
+        border-radius: 12px 12px 0 0;
+        min-height: 46px;
+        max-width: 100%;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .project-header-name {
+        font-size: .92rem;
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .file-rows {
+        gap: .5rem;
+        padding: .5rem 0 0;
+        max-width: 100%;
+      }
+      .file-rows .dl-row {
+        border-radius: 12px;
+        border-top: 1px solid var(--border);
+      }
+      .dl-group {
+        margin-bottom: .75rem;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      /* Filter sheet: fixed + transform — blockiert die Seite nicht, wenn zu */
+      .filter-sheet-backdrop {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        max-width: 100%;
+        background: rgba(0,0,0,.55);
+        z-index: 200;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity .25s ease, visibility .25s ease;
+      }
+      .filter-sheet-backdrop.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+      .filter-sheet {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        z-index: 210;
+        max-height: min(85dvh, 620px);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-bottom: none;
+        border-radius: 18px 18px 0 0;
+        transform: translate3d(0, 100%, 0);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform .28s cubic-bezier(.22,1,.36,1), visibility .28s;
+        padding-bottom: max(.85rem, env(safe-area-inset-bottom));
+        box-sizing: border-box;
+      }
+      .filter-sheet.open {
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+        pointer-events: auto;
+      }
+      .filter-sheet-handle {
+        width: 40px; height: 4px;
+        border-radius: 999px;
+        background: var(--border);
+        margin: .65rem auto .3rem;
+        flex-shrink: 0;
+      }
+      .filter-sheet-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        padding: .45rem 1rem .75rem;
+        border-bottom: 1px solid var(--border);
+        min-width: 0;
+      }
+      .filter-sheet-header h2 {
+        font-family: 'Syne', sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text);
+        min-width: 0;
+      }
+      .filter-sheet-close {
+        width: 40px; height: 40px;
+        flex-shrink: 0;
+        display: inline-flex; align-items: center; justify-content: center;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--card);
+        color: var(--text);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .filter-sheet-close svg { width: 16px; height: 16px; }
+      .filter-sheet-body {
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: .9rem 1rem 1.1rem;
+        -webkit-overflow-scrolling: touch;
+        min-height: 0;
+        flex: 1 1 auto;
+      }
+      .filter-sheet-body .sidebar-label {
+        margin-top: 1rem;
+        margin-bottom: .55rem;
+      }
+      .filter-sheet-body .sidebar-label:first-child { margin-top: 0; }
+      .filter-sheet-body .filter-btn {
+        min-height: 44px;
+        padding: .6rem .8rem;
+        font-size: .88rem;
+        margin-bottom: .2rem;
+        max-width: 100%;
+      }
+      .filter-sheet-body .sort-btn {
+        min-height: 44px;
+      }
+      .filter-sheet-footer {
+        display: grid;
+        grid-template-columns: 1fr 1.35fr;
+        gap: .55rem;
+        padding: .75rem 1rem 0;
+        border-top: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+      .sheet-btn {
+        min-height: 48px;
+        border-radius: 12px;
+        font-family: 'DM Sans', sans-serif;
+        font-size: .88rem;
+        font-weight: 600;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        border: 1px solid var(--border);
+        min-width: 0;
+      }
+      .sheet-btn.reset {
+        background: transparent;
+        color: var(--muted);
+      }
+      .sheet-btn.apply {
+        background: rgba(110,231,183,.14);
+        border-color: rgba(110,231,183,.35);
+        color: var(--accent);
+      }
+
+      body.sheet-open {
+        overflow: hidden;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        max-width: 100%;
+      }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      footer {
+        padding: 2.25rem 1rem 1.75rem;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+      .footer-brand p { max-width: none; }
+    }
+
+    @media (max-width: 420px) {
+      .stats-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .filter-open-btn .filter-label { display: none; }
+      .filter-open-btn { padding: 0; width: 42px; }
+      .page-title { font-size: clamp(1.5rem, 8vw, 1.95rem); }
+    }
+
+    @media (hover: none) {
+      .dl-btn:hover {
+        background: rgba(110,231,183,.1);
+        border-color: rgba(110,231,183,.28);
+        color: var(--accent);
+      }
+      .filter-btn:hover {
+        background: transparent;
+        color: var(--muted);
+      }
+      .filter-btn.active:hover {
+        background: rgba(110,231,183,.08);
+        color: var(--accent);
+      }
+    }
+
+  </style>
+  <link rel="stylesheet" href="assets/site-header.css">
+  <script src="assets/site-header.js" defer></script>
+</head>
+<body>
+
+<nav class="main-nav">
+<a href="/" class="nav-logo">sms<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="projekte/">Projekte</a></li>
+    <li><a href="downloads" class="active">Downloads</a></li>
+    <li><a href="projekt-pipeline">Projekt-Pipeline</a></li>
+    <li><a href="vision">Vision</a></li>
+    <li><a href="wissen/">Wissen</a></li>
+  </ul>
+  <div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/en/downloads" data-language-file-target="en/downloads.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    <span>GitHub</span>
+  </a>
+    </div>
+  <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="projekte/">Projekte</a></li>
+    <li><a href="downloads" class="active">Downloads</a></li>
+    <li><a href="projekt-pipeline">Projekt-Pipeline</a></li>
+    <li><a href="vision">Vision</a></li>
+    <li><a href="wissen/">Wissen</a></li>
+
+    <li class="mobile-language-row">
+  <span class="mobile-language-label">Sprache</span>
+  <button type="button" class="language-switch" data-language-target="/en/downloads" data-language-file-target="en/downloads.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+</li>
+<li>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<div class="hero-strip">
+  <p class="page-tag">Downloads | Tools, Code & Vorlagen</p>
+  <h1 class="page-title">Tools, Tabellen und <em>Code</em></h1>
+  <p class="page-sub">Dateien aus meinen Projekten zum kostenlosen Download.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-pill">
+    <span class="stat-icon">📦</span>
+    <div>
+      <div class="stat-count" id="stat-total">0</div>
+      <div class="stat-lbl">Dateien gesamt</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon">🗂️</span>
+    <div>
+      <div class="stat-count" id="stat-projects">0</div>
+      <div class="stat-lbl">Projekte</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon">📥</span>
+    <div>
+      <div class="stat-count" id="stat-types">0</div>
+      <div class="stat-lbl">Dateitypen</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="desktop-filters" id="desktop-filters">
+    <p class="sidebar-label">Kategorie</p>
+    <button class="filter-btn active" data-cat="all" onclick="setCat(this,'all')">
+      Alle
+      <span class="filter-count" id="fc-all"></span>
+    </button>
+    <button class="filter-btn" data-cat="gaming" onclick="setCat(this,'gaming')">
+      🎮 Gaming
+      <span class="filter-count" id="fc-gaming"></span>
+    </button>
+    <button class="filter-btn" data-cat="finance" onclick="setCat(this,'finance')">
+      📈 Finanzen
+      <span class="filter-count" id="fc-finance"></span>
+    </button>
+    <button class="filter-btn" data-cat="tools" onclick="setCat(this,'tools')">
+      🛠️ Tools
+      <span class="filter-count" id="fc-tools"></span>
+    </button>
+    <button class="filter-btn" data-cat="data" onclick="setCat(this,'data')">
+      📊 Datenanalyse
+      <span class="filter-count" id="fc-data"></span>
+    </button>
+    <button class="filter-btn" data-cat="web-development" onclick="setCat(this,'web-development')">
+      🌐 Web-Dev
+      <span class="filter-count" id="fc-web-development"></span>
+    </button>
+
+    <p class="sidebar-label">Dateityp</p>
+    <div id="type-filters">
+      <button class="filter-btn" data-type="all-types" onclick="setType(this,'all')">
+        Alle Typen
+        <span class="filter-count" id="ft-all"></span>
+      </button>
+      <!-- weitere Dateitypen werden aus download-data befüllt -->
+    </div>
+
+    <p class="sidebar-label">Sortieren</p>
+    <div class="sort-list" role="listbox" aria-label="Sortierung">
+      <button type="button" class="filter-btn sort-btn active" data-sort="date" onclick="setSort('date')" aria-pressed="true">Neuste <span class="sort-dir" aria-hidden="true">↓</span></button>
+      <button type="button" class="filter-btn sort-btn" data-sort="project" onclick="setSort('project')" aria-pressed="false">Projekt <span class="sort-dir" hidden aria-hidden="true"></span></button>
+      <button type="button" class="filter-btn sort-btn" data-sort="name" onclick="setSort('name')" aria-pressed="false">Name (A–Z) <span class="sort-dir" hidden aria-hidden="true"></span></button>
+      <button type="button" class="filter-btn sort-btn" data-sort="type" onclick="setSort('type')" aria-pressed="false">Dateityp <span class="sort-dir" hidden aria-hidden="true"></span></button>
+    </div>
+  </aside>
+
+  <!-- LIST -->
+  <div class="list-wrap">
+    <div class="list-controls">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Dateien durchsuchen …" oninput="onSearchInput()">
+      </div>
+    </div>
+
+    <!-- Mobile: sticky search + filter -->
+    <div class="mobile-toolbar" id="mobile-toolbar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="search" id="search-input-mobile" placeholder="Suchen …" enterkeyhint="search" autocomplete="off" oninput="onSearchInputMobile()">
+      </div>
+      <button type="button" class="filter-open-btn" id="filter-open-btn" aria-haspopup="dialog" aria-controls="filter-sheet" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16M7 12h10M10 19h4"/></svg>
+        <span class="filter-label">Filter</span>
+        <span class="filter-badge" id="filter-badge">0</span>
+      </button>
+    </div>
+
+    <div class="chip-rail" id="chip-rail" role="toolbar" aria-label="Kategorie filtern"></div>
+
+    <div class="results-meta" id="results-meta">
+      <span><strong id="results-count">0</strong> Dateien</span>
+      <button type="button" class="clear-filters" id="clear-filters" hidden>Filter zurücksetzen</button>
+    </div>
+
+    <div class="table-header">
+      <div>Name / Version</div>
+      <div>Tags</div>
+      <div>Dateityp</div>
+      <div>Datum</div>
+      <div style="text-align:right">Download</div>
+    </div>
+
+    <div id="dl-container"></div>
+    <div class="empty-state" id="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p>Keine Dateien gefunden.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BOTTOM SHEET (mobile) -->
+<div class="filter-sheet-backdrop" id="filter-sheet-backdrop" hidden></div>
+<div class="filter-sheet" id="filter-sheet" role="dialog" aria-modal="true" aria-labelledby="filter-sheet-title" hidden>
+  <div class="filter-sheet-handle" aria-hidden="true"></div>
+  <div class="filter-sheet-header">
+    <h2 id="filter-sheet-title">Filter & Sortierung</h2>
+    <button type="button" class="filter-sheet-close" id="filter-sheet-close" aria-label="Filter schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="filter-sheet-body" id="filter-sheet-body"></div>
+  <div class="filter-sheet-footer">
+    <button type="button" class="sheet-btn reset" id="filter-reset-btn">Zurücksetzen</button>
+    <button type="button" class="sheet-btn apply" id="filter-apply-btn">Anwenden</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">sms<span>.</span></a>
+      <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="projekte/">Projekte</a></li>
+        <li><a href="downloads">Downloads</a></li>
+        <li><a href="projekt-pipeline">Projekt-Pipeline</a></li>
+        <li><a href="vision">Vision</a></li>
+        <li><a href="wissen/">Wissen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <ul>
+        <li><a href="impressum">Impressum</a></li>
+        <li><a href="/#info">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Simon Stark</span>
+    <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+  </div>
+</footer>
+<script src="download-data.js"></script>
+<script>
+// ── MOBILE HAMBURGER MENU ─────────────────────────────────────────────────────
+(() => {
+  const navToggle = document.querySelector('.nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', () => {
+      const open = navToggle.classList.toggle('open');
+      mobileMenu.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    });
+    // Menü nach Klick auf einen Link schließen
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Menü öffnen');
+      });
+    });
+  }
+})();
+
+// ── DATA from download-data.js ────────────────────────────────────────────────
+const DOWNLOADS = Array.isArray(window.DOWNLOADS)
+  ? window.DOWNLOADS
+  : (Array.isArray(window.DOWNLOAD_DATA) ? window.DOWNLOAD_DATA : []);
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+let currentCat  = 'all';
+let currentType = 'all';
+let currentSort = 'date';
+let currentSortDir = 1;
+let lastResultCount = 0;
+const DEFAULT_SORT = 'date';
+const SORT_DESC = { date: true, project: false, name: false, type: false };
+
+function sortArrow() {
+  const defaultDesc = !!SORT_DESC[currentSort];
+  const isDesc = currentSortDir === 1 ? defaultDesc : !defaultDesc;
+  return isDesc ? '↓' : '↑';
+}
+
+function updateSortButtons() {
+  const arrow = sortArrow();
+  document.querySelectorAll('[data-sort]').forEach(btn => {
+    const on = btn.getAttribute('data-sort') === currentSort;
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    const dir = btn.querySelector('.sort-dir');
+    if (!dir) return;
+    dir.hidden = !on;
+    if (on) dir.textContent = arrow;
+  });
+}
+
+// ── HELPERS ──────────────────────────────────────────────────────────────────
+const TAG_LABELS = {
+  gaming:'🎮 Spiele', finance:'📈 Finanzen',
+  tools:'🛠️ Tools', data:'📊 Daten', 'web-development':'🌐 Web-Dev'
+};
+
+const CAT_CHIPS = [
+  { id: 'all', label: 'Alle' },
+  { id: 'gaming', label: '🎮 Gaming' },
+  { id: 'finance', label: '📈 Finanzen' },
+  { id: 'tools', label: '🛠️ Tools' },
+  { id: 'data', label: '📊 Daten' },
+  { id: 'web-development', label: '🌐 Web-Dev' }
+];
+
+/** Preferred display order for known types; unknown types are appended alphabetically. */
+const TYPE_ORDER = [
+  'zip', 'xlsx', 'xls', 'c', 'h', 'cpp', 'exe', 'apk',
+  'pdf', 'py', 'html', 'css', 'js', 'json',
+  'txt', 'md', 'csv', 'png', 'jpg', 'jpeg', 'svg', 'docx', 'doc'
+];
+
+/** Unique file types actually present in DOWNLOADS (for Dateityp filters). */
+function getPresentTypes() {
+  const set = new Set();
+  DOWNLOADS.forEach(d => {
+    (d.files || []).forEach(f => {
+      if (f && f.type) set.add(String(f.type).toLowerCase());
+    });
+  });
+  const present = [...set];
+  present.sort((a, b) => {
+    const ia = TYPE_ORDER.indexOf(a);
+    const ib = TYPE_ORDER.indexOf(b);
+    if (ia === -1 && ib === -1) return a.localeCompare(b);
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+  return present;
+}
+
+function buildTypeFilters() {
+  const wrap = document.getElementById('type-filters');
+  if (!wrap) return;
+
+  const present = getPresentTypes();
+  if (currentType !== 'all' && !present.includes(currentType)) {
+    currentType = 'all';
+  }
+
+  const allBtn = `
+    <button class="filter-btn${currentType === 'all' ? ' active' : ''}" data-type="all-types" onclick="setType(this,'all')">
+      Alle Typen
+      <span class="filter-count" id="ft-all"></span>
+    </button>`;
+
+  const typeBtns = present.map(t => `
+    <button class="filter-btn${currentType === t ? ' active' : ''}" data-type="${t}" onclick="setType(this,'${t}')">
+      <span class="ft-badge ${t}">.${t}</span>
+      <span class="filter-count" id="ft-${t}"></span>
+    </button>`).join('');
+
+  wrap.innerHTML = allBtn + typeBtns;
+}
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('de-DE', { day:'2-digit', month:'short', year:'numeric' });
+}
+
+function dlIcon() {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>`;
+}
+
+function getSearchQuery() {
+  const desktop = document.getElementById('search-input');
+  const mobile = document.getElementById('search-input-mobile');
+  const active = document.activeElement;
+  if (active === mobile) return (mobile.value || '').toLowerCase().trim();
+  if (active === desktop) return (desktop.value || '').toLowerCase().trim();
+  const m = (mobile && mobile.value) || '';
+  const d = (desktop && desktop.value) || '';
+  return (m || d).toLowerCase().trim();
+}
+
+function syncSearchInputs(source) {
+  const desktop = document.getElementById('search-input');
+  const mobile = document.getElementById('search-input-mobile');
+  if (!desktop || !mobile) return;
+  if (source === 'mobile') desktop.value = mobile.value;
+  else mobile.value = desktop.value;
+}
+
+function onSearchInput() {
+  syncSearchInputs('desktop');
+  render();
+}
+function onSearchInputMobile() {
+  syncSearchInputs('mobile');
+  render();
+}
+
+function activeFilterCount() {
+  let n = 0;
+  if (currentCat !== 'all') n++;
+  if (currentType !== 'all') n++;
+  if (currentSort !== DEFAULT_SORT || currentSortDir !== 1) n++;
+  return n;
+}
+
+function updateFilterChrome() {
+  const count = activeFilterCount();
+  const btn = document.getElementById('filter-open-btn');
+  const badge = document.getElementById('filter-badge');
+  const clearBtn = document.getElementById('clear-filters');
+  const resultsCount = document.getElementById('results-count');
+
+  if (btn) {
+    btn.classList.toggle('has-filters', count > 0);
+    btn.setAttribute('aria-expanded', document.body.classList.contains('sheet-open') ? 'true' : 'false');
+  }
+  if (badge) badge.textContent = String(count);
+  if (clearBtn) clearBtn.hidden = count === 0;
+  if (resultsCount) resultsCount.textContent = String(lastResultCount);
+
+  document.querySelectorAll('#chip-rail .chip').forEach(chip => {
+    chip.classList.toggle('active', chip.dataset.cat === currentCat);
+  });
+
+  document.querySelectorAll('[data-cat]').forEach(b => {
+    b.classList.toggle('active', b.dataset.cat === currentCat);
+  });
+  document.querySelectorAll('[data-type]').forEach(b => {
+    const val = b.dataset.type === 'all-types' ? 'all' : b.dataset.type;
+    b.classList.toggle('active', val === currentType);
+  });
+  updateSortButtons();
+}
+
+function buildChipRail() {
+  const rail = document.getElementById('chip-rail');
+  if (!rail) return;
+  rail.innerHTML = CAT_CHIPS.map(c => {
+    const count = c.id === 'all'
+      ? DOWNLOADS.length
+      : DOWNLOADS.filter(d => d.tags.includes(c.id)).length;
+    return `<button type="button" class="chip${c.id === currentCat ? ' active' : ''}" data-cat="${c.id}">
+      ${c.label}
+      <span class="chip-count" id="chip-count-${c.id}">${count}</span>
+    </button>`;
+  }).join('');
+
+  rail.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      currentCat = chip.dataset.cat;
+      render();
+    });
+  });
+}
+
+function updateChipCounts() {
+  CAT_CHIPS.forEach(c => {
+    const el = document.getElementById('chip-count-' + c.id);
+    if (!el) return;
+    el.textContent = c.id === 'all'
+      ? DOWNLOADS.length
+      : DOWNLOADS.filter(d => d.tags.includes(c.id)).length;
+  });
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function render() {
+  const q = getSearchQuery();
+
+  let items = DOWNLOADS.filter(d => {
+    const matchCat  = currentCat  === 'all' || d.tags.includes(currentCat);
+    const matchType = currentType === 'all' || d.files.some(f => String(f.type).toLowerCase() === currentType);
+    const matchQ    = !q || d.name.toLowerCase().includes(q)
+                         || d.project.toLowerCase().includes(q)
+                         || d.tags.some(t => t.includes(q))
+                         || (d.version && String(d.version).toLowerCase().includes(q));
+    return matchCat && matchType && matchQ;
+  });
+
+  items = items.slice().sort((a, b) => {
+    const dir = currentSortDir;
+    if (currentSort === 'date')    return (new Date(b.date) - new Date(a.date)) * dir;
+    if (currentSort === 'project') return a.project.localeCompare(b.project) * dir;
+    if (currentSort === 'name')    return a.name.localeCompare(b.name) * dir;
+    if (currentSort === 'type')    return a.files[0].type.localeCompare(b.files[0].type) * dir;
+    return 0;
+  });
+
+  lastResultCount = items.length;
+  const container = document.getElementById('dl-container');
+  const empty     = document.getElementById('empty-state');
+
+  if (items.length === 0) {
+    container.innerHTML = '';
+    empty.style.display = 'block';
+    updateCounts(items);
+    updateFilterChrome();
+    updateChipCounts();
+    return;
+  }
+  empty.style.display = 'none';
+
+  if (currentSort === 'project') {
+    const groups = {};
+    items.forEach(d => {
+      if (!groups[d.project]) groups[d.project] = { icon: d.projectIcon, entries: [] };
+      groups[d.project].entries.push(d);
+    });
+    container.innerHTML = Object.entries(groups).map(([proj, g]) => `
+      <div class="dl-group">
+        <div class="project-header" onclick="toggleGroup(this)" role="button" tabindex="0" aria-expanded="true">
+          <span class="project-header-icon">${g.icon || ''}</span>
+          <span class="project-header-name">${proj}</span>
+          <span class="project-header-count">${g.entries.length} Datei${g.entries.length !== 1 ? 'en' : ''}</span>
+          <svg class="project-header-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="file-rows">
+          ${g.entries.map((d,i) => buildRow(d, i, false)).join('')}
+        </div>
+      </div>
+    `).join('');
+  } else {
+    container.innerHTML = items.map((d, i) => buildRow(d, i, true)).join('');
+  }
+
+  updateCounts(items);
+  updateFilterChrome();
+  updateChipCounts();
+}
+
+function sortFilesByType(files) {
+  return (files || []).slice().sort((a, b) => {
+    const ta = String(a.type || '').toLowerCase();
+    const tb = String(b.type || '').toLowerCase();
+    const ia = TYPE_ORDER.indexOf(ta);
+    const ib = TYPE_ORDER.indexOf(tb);
+    if (ia === -1 && ib === -1) return ta.localeCompare(tb);
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+}
+
+function buildRow(d, i, standalone) {
+  const tags = d.tags.map(t => `<span class="tag ${t}">${TAG_LABELS[t] || t}</span>`).join('');
+  const files = sortFilesByType(d.files);
+  const types = files.map(f => {
+    const t = String(f.type || '').toLowerCase();
+    return `<span class="ft-badge ${t}">.${t}</span>`;
+  }).join('');
+  const btns = files.map(f => {
+    const t = String(f.type || '').toLowerCase();
+    return `<a href="${f.href}" class="dl-btn ${t}" download>${dlIcon()} ${f.label}</a>`;
+  }).join('');
+
+  return `
+    <article class="dl-row${standalone ? ' standalone' : ''}" style="animation-delay:${i*0.04}s">
+      <div class="dl-main">
+        <div class="dl-name">${d.name}</div>
+        <div class="dl-version">${d.version}${d.project ? ' | ' + d.project : ''}</div>
+      </div>
+      <div class="dl-meta-top">
+        <div class="tag-list">${tags}</div>
+        <div class="filetype-list">${types}</div>
+        <div class="dl-date">${formatDate(d.date)}</div>
+      </div>
+      <div class="tag-list col-tags">${tags}</div>
+      <div class="filetype-list col-types">${types}</div>
+      <div class="dl-date col-date">${formatDate(d.date)}</div>
+      <div class="dl-btns">${btns}</div>
+    </article>`;
+}
+
+// ── COUNTS ────────────────────────────────────────────────────────────────────
+function updateCounts() {
+  document.getElementById('stat-total').textContent    = DOWNLOADS.length;
+  document.getElementById('stat-projects').textContent = [...new Set(DOWNLOADS.map(d => d.project))].length;
+  document.getElementById('stat-types').textContent    = [...new Set(DOWNLOADS.flatMap(d => d.files.map(f => f.type)))].length;
+
+  const cats = ['gaming','finance','tools','data','web-development'];
+  document.querySelectorAll('#fc-all').forEach(el => { el.textContent = DOWNLOADS.length; });
+  cats.forEach(c => {
+    document.querySelectorAll('#fc-' + c).forEach(el => {
+      el.textContent = DOWNLOADS.filter(d => d.tags.includes(c)).length;
+    });
+  });
+
+  const types = getPresentTypes();
+  document.querySelectorAll('#ft-all').forEach(el => { el.textContent = DOWNLOADS.length; });
+  types.forEach(t => {
+    document.querySelectorAll('#ft-' + t).forEach(el => {
+      el.textContent = DOWNLOADS.filter(d => d.files.some(f => String(f.type).toLowerCase() === t)).length;
+    });
+  });
+}
+
+// ── CONTROLS ─────────────────────────────────────────────────────────────────
+function setCat(btn, val) {
+  currentCat = val;
+  render();
+}
+function setType(btn, val) {
+  currentType = val;
+  render();
+}
+function setSort(val, reset) {
+  if (reset || val !== currentSort) {
+    currentSort = val;
+    currentSortDir = 1;
+  } else {
+    currentSortDir *= -1;
+  }
+  render();
+}
+
+function toggleGroup(header) {
+  header.classList.toggle('collapsed');
+  header.nextElementSibling.classList.toggle('hidden');
+  const expanded = !header.classList.contains('collapsed');
+  header.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+}
+
+function resetFilters() {
+  currentCat = 'all';
+  currentType = 'all';
+  currentSort = DEFAULT_SORT;
+  currentSortDir = 1;
+  const desktop = document.getElementById('search-input');
+  const mobile = document.getElementById('search-input-mobile');
+  if (desktop) desktop.value = '';
+  if (mobile) mobile.value = '';
+  render();
+}
+
+// ── FILTER SHEET ──────────────────────────────────────────────────────────────
+function openFilterSheet() {
+  const sheet = document.getElementById('filter-sheet');
+  const backdrop = document.getElementById('filter-sheet-backdrop');
+  const body = document.getElementById('filter-sheet-body');
+  const desktop = document.getElementById('desktop-filters');
+  if (!sheet || !backdrop || !body || !desktop) return;
+
+  body.innerHTML = desktop.innerHTML;
+  // Avoid duplicate IDs / double-firing inline handlers in the sheet clone
+  body.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
+  body.querySelectorAll('[onclick], [onchange]').forEach(el => {
+    el.removeAttribute('onclick');
+    el.removeAttribute('onchange');
+  });
+  body.querySelectorAll('[data-cat]').forEach(btn => {
+    btn.addEventListener('click', () => setCat(btn, btn.dataset.cat));
+  });
+  body.querySelectorAll('[data-type]').forEach(btn => {
+    const val = btn.dataset.type === 'all-types' ? 'all' : btn.dataset.type;
+    btn.addEventListener('click', () => setType(btn, val));
+  });
+  body.querySelectorAll('[data-sort]').forEach(btn => {
+    btn.addEventListener('click', () => setSort(btn.dataset.sort));
+  });
+  // hidden-Attribut entfernen (sonst display:none !important schlägt .open)
+  sheet.hidden = false;
+  backdrop.hidden = false;
+  requestAnimationFrame(() => {
+    sheet.classList.add('open');
+    backdrop.classList.add('open');
+    document.body.classList.add('sheet-open');
+    updateFilterChrome();
+  });
+}
+
+function closeFilterSheet() {
+  const sheet = document.getElementById('filter-sheet');
+  const backdrop = document.getElementById('filter-sheet-backdrop');
+  if (!sheet || !backdrop) return;
+  sheet.classList.remove('open');
+  backdrop.classList.remove('open');
+  document.body.classList.remove('sheet-open');
+  // Nach Animation wieder aus dem A11y-Baum nehmen
+  const finish = () => {
+    if (sheet.classList.contains('open')) return;
+    sheet.hidden = true;
+    backdrop.hidden = true;
+  };
+  sheet.addEventListener('transitionend', finish, { once: true });
+  setTimeout(finish, 320);
+  updateFilterChrome();
+}
+
+function initMobileFilters() {
+  buildChipRail();
+
+  const openBtn = document.getElementById('filter-open-btn');
+  const closeBtn = document.getElementById('filter-sheet-close');
+  const backdrop = document.getElementById('filter-sheet-backdrop');
+  const applyBtn = document.getElementById('filter-apply-btn');
+  const resetBtn = document.getElementById('filter-reset-btn');
+  const clearBtn = document.getElementById('clear-filters');
+
+  if (openBtn) openBtn.addEventListener('click', openFilterSheet);
+  if (closeBtn) closeBtn.addEventListener('click', closeFilterSheet);
+  if (backdrop) backdrop.addEventListener('click', closeFilterSheet);
+  if (applyBtn) applyBtn.addEventListener('click', closeFilterSheet);
+  if (resetBtn) resetBtn.addEventListener('click', () => { resetFilters(); });
+  if (clearBtn) clearBtn.addEventListener('click', resetFilters);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('sheet-open')) {
+      closeFilterSheet();
+    }
+  });
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+buildTypeFilters();
+initMobileFilters();
+render();
+</script>
+
+</body>
+</html>

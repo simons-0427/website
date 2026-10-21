@@ -1,0 +1,3975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="icon" type="image/svg+xml" href="../../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicons/favicon-1g-dotgrid-180.png">
+  <title>Kelly calculator, Investment Kelly &amp; portfolio optimiser</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Kelly calculator for bets and investments: compare optimal position size, portfolio Kelly, cash returns, leverage and short positions in an interactive simulator.">
+  <link rel="canonical" href="https://smstark-projekt.de/en/dashboards/kelly-calculator">
+  <script type="application/ld+json">
+  {
+      "@context":  "https://schema.org",
+      "@type":  "WebApplication",
+      "@id":  "https://smstark-projekt.de/en/dashboards/kelly-calculator#webpage",
+      "name":  "Kelly calculator, Investment Kelly and portfolio optimiser",
+      "url":  "https://smstark-projekt.de/en/dashboards/kelly-calculator",
+      "description":  "Interactive Kelly calculator for position sizing, Investment Kelly and portfolio Kelly with simulations.",
+      "author":  {
+                     "@type":  "Person",
+                     "name":  "Simon Stark",
+                      "url":  "https://smstark-projekt.de/en/"
+                 },
+      "isPartOf":  {
+                       "@type":  "WebSite",
+                        "url":  "https://smstark-projekt.de/en/",
+                        "name":  "SMStark Project"
+                   },
+      "applicationCategory":  "FinanceApplication",
+      "operatingSystem":  "All"
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://smstark-projekt.de/en/dashboards/kelly-calculator">
+  <meta property="og:title" content="Kelly calculator, Investment Kelly &amp; portfolio optimiser">
+  <meta property="og:description" content="Kelly calculator for bets and investments: compare optimal position size, portfolio Kelly, cash returns, leverage and short positions in an interactive simulator.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/kelly-tool-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+      --green:   #4ade80;
+      --red:     #f87171;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,12,15,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; justify-content: center; align-items: center;
+      padding: 0 clamp(1.5rem,5vw,4rem);
+      z-index: 100; gap: 2.2rem;
+    }
+    .nav-logo {
+      position: absolute; left: clamp(1.5rem,5vw,4rem);
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: .875rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      letter-spacing: .03em; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-github {
+      position: absolute; right: clamp(1.5rem,5vw,4rem);
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      border: 1px solid var(--text);
+      padding: .4rem .9rem; border-radius: 8px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+    .nav-language { position:absolute; right:clamp(8.5rem,13vw,11rem); display:inline-flex; gap:.25rem; font-size:.72rem; letter-spacing:.08em; color:var(--muted); text-decoration:none; }
+    .nav-language span { color:var(--text); }
+    .nav-language:hover { color:var(--accent); }
+
+    /* ── HAMBURGER (mobil) ─────────────────────── */
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      width: 40px; height: 40px;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 101;
+      transition: border-color .2s;
+    }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span {
+      display: block; width: 18px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobiles Dropdown-Menü */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(12,12,15,.98);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      z-index: 102;
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .95rem .2rem;
+      color: var(--text); text-decoration: none;
+      font-size: 1rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+
+    /* ── HERO ── */
+    .hero-strip {
+      margin-top: var(--nav-h);
+      padding: 4rem clamp(1.5rem,8vw,8rem) 3rem;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-strip::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 80% 50%, rgba(110,231,183,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    .page-tag {
+      font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .9rem;
+    }
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800; letter-spacing: -.03em;
+      line-height: 1.05; margin-bottom: .8rem;
+    }
+    .page-title em { font-style: normal; color: var(--accent); }
+    .page-sub { color: var(--muted); font-weight: 300; font-size: 1rem; max-width: 52ch; }
+
+    /* ── MAIN WRAP ── */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem clamp(1.5rem,5vw,4rem) 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* ── CARDS ── */
+    .calc-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem 2.4rem;
+    }
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      margin-bottom: 1.6rem;
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .card-title span { font-size: 1.2rem; }
+
+    /* ── DIVIDER ── */
+    .h-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* ── INPUT GRID ── */
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+    .input-group { display: flex; flex-direction: column; gap: .45rem; }
+    .input-group label {
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+    .label-green { color: var(--green); }
+    .label-red   { color: var(--red); }
+    .label-white { color: var(--muted); }
+
+    .input-wrap {
+      position: relative; display: flex; align-items: center;
+    }
+    .input-wrap input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .7rem 2.2rem .7rem 1rem;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; font-weight: 500;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .input-wrap input:focus { border-color: var(--accent); }
+    .input-wrap input.green:focus { border-color: var(--green); }
+    .input-wrap input.red:focus   { border-color: var(--red); }
+    .input-unit {
+      position: absolute; right: .9rem;
+      font-size: .8rem; color: var(--muted); pointer-events: none;
+    }
+
+    /* Capital toggle */
+    .capital-row {
+      display: flex; align-items: center; gap: .8rem;
+      margin-top: 1.2rem;
+    }
+    .toggle-switch {
+      position: relative; width: 40px; height: 22px;
+      flex-shrink: 0;
+    }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider {
+      position: absolute; inset: 0;
+      background: var(--border); border-radius: 999px;
+      cursor: pointer; transition: background .2s;
+    }
+    .toggle-slider::before {
+      content: '';
+      position: absolute; left: 3px; top: 3px;
+      width: 16px; height: 16px;
+      background: var(--muted); border-radius: 50%;
+      transition: transform .2s, background .2s;
+    }
+    .toggle-switch input:checked + .toggle-slider { background: rgba(110,231,183,.2); }
+    .toggle-switch input:checked + .toggle-slider::before {
+      transform: translateX(18px); background: var(--accent);
+    }
+    .capital-label { font-size: .88rem; color: var(--muted); }
+    .capital-input-wrap {
+      margin-left: auto;
+      position: relative; display: flex; align-items: center;
+    }
+    .capital-input-wrap input {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .55rem 1rem .55rem 1.8rem;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem; font-weight: 500;
+      width: 160px; outline: none;
+      transition: border-color .2s, opacity .2s;
+    }
+    .capital-input-wrap input:disabled { opacity: .35; cursor: not-allowed; }
+    .capital-input-wrap input:not(:disabled):focus { border-color: var(--accent); }
+    .capital-euro {
+      position: absolute; left: .7rem;
+      font-size: .85rem; color: var(--muted); pointer-events: none;
+    }
+
+    /* ── CALCULATE BUTTON ── */
+    .calc-btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .75rem 2rem; border-radius: 10px;
+      background: var(--accent); color: #0c0c0f;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem; font-weight: 700;
+      border: none; cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+      margin-top: 1.4rem;
+    }
+    .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,231,183,.25); }
+    .calc-btn:active { transform: none; }
+
+    /* ── RESULT ── */
+    .result-wrap {
+      text-align: center;
+      padding: 1.5rem 0 .5rem;
+    }
+    .result-label {
+      font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--muted);
+      font-weight: 600; margin-bottom: .6rem;
+    }
+    .result-value {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 800; letter-spacing: -.04em;
+      line-height: 1; color: var(--accent);
+      transition: all .4s ease;
+    }
+    .result-sub {
+      font-size: .9rem; color: var(--muted);
+      margin-top: .6rem;
+    }
+    .result-capital {
+      font-size: 1rem; color: var(--text);
+      font-weight: 500; margin-top: .3rem;
+    }
+    .result-formula {
+      margin-top: 1.2rem;
+      font-size: .82rem; color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .6rem 1.2rem;
+      display: inline-block;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Result grid */
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .result-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .result-chip-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem; font-weight: 800;
+      line-height: 1;
+    }
+    .result-chip-val.green { color: var(--green); }
+    .result-chip-val.red   { color: var(--red); }
+    .result-chip-val.blue  { color: var(--accent2); }
+    .result-chip-val.accent { color: var(--accent); }
+    .result-chip-lbl {
+      font-size: .72rem; color: var(--muted);
+      margin-top: .3rem; text-transform: uppercase;
+      letter-spacing: .08em; font-weight: 600;
+    }
+
+    /* ── SIMULATOR ── */
+    .sim-controls {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .sim-label { font-size: .88rem; color: var(--muted); }
+    .sim-count-wrap { position: relative; display: flex; align-items: center; }
+    .sim-count-wrap input {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .6rem 3.5rem .6rem 1rem;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem; font-weight: 500;
+      width: 140px; outline: none;
+      transition: border-color .2s;
+    }
+    .sim-count-wrap input:focus { border-color: var(--accent); }
+    .sim-unit {
+      position: absolute; right: .9rem;
+      font-size: .78rem; color: var(--muted); pointer-events: none;
+    }
+    .sim-btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .65rem 1.6rem; border-radius: 10px;
+      background: rgba(110,231,183,.1); color: var(--accent);
+      border: 1px solid rgba(110,231,183,.25);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .88rem; font-weight: 600;
+      cursor: pointer; transition: all .2s;
+    }
+    .sim-btn:hover { background: rgba(110,231,183,.18); border-color: var(--accent); }
+    .sim-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+    /* Sim results */
+    .sim-results {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1rem;
+      margin-top: 1.4rem;
+      opacity: 0; transition: opacity .4s;
+    }
+    .sim-results.five { grid-template-columns: repeat(5,1fr); }
+    .sim-results.mc-stats {
+      grid-template-columns: repeat(4, 1fr);
+      opacity: 1;
+    }
+    .sim-results.mc-stats .result-chip.mc-beat-cash {
+      grid-column: 1 / -1;
+      max-width: 280px;
+    }
+    .sim-results.visible { opacity: 1; }
+    .mc-block {
+      margin-top: 1.6rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border);
+    }
+    .mc-block .card-title { margin-bottom: 1rem; }
+
+    /* Chart */
+    .chart-wrap {
+      margin-top: 1.8rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      position: relative;
+    }
+    .chart-title {
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1rem;
+    }
+    canvas { max-height: 320px; }
+
+    /* Warning */
+    .warning-box {
+      background: rgba(248,113,113,.06);
+      border: 1px solid rgba(248,113,113,.2);
+      border-left: 3px solid var(--red);
+      border-radius: 0 10px 10px 0;
+      padding: .8rem 1.2rem;
+      font-size: .85rem; color: var(--muted);
+      margin-top: 1rem; display: none;
+    }
+    .warning-box.show { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      display: inline-block; margin-bottom: .9rem;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: .78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem;
+    }
+    .footer-bottom a {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .5rem 1rem; border-radius: 8px;
+      border: 1px solid var(--border);
+      font-weight: 500; transition: all .2s;
+    }
+    .footer-bottom a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── RESPONSIVE: NAV → HAMBURGER ───────────── */
+    @media (max-width: 960px) {
+      nav {
+        justify-content: flex-start;
+        padding: 0 1.5rem;
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+      }
+      nav .nav-links,
+      nav .nav-github,
+      nav .nav-language { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+    }
+
+    /* ── RESPONSIVE: INHALT ────────────────────── */
+    @media (max-width: 768px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      footer { padding: 2.5rem max(1.25rem, env(safe-area-inset-left)) 2rem max(1.25rem, env(safe-area-inset-right)); }
+    }
+
+    @media (max-width: 640px) {
+      .main { padding: 2rem 1.25rem 3.5rem; }
+      .calc-card { padding: 1.5rem 1.25rem; }
+      .input-grid { grid-template-columns: 1fr; }
+      .result-grid { grid-template-columns: 1fr; }
+      .sim-results, .sim-results.five, .sim-results.mc-stats { grid-template-columns: 1fr; }
+      .sim-results.mc-stats .result-chip.mc-beat-cash { max-width: none; }
+      .capital-row { flex-wrap: wrap; }
+      .capital-input-wrap { margin-left: 0; width: 100%; }
+      .capital-input-wrap input { width: 100%; }
+    }
+
+
+    /* ── KELLY TABS ── */
+    .kelly-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .55rem;
+      padding: .45rem;
+      margin-bottom: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      position: sticky;
+      top: calc(var(--nav-h) + 12px);
+      z-index: 20;
+      backdrop-filter: blur(16px);
+    }
+    .kelly-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      min-height: 48px;
+      padding: .7rem 1rem;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color .2s, background .2s, border-color .2s, transform .15s;
+    }
+    .kelly-tab:hover {
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(255,255,255,.018);
+    }
+    .kelly-tab.active {
+      color: #0c0c0f;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .kelly-tab:active { transform: translateY(1px); }
+    .kelly-tab-icon { font-size: 1rem; line-height: 1; }
+    .kelly-tab-panel { display: none; }
+    .kelly-tab-panel.active { display: block; }
+    .tab-intro {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .tab-intro-copy { max-width: 72ch; }
+    .tab-eyebrow {
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: .35rem;
+    }
+    .tab-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      margin-bottom: .35rem;
+    }
+    .tab-description { color: var(--muted); font-size: .9rem; }
+    .chart-note {
+      margin-top: .75rem;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    /* ── ERWEITERTE KELLY-MODULE ── */
+    .module-kicker {
+      font-size: .68rem; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--accent); font-weight: 600; margin-bottom: .45rem;
+    }
+    .module-copy {
+      font-size: .88rem; color: var(--muted); margin: -.8rem 0 1.4rem;
+      max-width: 78ch;
+    }
+    .input-grid.four { grid-template-columns: repeat(4, 1fr); }
+    .input-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .input-grid.two  { grid-template-columns: repeat(2, 1fr); }
+    .projection-box {
+      margin-top: 1.4rem; padding: 1.1rem 1.15rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .projection-title {
+      font-family: 'Syne', sans-serif; font-size: .95rem; font-weight: 700;
+      color: var(--text); margin-bottom: .85rem;
+    }
+    .projection-title em { color: var(--accent); font-style: normal; }
+    .projection-result-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: .8rem; margin-top: .9rem;
+    }
+    .projection-result-grid.two { grid-template-columns: repeat(2, 1fr); }
+    .projection-card {
+      background: rgba(255,255,255,.02); border: 1px solid var(--border);
+      border-radius: 10px; padding: .85rem .95rem;
+    }
+    .projection-card.featured {
+      border-color: rgba(110,231,183,.32);
+      background: rgba(110,231,183,.04);
+    }
+    .projection-card-name {
+      font-size: .68rem; color: var(--muted); text-transform: uppercase;
+      letter-spacing: .08em; font-weight: 600;
+    }
+    .projection-card-value {
+      font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 800;
+      color: var(--text); margin-top: .25rem;
+    }
+    .projection-card.featured .projection-card-value { color: var(--accent); }
+    .projection-card-sub { font-size: .76rem; color: var(--muted); margin-top: .2rem; }
+    .mini-note {
+      margin-top: 1rem; padding: .8rem 1rem;
+      background: rgba(129,140,248,.05);
+      border: 1px solid rgba(129,140,248,.16);
+      border-radius: 10px; color: var(--muted); font-size: .82rem;
+    }
+    .mini-note strong { color: var(--text); }
+    .kelly-metrics {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1rem; margin-top: 1.4rem;
+    }
+    .metric-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1rem 1.05rem;
+    }
+    .metric-label {
+      font-size: .67rem; color: var(--muted); text-transform: uppercase;
+      letter-spacing: .08em; font-weight: 600; margin-bottom: .35rem;
+    }
+    .metric-value {
+      font-family: 'Syne', sans-serif; font-size: 1.35rem;
+      font-weight: 800; line-height: 1.15;
+    }
+    .metric-value.accent { color: var(--accent); }
+    .metric-value.blue   { color: var(--accent2); }
+    .metric-value.green  { color: var(--green); }
+    .metric-value.red    { color: var(--red); }
+    .metric-sub { color: var(--muted); font-size: .72rem; margin-top: .2rem; }
+
+    .fraction-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: .9rem; margin-top: 1.1rem;
+    }
+    .fraction-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1rem; text-align: center;
+    }
+    .fraction-card.featured { border-color: rgba(110,231,183,.32); background: rgba(110,231,183,.035); }
+    .fraction-name { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+    .fraction-value { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--text); margin-top: .25rem; }
+    .fraction-card.featured .fraction-value { color: var(--accent); }
+    .fraction-cash { font-size: .76rem; color: var(--muted); margin-top: .25rem; }
+
+    .module-kicker-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: .8rem; flex-wrap: wrap; margin-top: .2rem;
+    }
+    .module-kicker-row .module-kicker { margin: 0; }
+    .asset-actions { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; }
+    .asset-action-btn {
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: .45rem .85rem; font-family: 'DM Sans', sans-serif;
+      font-size: .82rem; font-weight: 600; cursor: pointer;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .asset-action-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .asset-action-btn:disabled { opacity: .45; cursor: not-allowed; }
+    .asset-action-btn:disabled:hover { border-color: var(--border); color: var(--text); }
+    .asset-count-hint { font-size: .78rem; color: var(--muted); }
+
+    .portfolio-assets {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem; margin-top: .75rem;
+    }
+    .asset-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1rem;
+      position: relative;
+    }
+    .asset-card-header {
+      display: flex; align-items: flex-start; gap: .5rem;
+      margin-bottom: .75rem;
+    }
+    .asset-name-input {
+      flex: 1; width: 100%; background: transparent; color: var(--text);
+      border: none; border-bottom: 1px solid var(--border);
+      font-family: 'Syne', sans-serif; font-size: .98rem; font-weight: 700;
+      outline: none; padding: .1rem 0 .55rem;
+    }
+    .asset-name-input:focus { border-bottom-color: var(--accent); }
+    .asset-remove-btn {
+      flex-shrink: 0; width: 1.7rem; height: 1.7rem;
+      border-radius: 8px; border: 1px solid var(--border);
+      background: transparent; color: var(--muted);
+      font-size: 1.05rem; line-height: 1; cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .asset-remove-btn:hover {
+      border-color: rgba(248,113,113,.45); color: var(--red);
+      background: rgba(248,113,113,.08);
+    }
+    .asset-remove-btn:disabled {
+      opacity: .35; cursor: not-allowed;
+    }
+    .asset-remove-btn:disabled:hover {
+      border-color: var(--border); color: var(--muted); background: transparent;
+    }
+    .asset-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+    .asset-mini-grid .input-group label { font-size: .68rem; }
+    .asset-mini-grid .input-wrap input { padding-left: .75rem; font-size: .9rem; }
+
+    .corr-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem; margin-top: 1rem;
+    }
+    .corr-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: .9rem 1rem;
+    }
+    .corr-label { font-size: .72rem; color: var(--muted); margin-bottom: .45rem; }
+    .corr-card .input-wrap input { padding-right: 1rem; }
+
+    .portfolio-toolbar {
+      display: flex; align-items: center; gap: .8rem; flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+    .select-wrap { position: relative; }
+    .select-wrap select {
+      appearance: none; -webkit-appearance: none;
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: .65rem 2.2rem .65rem 1rem;
+      font-family: 'DM Sans', sans-serif; font-size: .88rem; outline: none;
+      cursor: pointer;
+    }
+    .select-wrap::after {
+      content: '▾'; position: absolute; right: .8rem; top: 50%;
+      transform: translateY(-50%); color: var(--muted); pointer-events: none;
+    }
+    .select-wrap select:focus { border-color: var(--accent); }
+
+    .allocation-table-wrap {
+      margin-top: 1.3rem; overflow-x: auto;
+      border: 1px solid var(--border); border-radius: 12px;
+    }
+    .allocation-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+    .allocation-table th,
+    .allocation-table td { padding: .85rem 1rem; text-align: right; border-bottom: 1px solid var(--border); }
+    .allocation-table th:first-child,
+    .allocation-table td:first-child { text-align: left; }
+    .allocation-table th {
+      font-size: .68rem; color: var(--muted); text-transform: uppercase;
+      letter-spacing: .08em; font-weight: 600; background: rgba(255,255,255,.01);
+    }
+    .allocation-table td { font-size: .88rem; color: var(--text); }
+    .allocation-table tr:last-child td { border-bottom: none; }
+    .allocation-table .cash-row td { color: var(--accent2); }
+    .allocation-table .total-row td { font-weight: 700; background: rgba(110,231,183,.025); }
+    .allocation-table .neg { color: var(--red); }
+    .allocation-table .pos { color: var(--green); }
+
+    .portfolio-summary {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1rem; margin-top: 1rem;
+    }
+    .error-box {
+      display: none; margin-top: 1rem; padding: .85rem 1.1rem;
+      border: 1px solid rgba(248,113,113,.22);
+      border-left: 3px solid var(--red);
+      border-radius: 0 10px 10px 0;
+      background: rgba(248,113,113,.06); color: var(--muted); font-size: .84rem;
+    }
+    .error-box.show { display: block; }
+    .formula-box {
+      margin-top: 1rem; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: .8rem 1rem; color: var(--muted);
+      font-family: 'Courier New', monospace; font-size: .8rem; overflow-x: auto;
+    }
+
+    .financing-row {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      margin-top: 1rem; padding: .9rem 1rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .financing-copy { flex: 1 1 280px; min-width: 0; }
+    .financing-title {
+      display: flex; align-items: center; gap: .65rem;
+      color: var(--text); font-size: .86rem; font-weight: 600;
+    }
+    .financing-sub { color: var(--muted); font-size: .75rem; margin-top: .2rem; }
+    .financing-rate { flex: 0 1 190px; min-width: 160px; }
+    .financing-rate .input-wrap input:disabled {
+      opacity: .35; cursor: not-allowed;
+    }
+    .financing-status {
+      display: inline-flex; align-items: center; gap: .35rem;
+      margin-left: .25rem; padding: .18rem .45rem;
+      border: 1px solid var(--border); border-radius: 999px;
+      color: var(--muted); font-size: .66rem; font-weight: 600;
+      letter-spacing: .04em; text-transform: uppercase;
+    }
+    .financing-status.on { color: var(--accent); border-color: rgba(110,231,183,.28); background: rgba(110,231,183,.05); }
+    .financing-status.off { color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .input-grid.four, .input-grid.three, .kelly-metrics, .portfolio-summary, .projection-result-grid, .sim-results.five, .sim-results.mc-stats { grid-template-columns: repeat(2,1fr); }
+      .sim-results.mc-stats .result-chip.mc-beat-cash { grid-column: 1 / -1; max-width: none; }
+      .portfolio-assets, .corr-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .input-grid.four, .input-grid.three, .input-grid.two, .kelly-metrics, .portfolio-summary, .fraction-grid, .projection-result-grid, .projection-result-grid.two { grid-template-columns: 1fr; }
+      .asset-mini-grid { grid-template-columns: 1fr 1fr; }
+      .tab-intro { display: block; }
+      .financing-row { align-items: stretch; }
+      .financing-rate { flex-basis: 100%; }
+    }
+
+    /* ── HANDY UI ─────────────────────────────────────────────────────────── */
+    @media (max-width: 720px) {
+      :root { --nav-h: 60px; }
+
+      .hero-strip {
+        padding: 1.5rem max(1rem, env(safe-area-inset-left)) 1.35rem max(1rem, env(safe-area-inset-right));
+      }
+      .page-tag { font-size: .65rem; margin-bottom: .55rem; }
+      .page-title {
+        font-size: clamp(1.65rem, 7.5vw, 2.15rem);
+        margin-bottom: .5rem;
+        line-height: 1.1;
+      }
+      .page-sub {
+        font-size: .9rem;
+        line-height: 1.55;
+        max-width: none;
+      }
+
+      .main {
+        padding: 1rem max(1rem, env(safe-area-inset-left)) calc(2.5rem + env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-right));
+        gap: 0;
+      }
+
+      /* Segmented tabs: 3 equal buttons, sticky under nav */
+      .kelly-tabs {
+        position: sticky;
+        top: var(--nav-h);
+        z-index: 30;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .3rem;
+        margin: 0 0 1rem;
+        padding: .35rem;
+        border-radius: 12px;
+        background: rgba(19,19,26,.94);
+        border: 1px solid var(--border);
+        box-shadow: 0 8px 28px rgba(0,0,0,.35);
+      }
+      .kelly-tab {
+        min-height: 44px;
+        padding: .55rem .35rem;
+        gap: .3rem;
+        font-size: .78rem;
+        border-radius: 9px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+      }
+      .kelly-tab-icon { font-size: .95rem; }
+      .kelly-tab span:not(.kelly-tab-icon) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .tab-heading {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        margin-bottom: .35rem;
+      }
+      .tab-description {
+        font-size: .88rem;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+      .tab-intro { margin-bottom: .9rem; }
+
+      .calc-card {
+        padding: 1.15rem 1rem 1.25rem;
+        border-radius: 14px;
+        margin-bottom: .85rem;
+      }
+      .card-title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        gap: .45rem;
+      }
+      .module-copy {
+        font-size: .84rem;
+        margin: -.5rem 0 1rem;
+        line-height: 1.5;
+      }
+
+      /* Inputs: full width, 16px to stop iOS zoom */
+      .input-grid,
+      .input-grid.two,
+      .input-grid.three,
+      .input-grid.four {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+      }
+      .input-group label {
+        font-size: .72rem;
+        margin-bottom: .35rem;
+      }
+      .input-wrap input,
+      .select-wrap select,
+      .sim-count-wrap input,
+      .asset-name-input {
+        font-size: 16px !important;
+        min-height: 48px;
+      }
+      .input-wrap input {
+        padding: .75rem 2.6rem .75rem .9rem;
+        border-radius: 12px;
+      }
+      .input-unit { right: .85rem; font-size: .8rem; }
+      .select-wrap select {
+        width: 100%;
+        min-height: 48px;
+        padding: .75rem 2.4rem .75rem .9rem;
+        border-radius: 12px;
+      }
+      .select-wrap { width: 100%; }
+
+      .calc-btn,
+      .sim-btn,
+      .asset-action-btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+        font-size: .95rem;
+        border-radius: 12px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+      }
+      .calc-btn { margin-top: 1rem; }
+
+      .result-value {
+        font-size: clamp(2.4rem, 12vw, 3.4rem);
+      }
+      .result-wrap { padding: 1rem 0 .25rem; }
+      .result-grid,
+      .kelly-metrics,
+      .portfolio-summary,
+      .fraction-grid,
+      .projection-result-grid,
+      .projection-result-grid.two,
+      .sim-results,
+      .sim-results.five,
+      .sim-results.mc-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: .65rem;
+      }
+      .sim-results.mc-stats .result-chip.mc-beat-cash {
+        grid-column: 1 / -1;
+      }
+      .metric-card,
+      .result-chip,
+      .fraction-card,
+      .projection-card {
+        padding: .85rem .8rem;
+        border-radius: 12px;
+      }
+      .metric-value,
+      .fraction-value,
+      .projection-card-value,
+      .result-chip-val {
+        font-size: 1.15rem;
+        word-break: break-word;
+      }
+      .metric-label,
+      .fraction-name,
+      .projection-card-name,
+      .result-chip-lbl {
+        font-size: .62rem;
+        letter-spacing: .06em;
+      }
+
+      .financing-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: .85rem;
+        padding: .9rem;
+        border-radius: 12px;
+      }
+      .financing-title {
+        flex-wrap: wrap;
+        gap: .45rem;
+        font-size: .9rem;
+      }
+      .financing-sub { font-size: .78rem; line-height: 1.45; }
+      .financing-rate { flex-basis: auto; min-width: 0; width: 100%; }
+      .toggle-switch { width: 46px; height: 28px; flex-shrink: 0; }
+
+      .module-kicker-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: .55rem;
+      }
+      .asset-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .portfolio-assets,
+      .corr-grid {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+      }
+      .asset-card,
+      .corr-card {
+        padding: .9rem;
+        border-radius: 12px;
+      }
+      .asset-mini-grid { gap: .6rem; }
+      .asset-remove-btn {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1.15rem;
+      }
+
+      .portfolio-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: .65rem;
+      }
+      .portfolio-toolbar .calc-btn { width: 100%; margin-top: 0; }
+      .portfolio-toolbar .sim-label { display: none; }
+
+      .sim-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: .65rem;
+      }
+      .sim-count-wrap { width: 100%; }
+      .sim-count-wrap input { width: 100%; }
+
+      /* Tables: swipe horizontally */
+      .allocation-table-wrap {
+        margin-left: -.25rem;
+        margin-right: -.25rem;
+        border-radius: 12px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .allocation-table {
+        min-width: 520px;
+        font-size: .82rem;
+      }
+      .allocation-table th,
+      .allocation-table td {
+        padding: .7rem .75rem;
+        white-space: nowrap;
+      }
+
+      /* Charts smaller on phone */
+      .chart-wrap {
+        padding: 1rem .85rem 1.1rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+      }
+      .chart-title {
+        font-size: .7rem;
+        margin-bottom: .75rem;
+      }
+      .chart-note {
+        font-size: .75rem;
+        line-height: 1.45;
+        margin-top: .65rem;
+      }
+      canvas { max-height: 240px !important; }
+
+      .projection-box {
+        padding: .95rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+      }
+      .projection-title { font-size: .92rem; margin-bottom: .55rem; }
+
+      .mini-note,
+      .error-box,
+      .warning-box,
+      .formula-box {
+        font-size: .8rem;
+        line-height: 1.5;
+        padding: .8rem .9rem;
+        border-radius: 10px;
+      }
+      .formula-box {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .h-divider { margin: 1.4rem 0; }
+
+      /* Docs section denser */
+      .section-label { margin-top: .25rem; }
+    }
+
+    /* Sehr schmale Phones */
+    @media (max-width: 380px) {
+      .kelly-tab { font-size: .72rem; padding: .5rem .2rem; gap: .2rem; }
+      .kelly-tab-icon { display: none; }
+      .result-grid,
+      .kelly-metrics,
+      .portfolio-summary,
+      .fraction-grid,
+      .projection-result-grid,
+      .sim-results,
+      .sim-results.mc-stats {
+        grid-template-columns: 1fr;
+      }
+      .asset-mini-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Touch: less hover lift on phones */
+    @media (hover: none) and (pointer: coarse) {
+      .calc-btn:hover,
+      .sim-btn:hover,
+      .kelly-tab:hover { transform: none; }
+      .calc-btn:active,
+      .sim-btn:active { transform: scale(.98); opacity: .92; }
+    }
+
+  </style>
+
+  <link rel="stylesheet" href="../../assets/site-header.css">
+  <script src="../../assets/site-header.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="main-nav">
+    <a href="/en/" class="nav-logo">sms<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/en/">Home</a></li>
+     <li><a href="/en/projects/">Projects</a></li>
+     <li><a href="/en/downloads">Downloads</a></li>
+     <li><a href="/en/project-pipeline">Project pipeline</a></li>
+     <li><a href="/en/vision">Vision</a></li>
+     <li><a href="/en/knowledge/">Knowledge</a></li>
+  </ul>
+<div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/dashboards/kellykriterium" data-language-file-target="../../dashboards/kellykriterium.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    GitHub
+  </a>
+    </div>
+   <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+     <li><a href="/en/">Home</a></li>
+     <li><a href="/en/projects/">Projects</a></li>
+     <li><a href="/en/downloads">Downloads</a></li>
+     <li><a href="/en/project-pipeline">Project pipeline</a></li>
+     <li><a href="/en/vision">Vision</a></li>
+     <li><a href="/en/knowledge/">Knowledge</a></li>
+     <li class="mobile-language-row">
+  <span class="mobile-language-label">Language</span>
+  <button type="button" class="language-switch" data-language-target="/dashboards/kellykriterium" data-language-file-target="../../dashboards/kellykriterium.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+</li>
+    <li>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<div class="hero-strip">
+  <p class="page-tag">Tool | Financial analysis</p>
+  <h1 class="page-title">Kelly criterion <em>calculator</em></h1>
+  <p class="page-sub">Three Kelly models in one tool: a classic position-sizing calculator, Investment Kelly and Portfolio Kelly, each with its own interactive chart. The default euro cash return is 2.25%.</p>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="kelly-tabs" role="tablist" aria-label="Choose Kelly calculator">
+    <button class="kelly-tab active" type="button" role="tab" aria-selected="true" aria-controls="tab-classic" id="tab-btn-classic" data-tab="classic">
+      <span class="kelly-tab-icon">🎯</span><span>Classic</span>
+    </button>
+    <button class="kelly-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-investment" id="tab-btn-investment" data-tab="investment">
+      <span class="kelly-tab-icon">📈</span><span>Investment</span>
+    </button>
+    <button class="kelly-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-portfolio" id="tab-btn-portfolio" data-tab="portfolio">
+      <span class="kelly-tab-icon">🧮</span><span>Portfolio</span>
+    </button>
+  </div>
+
+  <section class="kelly-tab-panel active" id="tab-classic" role="tabpanel" aria-labelledby="tab-btn-classic">
+    <div class="tab-intro">
+      <div class="tab-intro-copy">
+        <h2 class="tab-heading">Classic Kelly criterion</h2>
+        <p class="tab-description">Determines the optimal capital allocation for repeated decisions with a known win probability, gain and loss.</p>
+      </div>
+    </div>
+
+  <!-- ── BLOCK 1: EINGABE ── -->
+  <div class="calc-card">
+    <div class="card-title"><span>🎯</span> Input</div>
+
+    <div class="input-grid">
+      <!-- Gewinnrate -->
+      <div class="input-group">
+        <label class="label-white">Win rate (%)</label>
+        <div class="input-wrap">
+          <input type="number" id="inp-winrate" value="55" min="0" max="100" step="0.1" oninput="calculate()">
+          <span class="input-unit">%</span>
+        </div>
+      </div>
+      <!-- Gewinn -->
+      <div class="input-group">
+        <label class="label-green">Gain (%)</label>
+        <div class="input-wrap">
+          <input type="number" id="inp-win" class="green" value="100" min="0" step="0.1" oninput="calculate()">
+          <span class="input-unit" style="color:var(--green)">%</span>
+        </div>
+      </div>
+      <!-- Risiko -->
+      <div class="input-group">
+        <label class="label-red">Risk (%)</label>
+        <div class="input-wrap">
+          <input type="number" id="inp-loss" class="red" value="100" min="0" step="0.1" oninput="calculate()">
+          <span class="input-unit" style="color:var(--red)">%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Startkapital toggle -->
+    <div class="capital-row">
+      <label class="toggle-switch">
+        <input type="checkbox" id="toggle-capital" onchange="toggleCapital()">
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="capital-label">Starting capital</span>
+      <div class="capital-input-wrap">
+        <span class="capital-euro">€</span>
+        <input type="number" id="inp-capital" value="10000" min="0" step="100" disabled oninput="calculate()">
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3M13 3h8m0 0v8m0-8L11 13"/></svg>
+      Calculate
+    </button>
+  </div>
+
+  <hr class="h-divider">
+
+  <!-- ── BLOCK 2: ERGEBNIS ── -->
+  <div class="calc-card">
+    <div class="card-title"><span>📊</span> Result</div>
+
+    <div class="result-wrap">
+      <div class="result-label">Optimal investment fraction</div>
+      <div class="result-value" id="result-pct">—</div>
+      <div class="result-sub" id="result-sub">Enter values and calculate</div>
+      <div class="result-capital" id="result-capital"></div>
+      <div class="result-formula" id="result-formula" style="display:none"></div>
+    </div>
+
+    <div class="warning-box" id="warning-box">
+      ⚠️ Negative Kelly result: You should <strong>not take this bet</strong>. The expected value is negative.
+    </div>
+
+    <div class="result-grid">
+      <div class="result-chip">
+        <div class="result-chip-val green" id="chip-p">—</div>
+        <div class="result-chip-lbl">Win rate</div>
+      </div>
+      <div class="result-chip">
+        <div class="result-chip-val blue" id="chip-b">—</div>
+        <div class="result-chip-lbl">Net odds (b)</div>
+      </div>
+      <div class="result-chip">
+        <div class="result-chip-val red" id="chip-q">—</div>
+        <div class="result-chip-lbl">Loss rate</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="h-divider">
+
+  <!-- ── BLOCK 3: SIMULATOR ── -->
+  <div class="calc-card">
+    <div class="card-title"><span>🎲</span> Kelly simulator</div>
+
+    <div class="sim-controls">
+      <div class="sim-count-wrap">
+        <input type="number" id="inp-simcount" value="1000" min="10" max="100000" step="1">
+        <span class="sim-unit">runs</span>
+      </div>
+      <button class="sim-btn" id="sim-btn" onclick="simulate()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Simulate
+      </button>
+      <span class="sim-label" id="sim-status"></span>
+    </div>
+
+    <!-- Sim results -->
+    <div class="sim-results" id="sim-results">
+      <div class="result-chip">
+        <div class="result-chip-val green" id="sim-wins">—</div>
+        <div class="result-chip-lbl">Wins</div>
+      </div>
+      <div class="result-chip">
+        <div class="result-chip-val red" id="sim-losses">—</div>
+        <div class="result-chip-lbl">Losses</div>
+      </div>
+      <div class="result-chip">
+        <div class="result-chip-val blue" id="sim-rate">—</div>
+        <div class="result-chip-lbl">Win rate</div>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-wrap">
+      <div class="chart-title">Ending capital by investment fraction (log scale)</div>
+      <canvas id="kelly-chart"></canvas>
+    </div>
+  </div>
+
+
+
+  </section>
+
+  <section class="kelly-tab-panel" id="tab-investment" role="tabpanel" aria-labelledby="tab-btn-investment" hidden>
+    <div class="tab-intro">
+      <div class="tab-intro-copy">
+        <h2 class="tab-heading">Investment Kelly</h2>
+        <p class="tab-description">Derives the growth-optimal exposure to one asset from expected return, volatility, cash rate and an optional borrowing rate.</p>
+      </div>
+    </div>
+
+  <!-- ── BLOCK 4: INVESTMENT-KELLY ── -->
+  <div class="calc-card" id="investment-kelly">
+    <div class="card-title"><span>📈</span> Investment Kelly calculator</div>
+    <p class="module-copy">For a single investment with an assumed annual return and volatility. The <strong style="color:var(--text)">inflation rate</strong> (2% by default) is subtracted from the expected return automatically, so Kelly sizing and the growth projection use the real return. Positive cash earns the default <strong style="color:var(--text)">2.25% p.a.</strong> (nominal). If leverage is allowed and exposure rises above 100%, the borrowing rate applies to the financed portion.</p>
+
+    <div class="input-grid four">
+      <div class="input-group">
+        <label class="label-green">Expected annual return</label>
+        <div class="input-wrap">
+          <input type="number" id="inv-return" class="green" value="8" step="0.1" oninput="calculateInvestmentKelly()">
+          <span class="input-unit" style="color:var(--green)">%</span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="label-white">Annual volatility</label>
+        <div class="input-wrap">
+          <input type="number" id="inv-vol" value="15" min="0.01" step="0.1" oninput="calculateInvestmentKelly()">
+          <span class="input-unit">%</span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="label-white">€ cash return p.a.</label>
+        <div class="input-wrap">
+          <input type="number" id="inv-rf" value="2.25" step="0.01" oninput="calculateInvestmentKelly()">
+          <span class="input-unit">%</span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="label-white">Annual inflation</label>
+        <div class="input-wrap">
+          <input type="number" id="inv-inflation" value="2" min="0" step="0.1" oninput="calculateInvestmentKelly()">
+          <span class="input-unit">%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-grid two" style="margin-top:1rem">
+      <div class="input-group">
+        <label class="label-white">Starting capital</label>
+        <div class="input-wrap">
+          <input type="number" id="inv-capital" value="50000" min="0" step="100" oninput="calculateInvestmentKelly()">
+          <span class="input-unit">€</span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="label-white">Time horizon</label>
+        <div class="input-wrap">
+          <input type="number" id="inv-years" value="10" min="1" max="100" step="1" oninput="calculateInvestmentKelly()">
+          <span class="input-unit">years</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="financing-row">
+      <div class="financing-copy">
+        <div class="financing-title">
+          <label class="toggle-switch" aria-label="Allow leverage for Investment Kelly">
+            <input type="checkbox" id="inv-borrow-toggle" onchange="toggleInvestmentBorrowing()">
+            <span class="toggle-slider"></span>
+          </label>
+          <span>Allow leverage</span>
+          <span class="financing-status off" id="inv-borrow-status">Off</span>
+        </div>
+        <div class="financing-sub">Off: maximum long exposure is 100%. On: negative cash is financed at the borrowing rate.</div>
+      </div>
+      <div class="financing-rate input-group">
+        <label class="label-red">Annual borrowing rate</label>
+        <div class="input-wrap">
+          <input type="number" id="inv-borrow-rate" class="red" value="5.00" min="0" step="0.01" disabled oninput="calculateInvestmentKelly()">
+          <span class="input-unit" style="color:var(--red)">%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="kelly-metrics">
+      <div class="metric-card">
+        <div class="metric-label">Full Kelly</div>
+        <div class="metric-value accent" id="inv-full">—</div>
+        <div class="metric-sub">theoretical risky-asset exposure</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Real return</div>
+        <div class="metric-value green" id="inv-real-return">—</div>
+        <div class="metric-sub" id="inv-real-return-sub">return minus inflation</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Risk premium</div>
+        <div class="metric-value green" id="inv-premium">—</div>
+        <div class="metric-sub" id="inv-premium-sub">real return minus cash return</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Cash / financing</div>
+        <div class="metric-value" id="inv-cash">—</div>
+        <div class="metric-sub" id="inv-cash-sub">remaining wealth</div>
+      </div>
+    </div>
+
+    <div class="kelly-metrics" style="margin-top:1rem">
+      <div class="metric-card">
+        <div class="metric-label">Exposure in €</div>
+        <div class="metric-value blue" id="inv-exposure-eur">—</div>
+        <div class="metric-sub">at Full Kelly</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Full Kelly ending capital</div>
+        <div class="metric-value accent" id="inv-end-full">—</div>
+        <div class="metric-sub" id="inv-end-full-sub">after the time horizon</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Half Kelly ending capital</div>
+        <div class="metric-value" id="inv-end-half">—</div>
+        <div class="metric-sub" id="inv-end-half-sub">after the time horizon</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Full Kelly purchasing power</div>
+        <div class="metric-value blue" id="inv-end-full-real">—</div>
+        <div class="metric-sub" id="inv-end-full-real-sub">adjusted for inflation</div>
+      </div>
+    </div>
+
+    <div class="mini-note" style="margin-top:1rem">
+       <strong>What does “Cash / financing” mean?</strong> It is the portion of your wealth left after the Kelly exposure: <strong>cash = 100% − exposure</strong>. At 70% exposure, 30% remains as euro cash and earns the selected cash rate. At 100% exposure, cash is 0%. At 130% exposure, the cash value is −30%: you invest 130% of your equity and finance the additional 30% with borrowing. If leverage is disabled, this value cannot become negative.
+    </div>
+
+    <div class="fraction-grid">
+      <div class="fraction-card">
+        <div class="fraction-name">Quarter Kelly</div>
+        <div class="fraction-value" id="inv-quarter">—</div>
+        <div class="fraction-cash" id="inv-quarter-cash">—</div>
+      </div>
+      <div class="fraction-card featured">
+        <div class="fraction-name">Half Kelly</div>
+        <div class="fraction-value" id="inv-half">—</div>
+        <div class="fraction-cash" id="inv-half-cash">—</div>
+      </div>
+      <div class="fraction-card">
+        <div class="fraction-name">Full Kelly</div>
+        <div class="fraction-value" id="inv-full-repeat">—</div>
+        <div class="fraction-cash" id="inv-full-cash">—</div>
+      </div>
+    </div>
+
+    <div class="projection-box">
+       <div class="projection-title">What will <em id="inv-proj-capital-label">€50,000</em> become after <em id="inv-proj-years-label">10 years</em>?</div>
+       <p style="font-size:.82rem;color:var(--muted);margin:0 0 .3rem">Expected ending capital from the Kelly log-growth model. Nominal in future euros; purchasing power in today’s euros with inflation deducted.</p>
+      <div class="projection-result-grid">
+        <div class="projection-card">
+          <div class="projection-card-name">Quarter Kelly</div>
+          <div class="projection-card-value" id="inv-proj-quarter">—</div>
+          <div class="projection-card-sub" id="inv-proj-quarter-sub">—</div>
+        </div>
+        <div class="projection-card featured">
+          <div class="projection-card-name">Half Kelly</div>
+          <div class="projection-card-value" id="inv-proj-half">—</div>
+          <div class="projection-card-sub" id="inv-proj-half-sub">—</div>
+        </div>
+        <div class="projection-card">
+          <div class="projection-card-name">Full Kelly</div>
+          <div class="projection-card-value" id="inv-proj-full">—</div>
+          <div class="projection-card-sub" id="inv-proj-full-sub">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+       <div class="chart-title">Wealth over the time horizon</div>
+      <canvas id="investment-wealth-chart"></canvas>
+       <div class="chart-note" id="inv-wealth-chart-note">Wealth path for Quarter, Half and Full Kelly. The curve follows the expected logarithmic growth.</div>
+    </div>
+
+    <div class="chart-wrap">
+       <div class="chart-title">Expected logarithmic growth by asset exposure</div>
+      <canvas id="investment-kelly-chart"></canvas>
+       <div class="chart-note" id="inv-chart-note">x-axis = asset exposure as a percentage of equity. The maximum marks Full Kelly and can exceed 100% when leverage is enabled.</div>
+    </div>
+
+    <div class="error-box" id="inv-warning"></div>
+    <div class="formula-box">μ<sub>real</sub> = μ − π &nbsp; | &nbsp; g(f) = r + f(μ<sub>real</sub> − r) − ½f²σ² &nbsp; | &nbsp; Ending capital ≈ K e<sup>gT</sup></div>
+  </div>
+
+  </section>
+
+  <section class="kelly-tab-panel" id="tab-portfolio" role="tabpanel" aria-labelledby="tab-btn-portfolio" hidden>
+    <div class="tab-intro">
+      <div class="tab-intro-copy">
+        <h2 class="tab-heading">Portfolio Kelly optimiser</h2>
+        <p class="tab-description">Optimises several assets jointly using returns and a covariance matrix, while distinguishing between interest-bearing cash and optional leverage.</p>
+      </div>
+    </div>
+
+  <!-- ── BLOCK 5: PORTFOLIO-KELLY ── -->
+  <div class="calc-card" id="portfolio-kelly">
+    <div class="card-title"><span>🧮</span> Portfolio Kelly optimiser</div>
+    <p class="module-copy">Optimises any number of risky assets jointly (default: MSCI World, Bitcoin, gold and REITs). The optimiser uses <strong style="color:var(--text)">covariances and correlations</strong>. As in the Investment tab, <strong style="color:var(--text)">inflation</strong> (2% by default) is deducted from every asset return, so Kelly sizing uses real returns. Positive cash earns the cash rate; with leverage, net risky exposure can exceed 100% when the borrowing rate still makes the leverage worthwhile.</p>
+
+    <div class="input-grid four" style="margin-bottom:1rem">
+      <div class="input-group">
+        <label class="label-white">€ cash return p.a.</label>
+        <div class="input-wrap">
+          <input type="number" id="pf-rf" value="2.25" step="0.01" oninput="calculatePortfolioKelly()">
+          <span class="input-unit">%</span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="label-white">Annual inflation</label>
+        <div class="input-wrap">
+          <input type="number" id="pf-inflation" value="2" min="0" step="0.1" oninput="calculatePortfolioKelly()">
+          <span class="input-unit">%</span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="label-white">Starting capital</label>
+        <div class="input-wrap">
+          <input type="number" id="pf-capital" value="50000" min="0" step="100" oninput="calculatePortfolioKelly()">
+          <span class="input-unit">€</span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="label-white">Time horizon</label>
+        <div class="input-wrap">
+          <input type="number" id="pf-years" value="10" min="1" max="100" step="1" oninput="calculatePortfolioKelly()">
+          <span class="input-unit">years</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="financing-row" style="margin-bottom:1.25rem">
+      <div class="financing-copy">
+        <div class="financing-title">
+          <label class="toggle-switch" aria-label="Allow leverage for Portfolio Kelly">
+            <input type="checkbox" id="pf-borrow-toggle" onchange="togglePortfolioBorrowing()">
+            <span class="toggle-slider"></span>
+          </label>
+          <span>Allow leverage</span>
+          <span class="financing-status off" id="pf-borrow-status">Off</span>
+        </div>
+        <div class="financing-sub">Off: net risky exposure is capped at 100%. On: Full Kelly may exceed 100% (negative cash means borrowing) if the borrowing rate still justifies the leverage in the model. A high borrowing rate often pushes the optimum back to exactly 100%.</div>
+      </div>
+      <div class="financing-rate input-group">
+        <label class="label-red">Annual borrowing rate</label>
+        <div class="input-wrap">
+          <input type="number" id="pf-borrow-rate" class="red" value="5.00" min="0" step="0.01" disabled oninput="calculatePortfolioKelly()">
+          <span class="input-unit" style="color:var(--red)">%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="financing-row" style="margin-top:0;margin-bottom:1.25rem">
+      <div class="financing-copy">
+        <div class="financing-title">
+          <label class="toggle-switch" aria-label="Allow short positions in Portfolio Kelly">
+            <input type="checkbox" id="pf-shorts-toggle" onchange="togglePortfolioShorts()">
+            <span class="toggle-slider"></span>
+          </label>
+          <span>Allow short positions</span>
+          <span class="financing-status off" id="pf-shorts-status">Off</span>
+        </div>
+        <div class="financing-sub">Off: long-only optimisation with wᵢ ≥ 0%. On: the optimiser may assign negative weights to individual assets. The restriction is handled directly during optimisation.</div>
+      </div>
+    </div>
+
+    <div class="module-kicker-row">
+      <div class="module-kicker">Assets</div>
+      <div class="asset-actions">
+        <span class="asset-count-hint" id="pf-asset-count"></span>
+        <button type="button" class="asset-action-btn" id="pf-add-asset" onclick="addPortfolioAsset()">+ Asset</button>
+      </div>
+    </div>
+    <div class="portfolio-assets" id="portfolio-assets"></div>
+
+    <div class="module-kicker" style="margin-top:1.35rem">Correlations</div>
+    <div class="corr-grid" id="portfolio-corrs"></div>
+
+    <div class="portfolio-toolbar">
+       <button class="calc-btn" style="margin-top:0" onclick="calculatePortfolioKelly()">Optimise</button>
+       <span class="sim-label">View:</span>
+      <div class="select-wrap">
+        <select id="pf-fraction" onchange="calculatePortfolioKelly()">
+          <option value="1">Full Kelly</option>
+           <option value="0.75">¾ Kelly</option>
+          <option value="0.5" selected>Half Kelly</option>
+          <option value="0.25">Quarter Kelly</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="allocation-table-wrap">
+      <table class="allocation-table">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Full Kelly</th>
+            <th id="pf-selected-head">Half Kelly</th>
+             <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="pf-table-body"></tbody>
+      </table>
+    </div>
+
+    <div class="chart-wrap">
+       <div class="chart-title">Kelly allocation by position</div>
+      <canvas id="portfolio-kelly-chart"></canvas>
+       <div class="chart-note" id="pf-allocation-chart-note">Full Kelly is compared with the currently selected fractional Kelly level. Negative cash bars represent borrowing only when leverage is enabled.</div>
+    </div>
+
+    <div class="chart-wrap">
+       <div class="chart-title">Expected logarithmic growth by net risky exposure</div>
+      <canvas id="portfolio-growth-chart"></canvas>
+       <div class="chart-note" id="pf-growth-chart-note">x-axis = net risky exposure as a percentage of equity. Full Kelly is shown at the calculated exposure and can exceed 100% when leverage is enabled.</div>
+    </div>
+
+    <div class="portfolio-summary">
+      <div class="metric-card">
+        <div class="metric-label">Risky Exposure</div>
+        <div class="metric-value accent" id="pf-risky">—</div>
+         <div class="metric-sub">sum of risky-asset weights</div>
+      </div>
+      <div class="metric-card">
+         <div class="metric-label">Expected return</div>
+        <div class="metric-value green" id="pf-exp-return">—</div>
+         <div class="metric-sub" id="pf-return-sub">including the cash component</div>
+      </div>
+      <div class="metric-card">
+         <div class="metric-label">Portfolio volatility</div>
+        <div class="metric-value blue" id="pf-vol">—</div>
+         <div class="metric-sub">from the covariance matrix</div>
+      </div>
+      <div class="metric-card">
+         <div class="metric-label">Cash / financing</div>
+        <div class="metric-value" id="pf-cash">—</div>
+         <div class="metric-sub" id="pf-cash-sub">remaining weight</div>
+      </div>
+    </div>
+
+    <div class="projection-box">
+       <div class="projection-title">What will <em id="pf-proj-capital-label">€50,000</em> become after <em id="pf-proj-years-label">10 years</em>?</div>
+       <p style="font-size:.82rem;color:var(--muted);margin:0 0 .3rem">Expected ending capital (nominal) from the log-growth model with a constant allocation. Purchasing power is nominal capital adjusted for inflation. Cash-only is shown for comparison.</p>
+      <div class="projection-result-grid two">
+        <div class="projection-card featured">
+          <div class="projection-card-name" id="pf-proj-selected-name">Half Kelly</div>
+          <div class="projection-card-value" id="pf-proj-selected">—</div>
+          <div class="projection-card-sub" id="pf-proj-selected-sub">—</div>
+        </div>
+        <div class="projection-card">
+          <div class="projection-card-name">Full Kelly</div>
+          <div class="projection-card-value" id="pf-proj-full">—</div>
+          <div class="projection-card-sub" id="pf-proj-full-sub">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+       <div class="chart-title">Wealth over the time horizon</div>
+      <canvas id="portfolio-wealth-chart"></canvas>
+       <div class="chart-note" id="pf-wealth-chart-note">The selected fractional Kelly level, Full Kelly and euro cash are compared. Each curve follows the expected logarithmic growth of its allocation.</div>
+    </div>
+
+    <div class="mc-block">
+       <div class="card-title"><span>🎲</span> Monte Carlo simulation</div>
+       <p style="font-size:.84rem;color:var(--muted);margin:-.4rem 0 1rem">Runs automatically with the current portfolio parameters. It simulates correlated annual returns (multivariate normal from μ and Σ) at a fixed Kelly allocation. Change the number of runs or simulate again to draw a fresh sample.</p>
+      <div class="sim-controls">
+        <div class="sim-count-wrap">
+          <input type="number" id="pf-simcount" value="1000" min="10" max="100000" step="1" oninput="schedulePortfolioMonteCarlo(500)">
+           <span class="sim-unit">runs</span>
+        </div>
+        <button class="sim-btn" id="pf-sim-btn" type="button" onclick="simulatePortfolioMonteCarlo()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+           Simulate again
+        </button>
+        <span class="sim-label" id="pf-sim-status"></span>
+      </div>
+      <div class="sim-results mc-stats visible" id="pf-sim-results">
+        <div class="result-chip">
+          <div class="result-chip-val green" id="pf-sim-median">—</div>
+           <div class="result-chip-lbl">Median ending capital</div>
+        </div>
+        <div class="result-chip">
+          <div class="result-chip-val blue" id="pf-sim-p5">—</div>
+           <div class="result-chip-lbl">5th percentile</div>
+        </div>
+        <div class="result-chip">
+          <div class="result-chip-val blue" id="pf-sim-p95">—</div>
+           <div class="result-chip-lbl">95th percentile</div>
+        </div>
+        <div class="result-chip">
+          <div class="result-chip-val red" id="pf-sim-loss">—</div>
+           <div class="result-chip-lbl">Loss rate</div>
+        </div>
+        <div class="result-chip mc-beat-cash">
+          <div class="result-chip-val accent" id="pf-sim-beat-cash">—</div>
+           <div class="result-chip-lbl">Better than cash</div>
+        </div>
+      </div>
+      <div class="chart-wrap">
+         <div class="chart-title">Median ending capital by net risky exposure (simulation, log)</div>
+        <canvas id="portfolio-mc-curve-chart"></canvas>
+         <div class="chart-note" id="pf-mc-curve-note">x-axis = net risky exposure. Full Kelly is shown at the calculated exposure and can exceed 100%. Every point uses the same simulated multi-asset returns.</div>
+      </div>
+      <div class="chart-wrap">
+         <div class="chart-title">Wealth range over time (simulation)</div>
+        <canvas id="portfolio-mc-fan-chart"></canvas>
+         <div class="chart-note" id="pf-mc-fan-note">P10–P90 range and median for the currently selected fractional Kelly level, plus euro cash.</div>
+      </div>
+    </div>
+
+    <div class="error-box" id="pf-error"></div>
+     <div class="mini-note"><strong>Shorts vs. leverage:</strong> These are two separate concepts. A negative asset weight is a short position. A negative cash weight means that the portfolio is leveraged with borrowing overall. Both options can be enabled or disabled independently.</div>
+     <div class="formula-box">g(w) = r + wᵀ(μ − r1) − ½wᵀΣw &nbsp; | &nbsp; leverage off: 1ᵀw ≤ 1 &nbsp; | &nbsp; shorts off: wᵢ ≥ 0</div>
+  </div>
+  </section>
+
+  <hr class="h-divider">
+
+    <!-- ── DOKUMENTATION ── -->
+    <div class="card-title" style="margin-top:.5rem"><span>📖</span> Documentation</div>
+
+    <!-- 1. Anwendung -->
+    <p class="section-label" style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.5rem">1 | Using the calculator</p>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:.8rem">The calculator determines the investment size for repeated processes with known probabilities. It maximises the long-term growth rate of capital.</p>
+    <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem">
+       <li style="font-size:.875rem;color:var(--muted);display:flex;gap:.7rem"><span style="color:var(--accent);font-weight:700;flex-shrink:0">→</span><span><strong style="color:var(--text)">Win rate (p):</strong> The probability that the scenario generates a positive return.</span></li>
+       <li style="font-size:.875rem;color:var(--muted);display:flex;gap:.7rem"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span><span><strong style="color:var(--text)">Gain (b):</strong> The expected relative return in the successful case. Example: €100 invested → €10 gain = 10%.</span></li>
+       <li style="font-size:.875rem;color:var(--muted);display:flex;gap:.7rem"><span style="color:var(--red);font-weight:700;flex-shrink:0">→</span><span><strong style="color:var(--text)">Risk (a):</strong> The expected loss rate in the negative scenario. Example: €100 invested → €10 loss = 10%.</span></li>
+    </ul>
+    <div style="background:rgba(110,231,183,.05);border:1px solid rgba(110,231,183,.15);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:.9rem 1.2rem;font-size:.875rem;color:var(--muted);margin-bottom:1.5rem">
+       The <strong style="color:var(--text)">optimal investment fraction</strong> is the share of total capital invested in each round. Values above 100% would theoretically require leverage. The calculator caps the result at 100%.
+    </div>
+
+    <hr class="h-divider">
+
+    <!-- 2. Grundlagen -->
+    <p class="section-label" style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.5rem">2 | Definition & basics</p>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.5rem">The Kelly criterion describes the position size for repeated decisions. It maximises expected logarithmic wealth growth and therefore requires estimated probabilities and payoffs.</p>
+
+    <hr class="h-divider">
+
+    <!-- 3. Risiken -->
+    <p class="section-label" style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.5rem">3 | Risks & sensitivities</p>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:.8rem">The model assumes deterministic inputs. In practice, probabilities and payoffs vary and can only be estimated.</p>
+    <div style="background:rgba(248,113,113,.06);border:1px solid rgba(248,113,113,.15);border-left:3px solid var(--red);border-radius:0 10px 10px 0;padding:.9rem 1.2rem;font-size:.875rem;color:var(--muted);margin-bottom:1.5rem">
+       <strong style="color:var(--red)"></strong> The result is highly sensitive to small changes in the inputs. If you overestimate the win probability, the position size can be too large and drawdown can increase. In practice, only part of the Kelly value is therefore often used, such as 50% (Half Kelly).
+    </div>
+
+    <hr class="h-divider">
+
+    <!-- 4. Nützlichkeit -->
+    <p class="section-label" style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.5rem">4 | Economic usefulness</p>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:.8rem">The model adjusts the position size to the asset’s volatility. Higher volatility produces a smaller calculated capital allocation.</p>
+    <div style="background:rgba(129,140,248,.06);border:1px solid rgba(129,140,248,.2);border-radius:10px;padding:.9rem 1.2rem;font-size:.875rem;color:var(--muted);margin-bottom:1.5rem">
+       <strong style="color:var(--accent2)">Example:</strong> Two scenarios have the same gain-to-loss ratio: scenario A with a <span style="color:var(--green)">+20% gain</span> and <span style="color:var(--red)">−10% risk</span>, and scenario B with a <span style="color:var(--green)">+10% gain</span> and <span style="color:var(--red)">−5% risk</span>. For the more volatile scenario A, the Kelly criterion halves the investment amount compared with scenario B.
+    </div>
+
+    <hr class="h-divider">
+
+    <!-- 5. Formel -->
+    <p class="section-label" style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.5rem">5 | Mathematical formulation</p>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:.8rem">If the entire stake is not lost in the negative case (risk a &lt; 100%), the Kelly criterion is:</p>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.4rem;font-family:'Courier New',monospace;font-size:1rem;color:var(--accent);text-align:center;margin-bottom:1.2rem;letter-spacing:.04em">
+      f* = (p / a) − (q / b)
+    </div>
+    <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.45rem">
+       <li style="font-size:.86rem;color:var(--muted);display:flex;gap:.7rem"><span style="color:var(--accent);font-weight:700;flex-shrink:0;font-family:'Courier New',monospace">f*</span><span>Optimal investment fraction (capital share as a decimal)</span></li>
+       <li style="font-size:.86rem;color:var(--muted);display:flex;gap:.7rem"><span style="color:var(--green);font-weight:700;flex-shrink:0;font-family:'Courier New',monospace">p</span><span>Win probability (0 ≤ p ≤ 1)</span></li>
+       <li style="font-size:.86rem;color:var(--muted);display:flex;gap:.7rem"><span style="color:var(--red);font-weight:700;flex-shrink:0;font-family:'Courier New',monospace">q</span><span>Loss probability (q = 1 − p)</span></li>
+       <li style="font-size:.86rem;color:var(--muted);display:flex;gap:.7rem"><span style="color:var(--red);font-weight:700;flex-shrink:0;font-family:'Courier New',monospace">a</span><span>Loss rate on failure</span></li>
+       <li style="font-size:.86rem;color:var(--muted);display:flex;gap:.7rem"><span style="color:var(--green);font-weight:700;flex-shrink:0;font-family:'Courier New',monospace">b</span><span>Return rate on success</span></li>
+    </ul>
+
+
+
+    <hr class="h-divider">
+
+    <p class="section-label" style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.5rem">6 | Investment Kelly</p>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:.8rem">For exposure up to 100%, the relevant alternative rate is the cash return. The default euro cash return is 2.25% p.a. Above 100%, additional exposure is financed with borrowing rather than cash, so the calculator uses the separately entered borrowing rate.</p>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.4rem;font-family:'Courier New',monospace;font-size:.92rem;color:var(--accent);text-align:center;margin-bottom:1.2rem;letter-spacing:.02em">g(f) = r + f(μ − r) − ½f²σ² &nbsp; | &nbsp; r = r<sub>cash</sub> for f ≤ 1, r<sub>borrowing</sub> for f &gt; 1</div>
+    <p style="font-size:.875rem;color:var(--muted);margin-bottom:.7rem">When leverage is disabled, f ≤ 1 also applies. When it is enabled, the optimum can exceed 100%. A higher borrowing rate lowers the Kelly optimum and can make exactly 100% exposure optimal.</p>
+    <p style="font-size:.875rem;color:var(--muted);margin-bottom:1.2rem"><strong style="color:var(--text)">Cash / financing</strong> is simply 1 − f: at f = 0.70, 30% of wealth is held in cash; at f = 1.00, 100% is invested and cash is 0%; at f = 1.30, the value is −30%, meaning 30% additional borrowing.</p>
+
+    <hr class="h-divider">
+
+    <p class="section-label" style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.5rem">7 | Portfolio Kelly</p>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:.8rem">With multiple assets, the covariance matrix is used. The optimiser maximises the approximate logarithmic growth rate. As long as the cash weight is positive, the cash rate applies; with a negative cash weight and leverage enabled, the borrowing rate applies to that portion.</p>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.4rem;font-family:'Courier New',monospace;font-size:.92rem;color:var(--accent);text-align:center;margin-bottom:1.2rem;letter-spacing:.02em">g(w) = r + wᵀ(μ − r1) − ½wᵀΣw</div>
+    <p style="font-size:.875rem;color:var(--muted)">Without leverage, the optimisation is solved under the constraint Σw ≤ 1. With leverage, the calculator checks the cash region, the borrowing region and the 100% boundary, then selects the solution with the highest modelled growth rate. When shorts are disabled, wᵢ ≥ 0 also applies to every asset. This long-only condition is solved directly during optimisation; negative weights are not clipped afterwards. Fractional Kelly then scales the risky-asset weights.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/en/" class="footer-logo">sms<span>.</span></a>
+      <p>Personal finance tools, dashboards and programming projects by Simon Stark. Always evolving.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/en/projects/">Projects</a></li>
+        <li><a href="/en/downloads">Downloads</a></li>
+        <li><a href="/en/project-pipeline">Project pipeline</a></li>
+        <li><a href="/en/vision">Vision</a></li>
+        <li><a href="/en/knowledge">Knowledge</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="/en/legal-notice">Legal notice</a></li>
+        <li><a href="/en/privacy">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Simon Stark</span>
+    <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+  </div>
+</footer>
+
+<script>
+// ── MOBILE NAV TOGGLE ─────────────────────────────────────────────────────────
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const menu   = document.getElementById('mobile-menu');
+  if (!toggle || !menu) return;
+  toggle.addEventListener('click', () => {
+    const open = toggle.classList.toggle('open');
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+})();
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let kellyF = 0;
+let chart  = null;
+let investmentChart = null;
+let investmentWealthChart = null;
+let portfolioChart = null;
+let portfolioGrowthChart = null;
+let portfolioWealthChart = null;
+let portfolioMcCurveChart = null;
+let portfolioMcFanChart = null;
+let lastSimulation = null;
+let lastPfSimulation = null;
+let lastPfKellyState = null;
+let pfMcTimer = null;
+let pfMcRunId = 0;
+
+// ── KELLY TABS ───────────────────────────────────────────────────────────────
+function activateKellyTab(name) {
+  document.querySelectorAll('.kelly-tab').forEach(btn => {
+    const active = btn.dataset.tab === name;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+
+  document.querySelectorAll('.kelly-tab-panel').forEach(panel => {
+    const active = panel.id === `tab-${name}`;
+    panel.classList.toggle('active', active);
+    panel.hidden = !active;
+  });
+
+  // Handy: Tab-Leiste im Sichtfeld halten, Panel-Start nicht unter sticky Tabs verstecken
+  if (window.matchMedia('(max-width: 720px)').matches) {
+    const tabs = document.querySelector('.kelly-tabs');
+    if (tabs) {
+      const top = tabs.getBoundingClientRect().top + window.scrollY - 4;
+      if (window.scrollY > top + 8) window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }
+
+  requestAnimationFrame(() => {
+    if (name === 'classic' && chart) chart.resize();
+    if (name === 'investment') {
+      calculateInvestmentKelly();
+      if (investmentChart) investmentChart.resize();
+      if (investmentWealthChart) investmentWealthChart.resize();
+    }
+    if (name === 'portfolio') {
+      calculatePortfolioKelly();
+      if (portfolioChart) portfolioChart.resize();
+      if (portfolioGrowthChart) portfolioGrowthChart.resize();
+      if (portfolioWealthChart) portfolioWealthChart.resize();
+      if (portfolioMcCurveChart) portfolioMcCurveChart.resize();
+      if (portfolioMcFanChart) portfolioMcFanChart.resize();
+    }
+  });
+}
+
+function initKellyTabs() {
+  document.querySelectorAll('.kelly-tab').forEach(btn => {
+    btn.addEventListener('click', () => activateKellyTab(btn.dataset.tab));
+    btn.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      const tabs = Array.from(document.querySelectorAll('.kelly-tab'));
+      const current = tabs.indexOf(btn);
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      const next = tabs[(current + direction + tabs.length) % tabs.length];
+      next.focus();
+      activateKellyTab(next.dataset.tab);
+    });
+  });
+}
+
+// ── TOGGLE CAPITAL ────────────────────────────────────────────────────────────
+function toggleCapital() {
+  const enabled = document.getElementById('toggle-capital').checked;
+  document.getElementById('inp-capital').disabled = !enabled;
+  calculate();
+}
+
+// ── KELLY CALCULATION ─────────────────────────────────────────────────────────
+function calculate() {
+  lastSimulation = null;
+
+  const p = parseFloat(document.getElementById('inp-winrate').value) / 100;
+  const winPct  = parseFloat(document.getElementById('inp-win').value) / 100;
+  const lossPct = parseFloat(document.getElementById('inp-loss').value) / 100;
+
+  if (isNaN(p) || isNaN(winPct) || isNaN(lossPct)) return;
+
+  const q = 1 - p;
+  const b = winPct / lossPct; 
+
+  // Kelly formula:
+  kellyF = (p / lossPct) - (q / winPct);
+
+  const pctEl      = document.getElementById('result-pct');
+  const subEl      = document.getElementById('result-sub');
+  const capitalEl  = document.getElementById('result-capital');
+  const formulaEl  = document.getElementById('result-formula');
+  const warningEl  = document.getElementById('warning-box');
+
+  // Result chips
+  document.getElementById('chip-p').textContent = (p*100).toFixed(1) + '%';
+  document.getElementById('chip-b').textContent = b.toFixed(3);
+  document.getElementById('chip-q').textContent = (q*100).toFixed(1) + '%';
+
+  if (kellyF <= 0) {
+    pctEl.textContent      = '0 %';
+    pctEl.style.color      = 'var(--red)';
+    subEl.textContent      = 'No investment recommended';
+    capitalEl.textContent  = '';
+    warningEl.classList.add('show');
+  } else {
+    const displayF = Math.min(kellyF, 1);
+    pctEl.textContent     = (displayF * 100).toFixed(2) + ' %';
+    pctEl.style.color     = 'var(--accent)';
+    subEl.textContent     = `Invest ${(displayF*100).toFixed(2)}% of your capital per round`;
+    warningEl.classList.remove('show');
+
+    // Capital calculation
+    const useCapital = document.getElementById('toggle-capital').checked;
+    if (useCapital) {
+      const capital = parseFloat(document.getElementById('inp-capital').value);
+      if (!isNaN(capital) && capital > 0) {
+        const invest = capital * displayF;
+        capitalEl.textContent = `→ With ${fmtEuro(capital)}, you invest ${fmtEuro(capital * displayF, 2)}`;
+      }
+    } else {
+      capitalEl.textContent = '';
+    }
+  }
+
+  updateChart();
+}
+
+// ── CHART ─────────────────────────────────────────────────────────────────────
+function updateChart() {
+  const p       = parseFloat(document.getElementById('inp-winrate').value) / 100;
+  const winPct  = parseFloat(document.getElementById('inp-win').value) / 100;
+  const lossPct = parseFloat(document.getElementById('inp-loss').value) / 100;
+  const rounds  = readSimCount('inp-simcount') || 1000;
+
+  if (isNaN(p) || isNaN(winPct) || isNaN(lossPct)) return;
+
+  const observedWins   = lastSimulation ? lastSimulation.wins : p * rounds;
+  const observedLosses = lastSimulation ? lastSimulation.losses : (1 - p) * rounds;
+  const simRounds      = lastSimulation ? lastSimulation.rounds : rounds;
+  const curveLabel     = lastSimulation ? 'Ending capital (simulation, log)' : 'Ending capital (expected, log)';
+
+  // Build curve: for each f from 0% to 100%, use the latest simulated result set
+  // or the theoretical expectation before the first simulation.
+  const steps = 101;
+  const labels = [];
+  const values = [];
+
+  for (let i = 0; i < steps; i++) {
+    const f = i / 100;
+    labels.push((f * 100).toFixed(0) + '%');
+
+    const winFactor  = 1 + f * winPct;
+    const lossFactor = 1 - f * lossPct;
+    const logCapital = observedWins * Math.log(winFactor) + observedLosses * Math.log(lossFactor);
+    const finalCapital = Math.exp(logCapital * (rounds / simRounds));
+    values.push(Math.max(finalCapital, 1e-10));
+  }
+
+  // Kelly point for annotation
+  const kellyIdx = Math.round(Math.min(Math.max(kellyF, 0), 1) * 100);
+
+  const ctx = document.getElementById('kelly-chart').getContext('2d');
+  if (chart) chart.destroy();
+
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: curveLabel,
+          data: values,
+          borderColor: '#6ee7b7',
+          backgroundColor: 'rgba(110,231,183,.08)',
+          borderWidth: 2.5,
+          pointRadius: 0,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: '#6ee7b7',
+          tension: 0.3,
+          fill: true,
+        },
+        {
+          label: 'Kelly optimum',
+          data: labels.map((_, i) => i === kellyIdx ? values[kellyIdx] : null),
+          borderColor: '#fbbf24',
+          backgroundColor: '#fbbf24',
+          pointRadius: 8,
+          pointHoverRadius: 10,
+          showLine: false,
+          pointStyle: 'triangle',
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: {
+          grid: {
+            color: ctx => ctx.index % 10 === 0 ? 'rgba(30,30,46,.8)' : 'transparent',
+          },
+          ticks: {
+            color: '#64748b', font: { family: 'DM Sans', size: 11 },
+            autoSkip: false,
+            callback: (value, index) => index % 10 === 0 ? labels[index] : '',
+          },
+          title: {
+            display: true, text: 'Investment fraction (%)',
+            color: '#64748b', font: { family: 'DM Sans', size: 11 }
+          }
+        },
+        y: {
+          type: 'logarithmic',
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: {
+            color: '#64748b', font: { family: 'DM Sans', size: 11 },
+            callback: v => {
+              if (v >= 1e9) return (v/1e9).toFixed(0)+'B';
+              if (v >= 1e6) return (v/1e6).toFixed(0)+'M';
+              if (v >= 1e3) return (v/1e3).toFixed(0)+'K';
+              return v.toFixed(2);
+            }
+          },
+          title: {
+            display: true, text: 'Ending capital (relative, log)',
+            color: '#64748b', font: { family: 'DM Sans', size: 11 }
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          labels: { color: '#64748b', font: { family: 'DM Sans', size: 12 }, boxWidth: 12 }
+        },
+        tooltip: {
+          backgroundColor: '#16161f',
+          borderColor: '#1e1e2e',
+          borderWidth: 1,
+          titleColor: '#e2e8f0',
+          bodyColor: '#64748b',
+          titleFont: { family: 'Syne', size: 13, weight: '700' },
+          bodyFont: { family: 'DM Sans', size: 12 },
+          callbacks: {
+            label: ctx => {
+              const v = ctx.raw;
+              if (v == null) return null;
+              if (v >= 1e9) return ` Ending capital: ${(v/1e9).toFixed(2)}B×`;
+              if (v >= 1e6) return ` Ending capital: ${(v/1e6).toFixed(2)}M×`;
+              if (v >= 1e3) return ` Ending capital: ${(v/1e3).toFixed(2)}K×`;
+              return ` Ending capital: ${v.toFixed(4)}×`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// ── SIMULATOR ─────────────────────────────────────────────────────────────────
+function simulate() {
+  const p      = parseFloat(document.getElementById('inp-winrate').value) / 100;
+  const n      = readSimCount('inp-simcount');
+  const btn    = document.getElementById('sim-btn');
+  const status = document.getElementById('sim-status');
+
+  if (isNaN(p) || p <= 0 || p >= 1) {
+    status.textContent = 'Enter a valid win rate.';
+    return;
+  }
+  if (n == null || n < 10 || n > 100000) {
+    status.textContent = 'Choose a number between 10 and 100,000.';
+    return;
+  }
+
+  btn.disabled = true;
+  status.textContent = `Simulating ${n.toLocaleString('en-GB')} runs…`;
+
+  setTimeout(() => {
+    let wins = 0, losses = 0;
+
+    for (let i = 0; i < n; i++) {
+      if (Math.random() < p) wins++;
+      else losses++;
+    }
+
+    const rate = ((wins / n) * 100).toFixed(2);
+    lastSimulation = { wins, losses, rounds: n };
+
+    document.getElementById('sim-wins').textContent    = wins.toLocaleString('en-GB');
+    document.getElementById('sim-losses').textContent  = losses.toLocaleString('en-GB');
+    document.getElementById('sim-rate').textContent    = rate + '%';
+
+    status.textContent = `${n.toLocaleString('en-GB')} runs: ${wins.toLocaleString('en-GB')} wins, ${losses.toLocaleString('en-GB')} losses, ${rate}% win rate`;
+
+    document.getElementById('sim-results').classList.add('visible');
+    btn.disabled = false;
+
+    updateChart();
+  }, 50);
+}
+
+
+
+// ── FORMAT HELPERS ────────────────────────────────────────────────────────────
+function fmtPct(x, digits = 2) {
+  if (!Number.isFinite(x)) return '—';
+  return (x * 100).toLocaleString('en-GB', {minimumFractionDigits: digits, maximumFractionDigits: digits}) + '%';
+}
+function fmtEuro(x) {
+  if (!Number.isFinite(x)) return '—';
+  return x.toLocaleString('en-GB', {style:'currency', currency:'EUR', maximumFractionDigits: 0});
+}
+function setSignedClass(el, x, neutralClass = '') {
+  el.classList.remove('red','green','accent','blue');
+  if (x < 0) el.classList.add('red');
+  else if (neutralClass) el.classList.add(neutralClass);
+}
+
+// ── INVESTMENT KELLY ─────────────────────────────────────────────────────────
+function toggleInvestmentBorrowing() {
+  const enabled = document.getElementById('inv-borrow-toggle').checked;
+  const rateInput = document.getElementById('inv-borrow-rate');
+  const status = document.getElementById('inv-borrow-status');
+  rateInput.disabled = !enabled;
+  status.textContent = enabled ? 'On' : 'Off';
+  status.classList.toggle('on', enabled);
+  status.classList.toggle('off', !enabled);
+  calculateInvestmentKelly();
+}
+
+function investmentGrowthAt(f, mu, sigma, cashRate, borrowRate, allowBorrow) {
+  if (!allowBorrow && f > 1 + 1e-10) return -Infinity;
+  // f ≤ 1: Rest in Cash; f > 1: negativer Cashanteil zum Kreditzins.
+  const rate = f <= 1 ? cashRate : borrowRate;
+  return rate + f * (mu - rate) - 0.5 * f * f * sigma * sigma;
+}
+
+function solveInvestmentKellyExposure(mu, sigma, cashRate, borrowRate, allowBorrow) {
+  const variance = sigma * sigma;
+  if (!(variance > 0)) return 0;
+  const eps = 1e-12;
+  const fCash = (mu - cashRate) / variance;
+  const candidates = [];
+
+  // Cash-Region: f* = (μ − r_cash)/σ², nur gültig wenn f* ≤ 1.
+  if (fCash <= 1 + eps) candidates.push(Math.max(0, fCash));
+  // 100-%-Grenze (immer relevant, wenn unbeschränktes Kelly über 100 % will).
+  candidates.push(1);
+
+  if (allowBorrow) {
+    const fBorrow = (mu - borrowRate) / variance;
+    // Kredit-Region: f* = (μ − r_kredit)/σ², nur gültig wenn f* ≥ 1.
+    if (fBorrow >= 1 - eps) candidates.push(fBorrow);
+  }
+
+  let bestF = 0;
+  let bestG = -Infinity;
+  candidates.forEach(f => {
+    const g = investmentGrowthAt(f, mu, sigma, cashRate, borrowRate, allowBorrow);
+    if (Number.isFinite(g) && g > bestG) {
+      bestG = g;
+      bestF = f;
+    }
+  });
+  return Math.max(0, bestF);
+}
+
+function wealthFromLogGrowth(capital, logGrowth, years) {
+  if (!Number.isFinite(capital) || !Number.isFinite(logGrowth) || !Number.isFinite(years)) return NaN;
+  return capital * Math.exp(logGrowth * years);
+}
+
+function wealthPathFromLogGrowth(capital, logGrowth, years) {
+  const path = [];
+  const steps = Math.max(1, Math.round(years));
+  for (let t = 0; t <= steps; t++) {
+    path.push({ x: t, y: wealthFromLogGrowth(capital, logGrowth, t) });
+  }
+  if (years > steps) path.push({ x: years, y: wealthFromLogGrowth(capital, logGrowth, years) });
+  return path;
+}
+
+function yearsLabel(years) {
+  const rounded = Math.abs(years - Math.round(years)) < 1e-9 ? Math.round(years) : years;
+  return `${rounded} ${rounded === 1 ? 'year' : 'years'}`;
+}
+
+function calculateInvestmentKelly() {
+  const muNominal = parseFloat(document.getElementById('inv-return').value) / 100;
+  const sigma = parseFloat(document.getElementById('inv-vol').value) / 100;
+  const cashRate = parseFloat(document.getElementById('inv-rf').value) / 100;
+  const inflation = parseFloat(document.getElementById('inv-inflation').value) / 100;
+  const allowBorrow = document.getElementById('inv-borrow-toggle').checked;
+  const borrowRateRaw = parseFloat(document.getElementById('inv-borrow-rate').value);
+  const borrowRate = borrowRateRaw / 100;
+  const capital = parseFloat(document.getElementById('inv-capital').value);
+  const yearsRaw = parseFloat(document.getElementById('inv-years').value);
+  const years = Math.max(1, yearsRaw || 1);
+  const warning = document.getElementById('inv-warning');
+  const status = document.getElementById('inv-borrow-status');
+
+  document.getElementById('inv-borrow-rate').disabled = !allowBorrow;
+  status.textContent = allowBorrow ? 'On' : 'Off';
+  status.classList.toggle('on', allowBorrow);
+  status.classList.toggle('off', !allowBorrow);
+
+  if (![muNominal, sigma, cashRate, inflation].every(Number.isFinite) || sigma <= 0 || inflation < 0 || (allowBorrow && !Number.isFinite(borrowRate))) {
+    warning.textContent = 'Enter valid values. Volatility must be > 0 and inflation must be ≥ 0; an annual borrowing rate is required when leverage is enabled.';
+    warning.classList.add('show');
+    return;
+  }
+
+  // Realgrößen: Inflation von Asset-, Cash- und Kreditzins abziehen.
+  // Überschussrenditen bleiben wie im Nominalmodell; Anzeige bleibt "real".
+  const mu = muNominal - inflation;
+  const cashRateKelly = cashRate - inflation;
+  const borrowRateKelly = borrowRate - inflation;
+  const variance = sigma * sigma;
+  const cashCandidate = (mu - cashRateKelly) / variance;
+  const borrowCandidate = allowBorrow ? (mu - borrowRateKelly) / variance : null;
+
+  let full = solveInvestmentKellyExposure(mu, sigma, cashRateKelly, borrowRateKelly, allowBorrow);
+  const cash = 1 - full;
+  const financingRateNom = full > 1 ? borrowRate : cashRate;
+  const premium = mu - (full > 1 ? borrowRateKelly : cashRateKelly);
+
+  document.getElementById('inv-full').textContent = fmtPct(full);
+  document.getElementById('inv-real-return').textContent = fmtPct(mu);
+  document.getElementById('inv-real-return-sub').textContent = `${fmtPct(muNominal)} nominal minus ${fmtPct(inflation)} inflation`;
+  document.getElementById('inv-premium').textContent = fmtPct(premium);
+  document.getElementById('inv-premium-sub').textContent = full > 1
+    ? `real return minus real borrowing rate (${fmtPct(borrowRateKelly)})`
+    : `real return minus real cash rate (${fmtPct(cashRateKelly)})`;
+  document.getElementById('inv-exposure-eur').textContent = Number.isFinite(capital) ? fmtEuro(capital * full) : '—';
+  document.getElementById('inv-cash').textContent = fmtPct(cash);
+
+  if (cash >= -1e-10) {
+    document.getElementById('inv-cash-sub').textContent = `Cash at ${fmtPct(cashRate)} p.a. nominal`;
+  } else {
+    const loan = Number.isFinite(capital) ? -cash * capital : NaN;
+    const annualCost = Number.isFinite(loan) ? loan * borrowRate : NaN;
+    document.getElementById('inv-cash-sub').textContent = Number.isFinite(annualCost)
+      ? `Borrowing at ${fmtPct(borrowRate)} p.a. nominal, approx. ${fmtEuro(annualCost)}/year`
+      : `Borrowing at ${fmtPct(borrowRate)} p.a. nominal`;
+  }
+
+  setSignedClass(document.getElementById('inv-full'), full, 'accent');
+  setSignedClass(document.getElementById('inv-real-return'), mu, 'green');
+  setSignedClass(document.getElementById('inv-cash'), cash, cash >= 0 ? 'blue' : '');
+
+  const fractions = [
+    ['quarter', .25],
+    ['half', .5],
+    ['full-repeat', 1]
+  ];
+  const growthNomByFraction = {};
+  const growthRealByFraction = {};
+  fractions.forEach(([id, fraction]) => {
+    const risky = full * fraction;
+    const cashWeight = 1 - risky;
+    // Euro-Wachstum mit Nominalzinsen; real = nominal minus Inflation.
+    const gNom = investmentGrowthAt(risky, muNominal, sigma, cashRate, borrowRate, allowBorrow);
+    const gReal = Number.isFinite(gNom) ? gNom - inflation : NaN;
+    growthNomByFraction[fraction] = gNom;
+    growthRealByFraction[fraction] = gReal;
+    document.getElementById('inv-' + id).textContent = fmtPct(risky);
+    const cashId = id === 'full-repeat' ? 'inv-full-cash' : 'inv-' + id + '-cash';
+    if (cashWeight >= -1e-10) {
+      document.getElementById(cashId).textContent = `Cash: ${fmtPct(Math.max(cashWeight, 0))} @ ${fmtPct(cashRate)}`;
+    } else {
+      document.getElementById(cashId).textContent = `Borrowing: ${fmtPct(-cashWeight)} @ ${fmtPct(borrowRate)}`;
+    }
+  });
+
+  const gNomQuarter = growthNomByFraction[0.25];
+  const gNomHalf = growthNomByFraction[0.5];
+  const gNomFull = growthNomByFraction[1];
+  const gRealQuarter = growthRealByFraction[0.25];
+  const gRealHalf = growthRealByFraction[0.5];
+  const gRealFull = growthRealByFraction[1];
+  const endFullNom = wealthFromLogGrowth(capital, gNomFull, years);
+  const endHalfNom = wealthFromLogGrowth(capital, gNomHalf, years);
+  const endFullReal = wealthFromLogGrowth(capital, gRealFull, years);
+  const endHalfReal = wealthFromLogGrowth(capital, gRealHalf, years);
+  const endQuarterNom = wealthFromLogGrowth(capital, gNomQuarter, years);
+  const endQuarterReal = wealthFromLogGrowth(capital, gRealQuarter, years);
+
+  document.getElementById('inv-end-full').textContent = Number.isFinite(endFullNom) ? fmtEuro(endFullNom) : '—';
+  document.getElementById('inv-end-full-sub').textContent = `nominal after ${yearsLabel(years)}`;
+  document.getElementById('inv-end-half').textContent = Number.isFinite(endHalfNom) ? fmtEuro(endHalfNom) : '—';
+  document.getElementById('inv-end-half-sub').textContent = `nominal after ${yearsLabel(years)}`;
+  document.getElementById('inv-end-full-real').textContent = Number.isFinite(endFullReal) ? fmtEuro(endFullReal) : '—';
+  document.getElementById('inv-end-full-real-sub').textContent = `purchasing power today after ${yearsLabel(years)}`;
+
+  const capLabel = document.getElementById('inv-proj-capital-label');
+  const yearsLabelEl = document.getElementById('inv-proj-years-label');
+  if (capLabel) capLabel.textContent = Number.isFinite(capital) ? fmtEuro(capital) : '—';
+  if (yearsLabelEl) yearsLabelEl.textContent = yearsLabel(years);
+
+  document.getElementById('inv-proj-quarter').textContent = Number.isFinite(endQuarterNom) ? fmtEuro(endQuarterNom) : '—';
+  document.getElementById('inv-proj-quarter-sub').textContent = Number.isFinite(endQuarterReal)
+    ? `Purchasing power ${fmtEuro(endQuarterReal)}, g ${fmtPct(gRealQuarter)} real`
+    : '—';
+  document.getElementById('inv-proj-half').textContent = Number.isFinite(endHalfNom) ? fmtEuro(endHalfNom) : '—';
+  document.getElementById('inv-proj-half-sub').textContent = Number.isFinite(endHalfReal)
+    ? `Purchasing power ${fmtEuro(endHalfReal)}, g ${fmtPct(gRealHalf)} real`
+    : '—';
+  document.getElementById('inv-proj-full').textContent = Number.isFinite(endFullNom) ? fmtEuro(endFullNom) : '—';
+  document.getElementById('inv-proj-full-sub').textContent = Number.isFinite(endFullReal)
+    ? `Purchasing power ${fmtEuro(endFullReal)}, g ${fmtPct(gRealFull)} real`
+    : '—';
+
+  // Chart nutzt dieselben Realzinsen wie die Optimierung, damit das Maximum = Full Kelly.
+  updateInvestmentChart(mu, sigma, cashRateKelly, borrowRateKelly, allowBorrow, full, cashCandidate, borrowCandidate);
+  updateInvestmentWealthChart(capital, years, inflation, gNomQuarter, gNomHalf, gNomFull);
+
+  const chartNote = document.getElementById('inv-chart-note');
+  chartNote.textContent = allowBorrow
+    ? `x-axis = asset exposure. Full Kelly at ${fmtPct(full)}. Up to 100%: real cash rate ${fmtPct(cashRateKelly)}; above that: real borrowing rate ${fmtPct(borrowRateKelly)}. Inflation ${fmtPct(inflation)} is included in all real rates.`
+    : `x-axis = asset exposure. Full Kelly at ${fmtPct(full)}. Leverage is off: the curve ends at 100%.`;
+
+  if (mu <= cashRateKelly && full <= 1e-10) {
+    warning.textContent = 'The real return is not above the real cash rate, so a long position produces 0% Kelly exposure.';
+    warning.classList.add('show');
+  } else if (!allowBorrow && cashCandidate > 1 + 1e-8) {
+    warning.textContent = `Leverage is disabled. Unconstrained Kelly would be ${fmtPct(cashCandidate)}; exposure is capped at 100%.`;
+    warning.classList.add('show');
+  } else if (allowBorrow && Math.abs(full - 1) < 1e-6 && cashCandidate > 1 + 1e-8 && Number.isFinite(borrowCandidate) && borrowCandidate < 1 - 1e-8) {
+    warning.textContent = `Without financing costs, Kelly would be ${fmtPct(cashCandidate)}. At a borrowing rate of ${fmtPct(borrowRate)} (real ${fmtPct(borrowRateKelly)}), leverage is not worthwhile, so the optimum is exactly 100%.`;
+    warning.classList.add('show');
+  } else if (allowBorrow && full > 1 + 1e-8) {
+    warning.textContent = `Full Kelly = ${fmtPct(full)} exposure, including ${fmtPct(full - 1)} financed at the nominal borrowing rate of ${fmtPct(borrowRate)} p.a.`;
+    warning.classList.add('show');
+  } else {
+    warning.classList.remove('show');
+  }
+}
+
+function updateInvestmentChart(mu, sigma, cashRate, borrowRate, allowBorrow, full, cashCandidate, borrowCandidate) {
+  const canvas = document.getElementById('investment-kelly-chart');
+  if (!canvas || typeof Chart === 'undefined') return;
+
+  let minExposure = 0;
+  let maxExposure = 1;
+  if (allowBorrow) {
+    const ref = Math.max(
+      full || 0,
+      Number.isFinite(cashCandidate) ? cashCandidate : 0,
+      Number.isFinite(borrowCandidate) ? borrowCandidate : 0,
+      1.2
+    );
+    maxExposure = Math.max(1.5, ref * 1.35);
+  } else {
+    maxExposure = 1;
+  }
+
+  const steps = 200;
+  const curve = [];
+  for (let i = 0; i <= steps; i++) {
+    const f = minExposure + (maxExposure - minExposure) * i / steps;
+    const g = investmentGrowthAt(f, mu, sigma, cashRate, borrowRate, allowBorrow);
+    if (Number.isFinite(g)) curve.push({x: f * 100, y: g * 100});
+  }
+  // Exakte Punkte: Optimum und 100-%-Kink
+  const boundaryGrowth = investmentGrowthAt(1, mu, sigma, cashRate, borrowRate, allowBorrow) * 100;
+  const optimumGrowth = investmentGrowthAt(full, mu, sigma, cashRate, borrowRate, allowBorrow) * 100;
+  if (Number.isFinite(optimumGrowth)) {
+    const exists = curve.some(p => Math.abs(p.x - full * 100) < 1e-6);
+    if (!exists) curve.push({x: full * 100, y: optimumGrowth});
+    curve.sort((a, b) => a.x - b.x);
+  }
+
+  const ctx = canvas.getContext('2d');
+  if (investmentChart) investmentChart.destroy();
+  investmentChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      datasets: [
+        {
+          label: 'Expected log growth p.a. (real)',
+          data: curve,
+          borderColor: '#6ee7b7',
+          backgroundColor: 'rgba(110,231,183,.08)',
+          borderWidth: 2.5,
+          pointRadius: 0,
+          pointHoverRadius: 5,
+          tension: .15,
+          fill: true,
+          parsing: false
+        },
+        {
+          label: `Full Kelly (${(full * 100).toFixed(1)}%)`,
+          data: [{x: full * 100, y: optimumGrowth}],
+          borderColor: '#fbbf24',
+          backgroundColor: '#fbbf24',
+          pointRadius: 8,
+          pointHoverRadius: 10,
+          showLine: false,
+          pointStyle: 'triangle',
+          parsing: false
+        },
+        {
+          label: '100% exposure',
+          data: [{x: 100, y: boundaryGrowth}],
+          borderColor: '#818cf8',
+          backgroundColor: '#818cf8',
+          pointRadius: allowBorrow || Math.abs(full - 1) > 1e-6 ? 5 : 0,
+          pointHoverRadius: allowBorrow || Math.abs(full - 1) > 1e-6 ? 7 : 0,
+          showLine: false,
+          pointStyle: 'rectRot',
+          parsing: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'nearest', intersect: false },
+      scales: {
+        x: {
+          type: 'linear',
+          min: minExposure * 100,
+          max: maxExposure * 100,
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: { color: '#64748b', font: { family: 'DM Sans', size: 11 }, maxTicksLimit: 10, callback: value => `${Math.round(value)}%` },
+          title: { display: true, text: 'Asset exposure (% of equity)', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        },
+        y: {
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: { color: '#64748b', font: { family: 'DM Sans', size: 11 }, callback: value => `${Number(value).toFixed(1)}%` },
+          title: { display: true, text: 'Expected log growth p.a. (real)', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        }
+      },
+      plugins: {
+        legend: { labels: { color: '#64748b', font: { family: 'DM Sans', size: 12 }, boxWidth: 12 } },
+        tooltip: {
+          backgroundColor: '#16161f', borderColor: '#1e1e2e', borderWidth: 1,
+          titleColor: '#e2e8f0', bodyColor: '#64748b',
+          callbacks: {
+            title: items => items.length ? `Exposure: ${Number(items[0].parsed.x).toFixed(1)}%` : '',
+            label: item => ` ${item.dataset.label}: ${Number(item.parsed.y).toFixed(2)} % p.a.`
+          }
+        }
+      }
+    }
+  });
+}
+
+function updateInvestmentWealthChart(capital, years, inflation, gNomQuarter, gNomHalf, gNomFull) {
+  const canvas = document.getElementById('investment-wealth-chart');
+  if (!canvas || typeof Chart === 'undefined' || !Number.isFinite(capital)) return;
+
+  const datasets = [
+    {
+      label: 'Full Kelly',
+      data: wealthPathFromLogGrowth(capital, gNomFull, years),
+      borderColor: '#6ee7b7',
+      backgroundColor: 'rgba(110,231,183,.08)',
+      borderWidth: 2.5,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      tension: .15,
+      fill: false,
+      parsing: false
+    },
+    {
+      label: 'Half Kelly',
+      data: wealthPathFromLogGrowth(capital, gNomHalf, years),
+      borderColor: '#818cf8',
+      backgroundColor: 'transparent',
+      borderWidth: 2.2,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      tension: .15,
+      fill: false,
+      parsing: false
+    },
+    {
+      label: 'Quarter Kelly',
+      data: wealthPathFromLogGrowth(capital, gNomQuarter, years),
+      borderColor: '#94a3b8',
+      backgroundColor: 'transparent',
+      borderWidth: 1.8,
+      borderDash: [5, 4],
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      tension: .15,
+      fill: false,
+      parsing: false
+    }
+  ];
+
+  const ctx = canvas.getContext('2d');
+  if (investmentWealthChart) investmentWealthChart.destroy();
+  investmentWealthChart = new Chart(ctx, {
+    type: 'line',
+    data: { datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: {
+          type: 'linear',
+          min: 0,
+          max: years,
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: { color: '#64748b', font: { family: 'DM Sans', size: 11 }, callback: value => `${Math.round(value)}` },
+          title: { display: true, text: 'Years', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        },
+        y: {
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: {
+            color: '#64748b',
+            font: { family: 'DM Sans', size: 11 },
+            callback: value => {
+              const n = Number(value);
+               if (Math.abs(n) >= 1e6) return `${(n / 1e6).toFixed(1)}m €`;
+              if (Math.abs(n) >= 1e3) return `${Math.round(n / 1e3)}k €`;
+              return `${Math.round(n)} €`;
+            }
+          },
+          title: { display: true, text: 'Wealth (€)', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        }
+      },
+      plugins: {
+        legend: { labels: { color: '#64748b', font: { family: 'DM Sans', size: 12 }, boxWidth: 12 } },
+        tooltip: {
+          backgroundColor: '#16161f', borderColor: '#1e1e2e', borderWidth: 1,
+          titleColor: '#e2e8f0', bodyColor: '#64748b',
+          callbacks: {
+            title: items => items.length ? `Year ${Number(items[0].parsed.x).toFixed(0)}` : '',
+            label: item => ` ${item.dataset.label}: ${fmtEuro(item.parsed.y)}`
+          }
+        }
+      }
+    }
+  });
+
+  const note = document.getElementById('inv-wealth-chart-note');
+  if (note) {
+    note.textContent = `Wealth path using the expected nominal return. Kelly exposure is based on the real return (nominal minus ${fmtPct(inflation)} inflation).`;
+  }
+}
+
+// ── MATRIX HELPERS ────────────────────────────────────────────────────────────
+function invertMatrix(matrix) {
+  const n = matrix.length;
+  const a = matrix.map((row, i) => row.map(Number).concat(Array.from({length:n}, (_, j) => i === j ? 1 : 0)));
+
+  for (let col = 0; col < n; col++) {
+    let pivotRow = col;
+    for (let r = col + 1; r < n; r++) {
+      if (Math.abs(a[r][col]) > Math.abs(a[pivotRow][col])) pivotRow = r;
+    }
+    if (Math.abs(a[pivotRow][col]) < 1e-12) throw new Error('The covariance matrix is singular or nearly singular.');
+    if (pivotRow !== col) [a[col], a[pivotRow]] = [a[pivotRow], a[col]];
+
+    const pivot = a[col][col];
+    for (let j = 0; j < 2*n; j++) a[col][j] /= pivot;
+
+    for (let r = 0; r < n; r++) {
+      if (r === col) continue;
+      const factor = a[r][col];
+      for (let j = 0; j < 2*n; j++) a[r][j] -= factor * a[col][j];
+    }
+  }
+  return a.map(row => row.slice(n));
+}
+
+function matVec(matrix, vector) {
+  return matrix.map(row => row.reduce((sum, v, i) => sum + v * vector[i], 0));
+}
+
+function quadForm(weights, matrix) {
+  let total = 0;
+  for (let i = 0; i < weights.length; i++) {
+    for (let j = 0; j < weights.length; j++) total += weights[i] * matrix[i][j] * weights[j];
+  }
+  return total;
+}
+
+function correlationMatrixIsValid(corr) {
+  const n = corr.length;
+  if (n === 0) return false;
+  for (let i = 0; i < n; i++) {
+    if (Math.abs(corr[i][i] - 1) > 1e-9) return false;
+    for (let j = 0; j < n; j++) {
+      if (!Number.isFinite(corr[i][j])) return false;
+      if (Math.abs(corr[i][j] - corr[j][i]) > 1e-9) return false;
+      if (corr[i][j] < -1 - 1e-9 || corr[i][j] > 1 + 1e-9) return false;
+    }
+  }
+  const L = Array.from({length: n}, () => Array(n).fill(0));
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j <= i; j++) {
+      let sum = 0;
+      for (let k = 0; k < j; k++) sum += L[i][k] * L[j][k];
+      if (i === j) {
+        const val = corr[i][i] - sum;
+        if (val <= 1e-10) return false;
+        L[i][j] = Math.sqrt(val);
+      } else {
+        if (Math.abs(L[j][j]) < 1e-12) return false;
+        L[i][j] = (corr[i][j] - sum) / L[j][j];
+      }
+    }
+  }
+  return true;
+}
+
+function sumVector(vector) {
+  return vector.reduce((sum, value) => sum + value, 0);
+}
+
+function portfolioLogGrowth(weights, mu, cov, cashRate, borrowRate, allowBorrow) {
+  const riskySum = sumVector(weights);
+  const cashWeight = 1 - riskySum;
+  if (!allowBorrow && cashWeight < -1e-9) return -Infinity;
+  const fundingRate = cashWeight >= 0 ? cashRate : borrowRate;
+  const expectedReturn = weights.reduce((sum, w, i) => sum + w * mu[i], 0) + cashWeight * fundingRate;
+  return expectedReturn - 0.5 * quadForm(weights, cov);
+}
+
+function boundaryPortfolioWeights(invCov, mu) {
+  const ones = mu.map(() => 1);
+  const invMu = matVec(invCov, mu);
+  const invOne = matVec(invCov, ones);
+  const denom = sumVector(invOne);
+    if (Math.abs(denom) < 1e-12) throw new Error('The 100% constraint could not be solved numerically.');
+  const lambda = (sumVector(invMu) - 1) / denom;
+  return matVec(invCov, mu.map(v => v - lambda));
+}
+
+function solvePortfolioKellyCore(invCov, mu, cov, cashRate, borrowRate, allowBorrow) {
+  const eps = 1e-9;
+  const cashWeights = matVec(invCov, mu.map(v => v - cashRate));
+  const boundaryWeights = boundaryPortfolioWeights(invCov, mu);
+  const candidates = [];
+
+  if (sumVector(cashWeights) <= 1 + eps) {
+    candidates.push({weights: cashWeights, regime: 'cash'});
+  }
+  candidates.push({weights: boundaryWeights, regime: allowBorrow ? 'boundary' : 'boundary-no-borrow'});
+
+  if (allowBorrow) {
+    const borrowWeights = matVec(invCov, mu.map(v => v - borrowRate));
+    if (sumVector(borrowWeights) >= 1 - eps) {
+      candidates.push({weights: borrowWeights, regime: 'borrow'});
+    }
+  }
+
+  let best = null;
+  for (const candidate of candidates) {
+    const growth = portfolioLogGrowth(candidate.weights, mu, cov, cashRate, borrowRate, allowBorrow);
+    if (!best || growth > best.growth) best = {...candidate, growth};
+  }
+  if (!best) throw new Error('No valid Kelly solution was found under the selected financing conditions.');
+
+  return {
+    ...best,
+    unconstrainedCashWeights: cashWeights,
+    unconstrainedCashSum: sumVector(cashWeights)
+  };
+}
+
+function solvePortfolioKellyNoShorts(mu, cov, cashRate, borrowRate, allowBorrow) {
+  const n = mu.length;
+  const eps = 1e-8;
+  const zero = Array(n).fill(0);
+  let best = {
+    weights: zero,
+    regime: 'cash-only',
+    growth: portfolioLogGrowth(zero, mu, cov, cashRate, borrowRate, allowBorrow),
+    activeMask: 0
+  };
+
+  const maxMasks = 1 << n;
+  for (let mask = 1; mask < maxMasks; mask++) {
+    const idx = [];
+    for (let i = 0; i < n; i++) if (mask & (1 << i)) idx.push(i);
+
+    const subMu = idx.map(i => mu[i]);
+    const subCov = idx.map(i => idx.map(j => cov[i][j]));
+
+    try {
+      const invSubCov = invertMatrix(subCov);
+      const subSolution = solvePortfolioKellyCore(invSubCov, subMu, subCov, cashRate, borrowRate, allowBorrow);
+      if (subSolution.weights.some(w => w < -eps)) continue;
+
+      const weights = Array(n).fill(0);
+      idx.forEach((assetIndex, k) => { weights[assetIndex] = Math.max(0, subSolution.weights[k]); });
+      const growth = portfolioLogGrowth(weights, mu, cov, cashRate, borrowRate, allowBorrow);
+
+      if (Number.isFinite(growth) && (!best || growth > best.growth + 1e-12)) {
+        best = {weights, regime: subSolution.regime, growth, activeMask: mask};
+      }
+    } catch (_) {}
+  }
+
+  if (!best) throw new Error('No valid long-only Kelly solution was found.');
+  return best;
+}
+
+function solvePortfolioKelly(invCov, mu, cov, cashRate, borrowRate, allowBorrow, allowShorts) {
+  const unrestricted = solvePortfolioKellyCore(invCov, mu, cov, cashRate, borrowRate, allowBorrow);
+  if (allowShorts) return {...unrestricted, shortConstraintActive: false};
+
+  const constrained = solvePortfolioKellyNoShorts(mu, cov, cashRate, borrowRate, allowBorrow);
+  return {
+    ...constrained,
+    unconstrainedCashWeights: unrestricted.unconstrainedCashWeights,
+    unconstrainedCashSum: unrestricted.unconstrainedCashSum,
+    unrestrictedWeights: unrestricted.weights,
+    shortConstraintActive: unrestricted.weights.some(w => w < -1e-8)
+  };
+}
+
+function togglePortfolioBorrowing() {
+  const enabled = document.getElementById('pf-borrow-toggle').checked;
+  const rateInput = document.getElementById('pf-borrow-rate');
+  const status = document.getElementById('pf-borrow-status');
+  rateInput.disabled = !enabled;
+  status.textContent = enabled ? 'On' : 'Off';
+  status.classList.toggle('on', enabled);
+  status.classList.toggle('off', !enabled);
+  calculatePortfolioKelly();
+}
+
+function togglePortfolioShorts() {
+  const enabled = document.getElementById('pf-shorts-toggle').checked;
+  const status = document.getElementById('pf-shorts-status');
+  status.textContent = enabled ? 'On' : 'Off';
+  status.classList.toggle('on', enabled);
+  status.classList.toggle('off', !enabled);
+  calculatePortfolioKelly();
+}
+
+// ── PORTFOLIO ASSETS UI ──────────────────────────────────────────────────────
+const PF_MIN_ASSETS = 2;
+const PF_MAX_ASSETS = 8;
+
+let pfAssets = [
+  { name: 'MSCI World', ret: 8, vol: 15 },
+  { name: 'Bitcoin', ret: 20, vol: 55 },
+  { name: 'Gold', ret: 5, vol: 14 },
+  { name: 'REITs', ret: 7, vol: 18 }
+];
+
+let pfCorr = {
+  '0,1': 0.30,
+  '0,2': 0.05,
+  '0,3': 0.65,
+  '1,2': 0.10,
+  '1,3': 0.20,
+  '2,3': 0.15
+};
+
+function corrKey(i, j) {
+  return i < j ? `${i},${j}` : `${j},${i}`;
+}
+
+function syncPortfolioFromDom() {
+  const container = document.getElementById('portfolio-assets');
+  if (!container) return;
+  const cards = container.querySelectorAll('.asset-card');
+  if (!cards.length) return;
+
+  pfAssets = Array.from(cards).map((card, i) => ({
+    name: (card.querySelector('.asset-name-input')?.value || `Asset ${i + 1}`).trim(),
+    ret: parseFloat(card.querySelector('.asset-ret')?.value),
+    vol: parseFloat(card.querySelector('.asset-vol')?.value)
+  }));
+
+  const n = pfAssets.length;
+  const nextCorr = {};
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      const el = document.getElementById(`corr-${i}-${j}`);
+      if (el) nextCorr[corrKey(i, j)] = parseFloat(el.value);
+      else if (pfCorr[corrKey(i, j)] !== undefined) nextCorr[corrKey(i, j)] = pfCorr[corrKey(i, j)];
+      else nextCorr[corrKey(i, j)] = 0.25;
+    }
+  }
+  pfCorr = nextCorr;
+}
+
+function updatePortfolioAssetControls() {
+  const n = pfAssets.length;
+  const count = document.getElementById('pf-asset-count');
+  const addBtn = document.getElementById('pf-add-asset');
+  if (count) count.textContent = `${n} / ${PF_MAX_ASSETS} Assets`;
+  if (addBtn) addBtn.disabled = n >= PF_MAX_ASSETS;
+  document.querySelectorAll('.asset-remove-btn').forEach(btn => {
+    btn.disabled = n <= PF_MIN_ASSETS;
+  });
+}
+
+function renderPortfolioUI() {
+  const assetsEl = document.getElementById('portfolio-assets');
+  const corrsEl = document.getElementById('portfolio-corrs');
+  if (!assetsEl || !corrsEl) return;
+
+  const canRemove = pfAssets.length > PF_MIN_ASSETS;
+  assetsEl.innerHTML = pfAssets.map((asset, i) => `
+    <div class="asset-card" data-index="${i}">
+      <div class="asset-card-header">
+        <input class="asset-name-input" value="${escapeHtml(asset.name)}" oninput="calculatePortfolioKelly()" aria-label="Asset ${i + 1} Name">
+        <button type="button" class="asset-remove-btn" onclick="removePortfolioAsset(${i})" title="Remove asset" aria-label="Remove asset ${i + 1}" ${canRemove ? '' : 'disabled'}>×</button>
+      </div>
+      <div class="asset-mini-grid">
+        <div class="input-group">
+          <label class="label-green">Annual return</label>
+          <div class="input-wrap"><input type="number" class="asset-ret green" value="${Number.isFinite(asset.ret) ? asset.ret : ''}" step="0.1" oninput="calculatePortfolioKelly()"><span class="input-unit">%</span></div>
+        </div>
+        <div class="input-group">
+          <label class="label-white">Volatility</label>
+          <div class="input-wrap"><input type="number" class="asset-vol" value="${Number.isFinite(asset.vol) ? asset.vol : ''}" min="0.01" step="0.1" oninput="calculatePortfolioKelly()"><span class="input-unit">%</span></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  const pairs = [];
+  for (let i = 0; i < pfAssets.length; i++) {
+    for (let j = i + 1; j < pfAssets.length; j++) {
+      const value = pfCorr[corrKey(i, j)];
+      const corrVal = Number.isFinite(value) ? value : 0.25;
+      pairs.push(`
+        <div class="corr-card">
+          <div class="corr-label"><span class="corr-name-a" data-i="${i}">${escapeHtml(pfAssets[i].name || `Asset ${i + 1}`)}</span> ↔ <span class="corr-name-b" data-j="${j}">${escapeHtml(pfAssets[j].name || `Asset ${j + 1}`)}</span></div>
+          <div class="input-wrap"><input type="number" id="corr-${i}-${j}" value="${corrVal}" min="-1" max="1" step="0.05" oninput="calculatePortfolioKelly()"></div>
+        </div>
+      `);
+    }
+  }
+  corrsEl.innerHTML = pairs.join('');
+  updatePortfolioAssetControls();
+}
+
+function addPortfolioAsset() {
+  syncPortfolioFromDom();
+  if (pfAssets.length >= PF_MAX_ASSETS) return;
+  const n = pfAssets.length;
+  pfAssets.push({ name: `Asset ${n + 1}`, ret: 8, vol: 15 });
+  for (let i = 0; i < n; i++) pfCorr[corrKey(i, n)] = 0.25;
+  renderPortfolioUI();
+  calculatePortfolioKelly();
+}
+
+function removePortfolioAsset(index) {
+  syncPortfolioFromDom();
+  if (pfAssets.length <= PF_MIN_ASSETS) return;
+  if (index < 0 || index >= pfAssets.length) return;
+
+  pfAssets.splice(index, 1);
+  const nextCorr = {};
+  for (let i = 0; i < pfAssets.length; i++) {
+    for (let j = i + 1; j < pfAssets.length; j++) {
+      const oi = i >= index ? i + 1 : i;
+      const oj = j >= index ? j + 1 : j;
+      const old = pfCorr[corrKey(oi, oj)];
+      nextCorr[corrKey(i, j)] = Number.isFinite(old) ? old : 0.25;
+    }
+  }
+  pfCorr = nextCorr;
+  renderPortfolioUI();
+  calculatePortfolioKelly();
+}
+
+function updateCorrLabelsFromNames(names) {
+  document.querySelectorAll('#portfolio-corrs .corr-name-a').forEach(el => {
+    const i = parseInt(el.dataset.i, 10);
+    if (Number.isFinite(i) && names[i]) el.textContent = names[i];
+  });
+  document.querySelectorAll('#portfolio-corrs .corr-name-b').forEach(el => {
+    const j = parseInt(el.dataset.j, 10);
+    if (Number.isFinite(j) && names[j]) el.textContent = names[j];
+  });
+}
+
+// ── PORTFOLIO KELLY ──────────────────────────────────────────────────────────
+function clearPortfolioMcResults() {
+  lastPfSimulation = null;
+  const status = document.getElementById('pf-sim-status');
+  if (status) status.textContent = '';
+  const setDash = id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '—';
+  };
+  setDash('pf-sim-median');
+  setDash('pf-sim-p5');
+  setDash('pf-sim-p95');
+  setDash('pf-sim-loss');
+  setDash('pf-sim-beat-cash');
+}
+
+function schedulePortfolioMonteCarlo(delay = 350) {
+  if (pfMcTimer) clearTimeout(pfMcTimer);
+  const status = document.getElementById('pf-sim-status');
+  if (status && !status.textContent.includes('Simulating')) {
+    status.textContent = 'Updating Monte Carlo simulation…';
+  }
+  pfMcTimer = setTimeout(() => {
+    pfMcTimer = null;
+    simulatePortfolioMonteCarlo({ auto: true });
+  }, delay);
+}
+
+function calculatePortfolioKelly() {
+  const assetsEl = document.getElementById('portfolio-assets');
+  if (!assetsEl || !assetsEl.children.length) return;
+
+  syncPortfolioFromDom();
+  updatePortfolioAssetControls();
+
+  const names = pfAssets.map((a, i) => (a.name || `Asset ${i + 1}`).trim());
+  const muNominal = pfAssets.map(a => a.ret / 100);
+  const vol = pfAssets.map(a => a.vol / 100);
+  const n = names.length;
+  const cashRate = parseFloat(document.getElementById('pf-rf').value) / 100;
+  const inflation = parseFloat(document.getElementById('pf-inflation').value) / 100;
+  const allowBorrow = document.getElementById('pf-borrow-toggle').checked;
+  const allowShorts = document.getElementById('pf-shorts-toggle').checked;
+  const borrowRateRaw = parseFloat(document.getElementById('pf-borrow-rate').value);
+  const borrowRate = borrowRateRaw / 100;
+  const capital = parseFloat(document.getElementById('pf-capital').value);
+  const yearsRaw = parseFloat(document.getElementById('pf-years').value);
+  const years = Math.max(1, yearsRaw || 1);
+  const fraction = parseFloat(document.getElementById('pf-fraction').value);
+  const error = document.getElementById('pf-error');
+  const status = document.getElementById('pf-borrow-status');
+  const shortsStatus = document.getElementById('pf-shorts-status');
+
+  document.getElementById('pf-borrow-rate').disabled = !allowBorrow;
+   status.textContent = allowBorrow ? 'On' : 'Off';
+  status.classList.toggle('on', allowBorrow);
+  status.classList.toggle('off', !allowBorrow);
+   shortsStatus.textContent = allowShorts ? 'On' : 'Off';
+  shortsStatus.classList.toggle('on', allowShorts);
+  shortsStatus.classList.toggle('off', !allowShorts);
+
+  updateCorrLabelsFromNames(names);
+
+  const corr = Array.from({length: n}, (_, i) => Array.from({length: n}, (_, j) => {
+    if (i === j) return 1;
+    const v = pfCorr[corrKey(i, j)];
+    return Number.isFinite(v) ? v : NaN;
+  }));
+
+  const corrValues = [];
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) corrValues.push(corr[i][j]);
+  }
+
+  const all = [...muNominal, ...vol, cashRate, inflation, fraction, years, ...corrValues];
+  if (allowBorrow) all.push(borrowRate);
+  if (!all.every(Number.isFinite) || vol.some(v => v <= 0) || inflation < 0 || years < 1 || corrValues.some(c => c < -1 || c > 1)) {
+     error.textContent = 'Enter valid returns, positive volatilities, inflation ≥ 0, a time horizon and correlations between -1 and +1. An annual borrowing rate is also required when leverage is enabled.';
+    error.classList.add('show');
+    clearPortfolioMcResults();
+    lastPfKellyState = null;
+    return;
+  }
+  if (!correlationMatrixIsValid(corr)) {
+     error.textContent = 'These correlations do not form a positive-definite correlation matrix. Adjust the correlations and try again.';
+    error.classList.add('show');
+    clearPortfolioMcResults();
+    lastPfKellyState = null;
+    return;
+  }
+
+  // Realzinsen für Kelly: Inflation von μ, Cash und Kredit abziehen (Überschussrenditen = Nominalfall).
+  const mu = muNominal.map(m => m - inflation);
+  const cashRateKelly = cashRate - inflation;
+  const borrowRateKelly = borrowRate - inflation;
+  const cov = Array.from({length: n}, (_, i) => Array.from({length: n}, (_, j) => corr[i][j] * vol[i] * vol[j]));
+
+  try {
+    const invCov = invertMatrix(cov);
+    const solution = solvePortfolioKelly(invCov, mu, cov, cashRateKelly, borrowRateKelly, allowBorrow, allowShorts);
+    const fullWeights = solution.weights;
+    const selectedWeights = fullWeights.map(w => w * fraction);
+    const fullRisky = sumVector(fullWeights);
+    const risky = sumVector(selectedWeights);
+    let cashWeight = 1 - risky;
+    let fullCash = 1 - fullRisky;
+    if (Math.abs(cashWeight) < 1e-10) cashWeight = 0;
+    if (Math.abs(fullCash) < 1e-10) fullCash = 0;
+
+    const selectedFundingRate = cashWeight >= 0 ? cashRate : borrowRate;
+    const selectedReturnNom = selectedWeights.reduce((sum, w, i) => sum + w * muNominal[i], 0) + cashWeight * selectedFundingRate;
+    const selectedReturnReal = selectedReturnNom - inflation;
+    const variance = quadForm(selectedWeights, cov);
+    const selectedVol = Math.sqrt(Math.max(variance, 0));
+
+    const fractionLabel = fraction === 1 ? 'Full Kelly' : fraction === .75 ? '¾ Kelly' : fraction === .5 ? 'Half Kelly' : 'Quarter Kelly';
+    document.getElementById('pf-selected-head').textContent = fractionLabel;
+
+    const rows = names.map((name, i) => {
+      const fw = fullWeights[i];
+      const sw = selectedWeights[i];
+      const amount = Number.isFinite(capital) ? sw * capital : NaN;
+      return `<tr><td>${escapeHtml(name)}</td><td class="${fw < 0 ? 'neg' : 'pos'}">${fmtPct(fw)}</td><td class="${sw < 0 ? 'neg' : 'pos'}">${fmtPct(sw)}</td><td>${fmtEuro(amount)}</td></tr>`;
+    });
+     rows.push(`<tr class="cash-row"><td>Euro cash / financing</td><td class="${fullCash < 0 ? 'neg' : ''}">${fmtPct(fullCash)}</td><td class="${cashWeight < 0 ? 'neg' : ''}">${fmtPct(cashWeight)}</td><td>${fmtEuro(Number.isFinite(capital) ? cashWeight * capital : NaN)}</td></tr>`);
+     rows.push(`<tr class="total-row"><td>Total</td><td>${fmtPct(1)}</td><td>${fmtPct(1)}</td><td>${fmtEuro(Number.isFinite(capital) ? capital : NaN)}</td></tr>`);
+    document.getElementById('pf-table-body').innerHTML = rows.join('');
+    updatePortfolioChart(names, fullWeights, selectedWeights, fullCash, cashWeight, fractionLabel);
+    document.getElementById('pf-allocation-chart-note').textContent = allowShorts
+       ? 'Full Kelly and the selected fractional Kelly level. Negative asset bars are permitted short positions; negative euro cash represents borrowing.'
+       : 'Full Kelly and the selected fractional Kelly level as a long-only portfolio. Asset weights stay at or above 0%; negative euro cash is possible only when leverage is enabled.';
+
+    document.getElementById('pf-risky').textContent = fmtPct(risky);
+    document.getElementById('pf-exp-return').textContent = fmtPct(selectedReturnNom);
+    document.getElementById('pf-return-sub').textContent = cashWeight >= 0
+       ? `nominal, real ${fmtPct(selectedReturnReal)} (after ${fmtPct(inflation)} inflation)`
+       : `nominal including borrowing @ ${fmtPct(borrowRate)}, real ${fmtPct(selectedReturnReal)}`;
+    document.getElementById('pf-vol').textContent = fmtPct(selectedVol);
+    document.getElementById('pf-cash').textContent = fmtPct(cashWeight);
+
+    if (cashWeight >= 0) {
+       document.getElementById('pf-cash-sub').textContent = `${fractionLabel}: earns ${fmtPct(cashRate)} p.a.`;
+    } else {
+      const loan = Number.isFinite(capital) ? -cashWeight * capital : NaN;
+      const annualCost = Number.isFinite(loan) ? loan * borrowRate : NaN;
+      document.getElementById('pf-cash-sub').textContent = Number.isFinite(annualCost)
+         ? `${fractionLabel}: borrowing ${fmtPct(-cashWeight)} @ ${fmtPct(borrowRate)}, approx. ${fmtEuro(annualCost)}/year`
+         : `${fractionLabel}: financed at ${fmtPct(borrowRate)} p.a.`;
+    }
+    setSignedClass(document.getElementById('pf-cash'), cashWeight, cashWeight >= 0 ? 'blue' : '');
+    setSignedClass(document.getElementById('pf-risky'), risky, 'accent');
+
+    // Nominales Log-Wachstum für Euro-Endkapital; real = nominal minus Inflation.
+    const gFullNom = portfolioLogGrowth(fullWeights, muNominal, cov, cashRate, borrowRate, allowBorrow);
+    const gSelectedNom = portfolioLogGrowth(selectedWeights, muNominal, cov, cashRate, borrowRate, allowBorrow);
+    const gCashNom = portfolioLogGrowth(fullWeights.map(() => 0), muNominal, cov, cashRate, borrowRate, allowBorrow);
+    const gFullReal = Number.isFinite(gFullNom) ? gFullNom - inflation : NaN;
+    const gSelectedReal = Number.isFinite(gSelectedNom) ? gSelectedNom - inflation : NaN;
+    const endSelected = wealthFromLogGrowth(capital, gSelectedNom, years);
+    const endFull = wealthFromLogGrowth(capital, gFullNom, years);
+    const endCash = wealthFromLogGrowth(capital, gCashNom, years);
+    const endSelectedReal = wealthFromLogGrowth(capital, gSelectedReal, years);
+    const endFullReal = wealthFromLogGrowth(capital, gFullReal, years);
+
+    lastPfKellyState = {
+      names, mu, muNominal, vol, cov, cashRate, borrowRate, allowBorrow, allowShorts,
+      inflation, capital, years, fraction, fractionLabel, fullWeights, selectedWeights
+    };
+
+    const pfCapLabel = document.getElementById('pf-proj-capital-label');
+    const pfYearsLabel = document.getElementById('pf-proj-years-label');
+    if (pfCapLabel) pfCapLabel.textContent = Number.isFinite(capital) ? fmtEuro(capital) : '—';
+    if (pfYearsLabel) pfYearsLabel.textContent = yearsLabel(years);
+
+    document.getElementById('pf-proj-selected-name').textContent = fractionLabel;
+    document.getElementById('pf-proj-selected').textContent = Number.isFinite(endSelected) ? fmtEuro(endSelected) : '—';
+    document.getElementById('pf-proj-selected-sub').textContent = Number.isFinite(endSelectedReal)
+       ? `Purchasing power ${fmtEuro(endSelectedReal)}, g ${fmtPct(gSelectedReal)} real`
+      : '—';
+    document.getElementById('pf-proj-full').textContent = Number.isFinite(endFull) ? fmtEuro(endFull) : '—';
+    document.getElementById('pf-proj-full-sub').textContent = Number.isFinite(endFullReal)
+       ? `Purchasing power ${fmtEuro(endFullReal)}, g ${fmtPct(gFullReal)} real`
+      : '—';
+
+    updatePortfolioGrowthChart(fullWeights, mu, cov, cashRateKelly, borrowRateKelly, allowBorrow, fraction, fractionLabel);
+    updatePortfolioWealthChart(capital, years, gSelectedNom, gFullNom, gCashNom, fractionLabel);
+
+    const extreme = fullWeights.some(w => Math.abs(w) > 3) || Math.abs(fullRisky) > 4;
+    if (extreme) {
+       error.textContent = 'The Full Kelly result is extremely high. This usually points to very optimistic return assumptions, low volatility or strong diversification effects. Review the inputs carefully.';
+      error.classList.add('show');
+    } else if (!allowShorts && solution.shortConstraintActive) {
+       error.textContent = 'Short positions are disabled. The unrestricted Kelly solution would assign a negative weight to at least one asset, so the optimiser recalculated the best long-only allocation with wᵢ ≥ 0.';
+      error.classList.add('show');
+    } else if (allowShorts && fullWeights.some(w => w < -1e-8)) {
+       error.textContent = 'At least one Full Kelly weight is negative. This is an explicitly enabled short position.';
+      error.classList.add('show');
+    } else if (!allowBorrow && solution.unconstrainedCashSum > 1 + 1e-8 && Math.abs(fullRisky - 1) < 1e-6) {
+       error.textContent = `Leverage is disabled. Unconstrained Kelly would have ${fmtPct(solution.unconstrainedCashSum)} net risky exposure; the optimiser caps it at 100%.`;
+      error.classList.add('show');
+    } else if (allowBorrow && solution.regime === 'boundary' && Math.abs(fullRisky - 1) < 1e-6) {
+       error.textContent = `Full Kelly is exactly 100% net exposure. At a borrowing rate of ${fmtPct(borrowRate)}, additional leverage is not worthwhile in the model. A lower borrowing rate or short positions can push exposure above 100%.`;
+      error.classList.add('show');
+    } else if (allowBorrow && fullRisky > 1 + 1e-8) {
+       error.textContent = `Full Kelly = ${fmtPct(fullRisky)} net risky exposure (${fmtPct(fullRisky - 1)} financed) at a borrowing rate of ${fmtPct(borrowRate)} p.a.`;
+      error.classList.add('show');
+    } else if (allowBorrow && cashWeight < -1e-8) {
+       error.textContent = `${fractionLabel} uses ${fmtPct(-cashWeight)} leverage at a borrowing rate of ${fmtPct(borrowRate)} p.a.`;
+      error.classList.add('show');
+    } else {
+      error.classList.remove('show');
+    }
+
+    schedulePortfolioMonteCarlo(350);
+  } catch (e) {
+    error.textContent = e.message || 'The portfolio optimisation could not be calculated with these inputs.';
+    error.classList.add('show');
+    clearPortfolioMcResults();
+    lastPfKellyState = null;
+  }
+}
+
+function updatePortfolioChart(names, fullWeights, selectedWeights, fullCash, selectedCash, fractionLabel) {
+  const canvas = document.getElementById('portfolio-kelly-chart');
+  if (!canvas || typeof Chart === 'undefined') return;
+  const labels = [...names, 'Euro cash'];
+  const full = [...fullWeights, fullCash].map(v => v * 100);
+  const selected = [...selectedWeights, selectedCash].map(v => v * 100);
+  const ctx = canvas.getContext('2d');
+
+  if (portfolioChart) portfolioChart.destroy();
+  portfolioChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Full Kelly',
+          data: full,
+          backgroundColor: 'rgba(110,231,183,.72)',
+          borderColor: '#6ee7b7',
+          borderWidth: 1,
+          borderRadius: 5
+        },
+        {
+          label: fractionLabel,
+          data: selected,
+          backgroundColor: 'rgba(129,140,248,.62)',
+          borderColor: '#818cf8',
+          borderWidth: 1,
+          borderRadius: 5
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: '#64748b', font: { family: 'DM Sans', size: 11 } },
+          title: { display: true, text: 'Position', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        },
+        y: {
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: { color: '#64748b', font: { family: 'DM Sans', size: 11 }, callback: value => `${value}%` },
+          title: { display: true, text: 'Portfolio weight', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        }
+      },
+      plugins: {
+        legend: { labels: { color: '#64748b', font: { family: 'DM Sans', size: 12 }, boxWidth: 12 } },
+        tooltip: {
+          backgroundColor: '#16161f', borderColor: '#1e1e2e', borderWidth: 1,
+          titleColor: '#e2e8f0', bodyColor: '#64748b',
+          callbacks: { label: item => ` ${item.dataset.label}: ${Number(item.raw).toFixed(2)}%` }
+        }
+      }
+    }
+  });
+}
+
+function updatePortfolioGrowthChart(fullWeights, mu, cov, cashRate, borrowRate, allowBorrow, fraction, fractionLabel) {
+  const canvas = document.getElementById('portfolio-growth-chart');
+  if (!canvas || typeof Chart === 'undefined') return;
+
+  const fullRisky = sumVector(fullWeights);
+  const fullAbs = Math.abs(fullRisky);
+  // x-Achse = Netto-Risky-Exposure in % des Eigenkapitals (nicht "relativ zu Full Kelly").
+  let maxExposure = allowBorrow
+    ? Math.max(1.5, fullAbs > 1e-10 ? fullAbs * 1.4 : 1.5, 1.2)
+    : 1;
+
+  const points = [];
+  const steps = 140;
+  for (let i = 0; i <= steps; i++) {
+    const exposure = maxExposure * i / steps;
+    let weights;
+    if (fullAbs < 1e-12) {
+      weights = fullWeights.map(() => 0);
+    } else {
+      const scale = exposure / fullRisky;
+      weights = fullWeights.map(w => w * scale);
+    }
+    const growth = portfolioLogGrowth(weights, mu, cov, cashRate, borrowRate, allowBorrow);
+    if (Number.isFinite(growth)) points.push({x: exposure * 100, y: growth * 100});
+  }
+
+  const selectedWeights = fullWeights.map(w => w * fraction);
+  const selectedExposure = sumVector(selectedWeights);
+  const selectedGrowth = portfolioLogGrowth(selectedWeights, mu, cov, cashRate, borrowRate, allowBorrow) * 100;
+  const fullGrowth = portfolioLogGrowth(fullWeights, mu, cov, cashRate, borrowRate, allowBorrow) * 100;
+  const boundaryWeights = fullAbs > 1e-12
+    ? fullWeights.map(w => w / fullRisky)
+    : fullWeights.map(() => 0);
+  const boundaryGrowth = portfolioLogGrowth(boundaryWeights, mu, cov, cashRate, borrowRate, true) * 100;
+  const ctx = canvas.getContext('2d');
+
+  if (portfolioGrowthChart) portfolioGrowthChart.destroy();
+  portfolioGrowthChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      datasets: [
+        {
+          label: 'Portfolio growth',
+          data: points,
+          borderColor: '#6ee7b7',
+          backgroundColor: 'rgba(110,231,183,.08)',
+          borderWidth: 2.5,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          tension: .2,
+          fill: true
+        },
+        {
+          label: `Full Kelly (${(fullRisky * 100).toFixed(1)}%)`,
+          data: [{x: fullRisky * 100, y: fullGrowth}],
+          borderColor: '#fbbf24',
+          backgroundColor: '#fbbf24',
+          pointRadius: 7,
+          pointHoverRadius: 9,
+          showLine: false,
+          pointStyle: 'triangle'
+        },
+        {
+          label: `${fractionLabel} (${(selectedExposure * 100).toFixed(1)}%)`,
+          data: [{x: selectedExposure * 100, y: selectedGrowth}],
+          borderColor: '#818cf8',
+          backgroundColor: '#818cf8',
+          pointRadius: 6,
+          pointHoverRadius: 8,
+          showLine: false
+        },
+        {
+          label: '100% exposure',
+          data: [{x: 100, y: boundaryGrowth}],
+          borderColor: '#94a3b8',
+          backgroundColor: '#94a3b8',
+          pointRadius: allowBorrow || Math.abs(fullRisky - 1) > 1e-4 ? 5 : 0,
+          pointHoverRadius: 7,
+          showLine: false,
+          pointStyle: 'rectRot'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'nearest', intersect: false },
+      scales: {
+        x: {
+          type: 'linear', min: 0, max: maxExposure * 100,
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: { color: '#64748b', font: { family: 'DM Sans', size: 11 }, callback: value => `${Math.round(value)}%` },
+          title: { display: true, text: 'Net risky exposure (% of equity)', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        },
+        y: {
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: { color: '#64748b', font: { family: 'DM Sans', size: 11 }, callback: value => `${Number(value).toFixed(1)}%` },
+          title: { display: true, text: 'Expected log growth p.a. (real)', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        }
+      },
+      plugins: {
+        legend: { labels: { color: '#64748b', font: { family: 'DM Sans', size: 12 }, boxWidth: 12 } },
+        tooltip: {
+          backgroundColor: '#16161f', borderColor: '#1e1e2e', borderWidth: 1,
+          titleColor: '#e2e8f0', bodyColor: '#64748b',
+          callbacks: {
+            title: items => items.length ? `Exposure: ${Number(items[0].parsed.x).toFixed(1)}%` : '',
+            label: item => ` ${item.dataset.label}: ${Number(item.parsed.y).toFixed(2)}% p.a.`
+          }
+        }
+      }
+    }
+  });
+
+  const note = document.getElementById('pf-growth-chart-note');
+  if (note) {
+    note.textContent = allowBorrow
+      ? `x-axis = net risky exposure. Full Kelly at ${fmtPct(fullRisky)}. Values above 100% represent borrowing. The curve scales the Full Kelly mix proportionally.`
+      : `x-axis = net risky exposure. Full Kelly at ${fmtPct(fullRisky)}. With leverage disabled, the allowed range ends at 100%.`;
+  }
+}
+
+function updatePortfolioWealthChart(capital, years, gSelected, gFull, gCash, fractionLabel) {
+  const canvas = document.getElementById('portfolio-wealth-chart');
+  if (!canvas || typeof Chart === 'undefined' || !Number.isFinite(capital)) return;
+
+  const datasets = [
+    {
+      label: fractionLabel,
+      data: wealthPathFromLogGrowth(capital, gSelected, years),
+      borderColor: '#818cf8',
+      backgroundColor: 'rgba(129,140,248,.08)',
+      borderWidth: 2.5,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      tension: .15,
+      fill: false,
+      parsing: false
+    },
+    {
+      label: 'Full Kelly',
+      data: wealthPathFromLogGrowth(capital, gFull, years),
+      borderColor: '#6ee7b7',
+      backgroundColor: 'transparent',
+      borderWidth: 2.2,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      tension: .15,
+      fill: false,
+      parsing: false
+    },
+    {
+       label: 'Euro cash only',
+      data: wealthPathFromLogGrowth(capital, gCash, years),
+      borderColor: '#94a3b8',
+      backgroundColor: 'transparent',
+      borderWidth: 1.8,
+      borderDash: [5, 4],
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      tension: .15,
+      fill: false,
+      parsing: false
+    }
+  ];
+
+  const ctx = canvas.getContext('2d');
+  if (portfolioWealthChart) portfolioWealthChart.destroy();
+  portfolioWealthChart = new Chart(ctx, {
+    type: 'line',
+    data: { datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: {
+          type: 'linear',
+          min: 0,
+          max: years,
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: { color: '#64748b', font: { family: 'DM Sans', size: 11 }, callback: value => `${Math.round(value)}` },
+           title: { display: true, text: 'Years', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        },
+        y: {
+          grid: { color: 'rgba(30,30,46,.8)' },
+          ticks: {
+            color: '#64748b',
+            font: { family: 'DM Sans', size: 11 },
+            callback: value => {
+              const n = Number(value);
+               if (Math.abs(n) >= 1e6) return `${(n / 1e6).toFixed(1)}m €`;
+              if (Math.abs(n) >= 1e3) return `${Math.round(n / 1e3)}k €`;
+              return `${Math.round(n)} €`;
+            }
+          },
+           title: { display: true, text: 'Wealth (€)', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+        }
+      },
+      plugins: {
+        legend: { labels: { color: '#64748b', font: { family: 'DM Sans', size: 12 }, boxWidth: 12 } },
+        tooltip: {
+          backgroundColor: '#16161f', borderColor: '#1e1e2e', borderWidth: 1,
+          titleColor: '#e2e8f0', bodyColor: '#64748b',
+          callbacks: {
+             title: items => items.length ? `Year ${Number(items[0].parsed.x).toFixed(0)}` : '',
+            label: item => ` ${item.dataset.label}: ${fmtEuro(item.parsed.y)}`
+          }
+        }
+      }
+    }
+  });
+
+  const note = document.getElementById('pf-wealth-chart-note');
+  if (note) {
+     note.textContent = `Ending capital ≈ starting capital × e^(gT). ${fractionLabel}: g = ${fmtPct(gSelected)}, Full Kelly: g = ${fmtPct(gFull)}, cash: g = ${fmtPct(gCash)}.`;
+  }
+}
+
+// ── MONTE CARLO HELPERS ──────────────────────────────────────────────────────
+function readSimCount(inputId) {
+  const el = document.getElementById(inputId);
+  if (!el) return null;
+  const n = Math.floor(Number(String(el.value).trim().replace(',', '.')));
+  if (!Number.isFinite(n)) return null;
+  return n;
+}
+
+function randn() {
+  let u = 0;
+  let v = 0;
+  while (u === 0) u = Math.random();
+  while (v === 0) v = Math.random();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+
+function choleskyDecompose(matrix) {
+  const n = matrix.length;
+  const L = Array.from({length: n}, () => Array(n).fill(0));
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j <= i; j++) {
+      let sum = 0;
+      for (let k = 0; k < j; k++) sum += L[i][k] * L[j][k];
+      if (i === j) {
+        const val = matrix[i][i] - sum;
+        if (val <= 1e-12) throw new Error('The covariance matrix is not positive definite (Cholesky decomposition failed).');
+        L[i][j] = Math.sqrt(val);
+      } else {
+        if (Math.abs(L[j][j]) < 1e-12) throw new Error('The covariance matrix is not positive definite (Cholesky decomposition failed).');
+        L[i][j] = (matrix[i][j] - sum) / L[j][j];
+      }
+    }
+  }
+  return L;
+}
+
+function sampleMultivariateNormal(mean, L) {
+  const z = mean.map(() => randn());
+  return mean.map((m, i) => {
+    let s = m;
+    for (let j = 0; j <= i; j++) s += L[i][j] * z[j];
+    return s;
+  });
+}
+
+function percentileSorted(sorted, p) {
+  if (!sorted.length) return NaN;
+  const idx = (sorted.length - 1) * p;
+  const lo = Math.floor(idx);
+  const hi = Math.ceil(idx);
+  if (lo === hi) return sorted[lo];
+  return sorted[lo] * (1 - (idx - lo)) + sorted[hi] * (idx - lo);
+}
+
+function summarizeWealths(endWealths, capital, cashEnds) {
+  const sorted = endWealths.slice().sort((a, b) => a - b);
+  const n = sorted.length;
+  let loss = 0;
+  let beatCash = 0;
+  for (let i = 0; i < n; i++) {
+    if (endWealths[i] < capital) loss++;
+    if (cashEnds && endWealths[i] > cashEnds[i]) beatCash++;
+  }
+  return {
+    median: percentileSorted(sorted, 0.5),
+    p5: percentileSorted(sorted, 0.05),
+    p95: percentileSorted(sorted, 0.95),
+    mean: endWealths.reduce((s, v) => s + v, 0) / n,
+    lossRate: loss / n,
+    beatCashRate: cashEnds ? beatCash / n : NaN
+  };
+}
+
+function yearlyPortfolioReturn(weights, assetReturns, cashRate, borrowRate, allowBorrow) {
+  const riskySum = sumVector(weights);
+  const cashW = 1 - riskySum;
+  if (!allowBorrow && cashW < -1e-10) return NaN;
+  const funding = cashW >= 0 ? cashRate : borrowRate;
+  let ret = cashW * funding;
+  for (let i = 0; i < weights.length; i++) ret += weights[i] * assetReturns[i];
+  return ret;
+}
+
+function compoundPaths(returnPaths, capital, mapYearReturn) {
+  const nPaths = returnPaths.length;
+  const years = returnPaths[0] ? returnPaths[0].length : 0;
+  const endWealths = new Array(nPaths);
+  const byYear = Array.from({length: years + 1}, () => new Array(nPaths));
+
+  for (let p = 0; p < nPaths; p++) {
+    let w = capital;
+    byYear[0][p] = w;
+    for (let t = 0; t < years; t++) {
+      const r = mapYearReturn(returnPaths[p][t], p, t);
+      if (!Number.isFinite(r) || r <= -1) w = 0;
+      else w = Math.max(0, w * (1 + r));
+      byYear[t + 1][p] = w;
+    }
+    endWealths[p] = w;
+  }
+  return { endWealths, byYear };
+}
+
+function yearPercentiles(byYear, probs) {
+  return byYear.map(wealths => {
+    const sorted = wealths.slice().sort((a, b) => a - b);
+    const out = {};
+    probs.forEach(pr => { out[pr] = percentileSorted(sorted, pr); });
+    return out;
+  });
+}
+
+function logEuroTick(v) {
+  if (v >= 1e9) return (v / 1e9).toFixed(0) + 'B';
+  if (v >= 1e6) return (v / 1e6).toFixed(0) + 'M';
+  if (v >= 1e3) return (v / 1e3).toFixed(0) + 'K';
+  return Number(v).toFixed(0);
+}
+
+// ── PORTFOLIO MONTE CARLO ────────────────────────────────────────────────────
+function simulatePortfolioMonteCarlo(opts = {}) {
+  const auto = !!opts.auto;
+  const btn = document.getElementById('pf-sim-btn');
+  const status = document.getElementById('pf-sim-status');
+  const runs = readSimCount('pf-simcount');
+  const state = lastPfKellyState;
+
+  if (runs == null || runs < 10 || runs > 100000) {
+    if (!auto) status.textContent = 'Choose a number between 10 and 100,000.';
+    return;
+  }
+  if (!state || !state.fullWeights) {
+    if (!auto) status.textContent = 'Set valid portfolio parameters first.';
+    return;
+  }
+  if (!Number.isFinite(state.capital) || state.capital <= 0) {
+    if (!auto) status.textContent = 'Enter positive starting capital.';
+    return;
+  }
+
+  const runId = ++pfMcRunId;
+  if (btn) btn.disabled = true;
+  status.textContent = `Simulating ${runs.toLocaleString('en-GB')} runs…`;
+
+  setTimeout(() => {
+    if (runId !== pfMcRunId) return;
+    try {
+      const {
+        muNominal, cov, cashRate, borrowRate, allowBorrow,
+        capital, years: yearsRaw, fraction, fractionLabel, fullWeights, selectedWeights
+      } = state;
+      const years = Math.max(1, Math.round(yearsRaw));
+      const L = choleskyDecompose(cov);
+      // Monte-Carlo auf Nominalrenditen (Euro-Ergebnis); Kelly-Gewichte kommen aus Realrenditen.
+      const meanNom = muNominal || state.mu;
+
+      const returnPaths = Array.from({length: runs}, () =>
+        Array.from({length: years}, () => sampleMultivariateNormal(meanNom, L))
+      );
+
+      const cashPaths = compoundPaths(returnPaths, capital, () => cashRate);
+      const selected = compoundPaths(returnPaths, capital, r =>
+        yearlyPortfolioReturn(selectedWeights, r, cashRate, borrowRate, allowBorrow)
+      );
+      const stats = summarizeWealths(selected.endWealths, capital, cashPaths.endWealths);
+
+      const fullRisky = sumVector(fullWeights);
+      const fullAbs = Math.abs(fullRisky);
+      let maxExposure = allowBorrow
+        ? Math.max(1.5, fullAbs > 1e-10 ? fullAbs * 1.4 : 1.5, 1.2)
+        : 1;
+
+      const steps = 31;
+      const curve = [];
+      for (let i = 0; i < steps; i++) {
+        const exposure = maxExposure * i / (steps - 1);
+        let weights;
+        if (fullAbs < 1e-12) weights = fullWeights.map(() => 0);
+        else weights = fullWeights.map(w => w * (exposure / fullRisky));
+        const { endWealths } = compoundPaths(returnPaths, capital, r =>
+          yearlyPortfolioReturn(weights, r, cashRate, borrowRate, allowBorrow)
+        );
+        const sorted = endWealths.slice().sort((a, b) => a - b);
+        curve.push({
+          exposure,
+          median: Math.max(percentileSorted(sorted, 0.5), 1e-6)
+        });
+      }
+
+      const fan = yearPercentiles(selected.byYear, [0.1, 0.5, 0.9]);
+      const cashFan = yearPercentiles(cashPaths.byYear, [0.5]);
+
+      if (runId !== pfMcRunId) return;
+
+      lastPfSimulation = {
+        n: runs, years, capital, fraction, fractionLabel, fullRisky,
+        selectedExposure: sumVector(selectedWeights),
+        stats, curve, fan, cashFan, maxExposure
+      };
+
+      document.getElementById('pf-sim-median').textContent = fmtEuro(stats.median);
+      document.getElementById('pf-sim-p5').textContent = fmtEuro(stats.p5);
+      document.getElementById('pf-sim-p95').textContent = fmtEuro(stats.p95);
+      document.getElementById('pf-sim-loss').textContent = fmtPct(stats.lossRate);
+      document.getElementById('pf-sim-beat-cash').textContent = fmtPct(stats.beatCashRate);
+      document.getElementById('pf-sim-results').classList.add('visible');
+      status.textContent = `${runs.toLocaleString('en-GB')} runs, ${yearsLabel(years)}, ${fractionLabel}`;
+
+      updatePortfolioMcCharts();
+    } catch (e) {
+      if (runId === pfMcRunId) {
+        status.textContent = e.message || 'Simulation failed.';
+      }
+    } finally {
+      if (runId === pfMcRunId && btn) btn.disabled = false;
+    }
+  }, 20);
+}
+
+function updatePortfolioMcCharts() {
+  if (!lastPfSimulation) return;
+  const sim = lastPfSimulation;
+
+  const curveCanvas = document.getElementById('portfolio-mc-curve-chart');
+  if (curveCanvas && typeof Chart !== 'undefined') {
+    const labels = sim.curve.map(p => (p.exposure * 100).toFixed(0) + '%');
+    const medians = sim.curve.map(p => p.median);
+    const fullExp = Number.isFinite(sim.fullRisky) ? sim.fullRisky : 1;
+    const selExp = Number.isFinite(sim.selectedExposure) ? sim.selectedExposure : fullExp * (sim.fraction || 0.5);
+    const fullIdx = sim.curve.reduce((best, p, i) =>
+      Math.abs(p.exposure - fullExp) < Math.abs(sim.curve[best].exposure - fullExp) ? i : best, 0);
+    const selIdx = sim.curve.reduce((best, p, i) =>
+      Math.abs(p.exposure - selExp) < Math.abs(sim.curve[best].exposure - selExp) ? i : best, 0);
+
+    if (portfolioMcCurveChart) portfolioMcCurveChart.destroy();
+    portfolioMcCurveChart = new Chart(curveCanvas.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'Median ending capital (simulation)',
+            data: medians,
+            borderColor: '#6ee7b7',
+            backgroundColor: 'rgba(110,231,183,.08)',
+            borderWidth: 2.5,
+            pointRadius: 0,
+            pointHoverRadius: 4,
+            tension: 0.25,
+            fill: true
+          },
+          {
+            label: `Full Kelly (${(fullExp * 100).toFixed(1)}%)`,
+            data: labels.map((_, i) => i === fullIdx ? medians[fullIdx] : null),
+            borderColor: '#fbbf24',
+            backgroundColor: '#fbbf24',
+            pointRadius: 7,
+            pointHoverRadius: 9,
+            showLine: false,
+            pointStyle: 'triangle'
+          },
+          {
+            label: `${sim.fractionLabel} (${(selExp * 100).toFixed(1)}%)`,
+            data: labels.map((_, i) => i === selIdx ? medians[selIdx] : null),
+            borderColor: '#818cf8',
+            backgroundColor: '#818cf8',
+            pointRadius: 6,
+            pointHoverRadius: 8,
+            showLine: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: {
+            grid: { color: 'rgba(30,30,46,.8)' },
+            ticks: {
+              color: '#64748b',
+              font: { family: 'DM Sans', size: 11 },
+              callback: (value, index) => index % 5 === 0 ? labels[index] : ''
+            },
+            title: { display: true, text: 'Net risky exposure', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+          },
+          y: {
+            type: 'logarithmic',
+            grid: { color: 'rgba(30,30,46,.8)' },
+            ticks: {
+              color: '#64748b',
+              font: { family: 'DM Sans', size: 11 },
+              callback: logEuroTick
+            },
+            title: { display: true, text: 'Median ending capital (€; log)', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+          }
+        },
+        plugins: {
+          legend: { labels: { color: '#64748b', font: { family: 'DM Sans', size: 12 }, boxWidth: 12 } },
+          tooltip: {
+            backgroundColor: '#16161f', borderColor: '#1e1e2e', borderWidth: 1,
+            titleColor: '#e2e8f0', bodyColor: '#64748b',
+            callbacks: {
+              label: item => item.raw == null ? null : ` ${item.dataset.label}: ${fmtEuro(item.raw)}`
+            }
+          }
+        }
+      }
+    });
+  }
+
+  const fanCanvas = document.getElementById('portfolio-mc-fan-chart');
+  if (fanCanvas && typeof Chart !== 'undefined') {
+    const labels = sim.fan.map((_, t) => t);
+    if (portfolioMcFanChart) portfolioMcFanChart.destroy();
+    portfolioMcFanChart = new Chart(fanCanvas.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'P90',
+            data: sim.fan.map(p => p[0.9]),
+            borderColor: 'rgba(129,140,248,.35)',
+            backgroundColor: 'rgba(129,140,248,.12)',
+            borderWidth: 1,
+            pointRadius: 0,
+            fill: '+1',
+            tension: 0.15
+          },
+          {
+            label: 'P10',
+            data: sim.fan.map(p => p[0.1]),
+            borderColor: 'rgba(129,140,248,.35)',
+            backgroundColor: 'transparent',
+            borderWidth: 1,
+            pointRadius: 0,
+            fill: false,
+            tension: 0.15
+          },
+          {
+            label: 'Median (' + sim.fractionLabel + ')',
+            data: sim.fan.map(p => p[0.5]),
+            borderColor: '#818cf8',
+            backgroundColor: 'transparent',
+            borderWidth: 2.4,
+            pointRadius: 0,
+            tension: 0.15
+          },
+          {
+            label: 'Cash',
+            data: sim.cashFan.map(p => p[0.5]),
+            borderColor: '#94a3b8',
+            borderDash: [5, 4],
+            borderWidth: 1.8,
+            pointRadius: 0,
+            tension: 0.15
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: {
+            grid: { color: 'rgba(30,30,46,.8)' },
+            ticks: { color: '#64748b', font: { family: 'DM Sans', size: 11 } },
+            title: { display: true, text: 'Years', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+          },
+          y: {
+            grid: { color: 'rgba(30,30,46,.8)' },
+            ticks: {
+              color: '#64748b',
+              font: { family: 'DM Sans', size: 11 },
+              callback: value => {
+                const n = Number(value);
+                if (Math.abs(n) >= 1e6) return `${(n / 1e6).toFixed(1)}m €`;
+                if (Math.abs(n) >= 1e3) return `${Math.round(n / 1e3)}k €`;
+                return `${Math.round(n)} €`;
+              }
+            },
+            title: { display: true, text: 'Wealth (€)', color: '#64748b', font: { family: 'DM Sans', size: 11 } }
+          }
+        },
+        plugins: {
+          legend: { labels: { color: '#64748b', font: { family: 'DM Sans', size: 12 }, boxWidth: 12 } },
+          tooltip: {
+            backgroundColor: '#16161f', borderColor: '#1e1e2e', borderWidth: 1,
+            titleColor: '#e2e8f0', bodyColor: '#64748b',
+            callbacks: {
+              title: items => items.length ? `Year ${items[0].label}` : '',
+              label: item => ` ${item.dataset.label}: ${fmtEuro(item.raw)}`
+            }
+          }
+        }
+      }
+    });
+
+    const note = document.getElementById('pf-mc-fan-note');
+    if (note) {
+      note.textContent = `P10–P90 range and median for ${sim.fractionLabel} (${sim.n.toLocaleString('en-GB')} runs). Dashed: euro cash only.`;
+    }
+  }
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+}
+
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+initKellyTabs();
+calculate();
+toggleInvestmentBorrowing();
+renderPortfolioUI();
+togglePortfolioBorrowing();
+togglePortfolioShorts();
+</script>
+</body>
+</html>

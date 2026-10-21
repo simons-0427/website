@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dungeon Crawler | Spielprojekt von Simon Stark</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Dungeon-Crawler-Spiel als Programmierprojekt: Kämpfe, Level, Gegner und Erkundung in einem textbasierten Rollenspiel von Simon Stark.">
+  <link rel="canonical" href="https://smstark-projekt.de/projekte/dungeoncrawler">
+  <script type="application/ld+json">
+  {
+      "@context":  "https://schema.org",
+      "@type":  "WebPage",
+      "@id":  "https://smstark-projekt.de/projekte/dungeoncrawler#webpage",
+      "name":  "Dungeon Crawler | Spielprojekt von Simon Stark",
+      "url":  "https://smstark-projekt.de/projekte/dungeoncrawler",
+      "description":  "Programmierprojekt eines textbasierten Dungeon-Crawler-Spiels mit Kämpfen, Leveln und Gegnern.",
+      "author":  {
+                     "@type":  "Person",
+                     "name":  "Simon Stark",
+                     "url":  "https://smstark-projekt.de/"
+                 },
+      "isPartOf":  {
+                       "@type":  "WebSite",
+                       "url":  "https://smstark-projekt.de/",
+                       "name":  "SMStark Projekt"
+                   }
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/projekte/dungeoncrawler">
+  <meta property="og:title" content="Dungeon Crawler | Spielprojekt von Simon Stark">
+  <meta property="og:description" content="Dungeon-Crawler-Spiel als Programmierprojekt: Kämpfe, Level, Gegner und Erkundung in einem textbasierten Rollenspiel von Simon Stark.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/dungeon-crawler-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+      --content: 720px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      min-height: 100vh; overflow-x: hidden; max-width: 100%; width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+   position: fixed; top: 0; left: 0; right: 0;
+   height: var(--nav-h);
+   background: rgba(12,12,15,.85);
+   backdrop-filter: blur(18px);
+   border-bottom: 1px solid var(--border);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0 clamp(1.5rem,5vw,4rem);
+   z-index: 100;
+   gap: 2.2rem;
+}
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      margin-right: auto;
+      position: absolute;
+      left: clamp(1.5rem,5vw,4rem);
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: .875rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      letter-spacing: .03em; transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .nav-github {
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      border: 1px solid var(--text);
+      padding: .4rem .9rem; border-radius: 8px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+
+    /* ── HAMBURGER (mobil) ─────────────────────── */
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      width: 40px; height: 40px;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 101;
+      transition: border-color .2s;
+    }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span {
+      display: block; width: 18px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobiles Dropdown-Menü */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(12,12,15,.98);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      z-index: 102;
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .95rem .2rem;
+      color: var(--text); text-decoration: none;
+      font-size: 1rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+
+    /* ── HERO ── */
+    .hero {
+      margin-top: var(--nav-h);
+      padding: 5rem clamp(1.5rem,8vw,8rem) 4rem;
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 80% 40%, rgba(110,231,183,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 5%  80%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    .hero-inner { max-width: var(--content); }
+    .breadcrumb {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .78rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb svg { width:12px; height:12px; }
+
+    .project-tag {
+      font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .9rem;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 800; letter-spacing: -.03em;
+      line-height: 1.05; margin-bottom: 1.2rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-desc {
+      font-size: 1.05rem; color: var(--muted);
+      font-weight: 300; max-width: 58ch;
+      margin-bottom: 2rem; line-height: 1.7;
+    }
+
+    /* Meta row */
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+      align-items: center;
+    }
+    .tag {
+      font-size: .72rem; font-weight: 600;
+      padding: .25rem .7rem; border-radius: 5px;
+    }
+    .tag.gaming { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .tag.finance { background: rgba(110,231,183,.12); color: var(--accent); }
+    .tag.tools  { background: rgba(251,191,36,.1);   color: #fbbf24; }
+    .tag.data   { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .tag.web-development { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .version-badge {
+      font-size: .72rem; font-weight: 700;
+      padding: .25rem .7rem; border-radius: 5px;
+      background: rgba(110,231,183,.1); color: var(--accent);
+      border: 1px solid rgba(110,231,183,.2);
+    }
+    .meta-date {
+      font-size: .78rem; color: var(--muted);
+      display: flex; align-items: center; gap: .3rem;
+    }
+    .meta-date svg { width:12px; height:12px; }
+    .meta-divider { width:1px; height:14px; background: var(--border); }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 4rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 4rem clamp(1.5rem,5vw,4rem);
+      align-items: start;
+      box-sizing: border-box;
+    }
+
+    /* ── ARTICLE / BLOG CONTENT ── */
+    article { max-width: var(--content); }
+
+    /* Section headings */
+    .section-label {
+      font-size: .68rem; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .6rem; margin-top: 3rem;
+    }
+    article h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem; font-weight: 800;
+      letter-spacing: -.02em; margin-bottom: 1rem;
+      margin-top: .3rem;
+    }
+    article h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      margin-top: 2rem; margin-bottom: .6rem;
+    }
+    article p {
+      font-size: .975rem; color: var(--muted);
+      margin-bottom: 1.1rem; line-height: 1.8;
+    }
+    article p strong { color: var(--text); font-weight: 600; }
+
+    /* Divider */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* Image block */
+    .img-block { margin: 2rem 0; }
+    .img-block img {
+      width: 100%; border-radius: 12px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+    .img-caption {
+      font-size: .78rem; color: var(--muted);
+      margin-top: .6rem; text-align: center;
+      font-style: italic;
+    }
+
+    /* Image grid (2 columns) */
+    .img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin: 2rem 0;
+    }
+    .img-grid img {
+      width: 100%; border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    /* Info/highlight box */
+    .info-box {
+      background: rgba(110,231,183,.05);
+      border: 1px solid rgba(110,231,183,.15);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 1.1rem 1.4rem;
+      margin: 1.5rem 0;
+      font-size: .9rem; color: var(--text);
+    }
+    .info-box strong { color: var(--accent); }
+
+    /* Feature list */
+    .feature-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: .55rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .feature-list li {
+      display: flex; align-items: flex-start; gap: .7rem;
+      font-size: .9rem; color: var(--muted);
+    }
+    .feature-list li::before {
+      content: '→';
+      color: var(--accent); font-weight: 700;
+      flex-shrink: 0; margin-top: .05rem;
+    }
+    .feature-list li strong { color: var(--text); }
+
+    /* Code snippet */
+    .code-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      font-family: 'Courier New', monospace;
+      font-size: .82rem; color: var(--accent);
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      line-height: 1.6;
+    }
+
+    /* Version timeline */
+    .timeline { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+    .tl-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-version {
+      font-family: 'Syne', sans-serif;
+      font-size: .82rem; font-weight: 700;
+      color: var(--accent); padding-top: .1rem;
+    }
+    .tl-date { font-size: .72rem; color: var(--muted); margin-top: .2rem; }
+    .tl-content { font-size: .875rem; color: var(--muted); }
+    .tl-content strong { color: var(--text); display: block; margin-bottom: .2rem; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 1rem; }
+    .sidebar-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+    }
+    .sidebar-card h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: .85rem; font-weight: 700;
+      margin-bottom: 1rem; color: var(--text);
+    }
+    .info-row {
+      display: flex; justify-content: space-between;
+      font-size: .82rem; padding: .5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-row span:first-child { color: var(--muted); }
+    .info-row span:last-child { color: var(--text); font-weight: 500; }
+
+    .dl-btn {
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      width: 100%; padding: .75rem 1rem; border-radius: 10px;
+      font-size: .875rem; font-weight: 500;
+      text-decoration: none; margin-top: .6rem;
+      transition: all .2s;
+    }
+    .dl-btn.primary {
+      background: var(--accent); color: #0c0c0f;
+    }
+    .dl-btn.primary:hover { box-shadow: 0 6px 20px rgba(110,231,183,.3); transform: translateY(-1px); }
+    .dl-btn.ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .dl-btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .dl-btn svg { width:14px; height:14px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem;
+      font-size: .85rem; color: var(--muted);
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      display: inline-block; margin-bottom: .9rem;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: .78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem;
+    }
+    .footer-bottom a {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .5rem 1rem; border-radius: 8px;
+      border: 1px solid var(--border);
+      font-weight: 500; transition: all .2s;
+    }
+    .footer-bottom a:hover { border-color: var(--accent); color: var(--accent); }
+    .footer-bottom a svg { width:14px; height:14px; }
+
+/* ── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 768px) {
+      .page-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .sidebar { order: -1; } 
+      .img-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0 1.5rem;
+        gap: 1.5rem; 
+      }
+      nav::-webkit-scrollbar { display: none; }
+      .nav-logo, .nav-github {
+        position: static; 
+        flex-shrink: 0;
+        margin-right: 0;
+      }
+      nav .nav-links { 
+        display: flex; 
+        gap: 1.3rem;
+        overflow-x: visible;
+        padding: 0; 
+        width: auto;
+        align-items: center;
+      }
+      nav .nav-links a { font-size: .8rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* ── RESPONSIVE: NAV → HAMBURGER ───────────── */
+    @media (max-width: 960px) {
+      nav {
+        justify-content: flex-start;
+        padding: 0 1.5rem;
+      }
+      nav .nav-links,
+      nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+    }
+  </style>
+  <link rel="stylesheet" href="project-responsive.css">
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">sms<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="../projekte/" class="active">Projekte</a></li>
+    <li><a href="../downloads">Downloads</a></li>
+    <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+    <li><a href="../vision">Vision</a></li>
+    <li><a href="../wissen">Wissen</a></li>
+  </ul>
+  <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    GitHub
+  </a>
+  <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="../projekte/" class="active">Projekte</a></li>
+    <li><a href="../downloads">Downloads</a></li>
+    <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+    <li><a href="../vision">Vision</a></li>
+    <li><a href="../wissen">Wissen</a></li>
+    <li>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="../projekte/">Projekte</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      Dungeon Crawler
+    </div>
+    <p class="project-tag">Spieleentwicklung | C-Projekt</p>
+    <h1>Dungeon <em>Crawler</em></h1>
+    <p class="hero-desc">
+      Ein Dungeon-Spiel, das mit Raylib komplett in C geschrieben wurde. 
+      Der Spieler navigiert durch eine Karte, flieht vor Gegnern und sammelt
+Items.
+    </p>
+    <div class="meta-row">
+      <span class="tag gaming">🎮 Spieleentwicklung</span>
+      <span class="version-badge">v1.6</span>
+      <span class="meta-divider"></span>
+      <span class="meta-date">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        18. Oktober. 2026
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="page-wrap">
+
+  <!-- ARTICLE -->
+  <article>
+
+    <!-- Titelbild -->
+    <div class="img-block">
+      <video autoplay loop muted playsinline width="100%" poster="../images/dungeon-crawler-preview.png">
+        <source src="../videos/dungeon-crawler-preview.mp4" type="video/mp4">
+      </video>
+      <p class="img-caption">Dungeon Crawler v1.6</p>
+    </div>
+
+    <!-- Über das Projekt -->
+    <p class="section-label">Über das Projekt</p>
+    <h2>Was ist der Dungeon Crawler?</h2>
+    <p>
+      Der Dungeon Crawler war mein erstes größeres C-Projekt. Ziel war es, ein vollständig 
+      spielbares Spiel mit Standard-C zu bauen.
+    </p>
+    <p>
+      Die Karte wird aus einem zweidimensionalen Array aufgebaut. Wände, freie Felder, 
+      Gegner und Items haben jeweils eigene Zeichen. Der Spieler bewegt sich mit den 
+      Pfeiltasten und muss Gegnern ausweichen, während er Schätze einsammelt.
+    </p>
+
+    <div class="info-box">
+      <strong>Sprache:</strong> C | Kompiliert mit GCC | Läuft als Anwendung im eigenen Fenster 
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Features -->
+    <p class="section-label">Features</p>
+    <h2>Was kann das Spiel?</h2>
+    <ul class="feature-list">
+  <li><strong>Grafisches Rendering:</strong> Das Spiel läuft in einem raylib-Fenster (1280×720); Karte, Spieler, Gegner und Effekte werden GPU-beschleunigt gezeichnet.</li>
+  <li><strong>Spielerbewegung:</strong> Steuerung mit WASD oder Pfeiltasten, Kollisionserkennung mit Wänden, Fallen und anderen Objekten.</li>
+  <li><strong>Gegner-KI:</strong> Gegner verfolgen aktiv den Spieler (Pathfinding entlang X/Y-Achse); bei Kontakt stirbt der Spieler. Gegner können per Taste ein- und ausgeschaltet werden.</li>
+  <li><strong>Rundenbasiertes Fortschrittssystem:</strong> Jede Runde besteht aus einer prozedural generierten Karte. Der Schatz beendet die Runde; ein Portal überspringt direkt zur nächsten.</li>
+  <li><strong>Münzen & Fallen:</strong> Münzen erhöhen den Punktestand. Fallen töten den Spieler sofort, sofern kein Schild aktiv ist.</li>
+  <li><strong>Partikeleffekte & Kamera:</strong> Explosionen, Münzfunken und Todeseffekte werden als Partikelsystem dargestellt; die Kamera folgt dem Spieler weich durch die Karte.</li>
+  <li><strong>Highscore & Persistenz:</strong> Beste Runde, meiste Schätze, meiste Münzen und gesamte Lifetime-Coins werden in einer Datei gespeichert und im Menü angezeigt.</li>
+ <li><strong>Game Over & Neustart:</strong> Nach dem Tod kann das Spiel neu gestartet oder ins Hauptmenü gewechselt werden.</li>
+  <li><strong>Item-System (6 Typen, upgradebar):</strong> Bis zu 3 Items können im Inventar liegen und mit den Tasten 1-5 genutzt werden. Jedes Item lässt sich im Shop aufwerten.</li>
+  <li><strong>Achievements:</strong> Ein eigenes Menü zeigt 21 Erfolge, darunter gespielte Runden, gesammelte Münzen und Kills. Jeder Erfolg hat 6 Stufen mit Fortschrittsbalken.</li>
+  <li><strong>43 Skins in 5 Rarity-Stufen:</strong> Common, Uncommon, Rare, Epic und Legendary sind im Shop und durch das Erreich
+  <li><strong>Musiksystem:</strong> Hintergrundmusik und Soundeffekte wurden über raylib AudioStream eingebunden.</li>
+  <li><strong>Settings-Menü:</strong>Audioregler, Toggle-Enemies, Fullscreen, und visuelle Einstellungen können verändert werden.</li>
+  <li><strong>Bossekämpfe:</strong> Ein Boss, der Feuer spuckt, Gegner beschwört und  alle 10 Levelbezwungen werden muss</li>
+  <li><strong>Alternative Level:</strong> DER BODEN IST LAVA, Fallenräume ohne Gegner, Münzräume und dunkele Räume bieten ein alternatives Erlebnis</li>
+</ul>
+
+<!-- Zukünftige Features -->
+    <p class="section-label">Zukünftige Features</p>
+    <h2>Was wird noch kommen?</h2>
+    <ul class="feature-list">
+   <li><strong>v1.6 Chambers of Chaos:</strong> Es wird 5 neue Leveltypen hinzugefügt.</li>
+   <li><strong>Bossekämpfe</strong> Ein Boss, der Feuer spuckt, Gegner beschwört und bezwungen werden muss</li>
+   <li><strong>Alternative Level</strong> DER BODEN IST LAVA, Fallenräume ohne Gegner und dunkele Räume werden hinzugefügt</li>
+   <li><strong>Mehr Musik</strong>4+ Neue Tracks werden hinzugefügt</li>
+   <li><strong>Skin Rework</strong>Blade Legend, Ascendant & Constellation bekommen ein neues Design</li> 
+   <li><strong>Neue Skins, Achievements & Stats</strong>Durch die neuen Leveltypen werden zusätzliche Skins, Achievements und Statistiken hinzugefügt</li>
+  </ul>
+
+    <hr class="section-divider">
+
+    <!-- Screenshots -->
+    <p class="section-label">Screenshots</p>
+    <h2>Einblicke ins Spiel</h2>
+
+    <!-- Einzelbild: -->
+    <div class="img-block">
+      <img src="../images/dungeon-crawler-preview.png" alt="Karten-Ansicht" width="1271" height="713">
+      <p class="img-caption">Die Karte mit Spieler, Gegnern und Items </p>
+    </div>
+
+    <!-- Zwei Bilder nebeneinander: -->
+    <div class="img-grid">
+      <img src="../images/dungeon-crawler-start.png" alt="Startbildschirm" width="1267" height="708">
+      <img src="../images/dungeon-crawler-gameover.png" alt="Game Over Bildschirm" width="1257" height="706">
+    </div>
+    <p class="img-caption" style="margin-top:-.5rem">Links: Startmenü | Rechts: Game Over</p>
+
+    <hr class="section-divider">
+
+    <!-- Technisches -->
+   <p class="section-label">Technisches</p>
+<h2>Wie wurde es gebaut?</h2>
+<p>
+  Das gesamte Projekt besteht weiterhin aus einer einzigen <strong>.c-Datei</strong>, mittlerweile auf ~5.350 Zeilen Code angewachsen. Gebaut ist es mit <strong>raylib</strong>, einer C-Bibliothek für 2D/3D-Grafik.
+  Die Karte ist ein statisches 2D-Array aus <code style="color:var(--accent);background:var(--card);padding:.1rem .4rem;border-radius:4px;font-size:.85em">char</code>-Zeichen (<code style="color:var(--accent);background:var(--card);padding:.1rem .4rem;border-radius:4px;font-size:.85em">char map[MAP_ROWS][MAP_COLS]</code>), 
+  wird zur Laufzeit <strong>prozedural erzeugt</strong> und ist nicht fest im Quelltext hinterlegt.
+</p>
+
+<div class="code-block">
+/* Karte wird zur Runtime generiert */<br>
+for (int y = 0; y &lt; mh; y++)<br>
+for (int x = 0; x &lt; mw; x++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int r = GetRandomValue(0,99);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;map[y][x] = (r &lt; tp) ? '#' : (r &lt; xp) ? '+' : '.';<br>
+}<br>
+<br>
+/* Tile-Map-Konstanten */<br>
+'#' = Wand,&nbsp;&nbsp;'.' = Boden,&nbsp;&nbsp;'+' = Falle<br>
+'T' = Schatz,&nbsp;&nbsp;'O' = Portal,&nbsp;&nbsp;'$' = Münze<br>
+'I' = Item,&nbsp;&nbsp;'X' = Gegner
+</div>
+
+<p>
+  <strong>Rendering mit raylib:</strong> Jedes Tile wird als 32×32 Pixel gerendert. Wände bekommen 3D-Bevel-Effekte, Items und Gegner sind animierte Formen/Kreise. 
+  Die Kamera folgt dem Spieler weich; Partikeleffekte werden pro Frame aktualisiert.
+</p>
+
+<p>
+  <strong>Eingabe mit raylib:</strong> Tasteneingaben erfolgen über <code style="color:var(--accent);background:var(--card);padding:.1rem .4rem;border-radius:4px;font-size:.85em">IsKeyPressed()</code> und <code style="color:var(--accent);background:var(--card);padding:.1rem .4rem;border-radius:4px;font-size:.85em">IsKeyDown()</code>. Die Eingabe funktioniert plattformübergreifend ohne spezielle Anpassungen.
+</p>
+
+<p>
+  <strong>Spiellogik:</strong> Eine State Machine (`GState`: MENU → PLAY → DEAD/NEXT) steuert den Flow. Die Hauptschleife nutzt Delta-Time (`GetFrameTime()`) für konstante Physik bei 60 FPS. 
+  Gegner-KI, Partikel, Timer und Kamerabewegung werden alle frame-unabhängig mit `dt` aktualisiert.
+</p>
+
+<p>
+  <strong>Persistenz:</strong> Highscores (beste Runde, Schätze, Münzen) werden in eine Datei geschrieben und geladen (`STATS_FILE`).
+</p>
+
+<p>
+  <strong>Shop & Fortschritt:</strong> Jedes der 5 Items hat ein eigenes Upgrade-Level, das per Array (Dauer/Reichweite pro Stufe) ausgelesen wird; Skin-Besitz, Levels und Coins werden separat gespeichert (`SHOP_FILE`). Die 30 Skins sind nach Seltenheit gestaffelt und werden je nach Stufe mit eigenen Zeichenfunktionen gerendert: von einfarbigen Common-Skins bis zu animierten Epic-Skins. Achievements laufen über dieselben Stats-Werte und werden live mit Zielwerten je Stufe abgeglichen.
+</p>
+
+    <hr class="section-divider">
+
+    <!-- Was ich gelernt habe -->
+    <p class="section-label">Rückblick</p>
+    <h2>Was ich gelernt habe</h2>
+    <p>
+     Mit C, Zeigern und Arrays habe ich die Spiellogik umgesetzt. Mit <strong>Raylib</strong> habe ich eine grafische Oberfläche aufgebaut.
+</p>
+<p>
+  Später habe ich mit <strong>Emscripten</strong> eine Web-Integration umgesetzt. Das Spiel läuft dadurch auch im Browser. Für WebAssembly und unterschiedliche Build-Ziele waren zusätzliche Anpassungen nötig.
+</p>
+<p>
+  Mit dem Projekt habe ich meine C-Kenntnisse vertieft und gelernt, den Code zu strukturieren, wenn neue Mechaniken dazukommen. Außerdem kann ich besser nachvollziehen, wie Spiellogik, Rendering und Benutzereingaben zusammenspielen.
+</p>
+
+    <hr class="section-divider">
+
+    <!-- Versionshistorie -->
+    <p class="section-label">Versionshistorie</p>
+    <h2>Wie das Projekt gewachsen ist</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.6</div>
+          <div class="tl-date">18. Oktober. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Chambers of Chaos</strong>
+          Bosskämpfe, Fallenräume, Dunkele Räume, Lavaräume und Münz-Räume, 5 Bosse, 5 neue Musik-Tracks, 7 neue Skins, Skin-Reworks und neue Einstellungen hinzugefügt.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">Snapshot</div>
+          <div class="tl-date">04. Oktober. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Skin Preview</strong>
+          Boss Designs, Skin-Designs und Icon-Designs sowie Musiknoten für die v1.6 wurden hinzugefügt.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.5</div>
+          <div class="tl-date">30. September. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Dungeon Crawler Handyversion</strong>
+           Version 1.5 wurde für Androidgeräte kompiliert. Die Handy-Version ist nun spielbar und enthält alle Features der Desktop-Version.
+        </div>
+      </div>
+       <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.5</div>
+          <div class="tl-date">25. August. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Dungeon Crawler für das Web</strong>
+           Version 1.5 wurde mit Emscripten für das Web kompiliert. Die Web-Version ist nun spielbar und enthält alle Features der Desktop-Version.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.5</div>
+          <div class="tl-date">05. August. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Legacy of Stars</strong>
+          Mehr Achievements, Musik hinzugefügt, neue Skins, Bugfixes, Einstellungen erweitert.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">Snapshot</div>
+          <div class="tl-date">01. Juli. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Skin Preview</strong>
+          Zukünftige Skins-Designs für die Version 1.5 wurden hinzugefügt, darunter Blade Legend, Ascendant und Constellation.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.4</div>
+          <div class="tl-date">01. Juli. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 1.4</strong>
+          Achievements hinzugefügt, Settings-Menü hinzugefügt, Future-Updates-Info nach oben verschoben, Mehr Item-Upgrades, 10+ neue Skins hinzugefügt, animierte Skins möglich, Nerfes für Skin-Prices
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.3</div>
+          <div class="tl-date">14. Juni. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 1.3</strong>
+          Menü-Redesign, Pause-Funktion hinzugefügt, HUD-Anzeigen überarbeitet, In-Game-Shop für Skins und Upgrades eingebaut, Counter komplett neu aufgebaut.
+        </div>
+      </div>
+       <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.2</div>
+          <div class="tl-date">07. Juni. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Dungeon Crawler für das Web</strong>
+           Version 1.2 wurde mit Emscripten für das Web kompiliert. Das Spiel läuft seit dem auch im Browser.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.2</div>
+          <div class="tl-date">31. Mai. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 1.2</strong>
+           Vollbildfunktion und Gegner-Killcount hinzugefügt; das Spiel im Web spielbar gemacht.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.1</div>
+          <div class="tl-date">21. Mai. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 1.1</strong>
+          Schilde schützen gegen Gegner, Item um Gegner zu besiegen hinzugefügt, Item um durch Wände zu gehen hinzugefügt, Bugfixes.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v1.0</div>
+          <div class="tl-date">25. April. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Finales Release</strong>
+          Raylib-Integration, Partikeleffekte, Gegner hinzugefügt,Highscore-System, 3 Item-Typen, verbessertes UI und viele Bugfixes.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.9.3</div>
+          <div class="tl-date">27. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+           <strong>Alpha: Finale Version</strong>
+          Bugfixes, Animationen hinzugefügt.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.9</div>
+          <div class="tl-date">20. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Alpha</strong>
+          Farben hinzugefügt.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.8</div>
+          <div class="tl-date">20. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 0.8</strong>
+          Neue Runden vergrößern die Map.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.7</div>
+          <div class="tl-date">19. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 0.7</strong>
+          Schatz hinzugefügt, danach wird die nächste Runde generiert.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.6</div>
+          <div class="tl-date">19. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 0.6</strong>
+          getch_ hinzugefügt, um Eingaben zu lesen, ohne enter zu drücken.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.5</div>
+          <div class="tl-date">18. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 0.5</strong>
+          Fallen und Mauern hinzugefügt.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.4</div>
+          <div class="tl-date">18. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 0.4</strong>
+          Wände hinzugefügt.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.3</div>
+          <div class="tl-date">18. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 0.3</strong>
+          Performance-Optimierungen.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.2</div>
+          <div class="tl-date">13. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Version 0.2</strong>
+          Map hinzugefügt, Spieler kann sich bewegen.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div>
+          <div class="tl-version">v0.1</div>
+          <div class="tl-date">12. Jan. 2026</div>
+        </div>
+        <div class="tl-content">
+          <strong>Erster Commit</strong>
+          Koordinatensystem zum Bewegen erstellt.
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Download Card -->
+    <div class="sidebar-card">
+      <h4>⬇️ Download</h4>
+      <a href="../data/DungeonCrawlerV1_6.zip" class="dl-btn primary" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Neuste Vollversion
+      </a>
+      <a href="../data/DungeonCrawler_Android_v1.5.apk" class="dl-btn ghost" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+         Handyversion (v1.5)
+      </a>
+      <a href="../data/v1.5_playdungeoncrawler.zip" class="dl-btn ghost" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+         Webversion (v1.5)
+      </a>
+      <a href="../downloads" class="dl-btn ghost" style="margin-top:.3rem">
+        Alle Versionen →
+      </a>
+    </div>
+
+    <!-- Projektinfos -->
+    <div class="sidebar-card">
+      <h4>📋 Projektinfos</h4>
+      <div class="info-row"><span>Version</span><span>v1.6</span></div>
+      <div class="info-row"><span>Sprache</span><span>C | C++ | Kotlin | js </span></div>
+      <div class="info-row"><span>Plattform</span><span>Windows</span></div>
+      <div class="info-row"><span>Status</span><span style="color:var(--accent)">🚧 In Arbeit</span></div>
+      <div class="info-row"><span>Veröffentlicht</span><span>18. Oktober. 2026</span></div>
+      <div class="info-row"><span>Verschiedene Versionen</span><span>22</span></div>
+    </div>
+
+    <!-- GitHub -->
+    <div class="sidebar-card">
+      <h4>🔗 Links</h4>
+       <a href="../playdungeoncrawler/v1.5" class="dl-btn primary" target="_blank" rel="noopener noreferrer">
+       v1.5 Im Web spielen →
+      </a>
+      <a href="../playdungeoncrawler/v1.2" target="_blank" class="dl-btn ghost">
+        v1.2 Im Web spielen →
+      </a>
+      <a href="https://github.com/simons-0427" target="_blank" class="dl-btn ghost">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub ansehen
+      </a>
+    </div>
+  </aside>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">sms<span>.</span></a>
+        <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="../projekte/">Projekte</a></li>
+          <li><a href="../downloads">Downloads</a></li>
+          <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+          <li><a href="../vision">Vision</a></li>
+          <li><a href="../wissen">Wissen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="../impressum">Impressum</a></li>
+          <li><a href="../#info">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        github.com/simons-0427
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile hamburger menu
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      });
+      // Menü nach Klick auf einen Link schließen
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>

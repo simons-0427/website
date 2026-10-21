@@ -1,0 +1,483 @@
+{
+  "batch": 9,
+  "checkedOn": "2026-08-14",
+  "selection": "30 relevante BLS-4.0-Datensätze aus alkoholfreien Getränken, Speiseölen, Milchfetten, Salzen, Essig, Senf und Tomatenpassata. Bereits verwendete BLS-Codes und bestehende Namen wurden ausgeschlossen; Produkte mit nicht eindeutig belegbarem Preisanker wurden nicht aufgenommen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Der Preisanker und die Verkaufseinheit stehen je Datensatz in sourceProduct und sourceUrl; keine Nährwertschätzung. Kritischer Nachaudit: besonders niedrige historische Preisanker wurden mit aktuellen Händlerseiten vom 14.08.2026 abgeglichen.",
+  "items": [
+    {
+      "code": "N314000",
+      "name": "Limonade chininhaltig",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "priceUnit": "L",
+      "fluid": 90,
+      "basePerKg": 0.49,
+      "sourceProduct": "FLIRT Bitter-Getränk als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177"
+    },
+    {
+      "code": "N310400",
+      "name": "Zitronenlimonade",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "priceUnit": "L",
+      "fluid": 90,
+      "basePerKg": 0.49,
+      "sourceProduct": "FLIRT Bitter-Getränk als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177"
+    },
+    {
+      "code": "N315000",
+      "name": "Ginger Ale",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "priceUnit": "L",
+      "fluid": 90,
+      "basePerKg": 0.49,
+      "sourceProduct": "FLIRT Bitter-Getränk als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,49 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177"
+    },
+    {
+      "code": "N128000",
+      "name": "Natürliches Mineralwasser still",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "priceUnit": "L",
+      "fluid": 90,
+      "basePerKg": 0.19,
+      "sourceProduct": "QUELLBRUNN Natürliches Mineralwasser als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,19 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/mineralwasser/k/1588161425467192"
+    },
+    {
+      "code": "N127000",
+      "name": "Natürliches Mineralwasser mit Kohlensäure",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "priceUnit": "L",
+      "fluid": 90,
+      "basePerKg": 0.19,
+      "sourceProduct": "QUELLBRUNN Natürliches Mineralwasser als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,19 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/mineralwasser/k/1588161425467192"
+    },
+    {
+      "code": "N160000",
+      "name": "Quellwasser",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "priceUnit": "L",
+      "fluid": 90,
+      "basePerKg": 0.19,
+      "sourceProduct": "QUELLBRUNN Natürliches Mineralwasser als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,19 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/mineralwasser/k/1588161425467192"
+    },
+    {
+      "code": "Q120000",
+      "name": "Olivenöl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 7.99,
+      "sourceProduct": "BELLASAN Olivenöl Extra Nativ als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129"
+    },
+    {
+      "code": "Q210000",
+      "name": "Erdnussöl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 7.98,
+      "sourceProduct": "Brändle Vita Erdnussöl, niedrigster ausgewiesener Preisanker 7,98 EUR/L",
+      "sourceUrl": "https://www.supermarktcheck.de/erdnussoel/produkte/"
+    },
+    {
+      "code": "Q180000",
+      "name": "Rapsöl/Rüböl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 2.78,
+      "sourceProduct": "BELLASAN Natives Rapsöl bei ALDI SÜD, niedrigster klar belegbarer Preisanker 2,78 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129"
+    },
+    {
+      "code": "Q260000",
+      "name": "Maiskeimöl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 2.78,
+      "sourceProduct": "BELLASAN Natives Rapsöl als niedrigster aktueller Pflanzenöl-Vergleichsanker, niedrigster klar belegbarer Preisanker 2,78 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129"
+    },
+    {
+      "code": "Q270000",
+      "name": "Sojaöl",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 2.78,
+      "sourceProduct": "BELLASAN Natives Rapsöl als niedrigster aktueller Pflanzenöl-Vergleichsanker, niedrigster klar belegbarer Preisanker 2,78 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129"
+    },
+    {
+      "code": "Q860000",
+      "name": "Schweinefett/Schweineschmalz",
+      "category": "oele_fette",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.36,
+      "sourceProduct": "Schachinger Mein Bestes Schweineschmalz, niedrigster ausgewiesener Preisanker 2,36 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/schweineschmalz/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q640000",
+      "name": "Halbfettbutter",
+      "category": "oele_fette",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 3.16,
+      "sourceProduct": "Leicht und Fit Leichte Butter, 39 % Fett, niedrigster ausgewiesener Preisanker 3,16 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/halbfettbutter/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q683000",
+      "name": "Butterschmalz",
+      "category": "oele_fette",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 10.98,
+      "sourceProduct": "MILSANI Butterschmalz bei ALDI SÜD, niedrigster klar belegbarer Preisanker 10,98 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q6A7000",
+      "name": "Mischfett mit überwiegend Milchfett, ungesalzen",
+      "category": "oele_fette",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "Milsani Streichfein ungesalzen, Mischstreichfett, 250 g zu 1,89 EUR = 7,56 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/product/299155-milsani-streichfein-ungesalzen-250g",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q630000",
+      "name": "Süßrahmbutter",
+      "category": "oele_fette",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 8.76,
+      "sourceProduct": "Penny Süßrahm Butter, niedrigster ausgewiesener Preisanker 8,76 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/suessrahmbutter/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q620000",
+      "name": "Sauerrahmbutter",
+      "category": "oele_fette",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 6.76,
+      "sourceProduct": "BioBio Sauerrahmbutter, niedrigster ausgewiesener Preisanker 6,76 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/sauerrahmbutter/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "R113000",
+      "name": "Speisesalz jodiert/Jodsalz, mit Fluorid",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 0.58,
+      "sourceProduct": "Jodsalz als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/gewuerze-frische-kraeuter/k/1588161425467132",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "R113100",
+      "name": "Speisesalz jodiert/Jodsalz, mit Fluorid und Folsäure",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.38,
+      "sourceProduct": "REWE Beste Wahl Jodsalz 500 g mit Fluorid und Folsäure, ausgewiesener Preisanker 1,38 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/jodsalz-mit-fluor-und-folsaeure/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "R111100",
+      "name": "Steinsalz",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.98,
+      "sourceProduct": "Alnatura Steinsalz, nicht Bio-Eigenmarke, ausgewiesener Preisanker 1,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/steinsalz/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "R114000",
+      "name": "Speisesalz jodiert/Jodsalz",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 0.58,
+      "sourceProduct": "LE GUSTO Jodsalz bei ALDI SÜD, niedrigster klar belegbarer Preisanker 0,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/gewuerze-frische-kraeuter/k/1588161425467132",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "R112000",
+      "name": "Meersalz",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.98,
+      "sourceProduct": "Alnatura Meersalz jodiert, niedrigster ausgewiesener Preisanker 1,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/meersalz/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "R121000",
+      "name": "Weinessig",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 2.53,
+      "sourceProduct": "HENGSTENBERG Weißweinessig bei ALDI SÜD, niedrigster klar belegbarer Preisanker 2,53 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "fluid": 0
+    },
+    {
+      "code": "R134000",
+      "name": "Senf extra scharf",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 13.9,
+      "sourceProduct": "Löwensenf Senf extra scharf, 100 ml zu 1,39 EUR = 13,90 EUR/L",
+      "sourceUrl": "https://www.supermarktcheck.de/product/249088-loewensenf-senf-extra-scharf"
+    },
+    {
+      "code": "R133000",
+      "name": "Senf scharf",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 1.16,
+      "sourceProduct": "Timbu Senf scharf, niedrigster ausgewiesener Preisanker 1,16 EUR/L",
+      "sourceUrl": "https://www.supermarktcheck.de/senf-scharf/produkte/"
+    },
+    {
+      "code": "R135000",
+      "name": "Senf süß",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 3.16,
+      "sourceProduct": "Gut & günstig Hausmacher Senf süß, niedrigster ausgewiesener Preisanker 3,16 EUR/L",
+      "sourceUrl": "https://www.supermarktcheck.de/senf/produkte/"
+    },
+    {
+      "code": "R141200",
+      "name": "Curry-Gewürzketchup",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 1.44,
+      "sourceProduct": "Tip Gewürzketchup Curry, niedrigster ausgewiesener Preisanker 1,44 EUR/L",
+      "sourceUrl": "https://www.supermarktcheck.de/gewuerzketchup/produkte/"
+    },
+    {
+      "code": "R148200",
+      "name": "Feinkostsauce/Grillsauce, Tomaten-Basis",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 2.2,
+      "sourceProduct": "Kraft Feinkostsauce Curry bei V-Markt, 250 ml zu 0,55 EUR = 2,20 EUR/L; Tomaten-Basis laut Produktbezeichnung",
+      "sourceUrl": "https://www.supermarktcheck.de/v-markt/sortiment/hersteller/kraft-foods/"
+    },
+    {
+      "code": "R161200",
+      "name": "Tomaten passiert/Tomatenpüree",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.1,
+      "sourceProduct": "Gut & Günstig italienische passierte Tomaten bei E aktiv markt, 500 g zu 0,55 EUR = 1,10 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/e-aktiv-markt/sortiment/passierte-tomaten/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q991000",
+      "name": "Mayonnaise (Fertigprodukt)",
+      "category": "wuerze",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "priceUnit": "L",
+      "basePerKg": 1.98,
+      "sourceProduct": "Penny Delikatess Mayonnaise mit 80 % Rapsöl, 500 ml zu 0,99 EUR = 1,98 EUR/L",
+      "sourceUrl": "https://www.supermarktcheck.de/penny-markt/sortiment/mayonnaise/"
+    }
+  ]
+}

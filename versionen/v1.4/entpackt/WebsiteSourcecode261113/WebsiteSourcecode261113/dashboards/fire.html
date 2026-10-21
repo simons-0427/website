@@ -1,0 +1,2305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/favicon-1g-dotgrid-180.png">
+  <title>FIRE-Rechner | Finanzielle Unabhängigkeit simulieren</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="FIRE-Rechner mit Monte-Carlo-Simulation: Sparphase, Entnahmerate und Steuern berechnen, um den Weg zur finanziellen Unabhängigkeit zu planen.">
+  <link rel="canonical" href="https://smstark-projekt.de/dashboards/fire">
+  <script type="application/ld+json">
+  {
+      "@context":  "https://schema.org",
+      "@type":  "WebApplication",
+      "@id":  "https://smstark-projekt.de/dashboards/fire#webpage",
+      "name":  "FIRE-Rechner",
+      "url":  "https://smstark-projekt.de/dashboards/fire",
+      "description":  "FIRE-Rechner mit Monte-Carlo-Simulation für Sparphase, Entnahmerate und finanzielle Unabhängigkeit.",
+      "author":  {
+                     "@type":  "Person",
+                     "name":  "Simon Stark",
+                     "url":  "https://smstark-projekt.de/"
+                 },
+      "isPartOf":  {
+                       "@type":  "WebSite",
+                       "url":  "https://smstark-projekt.de/",
+                       "name":  "SMStark Projekt"
+                   },
+      "applicationCategory":  "FinanceApplication",
+      "operatingSystem":  "All"
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/dashboards/fire">
+  <meta property="og:title" content="FIRE-Rechner | Finanzielle Unabhängigkeit simulieren">
+  <meta property="og:description" content="FIRE-Rechner mit Monte-Carlo-Simulation: Sparphase, Entnahmerate und Steuern berechnen, um den Weg zur finanziellen Unabhängigkeit zu planen.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/fire-kalkulator-preview1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --accent3: #f472b6;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+      --danger:  #f87171;
+      --warn:    #fbbf24;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ─────────────────────────── */
+    .main-nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,12,15,.95);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: center;
+      padding: 0 clamp(1.5rem,5vw,4rem);
+      z-index: 100; gap: 2.2rem;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      position: absolute;
+      left: clamp(1.5rem,5vw,4rem);
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: .9rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      letter-spacing: .03em; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-github {
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      border: 1px solid var(--text);
+      padding: .4rem .9rem; border-radius: 8px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+
+    /* ── HAMBURGER (mobil) ─────────────────────── */
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      width: 40px; height: 40px;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 101;
+      transition: border-color .2s;
+    }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span {
+      display: block; width: 18px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobiles Dropdown-Menü */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(12,12,15,.98);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      z-index: 102;
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .95rem .2rem;
+      color: var(--text); text-decoration: none;
+      font-size: 1rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+
+    /* ── HERO ────────────────────────── */
+    #hero {
+      min-height: 50vh;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: calc(var(--nav-h) + clamp(1.4rem,4vh,3rem)) clamp(1.25rem,7vw,7rem) clamp(2.4rem,5vh,4rem);
+      position: relative; overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 60% at 70% 30%, rgba(110,231,183,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 55% at 15% 75%, rgba(129,140,248,.045) 0%, transparent 60%);
+    }
+    .hero-dots {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black, transparent);
+    }
+    .hero-eyebrow {
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent); font-weight: 600;
+      margin-bottom: clamp(.8rem, 1.8vh, 1.4rem);
+      display: flex; align-items: center; gap: .9rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 28px; height: 1px; background: var(--accent);
+    }
+    .hero-title {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      line-height: .93; letter-spacing: -.04em;
+      margin-bottom: clamp(1.2rem, 2.5vh, 2rem);
+    }
+    .hero-title .line-solid {
+      display: block; font-size: clamp(3rem, 7.5vw, 6.5rem); color: var(--text);
+    }
+    .hero-title .line-outline {
+      display: block; font-size: clamp(3rem, 7.5vw, 6.5rem);
+      color: var(--accent);
+      text-shadow: 0 0 40px rgba(110,231,183,.18);
+    }
+    .hero-sub {
+      max-width: 52ch; font-size: 1.05rem; font-weight: 300;
+      color: var(--muted); line-height: 1.7;
+      margin-bottom: clamp(1.4rem, 3vh, 2rem);
+    }
+
+    /* ── HERO FIRE COUNTDOWN (Zweiteiler) ───────── */
+    .hero-fire {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--border);
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0,0,0,.28);
+      width: min(1100px, 100%);
+      margin-top: clamp(1.6rem, 3vh, 2.2rem);
+    }
+    .hfm {
+      background: linear-gradient(135deg, rgba(110,231,183,.09), rgba(129,140,248,.04), transparent 60%), var(--surface);
+      padding: 1.8rem 2rem;
+      display: flex; flex-direction: column; justify-content: center; gap: .35rem;
+    }
+    .hfm-label {
+      font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700;
+    }
+    .hfm-big {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.05; letter-spacing: -.03em;
+      color: var(--text);
+    }
+    .hfm-meta { font-size: 1rem; color: var(--accent2); font-weight: 500; }
+    .hfm-cap { font-size: .9rem; color: var(--muted); margin-top: .4rem; }
+    .hfm-cap .ok  { color: var(--accent); font-weight: 600; }
+    .hfm-cap .bad { color: var(--warn); font-weight: 600; }
+
+    .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .8rem 1.8rem;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .9rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform .15s, box-shadow .15s, background .2s;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+    .hero-fire-kpis {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: var(--border);
+    }
+    .micro-kpi {
+      background: var(--surface);
+      padding: 1rem 1.1rem;
+      display: flex; flex-direction: column; gap: .25rem; justify-content: center;
+    }
+    .micro-kpi .mk-label {
+      font-size: .58rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); font-weight: 700;
+    }
+    .micro-kpi .mk-val {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem;
+      color: var(--text); line-height: 1.1; letter-spacing: -.02em;
+    }
+    .micro-kpi .mk-sub { font-size: .66rem; color: var(--muted); }
+
+    /* ── MAIN LAYOUT ─────────────────── */
+    .calc-wrapper {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 0;
+      min-height: calc(100vh - var(--nav-h));
+    }
+
+    /* ── SIDEBAR ─────────────────────── */
+    .sidebar {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 2rem 1.8rem 3rem;
+      overflow-y: auto;
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+    }
+    .sidebar-title {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem;
+      letter-spacing: -.02em; color: var(--text);
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: .7rem;
+    }
+    .sidebar-title::before {
+      content: ''; display: block; width: 3px; height: 18px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+      border-radius: 2px;
+    }
+
+    /* ── TOGGLE GROUP ──── */
+    .toggle-group {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1.4rem;
+    }
+    .toggle-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 1rem;
+      cursor: pointer;
+      background: var(--card);
+      user-select: none;
+      transition: background .2s;
+    }
+    .toggle-header:hover { background: rgba(110,231,183,.06); }
+    .toggle-header-left {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .82rem; font-weight: 600; color: var(--text); letter-spacing: .02em;
+    }
+    .toggle-header-left .tg-icon {
+      width: 24px; height: 24px; border-radius: 6px;
+      background: rgba(110,231,183,.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem;
+    }
+    .toggle-chevron {
+      color: var(--muted); font-size: .8rem; transition: transform .25s;
+    }
+    .toggle-group.open .toggle-chevron { transform: rotate(180deg); }
+    .toggle-body {
+      display: none; padding: 1rem 1rem 1.2rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .toggle-group.open .toggle-body { display: block; }
+
+    /* ── FORM CONTROLS ─── */
+    .field { margin-bottom: 1.1rem; }
+    .field:last-child { margin-bottom: 0; }
+    .field label {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: .78rem; font-weight: 500; color: var(--muted);
+      margin-bottom: .4rem;
+    }
+    .field label .lval {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      color: var(--accent); font-size: .82rem;
+    }
+
+    /* ── MANUELL EDITIERBARE WERTE ── */
+    .lval.editable { cursor: text; transition: text-decoration-color .15s; }
+    .lval.editable:hover {
+      text-decoration: underline dotted; text-decoration-color: rgba(110,231,183,.55);
+      text-underline-offset: 3px;
+    }
+    .lval-edit {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: inherit;
+      color: var(--accent); background: rgba(110,231,183,.1);
+      border: 1px solid var(--accent); border-radius: 5px;
+      width: 5.5em; max-width: 96px; padding: .05rem .35rem;
+      text-align: right; outline: none; line-height: 1.2;
+      -moz-appearance: textfield;  appearance: textfield;
+    }
+    .lval-edit::-webkit-outer-spin-button,
+    .lval-edit::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+    .field input[type="range"] {
+      -webkit-appearance: none; appearance: none; width: 100%; height: 3px;
+      background: var(--border); border-radius: 99px; outline: none;
+      cursor: pointer;
+    }
+    .field input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 16px; height: 16px;
+      border-radius: 50%; background: var(--accent);
+      border: 2px solid var(--bg); box-shadow: 0 0 8px rgba(110,231,183,.4);
+      cursor: pointer; transition: box-shadow .2s;
+    }
+    .field input[type="range"]:hover::-webkit-slider-thumb {
+      box-shadow: 0 0 14px rgba(110,231,183,.6);
+    }
+    .field input[type="range"]::-moz-range-thumb {
+      width: 16px; height: 16px; border-radius: 50%; background: var(--accent);
+      border: 2px solid var(--bg); cursor: pointer;
+    }
+
+    /* inline validation hint */
+    .hint {
+      display: none; margin-top: .4rem;
+      font-size: .7rem; line-height: 1.4; font-weight: 500;
+      padding: .35rem .55rem; border-radius: 6px;
+    }
+    .hint.show { display: block; }
+    .hint.warn { color: var(--warn); background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.2); }
+    .hint.bad  { color: var(--danger); background: rgba(248,113,113,.08); border: 1px solid rgba(248,113,113,.2); }
+
+    /* ── MAIN CONTENT ─────────────────── */
+    .main-content { padding: 2rem 2.4rem 4rem; overflow-y: auto; }
+
+    /* ── RESULT HERO ─────────────────── */
+    .result-hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem 2.4rem;
+      margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem; align-items: center;
+    }
+    .result-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(110,231,183,.08), rgba(129,140,248,.04), transparent 60%);
+      pointer-events: none;
+    }
+    .result-hero-title {
+      font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700; margin-bottom: .5rem;
+    }
+    .result-hero-amount {
+      font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 800; letter-spacing: -.04em; line-height: 1;
+      background: linear-gradient(135deg, var(--accent) 30%, var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: .4rem;
+    }
+    .result-hero-sub { color: var(--muted); font-size: .88rem; font-weight: 300; }
+    .result-fire-badge {
+      display: flex; flex-direction: column; align-items: center;
+      gap: .35rem; text-align: center;
+    }
+    .fire-ring {
+      width: 96px; height: 96px; border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .fire-ring-inner {
+      width: 74px; height: 74px; border-radius: 50%;
+      background: var(--card);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .fire-ring-inner .yr { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--accent); line-height: 1; white-space: nowrap; max-width: 70px; }
+    .fire-ring-inner .yr-label { font-size: .55rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: .2rem; }
+    .result-fire-badge-label { font-size: .7rem; color: var(--muted); letter-spacing: .08em; }
+
+    /* ── ZIEL-FORTSCHRITTSBALKEN ── */
+    .goal-bar { margin-top: 1.3rem; max-width: 520px; }
+    .goal-bar-track {
+      position: relative; height: 12px; border-radius: 99px;
+      background: var(--border); overflow: visible;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+    .goal-bar-fill {
+      height: 100%; width: 0%; border-radius: 99px;
+      background: linear-gradient(90deg, var(--accent3), var(--accent2) 55%, var(--accent));
+      box-shadow: 0 0 12px rgba(110,231,183,.35);
+      transition: width .6s cubic-bezier(.4,0,.2,1);
+    }
+    .goal-bar-flag {
+      position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%);
+      font-size: .85rem; line-height: 1; filter: drop-shadow(0 0 4px rgba(244,114,182,.6));
+      transition: left .6s cubic-bezier(.4,0,.2,1);
+    }
+    .goal-bar-legend {
+      display: flex; justify-content: space-between; gap: 1rem;
+      font-size: .74rem; color: var(--muted); margin-top: .5rem;
+    }
+    .goal-bar-legend .gt { color: var(--accent3); font-weight: 600; }
+    .goal-bar-legend #goalCur { font-weight: 500; color: var(--text); }
+    .goal-bar.done .goal-bar-fill { background: linear-gradient(90deg, var(--accent2), var(--accent)); }
+    /* Überschießen: Balken voll + pulsierendes Glühen, Flagge wird zu ✓ */
+    .goal-bar.over .goal-bar-fill {
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      box-shadow: 0 0 16px rgba(110,231,183,.6), 0 0 4px rgba(110,231,183,.9);
+    }
+    .goal-bar.over .goal-bar-flag { filter: drop-shadow(0 0 6px rgba(110,231,183,.8)); }
+    .goal-bar-legend .over-badge { color: var(--accent); font-weight: 700; }
+
+    /* ── DEUTSCHE STEUERLOGIK ── */
+    .tax-section {
+      padding: clamp(2.4rem,5vh,3.6rem) clamp(1.25rem,7vw,7rem);
+      border-top: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse 50% 70% at 85% 0%, rgba(129,140,248,.05), transparent 60%),
+        var(--bg);
+    }
+    .tax-head { margin-bottom: 1.8rem; max-width: 60ch; }
+    .tax-eyebrow {
+      font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent2); font-weight: 700; margin-bottom: .6rem;
+      display: flex; align-items: center; gap: .7rem;
+    }
+    .tax-eyebrow::before { content:''; width:24px; height:1px; background:var(--accent2); }
+    .tax-title {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(1.5rem,3vw,2.1rem); letter-spacing: -.03em; color: var(--text);
+    }
+    .tax-sub { color: var(--muted); font-size: .92rem; margin-top: .4rem; }
+    .tax-grid {
+      display: grid; grid-template-columns: 0.9fr 1.2fr; gap: 1.2rem; align-items: start;
+    }
+    .tax-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.5rem 1.6rem; position: relative; overflow: hidden;
+    }
+    .tax-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background: linear-gradient(to right, var(--accent2), var(--accent3)); opacity:.5;
+    }
+    .tax-card-title {
+      font-family:'Syne',sans-serif; font-weight:700; font-size:.95rem; color:var(--text);
+      margin-bottom: 1.2rem; display:flex; align-items:center; gap:.5rem;
+    }
+    .tax-field { margin-bottom: 1.3rem; }
+    .tax-field:last-child { margin-bottom: 0; }
+    .tax-field > label {
+      display:block; font-size:.78rem; font-weight:500; color:var(--muted); margin-bottom:.5rem;
+    }
+    /* segmentierte Buttons */
+    .tax-seg { display:flex; border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+    .tax-seg button {
+      flex:1; padding:.5rem .4rem; background:transparent; border:none; border-right:1px solid var(--border);
+      color:var(--muted); font-family:'DM Sans',sans-serif; font-size:.76rem; font-weight:500; cursor:pointer;
+      transition: background .15s, color .15s;
+    }
+    .tax-seg button:last-child { border-right:none; }
+    .tax-seg button.active { background:rgba(129,140,248,.15); color:var(--accent2); }
+    /* Toggle-Zeile */
+    .tax-switch { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .tax-switch label { font-size:.82rem; color:var(--text); cursor:pointer; }
+    .tax-switch .sw { position:relative; width:38px; height:21px; flex-shrink:0; }
+    .tax-switch input { display:none; }
+    .tax-switch .sw-track { position:absolute; inset:0; background:var(--border); border-radius:99px; cursor:pointer; transition:background .2s; }
+    .tax-switch .sw-track::before { content:''; position:absolute; width:15px; height:15px; border-radius:50%; background:var(--muted); top:3px; left:3px; transition:transform .2s, background .2s; }
+    .tax-switch input:checked + .sw-track { background:rgba(110,231,183,.25); }
+    .tax-switch input:checked + .sw-track::before { transform:translateX(17px); background:var(--accent); }
+    .tax-hint { font-size:.72rem; color:var(--muted); margin-top:.5rem; line-height:1.5; }
+
+    /* Card-Title mit Modus-Schalter */
+    .tax-card-title { justify-content: space-between; }
+    .tax-mode-seg { display:flex; border:1px solid var(--border); border-radius:7px; overflow:hidden; }
+    .tax-mode-seg button {
+      padding:.3rem .7rem; background:transparent; border:none; border-right:1px solid var(--border);
+      color:var(--muted); font-family:'DM Sans',sans-serif; font-size:.7rem; font-weight:600; cursor:pointer;
+      letter-spacing:.02em; transition: background .15s, color .15s;
+    }
+    .tax-mode-seg button:last-child { border-right:none; }
+    .tax-mode-seg button.active { background:rgba(110,231,183,.15); color:var(--accent); }
+
+    /* vertikale Optionsliste (Fondstyp) */
+    .tax-seg.col { flex-direction: column; }
+    .tax-seg.col button { border-right:none; border-bottom:1px solid var(--border); text-align:left; padding:.55rem .7rem; }
+    .tax-seg.col button:last-child { border-bottom:none; }
+
+    /* Easy/Experte-Sichtbarkeit der Steuer-Sektion */
+    .tax-section[data-mode="easy"] .expert-only { display:none; }
+    .tax-section[data-mode="expert"] .easy-only { display:none; }
+
+    /* Slider in der Steuer-Sektion (gleiche Optik wie Sidebar) */
+    .tax-field input[type="range"] {
+      -webkit-appearance:none; appearance:none; width:100%; height:3px;
+      background:var(--border); border-radius:99px; outline:none; cursor:pointer;
+    }
+    .tax-field input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance:none; width:16px; height:16px; border-radius:50%; background:var(--accent);
+      border:2px solid var(--bg); box-shadow:0 0 8px rgba(110,231,183,.4); cursor:pointer;
+    }
+    .tax-field input[type="range"]::-moz-range-thumb {
+      width:16px; height:16px; border-radius:50%; background:var(--accent); border:2px solid var(--bg); cursor:pointer;
+    }
+    .tax-field label .lval { font-family:'Syne',sans-serif; font-weight:700; color:var(--accent); font-size:.82rem; float:right; }
+
+    /* Portfolio-Mix (Fondstyp-Slider) */
+    .mix-item { margin-bottom:.85rem; }
+    .mix-item:last-child { margin-bottom:0; }
+    .mix-head { display:flex; justify-content:space-between; align-items:baseline; font-size:.78rem; color:var(--muted); margin-bottom:.35rem; }
+    .mix-head em { font-style:normal; color:var(--accent2); font-size:.68rem; margin-left:.35rem; }
+    .mix-head .lval { font-family:'Syne',sans-serif; font-weight:700; color:var(--accent); font-size:.8rem; }
+    #mixHint.bad { color:var(--warn); }
+
+    /* Aufschlüsselung */
+    .tax-rows { width:100%; border-collapse:collapse; font-size:.86rem; }
+    .tax-rows td { padding:.5rem .2rem; border-bottom:1px solid rgba(30,30,46,.7); color:var(--muted); }
+    .tax-rows td.r { text-align:right; font-family:'Syne',sans-serif; color:var(--text); font-weight:600; }
+    .tax-rows tr.minus td.r { color:var(--accent); }
+    .tax-rows tr.tax td.r { color:var(--danger); }
+    .tax-rows tr.sum td { border-top:2px solid var(--border); border-bottom:none; padding-top:.7rem; font-weight:700; }
+    .tax-rows tr.sum td.r { font-size:1rem; }
+    .tax-rows tr.net td.r { color:var(--accent); font-size:1.15rem; }
+    .tax-summary { display:grid; grid-template-columns:repeat(3,1fr); gap:.9rem; margin-top:1.3rem; }
+    .tax-kpi { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:.9rem 1rem; }
+    .tax-kpi .tk-label { font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+    .tax-kpi .tk-val { font-family:'Syne',sans-serif; font-weight:800; font-size:1.15rem; color:var(--text); margin-top:.25rem; }
+    .tax-kpi.accent .tk-val { color:var(--accent); }
+    .tax-kpi.danger .tk-val { color:var(--danger); }
+
+    @media (max-width: 900px) {
+      .tax-grid { grid-template-columns: 1fr; }
+      .tax-summary { grid-template-columns: 1fr; }
+    }
+
+    /* ── ERKLÄR-SEKTION (Wissen/Methodik) ── */
+    .guide-section {
+      padding: clamp(2.6rem,6vh,4rem) clamp(1.25rem,7vw,7rem);
+      border-top: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse 55% 70% at 12% 0%, rgba(110,231,183,.05), transparent 60%),
+        var(--bg);
+    }
+    .guide-head { max-width: 72ch; margin-bottom: 2.2rem; }
+    .guide-eyebrow {
+      font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700; margin-bottom: .6rem;
+      display: flex; align-items: center; gap: .7rem;
+    }
+    .guide-eyebrow::before { content:''; width: 24px; height: 1px; background: var(--accent); }
+    .guide-title {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(1.6rem,3.4vw,2.4rem); letter-spacing: -.03em; color: var(--text);
+    }
+    .guide-sub { color: var(--muted); font-size: .95rem; margin-top: .5rem; line-height: 1.7; }
+    .guide-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+    .guide-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.6rem 1.8rem; position: relative; overflow: hidden;
+    }
+    .guide-card.wide { grid-column: span 2; }
+    .guide-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background: linear-gradient(to right, var(--accent), var(--accent2)); opacity:.45;
+    }
+    .guide-card h3 {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.08rem;
+      letter-spacing: -.015em; color: var(--text); margin-bottom: .9rem;
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .guide-card h3 .gi {
+      width: 28px; height: 28px; border-radius: 7px; flex-shrink: 0;
+      background: rgba(110,231,183,.12); color: var(--accent);
+      display: flex; align-items: center; justify-content: center; font-size: .95rem;
+    }
+    .guide-card h4 {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: .9rem;
+      color: var(--accent2); margin: 1.1rem 0 .5rem;
+    }
+    .guide-card p { font-size: .87rem; color: #9aa7b8; line-height: 1.72; margin-bottom: .7rem; }
+    .guide-card p:last-child { margin-bottom: 0; }
+    .guide-card strong { color: var(--text); font-weight: 600; }
+    .guide-card .hl { color: var(--accent); font-weight: 600; }
+    .guide-card .hl2 { color: var(--accent2); font-weight: 600; }
+    .guide-card .hl3 { color: var(--accent3); font-weight: 600; }
+    .guide-card .formula {
+      display: block; font-family: 'Syne', sans-serif; font-weight: 700;
+      color: var(--text); background: var(--surface);
+      border: 1px solid var(--border); border-left: 3px solid var(--accent2);
+      border-radius: 8px; padding: .6rem .8rem; margin: .3rem 0 .8rem;
+      font-size: .84rem; letter-spacing: -.01em;
+    }
+    .guide-card ul { margin: .2rem 0 .7rem; padding-left: 1.1rem; }
+    .guide-card li { font-size: .87rem; color: #9aa7b8; line-height: 1.65; margin-bottom: .35rem; }
+    .guide-card li strong { color: var(--text); }
+    .guide-disclaimer {
+      margin-top: 1.4rem; font-size: .78rem; color: var(--muted);
+      line-height: 1.6; max-width: 80ch;
+    }
+    @media (max-width: 900px) {
+      .guide-grid { grid-template-columns: 1fr; }
+      .guide-card.wide { grid-column: span 1; }
+    }
+
+    /* ── INSIGHT CARDS ─── */
+    .insight-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem;
+      margin-bottom: 1.6rem;
+    }
+    .insight-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 1rem 1.1rem;
+    }
+    .insight-icon { font-size: 1.1rem; margin-bottom: .4rem; }
+    .insight-label { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: .25rem; }
+    .insight-val { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); }
+    .insight-desc { font-size: .78rem; color: var(--muted); margin-top: .2rem; line-height: 1.4; }
+    .insight-desc.ok { color: var(--accent); font-weight: 500; }
+
+    /* ── CHART GRID ──────────────────── */
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
+    .chart-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      position: relative; overflow: hidden;
+    }
+    .chart-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(to right, var(--accent), var(--accent2));
+      opacity: .5;
+    }
+    .chart-label {
+      font-size: .66rem; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700; margin-bottom: .25rem;
+    }
+    .chart-title {
+      font-family: 'Syne', sans-serif; font-size: 1rem;
+      font-weight: 700; letter-spacing: -.015em; margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .chart-container { position: relative; width: 100%; }
+
+    /* ── ENTNAHMERATE-HINWEIS ── */
+    .swr-note {
+      font-size: .76rem; font-weight: 600; line-height: 1.4;
+      padding: .5rem .7rem; border-radius: 8px; margin-top: .2rem;
+      border: 1px solid transparent;
+    }
+    .swr-note.safe { color: var(--accent); background: rgba(110,231,183,.08); border-color: rgba(110,231,183,.25); }
+    .swr-note.risky { color: var(--warn); background: rgba(251,191,36,.08); border-color: rgba(251,191,36,.25); }
+    .swr-note.bad  { color: var(--danger); background: rgba(248,113,113,.08); border-color: rgba(248,113,113,.25); }
+
+    /* ── MONTE CARLO CARD ── */
+    .mc-card { margin-top: 1.2rem; cursor: pointer; transition: border-color .2s, box-shadow .2s; }
+    .mc-card:hover { border-color: var(--accent2); box-shadow: 0 0 0 1px rgba(129,140,248,.25), 0 18px 40px rgba(0,0,0,.25); }
+    .mc-card::before { background: linear-gradient(to right, var(--accent2), var(--accent3)); }
+    .mc-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; flex-wrap: wrap; }
+    .mc-head .chart-title { margin-bottom: 0; }
+    .mc-meta { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+    .mc-fail-badge {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: .92rem;
+      padding: .35rem .8rem; border-radius: 999px; white-space: nowrap;
+    }
+    .mc-fail-badge.safe { color: var(--accent); background: rgba(110,231,183,.12); }
+    .mc-fail-badge.risky { color: var(--warn); background: rgba(251,191,36,.12); }
+    .mc-fail-badge.bad  { color: var(--danger); background: rgba(248,113,113,.12); }
+    .mc-reroll { font-size: .72rem; color: var(--muted); white-space: nowrap; }
+    .mc-card:hover .mc-reroll { color: var(--accent2); }
+
+    /* ── TABLE ───────────────────────── */
+    .data-table {
+      width: 100%; border-collapse: collapse; font-size: .84rem;
+    }
+    .data-table th {
+      text-align: left; padding: .55rem .75rem;
+      font-size: .65rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); font-weight: 700; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; background: var(--card); z-index: 2;
+    }
+    .data-table td {
+      padding: .55rem .75rem; border-bottom: 1px solid rgba(30,30,46,.6);
+      color: var(--muted); font-weight: 300; line-height: 1.4;
+    }
+    .data-table tr:hover td { background: rgba(110,231,183,.03); }
+    .data-table td.accent { color: var(--accent); font-weight: 500; }
+    .data-table td.accent2 { color: var(--accent2); }
+    .data-table tr.post-fire td { background: rgba(110,231,183,.045); }
+    .data-table tr.fire-row td { border-top: 2px solid var(--accent); }
+    .fire-sep-row td {
+      background: linear-gradient(90deg, rgba(110,231,183,.18), rgba(110,231,183,.02));
+      color: var(--accent); font-weight: 700; font-size: .8rem;
+      letter-spacing: .04em; border-top: 2px solid var(--accent); border-bottom: none;
+    }
+    .data-table tr.retire-row td { background: rgba(129,140,248,.04); }
+    .retire-sep-row td {
+      background: linear-gradient(90deg, rgba(129,140,248,.18), rgba(129,140,248,.02));
+      color: var(--accent2); font-weight: 700; font-size: .8rem;
+      letter-spacing: .04em; border-top: 2px solid var(--accent2); border-bottom: none;
+    }
+
+    /* ── STATUS BADGE ──── */
+    .status-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .2rem .7rem; border-radius: 999px; font-size: .72rem; font-weight: 600;
+    }
+    .status-badge.ok { background: rgba(110,231,183,.12); color: var(--accent); }
+    .status-badge.warn { background: rgba(251,191,36,.1); color: var(--warn); }
+    .status-badge.bad { background: rgba(248,113,113,.1); color: var(--danger); }
+    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+    /* ── FADE IN ─────────────────────── */
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    .fade-in.d1 { transition-delay: .1s; }
+    .fade-in.d2 { transition-delay: .2s; }
+    .fade-in.d3 { transition-delay: .3s; }
+
+    hr.divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ── FOOTER ──────────────────────── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      display: inline-block; margin-bottom: .9rem;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: .78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem;
+    }
+
+    /* ── RESPONSIVE ──────────────────── */
+    @media (max-width: 1100px) {
+      .calc-wrapper { grid-template-columns: 300px 1fr; }
+      .insight-grid { grid-template-columns: 1fr; }
+      .hero-fire { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 960px) {
+      .main-nav {
+        justify-content: flex-start;
+        padding: 0 1.5rem;
+      }
+      .main-nav .nav-links,
+      .main-nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+      html { scroll-padding-top: calc(var(--nav-h) + 1rem); }
+    }
+    @media (max-width: 800px) {
+      .calc-wrapper { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; }
+      .result-hero { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+  <nav class="main-nav">
+    <a href="/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="../projekte/">Projekte</a></li>
+      <li><a href="../downloads">Downloads</a></li>
+      <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../vision">Vision</a></li>
+      <li><a href="../wissen">Wissen</a></li>
+    </ul>
+    <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    GitHub
+  </a>
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="../projekte/">Projekte</a></li>
+      <li><a href="../downloads">Downloads</a></li>
+      <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../vision">Vision</a></li>
+      <li><a href="../wissen">Wissen</a></li>
+      <li>
+        <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </li>
+    </ul>
+  </div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-dots"></div>
+  <p class="hero-eyebrow">Financial Independence Retire Early</p>
+  <h1 class="hero-title">
+    <span class="line-solid">FIRE</span>
+    <span class="line-outline">Rechner</span>
+  </h1>
+  <p class="hero-sub">
+    Simuliere Sparphase, Entnahme und Pleiterisiko mit einer Monte-Carlo-Simulation.
+  </p>
+
+  <div class="hero-fire">
+    <div class="hfm">
+      <div class="hfm-label">Du erreichst FIRE</div>
+      <div class="hfm-big" id="fireBig">–</div>
+      <div class="hfm-meta" id="fireMeta">–</div>
+      <div class="hfm-cap" id="fireCap">–</div>
+    </div>
+    <div class="hero-fire-kpis">
+      <div class="micro-kpi">
+        <div class="mk-label">Mögliche Monatl. Entnahme</div>
+        <div class="mk-val" id="mkEntnahme">–</div>
+        <div class="mk-sub">heutige Kaufkraft</div>
+      </div>
+      <div class="micro-kpi">
+        <div class="mk-label">Reale Kaufkraft</div>
+        <div class="mk-val" id="mkReal">–</div>
+        <div class="mk-sub">heutige Euro</div>
+      </div>
+      <div class="micro-kpi">
+        <div class="mk-label">FIRE-Zielkapital</div>
+        <div class="mk-val" id="mkZiel">–</div>
+        <div class="mk-sub">nominal bei Renteneintritt</div>
+      </div>
+      <div class="micro-kpi">
+        <div class="mk-label">FIRE-Fortschritt</div>
+        <div class="mk-val" id="mkProgress">–</div>
+        <div class="mk-sub">Kapital ÷ Ziel</div>
+      </div>
+      <div class="micro-kpi">
+        <div class="mk-label">Netto-Entnahme / Mon.</div>
+        <div class="mk-val" id="mkNetEntnahme">–</div>
+        <div class="mk-sub">nach Steuer, heute</div>
+      </div>
+      <div class="micro-kpi">
+        <div class="mk-label">Geld nach Steuern</div>
+        <div class="mk-val" id="mkNetCapital">–</div>
+        <div class="mk-sub">Kapital netto bei Verkauf</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══ KALKULATOR ══ -->
+<div class="calc-wrapper">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Parameter</div>
+
+    <!-- GRUNDLAGE -->
+    <div class="toggle-group open" id="tg-basis">
+      <div class="toggle-header" onclick="toggleGroup('tg-basis')">
+        <div class="toggle-header-left"><div class="tg-icon">💰</div> Grundlage</div>
+        <span class="toggle-chevron">▾</span>
+      </div>
+      <div class="toggle-body">
+        <div class="field">
+          <label>Startkapital <span class="lval" id="lv-start">10.000 €</span></label>
+          <input type="range" id="r-start" min="0" max="500000" step="1000" value="10000" oninput="setVal('start',this.value)">
+        </div>
+        <div class="field">
+          <label>Monatliche Sparrate <span class="lval" id="lv-rate">1.000 €</span></label>
+          <input type="range" id="r-rate" min="100" max="10000" step="50" value="1000" oninput="setVal('rate',this.value)">
+        </div>
+        <div class="field">
+          <label>Aktuelles Alter <span class="lval" id="lv-age">25 Jahre</span></label>
+          <input type="range" id="r-age" min="18" max="65" step="1" value="25" oninput="syncAge(this.value)">
+        </div>
+        <div class="field">
+          <label>Ziel-FIRE-Alter <span class="lval" id="lv-fireage">50 Jahre</span></label>
+          <input type="range" id="r-fireage" min="19" max="80" step="1" value="50" oninput="syncFireAge(this.value)">
+          <div class="hint" id="hint-fireage">FIRE-Alter muss größer als dein aktuelles Alter sein.</div>
+        </div>
+        <div class="field">
+          <label>Lebenserwartung <span class="lval" id="lv-life">90 Jahre</span></label>
+          <input type="range" id="r-life" min="70" max="110" step="1" value="90" oninput="setVal('life',this.value)">
+          <div class="hint" id="hint-life">Lebenserwartung sollte über dem FIRE-Alter liegen.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RENDITE & INFLATION -->
+    <div class="toggle-group open" id="tg-rendite">
+      <div class="toggle-header" onclick="toggleGroup('tg-rendite')">
+        <div class="toggle-header-left"><div class="tg-icon">📈</div> Rendite &amp; Inflation</div>
+        <span class="toggle-chevron">▾</span>
+      </div>
+      <div class="toggle-body">
+        <div class="field">
+          <label>Erwartete Rendite p.a. <span class="lval" id="lv-rendite">9,0 %</span></label>
+          <input type="range" id="r-rendite" min="1" max="15" step="0.1" value="9" oninput="setVal('rendite',this.value)">
+        </div>
+        <div class="field">
+          <label>Inflationsrate p.a. <span class="lval" id="lv-inflation">2,0 %</span></label>
+          <input type="range" id="r-inflation" min="0" max="8" step="0.1" value="2" oninput="setVal('inflation',this.value)">
+          <div class="hint" id="hint-real">Reale Rendite negativ: Kapital schrumpft real.</div>
+        </div>
+        <div class="field">
+          <label>TER <span class="lval" id="lv-ter">0,10 %</span></label>
+          <input type="range" id="r-ter" min="0" max="3" step="0.01" value="0.1" oninput="setVal('ter',this.value)">
+        </div>
+      </div>
+    </div>
+
+    <!-- ENTNAHME -->
+    <div class="toggle-group open" id="tg-entnahme">
+      <div class="toggle-header" onclick="toggleGroup('tg-entnahme')">
+        <div class="toggle-header-left"><div class="tg-icon">🏖️</div> Entnahme</div>
+        <span class="toggle-chevron">▾</span>
+      </div>
+      <div class="toggle-body">
+        <div class="field">
+          <label>Gewünschte Entnahme (heute) <span class="lval" id="lv-target">2.500 €</span></label>
+          <input type="range" id="r-target" min="500" max="15000" step="100" value="2500" oninput="setVal('target',this.value)">
+        </div>
+        <div class="field">
+          <label>Entnahmerate p.a. <span class="lval" id="lv-swr">4,0 %</span></label>
+          <input type="range" id="r-swr" min="2" max="8" step="0.1" value="4" oninput="setVal('swr',this.value)">
+        </div>
+        <div class="swr-note" id="swrNote">🛡️ 4 % als klassischer Richtwert</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.55;margin-top:.7rem;">
+          Die gewünschte Entnahme wird in <strong>heutiger Kaufkraft</strong> eingegeben und bis zum FIRE-Zeitpunkt an die Inflation angepasst. FIRE-Ziel = aufgezinste Jahresentnahme ÷ Entnahmerate. Die <strong>4-%-Regel</strong> ist ein klassischer Richtwert. Die Rate legt dein Zielkapital fest. Das Pleiterisiko hängt von deiner gewünschten Entnahme ab: Erhöhst du sie, steigt das Risiko.
+        </p>
+      </div>
+    </div>
+
+    <!-- MONTE CARLO -->
+    <div class="toggle-group" id="tg-mc">
+      <div class="toggle-header" onclick="toggleGroup('tg-mc')">
+        <div class="toggle-header-left"><div class="tg-icon">🎲</div> Monte Carlo</div>
+        <span class="toggle-chevron">▾</span>
+      </div>
+      <div class="toggle-body">
+        <div class="field">
+          <label>Simulationen <span class="lval" id="lv-mcruns">500</span></label>
+          <input type="range" id="r-mcruns" min="100" max="2000" step="100" value="500" oninput="setVal('mcRuns',this.value)">
+        </div>
+        <div class="field">
+          <label>Volatilität (σ) <span class="lval" id="lv-mcvol">10,0 %</span></label>
+          <input type="range" id="r-mcvol" min="5" max="30" step="0.5" value="10" oninput="setVal('mcVol',this.value)">
+        </div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.55;">
+          Zufällige Jahresrenditen um µ ± σ über Spar- und Entnahmephase. Mehr Simulationen machen das Ergebnis stabiler, höhere Volatilität erhöht die Streuung. Klicke den Chart, um neu zu würfeln.
+        </p>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="main-content">
+
+    <!-- RESULT HERO -->
+    <div class="result-hero fade-in">
+      <div>
+        <div class="result-hero-title">Projiziertes FIRE-Kapital</div>
+        <div class="result-hero-amount" id="resCapital">–</div>
+        <div class="result-hero-sub" id="resCapitalSub">Zum Ende der Sparphase</div>
+        <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap;">
+          <span class="status-badge ok" id="statusBadge"><span class="status-dot"></span>–</span>
+        </div>
+        <!-- Ziel-Fortschrittsbalken -->
+        <div class="goal-bar">
+          <div class="goal-bar-track">
+            <div class="goal-bar-fill" id="goalFill"></div>
+            <div class="goal-bar-flag" id="goalFlag">🎯</div>
+          </div>
+          <div class="goal-bar-legend">
+            <span id="goalCur">Projiziert: –</span>
+            <span class="gt">Ziel: <span id="goalTarget">–</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="result-fire-badge">
+        <div class="fire-ring" id="fireRing">
+          <div class="fire-ring-inner">
+            <div class="yr" id="ringYr">–</div>
+            <div class="yr-label">zum Ziel</div>
+          </div>
+        </div>
+        <div class="result-fire-badge-label">FIRE-Fortschritt</div>
+      </div>
+    </div>
+
+    <!-- INSIGHT CARDS -->
+    <div class="insight-grid fade-in d1">
+      <div class="insight-card">
+        <div class="insight-icon">💸</div>
+        <div class="insight-label">Eingezahltes Kapital</div>
+        <div class="insight-val" id="ins-einz">–</div>
+        <div class="insight-desc">Summe aller Einzahlungen</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">📊</div>
+        <div class="insight-label">Zinseszinsgewinn</div>
+        <div class="insight-val" id="ins-zins">–</div>
+        <div class="insight-desc">Endkapital − Eingezahltes</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">🚀</div>
+        <div class="insight-label">Vermögens-Multiplikator</div>
+        <div class="insight-val" id="ins-mult">–</div>
+        <div class="insight-desc">Endkapital ÷ Eingezahltes</div>
+      </div>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="chart-grid">
+      <div class="chart-card fade-in d2">
+        <div class="chart-label">Vermögensentwicklung</div>
+        <div class="chart-title">Sparphase: Portfoliowachstum</div>
+        <div class="chart-container" style="height:320px"><canvas id="chartGrowth"></canvas></div>
+      </div>
+      <div class="chart-card fade-in d2">
+        <div class="chart-label">Entnahmephase</div>
+        <div class="chart-title">Portfolio nach FIRE: drei Renditeszenarien</div>
+        <div class="chart-container" style="height:280px"><canvas id="chartWithdraw"></canvas></div>
+      </div>
+    </div>
+
+    <!-- MONTE CARLO SIMULATION -->
+    <div class="chart-card mc-card fade-in d3" id="mcCard" onclick="rerollMC()" title="Klicken zum neu würfeln">
+      <div class="mc-head">
+        <div>
+          <div class="chart-label">Monte Carlo Simulation</div>
+          <div class="chart-title">Szenarien-Fächer in heutiger Kaufkraft</div>
+        </div>
+        <div class="mc-meta">
+          <span class="mc-fail-badge" id="mcFailBadge">–</span>
+          <span class="mc-reroll">🎲 Klicken zum neu würfeln</span>
+        </div>
+      </div>
+      <div class="chart-container" style="height:300px"><canvas id="chartMC"></canvas></div>
+    </div>
+
+    <!-- TABELLE -->
+    <div class="chart-card fade-in d3">
+      <div class="chart-label">Jahrestabelle</div>
+      <div class="chart-title">Jahresübersicht: Sparphase &amp; Entnahme bis Lebensende</div>
+      <div style="overflow-x:auto;max-height:360px;overflow-y:auto;">
+        <table class="data-table" id="dataTable">
+          <thead>
+            <tr>
+              <th>Jahr</th>
+              <th>Alter</th>
+              <th>Portfolio</th>
+              <th>Eingezahlt</th>
+              <th>Renditegewinn</th>
+              <th>Real (inflationsber.)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ══ DEUTSCHE STEUERLOGIK ══ -->
+<section class="tax-section" id="taxSection" data-mode="easy">
+  <div class="tax-head">
+    <div class="tax-eyebrow">Steuern Stand 2026</div>
+    <div class="tax-title">Steuern auf Kapitalerträge</div>
+    <div class="tax-sub">
+      Kapitalerträge werden in Deutschland pauschal mit 25 % Abgeltungssteuer besteuert, zzgl. 5,5 % Solidaritätszuschlag und ggf. Kirchensteuer.
+      Je nach Fondstyp bleibt über die Teilfreistellung ein Teil steuerfrei. Im Experten-Modus wird dein Portfolio-Mix gewichtet versteuert.
+    </div>
+  </div>
+
+  <div class="tax-grid">
+    <!-- Steuer-Parameter -->
+    <div class="tax-card">
+      <div class="tax-card-title">
+        <span>⚙️ Steuer-Parameter</span>
+        <div class="tax-mode-seg" id="seg-taxmode">
+          <button class="active" onclick="setTaxMode('easy',this)">Easy</button>
+          <button onclick="setTaxMode('expert',this)">Experte</button>
+        </div>
+      </div>
+
+      <div class="tax-field">
+        <label>Kirchensteuer <span class="lval" id="lv-kirche" data-apply="kirche" data-min="0" data-max="9" data-step="1">0 %</span></label>
+        <div class="tax-seg" id="seg-kirche">
+          <button class="active" onclick="setKirche(0,this)">Keine</button>
+          <button onclick="setKirche(8,this)">8 % (BY/BW)</button>
+          <button onclick="setKirche(9,this)">9 %</button>
+        </div>
+      </div>
+
+      <div class="tax-field">
+        <label>Sparerpauschbetrag <span class="lval" id="lv-pausch" data-apply="pausch" data-min="0" data-max="100000" data-step="50">1.000 €</span></label>
+        <div class="tax-seg" id="seg-pausch">
+          <button class="active" onclick="setPausch(1000,this)">1.000 € (Einzel)</button>
+          <button onclick="setPausch(2000,this)">2.000 € (Paar)</button>
+        </div>
+      </div>
+
+      <!-- EASY: einfacher Teilfreistellungs-Schalter -->
+      <div class="tax-field easy-only">
+        <div class="tax-switch">
+          <label for="sw-teilfrei">Teilfreistellung Aktienfonds (30 %)</label>
+          <label class="sw">
+            <input type="checkbox" id="sw-teilfrei" checked onchange="setTeilfreiEasy(this.checked)">
+            <span class="sw-track"></span>
+          </label>
+        </div>
+        <div class="tax-hint">Für Fonds mit ≥ 51 % Aktienanteil sind 30 % der Erträge steuerfrei (§ 20 InvStG). Wechsle in den Experten-Modus, um dein Portfolio aus mehreren Fondstypen zu mischen.</div>
+      </div>
+
+      <!-- EXPERT: Portfolio-Mix nach Fondstyp -->
+      <div class="tax-field expert-only">
+        <label>Portfolio-Mix nach Fondstyp (§ 20 InvStG) <span class="lval" id="lv-mix-sum">Σ 100 %</span></label>
+        <div class="mix-list">
+          <div class="mix-item">
+            <div class="mix-head"><span>Aktienfonds <em>TF 30 %</em></span><span class="lval" id="lv-mix-aktien">100 %</span></div>
+            <input type="range" id="r-mix-aktien" min="0" max="100" step="1" value="100" oninput="setMix('aktien',this.value)">
+          </div>
+          <div class="mix-item">
+            <div class="mix-head"><span>Mischfonds <em>TF 15 %</em></span><span class="lval" id="lv-mix-misch">0 %</span></div>
+            <input type="range" id="r-mix-misch" min="0" max="100" step="1" value="0" oninput="setMix('misch',this.value)">
+          </div>
+          <div class="mix-item">
+            <div class="mix-head"><span>Immobilienfonds Inland <em>TF 60 %</em></span><span class="lval" id="lv-mix-immoInland">0 %</span></div>
+            <input type="range" id="r-mix-immoInland" min="0" max="100" step="1" value="0" oninput="setMix('immoInland',this.value)">
+          </div>
+          <div class="mix-item">
+            <div class="mix-head"><span>Immobilienfonds Ausland <em>TF 80 %</em></span><span class="lval" id="lv-mix-immoAusland">0 %</span></div>
+            <input type="range" id="r-mix-immoAusland" min="0" max="100" step="1" value="0" oninput="setMix('immoAusland',this.value)">
+          </div>
+          <div class="mix-item">
+            <div class="mix-head"><span>Sonstige / keine TF <em>TF 0 %</em></span><span class="lval" id="lv-mix-sonstige">0 %</span></div>
+            <input type="range" id="r-mix-sonstige" min="0" max="100" step="1" value="0" oninput="setMix('sonstige',this.value)">
+          </div>
+        </div>
+        <div class="tax-hint" id="mixHint">Gewichtete Teilfreistellung: 30 %. Die Summe sollte 100 % ergeben.</div>
+      </div>
+
+      <div class="tax-hint" id="taxRateHint">Effektiver Steuersatz auf Erträge: –</div>
+    </div>
+
+    <!-- Aufschlüsselung -->
+    <div class="tax-card">
+      <div class="tax-card-title" id="taxBreakTitle">🧾 Steuer auf deinen Kapitalgewinn (Verkauf zum FIRE-Zeitpunkt)</div>
+      <table class="tax-rows">
+        <tbody>
+          <tr><td>Bruttogewinn (Endkapital − Einzahlungen)</td><td class="r" id="tx-brutto">–</td></tr>
+          <tr class="minus"><td>− Teilfreistellung <span id="tx-teilfrei-pct">30 %</span></td><td class="r" id="tx-teilfrei">–</td></tr>
+          <tr class="minus"><td>− Sparerpauschbetrag</td><td class="r" id="tx-pausch">–</td></tr>
+          <tr><td>= Steuerpflichtiger Gewinn</td><td class="r" id="tx-steuerbar">–</td></tr>
+          <tr class="tax"><td>Abgeltungssteuer (25 %)</td><td class="r" id="tx-kest">–</td></tr>
+          <tr class="tax"><td>Solidaritätszuschlag (5,5 %)</td><td class="r" id="tx-soli">–</td></tr>
+          <tr class="tax"><td>Kirchensteuer <span id="tx-kirche-pct">0 %</span></td><td class="r" id="tx-kirche">–</td></tr>
+          <tr class="sum"><td>Gesamte Steuerlast</td><td class="r" id="tx-total">–</td></tr>
+          <tr><td>= Netto-Gewinn nach Steuern</td><td class="r" id="tx-netto">–</td></tr>
+          <tr class="net"><td>Netto-Kapital (Endkapital − Steuer)</td><td class="r" id="tx-netcap">–</td></tr>
+        </tbody>
+      </table>
+
+      <div class="tax-summary">
+        <div class="tax-kpi danger">
+          <div class="tk-label">Steuerlast gesamt</div>
+          <div class="tk-val" id="tk-total">–</div>
+        </div>
+        <div class="tax-kpi">
+          <div class="tk-label">Effektiver Satz</div>
+          <div class="tk-val" id="tk-rate">–</div>
+        </div>
+        <div class="tax-kpi accent">
+          <div class="tk-label">Netto verfügbar</div>
+          <div class="tk-val" id="tk-netto">–</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ERKLÄRUNG / METHODIK ══ -->
+<section class="guide-section">
+  <div class="guide-head">
+    <div class="guide-eyebrow">Methodik &amp; Hintergrund</div>
+    <div class="guide-title">Wie dieser Rechner funktioniert</div>
+    <div class="guide-sub">
+      Der Rechner umfasst Sparphase, Besteuerung, Monte-Carlo-Simulation und Pleiterisiko. Die folgenden Abschnitte erklären die einzelnen Bausteine und ihre Berechnung.
+    </div>
+  </div>
+
+  <div class="guide-grid">
+
+    <!-- Überblick -->
+    <div class="guide-card wide">
+      <h3><span class="gi">🧭</span> Der Lebenszyklus in drei Phasen</h3>
+      <p>
+        Der Rechner bildet deinen kompletten Weg von heute bis zum Lebensende ab. Er teilt sich in drei Abschnitte. In der <span class="hl">Sparphase</span> baust du mit monatlicher Sparrate und Zinseszins Vermögen auf. Am <span class="hl3">FIRE-Zeitpunkt</span> hast du dein Zielkapital erreicht und hörst auf zu arbeiten. In der <span class="hl2">Entnahmephase</span> lebst du vom Portfolio bis zur Lebenserwartung.
+      </p>
+      <p>
+        Änderungen an Reglern und Eingabefeldern aktualisieren Charts, Tabelle, Steuerlast und Wahrscheinlichkeiten sofort. Werte kannst du auch anklicken und direkt eingeben.
+      </p>
+    </div>
+
+    <!-- Sparphase -->
+    <div class="guide-card">
+      <h3><span class="gi">📈</span> Die Sparphase &amp; der Zinseszins</h3>
+      <p>
+        Dein Kapital wächst Monat für Monat. Jeden Monat wird die Sparrate hinzugefügt und das gesamte Portfolio mit einem Zwölftel der Jahresrendite verzinst. Dieser monatliche Aufschlag auf einen wachsenden Bestand ist der <strong>Zinseszinseffekt</strong>, der einen großen Teil deines Endvermögens ausmacht.
+      </p>
+      <p>
+        Die <strong>erwartete Rendite</strong> ist eine Brutto-Annahme. Davon ziehe ich die <strong>ETF-Kosten (TER)</strong> ab, denn jede Gebühr mindert die Rendite. Die <span class="hl3">Inflation</span> rechne ich getrennt heraus, damit du die <strong>reale Kaufkraft</strong> siehst, also den Wert deines Vermögens in heutigen Euro.
+      </p>
+    </div>
+
+    <!-- FIRE-Ziel & Entnahmerate -->
+    <div class="guide-card">
+      <h3><span class="gi">🎯</span> FIRE-Ziel &amp; die 4 %-Regel</h3>
+      <p>
+        Deine gewünschte Entnahme gibst du in <span class="hl">heutiger Kaufkraft</span> an. Damit du diese Kaufkraft im Ruhestand behältst, wird der Betrag bis zum FIRE-Zeitpunkt mit der Inflation hochgerechnet. Aus 2.500 € heute werden bei 2 % über 25 Jahre rund 4.100 € pro Monat zum Renteneintritt. Dein Zielkapital ergibt sich aus dieser aufgezinsten Jahresentnahme und deiner Entnahmerate.
+      </p>
+      <span class="formula">FIRE-Ziel = Jahresentnahme (bei FIRE) ÷ Entnahmerate</span>
+      <p>
+        Bei der klassischen <span class="hl">4-%-Regel</span> entspricht das dem 25-Fachen deiner Jahresausgaben. Sie geht auf die Trinity-Studie zurück und wurde für historische Zeiträume von rund 30 Jahren untersucht. Du kannst die Rate selbst verstellen. Eine höhere Rate senkt das nötige Kapital. Eine niedrigere Rate ist konservativer, kostet dafür aber mehr Ansparzeit. Das Pleiterisiko hängt von deiner gewünschten Entnahme ab, nicht von der Rate allein.
+      </p>
+    </div>
+
+    <!-- Fortschritt & Zielmarke -->
+    <div class="guide-card">
+      <h3><span class="gi">🚀</span> Fortschritt &amp; Zielmarke</h3>
+      <p>
+        Der Ring und der Zielbalken zeigen dein projiziertes Kapital im Verhältnis zum Ziel. Liegt das Kapital über dem Ziel, wandert die Zielflagge nach innen. Sie zeigt die Lage des Zielwerts im Verhältnis zum erreichten Kapital.
+      </p>
+      <p>
+        Der <span class="hl">Vermögens-Multiplikator</span> zeigt, wie oft sich dein eingezahltes Geld vervielfacht hat. Er entspricht dem Endkapital geteilt durch die Summe aller Einzahlungen und zeigt den Einfluss des Zinseszinses.
+      </p>
+      <span class="formula">Multiplikator = Endkapital ÷ Eingezahltes</span>
+      <p>Ein Wert von drei bedeutet: Aus jedem eingezahlten Euro sind drei geworden. Die Differenz ist der Renditegewinn.</p>
+    </div>
+
+    <!-- Entnahmephase -->
+    <div class="guide-card">
+      <h3><span class="gi">🏖️</span> Die Entnahmephase</h3>
+      <p>
+        Ab dem FIRE-Zeitpunkt entnimmst du jährlich den gewünschten Betrag in heutiger Kaufkraft und passt ihn an die Inflation an. So bleibt deine reale Kaufkraft über den Ruhestand konstant. Die Entnahmerate dient als Maßstab für dein Zielkapital; sie bestimmt nicht, wie viel du tatsächlich abhebst.
+      </p>
+      <p>
+        Der Chart zeigt drei Renditeszenarien gleichzeitig: <span class="hl">Optimistisch</span> rechnet zwei Prozentpunkte über deiner Annahme, <strong>Realistisch</strong> mit deiner Annahme und <span class="hl3">Pessimistisch</span> zwei darunter. Die Achse ist logarithmisch, damit Beträge über mehrere Größenordnungen vergleichbar bleiben. Wenn ein Portfolio leer ist, endet die Linie an diesem Punkt.
+      </p>
+    </div>
+
+    <!-- Deutsche Steuern -->
+    <div class="guide-card wide">
+      <h3><span class="gi">🏛️</span> Die deutsche Besteuerung im Detail</h3>
+      <p>
+        Kapitalerträge werden in Deutschland mit der <strong>Abgeltungssteuer</strong> von 25 % belastet. Darauf kommen <strong>5,5 % Solidaritätszuschlag</strong> und je nach Bundesland und Konfession <strong>8 oder 9 % Kirchensteuer</strong>. Zusammen ergibt das einen kombinierten Satz von rund <span class="hl3">26,4 bis 27,8 %</span> auf den steuerpflichtigen Gewinn.
+      </p>
+      <h4>Teilfreistellung nach Fondstyp</h4>
+      <p>Je nach Fondsart bleibt ein Anteil der Erträge steuerfrei. Im Experten-Modus mischst du dein Portfolio aus mehreren Typen und ich versteuere es nach Allokation gewichtet.</p>
+      <ul>
+        <li><strong>Aktienfonds</strong> mit mindestens 51 % Aktien: <span class="hl">30 % steuerfrei</span></li>
+        <li><strong>Mischfonds</strong> mit mindestens 25 % Aktien: <span class="hl">15 % steuerfrei</span></li>
+        <li><strong>Immobilienfonds Inland</strong>: <span class="hl">60 % steuerfrei</span></li>
+        <li><strong>Immobilienfonds Ausland</strong>: <span class="hl">80 % steuerfrei</span></li>
+      </ul>
+      <h4>Sparerpauschbetrag</h4>
+      <p>
+        Vor der Steuer ziehe ich den jährlichen <strong>Sparerpauschbetrag</strong> ab. Er liegt bei 1.000 € für Einzelpersonen und 2.000 € für gemeinsam Veranlagte. Der Rechner besteuert den realisierten Gewinn so als würdest du zum FIRE-Zeitpunkt alles verkaufen. <strong>Netto-Kapital</strong> ist dann dein Endkapital abzüglich dieser Steuerlast.
+      </p>
+    </div>
+
+    <!-- Monte Carlo -->
+    <div class="guide-card">
+      <h3><span class="gi">🎲</span> Die Monte-Carlo-Simulation</h3>
+      <p>
+        Die deterministischen Charts zeigen einen glatten Durchschnittsverlauf. Die Renditen schwanken. Deshalb simuliert der Rechner hunderte mögliche Verläufe. In jeder Simulation erhält jedes Jahr eine zufällige Rendite, die um deine erwartete Rendite µ mit der eingestellten <span class="hl2">Volatilität σ</span> streut.
+      </p>
+      <p>
+        Der <strong>Szenarien-Fächer</strong> zeigt diese Pfade über alle Phasen hinweg in <span class="hl">realer heutiger Kaufkraft</span>. Jeder Wert ist um die Inflation bereinigt, damit du die Beträge mit heutigen Werten vergleichen kannst. Die dicken Linien sind die Perzentile. <span class="hl3">P10</span> ist der pessimistische Rand; nur jeder zehnte Pfad ist schlechter. <span class="hl">P50</span> ist der Median und <span class="hl2">P90</span> der optimistische Rand. Die senkrechte Linie markiert deinen FIRE-Übergang. Die reale Darstellung verändert das Pleiterisiko nicht, denn eine leere Kasse bleibt nominal wie real null.
+      </p>
+      <p>
+        Derselbe Seed liefert dasselbe Ergebnis, daher ändern andere Regler die vorhandenen Pfade nicht. Ein <strong>Klick auf den Chart würfelt neu</strong>. Mehr Simulationen stabilisieren das Ergebnis, höhere Volatilität spreizt den Fächer.
+      </p>
+    </div>
+
+    <!-- Pleiterisiko -->
+    <div class="guide-card">
+      <h3><span class="gi">🔥</span> Das Pleiterisiko richtig deuten</h3>
+      <p>
+        Ein Pfad gilt als <strong>Pleite</strong>, wenn das Geld vor dem Lebensende ausgeht. Der Prozentsatz steigt mit einer höheren gewünschten Entnahme, mehr Volatilität und einem längeren Ruhestand. Er sinkt bei höherer Rendite, höherer Sparrate und einem kürzeren Zeitraum.
+      </p>
+      <p>
+        Die Standardwerte ergeben ein vergleichsweise hohes Risiko. Sieben Prozent sind eine Brutto-Annahme. Nach Inflation, Kosten und dem sogenannten <span class="hl3">Volatilitäts-Drag</span> bleiben real nur etwa 3,6 % geometrische Rendite. Das liegt kaum über den vier Prozent, die entnommen werden. Viele Pfade scheitern deshalb an einer ungünstigen Reihenfolge der Renditen.
+      </p>
+      <p>
+        Das ist der <strong>Sequence-of-Returns-Effekt</strong>. Schlechte Jahre direkt nach dem Ruhestandsbeginn wirken sich besonders stark aus, weil du gleichzeitig Geld entnimmst und Kapital für die Erholung fehlt. Die 4-%-Regel wurde für 30 Jahre und historisch höhere reale Renditen untersucht, nicht für 40 Jahre bei 3,6 % real.
+      </p>
+      <h4>So senkst du das Risiko</h4>
+      <ul>
+        <li>realistischere oder höhere Renditeannahme</li>
+        <li>niedrigere Entnahmerate etwa 3,5 statt 4 %</li>
+        <li>kürzerer Ruhestand durch späteren FIRE-Zeitpunkt</li>
+        <li>geringere Volatilität durch breitere Streuung</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="guide-disclaimer">
+    Hinweis: Dieser Rechner ist ein Bildungswerkzeug und keine Steuer- oder Anlageberatung. Alle Werte sind Modellannahmen. Reale Renditen, Steuern und Gesetze ändern sich. Vergangene Wertentwicklung ist keine Garantie für die Zukunft.
+  </p>
+</section>
+
+<hr class="divider">
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">sms<span>.</span></a>
+      <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="../projekte/">Projekte</a></li>
+        <li><a href="../downloads">Downloads</a></li>
+        <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+        <li><a href="../vision">Vision</a></li>
+        <li><a href="../wissen">Wissen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <ul>
+        <li><a href="../impressum">Impressum</a></li>
+        <li><a href="../#info">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Simon Stark</span>
+    <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+  </div>
+</footer>
+
+<script>
+  // Mobile hamburger menu
+  (function () {
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    }
+  })();
+</script>
+
+<script>
+// ═══════════════════════════════════════════════
+//  CONSTANTS
+// ═══════════════════════════════════════════════
+const CURRENT_YEAR = 2026;
+const SAFE_SWR = 4;         // 4 %-Regel = sicherster Standard (Trinity-Studie)
+const KEST = 0.25;          // Abgeltungssteuer
+const SOLI = 0.055;         // Solidaritätszuschlag (auf die KESt)
+const COL ={ acc:'#6ee7b7', acc2:'#818cf8', acc3:'#f472b6', danger:'#f87171', muted:'#64748b' };
+
+// ═══════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════
+const S = {
+  start: 10000, rate: 1000, age: 20, fireAge: 50, life: 90,
+  rendite: 9, inflation: 2, ter: 0.1, target: 2500,
+  swr: 4,                   // Entnahmerate p.a. in % (4 % = sicherster Standard)
+  // Monte Carlo
+  mcRuns: 500, mcVol: 10, mcSeed: 20260626,
+  // Steuer
+  kirche: 0, pausch: 1000,
+  taxMode: 'easy',          // 'easy' | 'expert'
+  easyTeilfrei: true,       // Easy-Modus: Teilfreistellung Aktienfonds 30 % an/aus
+  // Experten-Modus: Portfolio-Mix nach Fondstyp (Allokation in %)
+  mix: { aktien: 100, misch: 0, immoInland: 0, immoAusland: 0, sonstige: 0 },
+};
+
+// Standard-Teilfreistellung je Fondstyp (§ 20 InvStG)
+const FUND_TF = { aktien: 30, misch: 15, immoInland: 60, immoAusland: 80, sonstige: 0 };
+const FUND_ORDER = ['aktien', 'misch', 'immoInland', 'immoAusland', 'sonstige'];
+
+// Slider-Registry: key → {input-id, label-id, formatter}
+const fmtMoney = v => fmt(v);
+const fmtYears = v => v + ' Jahre';
+const fmtPct1  = v => parseFloat(v).toFixed(1).replace('.', ',') + ' %';
+const fmtPct2  = v => parseFloat(v).toFixed(2).replace('.', ',') + ' %';
+const fmtInt   = v => String(Math.round(v));
+
+const CTRL = {
+  start:     { id:'r-start',    lab:'lv-start',    f:fmtMoney },
+  rate:      { id:'r-rate',     lab:'lv-rate',     f:fmtMoney },
+  age:       { id:'r-age',      lab:'lv-age',      f:fmtYears },
+  fireAge:   { id:'r-fireage',  lab:'lv-fireage',  f:fmtYears },
+  life:      { id:'r-life',     lab:'lv-life',     f:fmtYears },
+  rendite:   { id:'r-rendite',  lab:'lv-rendite',  f:fmtPct1 },
+  inflation: { id:'r-inflation',lab:'lv-inflation',f:fmtPct1 },
+  ter:       { id:'r-ter',      lab:'lv-ter',      f:fmtPct2 },
+  target:    { id:'r-target',   lab:'lv-target',   f:fmtMoney },
+  swr:       { id:'r-swr',      lab:'lv-swr',      f:fmtPct1 },
+  mcRuns:    { id:'r-mcruns',   lab:'lv-mcruns',   f:fmtInt },
+  mcVol:     { id:'r-mcvol',    lab:'lv-mcvol',    f:fmtPct1 },
+};
+
+const fmt = v => {
+  const n = Number(v) || 0;
+  if (Math.abs(n) >= 1e6) return (n/1e6).toFixed(2).replace('.', ',') + ' Mio. €';
+  return Math.round(n).toLocaleString('de-DE') + ' €';
+};
+const setLab = key => { const c = CTRL[key]; if (c) document.getElementById(c.lab).textContent = c.f(S[key]); };
+
+// ── generische Slider-Handler ──
+function setVal(key, val) { S[key] = parseFloat(val); setLab(key); update(); }
+
+function syncAge(val) {
+  S.age = parseInt(val);
+  if (S.fireAge <= S.age) S.fireAge = S.age + 1;
+  document.getElementById('r-fireage').min = S.age + 1;
+  pushSlider('fireAge', S.fireAge);
+  setLab('age');
+  update();
+}
+function syncFireAge(val) {
+  S.fireAge = parseInt(val);
+  if (S.fireAge <= S.age) S.fireAge = S.age + 1;
+  pushSlider('fireAge', S.fireAge);
+  update();
+}
+// setzt Slider-Wert + Label im DOM aus dem State
+function pushSlider(key, value) {
+  S[key] = value;
+  const c = CTRL[key]; if (!c) return;
+  const el = document.getElementById(c.id);
+  if (el) { if (value < parseInt(el.min)) el.min = value; el.value = value; }
+  setLab(key);
+}
+
+function toggleGroup(id) { document.getElementById(id).classList.toggle('open'); }
+
+function setHint(id, show, type) {
+  const el = document.getElementById(id); if (!el) return;
+  el.classList.toggle('show', show);
+  el.classList.toggle('warn', type === 'warn');
+  el.classList.toggle('bad', type === 'bad');
+}
+
+// Verkleinert die Ringschrift, bis der Text in den Kreis passt (auch 5-stellige %-Werte)
+function fitRingText(el) {
+  el.style.fontSize = '1.2rem';
+  let guard = 0;
+  while (el.scrollWidth > el.clientWidth && guard < 24) {
+    const cur = parseFloat(getComputedStyle(el).fontSize);
+    if (cur <= 7) break;
+    el.style.fontSize = (cur - 0.6) + 'px';
+    guard++;
+  }
+}
+
+// ═══════════════════════════════════════════════
+//  CALC
+// ═══════════════════════════════════════════════
+const netRate = () => (S.rendite - S.ter) / 100;   // Nominalrendite nach Kosten
+const sparYears = () => Math.max(1, S.fireAge - S.age);
+// Aufzinsung der heutigen Kaufkraft bis zum FIRE-Zeitpunkt
+const inflToFire = () => Math.pow(1 + S.inflation / 100, sparYears());
+// gewünschte Entnahme ist in heutiger Kaufkraft → bis FIRE hochinflationieren
+const annualWithdrawNominal = () => S.target * 12 * inflToFire();
+const fireZiel  = () => annualWithdrawNominal() / (S.swr / 100);   // nötiges Nominalkapital bei FIRE
+
+// Sparphase: ein Datenpunkt pro Jahr (inkl. Jahr 0 = heute)
+function calcGrowth(rateOverride) {
+  const monthly = (rateOverride ?? netRate()) / 12;
+  const inflation = S.inflation / 100;
+  const years = sparYears();
+  let portfolio = S.start;
+  let totalIn = S.start;
+  const rows = [{ year:0, age:S.age, portfolio, totalIn, gain:0, real:portfolio }];
+
+  for (let y = 1; y <= years; y++) {
+    for (let m = 0; m < 12; m++) portfolio += portfolio*monthly + S.rate;
+    totalIn += S.rate * 12;
+    const real = portfolio * Math.pow(1/(1+inflation), y);
+    rows.push({ year:y, age:S.age+y, portfolio, totalIn, gain:Math.max(0, portfolio-totalIn), real });
+  }
+  return rows;
+}
+
+// Entnahmephase: gewünschte Entnahme, inflationsbereinigt, ein Punkt pro Jahr
+function calcWithdraw(startCapital, annualReturn) {
+  const inflation = S.inflation / 100;
+  const years = Math.max(1, S.life - S.fireAge);
+  const baseWithdraw = annualWithdrawNominal();   // heutige Kaufkraft, auf FIRE hochinflationiert
+  let portfolio = startCapital;
+  const rows = [{ age:S.fireAge, portfolio }];
+
+  for (let y = 1; y <= years; y++) {
+    const withdraw = baseWithdraw * Math.pow(1+inflation, y-1);
+    portfolio = portfolio*(1+annualReturn) - withdraw;
+    if (portfolio < 0) portfolio = 0;
+    rows.push({ age:S.fireAge+y, portfolio });
+  }
+  return rows;
+}
+
+// ── MONTE CARLO ──
+// Deterministischer PRNG (mulberry32): gleicher Seed ⇒ gleiches Ergebnis (kein Flackern).
+// Neu würfeln = neuer Seed.
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function randnFrom(rng) {
+  let u = 0, v = 0;
+  while (u === 0) u = rng();
+  while (v === 0) v = rng();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+// Simuliert Spar- + Entnahmephase. Liefert Akkumulations-Fächer + Pleite-Wahrscheinlichkeit.
+function runMC() {
+  const n = Math.round(S.mcRuns);
+  const years = sparYears();
+  const retYears = Math.max(1, S.life - S.fireAge);
+  const mu = netRate();
+  const sigma = S.mcVol / 100;
+  const inflation = S.inflation / 100;
+  const annualW = annualWithdrawNominal();   // heutige Kaufkraft, auf FIRE hochinflationiert
+  const rng = mulberry32(S.mcSeed);
+
+  const muM = mu / 12, sigM = sigma / Math.sqrt(12);
+  const paths = [];   // vollständige Verläufe (Spar- + Entnahmephase, years+retYears+1 Punkte)
+  let failures = 0;
+
+  for (let i = 0; i < n; i++) {
+    // Sparphase (monatlich, jährliche Punkte)
+    let p = S.start;
+    const path = [p];
+    for (let y = 1; y <= years; y++) {
+      const r = mu + sigma * randnFrom(rng);
+      for (let m = 0; m < 12; m++) p += p * (r / 12) + S.rate;
+      if (p < 0) p = 0;
+      path.push(p);
+    }
+    // Entnahmephase (monatlich) — Verlauf bis zur Lebenserwartung weiterzeichnen
+    const baseW = annualW;          // gewünschte Entnahme, inflationsindexiert
+    let failed = false;
+    for (let y = 1; y <= retYears; y++) {
+      if (!failed) {
+        const wMonth = baseW * Math.pow(1 + inflation, y - 1) / 12;
+        for (let m = 0; m < 12; m++) {
+          p = p * (1 + muM + sigM * randnFrom(rng)) - wMonth;
+          if (p <= 0) { p = 0; failed = true; break; }
+        }
+      }
+      path.push(p);   // nach Pleite bleibt der Pfad auf 0
+    }
+    if (failed) failures++;
+    paths.push(path);
+  }
+  return { paths, failRate: failures / n, n, years, retYears, totalYears: years + retYears };
+}
+// Perzentil über alle Pfade an einem Jahres-Index
+function pctlAt(paths, idx, q) {
+  const vals = paths.map(p => p[idx]).sort((a, b) => a - b);
+  return vals[Math.min(vals.length - 1, Math.floor(q * vals.length))];
+}
+// Neu würfeln (neuer Seed) — vom Klick auf den MC-Chart ausgelöst
+function rerollMC() {
+  S.mcSeed = (Math.random() * 2147483647) | 0;
+  update();
+}
+
+// ── DEUTSCHE STEUER (Abgeltungssteuer) ──
+// Kombinierter Satz: 25 % KESt × (1 + Soli 5,5 % + Kirchensteuer)
+function combinedTaxRate() {
+  return KEST * (1 + SOLI + S.kirche/100);
+}
+// Effektive Teilfreistellung (0–1). Easy: Aktienfonds 30 % an/aus.
+// Experte: nach Allokation gewichteter Durchschnitt über alle Fondstypen.
+function effTeilfreiRate() {
+  if (S.taxMode === 'easy') return S.easyTeilfrei ? FUND_TF.aktien/100 : 0;
+  let alloc = 0, weighted = 0;
+  for (const k of FUND_ORDER) { alloc += S.mix[k]; weighted += S.mix[k] * FUND_TF[k]; }
+  return alloc > 0 ? (weighted / alloc) / 100 : 0;
+}
+
+// Steuer auf einen realisierten Kapitalgewinn (Verkauf zum FIRE-Zeitpunkt).
+function calcTax(gain) {
+  const brutto = Math.max(0, gain);
+  const teilfreiRate = effTeilfreiRate();
+  const freigestellt = brutto * teilfreiRate;
+  const nachTeilfrei = brutto - freigestellt;
+  const pauschGenutzt = Math.min(S.pausch, nachTeilfrei);
+  const steuerbar = Math.max(0, nachTeilfrei - pauschGenutzt);
+  const kest = steuerbar * KEST;
+  const soli = kest * SOLI;
+  const kirche = kest * (S.kirche/100);
+  const total = kest + soli + kirche;
+  return {
+    brutto, teilfreiRate, freigestellt, pauschGenutzt, steuerbar,
+    kest, soli, kirche, total,
+    netto: brutto - total,
+    effRate: brutto > 0 ? total / brutto : 0,
+  };
+}
+
+// ── Steuer-Bedienelemente ──
+function setKirche(v, btn) { S.kirche = v; segActivate('seg-kirche', btn); update(); }
+function setPausch(v, btn) { S.pausch = v; segActivate('seg-pausch', btn); update(); }
+function setTaxMode(mode, btn) {
+  S.taxMode = mode;
+  segActivate('seg-taxmode', btn);
+  document.getElementById('taxSection').dataset.mode = mode;
+  update();
+}
+// Easy-Schalter: Teilfreistellung Aktienfonds 30 % an/aus
+function setTeilfreiEasy(on) { S.easyTeilfrei = on; update(); }
+// Experte: Allokation eines Fondstyps im Portfolio-Mix
+function setMix(key, val) {
+  S.mix[key] = parseFloat(val);
+  const lab = document.getElementById('lv-mix-' + key);
+  if (lab) lab.textContent = Math.round(S.mix[key]) + ' %';
+  update();
+}
+function segActivate(groupId, btn) {
+  document.querySelectorAll('#'+groupId+' button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ═══════════════════════════════════════════════
+//  CHARTS
+// ═══════════════════════════════════════════════
+let charts = {};
+
+// Plugin: zeichnet eine schattierte "Ziel erreicht"-Zone über der FIRE-Ziel-Linie,
+// beschriftet die Ziel-Linie und markiert den FIRE-Kreuzungspunkt im Chart.
+const goalZonePlugin = {
+  id: 'goalZone',
+  beforeDatasetsDraw(chart) {
+    const z = chart.$goal;
+    if (!z || z.value == null) return;
+    const { ctx, chartArea, scales } = chart;
+    if (!chartArea) return;
+    let y = scales.y.getPixelForValue(z.value);
+    y = Math.max(chartArea.top, Math.min(chartArea.bottom, y));
+    // Zielzone (oberhalb der Linie = "über dem Ziel")
+    ctx.save();
+    ctx.fillStyle = 'rgba(244,114,182,.07)';
+    ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, y - chartArea.top);
+    ctx.restore();
+  },
+  afterDatasetsDraw(chart) {
+    const z = chart.$goal;
+    if (!z || z.value == null) return;
+    const { ctx, chartArea, scales } = chart;
+    if (!chartArea) return;
+    let y = scales.y.getPixelForValue(z.value);
+    const clamped = Math.max(chartArea.top + 8, Math.min(chartArea.bottom, y));
+    // Label an der Ziel-Linie
+    ctx.save();
+    ctx.font = '700 11px Syne, sans-serif';
+    ctx.fillStyle = COL.acc3;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'bottom';
+    ctx.fillText('🎯 FIRE-Ziel ' + z.label, chartArea.left + 8, clamped - 4);
+    ctx.restore();
+    // Kreuzungspunkt markieren (Pixel erst hier auflösen — Layout ist fertig)
+    if (z.crossIdx != null && scales.x) {
+      const px = scales.x.getPixelForValue(z.crossIdx), py = scales.y.getPixelForValue(z.value);
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(px, py, 6, 0, Math.PI * 2);
+      ctx.fillStyle = COL.acc;
+      ctx.fill();
+      ctx.lineWidth = 2; ctx.strokeStyle = '#0c0c0f'; ctx.stroke();
+      ctx.font = '700 11px Syne, sans-serif';
+      ctx.fillStyle = COL.acc;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+      ctx.fillText('🔥 erreicht', px, py - 10);
+      ctx.restore();
+    }
+  }
+};
+Chart.register(goalZonePlugin);
+
+// Plugin: vertikale Trennlinie zwischen Spar- und Entnahmephase (FIRE) im MC-Chart
+const phaseLinePlugin = {
+  id: 'phaseLine',
+  afterDatasetsDraw(chart) {
+    const idx = chart.$fireIdx;
+    if (idx == null) return;
+    const { ctx, chartArea, scales } = chart;
+    if (!chartArea || !scales.x) return;
+    const x = scales.x.getPixelForValue(idx);
+    if (x < chartArea.left || x > chartArea.right) return;
+    ctx.save();
+    ctx.strokeStyle = 'rgba(244,114,182,.5)';
+    ctx.lineWidth = 1.5; ctx.setLineDash([5, 4]);
+    ctx.beginPath(); ctx.moveTo(x, chartArea.top); ctx.lineTo(x, chartArea.bottom); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = COL.acc3; ctx.font = '700 10px Syne, sans-serif';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+    ctx.fillText('🔥 FIRE', x, chartArea.top + 2);
+    ctx.restore();
+  }
+};
+Chart.register(phaseLinePlugin);
+
+function axisY() {
+  return { grid:{ color:'rgba(30,30,46,.8)' }, ticks:{ color:'#64748b', font:{size:10},
+    callback: v => Math.abs(v)>=1e6 ? (v/1e6).toFixed(1)+'M€' : (Math.abs(v)>=1000 ? (v/1000).toFixed(0)+'K€' : Math.round(v)+'€') } };
+}
+// Logarithmische Y-Achse — beschriftet nur die 1/2/5-Dekaden-Ticks, damit nichts überlappt
+function axisYLog() {
+  return { type:'logarithmic', grid:{ color:'rgba(30,30,46,.8)' }, ticks:{ color:'#64748b', font:{size:10},
+    callback: v => {
+      if (v <= 0) return '';
+      const pow = Math.pow(10, Math.floor(Math.log10(v)));
+      const m = Math.round(v / pow);
+      if (m !== 1 && m !== 2 && m !== 5) return '';
+      return Math.abs(v)>=1e6 ? (v/1e6)+'M€' : (Math.abs(v)>=1000 ? (v/1000)+'K€' : Math.round(v)+'€');
+    } } };
+}
+function axisX(maxTicks) {
+  return { grid:{ color:'rgba(30,30,46,.8)' }, ticks:{ color:'#64748b', font:{size:10}, autoSkip:true, maxTicksLimit:maxTicks } };
+}
+function chartOptions(maxTicks, logY) {
+  return {
+    responsive:true, maintainAspectRatio:false,
+    interaction:{ intersect:false, mode:'index' },
+    plugins:{
+      legend:{ display:true, labels:{ color:'#94a3b8', font:{size:10}, boxWidth:14, padding:8, usePointStyle:true,
+        filter: item => item.text != null && item.text !== '' } },
+      tooltip:{ backgroundColor:'#16161f', borderColor:'#1e1e2e', borderWidth:1, titleColor:'#6ee7b7', bodyColor:'#e2e8f0', padding:10,
+        filter: item => item.dataset.label != null && item.raw != null,
+        callbacks:{ label: c => c.dataset.label + ': ' + fmt(c.raw) } }
+    },
+    scales:{ x:axisX(maxTicks), y: logY ? axisYLog() : axisY() }
+  };
+}
+
+function initCharts() {
+  charts.growth   = new Chart(document.getElementById('chartGrowth'),   { type:'line', data:{labels:[],datasets:[]}, options:chartOptions(15) });
+  charts.withdraw = new Chart(document.getElementById('chartWithdraw'), { type:'line', data:{labels:[],datasets:[]}, options:chartOptions(15, true) });
+  const mcOpt = chartOptions(22, true);   // logarithmische Y-Achse
+  mcOpt.scales.y.min = 10000;             // untere Grenze 10K€
+  mcOpt.elements = { point: { radius: 0 } };
+  mcOpt.animation = false;   // schnelle Aktualisierung bei vielen Pfaden
+  charts.mc = new Chart(document.getElementById('chartMC'), { type:'line', data:{labels:[],datasets:[]}, options:mcOpt });
+}
+
+// ═══════════════════════════════════════════════
+//  UI / UPDATE
+// ═══════════════════════════════════════════════
+function update() {
+  const years = sparYears();
+  const ziel = fireZiel();
+  const netR = netRate();
+  const realR = (S.rendite - S.inflation - S.ter) / 100;
+
+  // ── Sparphase ──
+  const rows = calcGrowth();
+  const finalCap = rows[rows.length-1].portfolio;
+  const totalIn = rows[rows.length-1].totalIn;
+  const realCap = rows[rows.length-1].real;
+
+  // ── FIRE-Erreichbarkeit (erstes Jahr Portfolio ≥ Ziel) ──
+  let fireIdx = -1;
+  for (let i = 0; i < rows.length; i++) { if (rows[i].portfolio >= ziel) { fireIdx = i; break; } }
+  const reached = fireIdx >= 0;
+  const fireYearNo = reached ? rows[fireIdx].year : years;
+  const fireCalYear = CURRENT_YEAR + fireYearNo;
+  const fireAtAge = S.age + fireYearNo;
+
+  const monthlyW = finalCap * (S.swr / 100) / 12;
+  const progressPct = (finalCap / ziel) * 100;   // FIRE-Fortschritt: Kapital ÷ Ziel (kann > 100 % sein)
+  const overshoot = progressPct > 100;
+
+  // ── Steuer auf den Kapitalgewinn (Verkauf zum FIRE-Zeitpunkt) ──
+  const gain = Math.max(0, finalCap - totalIn);
+  const tax = calcTax(gain);
+  const netCapital = finalCap - tax.total;                    // Geld nach Steuern
+  // Netto-Monatsentnahme: pro entnommenem € ist nur der Gewinnanteil steuerpflichtig
+  const gainShare = finalCap > 0 ? gain / finalCap : 0;
+  const netMonthlyW = monthlyW * (1 - gainShare * (1 - tax.teilfreiRate) * combinedTaxRate());
+
+  // ── HERO ──
+  const fb = document.getElementById('fireBig');
+  const fm = document.getElementById('fireMeta');
+  const fc = document.getElementById('fireCap');
+  if (reached && fireYearNo === 0) {
+    fb.textContent = 'FIRE bereits erreicht';
+        fm.textContent = 'mit ' + S.age + ' Jahren | ' + CURRENT_YEAR;
+        fc.innerHTML = 'Kapital: ' + fmt(finalCap) + ' von ' + fmt(ziel) + ' Ziel | <span class="ok">✓ erreicht</span>';
+  } else if (reached) {
+    fb.textContent = 'in ' + fireYearNo + ' Jahr' + (fireYearNo === 1 ? '' : 'en');
+        fm.textContent = fireCalYear + ' | mit ' + fireAtAge + ' Jahren';
+        fc.innerHTML = 'Kapital: ' + fmt(rows[fireIdx].portfolio) + ' von ' + fmt(ziel) + ' Ziel | <span class="ok">✓ erreicht</span>';
+  } else {
+    fb.textContent = 'noch nicht erreicht';
+    fm.textContent = 'in ' + years + ' Jahren erst ' + fmt(finalCap);
+        fc.innerHTML = 'Kapital: ' + fmt(finalCap) + ' von ' + fmt(ziel) + ' Ziel | <span class="bad">Ziel verfehlt</span>';
+  }
+  // mögliche/Netto-Entnahme in heutiger Kaufkraft anzeigen (vergleichbar mit der Eingabe)
+  const toToday = 1 / inflToFire();
+  document.getElementById('mkEntnahme').textContent = fmt(monthlyW * toToday);
+  document.getElementById('mkReal').textContent = fmt(realCap);
+  document.getElementById('mkZiel').textContent = fmt(ziel);
+  document.getElementById('mkNetEntnahme').textContent = fmt(netMonthlyW * toToday);
+  document.getElementById('mkNetCapital').textContent = fmt(netCapital);
+  const mkProg = document.getElementById('mkProgress');
+  mkProg.textContent = Math.round(progressPct) + '%';
+  mkProg.style.color = progressPct >= 80 ? 'var(--accent)' : (progressPct >= 50 ? 'var(--accent2)' : 'var(--accent3)');
+
+  // ── RESULT HERO ──
+  document.getElementById('resCapital').textContent = fmt(finalCap);
+  document.getElementById('resCapitalSub').textContent = 'Zum Ende der Sparphase nach ' + years + ' Jahren';
+
+  const ringFill = Math.min(100, progressPct);   // Gradient max. Vollkreis
+  const ringColor = progressPct >= 80 ? 'var(--accent)' : (progressPct >= 50 ? 'var(--accent2)' : 'var(--accent3)');
+  document.getElementById('fireRing').style.background =
+    `conic-gradient(${ringColor} 0deg, ${ringColor} ${ringFill*3.6}deg, var(--border) ${ringFill*3.6}deg)`;
+  const ry = document.getElementById('ringYr');
+  ry.textContent = Math.round(progressPct) + '%';   // echter Wert, auch 5-stellig
+  ry.style.color = ringColor;
+  fitRingText(ry);   // Schrift verkleinern, bis der %-Wert in den Kreis passt
+
+  // ── Ziel-Fortschrittsbalken (Überschießen erlaubt) ──
+  const goalBar = document.querySelector('.goal-bar');
+  document.getElementById('goalFill').style.width = Math.min(100, progressPct).toFixed(1) + '%';
+  // Flaggen-Position: unter Ziel → rechts (Ziel = volle Strecke);
+  // über Ziel → Ziel relativ zum erreichten Gesamtkapital (z. B. 750k von 1,5 Mio → Mitte)
+  const flagPos = overshoot ? Math.min(100, (ziel / finalCap) * 100) : 100;
+  document.getElementById('goalFlag').style.left = flagPos + '%';
+  document.getElementById('goalCur').textContent = 'Projiziert: ' + fmt(finalCap) + ' (' + Math.round(progressPct) + '%)';
+  document.getElementById('goalTarget').innerHTML = overshoot
+    ? fmt(ziel) + ' <span class="over-badge">| +' + Math.round(progressPct - 100) + '% über Ziel</span>'
+    : fmt(ziel);
+  goalBar.classList.toggle('done', finalCap >= ziel);
+  goalBar.classList.toggle('over', overshoot);
+
+  const badge = document.getElementById('statusBadge');
+  if (overshoot) {
+    badge.className = 'status-badge ok';
+    badge.innerHTML = '<span class="status-dot"></span>Ziel übertroffen: ' + fmt(finalCap - ziel) + ' über dem FIRE-Ziel';
+  } else if (reached) {
+    badge.className = 'status-badge ok';
+    badge.innerHTML = '<span class="status-dot"></span>FIRE erreichbar in Jahr ' + fireYearNo + ' (' + fireCalYear + ')';
+  } else if (finalCap >= ziel*0.8) {
+    badge.className = 'status-badge warn';
+    badge.innerHTML = '<span class="status-dot"></span>Knapp: erhöhe Sparrate oder Zeithorizont';
+  } else {
+    badge.className = 'status-badge bad';
+    badge.innerHTML = '<span class="status-dot"></span>Ziel in der Sparphase nicht erreicht';
+  }
+
+  // ── Steuer-Sektion rendern ──
+  renderTax(tax, netCapital);
+
+  // ── INSIGHT CARDS ──
+  document.getElementById('ins-einz').textContent = fmt(totalIn);
+  document.getElementById('ins-zins').textContent = fmt(Math.max(0, finalCap - totalIn));
+  document.getElementById('ins-mult').textContent = (totalIn > 0 ? (finalCap / totalIn).toFixed(1).replace('.', ',') : '–') + '×';
+
+  // ── VALIDIERUNGS-HINTS ──
+  setHint('hint-fireage', S.fireAge <= S.age, 'bad');
+  setHint('hint-life', S.life <= S.fireAge, 'warn');
+  setHint('hint-real', realR < 0, 'warn');
+
+  // ── CHART 1: Sparphase ── (X = Alter, alle Jahre als Datenpunkte)
+  const gLabels = rows.map(r => 'A' + r.age);
+  charts.growth.options.scales.x.ticks.maxTicksLimit = Math.min(years, 15);
+  charts.growth.data.labels = gLabels;
+  charts.growth.data.datasets = [
+    { label:'Portfolio', data:rows.map(r => Math.round(r.portfolio)),
+      borderColor:COL.acc, backgroundColor:'rgba(110,231,183,.07)', fill:true, borderWidth:2.5, pointRadius:0, tension:.35 },
+    { label:'Eingezahlt', data:rows.map(r => Math.round(r.totalIn)),
+      borderColor:COL.muted, borderDash:[5,4], fill:false, borderWidth:1.5, pointRadius:0, tension:.35 },
+    { label:'FIRE-Ziel', data:rows.map(() => Math.round(ziel)),
+      borderColor:COL.acc3, borderDash:[7,5], fill:false, borderWidth:2.5, pointRadius:0, tension:0 },
+  ];
+  // Ziel-Annotation für das Plugin (Zone + Label + Kreuzungspunkt).
+  // crossIdx = Kategorie-Index; der Pixel wird im Plugin zur Zeichenzeit aufgelöst.
+  charts.growth.$goal = {
+    value: ziel,
+    label: '(' + fmt(ziel) + ')',
+    crossIdx: reached ? fireIdx : null,
+  };
+  charts.growth.update();
+
+  // ── CHART 2: Entnahmephase ── (X = Alter, drei Renditeszenarien)
+  const wReal = calcWithdraw(finalCap, netR);
+  const wOpt  = calcWithdraw(finalCap, netR + 0.02);
+  const wPes  = calcWithdraw(finalCap, netR - 0.02);
+  const wLabels = wReal.map(r => 'A' + r.age);
+  const retYears = Math.max(1, S.life - S.fireAge);
+  // 0 (Portfolio erschöpft) → null, damit die Log-Achse nicht bricht und die Linie sauber endet
+  const logVal = r => r.portfolio > 0 ? Math.round(r.portfolio) : null;
+  charts.withdraw.options.scales.x.ticks.maxTicksLimit = Math.min(retYears, 15);
+  charts.withdraw.data.labels = wLabels;
+  charts.withdraw.data.datasets = [
+    { label:'Optimistisch (+2%)', data:wOpt.map(logVal),
+      borderColor:'rgba(110,231,183,.55)', borderDash:[5,4], fill:false, borderWidth:1.5, pointRadius:0, tension:.35 },
+    { label:'Realistisch', data:wReal.map(logVal),
+      borderColor:COL.acc2, fill:false, borderWidth:2.5, pointRadius:0, tension:.35 },
+    { label:'Pessimistisch (−2%)', data:wPes.map(logVal),
+      borderColor:'rgba(248,113,113,.6)', borderDash:[5,4], fill:false, borderWidth:1.5, pointRadius:0, tension:.35 },
+  ];
+  charts.withdraw.update();
+
+  // ── Entnahmerate-Hinweis (4 % = sicherster Standard) ──
+  const swrNote = document.getElementById('swrNote');
+  if (S.swr <= SAFE_SWR) {
+    swrNote.className = 'swr-note safe';
+    swrNote.innerHTML = '🛡️ ' + fmtPct1(S.swr) + ' | innerhalb des Richtwerts (≤ 4 %)';
+  } else if (S.swr <= 5) {
+    swrNote.className = 'swr-note risky';
+    swrNote.innerHTML = '⚠️ ' + fmtPct1(S.swr) + ' | über der 4-%-Regel, höhere Zielannahme';
+  } else {
+    swrNote.className = 'swr-note bad';
+    swrNote.innerHTML = '🔥 ' + fmtPct1(S.swr) + ' | weit über dem Richtwert, sehr optimistische Zielannahme';
+  }
+
+  // ── MONTE CARLO: Szenarien-Fächer über alle Phasen + Pleite-Wahrscheinlichkeit ──
+  const mc = runMC();
+  const mcLabels = Array.from({ length: mc.totalYears + 1 }, (_, i) => 'J' + i);
+  // Anzeige in realen Euro (heutige Kaufkraft): Wert bei Jahr i durch (1+Inflation)^i teilen.
+  // 0 → null (Log-Achse + Pleite-Pfad endet sauber). Das Pleiterisiko bleibt davon unberührt.
+  const mcInfl = S.inflation / 100;
+  const realv = (v, i) => v > 0 ? Math.round(v / Math.pow(1 + mcInfl, i)) : null;
+  const p10 = mcLabels.map((_, i) => realv(pctlAt(mc.paths, i, 0.10), i));
+  const p50 = mcLabels.map((_, i) => realv(pctlAt(mc.paths, i, 0.50), i));
+  const p90 = mcLabels.map((_, i) => realv(pctlAt(mc.paths, i, 0.90), i));
+  const mcDs = [];
+  const step = Math.max(1, Math.floor(mc.paths.length / 28));
+  for (let i = 0; i < mc.paths.length; i += step) {
+    mcDs.push({ data: mc.paths[i].map((v, yi) => realv(v, yi)), borderColor: 'rgba(148,163,184,.10)', borderWidth: 1, pointRadius: 0, fill: false, tension: .2 });
+  }
+  mcDs.push({ label: 'P10', data: p10, borderColor: COL.danger, borderDash: [4, 4], borderWidth: 2, pointRadius: 0, fill: false, tension: .2 });
+  mcDs.push({ label: 'P50 (Median)', data: p50, borderColor: COL.acc, borderWidth: 2.6, pointRadius: 0, fill: false, tension: .2 });
+  mcDs.push({ label: 'P90', data: p90, borderColor: COL.acc2, borderDash: [4, 4], borderWidth: 2, pointRadius: 0, fill: false, tension: .2 });
+  charts.mc.options.scales.x.ticks.maxTicksLimit = Math.min(mc.totalYears + 1, 22);
+  charts.mc.data.labels = mcLabels;
+  charts.mc.data.datasets = mcDs;
+  charts.mc.$fireIdx = mc.years;   // Trennlinie Spar-/Entnahmephase
+  charts.mc.update();
+
+  const failPct = mc.failRate * 100;
+  const mcBadge = document.getElementById('mcFailBadge');
+  const sev = failPct < 5 ? 'safe' : (failPct < 15 ? 'risky' : 'bad');
+  mcBadge.className = 'mc-fail-badge ' + sev;
+  mcBadge.textContent = 'Pleiterisiko: ' + failPct.toFixed(1).replace('.', ',') + ' % (' + mc.n + ' Sim.)';
+
+  // ── TABELLE (Sparphase + Entnahmephase bis Lebensende) ──
+  const inflation = S.inflation / 100;
+  const tableRows = rows.map(r => ({ ...r, phase:'save' }));
+  for (let k = 1; k < wReal.length; k++) {          // wReal[0] = FIRE-Start (Dublette der letzten Sparzeile)
+    const wr = wReal[k];
+    const yearNo = years + k;
+    tableRows.push({
+      year: yearNo, age: wr.age, portfolio: wr.portfolio,
+      totalIn: totalIn, gain: wr.portfolio - totalIn,
+      real: wr.portfolio * Math.pow(1/(1+inflation), yearNo),
+      phase: 'retire',
+    });
+  }
+  buildTable(tableRows, ziel);
+}
+
+function buildTable(rows, ziel) {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = '';
+  let fireReached = false;
+  let retireStarted = false;
+
+  rows.forEach(r => {
+    if (r.year === 0) return; // Jahr 0 (heute) in der Tabelle überspringen
+
+    // Trennzeile: Übergang in die Entnahmephase
+    if (r.phase === 'retire' && !retireStarted) {
+      retireStarted = true;
+      const sep = document.createElement('tr');
+      sep.className = 'retire-sep-row';
+      sep.innerHTML = `<td colspan="7">🏖️ Ruhestand ab Alter ${r.age} (${CURRENT_YEAR + r.year}) | Entnahme nach 4-%-Regel bis Alter ${S.life}</td>`;
+      tbody.appendChild(sep);
+    }
+
+    // Trennzeile: FIRE-Ziel erreicht (nur Sparphase)
+    if (!fireReached && r.phase === 'save' && r.portfolio >= ziel) {
+      fireReached = true;
+      const sep = document.createElement('tr');
+      sep.className = 'fire-sep-row';
+      sep.innerHTML = `<td colspan="7">🔥 Ziel erreicht vor Ruhestand | Zielkapital ${fmt(ziel)} erreicht (Jahr ${r.year})</td>`;
+      tbody.appendChild(sep);
+    }
+
+    const tr = document.createElement('tr');
+    if (r.phase === 'retire') tr.classList.add('retire-row');
+    else if (fireReached) tr.classList.add('post-fire');
+    if (tbody.lastChild && tbody.lastChild.classList &&
+        (tbody.lastChild.classList.contains('fire-sep-row') || tbody.lastChild.classList.contains('retire-sep-row'))) {
+      tr.classList.add('fire-row');
+    }
+
+    let status;
+    if (r.phase === 'retire') {
+      status = r.portfolio > 0
+        ? '<span class="status-badge" style="background:rgba(129,140,248,.12);color:var(--accent2)"><span class="status-dot"></span>🏖️ Ruhestand</span>'
+        : '<span class="status-badge bad"><span class="status-dot"></span>⚠️ Erschöpft</span>';
+    } else {
+      status = r.portfolio >= ziel
+        ? '<span class="status-badge ok"><span class="status-dot"></span>🔥 Erfolg</span>'
+        : '<span class="status-badge warn"><span class="status-dot"></span>Sparphase</span>';
+    }
+
+    tr.innerHTML = `
+      <td>${r.year}</td>
+      <td>${r.age}</td>
+      <td class="accent">${fmt(r.portfolio)}</td>
+      <td>${fmt(r.totalIn)}</td>
+      <td>${fmt(r.gain)}</td>
+      <td class="accent2">${fmt(r.real)}</td>
+      <td>${status}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// ── Steuer-Sektion rendern ──
+function renderTax(tax, netCapital) {
+  const set = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+  const pct = v => v.toFixed(1).replace('.', ',') + ' %';
+
+  // Portfolio-Mix-Hinweis (Summe + gewichtete Teilfreistellung)
+  if (S.taxMode === 'expert') {
+    const sum = FUND_ORDER.reduce((a, k) => a + S.mix[k], 0);
+    const sumEl = document.getElementById('lv-mix-sum');
+    if (sumEl) sumEl.textContent = 'Σ ' + Math.round(sum) + ' %';
+    const hint = document.getElementById('mixHint');
+    if (hint) {
+      hint.textContent = 'Gewichtete Teilfreistellung: ' + pct(tax.teilfreiRate * 100)
+      + (Math.round(sum) === 100 ? '' : ' | Summe ist ' + Math.round(sum) + ' % (sollte 100 % sein)');
+      hint.classList.toggle('bad', Math.round(sum) !== 100);
+    }
+  }
+
+  set('tx-brutto', fmt(tax.brutto));
+  set('tx-teilfrei-pct', pct(tax.teilfreiRate * 100));
+  set('tx-teilfrei', '− ' + fmt(tax.freigestellt));
+  set('tx-pausch', '− ' + fmt(tax.pauschGenutzt));
+  set('tx-steuerbar', fmt(tax.steuerbar));
+  set('tx-kest', '− ' + fmt(tax.kest));
+  set('tx-soli', '− ' + fmt(tax.soli));
+  set('tx-kirche-pct', S.kirche + ' %');
+  set('tx-kirche', '− ' + fmt(tax.kirche));
+  set('tx-total', '− ' + fmt(tax.total));
+  set('tx-netto', fmt(tax.netto));
+  set('tx-netcap', fmt(netCapital));
+
+  set('tk-total', fmt(tax.total));
+  set('tk-rate', pct(tax.effRate * 100));
+  set('tk-netto', fmt(netCapital));
+
+  // editierbare Steuerwerte + Preset-Buttons synchronisieren
+  set('lv-kirche', S.kirche + ' %');
+  set('lv-pausch', fmt(S.pausch));
+  document.querySelectorAll('#seg-kirche button').forEach((b, i) => b.classList.toggle('active', [0,8,9][i] === S.kirche));
+  document.querySelectorAll('#seg-pausch button').forEach((b, i) => b.classList.toggle('active', [1000,2000][i] === S.pausch));
+
+  set('taxRateHint', 'Kombinierter Steuersatz auf steuerpflichtige Erträge: ' + pct(combinedTaxRate() * 100));
+}
+
+function sliderFor(span) {
+  const id = span.id || '';
+  if (!id.startsWith('lv-')) return null;
+  return document.getElementById('r-' + id.slice(3));
+}
+function tagEditable() {
+  document.querySelectorAll('.lval').forEach(span => {
+    if (sliderFor(span) || span.dataset.apply) span.classList.add('editable');
+  });
+}
+// Steuerwerte ohne Slider (Kirchensteuer, Sparerpauschbetrag) manuell setzen
+function applyTaxEdit(which, v) {
+  if (which === 'kirche') S.kirche = v;
+  else if (which === 'pausch') S.pausch = v;
+  update();   // renderTax aktualisiert Label + Preset-Buttons
+}
+function editLval(span) {
+  if (span.querySelector('input')) return;
+  const slider = sliderFor(span);
+  let raw, min, max, step, commit;
+  if (slider) {
+    raw = slider.value; min = parseFloat(slider.min); max = parseFloat(slider.max); step = slider.step;
+    commit = v => { slider.value = v; slider.dispatchEvent(new Event('input', { bubbles: true })); };
+  } else if (span.dataset.apply) {
+    const which = span.dataset.apply;
+    raw = (which === 'kirche') ? S.kirche : S.pausch;
+    min = parseFloat(span.dataset.min); max = parseFloat(span.dataset.max); step = span.dataset.step || '1';
+    commit = v => applyTaxEdit(which, v);
+  } else return;
+
+  const inp = document.createElement('input');
+  inp.type = 'number'; inp.className = 'lval-edit';
+  inp.value = raw; inp.min = min; inp.max = max; inp.step = step;
+  span.textContent = '';
+  span.appendChild(inp);
+  inp.focus(); inp.select();
+
+  let done = false;
+  const apply = (value) => {
+    if (done) return; done = true;
+    let v = parseFloat(value);
+    if (isNaN(v)) v = parseFloat(raw);
+    v = Math.min(max, Math.max(min, v));
+    commit(v);   // bestehende Logik aktualisiert Label, Buttons + Charts
+  };
+  inp.addEventListener('blur', () => apply(inp.value));
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); apply(inp.value); }
+    else if (e.key === 'Escape') { e.preventDefault(); apply(raw); }
+  });
+}
+
+// ═══════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  initCharts();
+  update();
+  tagEditable();
+
+  // Klick auf einen Wert öffnet die manuelle Eingabe
+  document.addEventListener('click', e => {
+    const span = e.target.closest('.lval.editable');
+    if (span && !span.querySelector('input')) editLval(span);
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold:.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+});
+</script>
+</body>
+</html>

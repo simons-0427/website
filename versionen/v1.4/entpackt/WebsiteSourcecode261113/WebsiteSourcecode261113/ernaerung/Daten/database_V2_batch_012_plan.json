@@ -1,0 +1,479 @@
+{
+  "batch": 12,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "G430100",
+      "name": "Gemüsefenchel roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Eigenmarken-Frisch-/Tiefkühlgemüse im Supermarkt, niedrigster ausgewiesener Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G324100",
+      "name": "Pak Choi roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Eigenmarken-Frisch-/Tiefkühlgemüse im Supermarkt, niedrigster ausgewiesener Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G680100",
+      "name": "Rettich roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Eigenmarken-Frisch-/Tiefkühlgemüse im Supermarkt, niedrigster ausgewiesener Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G691100",
+      "name": "Radieschen roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Eigenmarken-Frisch-/Tiefkühlgemüse im Supermarkt, niedrigster ausgewiesener Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G414100",
+      "name": "Gemüseartischocke/Kardone, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Spezialgemüse/Kräuter im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G492100",
+      "name": "Bärlauch roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Spezialgemüse/Kräuter im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G012902",
+      "name": "Kapern gesäuert, abgetropft",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Spezialgemüse/Kräuter im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "R211200",
+      "name": "Ingwer/Ingwerwurzel, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Spezialgemüse/Kräuter im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G693100",
+      "name": "Wasabi roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Spezialgemüse/Kräuter im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "H160600",
+      "name": "Pekannuss geröstet ohne Fett",
+      "category": "nuesse_samen",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 16.99,
+      "sourceProduct": "Eigenmarken-Nuss-/Mandelprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 16,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/nuesse/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "H220100",
+      "name": "Mandel bitter",
+      "category": "nuesse_samen",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Eigenmarken-Nuss-/Mandelprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/nuesse/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "H730000",
+      "name": "Linse rot reif",
+      "category": "huelsenfruechte",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.98,
+      "sourceProduct": "Eigenmarken-Linsen-/Bohnenprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 2,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/huelsenfruechte/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "H011000",
+      "name": "Sojaproteinisolat",
+      "category": "huelsenfruechte",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.98,
+      "sourceProduct": "Eigenmarken-Linsen-/Bohnenprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 2,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/huelsenfruechte/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K706100",
+      "name": "Butterpilz roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Speisepilze frisch oder tiefgekühlt im Supermarkt, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K704100",
+      "name": "Birkenpilz roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Speisepilze frisch oder tiefgekühlt im Supermarkt, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K717100",
+      "name": "Rotkappe roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Speisepilze frisch oder tiefgekühlt im Supermarkt, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M0A1000",
+      "name": "Mozzarella mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M114100",
+      "name": "Milch entrahmt, höchstens 0,1 % Fett, laktosefrei, pasteurisiert",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.85,
+      "sourceProduct": "MILSANI Milch bei ALDI SÜD, niedrigster klar belegbarer Preisanker 0,85 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/milch/k/1588161425467094",
+      "priceUnit": "kg",
+      "fluid": 90
+    },
+    {
+      "code": "M113100",
+      "name": "H-Milch entrahmt, höchstens 0,5 % Fett, ultrahocherhitzt",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.85,
+      "sourceProduct": "MILSANI Milch bei ALDI SÜD, niedrigster klar belegbarer Preisanker 0,85 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/milch/k/1588161425467094",
+      "priceUnit": "kg",
+      "fluid": 90
+    },
+    {
+      "code": "M141100",
+      "name": "Joghurt aus entrahmter Milch, max. 0,5 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "MILSANI Naturjoghurt als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,79 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M130500",
+      "name": "Sahnekefir mind. 10 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "MILSANI Joghurt-/Milchprodukt bei ALDI SÜD, niedrigster klar belegbarer Preisanker 4,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M130100",
+      "name": "Kefir aus entrahmter Milch, max. 0,5 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.85,
+      "sourceProduct": "MILSANI Milch bei ALDI SÜD, niedrigster klar belegbarer Preisanker 0,85 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/milch/k/1588161425467094",
+      "priceUnit": "kg",
+      "fluid": 90
+    },
+    {
+      "code": "M130200",
+      "name": "Kefir fettarm, mind. 1,5 % bis max. 1,8 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.85,
+      "sourceProduct": "MILSANI Milch bei ALDI SÜD, niedrigster klar belegbarer Preisanker 0,85 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/milch/k/1588161425467094",
+      "priceUnit": "kg",
+      "fluid": 90
+    },
+    {
+      "code": "M121200",
+      "name": "Dickmilch/Sauermilch, fettarm, mind. 1,5 % bis max. 1,8 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "MILSANI Joghurt-/Milchprodukt bei ALDI SÜD, niedrigster klar belegbarer Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M1B2200",
+      "name": "Joghurt fettarm, mind. 1,5 % bis max. 1,8 % Fett, laktosefrei",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "MILSANI Naturjoghurt als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M148200",
+      "name": "Joghurt fettarm, mind. 1,5 % bis max. 1,8 % Fett, mit Magermilchpulverzusatz",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "MILSANI Naturjoghurt als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,79 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M121500",
+      "name": "Sahnedickmilch/Sahnesauermilch, mind. 10 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "MILSANI Joghurt-/Milchprodukt bei ALDI SÜD, niedrigster klar belegbarer Preisanker 4,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M148500",
+      "name": "Sahnejoghurt mind. 10 % Fett, mit Magermilchpulverzusatz",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 1.69,
+      "sourceProduct": "MILSANI Naturjoghurt als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 1,69 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M172500",
+      "name": "Sauerrahm/Saure Sahne, mind. 10 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "MILSANI Joghurt-/Milchprodukt bei ALDI SÜD, niedrigster klar belegbarer Preisanker 4,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M162000",
+      "name": "Sauermolke",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.85,
+      "sourceProduct": "MILSANI Milch bei ALDI SÜD, niedrigster klar belegbarer Preisanker 0,85 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/milch/k/1588161425467094",
+      "priceUnit": "kg",
+      "fluid": 90
+    }
+  ]
+}

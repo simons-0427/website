@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-1g-dotgrid-16.png">
+  <link rel="shortcut icon" href="images/favicons/favicon-1g-dotgrid.ico">
+  <link rel="apple-touch-icon" sizes="64x64" href="images/favicons/favicon-1g-dotgrid-64.png">
+  <title>Simon Stark | Portfolio für Finance-Tools & Dashboards</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Persönliche Portfolio-Website von Simon Stark: interaktive Finance-Dashboards, Rechner und Programmierprojekte rund um Wirtschaft und Technik.">
+  <link rel="canonical" href="https://smstark-projekt.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/">
+  <meta property="og:title" content="Simon Stark | Portfolio für Finance-Tools & Dashboards">
+  <meta property="og:description" content="Persönliche Portfolio-Website von Simon Stark: interaktive Finance-Dashboards, Rechner und Programmierprojekte rund um Wirtschaft und Technik.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://smstark-projekt.de/#website",
+      "name": "SMStark Projekt",
+      "alternateName": [
+        "Simon Stark",
+        "Simon Stark Webseite",
+        "Stark Projekt Portfolio",
+        "Simon Stark Portfolio",
+        "smstark-project.de",
+        "smstark-projekt.de",
+        "smstark projekts",
+        "SMStark Projekt"
+      ],
+      "url": "https://smstark-projekt.de/",
+      "publisher": { "@id": "https://smstark-projekt.de/#person" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://smstark-projekt.de/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://smstark-projekt.de/#person",
+      "name": "Simon Stark",
+      "url": "https://smstark-projekt.de/",
+      "description": "Entwickelt Finance-Tools, Dashboards und Spiele als persönliche Projekte, mit besonderem Interesse an Wirtschaft, Finanzen und Datenanalyse.",
+      "sameAs": [
+        "https://github.com/simons-0427"
+      ],
+      "knowsAbout": [
+        "Finanzen",
+        "Datenanalyse",
+        "Webentwicklung",
+        "Spieleentwicklung",
+        "Unternehmensbewertung",
+        "Finance",
+        "Mechanical Engineering",
+        "Business Administration",
+        "AI & Machine Learning",
+        "Web Development",
+        "UI/UX Design",
+        "C",
+        "Excel",
+        "Data Analysis"
+      ]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://smstark-projekt.de/#about",
+      "url": "https://smstark-projekt.de/#about",
+      "name": "Über Simon Stark",
+      "isPartOf": { "@id": "https://smstark-projekt.de/#website" },
+      "mainEntity": { "@id": "https://smstark-projekt.de/#person" }
+    }
+  ]
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #0c0c0f;
+      --surface:   #13131a;
+      --border:    #1e1e2e;
+      --accent:    #6ee7b7;
+      --accent2:   #818cf8;
+      --text:      #e2e8f0;
+      --muted:     #6f7e96;
+      --card:      #16161f;
+      --nav-h:     68px;
+      --sub-nav-h: 46px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + var(--sub-nav-h)); }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a[href*="datenschutz"] {
+      color: var(--accent);
+      text-underline-offset: .18em;
+    }
+    a[href*="datenschutz"]:visited { color: var(--accent); }
+    a[href*="datenschutz"]:hover { color: #a7f3d0; }
+
+    /* ── HEADER / NAV ──────────────────────────── */
+    .main-nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,12,15,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: center;
+      padding: 0 clamp(1.5rem,5vw,4rem);
+      z-index: 100; gap: 2.2rem;
+    }
+
+    .sub-nav {
+      position: fixed; top: var(--nav-h); left: 0; right: 0;
+      height: var(--sub-nav-h);
+      background: rgba(19,19,26,.95);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: center;
+      z-index: 99;
+    }
+
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-actions {
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .nav-github {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 500;
+      color: var(--text); text-decoration: none;
+      border: 1px solid var(--text);
+      padding: .4rem .9rem; border-radius: 8px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+
+    /* ── SPRACHSWITCH ──────────────────────────── */
+    .language-switch,
+    .mobile-menu .language-switch {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      min-width: 4.6rem;
+      min-height: 1.9rem;
+      padding: 0;
+      border: 1px solid rgba(226,232,240,.28);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      line-height: 1;
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: none;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .language-switch:hover,
+    .language-switch:focus-visible {
+      border-color: var(--accent);
+      background: rgba(110,231,183,.06);
+      color: var(--text);
+      outline: none;
+    }
+    .language-switch:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .language-switch .language-option {
+      flex: 1 1 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      min-height: 1.9rem;
+      padding: .2rem .27rem;
+      color: var(--muted);
+      transition: background .2s, color .2s;
+    }
+    .language-switch .language-option + .language-option {
+      border-left: 1px solid var(--border);
+    }
+    .language-switch .language-option-active {
+      background: var(--accent);
+      color: #0c0c0f;
+      font-weight: 800;
+    }
+    .language-switch .language-separator {
+      display: none;
+    }
+    .mobile-menu .language-switch {
+      margin: .1rem 0 0;
+    }
+
+    /* ── HAMBURGER (mobil) ─────────────────────── */
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: clamp(1.5rem,5vw,4rem);
+      width: 40px; height: 40px;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 101;
+      transition: border-color .2s;
+    }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span {
+      display: block; width: 18px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobiles Dropdown-Menü */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(12,12,15,.98);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      z-index: 102;
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .95rem .2rem;
+      color: var(--text); text-decoration: none;
+      font-size: 1rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-section { color: var(--muted); }
+    .mobile-menu .mobile-section:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+    .mobile-menu .mobile-menu-label {
+      padding: 1rem .2rem .35rem;
+      font-size: .68rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .14em;
+      color: var(--muted);
+      border-top: none;
+    }
+    .mobile-language-row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .4rem;
+      margin: .45rem 0 .55rem;
+      padding: .7rem .2rem .75rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-language-label {
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      margin-right: auto;
+      position: absolute;
+      left: clamp(1.5rem,5vw,4rem);
+    }
+    .nav-logo span { color: var(--accent); }
+
+    /* Styling Haupt-Links */
+    .main-nav .nav-links a {
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: .03em;
+      transition: color .2s;
+    }
+    .main-nav .nav-links a:hover, .main-nav .nav-links a.active { color: var(--accent); }
+
+    /* Styling Sub-Links (Inhaltsverzeichnis) */
+    .sub-nav .nav-links { gap: 2.5rem; }
+    .sub-nav .nav-links a {
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      transition: color .2s;
+    }
+    .sub-nav .nav-links a:hover { color: var(--accent2); }
+
+    /* ── HERO ──────────────────────────────────── */
+    #home {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: calc(var(--nav-h) + var(--sub-nav-h) + 4rem) clamp(1.5rem,8vw,8rem) 6rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(110,231,183,.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    /* Punkteraster-Hintergrund (Motiv aus vision) */
+    .hero-dots {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black, transparent);
+      -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black, transparent);
+    }
+    #home > *:not(.hero-glow):not(.hero-dots) { position: relative; }
+    .hero-tag {
+      font-size: .75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.4rem;
+    }
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-bottom: 1.6rem;
+      max-width: 14ch;
+    }
+    .hero-title em { font-style: normal; color: var(--accent); }
+    .hero-sub {
+      max-width: 48ch;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 3rem;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding: .8rem 1.8rem;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform .15s, box-shadow .15s, background .2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0c0c0f;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,231,183,.3); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      margin-left: .8rem;
+    }
+    .btn-ghost:hover { border-color: var(--accent2); color: var(--text); transform: translateY(-2px); }
+
+    /* ── SECTION WRAPPER ───────────────────────── */
+    section {
+      padding: 6rem clamp(1.5rem,8vw,8rem);
+    }
+    .section-label {
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: .8rem;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -.025em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 54ch;
+      margin-bottom: 3.5rem;
+      font-size: 1rem;
+    }
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── ABOUT ─────────────────────────────────── */
+    #about { background: var(--surface); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p + p { margin-top: 1.1rem; color: var(--muted); }
+    .about-text p:first-child { color: var(--text); font-size: 1.05rem; }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
+    .chip {
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: .8rem;
+      color: var(--muted);
+      font-weight: 500;
+      transition: border-color .2s, color .2s;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label { font-size: .8rem; color: var(--muted); margin-top: .3rem; }
+
+    /* ── PROJECTS ──────────────────────────────── */
+    .project-tabs { display: flex; gap: 1rem; margin-bottom: 2.5rem; }
+    .tab-btn {
+      padding: .55rem 1.4rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--accent);
+      color: #0c0c0f;
+      border-color: var(--accent);
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      transition: border-color .2s, transform .2s;
+      display: none;
+    }
+    .project-card.visible { display: flex; flex-direction: column; }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .project-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .project-icon.gaming { background: rgba(129,140,248,.15); }
+    .project-icon.finance { background: rgba(110,231,183,.12); }
+    .project-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    .project-card p { font-size: .875rem; color: var(--muted); flex: 1; }
+    .project-footer { display: flex; gap: .8rem; margin-top: 1.4rem; flex-wrap: wrap; }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .5rem 1rem;
+      border-radius: 7px;
+      font-size: .82rem;
+      font-weight: 500;
+      text-decoration: none;
+      background: var(--border);
+      color: var(--text);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+    .dl-btn:hover { background: rgba(129,140,248,.12); border-color: var(--accent2); color: var(--text); }
+    .dl-btn svg { width:14px; height:14px; }
+    .badge {
+      display: inline-block;
+      padding: .2rem .6rem;
+      border-radius: 5px;
+      font-size: .72rem;
+      font-weight: 600;
+      background: rgba(110,231,183,.1);
+      color: var(--accent);
+      margin-bottom: .9rem;
+      align-self: flex-start;
+    }
+
+    /* ── CALCULATORS & DASHBOARDS ──────────────── */
+    #calculators { background: var(--surface); }
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: .8rem;
+    }
+    .section-eyebrow .section-label { margin-bottom: 0; }
+    .section-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      height: 1.45rem;
+      padding: 0 .5rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-family: 'Syne', sans-serif;
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+    .calculator-grid,
+    .dashboard-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .calculator-grid,
+    .dashboard-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .dash-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .dash-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
+    .dash-preview {
+      height: 170px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      position: relative; overflow: hidden;
+    }
+    .dash-preview.blue  { background: linear-gradient(135deg,#1e1b4b,#312e81); }
+    .dash-preview.green { background: linear-gradient(135deg,#064e3b,#065f46); }
+    .dash-preview.purple{ background: linear-gradient(135deg,#2e1065,#4c1d95); }
+    .dash-preview.yellow{ background: linear-gradient(135deg,#f59e0b,#d97706); }
+    .dash-preview::after {
+      content:'';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .dash-body { padding: 1.4rem 1.6rem 1.6rem; }
+    .dash-body h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+    .dash-body p { font-size: .85rem; color: var(--muted); margin-bottom: 1.1rem; }
+    .dash-link {
+      font-size: .83rem;
+      font-weight: 500;
+      color: var(--accent2);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: .3rem;
+    }
+    .dash-link:hover { text-decoration: underline; }
+
+    /* ── CONTACT ───────────────────────────────── */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-info p { color: var(--muted); margin-bottom: 2rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: .8rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color .2s;
+    }
+    .contact-item:hover { border-color: var(--accent); }
+    .contact-icon {
+      width:38px; height:38px;
+      border-radius: 10px;
+      background: rgba(110,231,183,.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-label { font-size: .78rem; color: var(--muted); }
+    .contact-val { font-size: .9rem; font-weight: 500; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: .82rem; font-weight: 500; color: var(--muted); margin-bottom: .5rem; }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .75rem 1rem;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .2s;
+      resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+    .form-group textarea { min-height: 120px; }
+
+    /* ── FOOTER ────────────────────────────────── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      display: inline-block; margin-bottom: .9rem;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: .78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    footer a[href*="datenschutz"],
+    footer a[href*="datenschutz"]:visited { color: var(--muted); }
+    footer a[href*="datenschutz"]:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem;
+    }
+
+    /* ── ANIMATIONS ────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+
+    /* ── RESPONSIVE: NAV → HAMBURGER ───────────── */
+    /* Umschalten, bevor sich "Wissen" und der GitHub-Button überlappen */
+    @media (max-width: 960px) {
+      .main-nav {
+        justify-content: flex-start;
+        padding: 0 1.5rem;
+      }
+      .main-nav .nav-links,
+      .main-nav .nav-actions { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+
+      /* Sub-Nav ausgeblendet – ihre Links liegen im Hamburger-Menü */
+      .sub-nav { display: none; }
+      html { scroll-padding-top: calc(var(--nav-h) + 1rem); }
+
+      .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .calculator-grid,
+      .dashboard-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── RESPONSIVE: INHALT ────────────────────── */
+    @media (max-width: 768px) {
+      .about-grid, .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .project-grid,
+      .dashboard-grid { grid-template-columns: 1fr; }
+
+    }
+
+    @media (max-width: 640px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* ── INFO SECTION ──────────────────────────── */
+    #info { background: var(--surface); position: relative; overflow: hidden; }
+    #info::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(129,140,248,.05) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 10% 90%, rgba(110,231,183,.04) 0%, transparent 70%);
+    }
+    #info > * { position: relative; z-index: 1; }
+
+    .info-tabs {
+      display: flex; gap: .6rem; margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .info-tab {
+      padding: .55rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .82rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: .45rem;
+      transition: all .2s;
+    }
+    .info-tab svg { width: 14px; height: 14px; }
+    .info-tab:hover { color: var(--text); border-color: var(--accent2); }
+    .info-tab.active {
+      background: var(--accent);
+      color: #0c0c0f;
+      border-color: var(--accent);
+    }
+
+    .info-panel { display: none; animation: infoFade .35s ease; }
+    .info-panel.active { display: block; }
+    @keyframes infoFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .info-card + .info-card { margin-top: 1rem; }
+    .info-card h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    .info-card p, .info-card li {
+      font-size: .9rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .info-card ul { list-style: none; margin-top: .6rem; }
+    .info-card ul li { padding: .35rem 0; padding-left: 1.1rem; position: relative; }
+    .info-card ul li::before {
+      content: ''; position: absolute; left: 0; top: .9rem;
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .info-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    /* FAQ accordion */
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+    .faq-item + .faq-item { margin-top: .8rem; }
+    .faq-item:hover { border-color: var(--accent2); }
+    .faq-item.open { border-color: var(--accent); }
+    .faq-q {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      padding: 1.1rem 1.4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+    }
+    .faq-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: transform .25s, background .2s, border-color .2s;
+      color: var(--muted);
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: rgba(110,231,183,.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+    .faq-a-inner {
+      padding: 0 1.4rem 1.2rem;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 300;
+    }
+
+    /* Contact cards (info variant) */
+    .info-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .info-contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      text-decoration: none;
+      color: var(--text);
+      display: flex; flex-direction: column; gap: .9rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .info-contact-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .info-contact-card .contact-icon { margin-bottom: 0; }
+    .info-contact-card .contact-label { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    .info-contact-card .contact-val { font-size: .92rem; font-weight: 500; }
+    .info-contact-card small { font-size: .78rem; color: var(--muted); font-weight: 300; }
+
+    /* ── TICKER (Motiv aus vision) ──────────── */
+    .ticker-wrap {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: .85rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+      background: var(--surface);
+    }
+    .ticker-track {
+      display: inline-flex;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 1.8rem;
+      padding: 0 1.8rem;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .ticker-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── MICRO-INTERAKTIONEN (Motiv aus vision) ── */
+    .stat-card { transition: border-color .2s, transform .2s; }
+    .stat-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
+    .info-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
+    .chip { transition: border-color .2s, color .2s, transform .2s; }
+    .chip:hover { transform: translateY(-2px); }
+    /* Gestaffelte Einblendungen */
+    .fade-in.d1 { transition-delay: .1s; }
+    .fade-in.d2 { transition-delay: .2s; }
+    .fade-in.d3 { transition-delay: .3s; }
+    .fade-in.d4 { transition-delay: .4s; }
+    .fade-in.d5 { transition-delay: .5s; }
+
+    /* ── REDUCED MOTION ────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .fade-in { opacity: 1; transform: none; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/site-header.css">
+  <script src="assets/site-header.js" defer></script>
+</head>
+<body>
+
+  <!-- MAIN NAV -->
+  <nav class="main-nav">
+    <a href="/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="projekte/">Projekte</a></li>
+      <li><a href="downloads">Downloads</a></li>
+      <li><a href="projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="vision">Vision</a></li>
+      <li><a href="wissen/">Wissen</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/en/" data-language-file-target="en/index.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="nav-github">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="projekte/">Projekte</a></li>
+      <li><a href="downloads">Downloads</a></li>
+      <li><a href="projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="vision">Vision</a></li>
+      <li><a href="wissen/">Wissen</a></li>
+
+      <li class="mobile-language-row">
+        <span class="mobile-language-label">Sprache</span>
+          <button type="button" class="language-switch" data-language-target="/en/" data-language-file-target="en/index.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+      </li>
+
+      <li class="mobile-menu-label">Auf dieser Seite</li>
+      <li><a href="#home" class="mobile-section">Start</a></li>
+      <li><a href="#about" class="mobile-section">Über mich</a></li>
+      <li><a href="#files" class="mobile-section">Dateien</a></li>
+      <li><a href="#calculators" class="mobile-section">Rechner</a></li>
+      <li><a href="#dashboards" class="mobile-section">Dashboards</a></li>
+      <li><a href="#contact" class="mobile-section">Kontakt</a></li>
+      <li><a href="#info" class="mobile-section">Info</a></li>
+
+      <li>
+        <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SUB NAV -->
+  <nav class="sub-nav">
+    <ul class="nav-links">
+      <li><a href="#home">Start</a></li>
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#files">Dateien</a></li>
+      <li><a href="#calculators">Rechner</a></li>
+      <li><a href="#dashboards">Dashboards</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+      <li><a href="#info">Info</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-glow"></div>
+    <div class="hero-dots"></div>
+    <p class="hero-tag fade-in">Willkommen auf meiner Website</p>
+    <h1 class="hero-title fade-in">Hallo, ich bin <em>Simon.</em></h1>
+    <p class="hero-sub fade-in d1">
+      Hier teile ich selbst erstellte Projekte, zum Beispiel interaktive Dashboards und Programme. Die Website wächst mit jedem neuen Projekt.
+    </p>
+    <div class="fade-in d2">
+      <a href="vision" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Meine Ziele & Vision
+      </a>
+      <a href="projekte/" class="btn btn-ghost">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Projekte ansehen
+      </a>
+    </div>
+  </section>
+
+  <!-- TICKER (Motiv aus vision; Themen = vorhandene Begriffe der Seite) -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="ticker-dot"></span>HTML &amp; CSS</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>JavaScript</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Excel / Sheets</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Datenanalyse</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Spieleentwicklung</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Finanzen</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>C</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>C++</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Kotlin</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>SQL</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Web-Development</span>
+      <!-- duplicate for seamless loop -->
+      <span class="ticker-item"><span class="ticker-dot"></span>HTML &amp; CSS</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>JavaScript</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Excel / Sheets</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Datenanalyse</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Spieleentwicklung</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Finanzen</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>C</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>C++</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Kotlin</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>SQL</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>Web-Development</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label fade-in">Über mich</p>
+    <h2 class="section-title fade-in">Wer steckt dahinter?</h2>
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p>
+          Ich bin Simon und lade auf dieser Seite meine Projekte hoch. Ich interessiere mich für Physik, Datenanalyse und Technik allgemein.
+          Besonders faszinieren mich Wirtschaft und Finanzen. Diese Themen versuche ich mit selbstgebauten Tools, Projekten und Dashboards
+          zu verstehen und mein Know-how zu teilen.
+        </p>
+        <p>
+          C und C++ waren meine ersten Programmiersprachen, mit denen ich kleine Spiele entwickelt habe. Um diese Projekte im Web zu veröffentlichen, lernte ich HTML,
+          CSS und etwas JavaScript, um eine Website zu erstellen. Die Seite wächst mit jedem neuen Projekt.
+        </p>
+        <p>
+          Ich analysiere Daten und entwickle eigene Tools, um Zusammenhänge besser zu verstehen und komplizierte Themen für mich und andere nachvollziehbar zu machen.
+        </p>
+        <div class="skill-chips">
+          <span class="chip">HTML & CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Excel / Sheets</span>
+          <span class="chip">Datenanalyse</span>
+          <span class="chip">Spieleentwicklung</span>
+          <span class="chip">Finanzen</span>
+          <span class="chip">Web-Development</span>
+        </div>
+      </div>
+      <div class="stat-grid fade-in">
+        <div class="stat-card">
+          <div class="stat-num">01</div>
+          <div class="stat-label">Website in Entwicklung</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="pipeline-count">0</div>
+          <div class="stat-label">Projekte in der Pipeline</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Themenbereiche</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Selbst gebaut</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PROJECTS -->
+  <section id="files">
+    <div class="section-eyebrow fade-in">
+      <p class="section-label">Tools, Spiele & Dateien</p>
+    </div>
+    <h2 class="section-title fade-in">Fertige Projekte zum Download</h2>
+    <p class="section-sub fade-in">
+      Kleine Tools, Tracker und Dateien zum Download, sortiert nach Bereich.
+    </p>
+
+    <div class="project-tabs fade-in">
+      <button class="tab-btn active" onclick="filterProjects('all')">Alle</button>
+      <button class="tab-btn" onclick="filterProjects('spieleentwicklung')">🎮 Spieleentwicklung</button>
+      <button class="tab-btn" onclick="filterProjects('finance')">📈 Finanzen</button>
+    </div>
+
+    <div class="project-grid">
+
+        <!-- Finance Projekt 1 -->
+      <div class="project-card visible" data-cat="finance">
+        <div class="project-icon finance" aria-hidden="true">📊</div>
+        <span class="badge" style="background:rgba(129,140,248,.12);color:var(--accent2);">Finanzen</span>
+        <h3>Immobilien-Kostenkalkulation</h3>
+        <p>Excel-Rechner für Kauf, Kredit, Miete, Steuern und Verkauf.</p>
+        <div class="project-footer">
+          <a href="data/v1.6_Immobilien_Kalkulationstool.xlsx" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            .xlsx herunterladen
+          </a>
+        </div>
+      </div>
+
+      <!-- Finance Projekt 2 -->
+      <div class="project-card visible" data-cat="finance">
+        <div class="project-icon finance" aria-hidden="true">💰</div>
+        <span class="badge" style="background:rgba(129,140,248,.12);color:var(--accent2);">Finanzen</span>
+        <h3>Discounted-Cashflow-Tool</h3>
+        <p>Excel-Tool zur Berechnung des heutigen Werts zukünftiger Cashflows in Investitionsprojekten.</p>
+        <div class="project-footer">
+          <a href="data/v1.2_DCF_Tool.xlsx" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            .xlsx herunterladen
+          </a>
+        </div>
+      </div>
+
+      <!-- Gaming Projekt 1 -->
+      <div class="project-card visible" data-cat="spieleentwicklung">
+        <div class="project-icon Spieleentwicklung" aria-hidden="true">🎮</div>
+        <span class="badge">Spieleentwicklung</span>
+        <h3>Dungeon Crawler</h3>
+        <p>Ein Arcade-Spiel, in dem du vor Feinden wegläufst, Schätze und Münzen sammelst und möglichst viele Runden überstehst.</p>
+        <div class="project-footer">
+         <a href="playdungeoncrawler/v1.5" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Im Web spielen
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+          <a href="data/DungeonCrawlerV1_6.zip" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Dungeon Crawler herunterladen
+          </a>
+          <a href="data/v1.5_playdungeoncrawler.zip" download="v1.5_playdungeoncrawler.zip" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Webversion herunterladen (v1.5)
+         </a>
+        </div>
+      </div>
+
+      <!-- Gaming Projekt 2 -->
+      <div class="project-card visible" data-cat="spieleentwicklung">
+        <div class="project-icon Spieleentwicklung" aria-hidden="true">🕹️</div>
+        <span class="badge">Spieleentwicklung</span>
+        <h3>Zufallszahl erraten</h3>
+        <p>Ein Spiel, in dem du eine zufällige Zahl zwischen 1 und 100 errätst. Nach jedem Versuch erfährst du, ob die gesuchte Zahl höher oder niedriger liegt.</p>
+        <div class="project-footer">
+          <a href="data/ZufallszahlFinal.zip" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            .zip herunterladen
+          </a>
+         <a href="data/ZufallszahlFinal.c" download="ZufallszahlFinal.c" class="dl-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            .c herunterladen
+         </a>
+        </div>
+      </div>
+</div> <div class="fade-in" style="text-align: center; margin-top: 3rem;">
+      <a href="projekte/" class="btn btn-primary">
+        Alle Projekte ansehen
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CALCULATORS -->
+  <section id="calculators">
+    <div class="section-eyebrow fade-in">
+      <p class="section-label">Rechner</p>
+    </div>
+    <h2 class="section-title fade-in">Interaktive Rechner</h2>
+    <p class="section-sub fade-in">
+      Rechner und Simulationen für persönliche Finanzentscheidungen.
+    </p>
+    <div class="calculator-grid">
+      <div class="dash-card fade-in">
+        <div class="dash-preview green" aria-hidden="true">🎲</div>
+        <div class="dash-body">
+          <h3>Kelly-Kriterium-Rechner</h3>
+          <p>Berechne den optimalen Investitionsanteil basierend auf Gewinnrate und Gewinnverhältnis, inklusive Monte-Carlo-Simulation.</p>
+          <a href="dashboards/kellykriterium" class="dash-link">Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="dash-card fade-in">
+        <div class="dash-preview yellow" aria-hidden="true">💰</div>
+        <div class="dash-body">
+          <h3>FIRE-Rechner</h3>
+          <p>Interaktiver Simulator für finanzielle Unabhängigkeit mit Sparrate, Rendite, Inflation und verschiedenen Entnahmestrategien.</p>
+          <a href="dashboards/fire" class="dash-link">Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="dash-card fade-in">
+        <div class="dash-preview purple" aria-hidden="true">🏠</div>
+        <div class="dash-body">
+           <h3>Ernährungs-Rechner</h3>
+          <p>Ein Rechner, der aus einer Lebensmitteldatenbank einen kostenoptimierten Ernährungsplan mit deinen Nährstoffzielen berechnet.</p>
+          <a href="ernaerung/" class="dash-link">Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- DASHBOARDS -->
+  <section id="dashboards">
+    <div class="section-eyebrow fade-in">
+      <p class="section-label">Dashboards</p>
+    </div>
+    <h2 class="section-title fade-in">Interaktive Dashboards</h2>
+    <p class="section-sub fade-in">
+      Live-Dashboards und Visualisierungen zu verschiedenen Themen.
+    </p>
+    <div class="dashboard-grid">
+
+      <div class="dash-card fade-in">
+        <div class="dash-preview green" aria-hidden="true">⏮️</div>
+        <div class="dash-body">
+          <h3>Asset-Klassen Backtester</h3>
+          <p>Interaktives Tool zum Vergleich von Aktien, Gold, MSCI World, Bitcoin und Immobilien über 10–15 Jahre. Vergleichsszenarien für die Frage: „Was wären aus 10.000 € geworden?“</p>
+          <a href="dashboards/backtester" class="dash-link">
+            Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="dash-card fade-in">
+        <div class="dash-preview blue" aria-hidden="true">📊</div>
+        <div class="dash-body">
+          <h3>Weltmarkt-Dashboard</h3>
+          <p>Weltmarkt-Dashboard mit 117 Datensätzen zu Konjunktur, Zinsen und Märkten.</p>
+          <a href="dashboards/weltmarkt/" class="dash-link">
+            Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="dash-card fade-in">
+        <div class="dash-preview purple" aria-hidden="true">💸</div>
+        <div class="dash-body">
+          <h3>Bitcoin-Dashboard <span style="color:var(--muted);font-weight:400;">(Bald verfügbar)</span></h3>
+          <p>Dashboard mit Daten und Kennzahlen rund um Bitcoin.</p>
+          <a href="#" class="dash-link">
+            Öffnen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- WISSEN TEASER -->
+  <section id="wissen-teaser" style="background: var(--surface);">
+    <p class="section-label fade-in">Wissen</p>
+    <h2 class="section-title fade-in">Die Konzepte dahinter verstehen</h2>
+    <p class="section-sub fade-in">
+      Hintergrundartikel zu finanzieller Unabhängigkeit, Einsatzgrößen, Unternehmensbewertung und Immobilien-Investitionen.
+    </p>
+    <div class="info-contact-grid fade-in">
+      <a href="wissen/wie-viel-geld-fuer-finanzielle-unabhaengigkeit" class="info-contact-card">
+        <div class="contact-icon" aria-hidden="true">🔥</div>
+        <div>
+          <div class="contact-label">FIRE-Grundlagen</div>
+          <div class="contact-val">Wie viel Geld brauche ich für finanzielle Unabhängigkeit?</div>
+        </div>
+      </a>
+      <a href="wissen/kelly-kriterium-einfach-erklaert" class="info-contact-card">
+        <div class="contact-icon" aria-hidden="true">🎲</div>
+        <div>
+          <div class="contact-label">Einsatzgröße &amp; Risiko</div>
+          <div class="contact-val">Das Kelly-Kriterium einfach erklärt</div>
+        </div>
+      </a>
+      <a href="wissen/dcf-methode-einfach-erklaert" class="info-contact-card">
+        <div class="contact-icon" aria-hidden="true">📊</div>
+        <div>
+          <div class="contact-label">Unternehmensbewertung</div>
+          <div class="contact-val">Die DCF-Methode einfach erklärt</div>
+        </div>
+      </a>
+      <a href="wissen/immobilie-als-kapitalanlage-kennzahlen" class="info-contact-card">
+        <div class="contact-icon" aria-hidden="true">🏠</div>
+        <div>
+          <div class="contact-label">Immobilien-Investition</div>
+          <div class="contact-val">Immobilie als Kapitalanlage bewerten</div>
+        </div>
+      </a>
+    </div>
+    <div class="fade-in" style="text-align: center; margin-top: 2.5rem;">
+      <a href="wissen/" class="btn btn-primary">
+        Alle Wissen-Artikel ansehen
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CONTACT -->
+ <section id="contact">
+  <p class="section-label fade-in">Kontakt</p>
+  <h2 class="section-title fade-in">Schreib mir!</h2>
+  <div class="contact-wrap">
+    <div class="contact-info fade-in">
+      <p>Du hast Fragen oder willst Hallo sagen? Ich freue mich über jede Nachricht.</p>
+      <a href="mailto:simonmstark@outlook.com" class="contact-item">
+        <div class="contact-icon" aria-hidden="true">✉️</div>
+        <div>
+          <div class="contact-label">E-Mail</div>
+          <div class="contact-val">simonmstark@outlook.com</div>
+        </div>
+      </a>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="contact-item">
+        <div class="contact-icon" aria-hidden="true">💻</div>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-val">github.com/simons-0427</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="fade-in">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="541c51c3-9844-407f-aa6c-45c752ac5ec2">
+        <input type="hidden" name="subject" value="Neue Nachricht über Portfolio">
+        <input type="hidden" name="from_name" value="Portfolio Website">
+        <div class="form-group">
+          <label for="contact-name">Dein Name</label>
+          <input id="contact-name" type="text" name="name" placeholder="Max Mustermann" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-email">E-Mail</label>
+          <input id="contact-email" type="email" name="email" placeholder="max@beispiel.de" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Nachricht</label>
+          <textarea id="contact-message" name="message" placeholder="Hallo Simon, …" required></textarea>
+        </div>
+        <p style="font-size:.75rem;color:var(--muted);margin:0 0 .9rem;">
+          Mit dem Absenden werden die Angaben über Web3Forms verarbeitet. Details stehen in der
+          <a href="/datenschutz">vollständigen Datenschutzerklärung</a>.
+        </p>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+          Nachricht senden
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+        </button>
+      </form>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:.8rem;text-align:center;">
+        Oder direkt per <a href="mailto:simonmstark@outlook.com">E-Mail kontaktieren</a>
+      </p>
+    </div>
+  </div>
+ </section>
+
+
+  <hr class="divider">
+
+  <!-- INFO -->
+  <section id="info">
+    <p class="section-label fade-in">Info</p>
+    <h2 class="section-title fade-in">Alles auf einen Blick</h2>
+    <p class="section-sub fade-in">
+      Datenschutz, Nutzungsbedingungen, Kontakt und FAQs an einem Ort.
+    </p>
+
+    <div class="info-tabs fade-in" role="tablist">
+      <button class="info-tab active" data-info="privacy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Datenschutz
+      </button>
+      <button class="info-tab" data-info="terms">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+        Nutzungsbedingungen
+      </button>
+      <button class="info-tab" data-info="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        Kontakt
+      </button>
+      <button class="info-tab" data-info="faq">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 015.8 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>
+        FAQ
+      </button>
+    </div>
+
+    <!-- PRIVACY -->
+    <div class="info-panel active fade-in" id="info-privacy">
+      <div class="info-card">
+        <h4>Daten, die diese Seite verarbeitet</h4>
+        <p>Diese Website ist ein persönliches Portfolio. Es werden keine Tracking-Cookies und keine Analytics-Tools eingesetzt.</p>
+        <ul>
+          <li>Beim Aufruf der Seite werden technisch notwendige Daten (z.&nbsp;B. IP-Adresse, Browser) kurzzeitig vom Hoster verarbeitet.</li>
+          <li>Bei Nutzung des Kontaktformulars werden Name, E-Mail und Nachricht über Web3Forms an mich weitergeleitet.</li>
+          <li>Es findet keine Weitergabe an Dritte zu Werbezwecken statt.</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>Deine Rechte</h4>
+        <p>Du hast jederzeit das Recht auf Auskunft, Berichtigung und Löschung deiner Daten. Eine kurze Nachricht per E-Mail genügt.</p>
+        <p><a href="/datenschutz">Vollständige Datenschutzerklärung: https://smstark-projekt.de/datenschutz</a></p>
+      </div>
+    </div>
+
+    <!-- TERMS -->
+    <div class="info-panel fade-in" id="info-terms">
+      <div class="info-grid-2">
+        <div class="info-card">
+          <h4>Nutzung der Inhalte</h4>
+          <p>Alle hier veröffentlichten Projekte, Tools und Texte sind persönliches Eigentum und für private, nicht-kommerzielle Nutzung freigegeben.</p>
+        </div>
+        <div class="info-card">
+          <h4>Downloads</h4>
+          <p>Die bereitgestellten Dateien (Excel-Tools, C-Programme, ZIPs) werden ohne Gewähr und ohne Haftung für Schäden oder Datenverluste angeboten.</p>
+        </div>
+        <div class="info-card">
+          <h4>Finanz-Tools</h4>
+          <p>Die Finanz- und Dashboard-Tools sind keine Anlageberatung. Sie dienen ausschließlich der Veranschaulichung und Weiterbildung.</p>
+        </div>
+        <div class="info-card">
+          <h4>Änderungen</h4>
+          <p>Inhalte und Tools können jederzeit erweitert, geändert oder entfernt werden, da sich die Seite aktiv weiterentwickelt.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="info-panel fade-in" id="info-contact">
+      <div class="info-contact-grid">
+        <a href="mailto:simonmstark@outlook.com" class="info-contact-card">
+          <div class="contact-icon" aria-hidden="true">✉️</div>
+          <div>
+            <div class="contact-label">E-Mail</div>
+            <div class="contact-val">simonmstark@outlook.com</div>
+          </div>
+          <small>Für Fragen, Feedback oder einfach Hallo sagen.</small>
+        </a>
+        <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="info-contact-card">
+          <div class="contact-icon" style="background:rgba(129,140,248,.12);" aria-hidden="true">💻</div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <div class="contact-val">github.com/simons-0427</div>
+          </div>
+          <small>Projekte, Code und kleine Experimente.</small>
+        </a>
+        <a href="#contact" class="info-contact-card">
+          <div class="contact-icon" aria-hidden="true">📝</div>
+          <div>
+            <div class="contact-label">Kontaktformular</div>
+            <div class="contact-val">Direkt schreiben</div>
+          </div>
+          <small>Springe nach oben zum Formular auf dieser Seite.</small>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="info-panel fade-in" id="info-faq">
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span>Was finde ich auf dieser Website?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Selbstgebaute Projekte: Finanz-Tools in Excel, kleine Spiele in C/C++ und interaktive Dashboards rund um Wirtschaft und Daten.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span>Sind die Downloads kostenlos?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Ja. Alle Dateien sind kostenlos und ohne Anmeldung verfügbar. Über Feedback freue ich mich trotzdem.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span>Sind die Finanz-Tools als Anlageberatung gedacht?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Nein. Sie sind Lern- und Analyse-Werkzeuge ohne Beratungscharakter. Entscheidungen liegen bei dir.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span>Kann ich eigene Ideen oder Wünsche einreichen?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Sehr gerne. Schreib mir per E-Mail oder über das Kontaktformular. Ich freue mich über deine Ideen!</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span>Wie oft kommen neue Inhalte dazu?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Unregelmäßig, aber stetig. In der Projekt-Pipeline siehst du, woran ich gerade arbeite.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">
+          <span>Wo finde ich die vollständige Datenschutzerklärung?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Unter <a href="https://smstark-projekt.de/datenschutz">https://smstark-projekt.de/datenschutz</a>.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">sms<span>.</span></a>
+        <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="projekte/">Projekte</a></li>
+          <li><a href="downloads">Downloads</a></li>
+          <li><a href="projekt-pipeline">Projekt-Pipeline</a></li>
+          <li><a href="vision">Vision</a></li>
+          <li><a href="wissen/">Wissen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+    </div>
+  </footer>
+
+  <script src="project-pipeline-data.js"></script>
+  <script>
+    // Mobile hamburger menu
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      });
+      // Menü nach Klick auf einen Link schließen
+      mobileMenu.querySelectorAll('a, button').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    }
+
+    const pipelineCount = document.getElementById('pipeline-count');
+    if (pipelineCount) pipelineCount.textContent = PROJECTS.length;
+
+    // Tabs
+    function filterProjects(cat) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.querySelectorAll('.project-card').forEach(c => {
+        const show = cat === 'all' || c.dataset.cat === cat;
+        c.classList.toggle('visible', show);
+      });
+    }
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Info tabs
+    document.querySelectorAll('.info-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.info;
+        document.querySelectorAll('.info-tab').forEach(b => b.classList.toggle('active', b === btn));
+        document.querySelectorAll('.info-panel').forEach(p => {
+          p.classList.toggle('active', p.id === 'info-' + target);
+        });
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const ans = q.nextElementSibling;
+        const isOpen = item.classList.toggle('open');
+        ans.style.maxHeight = isOpen ? ans.scrollHeight + 'px' : '0';
+      });
+    });
+
+  </script>
+</body>
+</html>

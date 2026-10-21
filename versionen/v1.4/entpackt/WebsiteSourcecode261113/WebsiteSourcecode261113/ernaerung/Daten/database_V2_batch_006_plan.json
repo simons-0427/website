@@ -1,0 +1,488 @@
+{
+  "batch": 6,
+  "checkedOn": "2026-08-14",
+  "selection": "30 relevante rohe Gemüse-, Salat-, Pilz- und Algenvarianten aus BLS 4.0 mit belegbaren Preisangaben je kg; Stückpreise ohne bekanntes Gewicht wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg aus deutschen Supermarkt-/Discounter-Preislisten, aktuellen Händlerseiten oder aktuellen Preisvergleichsseiten; danach +10 % und Umrechnung auf EUR/100 g. Für die Nährwerte werden ausschließlich die BLS-4.0-Werte übernommen; nicht vorhandene BLS-Messwerte bleiben null.",
+  "items": [
+    {
+      "code": "G520100",
+      "name": "Gurke, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.79,
+      "sourceProduct": "Landgurken frisch, ausgewiesener kg-Preis 1,79 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gurken-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G640100",
+      "name": "Pastinake, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.58,
+      "sourceProduct": "Pastinaken, Schale, ausgewiesener kg-Preis 3,58 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/pastinaken-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G710100",
+      "name": "Bohne grün, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.98,
+      "sourceProduct": "Buschbohnen frisch, niedrigster ausgewiesener kg-Preis 3,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/bohnen-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G730100",
+      "name": "Dicke Bohne unreif, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Dicke Bohnen frisch, 1-kg-Angebot 2,99 EUR/kg",
+      "sourceUrl": "https://uenluemarket.de/product/dicke-bohnen-1-kg/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G760100",
+      "name": "Erbse grün, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 6.9,
+      "sourceProduct": "Erbsen frisch, kg-Preis 6,90 EUR/kg",
+      "sourceUrl": "https://www.gerweck.de/gemuese/wurzelgemuese/erbsen-frisch.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G761100",
+      "name": "Zuckererbse, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.75,
+      "sourceProduct": "Zuckererbsen frisch, niedrigster ausgewiesener kg-Preis 8,75 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/zuckererbsen-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G102100",
+      "name": "Endivie/Escariol, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.98,
+      "sourceProduct": "Endivien-Salat, ausgewiesener kg-Preis 3,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/endivien-salat-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G101100",
+      "name": "Chicorée, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.98,
+      "sourceProduct": "Chicorée frisch, ausgewiesener kg-Preis 2,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/chicoree-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G108100",
+      "name": "Schnittsalat/Pflücksalat, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.95,
+      "sourceProduct": "Blattsalat-Rohkost-Mix frisch, ausgewiesener kg-Preis 3,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/geschnittener-salat/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G220100",
+      "name": "Bleichsellerie, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 4.98,
+      "sourceProduct": "Bio Staudensellerie frisch, 400-g-Packung mit 4,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/edeka/sortiment/staudensellerie-frisch/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G103100",
+      "name": "Eisbergsalat, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.45,
+      "sourceProduct": "Eisbergsalat frisch gewaschen, ausgewiesener kg-Preis 8,45 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/eisbergsalat-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G230100",
+      "name": "Mangold, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.58,
+      "sourceProduct": "Mangold frisch, 500-g-Beutel mit 3,58 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/mangold-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G410100",
+      "name": "Artischocke, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 6.64,
+      "sourceProduct": "Artischocken frisch, ausgewiesener kg-Preis 6,64 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/artischocken-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G322100",
+      "name": "Grünkohl, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Grünkohl frisch, ausgewiesener kg-Preis 2,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gruenkohl-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G343100",
+      "name": "Wirsing, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Wirsing Deutschland frisch, niedrigster ausgewiesener kg-Preis 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/wirsing-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G344100",
+      "name": "Spitzkohl, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.79,
+      "sourceProduct": "Spitzkohl frisch, aktueller 1-kg-Preis 2,79 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/product/88382-spitzkohl-frisch-",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G321100",
+      "name": "Chinakohl, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Ein gutes Stück Heimat Chinakohl, ausgewiesener kg-Preis 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/chinakohl-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G331100",
+      "name": "Kohlrabi, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.97,
+      "sourceProduct": "Kohlrabi Deutschland, 0,89 EUR für 300 g = 2,97 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/product/72549-kohlrabi",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G490100",
+      "name": "Knoblauch, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 4.95,
+      "sourceProduct": "Knoblauch frisch, niedrigster ausgewiesener kg-Preis 4,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/knoblauch-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G485100",
+      "name": "Schalotte, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.76,
+      "sourceProduct": "Schalotten frisch, ausgewiesener kg-Preis 2,76 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/schalotten-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G581000",
+      "name": "Kürbis Hokkaido, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.69,
+      "sourceProduct": "Bio Kürbis Hokkaido frisch, niedrigster ausgewiesener kg-Preis 1,69 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/bio-kuerbis-hokkaido/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G613100",
+      "name": "Rote Bete, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.95,
+      "sourceProduct": "Rote Bete frisch, ausgewiesener kg-Preis 2,95 EUR/kg",
+      "sourceUrl": "https://www.bauer-tannhof.de/produkte/0100/gemuese",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G650100",
+      "name": "Schwarzwurzel, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.98,
+      "sourceProduct": "REWE Schwarzwurzeln frisch, ausgewiesener kg-Preis 2,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/schwarzwurzeln-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G670100",
+      "name": "Wurzelpetersilie, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.96,
+      "sourceProduct": "Wurzelpetersilie frisch, ausgewiesener kg-Preis 5,96 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/wurzelpetersilie-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G995000",
+      "name": "Nori-Blatt, geröstet",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 20.95,
+      "sourceProduct": "Bamboo Garden Nori-Blätter, 200 g für 4,19 EUR = 20,95 EUR/kg",
+      "sourceUrl": "https://www.idealo.de/preisvergleich/OffersOfProduct/203314777_-nori-blaetter-2-x-100g-bamboo-garden.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G561100",
+      "name": "Tomate, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Penny Rispentomaten, 1-kg-Packung für 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/penny-markt/sortiment/tomaten-frisch/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G620100",
+      "name": "Karotte/Möhre, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 0.88,
+      "sourceProduct": "REWE Speisemöhren, 1-kg-Schale für 0,88 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/product/72861-speisemoeren",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G582100",
+      "name": "Zucchini, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.5,
+      "sourceProduct": "REWE Dortmund Zucchini, 1-kg-Packung für 1,50 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/product/72790-zucchini-frisch",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K701100",
+      "name": "Champignon, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 4.73,
+      "sourceProduct": "Braune Champignons frisch, niedrigster ausgewiesener kg-Preis 4,73 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/pilze-frisch/produkte/?page=1",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "K713100",
+      "name": "Pfifferling, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 13.95,
+      "sourceProduct": "ALDI Süd Pfifferlinge frisch, ausgewiesener kg-Preis 13,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/pilze-frisch/produkte/?page=1",
+      "priceUnit": "kg"
+    }
+  ]
+}

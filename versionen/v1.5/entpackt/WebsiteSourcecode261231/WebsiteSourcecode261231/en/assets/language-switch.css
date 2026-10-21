@@ -1,0 +1,84 @@
+/* Shared language switch. The desktop control keeps a reserved lane between
+   the main navigation and the GitHub link. */
+nav .nav-language {
+  position: absolute !important;
+  right: clamp(8.5rem, 13vw, 10rem) !important;
+  z-index: 102;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  min-width: 4.5rem;
+  min-height: 2rem;
+  padding: .35rem .65rem !important;
+  border: 1px solid var(--border, rgba(148, 163, 184, .25)) !important;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .78) !important;
+  color: var(--muted, #94a3b8) !important;
+  font-size: .68rem !important;
+  font-weight: 600;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .16);
+  white-space: nowrap;
+  transition: color .2s, border-color .2s, background .2s;
+}
+
+nav .nav-language:hover {
+  color: var(--text, #f8fafc) !important;
+  border-color: var(--accent, #6ee7b7) !important;
+  background: rgba(110, 231, 183, .08);
+}
+
+nav .nav-language .nav-language-current,
+nav .nav-language a.active,
+nav .nav-language a[aria-current="page"] {
+  color: var(--text, #f8fafc) !important;
+  font-weight: 700;
+}
+
+nav .nav-language a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mobile-menu .mobile-language-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  width: fit-content;
+  min-width: 4.5rem;
+  min-height: 2rem;
+  margin: .35rem .2rem;
+  padding: .35rem .65rem !important;
+  border: 1px solid var(--border, rgba(148, 163, 184, .25));
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .78) !important;
+  color: var(--muted, #94a3b8) !important;
+  font-size: .78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .16);
+  white-space: nowrap;
+}
+
+.mobile-menu .mobile-language-button:hover {
+  color: var(--text, #f8fafc) !important;
+  border-color: var(--accent, #6ee7b7);
+  background: rgba(110, 231, 183, .08);
+}
+
+.mobile-menu .mobile-language-button .nav-language-current {
+  color: var(--text, #f8fafc);
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  nav .nav-language { display: none !important; }
+}

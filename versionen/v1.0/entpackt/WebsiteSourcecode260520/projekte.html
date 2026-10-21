@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertige Projekte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,12,15,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      padding: 0 clamp(1.5rem,5vw,4rem);
+      z-index: 100; gap: 1.5rem;
+    }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+        font-size: .875rem; font-weight: 500;
+        color: var(--muted); text-decoration: none;
+        letter-spacing: .03em; transition: color .2s;
+    }
+.nav-links a:hover { color: var(--accent); }
+    .nav-back:hover { color: var(--accent); }
+    .nav-back svg { width:15px; height:15px; }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      margin-right: auto;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-link {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .82rem; font-weight: 500;
+      color: var(--muted); text-decoration: none;
+      border: 1px solid var(--border);
+      padding: .4rem .9rem; border-radius: 8px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero-strip {
+      margin-top: var(--nav-h);
+      padding: 5rem clamp(1.5rem,8vw,8rem) 3.5rem;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-strip::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 80% 50%, rgba(110,231,183,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    .page-tag {
+      font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .9rem;
+    }
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800; letter-spacing: -.03em;
+      line-height: 1.05; margin-bottom: 1rem;
+    }
+    .page-title em { font-style: normal; color: var(--accent); }
+    .page-sub { color: var(--muted); font-weight: 300; font-size: 1rem; max-width: 52ch; }
+
+    /* ── STATS ROW ── */
+    .stats-row {
+      display: flex; gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-pill {
+      flex: 1; padding: 1.1rem clamp(1rem,3vw,2.5rem);
+      background: var(--surface);
+      display: flex; align-items: center; gap: .9rem;
+    }
+    .stat-icon { font-size: 1.2rem; }
+    .stat-count {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.5rem; line-height: 1;
+    }
+    .stat-lbl { font-size: .75rem; color: var(--muted); margin-top: .1rem; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: calc(100vh - var(--nav-h));
+    }
+
+    /* ── SIDEBAR ── */
+    aside {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+    }
+    .sidebar-label {
+      font-size: .68rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted);
+      font-weight: 600; margin-bottom: .8rem; margin-top: 1.4rem;
+    }
+    .sidebar-label:first-child { margin-top: 0; }
+    .filter-btn {
+      display: flex; align-items: center; gap: .6rem;
+      width: 100%; padding: .55rem .8rem;
+      border-radius: 8px; border: none;
+      background: transparent; color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .875rem; font-weight: 500;
+      cursor: pointer; text-align: left;
+      transition: background .15s, color .15s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: rgba(110,231,183,.08); color: var(--text);
+    }
+    .filter-btn.active { color: var(--accent); }
+    .filter-count {
+      margin-left: auto; font-size: .7rem;
+      background: var(--border); padding: .1rem .45rem;
+      border-radius: 999px; color: var(--muted);
+    }
+    .sort-select {
+      width: 100%; background: var(--card);
+      border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text); font-family: 'DM Sans', sans-serif;
+      font-size: .82rem; padding: .5rem .8rem;
+      cursor: pointer; outline: none;
+    }
+
+    /* ── LIST AREA ── */
+    .list-wrap { padding: 2rem clamp(1.5rem,4vw,3rem); }
+    .list-controls {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.8rem; flex-wrap: wrap;
+    }
+    .search-box {
+      flex: 1; min-width: 200px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; display: flex; align-items: center;
+      gap: .6rem; padding: 0 .9rem;
+    }
+    .search-box svg { width:15px; height:15px; color: var(--muted); flex-shrink:0; }
+    .search-box input {
+      background: transparent; border: none; color: var(--text);
+      font-family: 'DM Sans', sans-serif; font-size: .875rem;
+      padding: .65rem 0; outline: none; width: 100%;
+    }
+    .search-box input::placeholder { color: var(--muted); }
+
+    /* ── PROJECT ROWS ── */
+    #project-container { display: flex; flex-direction: column; gap: .7rem; }
+
+    .p-row {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.6rem;
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      gap: 1.2rem;
+      align-items: start;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      animation: rowIn .3s ease both;
+    }
+    .p-row:hover {
+      border-color: rgba(110,231,183,.35);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,.3);
+    }
+    @keyframes rowIn {
+      from { opacity:0; transform: translateY(8px); }
+      to   { opacity:1; transform: none; }
+    }
+
+    .p-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+
+    .p-body h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      margin-bottom: .3rem;
+    }
+    .p-body .p-desc {
+      font-size: .875rem; color: var(--muted);
+      line-height: 1.55; margin-bottom: .9rem;
+      max-width: 70ch;
+    }
+    .p-meta { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+
+    .tag {
+      font-size: .7rem; font-weight: 600;
+      padding: .2rem .6rem; border-radius: 5px;
+    }
+    .tag.gaming          { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .tag.finance         { background: rgba(110,231,183,.12); color: var(--accent); }
+    .tag.tools           { background: rgba(251,191,36,.1);   color: #fbbf24; }
+    .tag.data            { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .tag.web-development { background: rgba(129,140,248,.13); color: var(--accent2); }
+
+    .p-date {
+      font-size: .75rem; color: var(--muted);
+      display: flex; align-items: center; gap: .3rem;
+      margin-left: .3rem;
+    }
+    .p-date svg { width:11px; height:11px; }
+
+    .p-actions {
+      display: flex; flex-direction: column;
+      align-items: flex-end; gap: .6rem;
+      flex-shrink: 0;
+    }
+    .version-badge {
+      font-size: .72rem; font-weight: 700;
+      font-family: 'DM Sans', sans-serif;
+      padding: .22rem .65rem; border-radius: 5px;
+      background: rgba(110,231,183,.1); color: var(--accent);
+      border: 1px solid rgba(110,231,183,.2);
+    }
+    .dl-link {
+      display: inline-flex; align-items: center; gap: .45rem;
+      padding: .5rem 1rem; border-radius: 8px;
+      font-size: .82rem; font-weight: 500;
+      text-decoration: none;
+      background: var(--border); color: var(--text);
+      border: 1px solid transparent;
+      transition: background .2s, border-color .2s, color .2s;
+      white-space: nowrap;
+    }
+    .dl-link:hover {
+      background: rgba(110,231,183,.12);
+      border-color: var(--accent); color: var(--accent);
+    }
+    .dl-link svg { width:13px; height:13px; }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center; padding: 5rem 2rem;
+      color: var(--muted); display: none;
+    }
+    .empty-state svg { width:48px; height:48px; margin: 0 auto 1rem; opacity:.3; display:block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1.5rem,8vw,8rem);
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: .82rem; color: var(--muted);
+    }
+    footer a {
+      display: inline-flex; align-items: center; gap: .5rem;
+      color: var(--muted); text-decoration: none;
+      padding: .5rem 1rem; border-radius: 8px;
+      border: 1px solid var(--border);
+      font-weight: 500; transition: all .2s;
+    }
+    footer a:hover { border-color: var(--accent); color: var(--accent); }
+    footer a svg { width:14px; height:14px; }
+
+    @media (max-width: 900px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+      .p-row { grid-template-columns: 48px 1fr; }
+      .p-actions { flex-direction: row; align-items: center; grid-column: 1 / -1; }
+    }
+    @media (max-width: 500px) {
+      .p-row { grid-template-columns: 1fr; }
+      .p-icon { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projekte.html">Projekte</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="projekt-pipeline.html">Projekt-Pipeline</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero-strip">
+  <p class="page-tag">Projekte · Fertig & Veröffentlicht</p>
+  <h1 class="page-title">Was bereits <em>fertig ist.</em></h1>
+  <p class="page-sub">Alle abgeschlossenen Projekte – mit Beschreibung und direktem Link zum Download.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-pill">
+    <span class="stat-icon">✅</span>
+    <div>
+      <div class="stat-count" id="stat-total">0</div>
+      <div class="stat-lbl">Fertige Projekte</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon">🎮</span>
+    <div>
+      <div class="stat-count" id="stat-gaming">0</div>
+      <div class="stat-lbl">Gaming</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon">📈</span>
+    <div>
+      <div class="stat-count" id="stat-finance">0</div>
+      <div class="stat-lbl">Finanzen</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon">🛠️</span>
+    <div>
+      <div class="stat-count" id="stat-tools">0</div>
+      <div class="stat-lbl">Tools & Sonstiges</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- SIDEBAR -->
+  <aside>
+    <p class="sidebar-label">Tags</p>
+    <button class="filter-btn active" data-tag="all" onclick="setTag(this,'all')">
+      Alle
+      <span class="filter-count" id="fc-all"></span>
+    </button>
+    <button class="filter-btn" data-tag="gaming" onclick="setTag(this,'gaming')">
+      🎮 Gaming
+      <span class="filter-count" id="fc-gaming"></span>
+    </button>
+    <button class="filter-btn" data-tag="finance" onclick="setTag(this,'finance')">
+      📈 Finanzen
+      <span class="filter-count" id="fc-finance"></span>
+    </button>
+    <button class="filter-btn" data-tag="tools" onclick="setTag(this,'tools')">
+      🛠️ Tools
+      <span class="filter-count" id="fc-tools"></span>
+    </button>
+    <button class="filter-btn" data-tag="data" onclick="setTag(this,'data')">
+      📊 Datenanalyse
+      <span class="filter-count" id="fc-data"></span>
+    </button>
+    <button class="filter-btn" data-tag="web-development" onclick="setTag(this,'web-development')">
+      🌐 Web-Dev
+      <span class="filter-count" id="fc-web-development"></span>
+    </button>
+
+    <p class="sidebar-label">Sortieren</p>
+    <select class="sort-select" onchange="setSort(this.value)">
+      <option value="date">Veröffentlichungsdatum</option>
+      <option value="name">Name (A–Z)</option>
+    </select>
+  </aside>
+
+  <!-- LIST -->
+  <div class="list-wrap">
+    <div class="list-controls">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Projekte durchsuchen …" oninput="render()">
+      </div>
+    </div>
+
+    <div id="project-container"></div>
+    <div class="empty-state" id="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p>Keine Projekte gefunden.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 · Fertige Projekte</span>
+  <a href="downloads.html">
+    Downloads
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+</footer>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────────────────────────
+const PROJECTS = [
+  {
+    id: 1,
+    icon: '🎮', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Dungeon Crawler',
+    version: 'v1.0',
+    desc: 'Ein Dungeon-Spiel in C. Der Spieler navigiert durch eine zufällig generierte Karte, flieht vor Gegnern und sammelt Schätze und Items. Erstes vollständig spielbares Release mit Grundmechaniken, Karte und Gegnern.',
+    tags: ['gaming'],
+    date: '2026-02-25',
+  },
+  {
+    id: 2,
+    icon: '🎮', iconBg: 'rgba(129,140,248,.15)',
+    name: 'RPG-Menü',
+    version: 'v0.7',
+    desc: 'Ein Menü, um für eine RPG-Figur Klassen, Level, Attribute, Skills und Stats zu erstellen. Alle Menüs sind miteinander verbunden und es können jederzeit neue Klassen, Attribute oder Skills hinzugefügt werden.',
+    tags: ['gaming'],
+    date: '2026-03-29',
+  },
+  {
+    id: 3,
+    icon: '🔀', iconBg: 'rgba(110,231,183,.12)',
+    name: 'Zufallszahl erraten',
+    version: 'v0.2',
+    desc: 'Ein Spiel, in welchem eine zufällige Zahl zwischen 1 und 100 generiert wird und der Spieler diese erraten muss. Nach jedem Versuch erhält der Spieler Feedback, ob die gesuchte Zahl höher oder niedriger liegt.',
+    tags: ['gaming'],
+    date: '2026-01-04',
+  },
+  {
+    id: 4,
+    icon: '🌐', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Persönliche Website',
+    version: 'v1.0',
+    desc: 'Diese Website dient der Vorstellung meiner Person sowie meiner praktischen Arbeiten. Neben der Präsentation und Bereitstellung kostenloser Projekt-Downloads und Dashboards teile ich hier meine zukünftigen Entwicklungsziele. Für Anfragen oder Feedback steht Ihnen ein Kontaktformular zur Verfügung.',
+    tags: ['web-development'],
+    date: '2026-05-21',
+  },
+{
+    id: 5,
+    icon: '📊', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Immobilien-Kostenkalkulation',
+    version: 'v1.0',
+    desc: 'Immobilien-Tool welches die Kaufnebenkosten und Finanzierung für ein Immobilienprojekt berechnet. Es liefert die exakte Mietrendite, den monatlichen Cashflow und steuerliche Effekte für sichere Kaufentscheidungen.',
+    tags: ['finance','data'],
+    date: '2026-05-18',
+  },
+];
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let currentTag  = 'all';
+let currentSort = 'date';
+
+const TAG_LABELS = {
+  gaming:'🎮 Gaming', finance:'📈 Finanzen',
+  tools:'🛠️ Tools', data:'📊 Daten', 'web-development':'🌐 Web-Dev'
+};
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('de-DE', { day:'2-digit', month:'short', year:'numeric' });
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function render() {
+  const q = document.getElementById('search-input').value.toLowerCase().trim();
+
+  let items = PROJECTS.filter(p => {
+    const matchTag = currentTag === 'all' || p.tags.includes(currentTag);
+    const matchQ   = !q || p.name.toLowerCase().includes(q)
+                        || p.desc.toLowerCase().includes(q)
+                        || p.tags.some(t => t.includes(q));
+    return matchTag && matchQ;
+  });
+
+  items = items.slice().sort((a, b) => {
+    if (currentSort === 'date') return new Date(b.date) - new Date(a.date);
+    if (currentSort === 'name') return a.name.localeCompare(b.name);
+    return 0;
+  });
+
+  const container = document.getElementById('project-container');
+  const empty     = document.getElementById('empty-state');
+
+  if (items.length === 0) {
+    container.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  container.innerHTML = items.map((p, i) => buildRow(p, i)).join('');
+  updateCounts();
+}
+
+function buildRow(p, i) {
+  const tags = p.tags.map(t => `<span class="tag ${t}">${TAG_LABELS[t] || t}</span>`).join('');
+  return `
+    <div class="p-row" style="animation-delay:${i * 0.05}s">
+      <div class="p-icon" style="background:${p.iconBg}">${p.icon}</div>
+      <div class="p-body">
+        <h3>${p.name}</h3>
+        <p class="p-desc">${p.desc}</p>
+        <div class="p-meta">
+          ${tags}
+          <span class="p-date">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            ${formatDate(p.date)}
+          </span>
+        </div>
+      </div>
+      <div class="p-actions">
+        <span class="version-badge">${p.version}</span>
+        <a href="downloads.html" class="dl-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download
+        </a>
+      </div>
+    </div>`;
+}
+
+// ── COUNTS ────────────────────────────────────────────────────────────────────
+function updateCounts() {
+  document.getElementById('stat-total').textContent   = PROJECTS.length;
+  document.getElementById('stat-gaming').textContent  = PROJECTS.filter(p => p.tags.includes('gaming')).length;
+  document.getElementById('stat-finance').textContent = PROJECTS.filter(p => p.tags.includes('finance')).length;
+  document.getElementById('stat-tools').textContent   = PROJECTS.filter(p =>
+    p.tags.includes('tools') || p.tags.includes('web-development') || p.tags.includes('data')
+  ).length;
+
+  const tags = ['gaming','finance','tools','data','web-development'];
+  document.getElementById('fc-all').textContent = PROJECTS.length;
+  tags.forEach(t => {
+    const el = document.getElementById('fc-' + t);
+    if (el) el.textContent = PROJECTS.filter(p => p.tags.includes(t)).length;
+  });
+}
+
+// ── CONTROLS ──────────────────────────────────────────────────────────────────
+function setTag(btn, val) {
+  currentTag = val;
+  document.querySelectorAll('[data-tag]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+function setSort(val) { currentSort = val; render(); }
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+render();
+</script>
+</body>
+</html>

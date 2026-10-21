@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Weltmarkt-Dashboard mit gespeicherten Konjunktur-, Zins- und Marktdaten von 2010 bis 2026.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0c0c0f">
+    <title>Weltmarkt | Dashboard </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/weltmarkt.css?v=20260916-6">
+    <script src="assets/vendor/chart.umd.min.js?v=4.5.0" defer></script>
+    <script type="module" src="assets/js/weltmarkt/app.js?v=20260916-8"></script>
+  <link rel="stylesheet" href="../../assets/site-header.css">
+  <script src="../../assets/site-header.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
+    <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="../../" class="nav-logo" aria-label="Zur Startseite">sms<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../projekte/">Projekte</a></li>
+            <li><a href="../../downloads">Downloads</a></li>
+            <li><a href="../../projekt-pipeline">Projekt-Pipeline</a></li>
+            <li><a href="../../vision">Vision</a></li>
+            <li><a href="../../wissen/">Wissen</a></li>
+        </ul>
+        <div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/en/dashboards/world-markets/" data-language-file-target="../../en/dashboards/world-markets/index.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="nav-github">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+        </a>
+    </div>
+        <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../projekte/">Projekte</a></li>
+            <li><a href="../../downloads">Downloads</a></li>
+            <li><a href="../../projekt-pipeline">Projekt-Pipeline</a></li>
+            <li><a href="../../vision">Vision</a></li>
+            <li><a href="../../wissen/">Wissen</a></li>
+            <li class="mobile-language-row">
+  <span class="mobile-language-label">Sprache</span>
+  <button type="button" class="language-switch" data-language-target="/en/dashboards/world-markets/" data-language-file-target="../../en/dashboards/world-markets/index.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+</li>
+<li><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">GitHub</a></li>
+        </ul>
+    </div>
+
+    <main id="main-content" class="dashboard-shell">
+        <div class="breadcrumbs" aria-label="Brotkrümelnavigation">
+             <a href="../../">Home</a><span aria-hidden="true">/</span>
+        <a href="../../#dashboards">Dashboards</a><span aria-hidden="true">/</span>
+        <span aria-current="page">Weltmarkt</span>
+        </div>
+
+        <header class="page-heading">
+            <div>
+                <p class="eyebrow">Eigenständig entwickeltes Datenprojekt</p>
+                <h1>Weltmarkt auf einen Blick</h1>
+                <p>Die wichtigsten Signale zuerst. Wähle eine Kennzahl für Verlauf, Quelle und Methodik.</p>
+            </div>
+            <div id="data-status" class="data-status" role="status" aria-live="polite">Daten werden geladen …</div>
+        </header>
+
+        <section class="market-overview" aria-labelledby="market-overview-title">
+            <div class="market-overview__heading">
+                <p class="eyebrow">Wichtigste Kennzahlen</p>
+                <h2 id="market-overview-title">Aktueller Überblick</h2>
+            </div>
+            <div id="top-metrics" class="top-metrics" aria-live="polite"></div>
+            <div class="card-change-toolbar">
+                <p id="card-change-description">Relative Änderung gegenüber dem unmittelbar vorherigen gespeicherten Wert.</p>
+                <div class="card-change-settings" aria-label="Einstellungen für die Änderungsanzeige auf den Karten">
+                    <label for="card-change-mode">
+                        <span class="control-label">Anzeige</span>
+                        <select id="card-change-mode">
+                            <option value="relative">Relativ</option>
+                            <option value="absolute">Absolut</option>
+                        </select>
+                    </label>
+                    <label for="card-change-period">
+                        <span class="control-label">Vergleich</span>
+                        <select id="card-change-period">
+                            <option value="previous">Letzter Datenpunkt</option>
+                            <option value="1y">1 Jahr</option>
+                            <option value="3y">3 Jahre</option>
+                            <option value="10y">10 Jahre</option>
+                            <option value="max">Maximum</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <section id="trend" class="trend-panel" aria-labelledby="chart-title">
+            <div class="trend-panel__header">
+                <div>
+                    <span id="chart-section" class="section-pill">Kennzahl</span>
+                    <h2 id="chart-title">Zeitreihe wird geladen</h2>
+                </div>
+                <div class="chart-controls">
+                    <label class="currency-control" for="currency-select">
+                        <span class="control-label">Anzeigewährung</span>
+                        <select id="currency-select" aria-describedby="currency-note" disabled>
+                            <option value="original">Original</option>
+                            <option value="USD">USD – US-Dollar</option>
+                            <option value="EUR">EUR – Euro</option>
+                            <option value="GBP">GBP – Britisches Pfund</option>
+                            <option value="JPY">JPY – Japanischer Yen</option>
+                            <option value="CNY">CNY – Chinesischer Renminbi</option>
+                        </select>
+                        <span id="currency-note" class="currency-note" role="status">Originaleinheit der gespeicherten Quelle</span>
+                    </label>
+                    <div class="range-control-group">
+                        <span class="control-label">Zeitraum</span>
+                        <div class="range-controls" aria-label="Diagrammzeitraum">
+                            <button type="button" data-range="1y" aria-pressed="false">1J</button>
+                            <button class="is-active" type="button" data-range="3y" aria-pressed="true">3J</button>
+                            <button type="button" data-range="5y" aria-pressed="false">5J</button>
+                            <button type="button" data-range="10y" aria-pressed="false">10J</button>
+                            <button type="button" data-range="max" aria-pressed="false">MAX</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-summary" aria-live="polite">
+                <div>
+                    <span class="summary-label">Aktueller Wert</span>
+                    <strong id="chart-latest">–</strong>
+                    <span id="chart-latest-change" class="point-change point-change--neutral">–</span>
+                    <span id="chart-latest-date">Noch nicht geladen</span>
+                </div>
+                <div>
+                    <span class="summary-label">Änderung im Zeitraum</span>
+                    <strong id="chart-change" class="chart-change chart-change--neutral">–</strong>
+                    <span>Erster bis letzter gespeicherter Wert</span>
+                </div>
+            </div>
+
+            <div class="chart-wrap">
+                <canvas id="chart-canvas" aria-label="Zeitreihendiagramm der ausgewählten Kennzahl" role="img"></canvas>
+                <div id="chart-state" class="chart-state" data-state="loading">Zeitreihe wird geladen …</div>
+            </div>
+
+            <div class="trend-panel__footer">
+                <dl class="chart-facts">
+                    <div><dt>Abdeckung</dt><dd id="chart-coverage">–</dd></div>
+                    <div><dt>Intervall</dt><dd id="chart-frequency">–</dd></div>
+                    <div><dt>Gespeicherte Werte</dt><dd id="chart-points">–</dd></div>
+                    <div><dt>Quelle</dt><dd><a id="chart-source" rel="noopener noreferrer" target="_blank">–</a></dd></div>
+                </dl>
+                <details class="export-menu">
+                    <summary>Exportieren</summary>
+                    <div class="export-actions" aria-label="CSV-Exporte">
+                        <button id="export-csv" class="secondary-button" type="button" disabled title="Alle gespeicherten Originalwerte der ausgewählten Kennzahl">Zeitreihe als CSV</button>
+                        <button id="export-snapshot" class="secondary-button" type="button" disabled title="Je Kennzahl der letzte verfügbare Originalwert aus allen drei Kategorien">Momentaufnahme als CSV</button>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <details class="method-details">
+            <summary>
+                <span>Methodik &amp; Quelle</span>
+                <small>Definition, Serienkennung und Datenregeln</small>
+            </summary>
+            <section class="details-grid" aria-label="Methodik und Quelle">
+                <article class="detail-card">
+                    <span class="detail-card__number">01</span>
+                    <div>
+                        <h2>Methodik der ausgewählten Kennzahl</h2>
+                        <p id="methodology-summary">Die Kennzahl wird in ihrer gespeicherten Originalfrequenz dargestellt.</p>
+                        <details class="original-method" open>
+                            <summary>Quellenmethodik anzeigen</summary>
+                            <p id="methodology-text">Die Methodik wird mit der Kennzahl geladen.</p>
+                        </details>
+                    </div>
+                </article>
+                <article class="detail-card">
+                    <span class="detail-card__number">02</span>
+                    <div>
+                        <h2>Quelle und Serienkennung</h2>
+                        <dl class="source-details">
+                            <div><dt>Quelle</dt><dd id="source-name">–</dd></div>
+                            <div><dt>Serie</dt><dd id="source-series">–</dd></div>
+                            <div><dt>Hinweis</dt><dd id="source-license">–</dd></div>
+                        </dl>
+                    </div>
+                </article>
+                <article class="detail-card detail-card--wide">
+                    <span class="detail-card__number">03</span>
+                    <div>
+                        <h2>Datenregeln</h2>
+                        <p>Die Daten behalten ihre natürliche Frequenz. Marktdaten erscheinen höchstens einmal pro Handelstag; Wochen-, Monats-, Quartals- und Jahresreihen werden nicht künstlich auf tägliche Werte aufgefüllt. Lücken bleiben sichtbar.</p>
+                    </div>
+                </article>
+            </section>
+        </details>
+
+        <section class="database-overview" aria-label="Datenbankübersicht">
+            <div><strong id="metric-count">–</strong><span>Kennzahlen</span></div>
+            <div><strong id="observation-count">–</strong><span>gespeicherte Werte</span></div>
+            <div><strong id="retrieved-at">–</strong><span>Datenstand</span></div>
+        </section>
+
+        <section class="catalog" aria-labelledby="catalog-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Datenkatalog</p>
+                    <h2 id="catalog-title">Kennzahl auswählen</h2>
+                    <p>117 Zeitreihen, nach Themen geordnet. Alle Bereiche sind zunächst geöffnet und lassen sich einzeln schließen.</p>
+                </div>
+            </div>
+
+            <div class="catalog-toolbar">
+                <label class="search-field" for="metric-search">
+                    <span class="sr-only">Kennzahl suchen</span>
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+                    <input id="metric-search" type="search" placeholder="Kennzahl oder Quelle suchen" autocomplete="off">
+                </label>
+                <div class="category-tabs" role="tablist" aria-label="Kennzahlgruppen">
+                    <button class="is-active" type="button" role="tab" data-category="macro" aria-selected="true">Konjunktur</button>
+                    <button type="button" role="tab" data-category="monetary" aria-selected="false">Zinsen &amp; Geldpolitik</button>
+                    <button type="button" role="tab" data-category="markets" aria-selected="false">Märkte</button>
+                </div>
+            </div>
+
+            <div id="metric-groups" class="metric-groups" aria-live="polite"></div>
+            <p id="empty-results" class="empty-results" hidden>Keine passende gespeicherte Kennzahl gefunden.</p>
+        </section>
+
+        <noscript>
+            <p class="noscript-message">Für die Auswahl der Zeitreihen und das Diagramm muss JavaScript aktiviert sein.</p>
+        </noscript>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../../" class="footer-logo">sms<span>.</span></a>
+                <p>Finance-Tools, Dashboards und Programmierprojekte von Simon Stark.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="../../projekte/">Projekte</a></li>
+                    <li><a href="../../downloads">Downloads</a></li>
+                    <li><a href="../../projekt-pipeline">Projekt-Pipeline</a></li>
+                    <li><a href="../../vision">Vision</a></li>
+                    <li><a href="../../wissen/">Wissen</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Rechtliches</h5>
+                <ul>
+                    <li><a href="../../impressum">Impressum</a></li>
+                    <li><a href="../../datenschutz">Datenschutz</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Simon Stark</span>
+            <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+        </div>
+    </footer>
+</body>
+</html>

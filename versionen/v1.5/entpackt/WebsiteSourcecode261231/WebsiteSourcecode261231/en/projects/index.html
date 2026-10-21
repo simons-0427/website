@@ -1,0 +1,2985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Completed projects | Simon Stark</title>
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Completed projects by Simon Stark: dashboards, finance calculators, games and tools to try in the browser or download.">
+  <link rel="canonical" href="https://smstark-projekt.de/en/projects/">
+  <script type="application/ld+json">
+  {
+      "@context":  "https://schema.org",
+      "@type":  "CollectionPage",
+      "@id":  "https://smstark-projekt.de/en/projects/#webpage",
+      "name":  "Completed projects | Simon Stark",
+      "url":  "https://smstark-projekt.de/en/projects/",
+      "description":  "An overview of completed dashboards, finance calculators, games and tools by Simon Stark.",
+      "author":  {
+                     "@type":  "Person",
+                     "name":  "Simon Stark",
+                     "url":  "https://smstark-projekt.de/en/"
+                 },
+      "isPartOf":  {
+                       "@type":  "WebSite",
+                       "url":  "https://smstark-projekt.de/en/",
+                       "name":  "SMStark Projekt"
+                   }
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://smstark-projekt.de/en/projects/">
+  <meta property="og:title" content="Completed projects | Simon Stark">
+  <meta property="og:description" content="Completed projects by Simon Stark: dashboards, finance calculators, games and tools to try in the browser or download.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #8b9bb4;
+      --card:    #16161f;
+      --nav-h:   64px;
+      --control-sticky-top: var(--nav-h);
+      --radius:  12px;
+      --focus:   0 0 0 2px var(--bg), 0 0 0 4px rgba(110, 231, 183, 0.55);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    body.menu-open { overflow: hidden; }
+
+    :focus-visible {
+      outline: none;
+      box-shadow: var(--focus);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12, 12, 15, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 clamp(1.25rem, 4vw, 3rem);
+      z-index: 100;
+      gap: 1.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: clamp(1rem, 2.5vw, 2rem);
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+      margin-right: auto;
+      position: absolute;
+      left: clamp(1.25rem, 4vw, 3rem);
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-github {
+      position: absolute;
+      right: clamp(1.25rem, 4vw, 3rem);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--text);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      min-height: 40px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width: 15px; height: 15px; }
+    .nav-language {
+      position: absolute;
+      right: clamp(8.5rem, 13vw, 11rem);
+      display: inline-flex;
+      align-items: center;
+      gap: .25rem;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .nav-language span { color: var(--text); }
+    .nav-language:hover { color: var(--accent); }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: clamp(1.25rem, 4vw, 3rem);
+      width: 44px;
+      height: 44px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 101;
+      transition: border-color 0.2s;
+    }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav panel — grid rows avoid layout thrash */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(12, 12, 15, 0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity 0.2s ease, transform 0.22s ease, visibility 0.2s;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: none;
+    }
+    .mobile-menu ul { list-style: none; padding: 0.5rem 1.25rem 2rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-height: 48px;
+      padding: 0.75rem 0.15rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    .mobile-menu a:hover,
+    .mobile-menu a.active { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+
+    /* ── HERO ── */
+    .hero-strip {
+      margin-top: var(--nav-h);
+      padding: 3.25rem clamp(1.25rem, 5vw, 4rem) 2rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .hero-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 80% at 85% 40%, rgba(110, 231, 183, 0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 70% at 8% 90%, rgba(129, 140, 248, 0.04) 0%, transparent 55%);
+    }
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.9rem, 4.5vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 0.65rem;
+      position: relative;
+    }
+    .page-title em { font-style: normal; color: var(--accent); }
+    .page-sub {
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 1rem;
+      max-width: 48ch;
+      position: relative;
+    }
+
+    /* ── STATS ── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-pill {
+      padding: 1rem clamp(0.85rem, 2.5vw, 1.75rem);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .stat-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: rgba(110, 231, 183, 0.08);
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .stat-icon svg { width: 16px; height: 16px; }
+    .stat-icon.indigo { background: rgba(129, 140, 248, 0.1); color: var(--accent2); }
+    .stat-count {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-lbl {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: calc(100vh - var(--nav-h));
+      align-items: start;
+    }
+
+    /* Desktop sidebar */
+    .filters-panel {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 1.5rem 1.15rem;
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+    }
+    .sidebar-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 0.65rem;
+      margin-top: 1.25rem;
+    }
+    .sidebar-label:first-child { margin-top: 0; }
+    .filter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .filter-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: 100%;
+      min-height: 40px;
+      padding: 0.45rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .filter-btn:hover {
+      background: rgba(110, 231, 183, 0.06);
+      color: var(--text);
+    }
+    .filter-btn.active {
+      background: rgba(110, 231, 183, 0.1);
+      color: var(--accent);
+      border-color: rgba(110, 231, 183, 0.22);
+    }
+    .filter-count {
+      margin-left: auto;
+      font-size: 0.7rem;
+      background: var(--border);
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .filter-btn.active .filter-count {
+      background: rgba(110, 231, 183, 0.15);
+      color: var(--accent);
+    }
+    .sort-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .sort-btn .sort-dir {
+      margin-left: auto;
+      font-size: 0.72rem;
+      font-variant-numeric: tabular-nums;
+      opacity: 0.85;
+    }
+    .sort-btn .sort-dir[hidden] { display: none !important; }
+
+    /* Mobile sticky controls — hidden on desktop */
+    .mobile-controls {
+      display: none;
+      position: sticky;
+      top: var(--control-sticky-top);
+      z-index: 40;
+      background: rgba(12, 12, 15, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1rem 0.85rem;
+      gap: 0.65rem;
+      flex-direction: column;
+    }
+    .mobile-controls-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: stretch;
+    }
+    .chip-scroller {
+      display: flex;
+      gap: 0.45rem;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity;
+      padding-bottom: 0.15rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .chip-scroller::-webkit-scrollbar { display: none; }
+    .chip-scroller .filter-btn {
+      width: auto;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      min-height: 40px;
+      white-space: nowrap;
+      background: var(--card);
+      border-color: var(--border);
+    }
+    .chip-scroller.sort-list { flex-direction: row; }
+
+    /* List area */
+    .list-wrap {
+      padding: 1.5rem clamp(1.15rem, 3.5vw, 2.5rem) 2.5rem;
+      min-width: 0;
+    }
+    .list-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0 0.9rem;
+      min-height: 44px;
+    }
+    .search-box svg {
+      width: 16px;
+      height: 16px;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .search-box input {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.65rem 0;
+      outline: none;
+      width: 100%;
+    }
+    .search-box input::placeholder { color: var(--muted); }
+    .search-box:focus-within {
+      border-color: rgba(110, 231, 183, 0.4);
+    }
+    .result-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #project-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    /* Project cards */
+    .p-row {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.35rem;
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 1rem 1.15rem;
+      align-items: start;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      animation: rowIn 0.35s ease both;
+    }
+    .p-row:hover {
+      border-color: rgba(110, 231, 183, 0.32);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    }
+    .card-link-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: inherit;
+      text-decoration: none;
+    }
+    .card-link-overlay:focus-visible {
+      box-shadow: inset 0 0 0 2px var(--accent);
+    }
+    .p-actions { position: relative; z-index: 2; }
+
+    @keyframes rowIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .p-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .p-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.45rem 0.65rem;
+      margin-bottom: 0.3rem;
+    }
+    .p-body h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .p-body .p-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 0.75rem;
+      max-width: 68ch;
+    }
+    .p-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 5px;
+    }
+    .tag.gaming          { background: rgba(129, 140, 248, 0.13); color: var(--accent2); }
+    .tag.finance         { background: rgba(110, 231, 183, 0.12); color: var(--accent); }
+    .tag.tools           { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+    .tag.data            { background: rgba(244, 114, 182, 0.1); color: #f472b6; }
+    .tag.web-development { background: rgba(129, 140, 248, 0.13); color: var(--accent2); }
+
+    .p-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-left: 0.15rem;
+    }
+    .p-date svg { width: 11px; height: 11px; }
+
+    .p-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.55rem;
+      flex-shrink: 0;
+    }
+    .version-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.22rem 0.6rem;
+      border-radius: 5px;
+      background: rgba(110, 231, 183, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(110, 231, 183, 0.2);
+    }
+    .action-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      align-items: stretch;
+    }
+    /* Classic project-card download control (original projekte/index style) */
+    .dl-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-height: 40px;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      background: var(--border);
+      color: var(--text);
+      border: 1px solid transparent;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .dl-link:hover {
+      background: rgba(110, 231, 183, 0.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .dl-link svg { width: 13px; height: 13px; }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      color: var(--muted);
+      display: none;
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      background: rgba(22, 22, 31, 0.5);
+    }
+    .empty-state svg {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 0.85rem;
+      opacity: 0.35;
+      display: block;
+    }
+    .empty-state p { margin-bottom: 1rem; }
+    .empty-reset {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .empty-reset:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+
+
+    /* ── GANTT ZEITSTRAHL (MS Project–inspired, site tokens) ── */
+    .version-timeline {
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+      padding: clamp(2.75rem, 5vw, 4.5rem) 0 clamp(3rem, 6vw, 5rem);
+    }
+    .vt-inner {
+      max-width: min(1680px, 100%);
+      margin: 0 auto;
+      padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+    }
+    .vt-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem 2rem;
+      align-items: end;
+      margin-bottom: 1.75rem;
+    }
+    .vt-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 0.45rem;
+    }
+    .vt-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 300;
+      max-width: 48ch;
+      line-height: 1.55;
+    }
+    .vt-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .vt-meta strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Selection detail under head */
+    .gantt-detail {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      padding: 1.15rem 1.25rem;
+      margin-top: 1.15rem;
+      min-height: 5.5rem;
+    }
+    .gantt-detail-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem 1.5rem;
+      transition: opacity 0.15s ease;
+    }
+    .gantt-detail-inner.is-swapping { opacity: 0; }
+    .gantt-detail-main {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+      min-width: 0;
+      flex: 1 1 14rem;
+    }
+    /* Name + Version in einer Zeile; Description/Meta immer darunter */
+    .gantt-detail-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem 0.85rem;
+      min-width: 0;
+      max-width: 100%;
+    }
+    .gantt-detail-project {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+    .gantt-detail-ver {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--accent);
+      background: rgba(110, 231, 183, 0.1);
+      border: 1px solid rgba(110, 231, 183, 0.25);
+      border-radius: 6px;
+      padding: 0.2rem 0.55rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .gantt-detail-name {
+      width: 100%;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+    .gantt-detail-desc {
+      display: block;
+      width: 100%;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 62ch;
+      margin: 0;
+    }
+    .gantt-detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem 0.85rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      width: 100%;
+    }
+    .gantt-detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      width: 100%;
+      margin-top: 0.05rem;
+    }
+    .gantt-detail-tags .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 5px;
+    }
+    .gantt-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-self: flex-start;
+    }
+    .gantt-detail-actions a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .gantt-detail-actions a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .gantt-detail-actions a.is-primary {
+      background: rgba(110, 231, 183, 0.12);
+      border-color: rgba(110, 231, 183, 0.3);
+      color: var(--accent);
+    }
+    .gantt-detail-placeholder {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Board shell */
+    .gantt-board {
+      --gantt-label-w: 220px;
+      --gantt-row-h: 48px;
+      --gantt-head-h: 56px;
+      --gantt-rail-h: 52px;
+      --gantt-visible-rows: 11;
+      --gantt-day-w: 3.2px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-height: calc(var(--gantt-head-h) + var(--gantt-visible-rows) * var(--gantt-row-h) + var(--gantt-rail-h));
+    }
+    .gantt-scroll-wrap {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: var(--gantt-label-w) minmax(0, 1fr);
+      grid-template-rows: minmax(0, 1fr);
+    }
+    .gantt-labels { grid-column: 1; grid-row: 1; min-height: 0; }
+    .gantt-scroll { grid-column: 2; grid-row: 1; min-height: 0; }
+    .gantt-scroll {
+      overflow-x: auto;
+      overflow-y: hidden;
+      min-width: 0;
+      position: relative;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      overscroll-behavior: auto;
+    }
+    .gantt-scroll::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    /* Single year: no horizontal pan. Multi-year: pan, native bar hidden — year rail is the control. */
+    .gantt-scroll.is-year-locked {
+      overflow-x: hidden;
+    }
+    .gantt-scroll.is-year-open {
+      overflow-x: auto;
+    }
+
+    /* Edge fades: only over the chart, never the sticky labels */
+    .gantt-fade {
+      position: absolute;
+      grid-column: 2;
+      grid-row: 1;
+      top: 0;
+      bottom: 0;
+      width: 64px;
+      pointer-events: none;
+      z-index: 6;
+      opacity: 0;
+      transition: opacity 0.28s ease;
+    }
+    .gantt-fade-left {
+      left: 0;
+      background: linear-gradient(90deg, var(--surface) 0%, rgba(19, 19, 26, 0) 100%);
+    }
+    .gantt-fade-right {
+      right: 0;
+      left: auto;
+      background: linear-gradient(270deg, var(--surface) 0%, rgba(19, 19, 26, 0) 100%);
+    }
+    .gantt-scroll-wrap.is-can-left .gantt-fade-left,
+    .gantt-scroll-wrap.is-can-right .gantt-fade-right { opacity: 1; }
+    .gantt-fade-top,
+    .gantt-fade-bottom {
+      grid-column: 1 / -1;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: 40px;
+    }
+    .gantt-fade-top {
+      top: var(--gantt-head-h);
+      background: linear-gradient(180deg, var(--surface) 0%, rgba(19, 19, 26, 0) 100%);
+    }
+    .gantt-fade-bottom {
+      top: auto;
+      bottom: 0;
+      background: linear-gradient(0deg, var(--surface) 0%, rgba(19, 19, 26, 0) 100%);
+    }
+    .gantt-scroll-wrap.is-can-up .gantt-fade-top,
+    .gantt-scroll-wrap.is-can-down .gantt-fade-bottom { opacity: 1; }
+
+    .gantt-vbar {
+      grid-column: 2;
+      grid-row: 1;
+      position: absolute;
+      top: calc(var(--gantt-head-h) + 8px);
+      bottom: 8px;
+      right: 5px;
+      width: 7px;
+      border-radius: 99px;
+      background: #101018;
+      border: 1px solid var(--border);
+      z-index: 7;
+      touch-action: none;
+    }
+    .gantt-vbar[hidden] { display: none !important; }
+    .gantt-vbar-thumb {
+      position: absolute;
+      left: 1px;
+      right: 1px;
+      top: 0;
+      height: 40%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 99px;
+      background: rgba(110, 231, 183, 0.5);
+      cursor: grab;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .gantt-vbar-thumb:hover,
+    .gantt-vbar-thumb:focus-visible {
+      background: rgba(110, 231, 183, 0.78);
+    }
+    .gantt-vbar-thumb.is-dragging,
+    .gantt-vbar-thumb:active { cursor: grabbing; }
+
+    /* Year rail — custom horizontal control, aligned to the chart column */
+    .gantt-year-rail {
+      display: grid;
+      grid-template-columns: var(--gantt-label-w) 1fr;
+      flex: 0 0 auto;
+      height: var(--gantt-rail-h);
+      min-height: var(--gantt-rail-h);
+      background: #0e0e16;
+      border-top: 1px solid var(--border);
+    }
+    .gantt-year-rail[hidden] { display: none !important; }
+    .gantt-year-rail-label {
+      display: flex;
+      align-items: center;
+      padding: 0 0.9rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-right: 1px solid var(--border);
+    }
+    .gantt-year-track {
+      position: relative;
+      margin: 10px 12px;
+      height: 32px;
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(12, 12, 15, 0.55) 0%, rgba(16, 16, 24, 0.9) 100%);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      cursor: pointer;
+      touch-action: none;
+    }
+    .gantt-year-segs {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      z-index: 1;
+    }
+    .gantt-year-seg {
+      position: relative;
+      flex: 1 1 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: transparent;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .gantt-year-seg + .gantt-year-seg {
+      box-shadow: inset 1px 0 0 rgba(30, 30, 46, 0.95);
+    }
+    .gantt-year-seg:hover,
+    .gantt-year-seg:focus-visible {
+      color: var(--text);
+      background: rgba(110, 231, 183, 0.04);
+    }
+    .gantt-year-seg.is-in-view { color: var(--text); }
+    .gantt-year-lens {
+      position: absolute;
+      top: 3px;
+      bottom: 3px;
+      left: 0;
+      width: 40%;
+      margin: 0;
+      padding: 0;
+      border-radius: 6px;
+      background: rgba(110, 231, 183, 0.12);
+      border: 1px solid rgba(110, 231, 183, 0.5);
+      box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(110, 231, 183, 0.18);
+      cursor: grab;
+      z-index: 2;
+      touch-action: none;
+      appearance: none;
+      -webkit-appearance: none;
+      font-size: 0;
+      color: transparent;
+      line-height: 0;
+    }
+    .gantt-year-lens:focus-visible {
+      box-shadow:
+        0 0 0 2px var(--bg),
+        0 0 0 4px rgba(110, 231, 183, 0.55),
+        inset 0 1px 0 rgba(110, 231, 183, 0.18);
+    }
+    .gantt-year-lens.is-dragging,
+    .gantt-year-lens:active { cursor: grabbing; }
+    .gantt-year-lens::before,
+    .gantt-year-lens::after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      bottom: 7px;
+      width: 2px;
+      border-radius: 1px;
+      background: var(--accent);
+      opacity: 0.75;
+    }
+    .gantt-year-lens::before { left: 5px; }
+    .gantt-year-lens::after { right: 5px; }
+    .gantt-year-now {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--accent2);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .gantt-year-now[hidden] { display: none !important; }
+    .gantt-year-rail.is-single .gantt-year-track { cursor: default; }
+    .gantt-year-rail.is-single .gantt-year-lens {
+      left: 3px !important;
+      width: calc(100% - 6px) !important;
+      cursor: default;
+      pointer-events: none;
+    }
+    .gantt-year-rail.is-single .gantt-year-seg {
+      cursor: default;
+      color: var(--text);
+      pointer-events: none;
+    }
+    .gantt-year-rail.is-single .gantt-year-seg:hover,
+    .gantt-year-rail.is-single .gantt-year-seg:focus-visible {
+      background: transparent;
+    }
+
+    .gantt-year-band {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .gantt-year-band.is-alt {
+      background: transparent;
+    }
+    .gantt-grid-line.is-year {
+      width: 1px;
+      background: rgba(110, 231, 183, 0.32);
+    }
+    .gantt-month.is-year-start {
+      box-shadow: inset 1px 0 0 rgba(110, 231, 183, 0.28);
+    }
+    .gantt-month.is-year-start .gantt-month-year {
+      color: var(--accent);
+    }
+
+    /* Project names live outside the horizontal scroller so they stay put in 2027/2028. */
+    .gantt-labels {
+      z-index: 4;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      box-shadow: 6px 0 16px rgba(0, 0, 0, 0.18);
+      overflow-x: hidden;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      overscroll-behavior: auto;
+    }
+    .gantt-labels::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    .gantt-label-head {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      height: var(--gantt-head-h);
+      display: flex;
+      align-items: flex-end;
+      padding: 0 0.9rem 0.65rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: #101018;
+      border-bottom: 1px solid var(--border);
+    }
+    .gantt-label-row {
+      height: var(--gantt-row-h);
+      display: flex;
+      align-items: center;
+      padding: 0 0.9rem;
+      border-bottom: 1px solid rgba(30, 30, 46, 0.9);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      gap: 0.5rem;
+      cursor: default;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background: var(--surface);
+    }
+    .gantt-label-row.is-alt { background: #12121a; }
+    .gantt-label-row.is-active {
+      color: var(--accent);
+      background: #15201c;
+    }
+    .gantt-label-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      width: 1.25rem;
+      text-align: center;
+    }
+    .gantt-label-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: -0.015em;
+    }
+    .gantt-label-count {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+
+    /* Chart area */
+    .gantt-chart {
+      position: relative;
+      min-width: 0;
+    }
+    .gantt-months {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      height: var(--gantt-head-h);
+      display: flex;
+      background: #101018;
+      border-bottom: 1px solid var(--border);
+    }
+    .gantt-month {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 0 0.55rem 0;
+      border-right: 1px solid rgba(30, 30, 46, 0.85);
+      box-sizing: border-box;
+      overflow: hidden;
+      min-width: 0;
+    }
+    .gantt-month-name {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      padding-left: 0.45rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .gantt-month-year {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--text);
+      padding-left: 0.45rem;
+      line-height: 1.1;
+      margin-bottom: 0.15rem;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .gantt-rows {
+      position: relative;
+    }
+    .gantt-row {
+      height: var(--gantt-row-h);
+      position: relative;
+      border-bottom: 1px solid rgba(30, 30, 46, 0.9);
+    }
+    .gantt-row.is-alt { background: rgba(12, 12, 15, 0.28); }
+    .gantt-row.is-active { background: rgba(110, 231, 183, 0.04); }
+
+    /* Vertical grid lines per month — drawn as background on chart body */
+    .gantt-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .gantt-grid-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(30, 30, 46, 0.95);
+    }
+
+    /* Today / end marker line */
+    .gantt-today {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(129, 140, 248, 0.55);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .gantt-today::before {
+      content: 'Today';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      white-space: nowrap;
+    }
+
+    /* Version bars / milestones */
+    .gantt-bars {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+    /* Version ticks: short dashes, large hit area for hover */
+    .gantt-bar {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 28px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      cursor: pointer;
+      z-index: 2;
+      appearance: none;
+      -webkit-appearance: none;
+      font-size: 0;
+      color: transparent;
+      line-height: 0;
+    }
+    .gantt-bar::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 6px;
+      height: 16px;
+      border-radius: 2px;
+      transform: translate(-50%, -50%);
+      background: #c4b5fd;
+      border: 1px solid rgba(12, 12, 15, 0.95);
+      box-sizing: border-box;
+      box-shadow: 0 0 0 1px rgba(196, 181, 253, 0.4);
+      transition: width 0.15s ease, height 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+    .gantt-bar:hover::before,
+    .gantt-bar:focus-visible::before {
+      width: 7px;
+      height: 18px;
+      background: #ddd6fe;
+      border-color: rgba(12, 12, 15, 0.98);
+      box-shadow: 0 0 0 1px rgba(221, 214, 254, 0.55);
+    }
+    .gantt-bar:focus-visible {
+      outline: none;
+    }
+    .gantt-bar.is-active::before {
+      width: 7px;
+      height: 18px;
+      background: #a78bfa;
+      border-color: rgba(12, 12, 15, 0.98);
+      box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.6), 0 0 0 3px rgba(110, 231, 183, 0.35);
+    }
+
+    /* Unified tick color — category tones no longer recolor ticks */
+    .gantt-bar.tone-gaming::before,
+    .gantt-bar.tone-finance::before,
+    .gantt-bar.tone-tools::before,
+    .gantt-bar.tone-data::before,
+    .gantt-bar.tone-web::before,
+    .gantt-bar.tone-default::before { background: #c4b5fd; }
+    .gantt-bar.is-active.tone-gaming::before,
+    .gantt-bar.is-active.tone-finance::before,
+    .gantt-bar.is-active.tone-tools::before,
+    .gantt-bar.is-active.tone-data::before,
+    .gantt-bar.is-active.tone-web::before,
+    .gantt-bar.is-active.tone-default::before { background: #a78bfa; }
+
+    /* Connector bar: same height as vertical ticks (16px) */
+    .gantt-span {
+      position: absolute;
+      top: 50%;
+      height: 16px;
+      transform: translateY(-50%);
+      background: rgba(110, 231, 183, 0.22);
+      border-radius: 3px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Project start — 1px red hairline */
+    .gantt-start {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 28px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      cursor: pointer;
+      z-index: 3;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .gantt-start::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 1px;
+      height: 22px;
+      border-radius: 0;
+      transform: translate(-50%, -50%);
+      background: rgba(248, 113, 113, 0.8);
+      border: none;
+      box-shadow: none;
+      opacity: 1;
+      transition: height 0.15s ease, background 0.15s ease;
+    }
+    .gantt-start:hover::before,
+    .gantt-start:focus-visible::before,
+    .gantt-start.is-active::before {
+      height: 26px;
+      background: #f87171;
+    }
+    .gantt-start:focus-visible { outline: none; }
+
+    .vt-empty {
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 2.25rem 1.25rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .vt-empty[hidden],
+    .vt-stage[hidden] { display: none !important; }
+
+    @media (max-width: 720px) {
+      .vt-head { grid-template-columns: 1fr; }
+      .vt-meta { text-align: left; }
+      .vt-meta strong { display: inline; font-size: 1.15rem; margin-right: 0.3rem; }
+      .gantt-board { --gantt-label-w: 132px; --gantt-row-h: 44px; --gantt-head-h: 52px; --gantt-rail-h: 48px; }
+      .gantt-label-text { font-size: 0.78rem; }
+      .gantt-label-count { display: none; }
+      .gantt-bar { width: 22px; height: 28px; }
+      .gantt-bar::before { width: 6px; height: 16px; }
+      .gantt-span { height: 16px; }
+      .gantt-detail-main { gap: 0.35rem; }
+      .gantt-detail-inner { flex-direction: column; align-items: stretch; }
+      .gantt-year-rail { min-height: 48px; }
+      .gantt-year-rail-label { padding: 0 0.55rem; font-size: 0.62rem; }
+      .gantt-year-track { margin: 8px 8px; height: 30px; }
+      .gantt-year-seg { font-size: 0.72rem; }
+      .gantt-fade { width: 36px; }
+      .gantt-month-name,
+      .gantt-month-year { padding-left: 0.2rem; font-size: 0.62rem; }
+      .gantt-board:has(#gantt-year-rail:not([hidden])) .gantt-month-year { display: none; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3rem clamp(1.25rem, 5vw, 4rem) 1.75rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.35rem;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { justify-content: flex-start; padding: 0 1.15rem; }
+      nav .nav-links,
+      nav .nav-github,
+      nav .nav-language { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+    }
+
+    @media (max-width: 900px) {
+      .main-wrap {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .filters-panel { display: none; }
+      .mobile-controls { display: flex; }
+      .list-wrap { padding: 1.15rem 1rem 2rem; }
+      .list-toolbar { margin-bottom: 0.85rem; }
+    }
+
+    @media (max-width: 720px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .hero-strip { padding: 2.25rem 1.15rem 1.5rem; }
+      .page-sub { font-size: 0.95rem; }
+      .stat-pill { padding: 0.85rem 0.9rem; gap: 0.55rem; }
+      .stat-count { font-size: 1.2rem; }
+      .stat-icon { width: 32px; height: 32px; }
+    }
+
+    @media (max-width: 640px) {
+      .p-row {
+        grid-template-columns: 44px 1fr;
+        padding: 1.1rem;
+        gap: 0.85rem;
+      }
+      .p-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+      .p-body .p-desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .p-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.65rem;
+        margin-top: 0.15rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid var(--border);
+      }
+      .action-btns {
+        flex-direction: row;
+        flex: 1;
+        justify-content: flex-end;
+      }
+      .dl-link {
+        flex: 1;
+        min-height: 44px;
+        max-width: 11rem;
+      }
+      .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .p-row:hover { transform: none; }
+    }
+  </style>
+
+  <link rel="stylesheet" href="../../assets/site-header.css">
+  <script src="../../assets/site-header.js" defer></script>
+</head>
+<body>
+<!--
+  THESIS: Pro catalog for finished work — mobile-first sticky filters, pro scan hierarchy; not a squeezed desktop sidebar.
+  OWN-WORLD: Dark studio #0c0c0f / mint #6ee7b7 / indigo #818cf8, Syne + DM Sans, fine borders.
+  STORY: Filter or search → open a real project or download.
+  FIRST VIEWPORT: Nav, compact hero, stats, sticky controls (mobile) or sidebar (desktop), first project cards.
+  FORM: Confirmed shape brief (extension of incumbent world). Seed: n/a (refinement).
+  FINISH: unreviewed and undocumented is unfinished; this build ends with detector pass + owner review.
+-->
+
+<nav class="main-nav">
+  <a href="/en/" class="nav-logo">sms<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/en/">Home</a></li>
+    <li><a href="/en/projects/" class="active" aria-current="page">Projects</a></li>
+    <li><a href="/en/downloads">Downloads</a></li>
+    <li><a href="/en/project-pipeline">Project pipeline</a></li>
+    <li><a href="/en/vision">Vision</a></li>
+    <li><a href="/en/knowledge/">Knowledge</a></li>
+  </ul>
+<div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/projekte/" data-language-file-target="../../projekte/index.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    GitHub
+  </a>
+    </div>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <ul>
+    <li><a href="/en/">Home</a></li>
+    <li><a href="/en/projects/" class="active" aria-current="page">Projects</a></li>
+    <li><a href="/en/downloads">Downloads</a></li>
+    <li><a href="/en/project-pipeline">Project pipeline</a></li>
+    <li><a href="/en/vision">Vision</a></li>
+    <li><a href="/en/knowledge/">Knowledge</a></li>
+    <li class="mobile-language-row">
+  <span class="mobile-language-label">Language</span>
+  <button type="button" class="language-switch" data-language-target="/projekte/" data-language-file-target="../../projekte/index.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+</li>
+    <li>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </li>
+  </ul>
+</div>
+
+<header class="hero-strip">
+  <h1 class="page-title">What is already <em>finished.</em></h1>
+  <p class="page-sub">Completed projects and dashboards with descriptions, direct access and downloads.</p>
+</header>
+
+<div class="stats-row" aria-label="Project overview">
+  <div class="stat-pill">
+    <span class="stat-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+    </span>
+    <div>
+      <div class="stat-count" id="stat-total">0</div>
+      <div class="stat-lbl">Completed projects</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon indigo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h4"/></svg>
+    </span>
+    <div>
+      <div class="stat-count" id="stat-gaming">0</div>
+      <div class="stat-lbl">Gaming</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+    </span>
+    <div>
+      <div class="stat-count" id="stat-finance">0</div>
+      <div class="stat-lbl">Finance</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon indigo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+    </span>
+    <div>
+      <div class="stat-count" id="stat-tools">0</div>
+      <div class="stat-lbl">Tools &amp; other</div>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky mobile controls -->
+<div class="mobile-controls" id="mobile-controls" aria-label="Filters and search">
+  <div class="mobile-controls-row">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="search-input-mobile" placeholder="Search projects …" autocomplete="off" enterkeyhint="search" aria-label="Search projects">
+    </div>
+  </div>
+  <div class="chip-scroller sort-list" role="listbox" aria-label="Sort options">
+    <button type="button" class="filter-btn sort-btn active" data-sort="newest" aria-pressed="true">Newest <span class="sort-dir" aria-hidden="true">↓</span></button>
+    <button type="button" class="filter-btn sort-btn" data-sort="start" aria-pressed="false">Start <span class="sort-dir" hidden aria-hidden="true"></span></button>
+    <button type="button" class="filter-btn sort-btn" data-sort="name" aria-pressed="false">A–Z <span class="sort-dir" hidden aria-hidden="true"></span></button>
+    <button type="button" class="filter-btn sort-btn" data-sort="duration" aria-pressed="false">Duration <span class="sort-dir" hidden aria-hidden="true"></span></button>
+  </div>
+  <div class="chip-scroller" id="mobile-filters" role="toolbar" aria-label="Filter by tag">
+    <button type="button" class="filter-btn active" data-tag="all">All <span class="filter-count" id="mfc-all"></span></button>
+    <button type="button" class="filter-btn" data-tag="gaming">Gaming <span class="filter-count" id="mfc-gaming"></span></button>
+    <button type="button" class="filter-btn" data-tag="finance">Finance <span class="filter-count" id="mfc-finance"></span></button>
+    <button type="button" class="filter-btn" data-tag="tools">Tools <span class="filter-count" id="mfc-tools"></span></button>
+    <button type="button" class="filter-btn" data-tag="data">Data <span class="filter-count" id="mfc-data"></span></button>
+    <button type="button" class="filter-btn" data-tag="web-development">Web development <span class="filter-count" id="mfc-web-development"></span></button>
+  </div>
+</div>
+
+<div class="main-wrap">
+  <aside class="filters-panel" aria-label="Filters">
+    <p class="sidebar-label">Tags</p>
+    <div class="filter-list" id="desktop-filters">
+      <button type="button" class="filter-btn active" data-tag="all">All <span class="filter-count" id="fc-all"></span></button>
+      <button type="button" class="filter-btn" data-tag="finance">Finance <span class="filter-count" id="fc-finance"></span></button>
+      <button type="button" class="filter-btn" data-tag="tools">Tools <span class="filter-count" id="fc-tools"></span></button>
+      <button type="button" class="filter-btn" data-tag="data">Data analysis <span class="filter-count" id="fc-data"></span></button>
+      <button type="button" class="filter-btn" data-tag="gaming">Gaming <span class="filter-count" id="fc-gaming"></span></button>
+<button type="button" class="filter-btn" data-tag="web-development">Web development <span class="filter-count" id="fc-web-development"></span></button>
+    </div>
+    <p class="sidebar-label">Sort</p>
+    <div class="sort-list" role="listbox" aria-label="Sort options">
+      <button type="button" class="filter-btn sort-btn active" data-sort="newest" aria-pressed="true">Newest <span class="sort-dir" aria-hidden="true">↓</span></button>
+      <button type="button" class="filter-btn sort-btn" data-sort="start" aria-pressed="false">Project start <span class="sort-dir" hidden aria-hidden="true"></span></button>
+      <button type="button" class="filter-btn sort-btn" data-sort="name" aria-pressed="false">A–Z <span class="sort-dir" hidden aria-hidden="true"></span></button>
+      <button type="button" class="filter-btn sort-btn" data-sort="duration" aria-pressed="false">Project duration <span class="sort-dir" hidden aria-hidden="true"></span></button>
+    </div>
+  </aside>
+
+  <div class="list-wrap">
+    <div class="list-toolbar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="search" id="search-input" placeholder="Search projects …" autocomplete="off" aria-label="Search projects">
+      </div>
+    </div>
+
+    <p class="result-meta" id="result-meta" aria-live="polite"></p>
+
+    <div id="project-container"></div>
+
+    <div class="empty-state" id="empty-state" role="status">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p>No projects found.</p>
+      <button type="button" class="empty-reset" id="empty-reset">Reset filters</button>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="version-timeline" id="version-timeline" aria-labelledby="vt-title">
+  <div class="vt-inner">
+    <div class="vt-head">
+      <div>
+        <h2 class="vt-title" id="vt-title">Version timeline</h2>
+        <p class="vt-sub">All published versions arranged chronologically.</p>
+      </div>
+        <p class="vt-meta" id="vt-meta" hidden><strong id="vt-count">0</strong> releases</p>
+    </div>
+
+    <div class="vt-stage" id="vt-stage" hidden>
+      <div class="gantt-board" id="gantt-board">
+        <div class="gantt-scroll-wrap" id="gantt-scroll-wrap">
+          <div class="gantt-labels" id="gantt-labels"></div>
+          <div class="gantt-scroll" id="gantt-scroll">
+            <div class="gantt-chart" id="gantt-chart"></div>
+          </div>
+          <div class="gantt-fade gantt-fade-left" id="gantt-fade-left"></div>
+          <div class="gantt-fade gantt-fade-right" id="gantt-fade-right"></div>
+          <div class="gantt-fade gantt-fade-top" id="gantt-fade-top"></div>
+          <div class="gantt-fade gantt-fade-bottom" id="gantt-fade-bottom"></div>
+          <div class="gantt-vbar" id="gantt-vbar" hidden>
+            <button type="button" class="gantt-vbar-thumb" id="gantt-vbar-thumb" aria-label="Liste scrollen"></button>
+          </div>
+        </div>
+        <div class="gantt-year-rail" id="gantt-year-rail">
+            <div class="gantt-year-rail-label">Year</div>
+          <div class="gantt-year-track" id="gantt-year-track">
+            <div class="gantt-year-segs" id="gantt-year-segs"></div>
+            <div class="gantt-year-now" id="gantt-year-now" hidden></div>
+            <button type="button" class="gantt-year-lens" id="gantt-year-lens" aria-label="Visible time range"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="gantt-detail" id="gantt-detail" aria-live="polite">
+        <div class="gantt-detail-inner" id="vt-card-body">
+          <p class="gantt-detail-placeholder">Select a bar to see details.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vt-empty" id="vt-empty" role="status">No version entries yet.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/en/" class="footer-logo">sms<span>.</span></a>
+      <p>Personal finance tools, dashboards and programming projects by Simon Stark. Always a work in progress.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="/en/projects/">Projects</a></li>
+        <li><a href="/en/downloads">Downloads</a></li>
+        <li><a href="/en/project-pipeline">Project pipeline</a></li>
+        <li><a href="/en/vision">Vision</a></li>
+        <li><a href="/en/knowledge/">Knowledge</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="/en/legal-notice">Legal notice</a></li>
+        <li><a href="/en/privacy">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Simon Stark</span>
+    <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+  </div>
+</footer>
+
+  <script src="../../download-data.js"></script>
+<script>
+// Mobile hamburger menu
+const navToggle = document.querySelector('.nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+function setMenuOpen(open) {
+  if (!navToggle || !mobileMenu) return;
+  navToggle.classList.toggle('open', open);
+  mobileMenu.classList.toggle('open', open);
+  mobileMenu.hidden = !open;
+  document.body.classList.toggle('menu-open', open);
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+if (navToggle && mobileMenu) {
+  mobileMenu.hidden = true;
+  navToggle.addEventListener('click', () => {
+    setMenuOpen(!navToggle.classList.contains('open'));
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => setMenuOpen(false));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenuOpen(false);
+  });
+}
+
+// ── DATA from download-data.js ────────────────────────────────────────────────
+function getDownloadData() {
+  if (Array.isArray(window.DOWNLOAD_DATA)) return window.DOWNLOAD_DATA;
+  if (Array.isArray(window.DOWNLOADS)) return window.DOWNLOADS;
+  return [];
+}
+
+function parseDay(d) {
+  if (!d) return null;
+  const t = new Date(d + (String(d).length <= 10 ? 'T12:00:00' : ''));
+  return isNaN(t.getTime()) ? null : t.getTime();
+}
+
+function nowTs() {
+  let now = new Date();
+  if (window.GANTT_NOW) {
+    const t = Date.parse(window.GANTT_NOW);
+    if (!isNaN(t)) now = new Date(t);
+  }
+  now.setHours(12, 0, 0, 0);
+  return now.getTime();
+}
+
+function assetRoot() {
+  return '/en/';
+}
+
+function durationDays(startTs, lastTs, finished) {
+  if (startTs == null) return 0;
+  const endTs = finished
+    ? lastTs
+    : Math.max(lastTs != null ? lastTs : startTs, nowTs());
+  if (endTs == null) return 0;
+  return Math.max(0, Math.round((endTs - startTs) / 86400000));
+}
+
+function getProjectMeta(projectName) {
+  const map = window.DOWNLOAD_PROJECTS;
+  const aliases = window.DOWNLOAD_PROJECT_ALIASES || {};
+  const sourceKey = aliases[projectName] || projectName;
+  if (map && typeof map === 'object' && map[sourceKey]) {
+    return map[sourceKey];
+  }
+  return null;
+}
+
+function isProjectFinished(projectName) {
+  const meta = getProjectMeta(projectName);
+  if (meta && typeof meta === 'object' && 'finished' in meta) {
+    return meta.finished === true;
+  }
+  const map = window.DOWNLOAD_PROJECT_FINISHED;
+  const aliases = window.DOWNLOAD_PROJECT_ALIASES || {};
+  const sourceKey = aliases[projectName] || projectName;
+  if (map && typeof map === 'object' && sourceKey in map) {
+    return map[sourceKey] === true;
+  }
+  return false;
+}
+
+function buildProjects() {
+  const metaMap = (window.DOWNLOAD_PROJECTS && typeof window.DOWNLOAD_PROJECTS === 'object')
+    ? window.DOWNLOAD_PROJECTS
+    : {};
+
+  let id = 0;
+  return Object.keys(metaMap).map(function (key) {
+    const m = metaMap[key] || {};
+    const startDate = m.started || m.startDate || m.date || '';
+    const date = m.date || '';
+    const startTs = parseDay(startDate);
+    const lastTs = parseDay(date);
+    const duration = durationDays(startTs, lastTs, !!m.finished);
+    id += 1;
+    return {
+      id: id,
+      key: key,
+      icon: m.icon || '📁',
+      iconBg: m.iconBg || 'rgba(129,140,248,.15)',
+      name: m.displayName || m.name || key,
+      version: m.version || '',
+      desc: m.desc || '',
+      tags: Array.isArray(m.tags) ? m.tags.slice() : [],
+      date: date,
+      startDate: startDate,
+      duration: duration,
+       link: m.link || '/en/downloads',
+      finished: !!m.finished
+    };
+  });
+}
+
+const PROJECTS = buildProjects();
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let currentTag  = 'all';
+let currentSort = 'newest';
+let currentSortDir = 1;
+const SORT_DESC = { newest: true, start: false, name: false, duration: true };
+const DEFAULT_SORT = 'newest';
+
+const TAG_LABELS = {
+  gaming: 'Gaming',
+  finance: 'Finance',
+  tools: 'Tools',
+  data: 'Data',
+  'web-development': 'Web development',
+};
+
+const searchDesktop = document.getElementById('search-input');
+const searchMobile  = document.getElementById('search-input-mobile');
+
+function getQuery() {
+  const a = (searchDesktop && searchDesktop.value) || '';
+  const b = (searchMobile && searchMobile.value) || '';
+  // Prefer the focused field; otherwise merge by last non-empty from either
+  const active = document.activeElement;
+  if (active === searchMobile) return b.toLowerCase().trim();
+  if (active === searchDesktop) return a.toLowerCase().trim();
+  return (a || b).toLowerCase().trim();
+}
+
+function syncSearch(source) {
+  const val = source.value;
+  if (searchDesktop && source !== searchDesktop) searchDesktop.value = val;
+  if (searchMobile && source !== searchMobile) searchMobile.value = val;
+  render();
+}
+
+function sortArrow() {
+  const defaultDesc = !!SORT_DESC[currentSort];
+  const isDesc = currentSortDir === 1 ? defaultDesc : !defaultDesc;
+  return isDesc ? '↓' : '↑';
+}
+
+function updateSortButtons() {
+  const arrow = sortArrow();
+  document.querySelectorAll('[data-sort]').forEach(btn => {
+    const on = btn.getAttribute('data-sort') === currentSort;
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    const dir = btn.querySelector('.sort-dir');
+    if (!dir) return;
+    dir.hidden = !on;
+    if (on) dir.textContent = arrow;
+  });
+}
+
+function applySort(val, reset) {
+  if (reset || val !== currentSort) {
+    currentSort = val;
+    currentSortDir = 1;
+  } else {
+    currentSortDir *= -1;
+  }
+  updateSortButtons();
+  render();
+  renderVersionTimeline();
+}
+
+function formatDate(d) {
+  if (!d) return '—';
+  const t = parseDay(d);
+  if (t == null) return '—';
+  return new Date(t).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+function formatDuration(days) {
+  if (days == null || days < 0) return '—';
+  if (days === 0) return '1 release';
+  if (days < 14) return days + (days === 1 ? ' day' : ' days');
+  const months = Math.round(days / 30.437);
+  if (months < 1) {
+    const weeks = Math.max(2, Math.round(days / 7));
+    return weeks + (weeks === 1 ? ' week' : ' weeks');
+  }
+  if (months < 12) return months + (months === 1 ? ' month' : ' months');
+  const years = Math.floor(months / 12);
+  const rem = months % 12;
+  const yearLbl = years + (years === 1 ? ' year' : ' years');
+  if (rem === 0) return yearLbl;
+  return yearLbl + ' ' + rem + (rem === 1 ? ' month' : ' months');
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function missingLast(a, b) {
+  const aMiss = a == null || a === '' || (typeof a === 'number' && isNaN(a));
+  const bMiss = b == null || b === '' || (typeof b === 'number' && isNaN(b));
+  if (aMiss && bMiss) return 0;
+  if (aMiss) return 1;
+  if (bMiss) return -1;
+  return null;
+}
+
+function compareProjectItems(a, b) {
+  const nameCmp = String(a.name || '').localeCompare(String(b.name || ''), 'en');
+  const dir = currentSortDir;
+  if (currentSort === 'newest') {
+    const c = missingLast(parseDay(a.date), parseDay(b.date));
+    if (c != null) return c;
+    return (parseDay(b.date) - parseDay(a.date)) * dir || nameCmp;
+  }
+  if (currentSort === 'start') {
+    const c = missingLast(parseDay(a.startDate), parseDay(b.startDate));
+    if (c != null) return c;
+    return (parseDay(a.startDate) - parseDay(b.startDate)) * dir || nameCmp;
+  }
+  if (currentSort === 'name') return nameCmp * dir;
+  if (currentSort === 'duration') return (b.duration - a.duration) * dir || nameCmp;
+  return 0;
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function render() {
+  const q = getQuery();
+
+  let items = PROJECTS.filter(p => {
+    const matchTag = currentTag === 'all' || p.tags.includes(currentTag);
+    const matchQ = !q
+      || p.name.toLowerCase().includes(q)
+      || p.desc.toLowerCase().includes(q)
+      || p.tags.some(t => t.includes(q) || (TAG_LABELS[t] || '').toLowerCase().includes(q));
+    return matchTag && matchQ;
+  });
+
+  items = items.slice().sort(compareProjectItems);
+
+  const container = document.getElementById('project-container');
+  const empty = document.getElementById('empty-state');
+  const meta = document.getElementById('result-meta');
+
+  if (meta) {
+    const tagNote = currentTag === 'all' ? '' : ` | ${TAG_LABELS[currentTag] || currentTag}`;
+    meta.textContent = items.length === 1
+      ? `1 project${tagNote}`
+      : `${items.length} projects${tagNote}`;
+  }
+
+  if (items.length === 0) {
+    container.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  container.innerHTML = items.map((p, i) => buildRow(p, i)).join('');
+  updateCounts();
+}
+
+function buildRow(p, i) {
+  const tags = p.tags.map(t =>
+    `<span class="tag ${t}">${escapeHtml(TAG_LABELS[t] || t)}</span>`
+  ).join('');
+  const name = escapeHtml(p.name);
+  const desc = escapeHtml(p.desc);
+  const version = escapeHtml(p.version);
+  const link = encodeURI(p.link);
+
+  return `
+    <article class="p-row" style="animation-delay:${i * 0.04}s">
+      <a href="${link}" class="card-link-overlay" aria-label="Open ${name}"></a>
+      <div class="p-icon" style="background:${p.iconBg}" aria-hidden="true">${p.icon}</div>
+      <div class="p-body">
+        <div class="p-head">
+          <h2>${name}</h2>
+        </div>
+        <p class="p-desc">${desc}</p>
+        <div class="p-meta">
+          ${tags}
+          <span class="p-date" title="Latest version">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            ${formatDate(p.date)}
+          </span>
+          <span class="p-date" title="Project duration">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ${escapeHtml(formatDuration(p.duration))}
+          </span>
+          <span class="p-date" title="${p.finished ? 'Project completed' : 'Project still in progress'}">
+            ${p.finished
+              ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Completed'
+              : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg> In progress'}
+          </span>
+        </div>
+      </div>
+      <div class="p-actions">
+        <span class="version-badge">${version}</span>
+        <div class="action-btns">
+          <a href="${assetRoot()}downloads" class="dl-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download
+          </a>
+        </div>
+      </div>
+    </article>`;
+}
+
+// ── COUNTS ────────────────────────────────────────────────────────────────────
+function updateCounts() {
+  document.getElementById('stat-total').textContent = PROJECTS.length;
+  document.getElementById('stat-gaming').textContent = PROJECTS.filter(p => p.tags.includes('gaming')).length;
+  document.getElementById('stat-finance').textContent = PROJECTS.filter(p => p.tags.includes('finance')).length;
+  document.getElementById('stat-tools').textContent = PROJECTS.filter(p =>
+    p.tags.includes('tools') || p.tags.includes('web-development') || p.tags.includes('data')
+  ).length;
+
+  const tags = ['gaming', 'finance', 'tools', 'data', 'web-development'];
+  const setCount = (id, n) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = n;
+  };
+  setCount('fc-all', PROJECTS.length);
+  setCount('mfc-all', PROJECTS.length);
+  tags.forEach(t => {
+    const n = PROJECTS.filter(p => p.tags.includes(t)).length;
+    setCount('fc-' + t, n);
+    setCount('mfc-' + t, n);
+  });
+}
+
+// ── CONTROLS ──────────────────────────────────────────────────────────────────
+function setTag(val) {
+  currentTag = val;
+  document.querySelectorAll('[data-tag]').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-tag') === val);
+  });
+  render();
+}
+
+document.querySelectorAll('[data-tag]').forEach(btn => {
+  btn.addEventListener('click', () => setTag(btn.getAttribute('data-tag')));
+});
+
+if (searchDesktop) searchDesktop.addEventListener('input', () => syncSearch(searchDesktop));
+if (searchMobile) searchMobile.addEventListener('input', () => syncSearch(searchMobile));
+
+document.querySelectorAll('[data-sort]').forEach(btn => {
+  btn.addEventListener('click', () => applySort(btn.getAttribute('data-sort')));
+});
+
+const emptyReset = document.getElementById('empty-reset');
+if (emptyReset) {
+  emptyReset.addEventListener('click', () => {
+    if (searchDesktop) searchDesktop.value = '';
+    if (searchMobile) searchMobile.value = '';
+    setTag('all');
+    applySort(DEFAULT_SORT, true);
+  });
+}
+
+
+
+// ── GANTT ZEITSTRAHL (download-data.js) ───────────────────────────────────────
+const TAG_LABELS_TIMELINE = {
+  gaming: 'Gaming',
+  finance: 'Finance',
+  tools: 'Tools',
+  data: 'Data',
+  'web-development': 'Web development',
+};
+
+let vtData = [];
+let vtProjects = []; // { name, icon, tags, versions: [...] }
+let vtActiveKey = null; // project|id or version id
+let vtRange = { min: 0, max: 0, days: 1 };
+let vtYears = [];
+let vtLayout = { originYear: 2026, nYears: 1, yearW: 0, labelW: 220, multi: false };
+let vtPreserveScroll = false;
+let vtScrollRatio = 0;
+let vtRailBound = false;
+
+function toLocalHref(href) {
+  const root = assetRoot();
+  if (!href) return root + 'downloads';
+  if (String(href).replace(/^\.\//, '').startsWith('data/')) return '/' + String(href).replace(/^\.\//, '');
+  if (/^https?:\/\//i.test(href) || href.startsWith('/') || href.startsWith('../')) return href;
+  return root + href.replace(/^\.\//, '');
+}
+
+function dayMs() { return 86400000; }
+
+function toneForTags(tags) {
+  const t = tags || [];
+  if (t.includes('gaming')) return 'tone-gaming';
+  if (t.includes('finance')) return 'tone-finance';
+  if (t.includes('tools')) return 'tone-tools';
+  if (t.includes('data')) return 'tone-data';
+  if (t.includes('web-development')) return 'tone-web';
+  return 'tone-default';
+}
+
+function monthsBetween(minTs, maxTs) {
+  const months = [];
+  const start = new Date(minTs);
+  const end = new Date(maxTs);
+  let y = start.getFullYear();
+  let m = start.getMonth();
+  const endY = end.getFullYear();
+  const endM = end.getMonth();
+  while (y < endY || (y === endY && m <= endM)) {
+    const from = new Date(y, m, 1).getTime();
+    const to = new Date(y, m + 1, 0, 23, 59, 59).getTime();
+    months.push({
+      year: y,
+      month: m,
+      label: new Date(y, m, 1).toLocaleDateString('en-GB', { month: 'short' }),
+      yearLabel: String(y),
+      from: Math.max(from, minTs),
+      to: Math.min(to, maxTs),
+    });
+    m += 1;
+    if (m > 11) { m = 0; y += 1; }
+  }
+  return months;
+}
+
+function xPct(ts) {
+  if (vtRange.days <= 0) return 0;
+  return ((ts - vtRange.min) / (vtRange.max - vtRange.min)) * 100;
+}
+
+function groupByProject(data) {
+  const map = new Map();
+  data.forEach(function (d, idx) {
+    const name = d.project || d.name || 'Project';
+    if (!map.has(name)) {
+      map.set(name, {
+        name: name,
+        icon: d.projectIcon || '',
+        tags: d.tags || [],
+        versions: [],
+      });
+    }
+    const g = map.get(name);
+    if ((!g.icon) && d.projectIcon) g.icon = d.projectIcon;
+    if ((!g.tags || !g.tags.length) && d.tags) g.tags = d.tags;
+    g.versions.push(Object.assign({ _idx: idx }, d));
+  });
+  // sort projects by first release
+  return Array.from(map.values()).map(function (g) {
+    g.versions.sort(function (a, b) {
+      return (parseDay(a.date) || 0) - (parseDay(b.date) || 0);
+    });
+    g.first = parseDay(g.versions[0].date);
+    g.last = parseDay(g.versions[g.versions.length - 1].date);
+    g.finished = isProjectFinished(g.name);
+    const meta = getProjectMeta(g.name) || {};
+    g.started = parseDay(meta.started);
+    g.startedDate = meta.started || '';
+    return g;
+  }).sort(function (a, b) {
+    return compareProjectItems(ganttSortItem(a), ganttSortItem(b));
+  });
+}
+
+function ganttSortItem(g) {
+  const p = PROJECTS.find(function (x) { return x.key === g.name; });
+  const lastDate = (p && p.date) || (g.versions.length ? g.versions[g.versions.length - 1].date : '');
+  const firstDate = (p && p.startDate) || g.startedDate || (g.versions.length ? g.versions[0].date : '');
+  const startTs = g.started != null ? g.started : (p ? parseDay(p.startDate) : g.first);
+  const lastTs = (p && parseDay(p.date)) || g.last;
+  const duration = durationDays(startTs, lastTs, !!g.finished);
+  return {
+    name: (p && p.name) || g.name,
+    date: lastDate,
+    startDate: firstDate,
+    duration: duration
+  };
+}
+
+function fillDetail(entry) {
+  const body = document.getElementById('vt-card-body');
+  if (!body) return;
+
+  if (!entry) {
+    body.innerHTML = '<p class="gantt-detail-placeholder">Select a bar to see details.</p>';
+    body.classList.remove('is-swapping');
+    return;
+  }
+
+  const isStart = !!entry._start;
+  const title = escapeHtml(entry.name || entry.project || 'Release');
+  const version = escapeHtml(isStart ? 'Start' : (entry.version || '—'));
+  const date = entry.date ? formatDate(entry.date) : '';
+  const desc = (entry.description && String(entry.description).trim())
+    ? escapeHtml(String(entry.description).trim())
+    : '';
+  const tags = Array.isArray(entry.tags) ? entry.tags : [];
+  const tagsHtml = tags.map(function (t) {
+    return '<span class="tag ' + escapeHtml(t) + '">' +
+      escapeHtml(TAG_LABELS_TIMELINE[t] || t) + '</span>';
+  }).join('');
+  const files = Array.isArray(entry.files) ? entry.files : [];
+  const fileLinks = files.slice(0, 4).map(function (f) {
+    return '<a class="is-primary" href="' + escapeHtml(toLocalHref(f.href)) + '" download>' +
+      escapeHtml(f.label || f.type || 'Download') + '</a>';
+  }).join('');
+
+  body.classList.add('is-swapping');
+  window.setTimeout(function () {
+    body.innerHTML =
+      '<div class="gantt-detail-main">' +
+        '<div class="gantt-detail-head">' +
+          '<span class="gantt-detail-project">' + title + '</span>' +
+          '<span class="gantt-detail-ver">' + version + '</span>' +
+        '</div>' +
+        (desc ? '<p class="gantt-detail-desc">' + desc + '</p>' : '') +
+        (date ? '<span class="gantt-detail-meta">' + date + '</span>' : '') +
+        (tagsHtml ? '<div class="gantt-detail-tags">' + tagsHtml + '</div>' : '') +
+      '</div>' +
+      '<div class="gantt-detail-actions">' +
+        (isStart ? '' : fileLinks) +
+        '<a href="' + escapeHtml(assetRoot()) + 'downloads">All downloads</a>' +
+      '</div>';
+    body.classList.remove('is-swapping');
+  }, 90);
+}
+
+function startDetail(p) {
+  const meta = getProjectMeta(p.name) || {};
+  return {
+    _start: true,
+    project: p.name,
+    name: meta.displayName || p.name,
+    version: 'Start',
+    date: p.startedDate || meta.started || '',
+    description: 'Project work started.',
+    tags: p.tags || meta.tags || [],
+    files: []
+  };
+}
+
+function setActiveBar(key, entry) {
+  vtActiveKey = key;
+  document.querySelectorAll('.gantt-bar, .gantt-start').forEach(function (el) {
+    el.classList.toggle('is-active', el.getAttribute('data-key') === key);
+  });
+  document.querySelectorAll('.gantt-label-row').forEach(function (el) {
+    const proj = el.getAttribute('data-project');
+    el.classList.toggle('is-active', entry && proj === (entry.project || entry.name));
+  });
+  document.querySelectorAll('.gantt-row').forEach(function (el) {
+    const proj = el.getAttribute('data-project');
+    el.classList.toggle('is-active', entry && proj === (entry.project || entry.name));
+  });
+  fillDetail(entry);
+}
+
+function renderVersionTimeline() {
+  const empty = document.getElementById('vt-empty');
+  const stage = document.getElementById('vt-stage');
+  const meta = document.getElementById('vt-meta');
+  const countEl = document.getElementById('vt-count');
+  const labelsEl = document.getElementById('gantt-labels');
+  const chartEl = document.getElementById('gantt-chart');
+  const boardEl = document.getElementById('gantt-board');
+  if (!empty || !stage || !labelsEl || !chartEl) return;
+
+  vtData = getDownloadData()
+    .slice()
+    .filter(function (d) { return d && (d.project || d.name) && d.version && d.date; });
+
+  if (vtData.length === 0) {
+    labelsEl.innerHTML = '';
+    chartEl.innerHTML = '';
+    stage.hidden = true;
+    empty.hidden = false;
+    if (meta) meta.hidden = true;
+    const emptyRail = document.getElementById('gantt-year-rail');
+    if (emptyRail) emptyRail.hidden = true;
+    return;
+  }
+
+  empty.hidden = true;
+  stage.hidden = false;
+  if (meta) meta.hidden = false;
+  if (countEl) countEl.textContent = String(vtData.length);
+
+  vtProjects = groupByProject(vtData);
+
+  const originYear = 2026;
+  const times = vtData.map(function (d) { return parseDay(d.date); }).filter(Boolean);
+  vtProjects.forEach(function (p) {
+    if (p.started != null) times.push(p.started);
+    if (p.last != null) times.push(p.last);
+    if (p.first != null) times.push(p.first);
+  });
+  const today = nowTs();
+  const hasUnfinished = vtProjects.some(function (p) { return !p.finished; });
+  let lastYear = originYear;
+  times.forEach(function (t) {
+    lastYear = Math.max(lastYear, new Date(t).getFullYear());
+  });
+  if (hasUnfinished) lastYear = Math.max(lastYear, new Date(today).getFullYear());
+  const multi = lastYear > originYear;
+  const min = new Date(originYear, 0, 1).getTime();
+  const max = new Date(lastYear, 11, 31, 23, 59, 59).getTime();
+  vtRange = { min: min, max: max, days: Math.max(1, (max - min) / dayMs()) };
+  vtYears = [];
+  for (let y = originYear; y <= lastYear; y++) {
+    vtYears.push({
+      year: y,
+      from: new Date(y, 0, 1).getTime(),
+      to: new Date(y, 11, 31, 23, 59, 59).getTime()
+    });
+  }
+
+  const scrollEl = document.getElementById('gantt-scroll');
+  const railEl = document.getElementById('gantt-year-rail');
+  if (scrollEl) {
+    scrollEl.classList.toggle('is-year-locked', !multi);
+    scrollEl.classList.toggle('is-year-open', multi);
+    scrollEl.style.overflowX = multi ? 'auto' : 'hidden';
+  }
+  if (railEl) {
+    railEl.hidden = false;
+    railEl.classList.toggle('is-single', !multi);
+  }
+
+  const labelColW = (labelsEl && labelsEl.offsetWidth) || 220;
+  const availW = scrollEl
+    ? Math.max(160, scrollEl.clientWidth)
+    : 720;
+  const edgePadPx = 12;
+  const nYears = vtYears.length;
+  const yearW = Math.max(160, availW - edgePadPx * 2);
+  const innerW = yearW * nYears;
+  const chartWidth = innerW + edgePadPx * 2;
+  vtLayout = { originYear: originYear, nYears: nYears, yearW: yearW, labelW: labelColW, multi: multi, chartWidth: chartWidth, edgePadPx: edgePadPx };
+
+  function xPos(ts) {
+    const clamped = Math.min(Math.max(ts, min), max);
+    return edgePadPx + ((clamped - min) / (max - min)) * innerW;
+  }
+  if (boardEl) boardEl.style.setProperty('--gantt-day-w', (innerW / vtRange.days) + 'px');
+
+  const months = monthsBetween(min, max);
+  renderYearRail();
+
+  // Labels
+  let labelsHtml = '<div class="gantt-label-head">Project</div>';
+  vtProjects.forEach(function (p, i) {
+    labelsHtml +=
+      '<div class="gantt-label-row' + (i % 2 ? ' is-alt' : '') + '" data-project="' + escapeHtml(p.name) + '">' +
+        (p.icon ? '<span class="gantt-label-icon" aria-hidden="true">' + escapeHtml(p.icon) + '</span>' : '') +
+        '<span class="gantt-label-text" title="' + escapeHtml(p.name) + '">' + escapeHtml(p.name) + '</span>' +
+        '<span class="gantt-label-count">' + p.versions.length + '</span>' +
+      '</div>';
+  });
+  labelsEl.innerHTML = labelsHtml;
+
+  // Chart: months + rows + bars (with left/right edge padding)
+  let monthsHtml = '<div class="gantt-months" style="width:' + chartWidth + 'px;padding:0 ' + edgePadPx + 'px;box-sizing:border-box">';
+  months.forEach(function (mo, idx) {
+    const w = ((mo.to - mo.from) / (max - min)) * innerW;
+    const showYear = idx === 0 || months[idx - 1].year !== mo.year;
+    monthsHtml +=
+      '<div class="gantt-month' + (showYear ? ' is-year-start' : '') + '" style="width:' + w + 'px">' +
+        (showYear ? '<span class="gantt-month-year">' + mo.yearLabel + '</span>' : '<span class="gantt-month-year" style="visibility:hidden">' + mo.yearLabel + '</span>') +
+        '<span class="gantt-month-name">' + escapeHtml(mo.label) + '</span>' +
+      '</div>';
+  });
+  monthsHtml += '</div>';
+
+  // grid lines + year bands
+  const rowH = 48;
+  let gridHtml = '<div class="gantt-grid" style="width:' + chartWidth + 'px;height:' + (vtProjects.length * rowH) + 'px">';
+  vtYears.forEach(function (yr, yi) {
+    const left = xPos(yr.from);
+    const width = xPos(yr.to) - left;
+    gridHtml += '<div class="gantt-year-band' + (yi % 2 ? ' is-alt' : '') + '" style="left:' + left + 'px;width:' + Math.max(0, width) + 'px"></div>';
+  });
+  let acc = edgePadPx;
+  months.forEach(function (mo) {
+    const w = ((mo.to - mo.from) / (max - min)) * innerW;
+    const isYear = mo.month === 0;
+    gridHtml += '<div class="gantt-grid-line' + (isYear ? ' is-year' : '') + '" style="left:' + acc + 'px"></div>';
+    acc += w;
+  });
+  if (today >= min && today <= max) {
+    gridHtml += '<div class="gantt-today" style="left:' + xPos(today) + 'px"></div>';
+  }
+  gridHtml += '</div>';
+
+  let rowsHtml = '<div class="gantt-rows" style="width:' + chartWidth + 'px">';
+  vtProjects.forEach(function (p, i) {
+    const tone = toneForTags(p.tags);
+    rowsHtml += '<div class="gantt-row' + (i % 2 ? ' is-alt' : '') + '" data-project="' + escapeHtml(p.name) + '" style="width:' + chartWidth + 'px">';
+    rowsHtml += '<div class="gantt-bars" style="width:' + chartWidth + 'px">';
+
+    // Span: started (or first release) → last / today
+    var spanStart = p.first;
+    if (p.started != null) {
+      spanStart = spanStart == null ? p.started : Math.min(spanStart, p.started);
+    }
+    if (spanStart != null) {
+      var spanEnd = p.finished
+        ? p.last
+        : Math.max(p.last || spanStart, nowTs());
+      if (spanEnd == null) spanEnd = spanStart;
+      spanEnd = Math.min(Math.max(spanEnd, spanStart), max);
+      var spanLeft = xPos(spanStart);
+      var spanWidth = xPos(spanEnd) - spanLeft;
+      if (spanWidth > 2) {
+        rowsHtml += '<div class="gantt-span" style="left:' + spanLeft +
+          'px;width:' + spanWidth + 'px"></div>';
+      }
+    }
+
+    if (p.started != null) {
+      var startLeft = xPos(p.started);
+      var startKey = 'start::' + p.name;
+      var startTip = escapeHtml((p.name || 'Project') + ' | Start' + (p.startedDate ? ' | ' + formatDate(p.startedDate) : ''));
+      rowsHtml +=
+        '<button type="button" class="gantt-start" data-key="' + escapeHtml(startKey) + '"' +
+          ' data-project="' + escapeHtml(p.name) + '"' +
+          ' style="left:' + Math.max(0, startLeft - 9) + 'px"' +
+          ' aria-label="' + startTip + '" title="' + startTip + '">' +
+        '</button>';
+    }
+
+    p.versions.forEach(function (v) {
+      const t = parseDay(v.date);
+      if (t == null) return;
+      if (p.startedDate && String(v.date).slice(0, 10) === String(p.startedDate).slice(0, 10)) return;
+      const left = xPos(t);
+      const tickW = 18;
+      const key = String(v.id != null ? v.id : v._idx) + '::' + (v.version || '');
+      const tip = escapeHtml(
+        (v.project || p.name) +
+        (v.version ? ' | ' + v.version : '') +
+        (v.name && v.name !== v.project ? ' — ' + v.name : '') +
+        (v.date ? ' | ' + formatDate(v.date) : '')
+      );
+      rowsHtml +=
+        '<button type="button" class="gantt-bar ' + tone + '" data-key="' + escapeHtml(key) + '"' +
+          ' data-idx="' + v._idx + '"' +
+          ' style="left:' + Math.max(0, left - tickW / 2) + 'px"' +
+          ' aria-label="' + tip + '" title="' + tip + '">' +
+        '</button>';
+    });
+
+    rowsHtml += '</div></div>';
+  });
+  rowsHtml += '</div>';
+
+  chartEl.innerHTML = monthsHtml + '<div style="position:relative;width:' + chartWidth + 'px">' + gridHtml + rowsHtml + '</div>';
+
+  // events
+  function bindTick(btn, getEntry) {
+    btn.addEventListener('click', function () {
+      setActiveBar(btn.getAttribute('data-key'), getEntry());
+    });
+    btn.addEventListener('mouseenter', function () {
+      if (!window.matchMedia('(hover: hover)').matches) return;
+      setActiveBar(btn.getAttribute('data-key'), getEntry());
+    });
+  }
+  chartEl.querySelectorAll('.gantt-bar').forEach(function (btn) {
+    bindTick(btn, function () {
+      return vtData[Number(btn.getAttribute('data-idx'))];
+    });
+  });
+  chartEl.querySelectorAll('.gantt-start').forEach(function (btn) {
+    bindTick(btn, function () {
+      const name = btn.getAttribute('data-project');
+      const p = vtProjects.find(function (x) { return x.name === name; });
+      return p ? startDetail(p) : null;
+    });
+  });
+
+  // keep current selection if still on the board, else latest release
+  let latestIdx = 0;
+  let latestT = -Infinity;
+  vtData.forEach(function (d, i) {
+    const t = parseDay(d.date) || 0;
+    if (t >= latestT) { latestT = t; latestIdx = i; }
+  });
+  const latest = vtData[latestIdx];
+  const keepBtn = vtActiveKey
+    ? chartEl.querySelector('[data-key="' + String(vtActiveKey).replace(/"/g, '') + '"]')
+    : null;
+  const latestBtn = keepBtn || chartEl.querySelector('.gantt-bar[data-idx="' + latestIdx + '"]');
+  if (latestBtn) {
+    const idx = Number(latestBtn.getAttribute('data-idx'));
+    const entry = vtData[idx] || latest;
+    setActiveBar(latestBtn.getAttribute('data-key'), entry);
+  } else {
+    fillDetail(latest);
+  }
+
+  bindYearRailOnce();
+  requestAnimationFrame(function () {
+    const scroll = document.getElementById('gantt-scroll');
+    const labels = document.getElementById('gantt-labels');
+    if (!scroll) return;
+    if (multi && latestBtn) {
+      const maxS = Math.max(0, scroll.scrollWidth - scroll.clientWidth);
+      const rightInset = Math.max(40, vtLayout.edgePadPx || 0);
+      const latestRight = latestBtn.offsetLeft + latestBtn.offsetWidth;
+      scroll.scrollLeft = Math.min(maxS, Math.max(0, latestRight - scroll.clientWidth + rightInset));
+      vtPreserveScroll = false;
+    } else if (vtPreserveScroll) {
+      const maxS = Math.max(0, scroll.scrollWidth - scroll.clientWidth);
+      scroll.scrollLeft = vtScrollRatio * maxS;
+      vtPreserveScroll = false;
+    }
+    if (labels) labels.scrollTop = scroll.scrollTop;
+    syncYearRail();
+  });
+}
+
+function ganttMaxScroll(scroll) {
+  if (!scroll) return 0;
+  return Math.max(0, scroll.scrollWidth - scroll.clientWidth);
+}
+
+function ganttReduceMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function renderYearRail() {
+  const segs = document.getElementById('gantt-year-segs');
+  const rail = document.getElementById('gantt-year-rail');
+  const lens = document.getElementById('gantt-year-lens');
+  if (!segs || !rail) return;
+  rail.hidden = false;
+  rail.classList.toggle('is-single', !vtLayout.multi);
+  segs.innerHTML = vtYears.map(function (yr) {
+    const jump = vtLayout.multi ? 'Jump to ' + yr.year : String(yr.year);
+    return '<button type="button" class="gantt-year-seg" data-year="' + yr.year + '" aria-label="' + jump + '">' + yr.year + '</button>';
+  }).join('');
+  if (lens) {
+    lens.setAttribute('aria-valuemin', String(vtLayout.originYear));
+    lens.setAttribute('aria-valuemax', String(vtLayout.originYear + vtLayout.nYears - 1));
+    lens.tabIndex = vtLayout.multi ? 0 : -1;
+    lens.setAttribute('aria-hidden', vtLayout.multi ? 'false' : 'true');
+  }
+}
+
+function yearScrollLeft(year) {
+  const idx = year - vtLayout.originYear;
+  return Math.max(0, idx * vtLayout.yearW);
+}
+
+function ganttMaxScrollY(scroll) {
+  if (!scroll) return 0;
+  return Math.max(0, scroll.scrollHeight - scroll.clientHeight);
+}
+
+function syncGanttVBar(scroll, wrap) {
+  if (!scroll) return;
+  const vbar = document.getElementById('gantt-vbar');
+  const thumb = document.getElementById('gantt-vbar-thumb');
+  const maxY = ganttMaxScrollY(scroll);
+  if (wrap) {
+    wrap.classList.toggle('is-overflow-y', maxY > 2);
+    wrap.classList.toggle('is-can-up', maxY > 2 && scroll.scrollTop > 2);
+    wrap.classList.toggle('is-can-down', maxY > 2 && scroll.scrollTop < maxY - 2);
+  }
+  if (!vbar || !thumb) return;
+  if (maxY <= 2) {
+    vbar.hidden = true;
+    return;
+  }
+  vbar.hidden = false;
+  const trackH = vbar.clientHeight;
+  const thumbH = Math.max(28, (scroll.clientHeight / Math.max(1, scroll.scrollHeight)) * trackH);
+  const maxThumb = Math.max(0, trackH - thumbH);
+  const ratio = maxY <= 0 ? 0 : scroll.scrollTop / maxY;
+  thumb.style.height = thumbH + 'px';
+  thumb.style.top = (ratio * maxThumb) + 'px';
+}
+
+function syncYearRail() {
+  const scroll = document.getElementById('gantt-scroll');
+  const wrap = document.getElementById('gantt-scroll-wrap');
+  const track = document.getElementById('gantt-year-track');
+  const lens = document.getElementById('gantt-year-lens');
+  const rail = document.getElementById('gantt-year-rail');
+  if (!scroll) return;
+
+  const maxS = ganttMaxScroll(scroll);
+  const ratio = maxS <= 0 ? 0 : scroll.scrollLeft / maxS;
+  vtScrollRatio = ratio;
+
+  if (wrap) {
+    wrap.classList.toggle('is-can-left', vtLayout.multi && scroll.scrollLeft > 2);
+    wrap.classList.toggle('is-can-right', vtLayout.multi && scroll.scrollLeft < maxS - 2);
+  }
+  syncGanttVBar(scroll, wrap);
+
+  const nowMark = document.getElementById('gantt-year-now');
+  if (nowMark) {
+    const t = nowTs();
+    if (t >= vtRange.min && t <= vtRange.max && (vtRange.max - vtRange.min) > 0) {
+      nowMark.hidden = false;
+      nowMark.style.left = (((t - vtRange.min) / (vtRange.max - vtRange.min)) * 100) + '%';
+    } else {
+      nowMark.hidden = true;
+    }
+  }
+
+  if (!rail || rail.hidden || !track || !lens) return;
+  if (!vtLayout.multi) {
+    track.querySelectorAll('.gantt-year-seg').forEach(function (btn) {
+      btn.classList.add('is-in-view');
+    });
+    lens.setAttribute('aria-valuenow', String(vtLayout.originYear));
+    lens.setAttribute('aria-valuetext', String(vtLayout.originYear));
+    return;
+  }
+
+  const trackW = track.clientWidth;
+  const lensW = Math.max(36, (1 / vtLayout.nYears) * trackW);
+  const maxLens = Math.max(0, trackW - lensW);
+  lens.style.width = lensW + 'px';
+  lens.style.left = (ratio * maxLens) + 'px';
+
+  const centerYear = vtLayout.originYear + Math.min(
+    vtLayout.nYears - 1,
+    Math.max(0, Math.round((scroll.scrollLeft / Math.max(1, vtLayout.yearW))))
+  );
+  lens.setAttribute('aria-valuenow', String(centerYear));
+  lens.setAttribute('aria-valuetext', String(centerYear));
+  track.querySelectorAll('.gantt-year-seg').forEach(function (btn) {
+    btn.classList.toggle('is-in-view', Number(btn.getAttribute('data-year')) === centerYear);
+  });
+}
+
+function scrollGanttTo(left, smooth) {
+  const scroll = document.getElementById('gantt-scroll');
+  if (!scroll) return;
+  const maxS = ganttMaxScroll(scroll);
+  const next = Math.min(maxS, Math.max(0, left));
+  if (smooth && !ganttReduceMotion() && typeof scroll.scrollTo === 'function') {
+    scroll.scrollTo({ left: next, behavior: 'smooth' });
+  } else {
+    scroll.scrollLeft = next;
+  }
+  syncYearRail();
+}
+
+function bindYearRailOnce() {
+  if (vtRailBound) return;
+  const scroll = document.getElementById('gantt-scroll');
+  const track = document.getElementById('gantt-year-track');
+  const lens = document.getElementById('gantt-year-lens');
+  const segs = document.getElementById('gantt-year-segs');
+  if (!scroll || !track || !lens || !segs) return;
+  vtRailBound = true;
+
+  const labels = document.getElementById('gantt-labels');
+  let ySync = false;
+  scroll.addEventListener('scroll', function () {
+    if (labels && !ySync && labels.scrollTop !== scroll.scrollTop) {
+      ySync = true;
+      labels.scrollTop = scroll.scrollTop;
+      ySync = false;
+    }
+    syncYearRail();
+  }, { passive: true });
+  if (labels) {
+    labels.addEventListener('scroll', function () {
+      if (ySync || scroll.scrollTop === labels.scrollTop) return;
+      ySync = true;
+      scroll.scrollTop = labels.scrollTop;
+      ySync = false;
+      syncYearRail();
+    }, { passive: true });
+  }
+
+  const vbar = document.getElementById('gantt-vbar');
+  const vthumb = document.getElementById('gantt-vbar-thumb');
+  if (vbar && vthumb) {
+    function yRatioFromClientY(clientY) {
+      const rect = vbar.getBoundingClientRect();
+      const thumbH = vthumb.offsetHeight;
+      const maxThumb = Math.max(1, rect.height - thumbH);
+      const y = clientY - rect.top - thumbH / 2;
+      return Math.min(1, Math.max(0, y / maxThumb));
+    }
+    let vDragging = false;
+    let vPointer = null;
+    function onVMove(e) {
+      if (!vDragging) return;
+      if (vPointer != null && e.pointerId !== vPointer) return;
+      e.preventDefault();
+      scroll.scrollTop = yRatioFromClientY(e.clientY) * ganttMaxScrollY(scroll);
+      if (labels) labels.scrollTop = scroll.scrollTop;
+      syncYearRail();
+    }
+    function onVUp(e) {
+      if (vPointer != null && e.pointerId !== vPointer) return;
+      vDragging = false;
+      vPointer = null;
+      vthumb.classList.remove('is-dragging');
+      window.removeEventListener('pointermove', onVMove);
+      window.removeEventListener('pointerup', onVUp);
+      window.removeEventListener('pointercancel', onVUp);
+    }
+    vthumb.addEventListener('pointerdown', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      vDragging = true;
+      vPointer = e.pointerId;
+      vthumb.classList.add('is-dragging');
+      if (vthumb.setPointerCapture) vthumb.setPointerCapture(e.pointerId);
+      window.addEventListener('pointermove', onVMove);
+      window.addEventListener('pointerup', onVUp);
+      window.addEventListener('pointercancel', onVUp);
+    });
+    vbar.addEventListener('pointerdown', function (e) {
+      if (e.target.closest('.gantt-vbar-thumb')) return;
+      scroll.scrollTop = yRatioFromClientY(e.clientY) * ganttMaxScrollY(scroll);
+      if (labels) labels.scrollTop = scroll.scrollTop;
+      syncYearRail();
+    });
+  }
+
+  segs.addEventListener('click', function (e) {
+    if (!vtLayout.multi) return;
+    const btn = e.target.closest('[data-year]');
+    if (!btn) return;
+    e.preventDefault();
+    scrollGanttTo(yearScrollLeft(Number(btn.getAttribute('data-year'))), true);
+  });
+
+  function ratioFromClientX(clientX) {
+    const trackW = track.clientWidth;
+    const lensW = lens.offsetWidth;
+    const rect = track.getBoundingClientRect();
+    const maxLens = Math.max(1, trackW - lensW);
+    const x = clientX - rect.left - lensW / 2;
+    return Math.min(1, Math.max(0, x / maxLens));
+  }
+
+  let dragging = false;
+  let dragPointer = null;
+
+  function onPointerMove(e) {
+    if (!dragging) return;
+    if (dragPointer != null && e.pointerId !== dragPointer) return;
+    e.preventDefault();
+    const maxS = ganttMaxScroll(scroll);
+    scroll.scrollLeft = ratioFromClientX(e.clientX) * maxS;
+    syncYearRail();
+  }
+  function onPointerUp(e) {
+    if (dragPointer != null && e.pointerId !== dragPointer) return;
+    dragging = false;
+    dragPointer = null;
+    lens.classList.remove('is-dragging');
+    window.removeEventListener('pointermove', onPointerMove);
+    window.removeEventListener('pointerup', onPointerUp);
+    window.removeEventListener('pointercancel', onPointerUp);
+  }
+
+  lens.addEventListener('pointerdown', function (e) {
+    if (!vtLayout.multi) return;
+    e.preventDefault();
+    e.stopPropagation();
+    dragging = true;
+    dragPointer = e.pointerId;
+    lens.classList.add('is-dragging');
+    if (lens.setPointerCapture) lens.setPointerCapture(e.pointerId);
+    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointerup', onPointerUp);
+    window.addEventListener('pointercancel', onPointerUp);
+  });
+
+  track.addEventListener('pointerdown', function (e) {
+    if (!vtLayout.multi) return;
+    if (e.target.closest('.gantt-year-lens')) return;
+    if (e.target.closest('[data-year]')) return;
+    const maxS = ganttMaxScroll(scroll);
+    scrollGanttTo(ratioFromClientX(e.clientX) * maxS, true);
+  });
+
+  lens.addEventListener('keydown', function (e) {
+    if (!vtLayout.multi) return;
+    const maxS = ganttMaxScroll(scroll);
+    const yearStep = vtLayout.yearW || 0;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      scrollGanttTo(scroll.scrollLeft + yearStep, true);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      scrollGanttTo(scroll.scrollLeft - yearStep, true);
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      scrollGanttTo(0, true);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      scrollGanttTo(maxS, true);
+    } else if (e.key === 'PageDown') {
+      e.preventDefault();
+      scrollGanttTo(scroll.scrollLeft + yearStep, true);
+    } else if (e.key === 'PageUp') {
+      e.preventDefault();
+      scrollGanttTo(scroll.scrollLeft - yearStep, true);
+    }
+  });
+}
+
+if (!window._ganttResizeBound) {
+  window._ganttResizeBound = true;
+  var _ganttResizeTimer;
+  window.addEventListener('resize', function () {
+    const scroll = document.getElementById('gantt-scroll');
+    if (scroll) {
+      const maxS = ganttMaxScroll(scroll);
+      vtScrollRatio = maxS <= 0 ? 0 : scroll.scrollLeft / maxS;
+      vtPreserveScroll = true;
+    }
+    clearTimeout(_ganttResizeTimer);
+    _ganttResizeTimer = setTimeout(function () {
+      if (document.getElementById('gantt-chart')) renderVersionTimeline();
+    }, 160);
+  });
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+render();
+renderVersionTimeline();
+
+</script>
+</body>
+</html>

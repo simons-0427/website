@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertige Projekte | Simon Stark</title>
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Übersicht abgeschlossener Projekte von Simon Stark: Finance-Rechner, Spiele und Tools zum Ausprobieren und Downloaden.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://smstark-projekt.de/projekte/">
+  <meta property="og:title" content="Fertige Projekte | Simon Stark">
+  <meta property="og:description" content="Übersicht abgeschlossener Projekte von Simon Stark: Finance-Rechner, Spiele und Tools zum Ausprobieren und Downloaden.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #8b9bb4;
+      --card:    #16161f;
+      --nav-h:   64px;
+      --control-sticky-top: var(--nav-h);
+      --radius:  12px;
+      --focus:   0 0 0 2px var(--bg), 0 0 0 4px rgba(110, 231, 183, 0.55);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    body.menu-open { overflow: hidden; }
+
+    :focus-visible {
+      outline: none;
+      box-shadow: var(--focus);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12, 12, 15, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 clamp(1.25rem, 4vw, 3rem);
+      z-index: 100;
+      gap: 1.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: clamp(1rem, 2.5vw, 2rem);
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+      margin-right: auto;
+      position: absolute;
+      left: clamp(1.25rem, 4vw, 3rem);
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-github {
+      position: absolute;
+      right: clamp(1.25rem, 4vw, 3rem);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--text);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      min-height: 40px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width: 15px; height: 15px; }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: clamp(1.25rem, 4vw, 3rem);
+      width: 44px;
+      height: 44px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 101;
+      transition: border-color 0.2s;
+    }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav panel — grid rows avoid layout thrash */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(12, 12, 15, 0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity 0.2s ease, transform 0.22s ease, visibility 0.2s;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: none;
+    }
+    .mobile-menu ul { list-style: none; padding: 0.5rem 1.25rem 2rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-height: 48px;
+      padding: 0.75rem 0.15rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    .mobile-menu a:hover,
+    .mobile-menu a.active { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+
+    /* ── HERO ── */
+    .hero-strip {
+      margin-top: var(--nav-h);
+      padding: 3.25rem clamp(1.25rem, 5vw, 4rem) 2rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .hero-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 80% at 85% 40%, rgba(110, 231, 183, 0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 70% at 8% 90%, rgba(129, 140, 248, 0.04) 0%, transparent 55%);
+    }
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.9rem, 4.5vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 0.65rem;
+      position: relative;
+    }
+    .page-title em { font-style: normal; color: var(--accent); }
+    .page-sub {
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 1rem;
+      max-width: 48ch;
+      position: relative;
+    }
+
+    /* ── STATS ── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-pill {
+      padding: 1rem clamp(0.85rem, 2.5vw, 1.75rem);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .stat-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: rgba(110, 231, 183, 0.08);
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .stat-icon svg { width: 16px; height: 16px; }
+    .stat-icon.indigo { background: rgba(129, 140, 248, 0.1); color: var(--accent2); }
+    .stat-count {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-lbl {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: calc(100vh - var(--nav-h));
+      align-items: start;
+    }
+
+    /* Desktop sidebar */
+    .filters-panel {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 1.5rem 1.15rem;
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+    }
+    .sidebar-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 0.65rem;
+      margin-top: 1.25rem;
+    }
+    .sidebar-label:first-child { margin-top: 0; }
+    .filter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .filter-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: 100%;
+      min-height: 40px;
+      padding: 0.45rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .filter-btn:hover {
+      background: rgba(110, 231, 183, 0.06);
+      color: var(--text);
+    }
+    .filter-btn.active {
+      background: rgba(110, 231, 183, 0.1);
+      color: var(--accent);
+      border-color: rgba(110, 231, 183, 0.22);
+    }
+    .filter-count {
+      margin-left: auto;
+      font-size: 0.7rem;
+      background: var(--border);
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .filter-btn.active .filter-count {
+      background: rgba(110, 231, 183, 0.15);
+      color: var(--accent);
+    }
+    .sort-select {
+      width: 100%;
+      min-height: 42px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      outline: none;
+    }
+    .sort-select:focus-visible { box-shadow: var(--focus); }
+
+    /* Mobile sticky controls — hidden on desktop */
+    .mobile-controls {
+      display: none;
+      position: sticky;
+      top: var(--control-sticky-top);
+      z-index: 40;
+      background: rgba(12, 12, 15, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1rem 0.85rem;
+      gap: 0.65rem;
+      flex-direction: column;
+    }
+    .mobile-controls-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: stretch;
+    }
+    .chip-scroller {
+      display: flex;
+      gap: 0.45rem;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity;
+      padding-bottom: 0.15rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .chip-scroller::-webkit-scrollbar { display: none; }
+    .chip-scroller .filter-btn {
+      width: auto;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      min-height: 40px;
+      white-space: nowrap;
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    /* List area */
+    .list-wrap {
+      padding: 1.5rem clamp(1.15rem, 3.5vw, 2.5rem) 2.5rem;
+      min-width: 0;
+    }
+    .list-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0 0.9rem;
+      min-height: 44px;
+    }
+    .search-box svg {
+      width: 16px;
+      height: 16px;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .search-box input {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.65rem 0;
+      outline: none;
+      width: 100%;
+    }
+    .search-box input::placeholder { color: var(--muted); }
+    .search-box:focus-within {
+      border-color: rgba(110, 231, 183, 0.4);
+    }
+    .list-toolbar .sort-select {
+      width: auto;
+      min-width: 11.5rem;
+      flex-shrink: 0;
+    }
+    .result-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #project-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    /* Project cards */
+    .p-row {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.35rem;
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 1rem 1.15rem;
+      align-items: start;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      animation: rowIn 0.35s ease both;
+    }
+    .p-row:hover {
+      border-color: rgba(110, 231, 183, 0.32);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    }
+    .card-link-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: inherit;
+      text-decoration: none;
+    }
+    .card-link-overlay:focus-visible {
+      box-shadow: inset 0 0 0 2px var(--accent);
+    }
+    .p-actions { position: relative; z-index: 2; }
+
+    @keyframes rowIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .p-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .p-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.45rem 0.65rem;
+      margin-bottom: 0.3rem;
+    }
+    .p-body h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .p-body .p-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 0.75rem;
+      max-width: 68ch;
+    }
+    .p-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 5px;
+    }
+    .tag.gaming          { background: rgba(129, 140, 248, 0.13); color: var(--accent2); }
+    .tag.finance         { background: rgba(110, 231, 183, 0.12); color: var(--accent); }
+    .tag.tools           { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+    .tag.data            { background: rgba(244, 114, 182, 0.1); color: #f472b6; }
+    .tag.web-development { background: rgba(129, 140, 248, 0.13); color: var(--accent2); }
+
+    .p-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-left: 0.15rem;
+    }
+    .p-date svg { width: 11px; height: 11px; }
+
+    .p-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.55rem;
+      flex-shrink: 0;
+    }
+    .version-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.22rem 0.6rem;
+      border-radius: 5px;
+      background: rgba(110, 231, 183, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(110, 231, 183, 0.2);
+    }
+    .action-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      align-items: stretch;
+    }
+    /* Classic project-card download control (original projekte/index style) */
+    .dl-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-height: 40px;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      background: var(--border);
+      color: var(--text);
+      border: 1px solid transparent;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .dl-link:hover {
+      background: rgba(110, 231, 183, 0.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .dl-link svg { width: 13px; height: 13px; }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      color: var(--muted);
+      display: none;
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      background: rgba(22, 22, 31, 0.5);
+    }
+    .empty-state svg {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 0.85rem;
+      opacity: 0.35;
+      display: block;
+    }
+    .empty-state p { margin-bottom: 1rem; }
+    .empty-reset {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .empty-reset:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+
+
+    /* ── GANTT ZEITSTRAHL (MS Project–inspired, site tokens) ── */
+    .version-timeline {
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+      padding: clamp(2.75rem, 5vw, 4.5rem) 0 clamp(3rem, 6vw, 5rem);
+    }
+    .vt-inner {
+      max-width: min(1680px, 100%);
+      margin: 0 auto;
+      padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+    }
+    .vt-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem 2rem;
+      align-items: end;
+      margin-bottom: 1.75rem;
+    }
+    .vt-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 0.45rem;
+    }
+    .vt-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 300;
+      max-width: 48ch;
+      line-height: 1.55;
+    }
+    .vt-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .vt-meta strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Selection detail under head */
+    .gantt-detail {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      padding: 1.15rem 1.25rem;
+      margin-top: 1.15rem;
+      min-height: 5.5rem;
+    }
+    .gantt-detail-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem 1.5rem;
+      transition: opacity 0.15s ease;
+    }
+    .gantt-detail-inner.is-swapping { opacity: 0; }
+    .gantt-detail-main {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+      min-width: 0;
+      flex: 1 1 14rem;
+    }
+    /* Name + Version in einer Zeile; Description/Meta immer darunter */
+    .gantt-detail-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem 0.85rem;
+      min-width: 0;
+      max-width: 100%;
+    }
+    .gantt-detail-project {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+    .gantt-detail-ver {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--accent);
+      background: rgba(110, 231, 183, 0.1);
+      border: 1px solid rgba(110, 231, 183, 0.25);
+      border-radius: 6px;
+      padding: 0.2rem 0.55rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .gantt-detail-name {
+      width: 100%;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+    .gantt-detail-desc {
+      display: block;
+      width: 100%;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 62ch;
+      margin: 0;
+    }
+    .gantt-detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem 0.85rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      width: 100%;
+    }
+    .gantt-detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      width: 100%;
+      margin-top: 0.05rem;
+    }
+    .gantt-detail-tags .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 5px;
+    }
+    .gantt-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-self: flex-start;
+    }
+    .gantt-detail-actions a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .gantt-detail-actions a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .gantt-detail-actions a.is-primary {
+      background: rgba(110, 231, 183, 0.12);
+      border-color: rgba(110, 231, 183, 0.3);
+      color: var(--accent);
+    }
+    .gantt-detail-placeholder {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Board shell */
+    .gantt-board {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-height: min(70vh, 720px);
+    }
+    .gantt-scroll {
+      overflow: auto;
+      flex: 1;
+      position: relative;
+      -webkit-overflow-scrolling: touch;
+    }
+    /* Fixed year 2026: no horizontal scroll */
+    .gantt-scroll.is-year-locked {
+      overflow-x: hidden;
+    }
+
+    .gantt-table {
+      --gantt-label-w: 220px;
+      --gantt-row-h: 48px;
+      --gantt-head-h: 56px;
+      --gantt-day-w: 3.2px; /* set in JS from range */
+      display: grid;
+      grid-template-columns: var(--gantt-label-w) max-content;
+      min-width: 100%;
+      position: relative;
+    }
+
+    /* Sticky project labels column */
+    .gantt-labels {
+      position: sticky;
+      left: 0;
+      z-index: 4;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      box-shadow: 6px 0 16px rgba(0, 0, 0, 0.18);
+    }
+    .gantt-label-head {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      height: var(--gantt-head-h);
+      display: flex;
+      align-items: flex-end;
+      padding: 0 0.9rem 0.65rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: #101018;
+      border-bottom: 1px solid var(--border);
+    }
+    .gantt-label-row {
+      height: var(--gantt-row-h);
+      display: flex;
+      align-items: center;
+      padding: 0 0.9rem;
+      border-bottom: 1px solid rgba(30, 30, 46, 0.9);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      gap: 0.5rem;
+      cursor: default;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .gantt-label-row.is-alt { background: rgba(12, 12, 15, 0.35); }
+    .gantt-label-row.is-active {
+      color: var(--accent);
+      background: rgba(110, 231, 183, 0.06);
+    }
+    .gantt-label-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      width: 1.25rem;
+      text-align: center;
+    }
+    .gantt-label-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: -0.015em;
+    }
+    .gantt-label-count {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+
+    /* Chart area */
+    .gantt-chart {
+      position: relative;
+      min-width: 0;
+    }
+    .gantt-months {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      height: var(--gantt-head-h);
+      display: flex;
+      background: #101018;
+      border-bottom: 1px solid var(--border);
+    }
+    .gantt-month {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 0 0.55rem 0;
+      border-right: 1px solid rgba(30, 30, 46, 0.85);
+      box-sizing: border-box;
+    }
+    .gantt-month-name {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      padding-left: 0.45rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .gantt-month-year {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--text);
+      padding-left: 0.45rem;
+      line-height: 1.1;
+      margin-bottom: 0.15rem;
+    }
+
+    .gantt-rows {
+      position: relative;
+    }
+    .gantt-row {
+      height: var(--gantt-row-h);
+      position: relative;
+      border-bottom: 1px solid rgba(30, 30, 46, 0.9);
+    }
+    .gantt-row.is-alt { background: rgba(12, 12, 15, 0.28); }
+    .gantt-row.is-active { background: rgba(110, 231, 183, 0.04); }
+
+    /* Vertical grid lines per month — drawn as background on chart body */
+    .gantt-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .gantt-grid-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(30, 30, 46, 0.95);
+    }
+
+    /* Today / end marker line */
+    .gantt-today {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(129, 140, 248, 0.55);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .gantt-today::before {
+      content: 'Heute';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      white-space: nowrap;
+    }
+
+    /* Version bars / milestones */
+    .gantt-bars {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+    /* Version ticks: short dashes, large hit area for hover */
+    .gantt-bar {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 28px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      cursor: pointer;
+      z-index: 2;
+      appearance: none;
+      -webkit-appearance: none;
+      font-size: 0;
+      color: transparent;
+      line-height: 0;
+    }
+    .gantt-bar::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 6px;
+      height: 16px;
+      border-radius: 2px;
+      transform: translate(-50%, -50%);
+      background: #c4b5fd;
+      border: 1px solid rgba(12, 12, 15, 0.95);
+      box-sizing: border-box;
+      box-shadow: 0 0 0 1px rgba(196, 181, 253, 0.4);
+      transition: width 0.15s ease, height 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+    .gantt-bar:hover::before,
+    .gantt-bar:focus-visible::before {
+      width: 7px;
+      height: 18px;
+      background: #ddd6fe;
+      border-color: rgba(12, 12, 15, 0.98);
+      box-shadow: 0 0 0 1px rgba(221, 214, 254, 0.55);
+    }
+    .gantt-bar:focus-visible {
+      outline: none;
+    }
+    .gantt-bar.is-active::before {
+      width: 7px;
+      height: 18px;
+      background: #a78bfa;
+      border-color: rgba(12, 12, 15, 0.98);
+      box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.6), 0 0 0 3px rgba(110, 231, 183, 0.35);
+    }
+
+    /* Unified tick color — category tones no longer recolor ticks */
+    .gantt-bar.tone-gaming::before,
+    .gantt-bar.tone-finance::before,
+    .gantt-bar.tone-tools::before,
+    .gantt-bar.tone-data::before,
+    .gantt-bar.tone-web::before,
+    .gantt-bar.tone-default::before { background: #c4b5fd; }
+    .gantt-bar.is-active.tone-gaming::before,
+    .gantt-bar.is-active.tone-finance::before,
+    .gantt-bar.is-active.tone-tools::before,
+    .gantt-bar.is-active.tone-data::before,
+    .gantt-bar.is-active.tone-web::before,
+    .gantt-bar.is-active.tone-default::before { background: #a78bfa; }
+
+    /* Connector bar: same height as vertical ticks (16px) */
+    .gantt-span {
+      position: absolute;
+      top: 50%;
+      height: 16px;
+      transform: translateY(-50%);
+      background: rgba(110, 231, 183, 0.22);
+      border-radius: 3px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .vt-empty {
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 2.25rem 1.25rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .vt-empty[hidden],
+    .vt-stage[hidden] { display: none !important; }
+
+    @media (max-width: 720px) {
+      .vt-head { grid-template-columns: 1fr; }
+      .vt-meta { text-align: left; }
+      .vt-meta strong { display: inline; font-size: 1.15rem; margin-right: 0.3rem; }
+      .gantt-table { --gantt-label-w: 132px; --gantt-row-h: 44px; --gantt-head-h: 52px; }
+      .gantt-label-text { font-size: 0.78rem; }
+      .gantt-label-count { display: none; }
+      .gantt-bar { width: 22px; height: 28px; }
+      .gantt-bar::before { width: 6px; height: 16px; }
+      .gantt-span { height: 16px; }
+      .gantt-board { max-height: min(65vh, 560px); }
+      .gantt-detail-main { gap: 0.35rem; }
+      .gantt-detail-inner { flex-direction: column; align-items: stretch; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3rem clamp(1.25rem, 5vw, 4rem) 1.75rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.35rem;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { justify-content: flex-start; padding: 0 1.15rem; }
+      nav .nav-links,
+      nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+    }
+
+    @media (max-width: 900px) {
+      .main-wrap {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .filters-panel { display: none; }
+      .mobile-controls { display: flex; }
+      .list-toolbar .sort-select { display: none; }
+      .list-wrap { padding: 1.15rem 1rem 2rem; }
+      .list-toolbar { margin-bottom: 0.85rem; }
+    }
+
+    @media (max-width: 720px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .hero-strip { padding: 2.25rem 1.15rem 1.5rem; }
+      .page-sub { font-size: 0.95rem; }
+      .stat-pill { padding: 0.85rem 0.9rem; gap: 0.55rem; }
+      .stat-count { font-size: 1.2rem; }
+      .stat-icon { width: 32px; height: 32px; }
+    }
+
+    @media (max-width: 640px) {
+      .p-row {
+        grid-template-columns: 44px 1fr;
+        padding: 1.1rem;
+        gap: 0.85rem;
+      }
+      .p-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+      .p-body .p-desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .p-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.65rem;
+        margin-top: 0.15rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid var(--border);
+      }
+      .action-btns {
+        flex-direction: row;
+        flex: 1;
+        justify-content: flex-end;
+      }
+      .dl-link {
+        flex: 1;
+        min-height: 44px;
+        max-width: 11rem;
+      }
+      .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .p-row:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+<!--
+  THESIS: Pro catalog for finished work — mobile-first sticky filters, pro scan hierarchy; not a squeezed desktop sidebar.
+  OWN-WORLD: Dark studio #0c0c0f / mint #6ee7b7 / indigo #818cf8, Syne + DM Sans, fine borders.
+  STORY: Filter or search → open a real project or download.
+  FIRST VIEWPORT: Nav, compact hero, stats, sticky controls (mobile) or sidebar (desktop), first project cards.
+  FORM: Confirmed shape brief (extension of incumbent world). Seed: n/a (refinement).
+  FINISH: unreviewed and undocumented is unfinished; this build ends with detector pass + owner review.
+-->
+
+<nav>
+  <a href="/" class="nav-logo">sms<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="../projekte" class="active" aria-current="page">Projekte</a></li>
+    <li><a href="../downloads">Downloads</a></li>
+    <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+    <li><a href="../vision">Vision</a></li>
+    <li><a href="../wissen">Wissen</a></li>
+  </ul>
+  <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    GitHub
+  </a>
+  <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="../projekte" class="active" aria-current="page">Projekte</a></li>
+    <li><a href="../downloads">Downloads</a></li>
+    <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+    <li><a href="../vision">Vision</a></li>
+    <li><a href="../wissen">Wissen</a></li>
+    <li>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </li>
+  </ul>
+</div>
+
+<header class="hero-strip">
+  <h1 class="page-title">Was bereits <em>fertig ist.</em></h1>
+  <p class="page-sub">Alle abgeschlossenen Projekte mit Beschreibung und direktem Download-Link.</p>
+</header>
+
+<div class="stats-row" aria-label="Projektübersicht">
+  <div class="stat-pill">
+    <span class="stat-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+    </span>
+    <div>
+      <div class="stat-count" id="stat-total">0</div>
+      <div class="stat-lbl">Fertige Projekte</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon indigo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h4"/></svg>
+    </span>
+    <div>
+      <div class="stat-count" id="stat-gaming">0</div>
+      <div class="stat-lbl">Gaming</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+    </span>
+    <div>
+      <div class="stat-count" id="stat-finance">0</div>
+      <div class="stat-lbl">Finanzen</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon indigo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+    </span>
+    <div>
+      <div class="stat-count" id="stat-tools">0</div>
+      <div class="stat-lbl">Tools &amp; Sonstiges</div>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky mobile controls -->
+<div class="mobile-controls" id="mobile-controls" aria-label="Filter und Suche">
+  <div class="mobile-controls-row">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="search-input-mobile" placeholder="Projekte durchsuchen …" autocomplete="off" enterkeyhint="search" aria-label="Projekte durchsuchen">
+    </div>
+    <select class="sort-select" id="sort-select-mobile" aria-label="Sortierung" style="width:auto;min-width:7.5rem;flex:0 0 auto;">
+      <option value="date">Datum</option>
+      <option value="name">A–Z</option>
+    </select>
+  </div>
+  <div class="chip-scroller" id="mobile-filters" role="toolbar" aria-label="Tags filtern">
+    <button type="button" class="filter-btn active" data-tag="all">Alle <span class="filter-count" id="mfc-all"></span></button>
+    <button type="button" class="filter-btn" data-tag="gaming">Gaming <span class="filter-count" id="mfc-gaming"></span></button>
+    <button type="button" class="filter-btn" data-tag="finance">Finanzen <span class="filter-count" id="mfc-finance"></span></button>
+    <button type="button" class="filter-btn" data-tag="tools">Tools <span class="filter-count" id="mfc-tools"></span></button>
+    <button type="button" class="filter-btn" data-tag="data">Daten <span class="filter-count" id="mfc-data"></span></button>
+    <button type="button" class="filter-btn" data-tag="web-development">Web-Dev <span class="filter-count" id="mfc-web-development"></span></button>
+  </div>
+</div>
+
+<div class="main-wrap">
+  <aside class="filters-panel" aria-label="Filter">
+    <p class="sidebar-label">Tags</p>
+    <div class="filter-list" id="desktop-filters">
+      <button type="button" class="filter-btn active" data-tag="all">Alle <span class="filter-count" id="fc-all"></span></button>
+      <button type="button" class="filter-btn" data-tag="gaming">Gaming <span class="filter-count" id="fc-gaming"></span></button>
+      <button type="button" class="filter-btn" data-tag="finance">Finanzen <span class="filter-count" id="fc-finance"></span></button>
+      <button type="button" class="filter-btn" data-tag="tools">Tools <span class="filter-count" id="fc-tools"></span></button>
+      <button type="button" class="filter-btn" data-tag="data">Datenanalyse <span class="filter-count" id="fc-data"></span></button>
+      <button type="button" class="filter-btn" data-tag="web-development">Web-Dev <span class="filter-count" id="fc-web-development"></span></button>
+    </div>
+    <p class="sidebar-label">Sortieren</p>
+    <select class="sort-select" id="sort-select-desktop" aria-label="Sortierung">
+      <option value="date">Veröffentlichungsdatum</option>
+      <option value="name">Name (A–Z)</option>
+    </select>
+  </aside>
+
+  <div class="list-wrap">
+    <div class="list-toolbar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="search" id="search-input" placeholder="Projekte durchsuchen …" autocomplete="off" aria-label="Projekte durchsuchen">
+      </div>
+      <select class="sort-select" id="sort-select-toolbar" aria-label="Sortierung">
+        <option value="date">Veröffentlichungsdatum</option>
+        <option value="name">Name (A–Z)</option>
+      </select>
+    </div>
+
+    <p class="result-meta" id="result-meta" aria-live="polite"></p>
+
+    <div id="project-container"></div>
+
+    <div class="empty-state" id="empty-state" role="status">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p>Keine Projekte gefunden.</p>
+      <button type="button" class="empty-reset" id="empty-reset">Filter zurücksetzen</button>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="version-timeline" id="version-timeline" aria-labelledby="vt-title">
+  <div class="vt-inner">
+    <div class="vt-head">
+      <div>
+        <h2 class="vt-title" id="vt-title">Versionszeitstrahl</h2>
+        <p class="vt-sub">Alle veröffentlichten Versionen chronologisch angeordnet.</p>
+      </div>
+      <p class="vt-meta" id="vt-meta" hidden><strong id="vt-count">0</strong> Versionen</p>
+    </div>
+
+    <div class="vt-stage" id="vt-stage" hidden>
+      <div class="gantt-board">
+        <div class="gantt-scroll" id="gantt-scroll">
+          <div class="gantt-table" id="gantt-table">
+            <div class="gantt-labels" id="gantt-labels"></div>
+            <div class="gantt-chart" id="gantt-chart"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gantt-detail" id="gantt-detail" aria-live="polite">
+        <div class="gantt-detail-inner" id="vt-card-body">
+          <p class="gantt-detail-placeholder">Klicke einen Balken, um Details zu sehen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vt-empty" id="vt-empty" role="status">Noch keine Versionseinträge.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">sms<span>.</span></a>
+      <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="../projekte">Projekte</a></li>
+        <li><a href="../downloads">Downloads</a></li>
+        <li><a href="../projekt-pipeline">Projekt-Pipeline</a></li>
+        <li><a href="../vision">Vision</a></li>
+        <li><a href="../wissen">Wissen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <ul>
+        <li><a href="../impressum">Impressum</a></li>
+        <li><a href="../datenschutz">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Simon Stark</span>
+    <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+  </div>
+</footer>
+
+<script src="../download-data.js"></script>
+<script>
+// Mobile hamburger menu
+const navToggle = document.querySelector('.nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+function setMenuOpen(open) {
+  if (!navToggle || !mobileMenu) return;
+  navToggle.classList.toggle('open', open);
+  mobileMenu.classList.toggle('open', open);
+  mobileMenu.hidden = !open;
+  document.body.classList.toggle('menu-open', open);
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+}
+if (navToggle && mobileMenu) {
+  mobileMenu.hidden = true;
+  navToggle.addEventListener('click', () => {
+    setMenuOpen(!navToggle.classList.contains('open'));
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenuOpen(false);
+  });
+}
+
+// ── DATA ─────────────────────────────────────────────────────────────────────
+const PROJECTS = [
+  {
+    id: 1,
+    icon: '🎮', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Dungeon Crawler',
+    version: 'v1.5',
+    desc: 'Dungeon-Spiel in C mit zufällig generierter Karte, Gegnern, Schätzen und Items. Das Release enthält die grundlegenden Spielmechaniken.',
+    tags: ['gaming'],
+    date: '2026-08-25',
+    link: 'dungeoncrawler',
+  },
+  {
+    id: 2,
+    icon: '🎮', iconBg: 'rgba(129,140,248,.15)',
+    name: 'RPG-Menü',
+    version: 'v0.9',
+    desc: 'Ein Menü, um für eine RPG-Figur Klassen, Level, Attribute, Skills und Stats zu erstellen. Alle Menüs sind miteinander verbunden und es können jederzeit neue Klassen, Attribute oder Skills hinzugefügt werden.',
+    tags: ['gaming'],
+    date: '2026-07-23',
+    link: 'rpg-menu',
+  },
+  {
+    id: 3,
+    icon: '🔀', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Zufallszahl erraten',
+    version: 'v1.0',
+    desc: 'Ein Spiel, in welchem eine zufällige Zahl zwischen 1 und 100 generiert wird und der Spieler diese erraten muss. Nach jedem Versuch erhält der Spieler Feedback, ob die gesuchte Zahl höher oder niedriger liegt.',
+    tags: ['gaming'],
+    date: '2026-05-19',
+    link: 'zufallszahlerraten',
+  },
+  {
+    id: 4,
+    icon: '🌐', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Persönliche Website',
+    version: 'v1.2',
+    desc: 'Persönliches Portfolio für meine Projekte, Downloads und Dashboards. Die Website zeigt außerdem meine weiteren Entwicklungsziele.',
+    tags: ['web-development'],
+    date: '2026-07-08',
+    link: 'website',
+  },
+  {
+    id: 5,
+    icon: '📊', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Immobilien-Kostenkalkulation',
+    version: 'v1.2',
+    desc: 'Immobilien-Tool zur Berechnung von Kaufnebenkosten und Finanzierung. Es zeigt Mietrendite, monatlichen Cashflow und steuerliche Effekte für das Projekt.',
+    tags: ['finance', 'tools'],
+    date: '2026-07-17',
+    link: 'immobilienkalkulation',
+  },
+  {
+    id: 6,
+    icon: '📈', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Discounted-Cashflow-Tool',
+    version: 'v1.2',
+    desc: 'Excel-Tool zur Berechnung des aktuellen Werts zukünftiger Cashflows.',
+    tags: ['finance', 'tools', 'data'],
+    date: '2026-07-30',
+    link: 'discounted-cashflow',
+  },
+  {
+    id: 7,
+    icon: '🎲', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Kelly Rechner & Simulation',
+    version: 'v1.0',
+    desc: 'Der Investitionsanteil basiert auf Gewinnrate, Verlustrate und Gewinnverhältnis. Das Dashboard berechnet ihn und simuliert die Entwicklung mit einer Monte-Carlo-Simulation.',
+    tags: ['finance', 'tools'],
+    date: '2026-05-22',
+    link: 'kellyrechner',
+  },
+  {
+    id: 8,
+    icon: '🔥', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Fire-Kalkulator',
+    version: 'v1.0',
+    desc: 'Rechner für das nötige Kapital im (Früh-)Ruhestand. Zeigt, welche Sparrate für finanzielle Unabhängigkeit nötig ist.',
+    tags: ['finance', 'tools'],
+    date: '2026-07-10',
+    link: 'firekalkulator',
+  },
+  {
+    id: 9,
+    icon: '🥦', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Ernährungsrechner',
+    version: 'v1.1',
+    desc: 'Rechner zur Berechnung der günstigsten Ernährung basierend auf Nährwerten, Kalorienbedarf und Preis pro Lebensmittel.',
+    tags: ['data'],
+    date: '2026-09-06',
+    link: 'ernaehrungsrechner',
+  },
+  {
+    id: 10,
+    icon: '⏮️', iconBg: 'rgba(129,140,248,.15)',
+    name: 'Assetklassen-Backtester',
+    version: 'v1.0',
+    desc: 'Interaktives Dashboard zum Vergleich vom S&P 500, Gold und Bitcoinüber 10 Jahre. Vergleichsszenarien für die Frage: „Was wären aus 10.000 € geworden?“',
+    tags: ['data', 'finance'],
+    date: '2026-08-18',
+    link: 'backtester',
+  },
+];
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let currentTag  = 'all';
+let currentSort = 'date';
+
+const TAG_LABELS = {
+  gaming: 'Gaming',
+  finance: 'Finanzen',
+  tools: 'Tools',
+  data: 'Daten',
+  'web-development': 'Web-Dev',
+};
+
+const searchDesktop = document.getElementById('search-input');
+const searchMobile  = document.getElementById('search-input-mobile');
+const sortDesktop   = document.getElementById('sort-select-desktop');
+const sortToolbar   = document.getElementById('sort-select-toolbar');
+const sortMobile    = document.getElementById('sort-select-mobile');
+
+function getQuery() {
+  const a = (searchDesktop && searchDesktop.value) || '';
+  const b = (searchMobile && searchMobile.value) || '';
+  // Prefer the focused field; otherwise merge by last non-empty from either
+  const active = document.activeElement;
+  if (active === searchMobile) return b.toLowerCase().trim();
+  if (active === searchDesktop) return a.toLowerCase().trim();
+  return (a || b).toLowerCase().trim();
+}
+
+function syncSearch(source) {
+  const val = source.value;
+  if (searchDesktop && source !== searchDesktop) searchDesktop.value = val;
+  if (searchMobile && source !== searchMobile) searchMobile.value = val;
+  render();
+}
+
+function syncSort(val, source) {
+  currentSort = val;
+  [sortDesktop, sortToolbar, sortMobile].forEach(el => {
+    if (el && el !== source) el.value = val;
+  });
+  render();
+}
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('de-DE', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function render() {
+  const q = getQuery();
+
+  let items = PROJECTS.filter(p => {
+    const matchTag = currentTag === 'all' || p.tags.includes(currentTag);
+    const matchQ = !q
+      || p.name.toLowerCase().includes(q)
+      || p.desc.toLowerCase().includes(q)
+      || p.tags.some(t => t.includes(q) || (TAG_LABELS[t] || '').toLowerCase().includes(q));
+    return matchTag && matchQ;
+  });
+
+  items = items.slice().sort((a, b) => {
+    if (currentSort === 'date') return new Date(b.date) - new Date(a.date);
+    if (currentSort === 'name') return a.name.localeCompare(b.name, 'de');
+    return 0;
+  });
+
+  const container = document.getElementById('project-container');
+  const empty = document.getElementById('empty-state');
+  const meta = document.getElementById('result-meta');
+
+  if (meta) {
+    const tagNote = currentTag === 'all' ? '' : ` | ${TAG_LABELS[currentTag] || currentTag}`;
+    meta.textContent = items.length === 1
+      ? `1 Projekt${tagNote}`
+      : `${items.length} Projekte${tagNote}`;
+  }
+
+  if (items.length === 0) {
+    container.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  container.innerHTML = items.map((p, i) => buildRow(p, i)).join('');
+  updateCounts();
+}
+
+function buildRow(p, i) {
+  const tags = p.tags.map(t =>
+    `<span class="tag ${t}">${escapeHtml(TAG_LABELS[t] || t)}</span>`
+  ).join('');
+  const name = escapeHtml(p.name);
+  const desc = escapeHtml(p.desc);
+  const version = escapeHtml(p.version);
+  const link = encodeURI(p.link);
+
+  return `
+    <article class="p-row" style="animation-delay:${i * 0.04}s">
+      <a href="${link}" class="card-link-overlay" aria-label="${name} öffnen"></a>
+      <div class="p-icon" style="background:${p.iconBg}" aria-hidden="true">${p.icon}</div>
+      <div class="p-body">
+        <div class="p-head">
+          <h2>${name}</h2>
+        </div>
+        <p class="p-desc">${desc}</p>
+        <div class="p-meta">
+          ${tags}
+          <span class="p-date">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            ${formatDate(p.date)}
+          </span>
+        </div>
+      </div>
+      <div class="p-actions">
+        <span class="version-badge">${version}</span>
+        <div class="action-btns">
+          <a href="../downloads" class="dl-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download
+          </a>
+        </div>
+      </div>
+    </article>`;
+}
+
+// ── COUNTS ────────────────────────────────────────────────────────────────────
+function updateCounts() {
+  document.getElementById('stat-total').textContent = PROJECTS.length;
+  document.getElementById('stat-gaming').textContent = PROJECTS.filter(p => p.tags.includes('gaming')).length;
+  document.getElementById('stat-finance').textContent = PROJECTS.filter(p => p.tags.includes('finance')).length;
+  document.getElementById('stat-tools').textContent = PROJECTS.filter(p =>
+    p.tags.includes('tools') || p.tags.includes('web-development') || p.tags.includes('data')
+  ).length;
+
+  const tags = ['gaming', 'finance', 'tools', 'data', 'web-development'];
+  const setCount = (id, n) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = n;
+  };
+  setCount('fc-all', PROJECTS.length);
+  setCount('mfc-all', PROJECTS.length);
+  tags.forEach(t => {
+    const n = PROJECTS.filter(p => p.tags.includes(t)).length;
+    setCount('fc-' + t, n);
+    setCount('mfc-' + t, n);
+  });
+}
+
+// ── CONTROLS ──────────────────────────────────────────────────────────────────
+function setTag(val) {
+  currentTag = val;
+  document.querySelectorAll('[data-tag]').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-tag') === val);
+  });
+  render();
+}
+
+document.querySelectorAll('[data-tag]').forEach(btn => {
+  btn.addEventListener('click', () => setTag(btn.getAttribute('data-tag')));
+});
+
+if (searchDesktop) searchDesktop.addEventListener('input', () => syncSearch(searchDesktop));
+if (searchMobile) searchMobile.addEventListener('input', () => syncSearch(searchMobile));
+
+[sortDesktop, sortToolbar, sortMobile].forEach(el => {
+  if (!el) return;
+  el.addEventListener('change', () => syncSort(el.value, el));
+});
+
+const emptyReset = document.getElementById('empty-reset');
+if (emptyReset) {
+  emptyReset.addEventListener('click', () => {
+    if (searchDesktop) searchDesktop.value = '';
+    if (searchMobile) searchMobile.value = '';
+    setTag('all');
+    syncSort('date');
+  });
+}
+
+
+
+// ── GANTT ZEITSTRAHL (download-data.js) ───────────────────────────────────────
+const TAG_LABELS_TIMELINE = {
+  gaming: 'Gaming',
+  finance: 'Finanzen',
+  tools: 'Tools',
+  data: 'Daten',
+  'web-development': 'Web-Dev',
+};
+
+let vtData = [];
+let vtProjects = []; // { name, icon, tags, versions: [...] }
+let vtActiveKey = null; // project|id or version id
+let vtRange = { min: 0, max: 0, days: 1 };
+
+function getDownloadData() {
+  if (Array.isArray(window.DOWNLOAD_DATA)) return window.DOWNLOAD_DATA;
+  if (Array.isArray(window.DOWNLOADS)) return window.DOWNLOADS;
+  return [];
+}
+
+/** Project meta from DOWNLOAD_PROJECTS (once per project). */
+function getProjectMeta(projectName) {
+  const map = window.DOWNLOAD_PROJECTS;
+  if (map && typeof map === 'object' && map[projectName]) {
+    return map[projectName];
+  }
+  return null;
+}
+
+/** Project finished flag (DOWNLOAD_PROJECTS or legacy DOWNLOAD_PROJECT_FINISHED). */
+function isProjectFinished(projectName) {
+  const meta = getProjectMeta(projectName);
+  if (meta && typeof meta === 'object' && 'finished' in meta) {
+    return meta.finished === true;
+  }
+  const map = window.DOWNLOAD_PROJECT_FINISHED;
+  if (map && typeof map === 'object' && projectName in map) {
+    return map[projectName] === true;
+  }
+  return false;
+}
+
+
+function toLocalHref(href) {
+  if (!href) return '../downloads';
+  if (/^https?:\/\//i.test(href) || href.startsWith('/') || href.startsWith('../')) return href;
+  return '../' + href.replace(/^\.\//, '');
+}
+
+function dayMs() { return 86400000; }
+
+function parseDay(d) {
+  if (!d) return null;
+  const t = new Date(d + (String(d).length <= 10 ? 'T12:00:00' : ''));
+  return isNaN(t.getTime()) ? null : t.getTime();
+}
+
+function toneForTags(tags) {
+  const t = tags || [];
+  if (t.includes('gaming')) return 'tone-gaming';
+  if (t.includes('finance')) return 'tone-finance';
+  if (t.includes('tools')) return 'tone-tools';
+  if (t.includes('data')) return 'tone-data';
+  if (t.includes('web-development')) return 'tone-web';
+  return 'tone-default';
+}
+
+function monthsBetween(minTs, maxTs) {
+  const months = [];
+  const start = new Date(minTs);
+  const end = new Date(maxTs);
+  let y = start.getFullYear();
+  let m = start.getMonth();
+  const endY = end.getFullYear();
+  const endM = end.getMonth();
+  while (y < endY || (y === endY && m <= endM)) {
+    const from = new Date(y, m, 1).getTime();
+    const to = new Date(y, m + 1, 0, 23, 59, 59).getTime();
+    months.push({
+      year: y,
+      month: m,
+      label: new Date(y, m, 1).toLocaleDateString('de-DE', { month: 'short' }),
+      yearLabel: String(y),
+      from: Math.max(from, minTs),
+      to: Math.min(to, maxTs),
+    });
+    m += 1;
+    if (m > 11) { m = 0; y += 1; }
+  }
+  return months;
+}
+
+function xPct(ts) {
+  if (vtRange.days <= 0) return 0;
+  return ((ts - vtRange.min) / (vtRange.max - vtRange.min)) * 100;
+}
+
+function groupByProject(data) {
+  const map = new Map();
+  data.forEach(function (d, idx) {
+    const name = d.project || d.name || 'Projekt';
+    if (!map.has(name)) {
+      map.set(name, {
+        name: name,
+        icon: d.projectIcon || '',
+        tags: d.tags || [],
+        versions: [],
+      });
+    }
+    const g = map.get(name);
+    if ((!g.icon) && d.projectIcon) g.icon = d.projectIcon;
+    if ((!g.tags || !g.tags.length) && d.tags) g.tags = d.tags;
+    g.versions.push(Object.assign({ _idx: idx }, d));
+  });
+  // sort projects by first release
+  return Array.from(map.values()).map(function (g) {
+    g.versions.sort(function (a, b) {
+      return (parseDay(a.date) || 0) - (parseDay(b.date) || 0);
+    });
+    g.first = parseDay(g.versions[0].date);
+    g.last = parseDay(g.versions[g.versions.length - 1].date);
+    g.finished = isProjectFinished(g.name);
+    return g;
+  }).sort(function (a, b) {
+    return (a.first || 0) - (b.first || 0);
+  });
+}
+
+function fillDetail(entry) {
+  const body = document.getElementById('vt-card-body');
+  if (!body) return;
+
+  if (!entry) {
+    body.innerHTML = '<p class="gantt-detail-placeholder">Klicke einen Balken, um Details zu sehen.</p>';
+    body.classList.remove('is-swapping');
+    return;
+  }
+
+  // Title = name; next line = per-version description (optional)
+  const title = escapeHtml(entry.name || entry.project || 'Release');
+  const version = escapeHtml(entry.version || '—');
+  const date = entry.date ? formatDate(entry.date) : '';
+  const desc = (entry.description && String(entry.description).trim())
+    ? escapeHtml(String(entry.description).trim())
+    : '';
+  const tags = Array.isArray(entry.tags) ? entry.tags : [];
+  const tagsHtml = tags.map(function (t) {
+    return '<span class="tag ' + escapeHtml(t) + '">' +
+      escapeHtml(TAG_LABELS_TIMELINE[t] || t) + '</span>';
+  }).join('');
+  const files = Array.isArray(entry.files) ? entry.files : [];
+  const fileLinks = files.slice(0, 4).map(function (f) {
+    return '<a class="is-primary" href="' + escapeHtml(toLocalHref(f.href)) + '" download>' +
+      escapeHtml(f.label || f.type || 'Download') + '</a>';
+  }).join('');
+
+  body.classList.add('is-swapping');
+  window.setTimeout(function () {
+    body.innerHTML =
+      '<div class="gantt-detail-main">' +
+        '<div class="gantt-detail-head">' +
+          '<span class="gantt-detail-project">' + title + '</span>' +
+          '<span class="gantt-detail-ver">' + version + '</span>' +
+        '</div>' +
+        (desc ? '<p class="gantt-detail-desc">' + desc + '</p>' : '') +
+        (date ? '<span class="gantt-detail-meta">' + date + '</span>' : '') +
+        (tagsHtml ? '<div class="gantt-detail-tags">' + tagsHtml + '</div>' : '') +
+      '</div>' +
+      '<div class="gantt-detail-actions">' +
+        fileLinks +
+        '<a href="../downloads">Alle Downloads</a>' +
+      '</div>';
+    body.classList.remove('is-swapping');
+  }, 90);
+}
+
+function setActiveBar(key, entry) {
+  vtActiveKey = key;
+  document.querySelectorAll('.gantt-bar').forEach(function (el) {
+    el.classList.toggle('is-active', el.getAttribute('data-key') === key);
+  });
+  document.querySelectorAll('.gantt-label-row').forEach(function (el) {
+    const proj = el.getAttribute('data-project');
+    el.classList.toggle('is-active', entry && proj === (entry.project || entry.name));
+  });
+  document.querySelectorAll('.gantt-row').forEach(function (el) {
+    const proj = el.getAttribute('data-project');
+    el.classList.toggle('is-active', entry && proj === (entry.project || entry.name));
+  });
+  fillDetail(entry);
+}
+
+function renderVersionTimeline() {
+  const empty = document.getElementById('vt-empty');
+  const stage = document.getElementById('vt-stage');
+  const meta = document.getElementById('vt-meta');
+  const countEl = document.getElementById('vt-count');
+  const labelsEl = document.getElementById('gantt-labels');
+  const chartEl = document.getElementById('gantt-chart');
+  const tableEl = document.getElementById('gantt-table');
+  if (!empty || !stage || !labelsEl || !chartEl) return;
+
+  vtData = getDownloadData()
+    .slice()
+    .filter(function (d) { return d && (d.project || d.name) && d.version && d.date; });
+
+  if (vtData.length === 0) {
+    labelsEl.innerHTML = '';
+    chartEl.innerHTML = '';
+    stage.hidden = true;
+    empty.hidden = false;
+    if (meta) meta.hidden = true;
+    return;
+  }
+
+  empty.hidden = true;
+  stage.hidden = false;
+  if (meta) meta.hidden = false;
+  if (countEl) countEl.textContent = String(vtData.length);
+
+  const times = vtData.map(function (d) { return parseDay(d.date); }).filter(Boolean);
+  // Default window: full year 2026 only. Extend (and allow H-scroll) only if a release is on/after Jan 2027.
+  const min = new Date(2026, 0, 1).getTime();
+  const end2026 = new Date(2026, 11, 31, 23, 59, 59).getTime();
+  const jan2027 = new Date(2027, 0, 1).getTime();
+  const hasAfterJan2027 = times.some(function (t) { return t >= jan2027; });
+  let max = end2026;
+  if (hasAfterJan2027) {
+    max = Math.max(end2026, Math.max.apply(null, times));
+    const maxD = new Date(max);
+    max = new Date(maxD.getFullYear(), maxD.getMonth() + 1, 0, 23, 59, 59).getTime();
+  }
+  vtRange = { min: min, max: max, days: Math.max(1, (max - min) / dayMs()) };
+
+  const scrollEl = document.getElementById('gantt-scroll');
+  if (scrollEl) {
+    scrollEl.classList.toggle('is-year-locked', !hasAfterJan2027);
+    scrollEl.style.overflowX = hasAfterJan2027 ? 'auto' : 'hidden';
+  }
+
+  // Measure available chart width (after labels) so 2026 fits without horizontal scroll
+  const labelColW = (labelsEl && labelsEl.offsetWidth) || 220;
+  const availW = scrollEl
+    ? Math.max(320, scrollEl.clientWidth - labelColW)
+    : 720;
+  const edgePadPx = hasAfterJan2027 ? 40 : 12;
+  const pxPerDay = 4.5;
+  let innerW;
+  if (hasAfterJan2027) {
+    innerW = Math.max(availW - edgePadPx * 2, Math.ceil(vtRange.days * pxPerDay));
+  } else {
+    // Exactly Jan–Dec 2026, stretched to the board width
+    innerW = Math.max(280, availW - edgePadPx * 2);
+  }
+  const chartWidth = innerW + edgePadPx * 2;
+  function xPos(ts) {
+    const clamped = Math.min(Math.max(ts, min), max);
+    return edgePadPx + ((clamped - min) / (max - min)) * innerW;
+  }
+  if (tableEl) tableEl.style.setProperty('--gantt-day-w', (innerW / vtRange.days) + 'px');
+
+  vtProjects = groupByProject(vtData);
+  const months = monthsBetween(min, max);
+
+  // Labels
+  let labelsHtml = '<div class="gantt-label-head">Projekt</div>';
+  vtProjects.forEach(function (p, i) {
+    labelsHtml +=
+      '<div class="gantt-label-row' + (i % 2 ? ' is-alt' : '') + '" data-project="' + escapeHtml(p.name) + '">' +
+        (p.icon ? '<span class="gantt-label-icon" aria-hidden="true">' + escapeHtml(p.icon) + '</span>' : '') +
+        '<span class="gantt-label-text" title="' + escapeHtml(p.name) + '">' + escapeHtml(p.name) + '</span>' +
+        '<span class="gantt-label-count">' + p.versions.length + '</span>' +
+      '</div>';
+  });
+  labelsEl.innerHTML = labelsHtml;
+
+  // Chart: months + rows + bars (with left/right edge padding)
+  let monthsHtml = '<div class="gantt-months" style="width:' + chartWidth + 'px;padding:0 ' + edgePadPx + 'px;box-sizing:border-box">';
+  months.forEach(function (mo, idx) {
+    const w = ((mo.to - mo.from) / (max - min)) * innerW;
+    const showYear = idx === 0 || months[idx - 1].year !== mo.year;
+    monthsHtml +=
+      '<div class="gantt-month" style="width:' + w + 'px">' +
+        (showYear ? '<span class="gantt-month-year">' + mo.yearLabel + '</span>' : '<span class="gantt-month-year" style="visibility:hidden">' + mo.yearLabel + '</span>') +
+        '<span class="gantt-month-name">' + escapeHtml(mo.label) + '</span>' +
+      '</div>';
+  });
+  monthsHtml += '</div>';
+
+  // grid lines
+  let gridHtml = '<div class="gantt-grid" style="width:' + chartWidth + 'px;height:' + (vtProjects.length * 48) + 'px">';
+  let acc = edgePadPx;
+  months.forEach(function (mo) {
+    const w = ((mo.to - mo.from) / (max - min)) * innerW;
+    gridHtml += '<div class="gantt-grid-line" style="left:' + acc + 'px"></div>';
+    acc += w;
+  });
+  // today
+  const today = Date.now();
+  if (today >= min && today <= max) {
+    gridHtml += '<div class="gantt-today" style="left:' + xPos(today) + 'px"></div>';
+  }
+  gridHtml += '</div>';
+
+  let rowsHtml = '<div class="gantt-rows" style="width:' + chartWidth + 'px">';
+  vtProjects.forEach(function (p, i) {
+    const tone = toneForTags(p.tags);
+    rowsHtml += '<div class="gantt-row' + (i % 2 ? ' is-alt' : '') + '" data-project="' + escapeHtml(p.name) + '" style="width:' + chartWidth + 'px">';
+    rowsHtml += '<div class="gantt-bars" style="width:' + chartWidth + 'px">';
+
+    // Span: finished → first→last release; open → first→today (clamped to chart)
+    if (p.first != null) {
+      var spanEnd = p.finished
+        ? p.last
+        : Math.max(p.last || p.first, Date.now());
+      if (spanEnd == null) spanEnd = p.first;
+      spanEnd = Math.min(Math.max(spanEnd, p.first), max);
+      var spanLeft = xPos(p.first);
+      var spanWidth = xPos(spanEnd) - spanLeft;
+      if (spanWidth > 2) {
+        rowsHtml += '<div class="gantt-span" style="left:' + spanLeft +
+          'px;width:' + spanWidth + 'px"></div>';
+      }
+    }
+
+    p.versions.forEach(function (v) {
+      const t = parseDay(v.date);
+      if (t == null) return;
+      const left = xPos(t);
+      const tickW = 18;
+      const key = String(v.id != null ? v.id : v._idx) + '::' + (v.version || '');
+      const tip = escapeHtml(
+        (v.project || p.name) +
+        (v.version ? ' | ' + v.version : '') +
+        (v.name && v.name !== v.project ? ' — ' + v.name : '') +
+        (v.date ? ' | ' + formatDate(v.date) : '')
+      );
+      rowsHtml +=
+        '<button type="button" class="gantt-bar ' + tone + '" data-key="' + escapeHtml(key) + '"' +
+          ' data-idx="' + v._idx + '"' +
+          ' style="left:' + Math.max(0, left - tickW / 2) + 'px"' +
+          ' aria-label="' + tip + '" title="' + tip + '">' +
+        '</button>';
+    });
+
+    rowsHtml += '</div></div>';
+  });
+  rowsHtml += '</div>';
+
+  chartEl.innerHTML = monthsHtml + '<div style="position:relative;width:' + chartWidth + 'px">' + gridHtml + rowsHtml + '</div>';
+
+  // events
+  chartEl.querySelectorAll('.gantt-bar').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const idx = Number(btn.getAttribute('data-idx'));
+      const entry = vtData[idx];
+      const key = btn.getAttribute('data-key');
+      setActiveBar(key, entry);
+    });
+    btn.addEventListener('mouseenter', function () {
+      if (!window.matchMedia('(hover: hover)').matches) return;
+      // preview without locking — still set active for clarity
+      const idx = Number(btn.getAttribute('data-idx'));
+      const entry = vtData[idx];
+      const key = btn.getAttribute('data-key');
+      setActiveBar(key, entry);
+    });
+  });
+
+  // default: latest release
+  let latestIdx = 0;
+  let latestT = -Infinity;
+  vtData.forEach(function (d, i) {
+    const t = parseDay(d.date) || 0;
+    if (t >= latestT) { latestT = t; latestIdx = i; }
+  });
+  const latest = vtData[latestIdx];
+  const latestKey = String(latest.id != null ? latest.id : latestIdx) + '::' + (latest.version || '');
+  // find button
+  const latestBtn = chartEl.querySelector('.gantt-bar[data-idx="' + latestIdx + '"]');
+  if (latestBtn) {
+    setActiveBar(latestBtn.getAttribute('data-key'), latest);
+    // Horizontal scroll only when the axis extends past 2026
+    if (hasAfterJan2027) {
+      const scroll = document.getElementById('gantt-scroll');
+      if (scroll) {
+        requestAnimationFrame(function () {
+          const left = latestBtn.offsetLeft - scroll.clientWidth * 0.4;
+          scroll.scrollLeft = Math.max(0, left);
+        });
+      }
+    }
+  } else {
+    fillDetail(latest);
+  }
+}
+
+if (!window._ganttResizeBound) {
+  window._ganttResizeBound = true;
+  var _ganttResizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(_ganttResizeTimer);
+    _ganttResizeTimer = setTimeout(function () {
+      if (document.getElementById('gantt-table')) renderVersionTimeline();
+    }, 160);
+  });
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+render();
+renderVersionTimeline();
+
+</script>
+</body>
+</html>

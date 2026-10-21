@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Knowledge | Finance &amp; investment concepts explained</title>
+  <link rel="icon" type="image/svg+xml" href="../../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Background articles on finance tools: asset classes, risk, financial independence, position sizing and company valuation explained clearly.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://smstark-projekt.de/en/knowledge/">
+  <meta property="og:title" content="Knowledge | Finance &amp; investment concepts explained">
+  <meta property="og:description" content="Background articles on finance tools: asset classes, risk, financial independence, position sizing and company valuation explained clearly.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://smstark-projekt.de/en/knowledge/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Knowledge | Finance & investment concepts explained",
+    "url": "https://smstark-projekt.de/en/knowledge/",
+    "hasPart": [
+      {
+        "@type": "Article",
+        "headline": "Comparing asset classes: understanding returns, risk and backtests",
+        "url": "https://smstark-projekt.de/en/knowledge/asset-class-backtester-return-risk"
+      },
+      {
+        "@type": "Article",
+        "headline": "How much money do I need for financial independence?",
+        "url": "https://smstark-projekt.de/en/knowledge/how-much-money-for-financial-independence"
+      },
+      {
+        "@type": "Article",
+        "headline": "The 4% rule explained simply",
+        "url": "https://smstark-projekt.de/en/knowledge/four-percent-rule-explained"
+      },
+      {
+        "@type": "Article",
+        "headline": "Retirement ruin risk: how likely is it that your money runs out?",
+        "url": "https://smstark-projekt.de/en/knowledge/retirement-ruin-risk-monte-carlo"
+      },
+      {
+        "@type": "Article",
+        "headline": "The Kelly criterion explained simply",
+        "url": "https://smstark-projekt.de/en/knowledge/kelly-criterion-explained"
+      },
+      {
+        "@type": "Article",
+        "headline": "How much should you stake when you have an edge?",
+        "url": "https://smstark-projekt.de/en/knowledge/how-much-should-you-stake"
+      },
+      {
+        "@type": "Article",
+        "headline": "Spotting a value bet: when your estimate differs from the odds",
+        "url": "https://smstark-projekt.de/en/knowledge/spotting-a-value-bet"
+      },
+      {
+        "@type": "Article",
+        "headline": "The DCF method explained simply",
+        "url": "https://smstark-projekt.de/en/knowledge/dcf-method-explained"
+      },
+      {
+        "@type": "Article",
+    "headline": "Calculating company value: how WACC works",
+        "url": "https://smstark-projekt.de/en/knowledge/company-value-wacc"
+      },
+      {
+        "@type": "Article",
+        "headline": "Discounted cash flow example: from forecast to terminal value",
+        "url": "https://smstark-projekt.de/en/knowledge/discounted-cash-flow-example-terminal-value"
+      },
+      {
+        "@type": "Article",
+        "headline": "Reverse DCF: which expectations are already priced in?",
+        "url": "https://smstark-projekt.de/en/knowledge/reverse-dcf-expectations-in-price"
+      },
+      {
+        "@type": "Article",
+    "headline": "Evaluating property as an investment: key metrics",
+        "url": "https://smstark-projekt.de/en/knowledge/property-as-an-investment"
+      },
+      {
+        "@type": "Article",
+        "headline": "Planning purchase costs and financing correctly",
+        "url": "https://smstark-projekt.de/en/knowledge/property-purchase-costs-financing"
+      },
+      {
+        "@type": "Article",
+        "headline": "30-year projection: cash flow, remaining debt and taxes over time",
+        "url": "https://smstark-projekt.de/en/knowledge/30-year-property-projection-cash-flow-debt-taxes"
+      },
+      {
+        "@type": "Article",
+        "headline": "What is the minimum principle?",
+        "url": "https://smstark-projekt.de/en/knowledge/what-is-the-minimum-principle"
+      },
+      {
+        "@type": "Article",
+        "headline": "Opportunity costs in everyday life",
+        "url": "https://smstark-projekt.de/en/knowledge/opportunity-costs-everyday-life"
+      },
+      {
+        "@type": "Article",
+        "headline": "How do I calculate the minimum principle?",
+        "url": "https://smstark-projekt.de/en/knowledge/calculate-minimum-principle"
+      },
+      {
+        "@type": "Article",
+        "headline": "Data quality before the dashboard: what must be right?",
+        "url": "https://smstark-projekt.de/en/knowledge/data-quality-before-dashboard"
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0f; --surface: #13131a; --border: #1e1e2e;
+      --accent: #6ee7b7; --accent2: #818cf8; --text: #e2e8f0;
+      --muted: #64748b; --card: #16161f; --nav-h: 68px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); scrollbar-width: none; -ms-overflow-style: none; }
+    html::-webkit-scrollbar { display: none; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+
+    .main-nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(12,12,15,.95); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 0 clamp(1.5rem,5vw,4rem); z-index: 100; gap: 2.2rem; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-github { position: absolute; right: clamp(1.5rem,5vw,4rem); display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 500; color: var(--text); text-decoration: none; border: 1px solid var(--text); padding: .4rem .9rem; border-radius: 8px; transition: border-color .2s, color .2s; }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; position: absolute; left: clamp(1.5rem,5vw,4rem); }
+    .nav-logo span { color: var(--accent); }
+    .main-nav .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: .03em; transition: color .2s; }
+    .main-nav .nav-links a:hover, .main-nav .nav-links a.active { color: var(--accent); }
+    .nav-toggle { display: none; position: absolute; right: clamp(1.5rem,5vw,4rem); width: 40px; height: 40px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; z-index: 101; transition: border-color .2s; }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(12,12,15,.98); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); z-index: 102; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a { display: flex; align-items: center; gap: .6rem; padding: .95rem .2rem; color: var(--text); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color .2s; }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+    @media (max-width: 960px) {
+      .main-nav { justify-content: flex-start; padding: 0 1.5rem; }
+      .main-nav .nav-links, .main-nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+    }
+
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    #hub-hero { padding: calc(var(--nav-h) + 4rem) clamp(1.5rem,8vw,8rem) 3rem; max-width: 900px; }
+    .hub-eyebrow { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .hub-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -.03em; margin-bottom: 1.4rem; }
+    .hub-lead { font-size: 1.05rem; font-weight: 300; color: var(--muted); max-width: 62ch; line-height: 1.75; }
+
+    .article-list { padding: 1rem clamp(1.5rem,8vw,8rem) 5rem; display: flex; flex-direction: column; gap: .9rem; }
+    .article-card { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.7rem 1.9rem; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; }
+    .article-card:hover { border-color: rgba(110,231,183,.4); transform: translateY(-2px); }
+    .article-card .kicker { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: .5rem; }
+    .badge-new { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--bg); background: var(--accent); padding: .15rem .5rem; border-radius: 20px; margin-left: .5rem; vertical-align: middle; }
+    .article-card h2 { font-family: 'Syne', sans-serif; font-size: 1.25rem; margin-bottom: .5rem; letter-spacing: -.01em; }
+    .article-card p { color: var(--muted); font-size: .92rem; max-width: 60ch; line-height: 1.6; }
+    .article-card .arrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: border-color .2s, background .2s; }
+    .article-card:hover .arrow { border-color: var(--accent); background: rgba(110,231,183,.1); }
+    .article-card .arrow svg { width: 15px; height: 15px; color: var(--accent); }
+
+    .cluster-heading { padding: 1.5rem clamp(1.5rem,8vw,8rem) 0; font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--text); }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem; color: var(--muted); font-size: .82rem; }
+    .footer-inner { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; display: inline-block; margin-bottom: .9rem; }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 { font-family: 'Syne', sans-serif; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--text); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem; }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } .footer-bottom { flex-direction: column; text-align: center; } }
+
+    @media (max-width: 768px) {
+      .article-card { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: .6rem; text-align: center; }
+    }
+  </style>
+
+  <link rel="stylesheet" href="../../assets/site-header.css">
+  <script src="../../assets/site-header.js" defer></script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="/en/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li>
+      <li><a href="/en/vision">Vision</a></li>
+      <li><a href="./" class="active">Knowledge</a></li>
+    </ul>
+<div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/wissen/" data-language-file-target="../../wissen/index.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li>
+      <li><a href="/en/vision">Vision</a></li>
+      <li><a href="./">Knowledge</a></li>
+      <li class="mobile-language-row">
+  <span class="mobile-language-label">Language</span>
+  <button type="button" class="language-switch" data-language-target="/wissen/" data-language-file-target="../../wissen/index.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+</li>
+      <li><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub</a></li>
+    </ul>
+  </div>
+
+  <section id="hub-hero">
+    <p class="hub-eyebrow fade-in">Knowledge</p>
+    <h1 class="hub-title fade-in">Finance &amp; investment<br>concepts explained.</h1>
+    <p class="hub-lead fade-in">
+      Clear background articles on the ideas behind my finance tools: asset classes, risk, financial independence, position sizing, company valuation and property investment.
+    </p>
+  </section>
+
+  <p class="cluster-heading fade-in" id="fire-basics">Financial foundations</p>
+  <div class="article-list">
+    <a href="asset-class-backtester-return-risk" class="article-card fade-in" data-date="2026-08-15">
+      <div>
+        <p class="kicker">Asset classes &amp; risk</p>
+        <h2>Comparing asset classes: returns, risk and backtests</h2>
+        <p>How the S&amp;P 500, Bitcoin and gold are compared on a shared euro basis, and what volatility, drawdown, Sharpe and Calmar actually tell you.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  
+    <a href="how-much-money-for-financial-independence" class="article-card fade-in" data-date="2026-07-15">
+      <div>
+        <p class="kicker">FIRE basics</p>
+        <h2>How much money do I need for financial independence?</h2>
+        <p>The core formula, German tax details and a worked example you can follow.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="four-percent-rule-explained" class="article-card fade-in" data-date="2026-06-04">
+      <div>
+        <p class="kicker">FIRE basics</p>
+        <h2>The 4% rule explained simply</h2>
+        <p>Where the best-known FIRE rule of thumb comes from, how it works and where its limits lie.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="retirement-ruin-risk-monte-carlo" class="article-card fade-in" data-date="2026-06-08">
+      <div>
+        <p class="kicker">FIRE basics</p>
+        <h2>Retirement ruin risk: how likely is it that your money runs out?</h2>
+        <p>Why averages can mislead and how to assess your personal risk more seriously.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  </div>
+
+  <p class="cluster-heading fade-in" id="einsatzgroesse-risiko">Position sizing &amp; risk</p>
+  <div class="article-list">
+    <a href="kelly-criterion-explained" class="article-card fade-in" data-date="2026-06-12">
+      <div>
+        <p class="kicker">Position sizing &amp; risk</p>
+        <h2>The Kelly criterion explained simply</h2>
+        <p>The formula for an ideal stake when the odds are known, including its origin and a worked example.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="how-much-should-you-stake" class="article-card fade-in" data-date="2026-06-16">
+      <div>
+        <p class="kicker">Position sizing &amp; risk</p>
+        <h2>How much should you stake when you have an edge?</h2>
+        <p>Why fixed stakes are usually suboptimal and how to tie position size to your edge.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="spotting-a-value-bet" class="article-card fade-in" data-date="2026-06-20">
+      <div>
+        <p class="kicker">Position sizing &amp; risk</p>
+        <h2>Spotting a value bet: when your estimate differs from the odds</h2>
+        <p>How to calculate the implied probability of odds and test whether you actually have an edge.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  </div>
+
+  <p class="cluster-heading fade-in" id="unternehmensbewertung">Company valuation</p>
+  <div class="article-list">
+    <a href="reverse-dcf-expectations-in-price" class="article-card fade-in" data-date="2026-09-02">
+      <div>
+        <p class="kicker">Company valuation</p>
+        <h2>Reverse DCF: which expectations are already priced in?</h2>
+        <p>Turn the market price around to see what growth and margin a share price already assumes.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="spacex-ipo-valuation" class="article-card fade-in" data-date="2026-05-29">
+      <div>
+        <p class="kicker">Company valuation</p>
+        <h2>SpaceX before the IPO: how much future is already in the price?</h2>
+        <p>DCF valuation as of 29 May 2026, key risks, overvaluation and insider lock-up periods.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="dcf-method-explained" class="article-card fade-in" data-date="2026-06-25">
+      <div>
+        <p class="kicker">Company valuation</p>
+        <h2>The DCF method explained simply</h2>
+        <p>How to calculate company value and what the present value of future cash flows means.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="company-value-wacc" class="article-card fade-in" data-date="2026-06-29">
+      <div>
+        <p class="kicker">Company valuation</p>
+        <h2>Calculating company value: how WACC works</h2>
+        <p>How the cost of equity and debt fit together, and why WACC has such a strong effect on the result.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="discounted-cash-flow-example-terminal-value" class="article-card fade-in" data-date="2026-07-03">
+      <div>
+        <p class="kicker">Company valuation</p>
+        <h2>Discounted cash flow example: from forecast to terminal value</h2>
+        <p>A worked example from the forecast phase through to the final company value.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  </div>
+
+  <p class="cluster-heading fade-in" id="immobilien-investition">Property investment</p>
+  <div class="article-list">
+    <a href="property-as-an-investment" class="article-card fade-in" data-date="2026-07-07">
+      <div>
+        <p class="kicker">Property investment</p>
+        <h2>Evaluating property as an investment: key metrics</h2>
+        <p>Gross and net yield, cash flow, ROE and the price multiplier, measured objectively rather than by gut feeling.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="property-purchase-costs-financing" class="article-card fade-in" data-date="2026-07-11">
+      <div>
+        <p class="kicker">Property investment</p>
+        <h2>Planning purchase costs and financing correctly</h2>
+        <p>How to include transfer tax, notary fees, agent fees and an amortising loan in the calculation.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="30-year-property-projection-cash-flow-debt-taxes" class="article-card fade-in" data-date="2026-06-01">
+      <div>
+        <p class="kicker">Property investment</p>
+        <h2>30-year projection: cash flow, remaining debt and taxes over time</h2>
+        <p>How rent growth, remaining debt, depreciation and the exit analysis develop over the holding period.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  </div>
+
+  <p class="cluster-heading fade-in" id="wirtschaft">Economic concepts</p>
+  <div class="article-list">
+    <a href="what-is-the-minimum-principle" class="article-card fade-in" data-date="2026-08-05">
+      <div>
+        <p class="kicker">Economics</p>
+        <h2>What is the minimum principle?</h2>
+        <p>Keep the result fixed and make the input as small as necessary. Feasible versus optimal, constraints and common mistakes.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="opportunity-costs-everyday-life" class="article-card fade-in" data-date="2026-09-18">
+      <div>
+        <p class="kicker">Economics</p>
+        <h2>Opportunity costs in everyday life</h2>
+        <p>What are opportunity costs, and how do they shape everyday decisions?</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    </div>
+
+    <p class="cluster-heading fade-in" id="datenanalyse">Data analysis</p>
+      <div class="article-list">
+    <a href="data-quality-before-dashboard" class="article-card fade-in" data-date="2026-09-11">
+      <div>
+        <p class="kicker">Data analysis</p>
+        <h2>Data quality before the dashboard: what must be right?</h2>
+        <p>Check provenance, units, duplicates, missing values and metrics before raw data becomes a chart.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="calculate-minimum-principle" class="article-card fade-in" data-date="2026-08-08">
+      <div>
+        <p class="kicker">Data analysis</p>
+        <h2>How do I calculate the minimum principle?</h2>
+        <p>A nutrition-optimizer example covering the pool, units, buildModel, solver, whole quantities and repair.</p>
+      </div>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/en/" class="footer-logo">sms<span>.</span></a>
+        <p>Personal finance tools, dashboards and programming projects by Simon Stark. Always a work in progress.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="/en/projects/">Projects</a></li>
+          <li><a href="/en/downloads">Downloads</a></li>
+          <li><a href="/en/project-pipeline">Project pipeline</a></li>
+          <li><a href="/en/vision">Vision</a></li>
+          <li><a href="./">Knowledge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="/en/legal-notice">Legal notice</a></li>
+          <li><a href="/en/privacy">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const NEW_BADGE_DAYS = 30;
+    const now = new Date();
+    document.querySelectorAll('.article-card[data-date]').forEach(card => {
+      const published = new Date(card.dataset.date);
+      const ageDays = (now - published) / 86400000;
+      if (ageDays <= NEW_BADGE_DAYS) {
+        const kicker = card.querySelector('.kicker');
+        if (kicker) kicker.insertAdjacentHTML('beforeend', ' <span class="badge-new">New</span>');
+      }
+    });
+  </script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+         navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+           navToggle.setAttribute('aria-label', 'Open menu');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

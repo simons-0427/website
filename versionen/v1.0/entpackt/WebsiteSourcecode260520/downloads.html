@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,12,15,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      padding: 0 clamp(1.5rem,5vw,4rem);
+      z-index: 100;
+      gap: 1.5rem;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text); text-decoration: none;
+      margin-right: auto;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; margin-right: auto; }
+    .nav-links a {
+    font-size: .875rem; font-weight: 500;
+    color: var(--muted); text-decoration: none;
+    letter-spacing: .03em; transition: color .2s;
+   }
+.nav-links a:hover { color: var(--accent); }
+    .nav-back:hover { color: var(--accent); }
+    .nav-back svg { width:15px; height:15px; }
+    .nav-github {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 500;
+      color: var(--muted); text-decoration: none;
+      border: 1px solid var(--border);
+      padding: .4rem .9rem; border-radius: 8px;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+
+    /* ── HERO ── */
+    .hero-strip {
+      margin-top: var(--nav-h);
+      padding: 5rem clamp(1.5rem,8vw,8rem) 3.5rem;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-strip::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 80% 50%, rgba(110,231,183,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    .page-tag {
+      font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .9rem;
+    }
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800; letter-spacing: -.03em;
+      line-height: 1.05; margin-bottom: 1rem;
+    }
+    .page-title em { font-style: normal; color: var(--accent); }
+    .page-sub { color: var(--muted); font-weight: 300; font-size: 1rem; max-width: 52ch; }
+
+    /* ── STATS ROW ── */
+    .stats-row {
+      display: flex; gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-pill {
+      flex: 1; padding: 1.1rem clamp(1rem,3vw,2.5rem);
+      background: var(--surface);
+      display: flex; align-items: center; gap: .9rem;
+    }
+    .stat-icon { font-size: 1.2rem; }
+    .stat-count {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.5rem; line-height: 1;
+    }
+    .stat-lbl { font-size: .75rem; color: var(--muted); margin-top: .1rem; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: calc(100vh - var(--nav-h));
+    }
+
+    /* ── SIDEBAR ── */
+    aside {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+    }
+    .sidebar-label {
+      font-size: .68rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted);
+      font-weight: 600; margin-bottom: .8rem; margin-top: 1.4rem;
+    }
+    .sidebar-label:first-child { margin-top: 0; }
+    .filter-btn {
+      display: flex; align-items: center; gap: .6rem;
+      width: 100%; padding: .55rem .8rem;
+      border-radius: 8px; border: none;
+      background: transparent; color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .875rem; font-weight: 500;
+      cursor: pointer; text-align: left;
+      transition: background .15s, color .15s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: rgba(110,231,183,.08); color: var(--text);
+    }
+    .filter-btn.active { color: var(--accent); }
+    .filter-count {
+      margin-left: auto; font-size: .7rem;
+      background: var(--border); padding: .1rem .45rem;
+      border-radius: 999px; color: var(--muted);
+    }
+    .sort-select {
+      width: 100%; background: var(--card);
+      border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text); font-family: 'DM Sans', sans-serif;
+      font-size: .82rem; padding: .5rem .8rem;
+      cursor: pointer; outline: none;
+    }
+
+    /* ── LIST AREA ── */
+    .list-wrap { padding: 2rem clamp(1.5rem,4vw,3rem); }
+    .list-controls {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.8rem; flex-wrap: wrap;
+    }
+    .search-box {
+      flex: 1; min-width: 200px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; display: flex; align-items: center;
+      gap: .6rem; padding: 0 .9rem;
+    }
+    .search-box svg { width:15px; height:15px; color: var(--muted); flex-shrink:0; }
+    .search-box input {
+      background: transparent; border: none; color: var(--text);
+      font-family: 'DM Sans', sans-serif; font-size: .875rem;
+      padding: .65rem 0; outline: none; width: 100%;
+    }
+    .search-box input::placeholder { color: var(--muted); }
+
+    /* ── TABLE HEADER ── */
+    .table-header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 140px;
+      gap: 1rem;
+      padding: .5rem 1.2rem;
+      font-size: .7rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted);
+      font-weight: 600; margin-bottom: .4rem;
+    }
+
+    /* ── DOWNLOAD ROWS ── */
+    #dl-container { display: flex; flex-direction: column; gap: .5rem; }
+
+    .dl-group { margin-bottom: .5rem; }
+
+    /* Project header row */
+    .project-header {
+      display: flex; align-items: center; gap: .8rem;
+      padding: .55rem 1.2rem;
+      background: rgba(110,231,183,.04);
+      border: 1px solid var(--border);
+      border-radius: 10px 10px 0 0;
+      cursor: pointer;
+      user-select: none;
+      transition: background .15s;
+    }
+    .project-header:hover { background: rgba(110,231,183,.08); }
+    .project-header-icon { font-size: 1rem; }
+    .project-header-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700; font-size: .9rem; flex: 1;
+    }
+    .project-header-count {
+      font-size: .72rem; color: var(--muted);
+      background: var(--border); padding: .1rem .5rem;
+      border-radius: 999px;
+    }
+    .project-header-chevron {
+      width: 16px; height: 16px; color: var(--muted);
+      transition: transform .2s;
+    }
+    .project-header.collapsed .project-header-chevron { transform: rotate(-90deg); }
+
+    /* File rows */
+    .file-rows { display: flex; flex-direction: column; gap: 0; }
+    .file-rows.hidden { display: none; }
+
+    .dl-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 140px;
+      gap: 1rem; align-items: center;
+      padding: .85rem 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: none;
+      transition: background .15s;
+      animation: rowIn .25s ease both;
+    }
+    .dl-row:last-child { border-radius: 0 0 10px 10px; }
+    .dl-row:hover { background: rgba(255,255,255,.025); }
+
+    @keyframes rowIn {
+      from { opacity:0; transform: translateY(6px); }
+      to   { opacity:1; transform: none; }
+    }
+
+    /* Standalone row (not under a project header) */
+    .dl-row.standalone {
+      border-radius: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .dl-name { font-size: .9rem; font-weight: 500; }
+    .dl-version { font-size: .8rem; color: var(--muted); margin-top: .1rem; }
+
+    /* Tags */
+    .tag-list { display: flex; flex-wrap: wrap; gap: .3rem; }
+    .tag {
+      font-size: .68rem; font-weight: 600;
+      padding: .18rem .55rem; border-radius: 4px;
+    }
+    .tag.gaming          { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .tag.finance         { background: rgba(110,231,183,.12); color: var(--accent); }
+    .tag.tools           { background: rgba(251,191,36,.1);   color: #fbbf24; }
+    .tag.data            { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .tag.web-development { background: rgba(129,140,248,.13); color: var(--accent2); }
+
+    /* File type badges */
+    .filetype-list { display: flex; flex-wrap: wrap; gap: .3rem; }
+    .ft-badge {
+      font-size: .7rem; font-weight: 700;
+      padding: .2rem .55rem; border-radius: 5px;
+      font-family: 'DM Sans', sans-serif; letter-spacing: .03em;
+    }
+    .ft-badge.zip  { background: rgba(251,191,36,.12); color: #fbbf24; }
+    .ft-badge.xlsx { background: rgba(110,231,183,.12); color: var(--accent); }
+    .ft-badge.c    { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .ft-badge.pdf  { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .ft-badge.py   { background: rgba(251,191,36,.1);   color: #fbbf24; }
+    .ft-badge.exe  { background: rgba(100,116,139,.12); color: #94a3b8; }
+
+    /* Date */
+    .dl-date { font-size: .8rem; color: var(--muted); }
+
+    /* Download buttons */
+    .dl-btns { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: flex-end; }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: .35rem;
+      padding: .4rem .8rem; border-radius: 7px;
+      font-size: .78rem; font-weight: 500;
+      text-decoration: none; cursor: pointer;
+      background: var(--border); color: var(--text);
+      border: 1px solid transparent;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .dl-btn:hover { background: rgba(110,231,183,.12); border-color: var(--accent); color: var(--accent); }
+    .dl-btn svg { width:12px; height:12px; flex-shrink: 0; }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center; padding: 5rem 2rem;
+      color: var(--muted); display: none;
+    }
+    .empty-state svg { width:48px; height:48px; margin: 0 auto 1rem; opacity:.3; display:block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1.5rem,8vw,8rem);
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: .82rem; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+      .table-header { display: none; }
+      .dl-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+      }
+      .dl-btns { justify-content: flex-start; }
+    }
+    @media (max-width: 500px) {
+      .dl-row { grid-template-columns: 1fr; }
+      .nav-github span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+html<nav>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projekte.html">Projekte</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="projekt-pipeline.html">Projekt-Pipeline</a></li>
+  </ul>
+  <a href="https://github.com/simons-0427" target="_blank" class="nav-github">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    <span>GitHub</span>
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero-strip">
+  <p class="page-tag">Downloads · Tools, Code & Vorlagen</p>
+  <h1 class="page-title">Alles zum <em>Herunterladen.</em></h1>
+  <p class="page-sub">Tools, Tabellen und Code aus meinen Projekten – direkt als Datei, kostenlos.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-pill">
+    <span class="stat-icon">📦</span>
+    <div>
+      <div class="stat-count" id="stat-total">0</div>
+      <div class="stat-lbl">Dateien gesamt</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon">🗂️</span>
+    <div>
+      <div class="stat-count" id="stat-projects">0</div>
+      <div class="stat-lbl">Projekte</div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="stat-icon">📥</span>
+    <div>
+      <div class="stat-count" id="stat-types">0</div>
+      <div class="stat-lbl">Dateitypen</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- SIDEBAR -->
+  <aside>
+    <p class="sidebar-label">Kategorie</p>
+    <button class="filter-btn active" data-cat="all" onclick="setCat(this,'all')">
+      Alle
+      <span class="filter-count" id="fc-all"></span>
+    </button>
+    <button class="filter-btn" data-cat="gaming" onclick="setCat(this,'gaming')">
+      🎮 Gaming
+      <span class="filter-count" id="fc-gaming"></span>
+    </button>
+    <button class="filter-btn" data-cat="finance" onclick="setCat(this,'finance')">
+      📈 Finanzen
+      <span class="filter-count" id="fc-finance"></span>
+    </button>
+    <button class="filter-btn" data-cat="tools" onclick="setCat(this,'tools')">
+      🛠️ Tools
+      <span class="filter-count" id="fc-tools"></span>
+    </button>
+    <button class="filter-btn" data-cat="data" onclick="setCat(this,'data')">
+      📊 Datenanalyse
+      <span class="filter-count" id="fc-data"></span>
+    </button>
+    <button class="filter-btn" data-cat="web-development" onclick="setCat(this,'web-development')">
+      🌐 Web-Dev
+      <span class="filter-count" id="fc-web-development"></span>
+    </button>
+
+    <p class="sidebar-label">Dateityp</p>
+    <button class="filter-btn" data-type="all-types" onclick="setType(this,'all')">
+      Alle Typen
+      <span class="filter-count" id="ft-all"></span>
+    </button>
+    <button class="filter-btn" data-type="zip" onclick="setType(this,'zip')">
+      <span class="ft-badge zip">.zip</span>
+      <span class="filter-count" id="ft-zip"></span>
+    </button>
+    <button class="filter-btn" data-type="xlsx" onclick="setType(this,'xlsx')">
+      <span class="ft-badge xlsx">.xlsx</span>
+      <span class="filter-count" id="ft-xlsx"></span>
+    </button>
+    <button class="filter-btn" data-type="c" onclick="setType(this,'c')">
+      <span class="ft-badge c">.c</span>
+      <span class="filter-count" id="ft-c"></span>
+    </button>
+    <button class="filter-btn" data-type="pdf" onclick="setType(this,'pdf')">
+      <span class="ft-badge pdf">.pdf</span>
+      <span class="filter-count" id="ft-pdf"></span>
+    </button>
+
+    <p class="sidebar-label">Sortieren</p>
+    <select class="sort-select" onchange="setSort(this.value)">
+      <option value="date">Veröffentlichungsdatum</option>
+      <option value="project">Projekt</option>
+      <option value="name">Name (A–Z)</option>
+      <option value="type">Dateityp</option>
+    </select>
+  </aside>
+
+  <!-- LIST -->
+  <div class="list-wrap">
+    <div class="list-controls">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Dateien durchsuchen …" oninput="render()">
+      </div>
+    </div>
+
+    <div class="table-header">
+      <div>Name / Version</div>
+      <div>Tags</div>
+      <div>Dateityp</div>
+      <div>Datum</div>
+      <div style="text-align:right">Download</div>
+    </div>
+
+    <div id="dl-container"></div>
+    <div class="empty-state" id="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p>Keine Dateien gefunden.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 · Downloads</span>
+  <a href="https://github.com/simons-0427" target="_blank">github.com/simons-0427 ↗</a>
+</footer>
+
+<script>
+// ── DATA ────────────────────────────────────────────────────────────────────
+// files: array of download entries. Each entry can have multiple `files`
+// (different filetypes for the same release) and multiple `versions`.
+const DOWNLOADS = [
+  {
+    id: 1,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeons Alpha',
+    version: 'v0.1',
+    tags: ['gaming'],
+    date: '2026-01-12',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.1.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.1.c' },
+    ],
+  },
+  {
+    id: 2,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeon Alpha ',
+    version: 'v0.2.1',
+    tags: ['gaming'],
+    date: '2026-01-13',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.2.1.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.2.1.c' },
+    ],
+  },
+  {
+    id: 3,
+    project: 'RPG-Menü',
+    projectIcon: '📖',
+    name: 'Quest-Menü',
+    version: 'v1.0',
+    tags: ['gaming'],
+    date: '2026-03-20',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Questmenu.zip' },
+      { type: 'c',  label: '.c',  href: 'data/Questmenu.c' },
+    ],
+  },
+  {
+    id: 4,
+    project: 'RPG-Menü',
+    projectIcon: '📖',
+    name: 'RPG-Menü',
+    version: 'v0.7',
+    tags: ['gaming'],
+    date: '2026-03-29',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/RPG-MenuV07.zip' },
+      { type: 'c',  label: '.c',  href: 'data/RPG-MenuV07.c' },
+    ],
+  },
+  {
+    id: 5,
+    project: 'RPG-Menü',
+    projectIcon: '📖',
+    name: 'Klassen-Menü',
+    version: 'v1.0',
+    tags: ['gaming'],
+    date: '2026-03-01',
+    files: [
+     { type: 'zip', label: '.zip', href: 'data/Classes.zip' },
+     { type: 'c',  label: '.c',  href: 'data/Classes.c' },
+    ],
+  },
+  {
+    id: 6,
+    project: 'Website',
+    projectIcon: '🌐',
+    name: 'Website Quellcode',
+    version: 'v1.0',
+    tags: ['web-development'],
+    date: '2026-05-31',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/WebsiteSourcecode.zip' },
+    ],
+  },
+  {
+    id: 7,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeons Alpha',
+    version: 'v0.3',
+    tags: ['gaming'],
+    date: '2026-01-18',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.3.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.3.c' },
+    ],
+  },
+  {
+    id: 8,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeons Alpha',
+    version: 'v0.4',
+    tags: ['gaming'],
+    date: '2026-01-18',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.4.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.4.c' },
+    ],
+  },
+  {
+    id: 9,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeons Alpha',
+    version: 'v0.5',
+    tags: ['gaming'],
+    date: '2026-01-18',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.5.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.5.c' },
+    ],
+  },
+  {
+    id: 10,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeons Alpha',
+    version: 'v0.6',
+    tags: ['gaming'],
+    date: '2026-01-19',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.6.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.6.c' },
+    ],
+  },
+  {
+    id: 11,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeons Alpha',
+    version: 'v0.7',
+    tags: ['gaming'],
+    date: '2026-01-19',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.7.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.7.c' },
+    ],
+  },
+  {
+    id: 12,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeons Alpha',
+    version: 'v0.8',
+    tags: ['gaming'],
+    date: '2026-01-20',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.8.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.8.c' },
+    ],
+  },
+  {
+    id: 13,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeons Alpha',
+    version: 'v0.9',
+    tags: ['gaming'],
+    date: '2026-01-20',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.9.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.9.c' },
+    ],
+  },
+  {
+    id: 14,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeons Alpha - Finale Version',
+    version: 'v0.9.3',
+    tags: ['gaming'],
+    date: '2026-01-27',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/Dungeons 0.9.3.zip' },
+      { type: 'c',   label: '.c',   href: 'data/Dungeons 0.9.3.c' },
+    ],
+  },
+  {
+    id: 15,
+    project: 'Dungeon Crawler',
+    projectIcon: '🎮',
+    name: 'Dungeon Crawler',
+    version: 'v1.0',
+    tags: ['gaming'],
+    date: '2026-02-25',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/DungeonCrawler.zip' },
+      { type: 'c',   label: '.c',   href: 'data/DungeonCrawler.c' },
+    ],
+  },
+{
+    id: 15,
+    project: 'Zufallszahl erraten',
+    projectIcon: '🎮',
+    name: 'Zufallszahl erraten',
+    version: 'v0.4',
+    tags: ['gaming'],
+    date: '2026-01-04',
+    files: [
+      { type: 'zip', label: '.zip', href: 'data/ZufallszahlV04.zip' },
+      { type: 'c',   label: '.c',   href: 'data/ZufallszahlV04.c' },
+    ],
+  },
+  {
+    id: 16,
+    project: 'Immobilien-Kostenkalkulation',
+    projectIcon: '📊',
+    name: 'Immobilien-Kostenkalkulation',
+    version: 'v1.0',
+    tags: ['finance', 'tools'],
+    date: '2026-05-18',
+    files: [
+      { type: 'xlsx',   label: '.xlsx',   href: 'data/Immobilien_Kalkulationstool_Pro.xlsx' },
+    ],
+  },
+];
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+let currentCat  = 'all';
+let currentType = 'all';
+let currentSort = 'date';
+
+// ── HELPERS ──────────────────────────────────────────────────────────────────
+const TAG_LABELS = {
+  gaming:'🎮 Spiele', finance:'📈 Finanzen',
+  tools:'🛠️ Tools', data:'📊 Daten', 'web-development':'🌐 Web-Dev'
+};
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('de-DE', { day:'2-digit', month:'short', year:'numeric' });
+}
+
+function dlIcon() {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>`;
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function render() {
+  const q = document.getElementById('search-input').value.toLowerCase().trim();
+
+  let items = DOWNLOADS.filter(d => {
+    const matchCat  = currentCat  === 'all' || d.tags.includes(currentCat);
+    const matchType = currentType === 'all' || d.files.some(f => f.type === currentType);
+    const matchQ    = !q || d.name.toLowerCase().includes(q)
+                         || d.project.toLowerCase().includes(q)
+                         || d.desc.toLowerCase().includes(q)
+                         || d.tags.some(t => t.includes(q));
+    return matchCat && matchType && matchQ;
+  });
+
+  // Sort
+  items = items.slice().sort((a, b) => {
+    if (currentSort === 'date')    return new Date(b.date) - new Date(a.date);
+    if (currentSort === 'project') return a.project.localeCompare(b.project);
+    if (currentSort === 'name')    return a.name.localeCompare(b.name);
+    if (currentSort === 'type')    return a.files[0].type.localeCompare(b.files[0].type);
+    return 0;
+  });
+
+  const container = document.getElementById('dl-container');
+  const empty     = document.getElementById('empty-state');
+
+  if (items.length === 0) {
+    container.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  // Group by project when sorting by project, otherwise flat list
+  if (currentSort === 'project') {
+    const groups = {};
+    items.forEach(d => {
+      if (!groups[d.project]) groups[d.project] = { icon: d.projectIcon, entries: [] };
+      groups[d.project].entries.push(d);
+    });
+    container.innerHTML = Object.entries(groups).map(([proj, g]) => `
+      <div class="dl-group">
+        <div class="project-header" onclick="toggleGroup(this)">
+          <span class="project-header-icon">${g.icon}</span>
+          <span class="project-header-name">${proj}</span>
+          <span class="project-header-count">${g.entries.length} Datei${g.entries.length !== 1 ? 'en' : ''}</span>
+          <svg class="project-header-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="file-rows">
+          ${g.entries.map((d,i) => buildRow(d, i, false)).join('')}
+        </div>
+      </div>
+    `).join('');
+  } else {
+    container.innerHTML = items.map((d, i) => buildRow(d, i, true)).join('');
+  }
+
+  updateCounts(items);
+}
+
+function buildRow(d, i, standalone) {
+  const tags = d.tags.map(t => `<span class="tag ${t}">${TAG_LABELS[t] || t}</span>`).join('');
+  const types = d.files.map(f => `<span class="ft-badge ${f.type}">.${f.type}</span>`).join('');
+  const btns = d.files.map(f =>
+    `<a href="${f.href}" class="dl-btn" download>${dlIcon()} ${f.label}</a>`
+  ).join('');
+
+  return `
+    <div class="dl-row${standalone ? ' standalone' : ''}" style="animation-delay:${i*0.04}s">
+      <div>
+        <div class="dl-name">${d.name}</div>
+        <div class="dl-version">${d.version}</div>
+      </div>
+      <div class="tag-list">${tags}</div>
+      <div class="filetype-list">${types}</div>
+      <div class="dl-date">${formatDate(d.date)}</div>
+      <div class="dl-btns">${btns}</div>
+    </div>`;
+}
+
+// ── COUNTS ────────────────────────────────────────────────────────────────────
+function updateCounts(filtered) {
+  // Stats bar
+  document.getElementById('stat-total').textContent    = DOWNLOADS.length;
+  document.getElementById('stat-projects').textContent = [...new Set(DOWNLOADS.map(d => d.project))].length;
+  document.getElementById('stat-types').textContent    = [...new Set(DOWNLOADS.flatMap(d => d.files.map(f => f.type)))].length;
+
+  // Sidebar cat counts
+  const cats = ['gaming','finance','tools','data','web-development'];
+  document.getElementById('fc-all').textContent = DOWNLOADS.length;
+  cats.forEach(c => {
+    const el = document.getElementById('fc-' + c);
+    if (el) el.textContent = DOWNLOADS.filter(d => d.tags.includes(c)).length;
+  });
+
+  // Sidebar type counts
+  const types = ['zip','xlsx','c','pdf'];
+  document.getElementById('ft-all').textContent = DOWNLOADS.length;
+  types.forEach(t => {
+    const el = document.getElementById('ft-' + t);
+    if (el) el.textContent = DOWNLOADS.filter(d => d.files.some(f => f.type === t)).length;
+  });
+}
+
+// ── CONTROLS ─────────────────────────────────────────────────────────────────
+function setCat(btn, val) {
+  currentCat = val;
+  document.querySelectorAll('[data-cat]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+function setType(btn, val) {
+  currentType = val;
+  document.querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+function setSort(val) { currentSort = val; render(); }
+
+function toggleGroup(header) {
+  header.classList.toggle('collapsed');
+  header.nextElementSibling.classList.toggle('hidden');
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+render();
+</script>
+</body>
+</html>

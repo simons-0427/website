@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="index, follow">
+  <title>SpaceX before the IPO: valuation, risks and DCF</title>
+  <meta name="description" content="SpaceX before the 29 May 2026 IPO: reported figures, DCF valuation, risks, scenarios and unusual insider lock-ups.">
+  <link rel="icon" type="image/svg+xml" href="../../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicons/favicon-1g-dotgrid-180.png">
+  <link rel="canonical" href="https://smstark-projekt.de/en/knowledge/spacex-ipo-valuation">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://smstark-projekt.de/en/knowledge/spacex-ipo-valuation">
+  <meta property="og:title" content="SpaceX before the IPO: valuation, risks and DCF">
+  <meta property="og:description" content="SpaceX before the 29 May 2026 IPO: reported figures, DCF valuation, risks, scenarios and unusual insider lock-ups.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/dcf-tool-dashboard.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "SpaceX before the IPO: valuation, risks and DCF",
+    "description": "SpaceX before the 29 May 2026 IPO: reported figures, DCF valuation, risks, scenarios and unusual insider lock-ups.",
+    "author": {"@type": "Person", "@id": "https://smstark-projekt.de/#person", "name": "Simon Stark", "url": "https://smstark-projekt.de/"},
+    "publisher": {"@id": "https://smstark-projekt.de/#person"},
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-05-29",
+    "image": "https://smstark-projekt.de/images/dcf-tool-dashboard.png",
+    "mainEntityOfPage": "https://smstark-projekt.de/en/knowledge/spacex-ipo-valuation",
+    "inLanguage": "en-GB"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0c0c0f; --surface:#13131a; --border:#1e1e2e; --card:#16161f;
+      --accent:#6ee7b7; --accent2:#818cf8; --danger:#fb7185; --warn:#fbbf24;
+      --text:#e2e8f0; --muted:#7c8aa0; --nav-h:68px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h);scrollbar-width:none;-ms-overflow-style:none}
+    html::-webkit-scrollbar{display:none}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;overflow-x:hidden}
+    a{color:var(--accent)}
+    .main-nav{position:fixed;inset:0 0 auto;height:var(--nav-h);background:rgba(12,12,15,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:0 clamp(1.5rem,5vw,4rem);z-index:100}
+    .nav-logo{position:absolute;left:clamp(1.5rem,5vw,4rem);font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--text);text-decoration:none}
+    .nav-logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{font-size:.9rem;font-weight:500;color:var(--text);text-decoration:none;transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent)}
+    .nav-github{position:absolute;right:clamp(1.5rem,5vw,4rem);color:var(--text);text-decoration:none;border:1px solid var(--text);padding:.35rem .85rem;border-radius:8px;font-size:.82rem}
+    .nav-toggle{display:none;position:absolute;right:clamp(1.5rem,5vw,4rem);width:40px;height:40px;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:transparent;border:1px solid var(--border);border-radius:8px;cursor:pointer;z-index:101;transition:border-color .2s}
+    .nav-toggle span{display:block;width:18px;height:2px;background:var(--text);margin:0;border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+    .mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(12,12,15,.98);border-bottom:1px solid var(--border);z-index:99;max-height:0;overflow:hidden;transition:max-height .25s}
+    .mobile-menu.open{max-height:420px}
+    .mobile-menu ul{list-style:none;padding:.5rem 1.5rem 1.4rem}
+    .mobile-menu a{display:block;padding:.85rem 0;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity .55s,transform .55s}
+    .fade-in.visible{opacity:1;transform:none}
+    #article-hero{padding:calc(var(--nav-h) + 3.5rem) clamp(1.5rem,5vw,4rem) 3.5rem;max-width:1040px;margin:auto}
+    .breadcrumb{font-size:.78rem;color:var(--muted);margin-bottom:1.4rem}
+    .breadcrumb a{color:var(--muted);text-decoration:none}
+    .article-eyebrow,.section-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.8rem}
+    .article-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,5.5vw,3.8rem);line-height:1.05;letter-spacing:-.035em;max-width:17ch;margin-bottom:1.4rem}
+    .article-lead{font-size:1.12rem;font-weight:300;color:var(--muted);max-width:74ch}
+    .article-meta{display:flex;flex-wrap:wrap;gap:.75rem 1.1rem;margin-top:1.5rem;font-size:.78rem;color:var(--muted)}
+    .divider{border:0;border-top:1px solid var(--border)}
+    section.content{padding:3.5rem clamp(1.5rem,5vw,4rem)}
+    .bg-surface{background:var(--surface)}
+    .chapter-grid{display:grid;grid-template-columns:70px 1fr;gap:2.4rem;max-width:960px;margin:auto}
+    .ch-num{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.18em;color:#343449;position:sticky;top:calc(var(--nav-h) + 2rem);height:max-content}
+    .section-title{font-family:'Syne',sans-serif;font-size:clamp(1.65rem,3.4vw,2.35rem);line-height:1.15;letter-spacing:-.025em;margin-bottom:1.1rem}
+    .ch-text{font-size:1.02rem;font-weight:300;color:var(--muted);max-width:77ch}
+    .ch-text+.ch-text{margin-top:1.2rem}
+    .ch-text strong{color:var(--text);font-weight:500}
+    .verdict{margin-top:1.5rem;padding:1.35rem 1.5rem;background:linear-gradient(135deg,rgba(251,113,133,.1),rgba(129,140,248,.08));border:1px solid rgba(251,113,133,.32);border-radius:14px;max-width:77ch}
+    .verdict strong{display:block;font-family:'Syne',sans-serif;color:var(--danger);margin-bottom:.35rem}
+    .metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin-top:1.5rem;max-width:920px}
+    .metric{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.15rem}
+    .metric span{display:block;color:var(--muted);font-size:.75rem;margin-bottom:.35rem}
+    .metric strong{font-family:'Syne',sans-serif;font-size:1.3rem;color:var(--text)}
+    .metric.danger strong{color:var(--danger)}
+    .model-figure{max-width:1040px;margin:2rem auto 0;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.2)}
+    .model-figure img{display:block;width:100%;height:auto}
+    .model-figure figcaption{background:var(--card);color:var(--muted);font-size:.78rem;padding:.8rem 1rem}
+    .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.4rem;max-width:760px}
+    .scenario{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
+    .scenario span{font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+    .scenario strong{display:block;font-family:'Syne',sans-serif;font-size:1.55rem;margin:.25rem 0}
+    .scenario small{color:var(--muted)}
+    .scenario.bear span,.scenario.bear strong{color:var(--danger)}
+    .scenario.base span,.scenario.base strong{color:var(--warn)}
+    .scenario.bull span,.scenario.bull strong{color:var(--accent)}
+    .risk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem;margin-top:1.4rem;max-width:920px}
+    .risk-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+    .risk-card h3{font-family:'Syne',sans-serif;font-size:1rem;margin-bottom:.45rem}
+    .risk-card p{color:var(--muted);font-size:.9rem;line-height:1.65}
+    .timeline{margin-top:1.4rem;max-width:820px;display:grid;gap:.8rem}
+    .timeline-item{display:grid;grid-template-columns:125px 1fr;gap:1rem;padding:1rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:11px}
+    .timeline-item strong{color:var(--accent);font-family:'Syne',sans-serif}
+    .timeline-item p{color:var(--muted);font-size:.92rem}
+    .tool-box{max-width:960px;margin:auto;background:var(--card);border:1px solid rgba(110,231,183,.25);border-radius:16px;padding:2rem}
+    .tool-box h2{font-family:'Syne',sans-serif;font-size:1.5rem;margin-bottom:.55rem}
+    .tool-box p{color:var(--muted);max-width:66ch}
+    .button-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
+    .btn{display:inline-flex;align-items:center;padding:.72rem 1.2rem;border-radius:8px;text-decoration:none;font-size:.88rem;font-weight:500;border:1px solid var(--border)}
+    .btn-primary{background:var(--accent);color:#0c0c0f;border-color:var(--accent)}
+    .btn-secondary{color:var(--text)}
+    .btn-arrow{font-size:1rem;line-height:1;transition:transform .2s}
+    .btn:hover .btn-arrow{transform:translateX(3px)}
+    .related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;max-width:960px;margin:1.2rem auto 0}
+    .related-card{display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+    .related-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+    .related-card span{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+    .related-card h3{font-family:'Syne',sans-serif;font-size:1rem;line-height:1.35;margin-top:.5rem}
+    .sources{max-width:960px;margin:auto}
+    .source-list{list-style:none;margin-top:1rem;display:grid;gap:.7rem}
+    .source-list li{color:var(--muted);font-size:.88rem;padding-bottom:.7rem;border-bottom:1px solid var(--border)}
+    .source-list a{color:var(--text);text-decoration:none}
+    .source-list a:hover{color:var(--accent)}
+    .disclaimer{margin-top:1.4rem;color:var(--muted);font-size:.78rem;max-width:80ch}
+    footer{background:var(--surface);border-top:1px solid var(--border);padding:3.5rem clamp(1.5rem,8vw,8rem) 2rem;color:var(--muted);font-size:.82rem}
+    .footer-inner{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border)}
+    .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--text);text-decoration:none}
+    .footer-logo span{color:var(--accent)}
+    .footer-brand p{max-width:34ch;margin-top:.8rem}
+    .footer-col h5{font-family:'Syne',sans-serif;color:var(--text);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem}
+    .footer-col ul{list-style:none;display:grid;gap:.5rem}
+    footer a{color:var(--muted);text-decoration:none}
+    .footer-bottom{display:flex;justify-content:space-between;padding-top:1.5rem;gap:1rem;flex-wrap:wrap}
+    @media(max-width:960px){
+      .nav-links,.nav-github{display:none}.nav-toggle{display:flex}.mobile-menu{display:block}
+      .chapter-grid{grid-template-columns:1fr;gap:.7rem}.ch-num{position:static}
+      .metric-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:680px){
+      section.content{padding:2.8rem 1.25rem}.metric-grid,.scenario-grid,.risk-grid{grid-template-columns:1fr}
+      .timeline-item{grid-template-columns:1fr;gap:.25rem}.related-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr;gap:2rem}
+    }
+  </style>
+  <link rel="stylesheet" href="../../wissen/article-responsive.css">
+
+  <link rel="stylesheet" href="../../assets/site-header.css">
+  <script src="../../assets/site-header.js" defer></script>
+</head>
+<body>
+  <nav class="main-nav">
+    <a href="/en/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li>
+      <li><a href="/en/vision">Vision</a></li>
+      <li><a href="./" class="active">Knowledge</a></li>
+    </ul>
+<div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/wissen/spacex-ipo-valuation" data-language-file-target="../../wissen/spacex-ipo-valuation.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="nav-github"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688.1-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/en/">Home</a></li><li><a href="/en/projects/">Projects</a></li><li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li><li><a href="/en/vision">Vision</a></li><li><a href="./">Knowledge</a></li>
+      <li class="mobile-language-row">
+  <span class="mobile-language-label">Language</span>
+  <button type="button" class="language-switch" data-language-target="/wissen/spacex-ipo-valuation" data-language-file-target="../../wissen/spacex-ipo-valuation.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+</li>
+      <li><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688.1-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub</a></li>
+    </ul>
+  </div>
+
+  <header id="article-hero">
+    <p class="breadcrumb fade-in"><a href="/en/">Home</a> / <a href="./">Knowledge</a> / <a href="./#unternehmensbewertung">Company valuation</a> / SpaceX IPO analysis</p>
+    <p class="article-eyebrow fade-in">Company valuation | Data as of 29 May 2026</p>
+    <h1 class="article-title fade-in">SpaceX before the IPO:<br>how much future is already in the price?</h1>
+    <p class="article-lead fade-in">At an expected IPO price of $135, the valuation already assumes that Starlink, Starship, xAI and orbital computing will all work almost at once.</p>
+    <div class="article-meta fade-in"><span>Simon Stark</span><span>|</span><span>Published 29 May 2026</span><span>|</span><span>Approx. 7 min read</span></div>
+  </header>
+
+  <hr class="divider">
+
+  <section class="content">
+    <div class="chapter-grid"><div class="ch-num fade-in">01</div><div>
+      <p class="section-label fade-in">My conclusion first</p>
+      <h2 class="section-title fade-in">Strong company, demanding price</h2>
+      <p class="ch-text fade-in"><strong>$135 is not a fair entry price for me.</strong> At an expected valuation of roughly $1.75 trillion, that is about 94 times 2025 revenue even though SpaceX was loss-making both operationally and overall. The market is valuing the company as if the next ten years pass without major disappointment.</p>
+      <div class="verdict fade-in"><strong>My assessment</strong>SpaceX may become enormous over the long term. The IPO price is nevertheless so high that even modest disappointment in growth, margins or capital needs could trigger a severe decline.</div>
+      <div class="metric-grid fade-in"><div class="metric"><span>Expected IPO price</span><strong>$135</strong></div><div class="metric"><span>2025 revenue</span><strong>$18.7bn</strong></div><div class="metric danger"><span>2025 net loss</span><strong>$4.9bn</strong></div><div class="metric danger"><span>Q1 2026 net loss</span><strong>$4.3bn</strong></div></div>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="content bg-surface">
+    <div class="chapter-grid"><div class="ch-num fade-in">02</div><div>
+      <p class="section-label fade-in">The actual numbers</p>
+      <h2 class="section-title fade-in">Starlink makes money; xAI consumes it faster</h2>
+      <p class="ch-text fade-in">SpaceX generated $18.674 billion of revenue in 2025. Connectivity around Starlink contributed $11.387 billion and $4.423 billion of operating profit, making it the more profitable part of the business.</p>
+      <p class="ch-text fade-in">The AI segment generated $3.201 billion of revenue but recorded an operating loss of $6.355 billion. SpaceX reported an operating loss of $2.589 billion and a net loss of $4.937 billion for 2025. In Q1 2026, another $4.276 billion net loss followed on $4.694 billion of revenue, while investment alone reached $10.107 billion.</p>
+      <p class="ch-text fade-in">SpaceX is funding Starship, new satellites, data centres, GPUs and xAI at the same time. Revenue alone does not show that capital commitment or the losses.</p>
+    </div></div>
+    <figure class="model-figure fade-in"><img src="/images/article_dashboard.png" alt="SpaceX DCF dashboard with a $135 IPO price and a $28.63 base-case fair value" loading="lazy" width="1496" height="543"><figcaption>My DCF dashboard as of 29 May 2026. Even with optimistic growth assumptions, the base case is well below the price anchor.</figcaption></figure>
+  </section>
+
+  <hr class="divider">
+
+  <section class="content">
+    <div class="chapter-grid"><div class="ch-num fade-in">03</div><div>
+      <p class="section-label fade-in">My DCF valuation</p><h2 class="section-title fade-in">My base case is $28.63</h2>
+      <p class="ch-text fade-in">I used my own DCF tool. Even the base case is not conservative: five-year average revenue growth of 28.4%, an EBIT margin of 40% in 2030 and perpetual growth of 4.5%. Those are already very optimistic assumptions.</p>
+      <p class="ch-text fade-in">The fair value still comes to only <strong>$28.63 per share</strong>, roughly 78.8% below $135. The bear case is $2.58. Only the extremely optimistic bull case reaches $228.89.</p>
+      <div class="scenario-grid fade-in"><div class="scenario bear"><span>Bear case</span><strong>$2.58</strong><small>about 98.1% below $135</small></div><div class="scenario base"><span>Base case</span><strong>$28.63</strong><small>about 78.8% below $135</small></div><div class="scenario bull"><span>Bull case</span><strong>$228.89</strong><small>about 69.5% above $135</small></div></div>
+      <p class="ch-text fade-in">The bull case requires average revenue growth of 50%, sharply rising margins and a very high terminal growth rate. It may happen, but it is not an assumption I would use to justify a normal entry price.</p>
+    </div></div>
+    <figure class="model-figure fade-in"><img src="/images/article_scenario.png" alt="Bear, base and bull cases in the SpaceX valuation" loading="lazy" width="760" height="407"><figcaption>Bear, base and bull cases from the SpaceX valuation file dated 29 May 2026.</figcaption></figure>
+  </section>
+
+  <hr class="divider">
+
+  <section class="content bg-surface">
+    <div class="chapter-grid"><div class="ch-num fade-in">04</div><div>
+      <p class="section-label fade-in">Why the valuation is dangerous</p><h2 class="section-title fade-in">Several assumptions must work at once</h2>
+      <p class="ch-text fade-in">New Constructs reaches a similar problem with its reverse DCF. Even with 34% annual revenue growth through 2035 and an immediate NOPAT margin of 19%, that analysis puts enterprise value at about $500 billion, roughly 71% below the expected $1.75 trillion.</p>
+      <div class="risk-grid fade-in">
+        <article class="risk-card"><h3>Starship is the central bottleneck</h3><p>Many future plans depend on high launch frequency, full reusability and much lower costs. Delays would hit Starlink, lunar projects and orbital computing at the same time.</p></article>
+        <article class="risk-card"><h3>xAI raises capital needs</h3><p>The AI segment is losing billions while competing with companies that already have major customer relationships and enormous computing capacity.</p></article>
+        <article class="risk-card"><h3>Dilution</h3><p>Stock compensation, new funding rounds and performance-based share packages can materially dilute today's shareholders.</p></article>
+        <article class="risk-card"><h3>Control stays with Musk</h3><p>The voting structure gives Musk roughly 85% of the votes. Public shareholders carry the economic risk with little influence.</p></article>
+        <article class="risk-card"><h3>Customer concentration</h3><p>One customer represented 21% of revenue in 2025. Government contracts are valuable but can be cut, delayed or ended for political reasons.</p></article>
+        <article class="risk-card"><h3>Balance sheet and controls</h3><p>The S-1 reports substantial debt, rising investment and reporting controls that were not yet fully established. At this valuation there is little room for error.</p></article>
+      </div>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="content">
+    <div class="chapter-grid"><div class="ch-num fade-in">05</div><div>
+      <p class="section-label fade-in">Lock-up periods</p><h2 class="section-title fade-in">A small public float only helps temporarily</h2>
+      <p class="ch-text fade-in">Only comparatively few shares are expected to trade freely at launch. That can support the price in the short term when demand meets limited supply. As more shares are released, the effect can reverse. SpaceX is not using one simple 180-day lock-up.</p>
+      <div class="timeline fade-in"><div class="timeline-item"><strong>After Q2 results</strong><p>Up to 20% of eligible insider shares may be sold shortly after the first quarterly report as a public company.</p></div><div class="timeline-item"><strong>Price clause</strong><p>Another 10% may be released early if the share trades well above the IPO price. A strong price can therefore attract additional sellers.</p></div><div class="timeline-item"><strong>By day 180</strong><p>Further tranches are released gradually; the regular block is unlocked after 180 days at the latest.</p></div><div class="timeline-item"><strong>Elon Musk</strong><p>Musk himself has a longer 366-day lock-up. That does not prevent sales by employees, early investors and other insiders.</p></div></div>
+      <p class="ch-text fade-in">No holder has to sell after release. Still, selling pressure is realistic: employees and early investors have held shares for years and may liquidate part of their wealth. Later price action depends on how many new shares meet the IPO buyers.</p>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="content bg-surface"><div class="tool-box fade-in">
+    <p class="section-label">Model and tool</p><h2>Run the assumptions yourself</h2>
+    <p>The full SpaceX valuation contains bear, base and bull cases, WACC, DCF, sensitivity, Monte Carlo and peer multiples. If you consider other growth or margin assumptions more realistic, edit the blue input cells directly.</p>
+     <div class="button-row"><a class="btn btn-primary" href="/data/en/spacex-valuation/SpaceX_Valuation_USD_EN.xlsx" download>Download SpaceX valuation <span class="btn-arrow" aria-hidden="true">→</span></a><a class="btn btn-secondary" href="/en/projects/discounted-cashflow">Open the DCF tool <span class="btn-arrow" aria-hidden="true">→</span></a></div>
+  </div></section>
+
+  <hr class="divider">
+
+  <section class="content">
+    <div class="sources"><p class="section-label fade-in">Read next</p><h2 class="section-title fade-in">Related articles</h2><div class="related-grid"><a href="dcf-method-explained" class="related-card fade-in"><span>Company valuation</span><h3>The DCF method explained simply</h3></a><a href="company-value-wacc" class="related-card fade-in"><span>Company valuation</span><h3>Calculating company value: how WACC works</h3></a><a href="discounted-cash-flow-example-terminal-value" class="related-card fade-in"><span>Company valuation</span><h3>Discounted cash flow example: from forecast to terminal value</h3></a></div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="content">
+    <div class="sources"><p class="section-label fade-in">Sources as of 29 May 2026</p><h2 class="section-title fade-in">Sources used</h2><ul class="source-list fade-in">
+      <li><a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm" target="_blank" rel="noopener noreferrer">SpaceX Form S-1, 20 May 2026</a>: financials, segments, risks, capital structure and lock-up rules.</li>
+      <li><a href="https://www.newconstructs.com/wp-content/uploads/2026/05/New-Constructs-IPO-Report-on-SPCX_2026-05-21.pdf" target="_blank" rel="noopener noreferrer">New Constructs IPO Research, 21 May 2026</a>: reverse DCF, profitability, dilution and use of funds.</li>
+      <li><a href="https://blog.syzgroup.com/hubfs/Focus_260527_SpaceX.pdf?hsLang=en" target="_blank" rel="noopener noreferrer">Syz Private Banking Focus, 27 May 2026</a>: business segments, xAI, governance and IPO structure.</li>
+      <li><a href="https://apnews.com/article/da83ecf78085755a522b8376254a8273" target="_blank" rel="noopener noreferrer">Associated Press, 20 May 2026</a>: context for the IPO and reported losses.</li>
+      <li><a href="https://fortune.com/2026/05/29/spacex-ipo-should-i-buy-bear-case-david-trainer/" target="_blank" rel="noopener noreferrer">Fortune, 29 May 2026</a>: critical view of the expected market capitalisation.</li>
+      <li><a href="https://www.fool.com/investing/2026/05/26/the-spacex-ipo-has-an-unusual-lockup-policy-for-in/" target="_blank" rel="noopener noreferrer">The Motley Fool, 26 May 2026</a>: staggered insider lock-ups.</li>
+    </ul>
+    <p class="disclaimer fade-in"><strong>Note:</strong> As of 29 May 2026, the final IPO price had not been officially set. This model uses $135 as the expected price anchor, matching the reported target valuation of about $1.75 trillion at that time. It is a personal model based on the data available then, not investment advice.</p></div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><a href="/en/" class="footer-logo">sms<span>.</span></a><p>Personal finance tools, dashboards and programming projects by Simon Stark. Always a work in progress.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="/en/projects/">Projects</a></li><li><a href="/en/downloads">Downloads</a></li><li><a href="/en/project-pipeline">Project pipeline</a></li><li><a href="/en/vision">Vision</a></li><li><a href="./">Knowledge</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a href="/en/legal-notice">Legal notice</a></li><li><a href="/en/privacy">Privacy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Simon Stark</span><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a></div>
+  </footer>
+
+  <script>
+    if ('IntersectionObserver' in window) {
+      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.1});
+      document.querySelectorAll('.fade-in').forEach(element=>observer.observe(element));
+    } else {
+      document.querySelectorAll('.fade-in').forEach(element=>element.classList.add('visible'));
+    }
+
+    const navToggle=document.querySelector('.nav-toggle');
+    const mobileMenu=document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      const closeMenu=()=>{
+        navToggle.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded','false');
+        navToggle.setAttribute('aria-label','Open menu');
+      };
+      navToggle.addEventListener('click',event=>{
+        event.stopPropagation();
+        const open=navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open',open);
+        navToggle.setAttribute('aria-expanded',open?'true':'false');
+        navToggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+      document.addEventListener('click',event=>{
+        if (mobileMenu.classList.contains('open') && !mobileMenu.contains(event.target) && !navToggle.contains(event.target)) closeMenu();
+      });
+      document.addEventListener('keydown',event=>{
+        if (event.key==='Escape' && mobileMenu.classList.contains('open')) {
+          closeMenu();
+          navToggle.focus();
+        }
+      });
+    }
+  </script>
+</body>
+</html>

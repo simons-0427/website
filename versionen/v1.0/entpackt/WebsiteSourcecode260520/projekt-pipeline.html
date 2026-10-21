@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekt-Pipeline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0c0c0f;
+      --surface: #13131a;
+      --border:  #1e1e2e;
+      --accent:  #6ee7b7;
+      --accent2: #818cf8;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --card:    #16161f;
+      --nav-h:   68px;
+
+      --status-idea:       rgba(251,191,36,.12);
+      --status-idea-text:  #fbbf24;
+      --status-wip:        rgba(110,231,183,.12);
+      --status-wip-text:   #6ee7b7;
+      --status-planned:    rgba(129,140,248,.12);
+      --status-planned-text: #818cf8;
+      --status-paused:     rgba(100,116,139,.12);
+      --status-paused-text:#94a3b8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,12,15,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      padding: 0 clamp(1.5rem,5vw,4rem);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: -.02em;
+      color: var(--text);
+      text-decoration: none;
+      margin-right: auto;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+  font-size: .875rem; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  letter-spacing: .03em; transition: color .2s;
+ }
+.nav-links a:hover { color: var(--accent); }
+    .nav-back:hover { color: var(--accent); }
+    .nav-back svg { width:15px; height:15px; }
+
+    /* ── HERO STRIP ── */
+    .hero-strip {
+      margin-top: var(--nav-h);
+      padding: 5rem clamp(1.5rem,8vw,8rem) 3.5rem;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-strip::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 70% at 80% 50%, rgba(110,231,183,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(129,140,248,.05) 0%, transparent 60%);
+    }
+    .page-tag {
+      font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+      font-weight: 600; margin-bottom: .9rem;
+    }
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800; letter-spacing: -.03em;
+      line-height: 1.05; margin-bottom: 1rem;
+    }
+    .page-title em { font-style: normal; color: var(--accent); }
+    .page-sub {
+      color: var(--muted); font-weight: 300;
+      font-size: 1rem; max-width: 52ch;
+    }
+
+    /* ── STATS ROW ── */
+    .stats-row {
+      display: flex; gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-pill {
+      flex: 1; padding: 1.2rem clamp(1.5rem,4vw,3rem);
+      background: var(--surface);
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .stat-dot {
+      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+    }
+    .stat-dot.idea    { background: var(--status-idea-text); box-shadow: 0 0 8px var(--status-idea-text); }
+    .stat-dot.planned { background: var(--status-planned-text); box-shadow: 0 0 8px var(--status-planned-text); }
+    .stat-dot.wip     { background: var(--status-wip-text); box-shadow: 0 0 8px var(--status-wip-text); }
+    .stat-dot.paused  { background: var(--status-paused-text); }
+    .stat-count {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.6rem; line-height: 1;
+    }
+    .stat-lbl { font-size: .78rem; color: var(--muted); margin-top: .1rem; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: calc(100vh - var(--nav-h));
+    }
+
+    /* ── SIDEBAR ── */
+    aside {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+    }
+    .sidebar-label {
+      font-size: .68rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted);
+      font-weight: 600; margin-bottom: .8rem; margin-top: 1.4rem;
+    }
+    .sidebar-label:first-child { margin-top: 0; }
+    .filter-btn {
+      display: flex; align-items: center; gap: .6rem;
+      width: 100%; padding: .55rem .8rem;
+      border-radius: 8px; border: none;
+      background: transparent;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .875rem; font-weight: 500;
+      cursor: pointer; text-align: left;
+      transition: background .15s, color .15s;
+    }
+    .filter-btn .dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: rgba(110,231,183,.08);
+      color: var(--text);
+    }
+    .filter-btn.active { color: var(--accent); }
+    .filter-count {
+      margin-left: auto;
+      font-size: .7rem;
+      background: var(--border);
+      padding: .1rem .45rem;
+      border-radius: 999px;
+      color: var(--muted);
+    }
+    .sort-select {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .82rem;
+      padding: .5rem .8rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* ── PROJECT LIST ── */
+    .list-wrap {
+      padding: 2rem clamp(1.5rem,4vw,3rem);
+    }
+    .list-controls {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .search-box {
+      flex: 1; min-width: 200px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex; align-items: center; gap: .6rem;
+      padding: 0 .9rem;
+    }
+    .search-box svg { width:15px; height:15px; color: var(--muted); flex-shrink:0; }
+    .search-box input {
+      background: transparent; border: none;
+      color: var(--text); font-family: 'DM Sans', sans-serif;
+      font-size: .875rem; padding: .65rem 0;
+      outline: none; width: 100%;
+    }
+    .search-box input::placeholder { color: var(--muted); }
+    .view-toggle { display: flex; gap: .3rem; }
+    .view-btn {
+      padding: .55rem .7rem;
+      border-radius: 8px; border: 1px solid var(--border);
+      background: transparent; cursor: pointer;
+      color: var(--muted); transition: all .15s;
+      display: flex; align-items: center;
+    }
+    .view-btn.active { background: var(--accent); color: #0c0c0f; border-color: var(--accent); }
+    .view-btn svg { width:15px; height:15px; }
+
+    /* Cards view */
+    #project-container.cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+      gap: 1.2rem;
+    }
+    /* List view */
+      #project-container.cards .card-right { display: none; }
+
+    /* ── PROJECT CARD ── */
+    .p-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      cursor: default;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      animation: popIn .35s ease both;
+    }
+    .p-card:hover {
+      border-color: rgba(110,231,183,.35);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,.3);
+    }
+    @keyframes popIn {
+      from { opacity:0; transform: translateY(10px) scale(.98); }
+      to   { opacity:1; transform: none; }
+    }
+
+    /* List item */
+    #project-container.list .p-card {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.3rem;
+      border-radius: 10px;
+    }
+    #project-container.list .p-card .card-icon { margin-bottom: 0; }
+    #project-container.list .p-card .card-body { min-width: 0; }
+    #project-container.list .p-card .card-body h3 { font-size: .95rem; }
+    #project-container.list .p-card .card-footer { display: none; }
+    #project-container.list .p-card .card-meta { margin-top: 0; display: flex; align-items: center; gap: .5rem; }
+    #project-container.list .p-card .card-desc { display: none; }
+    #project-container.list .p-card .card-right { display: flex; align-items: center; gap: .8rem; }
+    #project-container.list .p-card .card-progress-wrap { display: none; }
+
+    .card-icon {
+      width: 42px; height: 42px;
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+    .card-body h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      margin-bottom: .3rem;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .card-desc {
+      font-size: .835rem; color: var(--muted);
+      margin-bottom: .9rem; line-height: 1.5;
+    }
+    .card-meta { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .9rem; }
+    .tag {
+      font-size: .72rem; font-weight: 600;
+      padding: .22rem .65rem; border-radius: 5px;
+    }
+    .tag.gaming  { background: rgba(129,140,248,.13); color: var(--accent2); }
+    .tag.finance { background: rgba(110,231,183,.12); color: var(--accent); }
+    .tag.tools   { background: rgba(251,191,36,.1);   color: #fbbf24; }
+    .tag.data    { background: rgba(244,114,182,.1);  color: #f472b6; }
+    .tag.web-development  { background: rgba(129,140,248,.13); color: var(--accent3); }
+
+    .status-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .72rem; font-weight: 600;
+      padding: .22rem .7rem; border-radius: 5px;
+    }
+    .status-badge .s-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+    }
+    .status-badge.idea    { background: var(--status-idea);    color: var(--status-idea-text); }
+    .status-badge.planned { background: var(--status-planned); color: var(--status-planned-text); }
+    .status-badge.wip     { background: var(--status-wip);     color: var(--status-wip-text); }
+    .status-badge.paused  { background: var(--status-paused);  color: var(--status-paused-text); }
+    .s-dot.idea    { background: var(--status-idea-text); }
+    .s-dot.planned { background: var(--status-planned-text); }
+    .s-dot.wip     { background: var(--status-wip-text); animation: pulse 1.8s infinite; }
+    .s-dot.paused  { background: var(--status-paused-text); }
+
+    @keyframes pulse {
+      0%,100% { opacity:1; } 50% { opacity:.3; }
+    }
+
+    .card-progress-wrap { margin-top: .6rem; }
+    .progress-label {
+      display: flex; justify-content: space-between;
+      font-size: .72rem; color: var(--muted);
+      margin-bottom: .35rem;
+    }
+    .progress-bar {
+      height: 4px; background: var(--border);
+      border-radius: 999px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width .6s ease;
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--border);
+      margin-top: 1rem; padding-top: .9rem;
+      font-size: .78rem; color: var(--muted);
+      display: flex; justify-content: space-between;
+      align-items: center;
+    }
+    .priority-dot {
+      display: inline-flex; align-items: center; gap: .3rem;
+    }
+    .priority-dot::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+    }
+    .priority-dot.high::before   { background: #f87171; }
+    .priority-dot.medium::before { background: #fbbf24; }
+    .priority-dot.low::before    { background: var(--muted); }
+
+    /* empty state */
+    .empty-state {
+      text-align: center; padding: 5rem 2rem;
+      color: var(--muted);
+      display: none;
+    }
+    .empty-state svg { width:48px; height:48px; margin: 0 auto 1rem; opacity:.3; }
+    .empty-state p { font-size: .9rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1.5rem,8vw,8rem);
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: .82rem; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 720px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: .5rem; padding: 1rem 1.5rem; }
+      .sidebar-label { display: none; }
+      .stats-row { flex-wrap: wrap; }
+      .stat-pill { min-width: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+   <nav>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projekte.html">Projekte</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+    <li><a href="projekt-pipeline.html">Projekt-Pipeline</a></li>
+  </ul>
+ </nav>
+
+  <!-- HERO STRIP -->
+  <div class="hero-strip">
+    <p class="page-tag">Dashboard · Aktuelle und Zukünftige Projekte</p>
+    <h1 class="page-title">Was als nächstes <em>kommt.</em></h1>
+    <p class="page-sub">Alle Projekte die ich plane, baue oder noch eine Idee sind, transparent & live.</p>
+  </div>
+
+  <!-- STATS ROW -->
+  <div class="stats-row" id="stats-row">
+    <div class="stat-pill">
+      <span class="stat-dot idea"></span>
+      <div>
+        <div class="stat-count" id="count-idea">0</div>
+        <div class="stat-lbl">Ideen</div>
+      </div>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-dot planned"></span>
+      <div>
+        <div class="stat-count" id="count-planned">0</div>
+        <div class="stat-lbl">Geplant</div>
+      </div>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-dot wip"></span>
+      <div>
+        <div class="stat-count" id="count-wip">0</div>
+        <div class="stat-lbl">In Arbeit</div>
+      </div>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-dot paused"></span>
+      <div>
+        <div class="stat-count" id="count-paused">0</div>
+        <div class="stat-lbl">Pausiert</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main-wrap">
+
+    <!-- SIDEBAR -->
+    <aside>
+      <p class="sidebar-label">Status</p>
+      <button class="filter-btn active" data-filter="all" onclick="setFilter(this,'all')">
+        <span class="dot" style="background:var(--accent)"></span>
+        Alle
+        <span class="filter-count" id="fc-all"></span>
+      </button>
+      <button class="filter-btn" data-filter="wip" onclick="setFilter(this,'wip')">
+        <span class="dot" style="background:var(--status-wip-text)"></span>
+        In Arbeit
+        <span class="filter-count" id="fc-wip"></span>
+      </button>
+      <button class="filter-btn" data-filter="planned" onclick="setFilter(this,'planned')">
+        <span class="dot" style="background:var(--status-planned-text)"></span>
+        Geplant
+        <span class="filter-count" id="fc-planned"></span>
+      </button>
+      <button class="filter-btn" data-filter="idea" onclick="setFilter(this,'idea')">
+        <span class="dot" style="background:var(--status-idea-text)"></span>
+        Idee
+        <span class="filter-count" id="fc-idea"></span>
+      </button>
+      <button class="filter-btn" data-filter="paused" onclick="setFilter(this,'paused')">
+        <span class="dot" style="background:var(--status-paused-text)"></span>
+        Pausiert
+        <span class="filter-count" id="fc-paused"></span>
+      </button>
+
+      <p class="sidebar-label">Kategorie</p>
+      <button class="filter-btn" data-cat="gaming"  onclick="setCat(this,'gaming')">
+        <span>🎮</span> Spieleentwicklung
+        <span class="filter-count" id="cc-gaming"></span>
+      </button>
+      <button class="filter-btn" data-cat="web-development"  onclick="setCat(this,'web-development')">
+        <span>🌐</span> Web-Development
+        <span class="filter-count" id="cc-web-development"></span>
+      </button>
+      <button class="filter-btn" data-cat="finance" onclick="setCat(this,'finance')">
+        <span>📈</span> Finanzen
+        <span class="filter-count" id="cc-finance"></span>
+      </button>
+      <button class="filter-btn" data-cat="tools"   onclick="setCat(this,'tools')">
+        <span>🛠️</span> Tools
+        <span class="filter-count" id="cc-tools"></span>
+      </button>
+      <button class="filter-btn" data-cat="data"    onclick="setCat(this,'data')">
+        <span>📊</span> Datenanalyse
+        <span class="filter-count" id="cc-data"></span>
+      </button>
+
+      <p class="sidebar-label">Sortieren</p>
+      <select class="sort-select" onchange="setSort(this.value)">
+        <option value="priority">Priorität</option>
+        <option value="progress">Fortschritt</option>
+        <option value="name">Name (A–Z)</option>
+      </select>
+    </aside>
+
+    <!-- PROJECT LIST -->
+    <div class="list-wrap">
+      <div class="list-controls">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="search-input" placeholder="Projekte durchsuchen …" oninput="render()">
+        </div>
+        <div class="view-toggle">
+          <button class="view-btn active" id="btn-cards" onclick="setView('cards')" title="Kachelansicht">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </button>
+          <button class="view-btn" id="btn-list" onclick="setView('list')" title="Listenansicht">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="project-container" class="cards"></div>
+      <div class="empty-state" id="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <p>Keine Projekte gefunden.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 · Projekt-Dashboard</span>
+  </footer>
+
+<script>
+  // ── DATA ───────────────────────────────────────────────────────────────────
+  const PROJECTS = [
+    {
+      id: 1,
+      icon: '🗺️', iconBg: 'rgba(129,140,248,.15)',
+      name: 'RPG-Menü 1.0',
+      desc: 'Gilden, Fähigkeiten, Ausrüstung, Verbesserungen, Kettenquests und Baumquests hinzufügen.',
+      tags: ['gaming'],
+      status: 'paused',
+      progress: 5,
+      priority: 'low',
+      eta: 'TBD',
+    },
+    {
+      id: 2,
+      icon: '📊', iconBg: 'rgba(244,114,182,.1)',
+      name: 'Weltmarkt-Dashboard',
+      desc: 'Dashboard mit relevantesten Informationen über den Weltmarkt, mit CSV-Export.',
+      tags: ['finance', 'data'],
+      status: 'planned',
+      progress: 0,
+      priority: 'medium',
+      eta: 'Q3 2026',
+    },
+    {
+      id: 4,
+      icon: '🎮', iconBg: 'rgba(110,231,183,.1)',
+      name: 'Dungeon Crawler 1.1',
+      desc: 'Menü verschönern, Item um Wände zu überspringen hinzufügen, Schild soll gegen Gegner schützen, Item um Gegner zu besiegen hinzufügen.',
+      tags: ['gaming', 'tools'],
+      status: 'wip',
+      progress: 25,
+      priority: 'medium',
+      eta: 'Q2 2026',
+    },
+    {
+      id: 5,
+      icon: '📈', iconBg: 'rgba(110,231,183,.12)',
+      name: 'Bitcoin-Dashboard',
+      desc: 'Bitcoin Dashboard mit allen relevanten Informationen zu der Branche.',
+      tags: ['finance', 'data'],
+      status: 'planned',
+      progress: 0,
+      priority: 'medium',
+      eta: 'Q3 2026',
+    },
+    {
+      id: 6,
+      icon: '🌐', iconBg: 'rgba(129,140,248,.15)',
+      name: 'Website fertigstellen',
+      desc: 'Website fertigstellen: Projektdashboard beenden, Downloadbereich für Tools, Code und Programme erstellen und weiteres. Anschließend online stellen.',
+      tags: ['web-development'],
+      status: 'wip',
+      progress: 80,
+      priority: 'high',
+      eta: 'Q2 2026',
+    },
+    {
+      id: 7,
+      icon: '💸', iconBg: 'rgba(244,114,182,.1)',
+      name: 'DCF-Tool',
+      desc: 'Discounted-Cashflow-Analyse Dashboard und Excel-Tool für Investitionsprojekte, um den aktuellen Wert zukünftiger Cashflows zu berechnen und fundierte Investitionsentscheidungen zu treffen.',
+      tags: ['finance', 'data'],
+      status: 'wip',
+      progress: 5,
+      priority: 'low',
+      eta: 'Q2 2026',
+    },  
+    {
+      id: 8,
+      icon: '🎲', iconBg: 'rgba(129,140,248,.15)',
+      name: 'Kelly Kriterium Simulator',
+      desc: 'Idealer Wetteinsatz basierend auf Gewinnwahrscheinlichkeit und Quote mit Simulationsfunktion.',
+      tags: ['data', 'tools'],
+      status: 'idea',
+      progress: 0,
+      priority: 'low',
+      eta: 'TBD',
+    },
+    {
+      id: 3,
+      icon: '🔀', iconBg: 'rgba(129,140,248,.15)',
+      name: 'Zufallszahl erraten',
+      desc: 'Errate eine Zahl zwischen 1-100, bei falschen Antworten gibt es Tipps. Neues Design erstellen und auf Raylib bringen',
+      tags: ['gaming'],
+      status: 'wip',
+      progress: 70,
+      priority: 'medium',
+      eta: 'Q2 2026',
+    },  
+    ];
+
+  // ── STATE ──────────────────────────────────────────────────────────────────
+  let currentFilter = 'all';
+  let currentCat    = null;
+  let currentSort   = 'priority';
+  let currentView   = 'cards';
+
+  const PRIORITY_ORDER = { high: 0, medium: 1, low: 2 };
+
+  // ── RENDER ─────────────────────────────────────────────────────────────────
+  function render() {
+    const q = document.getElementById('search-input').value.toLowerCase().trim();
+    let items = PROJECTS.filter(p => {
+      const matchStatus = currentFilter === 'all' || p.status === currentFilter;
+      const matchCat    = !currentCat || p.tags.includes(currentCat);
+      const matchSearch = !q || p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+      return matchStatus && matchCat && matchSearch;
+    });
+
+    // Sort
+    items = items.slice().sort((a, b) => {
+      if (currentSort === 'priority') return PRIORITY_ORDER[a.priority] - PRIORITY_ORDER[b.priority];
+      if (currentSort === 'progress') return b.progress - a.progress;
+      if (currentSort === 'name')     return a.name.localeCompare(b.name);
+      return 0;
+    });
+
+    const container = document.getElementById('project-container');
+    const empty     = document.getElementById('empty-state');
+
+    if (items.length === 0) {
+      container.innerHTML = '';
+      empty.style.display = 'block';
+    } else {
+      empty.style.display = 'none';
+      container.innerHTML = items.map((p, i) => buildCard(p, i)).join('');
+    }
+
+    updateCounts();
+  }
+
+  function buildCard(p, i) {
+    const tags = p.tags.map(t => `<span class="tag ${t}">${tagLabel(t)}</span>`).join('');
+    const priorityLabel = { high:'Hohe Prio', medium:'Mittlere Prio', low:'Niedrige Prio' }[p.priority];
+    const statusLabel   = { idea:'Idee', planned:'Geplant', wip:'In Arbeit', paused:'Pausiert' }[p.status];
+    const listRight = `
+      <div class="card-right">
+        <span class="status-badge ${p.status}">
+          <span class="s-dot ${p.status}"></span>${statusLabel}
+        </span>
+      </div>`;
+    return `
+      <div class="p-card" style="animation-delay:${i * 0.05}s">
+        <div class="card-icon" style="background:${p.iconBg}">${p.icon}</div>
+        <div class="card-body">
+          <h3>${p.name}</h3>
+          <p class="card-desc">${p.desc}</p>
+          <div class="card-meta">
+             ${tags}
+             </div>
+             <div class="card-progress-wrap">
+            ${p.progress > 0 ? `
+            <div class="progress-label"><span>Fortschritt</span><span>${p.progress}%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:${p.progress}%"></div></div>` : ''}
+            <span class="status-badge ${p.status}" style="margin-top:.5rem;display:inline-flex">
+            <span class="s-dot ${p.status}"></span>${statusLabel}
+        </span>
+    </div>
+        </div>
+        ${listRight}
+        <div class="card-footer">
+          <span class="priority-dot ${p.priority}">${priorityLabel}</span>
+          <span>ETA: ${p.eta}</span>
+        </div>
+      </div>`;
+  }
+
+  function tagLabel(t) {
+    return { gaming:'🎮 Spieleentwicklung', 'web-development':'🌐 Web-Development', finance:'📈 Finanzen', tools:'🛠️ Tools', data:'📊 Daten' }[t] || t;
+  }
+
+  // ── COUNTS ─────────────────────────────────────────────────────────────────
+  function updateCounts() {
+    const statuses = ['idea','planned','wip','paused'];
+    const cats     = ['gaming','web-development','finance','tools','data'];
+    statuses.forEach(s => {
+      const n = PROJECTS.filter(p => p.status === s).length;
+      const el = document.getElementById('fc-' + s);
+      if (el) el.textContent = n;
+      const cnt = document.getElementById('count-' + s);
+      if (cnt) cnt.textContent = n;
+    });
+    document.getElementById('fc-all').textContent = PROJECTS.length;
+    cats.forEach(c => {
+      const el = document.getElementById('cc-' + c);
+      if (el) el.textContent = PROJECTS.filter(p => p.tags.includes(c)).length;
+    });
+  }
+
+  // ── CONTROLS ───────────────────────────────────────────────────────────────
+  function setFilter(btn, val) {
+    currentFilter = val;
+    currentCat    = null;
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.filter-btn[data-cat]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render();
+  }
+  function setCat(btn, val) {
+    if (currentCat === val) {
+      currentCat = null; btn.classList.remove('active');
+    } else {
+      currentCat = val;
+      document.querySelectorAll('.filter-btn[data-cat]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    render();
+  }
+  function setSort(val) { currentSort = val; render(); }
+  function setView(v) {
+    currentView = v;
+    document.getElementById('project-container').className = v;
+    document.getElementById('btn-cards').classList.toggle('active', v === 'cards');
+    document.getElementById('btn-list').classList.toggle('active',  v === 'list');
+  }
+
+  // ── INIT ───────────────────────────────────────────────────────────────────
+  render();
+</script>
+</body>
+</html>

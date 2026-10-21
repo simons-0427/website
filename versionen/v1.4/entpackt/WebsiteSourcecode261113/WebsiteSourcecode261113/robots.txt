@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /bingo/
+
+Sitemap: https://smstark-projekt.de/sitemap.xml
