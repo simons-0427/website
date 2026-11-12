@@ -21,13 +21,9 @@ Die Datumsangaben stammen aus `download-data.js`. Jede ZIP-Datei liegt im Versio
 
 Die Originaldateien stammen aus dem lokalen Downloadbestand von `smstark-projekt.de` und sind nach der Zuordnung in `download-data.js` geordnet.
 
-
 ## v1.6
 
-Aktueller Website-Stand mit neuer Startseite auf Deutsch und Englisch, visueller Projektnavigation sowie einheitlichen Projekt-Metadaten und farbigen Tags.
+Website-Quellcode mit deutschen und englischen Seiten, CSS, JavaScript, Bildern und Schriften.
 
-- [Quellcodearchiv](versionen/v1.6/websitesourcecode270205.zip)
-- [Entpackter Quellcode](versionen/v1.6/entpackt/websitesourcecode270205/)
-- [SHA-256](versionen/v1.6/SHA256SUMS)
-
-Produktive Zugangsdaten, private Datenbanken, Caches, historische Programm-Downloads und Videos sind nicht Bestandteil des Quellcodearchivs.
+- [ZIP herunterladen](versionen/v1.6/websitesourcecode270205.zip)
+- [Dateien ansehen](versionen/v1.6/entpackt/websitesourcecode270205/)
