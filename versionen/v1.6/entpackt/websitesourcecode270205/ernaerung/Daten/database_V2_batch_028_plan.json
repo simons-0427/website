@@ -1,0 +1,460 @@
+{
+  "batch": 28,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "V592800",
+      "name": "Kalb Zunge, Kochpökelware",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Y141523",
+      "name": "Krautgulasch (mit Rindfleisch)",
+      "category": "verarbeitet",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.81,
+      "sourceProduct": "Günstiges zubereitetes Fertiggericht als aktueller Preisanker, niedrigster klar belegbarer Preisanker 4,81 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/fertiggerichte/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "B710700",
+      "name": "Dinkelbrot mit Nüssen",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 3.48,
+      "sourceProduct": "Eigenmarken-Brot bzw. Backware im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 3,48 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/brot/k/1588161425467102",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "D701500",
+      "name": "Raspeli",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "Günstige Kuchen-/Gebäckware im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 7,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "D440700",
+      "name": "Englischer Kuchen (Sandmasse) mit Alkohol",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.71,
+      "sourceProduct": "MEINE KUCHENWELT bzw. Eigenmarken-Gebäck im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 6,71 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U665162",
+      "name": "Schwein Dünner Bug (ohne Fett und Schwarte) gebraten ohne Fett (Ofen)",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Schweinefleisch als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T402152",
+      "name": "Stint gedünstet",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Günstiges Fischfilet bzw. Tiefkühlfisch im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G093100",
+      "name": "Suppengrün/Suppenkraut, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Eigenmarken-Frisch-/Tiefkühlgemüse im Supermarkt, niedrigster ausgewiesener Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Y824443",
+      "name": "Kirschenmichel gebacken",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 3.99,
+      "sourceProduct": "Günstige Quark-/Dessertware im Kühlregal, niedrigster klar belegbarer Preisanker 3,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/speisequark/k/1588161425467095",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U724000",
+      "name": "Schaf Kotelett, mariniert, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 14.9,
+      "sourceProduct": "Kaufland AKTION Frenched Racks (Lamm) als aktuell sichtbarer niedrigster Lammfleisch-Preisanker, niedrigster klar belegbarer Preisanker 14,90 EUR/kg",
+      "sourceUrl": "https://filiale.kaufland.de/sortiment/frischewelten/fleisch.html?cid=DE%3Aoff%3Aprint_1676375925750",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "B111600",
+      "name": "Weizenvollkornbrot mit Sonnenblumenkernen",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 3.48,
+      "sourceProduct": "Eigenmarken-Brot bzw. Backware im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 3,48 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/brot/k/1588161425467102",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U461132",
+      "name": "Kalb Bug/Schulter, gekocht",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "E632100",
+      "name": "Dinkeleierteigwaren roh",
+      "category": "getreide",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.78,
+      "sourceProduct": "ALDI Eierspätzle/Eierteigwaren als aktueller Pastaanker, niedrigster klar belegbarer Preisanker 4,78 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F201600",
+      "name": "Aprikosensaft",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 1.55,
+      "sourceProduct": "ALDI Bio-Direktsaft bzw. Nektar als aktueller Saft-Preisanker, niedrigster klar belegbarer Preisanker 1,55 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/bio-produkte/k/1588161425467036",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "D2A2000",
+      "name": "Johannisbeertorte mit Baiser/Träublestorte (Mürbeteig)",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.71,
+      "sourceProduct": "MEINE KUCHENWELT bzw. Eigenmarken-Gebäck im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 6,71 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Y782613",
+      "name": "Käse-Weißbrot-Auflauf",
+      "category": "verarbeitet",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.81,
+      "sourceProduct": "Käse-Brot-Auflauf als aktueller Fertiggericht-Preisanker, niedrigster klar belegbarer Preisanker 4,81 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/fertiggerichte/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "D610300",
+      "name": "Schokoladenbaiser",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 9.9,
+      "sourceProduct": "CHOCEUR Schokolade bzw. Pralinen als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 9,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/schokolade/k/1588161425467171",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "D431300",
+      "name": "Makronenkuchen (Rührmasse)",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.71,
+      "sourceProduct": "MEINE KUCHENWELT bzw. Eigenmarken-Gebäck im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 6,71 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "W540000",
+      "name": "Hamburger Rauchfleisch (Rind Oberschale) Rohpökelware, geräuchert",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Koch-/Räucherschinken als aktueller Kühlregalanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wurst-aufschnitt/k/1588161425467075",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G730200",
+      "name": "Dicke Bohne unreif, tiefgefroren",
+      "category": "huelsenfruechte",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.98,
+      "sourceProduct": "Eigenmarken-Linsen-/Bohnenprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 2,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/huelsenfruechte/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "D790700",
+      "name": "Kekse/Plätzchen (Vollkornmürbeteig)",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 9.05,
+      "sourceProduct": "BISCOTTO/CHOCEUR Kekse als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 9,05 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/kekse/k/1588161425467166",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "D0A8000",
+      "name": "Quicheboden (Mürbeteig)",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "Quicheboden/Mürbeteig als aktueller Backwarenanker, niedrigster klar belegbarer Preisanker 7,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C522600",
+      "name": "Getreideflakes gesüßt, mit Schokolade",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.38,
+      "sourceProduct": "Flocken/Cerealien als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 2,38 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "G994100",
+      "name": "Gemüsemischung asiatische Art, roh",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Eigenmarken-Frisch-/Tiefkühlgemüse im Supermarkt, niedrigster ausgewiesener Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "B8A9000",
+      "name": "Vollkornbrot glutenfrei",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 3.98,
+      "sourceProduct": "Eigenmarken-Brot bzw. Backware im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 3,98 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/brot/k/1588161425467102",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Y497623",
+      "name": "Hammelfleisch gedünstet mit Weißkraut (Irish Stew)",
+      "category": "verarbeitet",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.81,
+      "sourceProduct": "Hammel-Eintopf als aktueller Fertiggericht-Preisanker, niedrigster klar belegbarer Preisanker 4,81 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/fertiggerichte/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "B275700",
+      "name": "Roggenmischbrot mit Kümmel",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 3.48,
+      "sourceProduct": "Eigenmarken-Brot bzw. Backware im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 3,48 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/brot/k/1588161425467102",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "X471423",
+      "name": "Schokoladen-Milchsuppe gebunden mit Grieß",
+      "category": "suessung",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.98,
+      "sourceProduct": "DR. OETKER High-Protein-Pudding als aktueller Milchdessert-Preisanker, niedrigster klar belegbarer Preisanker 4,98 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "D432100",
+      "name": "Rehrücken gebacken (Sandmasse)",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.71,
+      "sourceProduct": "MEINE KUCHENWELT Rehrücken-Kuchen als aktueller Gebäckanker, niedrigster klar belegbarer Preisanker 6,71 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V592132",
+      "name": "Kalb Zunge, gekocht",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    }
+  ]
+}

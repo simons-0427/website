@@ -1,0 +1,1674 @@
+[
+    {
+        "column":  "A",
+        "label":  "BLS Code"
+    },
+    {
+        "column":  "B",
+        "label":  "Lebensmittelbezeichnung"
+    },
+    {
+        "column":  "C",
+        "label":  "Food name"
+    },
+    {
+        "column":  "D",
+        "label":  "ENERCJ Energie (Kilojoule) [kJ/100g]"
+    },
+    {
+        "column":  "E",
+        "label":  "ENERCJ Datenherkunft"
+    },
+    {
+        "column":  "F",
+        "label":  "ENERCJ Referenz"
+    },
+    {
+        "column":  "G",
+        "label":  "ENERCC Energie (Kilokalorien) [kcal/100g]"
+    },
+    {
+        "column":  "H",
+        "label":  "ENERCC Datenherkunft"
+    },
+    {
+        "column":  "I",
+        "label":  "ENERCC Referenz"
+    },
+    {
+        "column":  "J",
+        "label":  "WATER Wasser [g/100g]"
+    },
+    {
+        "column":  "K",
+        "label":  "WATER Datenherkunft"
+    },
+    {
+        "column":  "L",
+        "label":  "WATER Referenz"
+    },
+    {
+        "column":  "M",
+        "label":  "PROT625 Protein (Nx6,25) [g/100g]"
+    },
+    {
+        "column":  "N",
+        "label":  "PROT625 Datenherkunft"
+    },
+    {
+        "column":  "O",
+        "label":  "PROT625 Referenz"
+    },
+    {
+        "column":  "P",
+        "label":  "FAT Fett [g/100g]"
+    },
+    {
+        "column":  "Q",
+        "label":  "FAT Datenherkunft"
+    },
+    {
+        "column":  "R",
+        "label":  "FAT Referenz"
+    },
+    {
+        "column":  "S",
+        "label":  "CHO Kohlenhydrate, verfügbar [g/100g]"
+    },
+    {
+        "column":  "T",
+        "label":  "CHO Datenherkunft"
+    },
+    {
+        "column":  "U",
+        "label":  "CHO Referenz"
+    },
+    {
+        "column":  "V",
+        "label":  "FIBT Ballaststoffe, gesamt [g/100g]"
+    },
+    {
+        "column":  "W",
+        "label":  "FIBT Datenherkunft"
+    },
+    {
+        "column":  "X",
+        "label":  "FIBT Referenz"
+    },
+    {
+        "column":  "Y",
+        "label":  "ALC Alkohol (Ethanol) [g/100g]"
+    },
+    {
+        "column":  "Z",
+        "label":  "ALC Datenherkunft"
+    },
+    {
+        "column":  "AA",
+        "label":  "ALC Referenz"
+    },
+    {
+        "column":  "AB",
+        "label":  "OA Organische Säuren, gesamt [g/100g]"
+    },
+    {
+        "column":  "AC",
+        "label":  "OA Datenherkunft"
+    },
+    {
+        "column":  "AD",
+        "label":  "OA Referenz"
+    },
+    {
+        "column":  "AE",
+        "label":  "ASH Rohasche [g/100g]"
+    },
+    {
+        "column":  "AF",
+        "label":  "ASH Datenherkunft"
+    },
+    {
+        "column":  "AG",
+        "label":  "ASH Referenz"
+    },
+    {
+        "column":  "AH",
+        "label":  "VITA Vitamin A, Retinol-Äquivalent (RE) [µg/100g]"
+    },
+    {
+        "column":  "AI",
+        "label":  "VITA Datenherkunft"
+    },
+    {
+        "column":  "AJ",
+        "label":  "VITA Referenz"
+    },
+    {
+        "column":  "AK",
+        "label":  "VITAA Vitamin A, Retinol-Aktivitäts-Äquivalent (RAE) [µg/100g]"
+    },
+    {
+        "column":  "AL",
+        "label":  "VITAA Datenherkunft"
+    },
+    {
+        "column":  "AM",
+        "label":  "VITAA Referenz"
+    },
+    {
+        "column":  "AN",
+        "label":  "RETOL Retinol [µg/100g]"
+    },
+    {
+        "column":  "AO",
+        "label":  "RETOL Datenherkunft"
+    },
+    {
+        "column":  "AP",
+        "label":  "RETOL Referenz"
+    },
+    {
+        "column":  "AQ",
+        "label":  "CARTB Beta‑Carotin [µg/100g]"
+    },
+    {
+        "column":  "AR",
+        "label":  "CARTB Datenherkunft"
+    },
+    {
+        "column":  "AS",
+        "label":  "CARTB Referenz"
+    },
+    {
+        "column":  "AT",
+        "label":  "CAROTPAXB Carotinoide, außer Beta-Carotin [µg/100g]"
+    },
+    {
+        "column":  "AU",
+        "label":  "CAROTPAXB Datenherkunft"
+    },
+    {
+        "column":  "AV",
+        "label":  "CAROTPAXB Referenz"
+    },
+    {
+        "column":  "AW",
+        "label":  "VITD Vitamin D [µg/100g]"
+    },
+    {
+        "column":  "AX",
+        "label":  "VITD Datenherkunft"
+    },
+    {
+        "column":  "AY",
+        "label":  "VITD Referenz"
+    },
+    {
+        "column":  "AZ",
+        "label":  "CHOCAL Vitamin D3 (Cholecalciferol) [µg/100g]"
+    },
+    {
+        "column":  "BA",
+        "label":  "CHOCAL Datenherkunft"
+    },
+    {
+        "column":  "BB",
+        "label":  "CHOCAL Referenz"
+    },
+    {
+        "column":  "BC",
+        "label":  "ERGCAL Vitamin D2 (Ergocalciferol) [µg/100g]"
+    },
+    {
+        "column":  "BD",
+        "label":  "ERGCAL Datenherkunft"
+    },
+    {
+        "column":  "BE",
+        "label":  "ERGCAL Referenz"
+    },
+    {
+        "column":  "BF",
+        "label":  "VITE Vitamin E (Alpha-Tocopherol) [mg/100g]"
+    },
+    {
+        "column":  "BG",
+        "label":  "VITE Datenherkunft"
+    },
+    {
+        "column":  "BH",
+        "label":  "VITE Referenz"
+    },
+    {
+        "column":  "BI",
+        "label":  "TOCPHA Alpha‑Tocopherol [mg/100g]"
+    },
+    {
+        "column":  "BJ",
+        "label":  "TOCPHA Datenherkunft"
+    },
+    {
+        "column":  "BK",
+        "label":  "TOCPHA Referenz"
+    },
+    {
+        "column":  "BL",
+        "label":  "TOCPHB Beta-Tocopherol [mg/100g]"
+    },
+    {
+        "column":  "BM",
+        "label":  "TOCPHB Datenherkunft"
+    },
+    {
+        "column":  "BN",
+        "label":  "TOCPHB Referenz"
+    },
+    {
+        "column":  "BO",
+        "label":  "TOCPHG Gamma-Tocopherol [mg/100g]"
+    },
+    {
+        "column":  "BP",
+        "label":  "TOCPHG Datenherkunft"
+    },
+    {
+        "column":  "BQ",
+        "label":  "TOCPHG Referenz"
+    },
+    {
+        "column":  "BR",
+        "label":  "TOCPHD Delta-Tocopherol [mg/100g]"
+    },
+    {
+        "column":  "BS",
+        "label":  "TOCPHD Datenherkunft"
+    },
+    {
+        "column":  "BT",
+        "label":  "TOCPHD Referenz"
+    },
+    {
+        "column":  "BU",
+        "label":  "TOCTRA Alpha-Tocotrienol [mg/100g]"
+    },
+    {
+        "column":  "BV",
+        "label":  "TOCTRA Datenherkunft"
+    },
+    {
+        "column":  "BW",
+        "label":  "TOCTRA Referenz"
+    },
+    {
+        "column":  "BX",
+        "label":  "VITK Vitamin K [µg/100g]"
+    },
+    {
+        "column":  "BY",
+        "label":  "VITK Datenherkunft"
+    },
+    {
+        "column":  "BZ",
+        "label":  "VITK Referenz"
+    },
+    {
+        "column":  "CA",
+        "label":  "VITK1 Vitamin K1 (Phyllochinon) [µg/100g]"
+    },
+    {
+        "column":  "CB",
+        "label":  "VITK1 Datenherkunft"
+    },
+    {
+        "column":  "CC",
+        "label":  "VITK1 Referenz"
+    },
+    {
+        "column":  "CD",
+        "label":  "VITK2 Vitamin K2 (Menachinone) [µg/100g]"
+    },
+    {
+        "column":  "CE",
+        "label":  "VITK2 Datenherkunft"
+    },
+    {
+        "column":  "CF",
+        "label":  "VITK2 Referenz"
+    },
+    {
+        "column":  "CG",
+        "label":  "THIA Vitamin B1 (Thiamin) [mg/100g]"
+    },
+    {
+        "column":  "CH",
+        "label":  "THIA Datenherkunft"
+    },
+    {
+        "column":  "CI",
+        "label":  "THIA Referenz"
+    },
+    {
+        "column":  "CJ",
+        "label":  "RIBF Vitamin B2 (Riboflavin) [mg/100g]"
+    },
+    {
+        "column":  "CK",
+        "label":  "RIBF Datenherkunft"
+    },
+    {
+        "column":  "CL",
+        "label":  "RIBF Referenz"
+    },
+    {
+        "column":  "CM",
+        "label":  "NIAEQ Niacin-Äquivalent [mg/100g]"
+    },
+    {
+        "column":  "CN",
+        "label":  "NIAEQ Datenherkunft"
+    },
+    {
+        "column":  "CO",
+        "label":  "NIAEQ Referenz"
+    },
+    {
+        "column":  "CP",
+        "label":  "NIA Niacin [mg/100g]"
+    },
+    {
+        "column":  "CQ",
+        "label":  "NIA Datenherkunft"
+    },
+    {
+        "column":  "CR",
+        "label":  "NIA Referenz"
+    },
+    {
+        "column":  "CS",
+        "label":  "PANTAC Pantothensäure [mg/100g]"
+    },
+    {
+        "column":  "CT",
+        "label":  "PANTAC Datenherkunft"
+    },
+    {
+        "column":  "CU",
+        "label":  "PANTAC Referenz"
+    },
+    {
+        "column":  "CV",
+        "label":  "VITB6 Vitamin B6 [µg/100g]"
+    },
+    {
+        "column":  "CW",
+        "label":  "VITB6 Datenherkunft"
+    },
+    {
+        "column":  "CX",
+        "label":  "VITB6 Referenz"
+    },
+    {
+        "column":  "CY",
+        "label":  "BIOT Biotin [µg/100g]"
+    },
+    {
+        "column":  "CZ",
+        "label":  "BIOT Datenherkunft"
+    },
+    {
+        "column":  "DA",
+        "label":  "BIOT Referenz"
+    },
+    {
+        "column":  "DB",
+        "label":  "FOL Folat-Äquivalent [µg/100g]"
+    },
+    {
+        "column":  "DC",
+        "label":  "FOL Datenherkunft"
+    },
+    {
+        "column":  "DD",
+        "label":  "FOL Referenz"
+    },
+    {
+        "column":  "DE",
+        "label":  "FOLFD Folat [µg/100g]"
+    },
+    {
+        "column":  "DF",
+        "label":  "FOLFD Datenherkunft"
+    },
+    {
+        "column":  "DG",
+        "label":  "FOLFD Referenz"
+    },
+    {
+        "column":  "DH",
+        "label":  "FOLAC Folsäure, synthetisch [µg/100g]"
+    },
+    {
+        "column":  "DI",
+        "label":  "FOLAC Datenherkunft"
+    },
+    {
+        "column":  "DJ",
+        "label":  "FOLAC Referenz"
+    },
+    {
+        "column":  "DK",
+        "label":  "VITB12 Vitamin B12 (Cobalamine) [µg/100g]"
+    },
+    {
+        "column":  "DL",
+        "label":  "VITB12 Datenherkunft"
+    },
+    {
+        "column":  "DM",
+        "label":  "VITB12 Referenz"
+    },
+    {
+        "column":  "DN",
+        "label":  "VITC Vitamin C [mg/100g]"
+    },
+    {
+        "column":  "DO",
+        "label":  "VITC Datenherkunft"
+    },
+    {
+        "column":  "DP",
+        "label":  "VITC Referenz"
+    },
+    {
+        "column":  "DQ",
+        "label":  "NACL Salz (Natriumchlorid) [g/100g]"
+    },
+    {
+        "column":  "DR",
+        "label":  "NACL Datenherkunft"
+    },
+    {
+        "column":  "DS",
+        "label":  "NACL Referenz"
+    },
+    {
+        "column":  "DT",
+        "label":  "NA Natrium [mg/100g]"
+    },
+    {
+        "column":  "DU",
+        "label":  "NA Datenherkunft"
+    },
+    {
+        "column":  "DV",
+        "label":  "NA Referenz"
+    },
+    {
+        "column":  "DW",
+        "label":  "CLD Chlorid [mg/100g]"
+    },
+    {
+        "column":  "DX",
+        "label":  "CLD Datenherkunft"
+    },
+    {
+        "column":  "DY",
+        "label":  "CLD Referenz"
+    },
+    {
+        "column":  "DZ",
+        "label":  "K Kalium [mg/100g]"
+    },
+    {
+        "column":  "EA",
+        "label":  "K Datenherkunft"
+    },
+    {
+        "column":  "EB",
+        "label":  "K Referenz"
+    },
+    {
+        "column":  "EC",
+        "label":  "CA Calcium [mg/100g]"
+    },
+    {
+        "column":  "ED",
+        "label":  "CA Datenherkunft"
+    },
+    {
+        "column":  "EE",
+        "label":  "CA Referenz"
+    },
+    {
+        "column":  "EF",
+        "label":  "MG Magnesium [mg/100g]"
+    },
+    {
+        "column":  "EG",
+        "label":  "MG Datenherkunft"
+    },
+    {
+        "column":  "EH",
+        "label":  "MG Referenz"
+    },
+    {
+        "column":  "EI",
+        "label":  "P Phosphor [mg/100g]"
+    },
+    {
+        "column":  "EJ",
+        "label":  "P Datenherkunft"
+    },
+    {
+        "column":  "EK",
+        "label":  "P Referenz"
+    },
+    {
+        "column":  "EL",
+        "label":  "S Schwefel [mg/100g]"
+    },
+    {
+        "column":  "EM",
+        "label":  "S Datenherkunft"
+    },
+    {
+        "column":  "EN",
+        "label":  "S Referenz"
+    },
+    {
+        "column":  "EO",
+        "label":  "FE Eisen [mg/100g]"
+    },
+    {
+        "column":  "EP",
+        "label":  "FE Datenherkunft"
+    },
+    {
+        "column":  "EQ",
+        "label":  "FE Referenz"
+    },
+    {
+        "column":  "ER",
+        "label":  "ZN Zink [mg/100g]"
+    },
+    {
+        "column":  "ES",
+        "label":  "ZN Datenherkunft"
+    },
+    {
+        "column":  "ET",
+        "label":  "ZN Referenz"
+    },
+    {
+        "column":  "EU",
+        "label":  "ID Iodid [µg/100g]"
+    },
+    {
+        "column":  "EV",
+        "label":  "ID Datenherkunft"
+    },
+    {
+        "column":  "EW",
+        "label":  "ID Referenz"
+    },
+    {
+        "column":  "EX",
+        "label":  "CU Kupfer [µg/100g]"
+    },
+    {
+        "column":  "EY",
+        "label":  "CU Datenherkunft"
+    },
+    {
+        "column":  "EZ",
+        "label":  "CU Referenz"
+    },
+    {
+        "column":  "FA",
+        "label":  "MN Mangan [µg/100g]"
+    },
+    {
+        "column":  "FB",
+        "label":  "MN Datenherkunft"
+    },
+    {
+        "column":  "FC",
+        "label":  "MN Referenz"
+    },
+    {
+        "column":  "FD",
+        "label":  "FD Fluorid [µg/100g]"
+    },
+    {
+        "column":  "FE",
+        "label":  "FD Datenherkunft"
+    },
+    {
+        "column":  "FF",
+        "label":  "FD Referenz"
+    },
+    {
+        "column":  "FG",
+        "label":  "CR Chrom [µg/100g]"
+    },
+    {
+        "column":  "FH",
+        "label":  "CR Datenherkunft"
+    },
+    {
+        "column":  "FI",
+        "label":  "CR Referenz"
+    },
+    {
+        "column":  "FJ",
+        "label":  "MO Molybdän [µg/100g]"
+    },
+    {
+        "column":  "FK",
+        "label":  "MO Datenherkunft"
+    },
+    {
+        "column":  "FL",
+        "label":  "MO Referenz"
+    },
+    {
+        "column":  "FM",
+        "label":  "ACEAC Essigsäure [g/100g]"
+    },
+    {
+        "column":  "FN",
+        "label":  "ACEAC Datenherkunft"
+    },
+    {
+        "column":  "FO",
+        "label":  "ACEAC Referenz"
+    },
+    {
+        "column":  "FP",
+        "label":  "CITAC Zitronensäure [g/100g]"
+    },
+    {
+        "column":  "FQ",
+        "label":  "CITAC Datenherkunft"
+    },
+    {
+        "column":  "FR",
+        "label":  "CITAC Referenz"
+    },
+    {
+        "column":  "FS",
+        "label":  "LACAC Milchsäure [g/100g]"
+    },
+    {
+        "column":  "FT",
+        "label":  "LACAC Datenherkunft"
+    },
+    {
+        "column":  "FU",
+        "label":  "LACAC Referenz"
+    },
+    {
+        "column":  "FV",
+        "label":  "MALAC Äpfelsäure [g/100g]"
+    },
+    {
+        "column":  "FW",
+        "label":  "MALAC Datenherkunft"
+    },
+    {
+        "column":  "FX",
+        "label":  "MALAC Referenz"
+    },
+    {
+        "column":  "FY",
+        "label":  "TARAC Weinsäure [g/100g]"
+    },
+    {
+        "column":  "FZ",
+        "label":  "TARAC Datenherkunft"
+    },
+    {
+        "column":  "GA",
+        "label":  "TARAC Referenz"
+    },
+    {
+        "column":  "GB",
+        "label":  "POLYL Zuckeralkohole, gesamt [g/100g]"
+    },
+    {
+        "column":  "GC",
+        "label":  "POLYL Datenherkunft"
+    },
+    {
+        "column":  "GD",
+        "label":  "POLYL Referenz"
+    },
+    {
+        "column":  "GE",
+        "label":  "MANTL Mannit [g/100g]"
+    },
+    {
+        "column":  "GF",
+        "label":  "MANTL Datenherkunft"
+    },
+    {
+        "column":  "GG",
+        "label":  "MANTL Referenz"
+    },
+    {
+        "column":  "GH",
+        "label":  "SORTL Sorbit [g/100g]"
+    },
+    {
+        "column":  "GI",
+        "label":  "SORTL Datenherkunft"
+    },
+    {
+        "column":  "GJ",
+        "label":  "SORTL Referenz"
+    },
+    {
+        "column":  "GK",
+        "label":  "XYLTL Xylit [g/100g]"
+    },
+    {
+        "column":  "GL",
+        "label":  "XYLTL Datenherkunft"
+    },
+    {
+        "column":  "GM",
+        "label":  "XYLTL Referenz"
+    },
+    {
+        "column":  "GN",
+        "label":  "MNSAC Monosaccharide, gesamt [g/100g]"
+    },
+    {
+        "column":  "GO",
+        "label":  "MNSAC Datenherkunft"
+    },
+    {
+        "column":  "GP",
+        "label":  "MNSAC Referenz"
+    },
+    {
+        "column":  "GQ",
+        "label":  "GLUS Glucose [g/100g]"
+    },
+    {
+        "column":  "GR",
+        "label":  "GLUS Datenherkunft"
+    },
+    {
+        "column":  "GS",
+        "label":  "GLUS Referenz"
+    },
+    {
+        "column":  "GT",
+        "label":  "FRUS Fructose [g/100g]"
+    },
+    {
+        "column":  "GU",
+        "label":  "FRUS Datenherkunft"
+    },
+    {
+        "column":  "GV",
+        "label":  "FRUS Referenz"
+    },
+    {
+        "column":  "GW",
+        "label":  "GALS Galactose [g/100g]"
+    },
+    {
+        "column":  "GX",
+        "label":  "GALS Datenherkunft"
+    },
+    {
+        "column":  "GY",
+        "label":  "GALS Referenz"
+    },
+    {
+        "column":  "GZ",
+        "label":  "DISAC Disaccharide, gesamt [g/100g]"
+    },
+    {
+        "column":  "HA",
+        "label":  "DISAC Datenherkunft"
+    },
+    {
+        "column":  "HB",
+        "label":  "DISAC Referenz"
+    },
+    {
+        "column":  "HC",
+        "label":  "SUCS Saccharose [g/100g]"
+    },
+    {
+        "column":  "HD",
+        "label":  "SUCS Datenherkunft"
+    },
+    {
+        "column":  "HE",
+        "label":  "SUCS Referenz"
+    },
+    {
+        "column":  "HF",
+        "label":  "MALS Maltose [g/100g]"
+    },
+    {
+        "column":  "HG",
+        "label":  "MALS Datenherkunft"
+    },
+    {
+        "column":  "HH",
+        "label":  "MALS Referenz"
+    },
+    {
+        "column":  "HI",
+        "label":  "LACS Lactose [g/100g]"
+    },
+    {
+        "column":  "HJ",
+        "label":  "LACS Datenherkunft"
+    },
+    {
+        "column":  "HK",
+        "label":  "LACS Referenz"
+    },
+    {
+        "column":  "HL",
+        "label":  "SUGAR Zucker (Mono- und Disaccharide), gesamt [g/100g]"
+    },
+    {
+        "column":  "HM",
+        "label":  "SUGAR Datenherkunft"
+    },
+    {
+        "column":  "HN",
+        "label":  "SUGAR Referenz"
+    },
+    {
+        "column":  "HO",
+        "label":  "OLSAC Oligosaccharide, verfügbar [g/100g]"
+    },
+    {
+        "column":  "HP",
+        "label":  "OLSAC Datenherkunft"
+    },
+    {
+        "column":  "HQ",
+        "label":  "OLSAC Referenz"
+    },
+    {
+        "column":  "HR",
+        "label":  "STARCH Stärke (Stärke, Glykogen, Dextrine) [g/100g]"
+    },
+    {
+        "column":  "HS",
+        "label":  "STARCH Datenherkunft"
+    },
+    {
+        "column":  "HT",
+        "label":  "STARCH Referenz"
+    },
+    {
+        "column":  "HU",
+        "label":  "FIBLMW Ballaststoffe, niedermolekular [g/100g]"
+    },
+    {
+        "column":  "HV",
+        "label":  "FIBLMW Datenherkunft"
+    },
+    {
+        "column":  "HW",
+        "label":  "FIBLMW Referenz"
+    },
+    {
+        "column":  "HX",
+        "label":  "FIBHMW Ballaststoffe, hochmolekular [g/100g]"
+    },
+    {
+        "column":  "HY",
+        "label":  "FIBHMW Datenherkunft"
+    },
+    {
+        "column":  "HZ",
+        "label":  "FIBHMW Referenz"
+    },
+    {
+        "column":  "IA",
+        "label":  "FIBINS Ballaststoffe, wasserunlöslich [g/100g]"
+    },
+    {
+        "column":  "IB",
+        "label":  "FIBINS Datenherkunft"
+    },
+    {
+        "column":  "IC",
+        "label":  "FIBINS Referenz"
+    },
+    {
+        "column":  "ID",
+        "label":  "FIBSOL Ballaststoffe, wasserlöslich [g/100g]"
+    },
+    {
+        "column":  "IE",
+        "label":  "FIBSOL Datenherkunft"
+    },
+    {
+        "column":  "IF",
+        "label":  "FIBSOL Referenz"
+    },
+    {
+        "column":  "IG",
+        "label":  "FIBHMWS Ballaststoffe, hochmolekular, wasserlöslich [g/100g]"
+    },
+    {
+        "column":  "IH",
+        "label":  "FIBHMWS Datenherkunft"
+    },
+    {
+        "column":  "II",
+        "label":  "FIBHMWS Referenz"
+    },
+    {
+        "column":  "IJ",
+        "label":  "FIBHMWI Ballaststoffe, hochmolekular, wasserunlöslich [g/100g]"
+    },
+    {
+        "column":  "IK",
+        "label":  "FIBHMWI Datenherkunft"
+    },
+    {
+        "column":  "IL",
+        "label":  "FIBHMWI Referenz"
+    },
+    {
+        "column":  "IM",
+        "label":  "FASAT Fettsäuren, gesättigt, gesamt [g/100g]"
+    },
+    {
+        "column":  "IN",
+        "label":  "FASAT Datenherkunft"
+    },
+    {
+        "column":  "IO",
+        "label":  "FASAT Referenz"
+    },
+    {
+        "column":  "IP",
+        "label":  "F4:0 Fettsäure C4:0 (Buttersäure) [g/100g]"
+    },
+    {
+        "column":  "IQ",
+        "label":  "F4:0 Datenherkunft"
+    },
+    {
+        "column":  "IR",
+        "label":  "F4:0 Referenz"
+    },
+    {
+        "column":  "IS",
+        "label":  "F6:0 Fettsäure C6:0 (Capronsäure) [g/100g]"
+    },
+    {
+        "column":  "IT",
+        "label":  "F6:0 Datenherkunft"
+    },
+    {
+        "column":  "IU",
+        "label":  "F6:0 Referenz"
+    },
+    {
+        "column":  "IV",
+        "label":  "F8:0 Fettsäure C8:0 (Caprylsäure) [g/100g]"
+    },
+    {
+        "column":  "IW",
+        "label":  "F8:0 Datenherkunft"
+    },
+    {
+        "column":  "IX",
+        "label":  "F8:0 Referenz"
+    },
+    {
+        "column":  "IY",
+        "label":  "F10:0 Fettsäure C10:0 (Caprinsäure) [g/100g]"
+    },
+    {
+        "column":  "IZ",
+        "label":  "F10:0 Datenherkunft"
+    },
+    {
+        "column":  "JA",
+        "label":  "F10:0 Referenz"
+    },
+    {
+        "column":  "JB",
+        "label":  "F12:0 Fettsäure C12:0 (Laurinsäure) [g/100g]"
+    },
+    {
+        "column":  "JC",
+        "label":  "F12:0 Datenherkunft"
+    },
+    {
+        "column":  "JD",
+        "label":  "F12:0 Referenz"
+    },
+    {
+        "column":  "JE",
+        "label":  "F14:0 Fettsäure C14:0 (Myristinsäure) [g/100g]"
+    },
+    {
+        "column":  "JF",
+        "label":  "F14:0 Datenherkunft"
+    },
+    {
+        "column":  "JG",
+        "label":  "F14:0 Referenz"
+    },
+    {
+        "column":  "JH",
+        "label":  "F15:0 Fettsäure C15:0 (Pentadecylsäure) [g/100g]"
+    },
+    {
+        "column":  "JI",
+        "label":  "F15:0 Datenherkunft"
+    },
+    {
+        "column":  "JJ",
+        "label":  "F15:0 Referenz"
+    },
+    {
+        "column":  "JK",
+        "label":  "F16:0 Fettsäure C16:0 (Palmitinsäure) [g/100g]"
+    },
+    {
+        "column":  "JL",
+        "label":  "F16:0 Datenherkunft"
+    },
+    {
+        "column":  "JM",
+        "label":  "F16:0 Referenz"
+    },
+    {
+        "column":  "JN",
+        "label":  "F17:0 Fettsäure C17:0 (Margarinsäure) [g/100g]"
+    },
+    {
+        "column":  "JO",
+        "label":  "F17:0 Datenherkunft"
+    },
+    {
+        "column":  "JP",
+        "label":  "F17:0 Referenz"
+    },
+    {
+        "column":  "JQ",
+        "label":  "F18:0 Fettsäure C18:0 (Stearinsäure) [g/100g]"
+    },
+    {
+        "column":  "JR",
+        "label":  "F18:0 Datenherkunft"
+    },
+    {
+        "column":  "JS",
+        "label":  "F18:0 Referenz"
+    },
+    {
+        "column":  "JT",
+        "label":  "F20:0 Fettsäure C20:0 (Arachinsäure) [g/100g]"
+    },
+    {
+        "column":  "JU",
+        "label":  "F20:0 Datenherkunft"
+    },
+    {
+        "column":  "JV",
+        "label":  "F20:0 Referenz"
+    },
+    {
+        "column":  "JW",
+        "label":  "F22:0 Fettsäure C22:0 (Behensäure) [g/100g]"
+    },
+    {
+        "column":  "JX",
+        "label":  "F22:0 Datenherkunft"
+    },
+    {
+        "column":  "JY",
+        "label":  "F22:0 Referenz"
+    },
+    {
+        "column":  "JZ",
+        "label":  "F24:0 Fettsäure C24:0 (Lignocerinsäure) [g/100g]"
+    },
+    {
+        "column":  "KA",
+        "label":  "F24:0 Datenherkunft"
+    },
+    {
+        "column":  "KB",
+        "label":  "F24:0 Referenz"
+    },
+    {
+        "column":  "KC",
+        "label":  "FAMS Fettsäure, einfach ungesättigt, gesamt [g/100g]"
+    },
+    {
+        "column":  "KD",
+        "label":  "FAMS Datenherkunft"
+    },
+    {
+        "column":  "KE",
+        "label":  "FAMS Referenz"
+    },
+    {
+        "column":  "KF",
+        "label":  "F14:1CN5 Fettsäure C14:1 n-5 cis (Myristoleinsäure) [g/100g]"
+    },
+    {
+        "column":  "KG",
+        "label":  "F14:1CN5 Datenherkunft"
+    },
+    {
+        "column":  "KH",
+        "label":  "F14:1CN5 Referenz"
+    },
+    {
+        "column":  "KI",
+        "label":  "F16:1CN7 Fettsäure C16:1 n-7 cis (Palmitoleinsäure) [g/100g]"
+    },
+    {
+        "column":  "KJ",
+        "label":  "F16:1CN7 Datenherkunft"
+    },
+    {
+        "column":  "KK",
+        "label":  "F16:1CN7 Referenz"
+    },
+    {
+        "column":  "KL",
+        "label":  "F18:1CN7 Fettsäure C18:1 n-7 cis (Vaccensäure) [g/100g]"
+    },
+    {
+        "column":  "KM",
+        "label":  "F18:1CN7 Datenherkunft"
+    },
+    {
+        "column":  "KN",
+        "label":  "F18:1CN7 Referenz"
+    },
+    {
+        "column":  "KO",
+        "label":  "F18:1CN9 Fettsäure C18:1 n-9 cis (Ölsäure) [g/100g]"
+    },
+    {
+        "column":  "KP",
+        "label":  "F18:1CN9 Datenherkunft"
+    },
+    {
+        "column":  "KQ",
+        "label":  "F18:1CN9 Referenz"
+    },
+    {
+        "column":  "KR",
+        "label":  "F20:1CN9 Fettsäure C20:1 n-9 cis (Gondosäure) [g/100g]"
+    },
+    {
+        "column":  "KS",
+        "label":  "F20:1CN9 Datenherkunft"
+    },
+    {
+        "column":  "KT",
+        "label":  "F20:1CN9 Referenz"
+    },
+    {
+        "column":  "KU",
+        "label":  "F22:1CN9 Fettsäure C22:1 n-9 cis (Erucasäure) [g/100g]"
+    },
+    {
+        "column":  "KV",
+        "label":  "F22:1CN9 Datenherkunft"
+    },
+    {
+        "column":  "KW",
+        "label":  "F22:1CN9 Referenz"
+    },
+    {
+        "column":  "KX",
+        "label":  "FAPU Fettsäuren, mehrfach ungesättigt, gesamt [g/100g]"
+    },
+    {
+        "column":  "KY",
+        "label":  "FAPU Datenherkunft"
+    },
+    {
+        "column":  "KZ",
+        "label":  "FAPU Referenz"
+    },
+    {
+        "column":  "LA",
+        "label":  "FAPUN3 Fettsäuren, mehrfach ungesättigt n-3 (Omega-3), gesamt [g/100g]"
+    },
+    {
+        "column":  "LB",
+        "label":  "FAPUN3 Datenherkunft"
+    },
+    {
+        "column":  "LC",
+        "label":  "FAPUN3 Referenz"
+    },
+    {
+        "column":  "LD",
+        "label":  "F18:3CN3 Fettsäure C18:3 n-3 all-cis (Alpha-Linolensäure) [g/100g]"
+    },
+    {
+        "column":  "LE",
+        "label":  "F18:3CN3 Datenherkunft"
+    },
+    {
+        "column":  "LF",
+        "label":  "F18:3CN3 Referenz"
+    },
+    {
+        "column":  "LG",
+        "label":  "F18:4CN3 Fettsäure C18:4 n-3 all-cis (Stearidonsäure) [g/100g]"
+    },
+    {
+        "column":  "LH",
+        "label":  "F18:4CN3 Datenherkunft"
+    },
+    {
+        "column":  "LI",
+        "label":  "F18:4CN3 Referenz"
+    },
+    {
+        "column":  "LJ",
+        "label":  "F20:5CN3 Fettsäure C20:5 n-3 all-cis (Eicosapentaensäure) [g/100g]"
+    },
+    {
+        "column":  "LK",
+        "label":  "F20:5CN3 Datenherkunft"
+    },
+    {
+        "column":  "LL",
+        "label":  "F20:5CN3 Referenz"
+    },
+    {
+        "column":  "LM",
+        "label":  "F22:5CN3 Fettsäure C22:5 n-3 all-cis (Docosapentaensäure) [g/100g]"
+    },
+    {
+        "column":  "LN",
+        "label":  "F22:5CN3 Datenherkunft"
+    },
+    {
+        "column":  "LO",
+        "label":  "F22:5CN3 Referenz"
+    },
+    {
+        "column":  "LP",
+        "label":  "F22:6CN3 Fettsäure C22:6 n-3 all-cis (Docosahexaensäure) [g/100g]"
+    },
+    {
+        "column":  "LQ",
+        "label":  "F22:6CN3 Datenherkunft"
+    },
+    {
+        "column":  "LR",
+        "label":  "F22:6CN3 Referenz"
+    },
+    {
+        "column":  "LS",
+        "label":  "FAPUN6 Fettsäuren, mehrfach ungesättigt n-6 (Omega-6), gesamt [g/100g]"
+    },
+    {
+        "column":  "LT",
+        "label":  "FAPUN6 Datenherkunft"
+    },
+    {
+        "column":  "LU",
+        "label":  "FAPUN6 Referenz"
+    },
+    {
+        "column":  "LV",
+        "label":  "F18:2CN6 Fettsäure C18:2 n-6 cis, cis (Linolsäure) [g/100g]"
+    },
+    {
+        "column":  "LW",
+        "label":  "F18:2CN6 Datenherkunft"
+    },
+    {
+        "column":  "LX",
+        "label":  "F18:2CN6 Referenz"
+    },
+    {
+        "column":  "LY",
+        "label":  "F18:2C9T11 Fettsäure C18:2 n-7 cis 9, trans 11 (konjugierte Linolsäure) [g/100g]"
+    },
+    {
+        "column":  "LZ",
+        "label":  "F18:2C9T11 Datenherkunft"
+    },
+    {
+        "column":  "MA",
+        "label":  "F18:2C9T11 Referenz"
+    },
+    {
+        "column":  "MB",
+        "label":  "F18:3CN6 Fettsäure C18:3 n-6 all-cis (Gamma-Linolensäure) [g/100g]"
+    },
+    {
+        "column":  "MC",
+        "label":  "F18:3CN6 Datenherkunft"
+    },
+    {
+        "column":  "MD",
+        "label":  "F18:3CN6 Referenz"
+    },
+    {
+        "column":  "ME",
+        "label":  "F20:2CN6 Fettsäure C20:2 n-6 all-cis (Eicosadiensäure) [g/100g]"
+    },
+    {
+        "column":  "MF",
+        "label":  "F20:2CN6 Datenherkunft"
+    },
+    {
+        "column":  "MG",
+        "label":  "F20:2CN6 Referenz"
+    },
+    {
+        "column":  "MH",
+        "label":  "F20:3CN6 Fettsäure C20:3 n-6 all-cis (Dihomogamma-Linolensäure) [g/100g]"
+    },
+    {
+        "column":  "MI",
+        "label":  "F20:3CN6 Datenherkunft"
+    },
+    {
+        "column":  "MJ",
+        "label":  "F20:3CN6 Referenz"
+    },
+    {
+        "column":  "MK",
+        "label":  "F20:4CN6 Fettsäure C20:4 n-6 all-cis (Arachidonsäure) [g/100g]"
+    },
+    {
+        "column":  "ML",
+        "label":  "F20:4CN6 Datenherkunft"
+    },
+    {
+        "column":  "MM",
+        "label":  "F20:4CN6 Referenz"
+    },
+    {
+        "column":  "MN",
+        "label":  "FAX Fettsäuren, sonstige [g/100g]"
+    },
+    {
+        "column":  "MO",
+        "label":  "FAX Datenherkunft"
+    },
+    {
+        "column":  "MP",
+        "label":  "FAX Referenz"
+    },
+    {
+        "column":  "MQ",
+        "label":  "CHORL Cholesterin [mg/100g]"
+    },
+    {
+        "column":  "MR",
+        "label":  "CHORL Datenherkunft"
+    },
+    {
+        "column":  "MS",
+        "label":  "CHORL Referenz"
+    },
+    {
+        "column":  "MT",
+        "label":  "AAE9 Aminosäuren, unentbehrlich, gesamt [g/100g]"
+    },
+    {
+        "column":  "MU",
+        "label":  "AAE9 Datenherkunft"
+    },
+    {
+        "column":  "MV",
+        "label":  "AAE9 Referenz"
+    },
+    {
+        "column":  "MW",
+        "label":  "ALA Alanin [g/100g]"
+    },
+    {
+        "column":  "MX",
+        "label":  "ALA Datenherkunft"
+    },
+    {
+        "column":  "MY",
+        "label":  "ALA Referenz"
+    },
+    {
+        "column":  "MZ",
+        "label":  "ARG Arginin [g/100g]"
+    },
+    {
+        "column":  "NA",
+        "label":  "ARG Datenherkunft"
+    },
+    {
+        "column":  "NB",
+        "label":  "ARG Referenz"
+    },
+    {
+        "column":  "NC",
+        "label":  "ASP Asparaginsäure, inklusive Asparagin [g/100g]"
+    },
+    {
+        "column":  "ND",
+        "label":  "ASP Datenherkunft"
+    },
+    {
+        "column":  "NE",
+        "label":  "ASP Referenz"
+    },
+    {
+        "column":  "NF",
+        "label":  "CYSTE Cystein [g/100g]"
+    },
+    {
+        "column":  "NG",
+        "label":  "CYSTE Datenherkunft"
+    },
+    {
+        "column":  "NH",
+        "label":  "CYSTE Referenz"
+    },
+    {
+        "column":  "NI",
+        "label":  "GLU Glutaminsäure, inklusive Glutamin [g/100g]"
+    },
+    {
+        "column":  "NJ",
+        "label":  "GLU Datenherkunft"
+    },
+    {
+        "column":  "NK",
+        "label":  "GLU Referenz"
+    },
+    {
+        "column":  "NL",
+        "label":  "GLY Glycin [g/100g]"
+    },
+    {
+        "column":  "NM",
+        "label":  "GLY Datenherkunft"
+    },
+    {
+        "column":  "NN",
+        "label":  "GLY Referenz"
+    },
+    {
+        "column":  "NO",
+        "label":  "HIS Histidin [g/100g]"
+    },
+    {
+        "column":  "NP",
+        "label":  "HIS Datenherkunft"
+    },
+    {
+        "column":  "NQ",
+        "label":  "HIS Referenz"
+    },
+    {
+        "column":  "NR",
+        "label":  "ILE Isoleucin [g/100g]"
+    },
+    {
+        "column":  "NS",
+        "label":  "ILE Datenherkunft"
+    },
+    {
+        "column":  "NT",
+        "label":  "ILE Referenz"
+    },
+    {
+        "column":  "NU",
+        "label":  "LEU Leucin [g/100g]"
+    },
+    {
+        "column":  "NV",
+        "label":  "LEU Datenherkunft"
+    },
+    {
+        "column":  "NW",
+        "label":  "LEU Referenz"
+    },
+    {
+        "column":  "NX",
+        "label":  "LYS Lysin [g/100g]"
+    },
+    {
+        "column":  "NY",
+        "label":  "LYS Datenherkunft"
+    },
+    {
+        "column":  "NZ",
+        "label":  "LYS Referenz"
+    },
+    {
+        "column":  "OA",
+        "label":  "MET Methionin [g/100g]"
+    },
+    {
+        "column":  "OB",
+        "label":  "MET Datenherkunft"
+    },
+    {
+        "column":  "OC",
+        "label":  "MET Referenz"
+    },
+    {
+        "column":  "OD",
+        "label":  "PHE Phenylalanin [g/100g]"
+    },
+    {
+        "column":  "OE",
+        "label":  "PHE Datenherkunft"
+    },
+    {
+        "column":  "OF",
+        "label":  "PHE Referenz"
+    },
+    {
+        "column":  "OG",
+        "label":  "PRO Prolin [g/100g]"
+    },
+    {
+        "column":  "OH",
+        "label":  "PRO Datenherkunft"
+    },
+    {
+        "column":  "OI",
+        "label":  "PRO Referenz"
+    },
+    {
+        "column":  "OJ",
+        "label":  "SER Serin [g/100g]"
+    },
+    {
+        "column":  "OK",
+        "label":  "SER Datenherkunft"
+    },
+    {
+        "column":  "OL",
+        "label":  "SER Referenz"
+    },
+    {
+        "column":  "OM",
+        "label":  "THR Threonin [g/100g]"
+    },
+    {
+        "column":  "ON",
+        "label":  "THR Datenherkunft"
+    },
+    {
+        "column":  "OO",
+        "label":  "THR Referenz"
+    },
+    {
+        "column":  "OP",
+        "label":  "TRP Tryptophan [g/100g]"
+    },
+    {
+        "column":  "OQ",
+        "label":  "TRP Datenherkunft"
+    },
+    {
+        "column":  "OR",
+        "label":  "TRP Referenz"
+    },
+    {
+        "column":  "OS",
+        "label":  "TYR Tyrosin [g/100g]"
+    },
+    {
+        "column":  "OT",
+        "label":  "TYR Datenherkunft"
+    },
+    {
+        "column":  "OU",
+        "label":  "TYR Referenz"
+    },
+    {
+        "column":  "OV",
+        "label":  "VAL Valin [g/100g]"
+    },
+    {
+        "column":  "OW",
+        "label":  "VAL Datenherkunft"
+    },
+    {
+        "column":  "OX",
+        "label":  "VAL Referenz"
+    },
+    {
+        "column":  "OY",
+        "label":  "NT Stickstoff, gesamt [g/100g]"
+    },
+    {
+        "column":  "OZ",
+        "label":  "NT Datenherkunft"
+    },
+    {
+        "column":  "PA",
+        "label":  "NT Referenz"
+    },
+    {
+        "column":  "PB",
+        "label":  "Hinweis"
+    }
+]

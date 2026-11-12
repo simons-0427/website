@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-10-04T20:44:43.982Z",
+  "algorithm": "lp-repair",
+  "repeat": 1,
+  "profiles": [
+    {
+      "id": "default",
+      "activeConstraints": 55,
+      "pool": 1516,
+      "ms": 62,
+      "feasible": true,
+      "valid": true,
+      "method": "lp-repair",
+      "approx": true,
+      "cost": 1.5327800000000003,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 28,
+          "integer": false,
+          "variables": 1516,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 62,
+          "feasible": true,
+          "valid": true,
+          "method": "lp-repair",
+          "approx": true,
+          "cost": 1.5327800000000003,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 28,
+              "integer": false,
+              "variables": 1516,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

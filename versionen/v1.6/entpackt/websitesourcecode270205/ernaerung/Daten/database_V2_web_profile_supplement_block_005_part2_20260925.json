@@ -1,0 +1,73 @@
+{
+  "checkedOn": "2026-09-25",
+  "block": {
+    "firstIndex": 401,
+    "lastIndex": 500
+  },
+  "source": "Matvaretabellen, Norwegian Food Composition Table",
+  "method": "Close per-100g prepared-food profiles; values copied without scaling, existing non-null values left unchanged.",
+  "profiles": [
+    {
+      "index": 416,
+      "name": "Ente gebraten nur Fleisch",
+      "targetFat": 10.4,
+      "sourceName": "Duck, without skin, roasted",
+      "sourceFat": 6.8,
+      "sourceUrl": "https://www.matvaretabellen.no/en/duck-without-skin-roasted/",
+      "confidence": "medium",
+      "values": {
+        "trans": 0.1
+      },
+      "note": "Same species, no-skin edible part and roasting method; source fat is lower by about 35%, so only the reported trans value is transferred without scaling.",
+      "valuesPer100g": {
+        "Trans Fat (g)": 0.1
+      },
+      "priorValues": {
+        "Trans Fat (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    },
+    {
+      "index": 455,
+      "name": "Lasagne (Handelsware aufgewärmt)",
+      "targetFat": 6.1,
+      "sourceName": "Lasagne, with minced meat, frozen, industrially made",
+      "sourceFat": 5.4,
+      "sourceUrl": "https://www.matvaretabellen.no/en/lasagne-with-minced-meat-frozen-industrially-made/",
+      "confidence": "medium-high",
+      "values": {
+        "omega3": 0.1,
+        "omega6": 0.3,
+        "trans": 0.4,
+        "ala": 0,
+        "epa": 0,
+        "dha": 0
+      },
+      "note": "Closest industrial lasagne profile; source fat differs by about 11.5%. Values copied without scaling. Omega-3 total is the source sum; ALA/EPA/DHA are source values at displayed precision.",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 0.3,
+        "Trans Fat (g)": 0.4,
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    }
+  ],
+  "validation": {
+    "rowCountUnchanged": 1516,
+    "nonnegative": true,
+    "noOverwrites": true,
+    "omega3ComponentsWithinTotal": true,
+    "alcoholUnchanged": true
+  }
+}

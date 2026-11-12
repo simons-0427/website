@@ -1,0 +1,614 @@
+{
+  "generatedAt": "2026-10-21T13:01:32.428Z",
+  "source": "en",
+  "algorithm": "hybrid",
+  "repeat": 1,
+  "profiles": [
+    {
+      "id": "default",
+      "activeConstraints": 56,
+      "pool": 1636,
+      "ms": 141,
+      "feasible": true,
+      "valid": true,
+      "method": "mixed-expanded-repair",
+      "approx": true,
+      "cost": 1.9721097099999998,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 36,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        },
+        {
+          "ms": 3,
+          "integer": true,
+          "variables": 16,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 141,
+          "feasible": true,
+          "valid": true,
+          "method": "mixed-expanded-repair",
+          "approx": true,
+          "cost": 1.9721097099999998,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 36,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            },
+            {
+              "ms": 3,
+              "integer": true,
+              "variables": 16,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "normal_protein",
+      "activeConstraints": 56,
+      "pool": 1636,
+      "ms": 149,
+      "feasible": true,
+      "valid": true,
+      "method": "mixed-repair",
+      "approx": true,
+      "cost": 1.8354957299999997,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 26,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        },
+        {
+          "ms": 1,
+          "integer": true,
+          "variables": 20,
+          "feasible": true
+        },
+        {
+          "ms": 22,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        },
+        {
+          "ms": 15,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 149,
+          "feasible": true,
+          "valid": true,
+          "method": "mixed-repair",
+          "approx": true,
+          "cost": 1.8354957299999997,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 26,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            },
+            {
+              "ms": 1,
+              "integer": true,
+              "variables": 20,
+              "feasible": true
+            },
+            {
+              "ms": 22,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            },
+            {
+              "ms": 15,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "very_active",
+      "activeConstraints": 56,
+      "pool": 1636,
+      "ms": 223,
+      "feasible": true,
+      "valid": true,
+      "method": "alternate-expanded-repair",
+      "approx": true,
+      "cost": 2.2595349999999996,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 16,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        },
+        {
+          "ms": 1,
+          "integer": true,
+          "variables": 18,
+          "feasible": true
+        },
+        {
+          "ms": 13,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 223,
+          "feasible": true,
+          "valid": true,
+          "method": "alternate-expanded-repair",
+          "approx": true,
+          "cost": 2.2595349999999996,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 16,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            },
+            {
+              "ms": 1,
+              "integer": true,
+              "variables": 18,
+              "feasible": true
+            },
+            {
+              "ms": 13,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "female",
+      "activeConstraints": 56,
+      "pool": 1636,
+      "ms": 218,
+      "feasible": true,
+      "valid": true,
+      "method": "alternate-expanded-repair",
+      "approx": true,
+      "cost": 1.9016979999999997,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 15,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        },
+        {
+          "ms": 0,
+          "integer": true,
+          "variables": 18,
+          "feasible": true
+        },
+        {
+          "ms": 14,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 218,
+          "feasible": true,
+          "valid": true,
+          "method": "alternate-expanded-repair",
+          "approx": true,
+          "cost": 1.9016979999999997,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 15,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            },
+            {
+              "ms": 0,
+              "integer": true,
+              "variables": 18,
+              "feasible": true
+            },
+            {
+              "ms": 14,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vegan",
+      "activeConstraints": 56,
+      "pool": 933,
+      "ms": 88,
+      "feasible": true,
+      "valid": true,
+      "method": "mixed-expanded-repair",
+      "approx": true,
+      "cost": 2.77583487,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 8,
+          "integer": false,
+          "variables": 933,
+          "feasible": true
+        },
+        {
+          "ms": 0,
+          "integer": true,
+          "variables": 18,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 88,
+          "feasible": true,
+          "valid": true,
+          "method": "mixed-expanded-repair",
+          "approx": true,
+          "cost": 2.77583487,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 8,
+              "integer": false,
+              "variables": 933,
+              "feasible": true
+            },
+            {
+              "ms": 0,
+              "integer": true,
+              "variables": 18,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whole_food",
+      "activeConstraints": 56,
+      "pool": 676,
+      "ms": 83,
+      "feasible": true,
+      "valid": true,
+      "method": "alternate-expanded-repair",
+      "approx": true,
+      "cost": 5.216005,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 5,
+          "integer": false,
+          "variables": 676,
+          "feasible": true
+        },
+        {
+          "ms": 5,
+          "integer": false,
+          "variables": 676,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 83,
+          "feasible": true,
+          "valid": true,
+          "method": "alternate-expanded-repair",
+          "approx": true,
+          "cost": 5.216005,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 5,
+              "integer": false,
+              "variables": 676,
+              "feasible": true
+            },
+            {
+              "ms": 5,
+              "integer": false,
+              "variables": 676,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "high_micro",
+      "activeConstraints": 56,
+      "pool": 1636,
+      "ms": 184,
+      "feasible": true,
+      "valid": true,
+      "method": "alternate-support-repair",
+      "approx": true,
+      "cost": 2.94434291,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 18,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        },
+        {
+          "ms": 1,
+          "integer": true,
+          "variables": 20,
+          "feasible": true
+        },
+        {
+          "ms": 24,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 184,
+          "feasible": true,
+          "valid": true,
+          "method": "alternate-support-repair",
+          "approx": true,
+          "cost": 2.94434291,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 18,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            },
+            {
+              "ms": 1,
+              "integer": true,
+              "variables": 20,
+              "feasible": true
+            },
+            {
+              "ms": 24,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "omega_ratio",
+      "activeConstraints": 57,
+      "pool": 1636,
+      "ms": 187,
+      "feasible": true,
+      "valid": true,
+      "method": "alternate-expanded-repair",
+      "approx": true,
+      "cost": 2.2563449999999996,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 15,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        },
+        {
+          "ms": 0,
+          "integer": true,
+          "variables": 18,
+          "feasible": true
+        },
+        {
+          "ms": 19,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 187,
+          "feasible": true,
+          "valid": true,
+          "method": "alternate-expanded-repair",
+          "approx": true,
+          "cost": 2.2563449999999996,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 15,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            },
+            {
+              "ms": 0,
+              "integer": true,
+              "variables": 18,
+              "feasible": true
+            },
+            {
+              "ms": 19,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epa_dha",
+      "activeConstraints": 57,
+      "pool": 1636,
+      "ms": 72,
+      "feasible": true,
+      "valid": true,
+      "method": "mixed-expanded-repair",
+      "approx": true,
+      "cost": 2.05041124,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 15,
+          "integer": false,
+          "variables": 1636,
+          "feasible": true
+        },
+        {
+          "ms": 0,
+          "integer": true,
+          "variables": 17,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 72,
+          "feasible": true,
+          "valid": true,
+          "method": "mixed-expanded-repair",
+          "approx": true,
+          "cost": 2.05041124,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 15,
+              "integer": false,
+              "variables": 1636,
+              "feasible": true
+            },
+            {
+              "ms": 0,
+              "integer": true,
+              "variables": 17,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gluten_free",
+      "activeConstraints": 56,
+      "pool": 1461,
+      "ms": 81,
+      "feasible": true,
+      "valid": true,
+      "method": "lp-repair",
+      "approx": true,
+      "cost": 2.0820319400000002,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 12,
+          "integer": false,
+          "variables": 1461,
+          "feasible": true
+        },
+        {
+          "ms": 0,
+          "integer": true,
+          "variables": 15,
+          "feasible": true
+        },
+        {
+          "ms": 13,
+          "integer": false,
+          "variables": 1461,
+          "feasible": true
+        },
+        {
+          "ms": 11,
+          "integer": false,
+          "variables": 1461,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 81,
+          "feasible": true,
+          "valid": true,
+          "method": "lp-repair",
+          "approx": true,
+          "cost": 2.0820319400000002,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 12,
+              "integer": false,
+              "variables": 1461,
+              "feasible": true
+            },
+            {
+              "ms": 0,
+              "integer": true,
+              "variables": 15,
+              "feasible": true
+            },
+            {
+              "ms": 13,
+              "integer": false,
+              "variables": 1461,
+              "feasible": true
+            },
+            {
+              "ms": 11,
+              "integer": false,
+              "variables": 1461,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

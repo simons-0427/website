@@ -1,0 +1,275 @@
+{
+  "batch": 13,
+  "range": {
+    "first": 1201,
+    "last": 1300
+  },
+  "checkedOn": "2026-09-24",
+  "sources": {
+    "USDA_FoodData_Central_SR_Legacy_2018": {
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "citation": "USDA FoodData Central, SR Legacy, April 2018, food.csv, food_nutrient.csv and food_portion.csv.",
+      "components": {
+        "1004": "Total lipid (fat), g per 100 g",
+        "1257": "Fatty acids, total trans, g per 100 g",
+        "1018": "Alcohol, ethyl, g per 100 g"
+      },
+      "volumeConversion": "Density proxies are calculated from SR Legacy gram weights for standard household measures divided by their standard US volume. They are used only for close food-category matches and are identified per record."
+    },
+    "CoFID_2021_category_crosswalk": {
+      "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "citation": "Public Health England, McCance and Widdowson's Composition of Foods Integrated Dataset, 2021, workbook values and food groups.",
+      "components": {
+        "TOTn3PFOD": "Total n-3 polyunsaturated fatty acids, g per 100 g or ml by food group",
+        "TOTn6PFOD": "Total n-6 polyunsaturated fatty acids, g per 100 g or ml by food group",
+        "FODTRANS": "Total trans fatty acids, g per 100 g or ml by food group",
+        "ALCO": "Alcohol, g per 100 g or ml by food group"
+      }
+    }
+  },
+  "mappings": [
+    {
+      "databaseIndex": 1205,
+      "databaseName": "Mayonnaise mit Essig",
+      "unit": "ml",
+      "source": "BLS_4_0",
+      "sourceCode": "X341040",
+      "sourceName": "Mayonnaise mit Essig",
+      "matchMethod": "exact_BLS_code_with_density_proxy",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 6.41,
+        "Omega-6 Fatty Acids (g)": 14.57,
+        "Alcohol (g)": 0.009
+      },
+      "density": {
+        "gramsPerMl": 0.929886,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 171009,
+        "sourceName": "Salad dressing, mayonnaise, regular",
+        "portion": "1 US cup",
+        "grams": 220,
+        "millilitres": 236.5882365
+      },
+      "values": {
+        "Omega-3 Fatty Acids (g)": 5.960567,
+        "Omega-6 Fatty Acids (g)": 13.548434,
+        "Alcohol (g)": 0.008369
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "Exact BLS food-code values per 100 g multiplied by the USDA SR Legacy mayonnaise density proxy of 220 g per 236.5882365 ml."
+    },
+    {
+      "databaseIndex": 1205,
+      "databaseName": "Mayonnaise mit Essig",
+      "unit": "ml",
+      "source": "CoFID_2021_category_crosswalk",
+      "sourceCode": "17-654",
+      "sourceName": "Mayonnaise, standard, retail",
+      "matchMethod": "generic_category_match_with_density_proxy",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0.04
+      },
+      "density": {
+        "gramsPerMl": 0.929886,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 171009,
+        "sourceName": "Salad dressing, mayonnaise, regular",
+        "portion": "1 US cup",
+        "grams": 220,
+        "millilitres": 236.5882365
+      },
+      "values": {
+        "Trans Fat (g)": 0.037195
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "CoFID standard retail mayonnaise trans-fat value per 100 g multiplied by the USDA SR Legacy mayonnaise density proxy."
+    },
+    {
+      "databaseIndex": 1260,
+      "databaseName": "Senf-Honig-Dressing für Salat",
+      "unit": "ml",
+      "source": "BLS_4_0",
+      "sourceCode": "X3A8020",
+      "sourceName": "Senf-Honig-Dressing für Salat",
+      "matchMethod": "exact_BLS_code_with_density_proxy",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 3.52,
+        "Omega-6 Fatty Acids (g)": 7.75,
+        "Alcohol (g)": 0.031
+      },
+      "density": {
+        "gramsPerMl": 1.014421,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 171043,
+        "sourceName": "Salad dressing, honey mustard, regular",
+        "portion": "2 US tablespoons",
+        "grams": 30,
+        "millilitres": 29.573528
+      },
+      "values": {
+        "Omega-3 Fatty Acids (g)": 3.570761,
+        "Omega-6 Fatty Acids (g)": 7.861761,
+        "Alcohol (g)": 0.031447
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "Exact BLS food-code values per 100 g multiplied by the USDA SR Legacy honey-mustard-dressing density proxy of 30 g per 2 US tablespoons."
+    },
+    {
+      "databaseIndex": 1260,
+      "databaseName": "Senf-Honig-Dressing für Salat",
+      "unit": "ml",
+      "source": "USDA_FoodData_Central_SR_Legacy_2018",
+      "sourceCode": "171034",
+      "sourceName": "Salad dressing, honey mustard dressing, reduced calorie",
+      "matchMethod": "reduced_calorie_category_analogue_scaled_to_total_fat",
+      "confidence": "low",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0.003,
+        "Total Fat (g)": 10
+      },
+      "targetTotalFatPer100g": 41.3,
+      "density": {
+        "gramsPerMl": 1.014421,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 171043,
+        "sourceName": "Salad dressing, honey mustard, regular",
+        "portion": "2 US tablespoons",
+        "grams": 30,
+        "millilitres": 29.573528
+      },
+      "values": {
+        "Trans Fat (g)": 0.012569
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "Reduced-calorie honey-mustard dressing trans-fat value scaled from 10 g source fat to the target's 41.3 g total fat per 100 g, then multiplied by the regular dressing density proxy. This is an analogue estimate, not an item-specific measurement."
+    },
+    {
+      "databaseIndex": 1269,
+      "databaseName": "Sahnelikör",
+      "unit": "ml",
+      "source": "CoFID_2021_category_crosswalk",
+      "sourceCode": "17-768",
+      "sourceName": "Liqueurs, cream",
+      "matchMethod": "direct_generic_category_match",
+      "confidence": "high",
+      "sourceValuesPer100ml": {
+        "Omega-3 Fatty Acids (g)": 0.06,
+        "Omega-6 Fatty Acids (g)": 0.16,
+        "Trans Fat (g)": 0.44,
+        "Alcohol (g)": 13.5
+      },
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.06,
+        "Omega-6 Fatty Acids (g)": 0.16,
+        "Trans Fat (g)": 0.44
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "CoFID food group QI is reported per 100 ml; no unit conversion required."
+    },
+    {
+      "databaseIndex": 1282,
+      "databaseName": "Cocktail, Gin Tonic",
+      "unit": "ml",
+      "source": "BLS_4_0",
+      "sourceCode": "P9A4000",
+      "sourceName": "Cocktail, Gin Tonic",
+      "matchMethod": "exact_BLS_recipe_with_approximate_liquid_density",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Alcohol (g)": 4.79
+      },
+      "density": {
+        "gramsPerMl": 1.0,
+        "method": "approximate water-like density for a mixed gin-and-tonic beverage; no item-specific measured density located"
+      },
+      "values": {
+        "Alcohol (g)": 4.79
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "Exact BLS recipe alcohol value per 100 g multiplied by an approximate density of 1.0 g/ml. The alcohol value is a per-100-ml estimate because an item-specific density was not available."
+    },
+    {
+      "databaseIndex": 1284,
+      "databaseName": "Buttermilch-Dressing mit Honig für Salat",
+      "unit": "ml",
+      "source": "BLS_4_0",
+      "sourceCode": "X357112",
+      "sourceName": "Buttermilch-Dressing mit Honig für Salat",
+      "matchMethod": "exact_BLS_code_with_density_proxy",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.46,
+        "Omega-6 Fatty Acids (g)": 1.01,
+        "Alcohol (g)": 0.009
+      },
+      "density": {
+        "gramsPerMl": 1.014421,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 169895,
+        "sourceName": "Salad dressing, buttermilk, lite",
+        "portion": "1 US tablespoon",
+        "grams": 15,
+        "millilitres": 14.786764
+      },
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.466634,
+        "Omega-6 Fatty Acids (g)": 1.024565,
+        "Alcohol (g)": 0.00913
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "Exact BLS food-code values per 100 g multiplied by the USDA SR Legacy buttermilk-dressing density proxy of 15 g per US tablespoon."
+    },
+    {
+      "databaseIndex": 1284,
+      "databaseName": "Buttermilch-Dressing mit Honig für Salat",
+      "unit": "ml",
+      "source": "USDA_FoodData_Central_SR_Legacy_2018",
+      "sourceCode": "169895",
+      "sourceName": "Salad dressing, buttermilk, lite",
+      "matchMethod": "low_fat_buttermilk_dressing_analogue_scaled_to_total_fat",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0.059,
+        "Total Fat (g)": 12.42
+      },
+      "targetTotalFatPer100g": 6.28,
+      "density": {
+        "gramsPerMl": 1.014421,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 169895,
+        "sourceName": "Salad dressing, buttermilk, lite",
+        "portion": "1 US tablespoon",
+        "grams": 15,
+        "millilitres": 14.786764
+      },
+      "values": {
+        "Trans Fat (g)": 0.030263
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "Buttermilk-dressing analogue trans-fat value scaled from 12.42 g source fat to the target's 6.28 g total fat per 100 g, then multiplied by the source density proxy. This is an analogue estimate, not an item-specific measurement."
+    },
+    {
+      "databaseIndex": 1287,
+      "databaseName": "Stachelbeere gedünstet",
+      "unit": "g",
+      "source": "CoFID_2021_category_crosswalk",
+      "sourceCode": "14-102",
+      "sourceName": "Gooseberries, cooking, stewed without sugar",
+      "matchMethod": "exact_food_and_preparation_category_match",
+      "confidence": "high",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0
+      },
+      "values": {
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0
+      },
+      "valueBasis": "g per 100 g",
+      "conversion": "CoFID values copied directly to the matching database gram basis. Numeric zeros are explicit source values, not blanks or trace markers."
+    }
+  ]
+}

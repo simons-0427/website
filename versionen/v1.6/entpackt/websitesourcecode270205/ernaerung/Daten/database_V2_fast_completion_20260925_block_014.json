@@ -1,0 +1,2781 @@
+{
+  "checkedOn": "2026-09-25",
+  "method": "Fast completion: fill direct audited source values first, then estimate missing values from median ratios in matching food categories. Exact existing values are never overwritten.",
+  "scope": {
+    "firstDatabaseIndex": 1301,
+    "lastDatabaseIndex": 1400,
+    "count": 100,
+    "unitBasis": "g per 100 g; g per 100 ml for liquids"
+  },
+  "sources": [
+    "Daten/database_V2_fatty_acids_alcohol_batch_014_sources.json",
+    "Daten/database_V2_omega3_components_batch_004.json",
+    "Daten/database_V2_omega3_components_batch_005.json",
+    "Daten/database_V2_omega3_components_batch_006.json",
+    "Daten/database_V2_omega3_components_batch_007.json",
+    "Daten/database_V2_omega3_components_batch_008.json",
+    "Daten/database_V2_omega3_components_batch_009.json",
+    "Daten/database_V2_omega3_components_batch_010.json",
+    "Daten/database_V2_omega3_components_batch_011.json",
+    "Daten/database_V2_omega3_components_batch_012.json",
+    "Daten/database_V2_omega3_components_batch_013.json",
+    "Daten/database_V2_omega3_components_batch_014.json",
+    "Daten/database_V2_omega3_components_batch_015.json",
+    "Daten/database_V2_omega3_components_batch_016.json",
+    "Daten/database_V2_omega3_components_batch_017.json",
+    "Daten/database_V2_omega3_components_batch_018.json",
+    "Daten/database_V2_omega3_components_batch_019.json",
+    "Daten/database_V2_omega3_components_cofid_exact.json",
+    "Daten/database_V2_omega3_components_cofid_exact_batch005_20260925.json",
+    "Existing completed database records in the same food category, excluding the target block, used only for median-ratio estimates."
+  ],
+  "coverage": {
+    "Omega-3 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Omega-6 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Trans Fat (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Alcohol (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Alpha-Linolenic Acid (ALA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Eicosapentaenoic Acid (EPA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Docosahexaenoic Acid (DHA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    }
+  },
+  "changes": [
+    {
+      "databaseIndex": 1301,
+      "food": "Vollkornbrot mit Sonnenblumenkernen",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1302,
+      "food": "Milchmischgetränk 3,5 % Fett, aromatisiert, gesüßt, angereichert mit Vitaminen",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1303,
+      "food": "Dinkelvollkornbrötchen mit Ölsamen",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1304,
+      "food": "Hähnchenbrustfilet mit Cornflakes paniert, gebraten",
+      "values": {
+        "Trans Fat (g)": 0.119559
+      }
+    },
+    {
+      "databaseIndex": 1305,
+      "food": "Rumtopf",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1306,
+      "food": "Erdbeersahneeis",
+      "values": {
+        "Trans Fat (g)": 0.175325
+      }
+    },
+    {
+      "databaseIndex": 1308,
+      "food": "Pute Flügel, mit Haut, tiefgefroren",
+      "values": {
+        "Trans Fat (g)": 0.180882
+      }
+    },
+    {
+      "databaseIndex": 1309,
+      "food": "Meeresfrüchtemischung roh",
+      "values": {
+        "Trans Fat (g)": 0.002068
+      }
+    },
+    {
+      "databaseIndex": 1310,
+      "food": "Bechamelsauce mit Milch 3,5 % Fett",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1311,
+      "food": "Omelett gebraten mit Tomaten",
+      "values": {
+        "Trans Fat (g)": 0.032717
+      }
+    },
+    {
+      "databaseIndex": 1312,
+      "food": "Rindergulasch mit Gemüse",
+      "values": {
+        "Trans Fat (g)": 0.058824
+      }
+    },
+    {
+      "databaseIndex": 1313,
+      "food": "Kräuterquark (aus Magerquark)",
+      "values": {
+        "Trans Fat (g)": 0.091827
+      }
+    },
+    {
+      "databaseIndex": 1314,
+      "food": "Weizenmischbrötchen",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1315,
+      "food": "Westfälischer Pfefferpotthast mit Rindfleisch und Sauce",
+      "values": {
+        "Trans Fat (g)": 0.019682
+      }
+    },
+    {
+      "databaseIndex": 1316,
+      "food": "Fleischkäse fettreduziert",
+      "values": {
+        "Trans Fat (g)": 0.119118
+      }
+    },
+    {
+      "databaseIndex": 1317,
+      "food": "Brathähnchen gebraten im Ofen",
+      "values": {
+        "Trans Fat (g)": 0.227059
+      }
+    },
+    {
+      "databaseIndex": 1318,
+      "food": "Müslimischung Bircher Art (mit Trockenfrüchten und Nüssen) ungesüßt",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1319,
+      "food": "Mais gekocht",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1320,
+      "food": "Currybratwurst",
+      "values": {
+        "Trans Fat (g)": 0.279559
+      }
+    },
+    {
+      "databaseIndex": 1321,
+      "food": "Ganze Tomaten gedünstet, mit Sahne",
+      "values": {
+        "Trans Fat (g)": 0.021089
+      }
+    },
+    {
+      "databaseIndex": 1322,
+      "food": "Kalb Zunge, Kochpökelware",
+      "values": {
+        "Trans Fat (g)": 0.127676
+      }
+    },
+    {
+      "databaseIndex": 1323,
+      "food": "Krautgulasch (mit Rindfleisch)",
+      "values": {
+        "Trans Fat (g)": 0.022539
+      }
+    },
+    {
+      "databaseIndex": 1324,
+      "food": "Dinkelbrot mit Nüssen",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1325,
+      "food": "Raspeli",
+      "values": {
+        "Trans Fat (g)": 0.196384
+      }
+    },
+    {
+      "databaseIndex": 1326,
+      "food": "Englischer Kuchen (Sandmasse) mit Alkohol",
+      "values": {
+        "Trans Fat (g)": 0.186408,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.068467,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.005556,
+        "Docosahexaenoic Acid (DHA) (g)": 0.005
+      }
+    },
+    {
+      "databaseIndex": 1327,
+      "food": "Schwein Dünner Bug (ohne Fett und Schwarte) gebraten ohne Fett (Ofen)",
+      "values": {
+        "Trans Fat (g)": 0.096618
+      }
+    },
+    {
+      "databaseIndex": 1328,
+      "food": "Stint gedünstet",
+      "values": {
+        "Trans Fat (g)": 0.002218
+      }
+    },
+    {
+      "databaseIndex": 1329,
+      "food": "Suppengrün/Suppenkraut, roh",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1330,
+      "food": "Kirschenmichel gebacken",
+      "values": {
+        "Trans Fat (g)": 0.164608
+      }
+    },
+    {
+      "databaseIndex": 1331,
+      "food": "Schaf Kotelett, mariniert, roh",
+      "values": {
+        "Trans Fat (g)": 0.429412
+      }
+    },
+    {
+      "databaseIndex": 1332,
+      "food": "Weizenvollkornbrot mit Sonnenblumenkernen",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1333,
+      "food": "Kalb Bug/Schulter, gekocht",
+      "values": {
+        "Trans Fat (g)": 0.015912,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1334,
+      "food": "Dinkeleierteigwaren roh",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1335,
+      "food": "Aprikosensaft",
+      "values": {
+        "Trans Fat (g)": 0,
+        "Alpha-Linolenic Acid (ALA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1336,
+      "food": "Johannisbeertorte mit Baiser/Träublestorte (Mürbeteig)",
+      "values": {
+        "Trans Fat (g)": 0.108318
+      }
+    },
+    {
+      "databaseIndex": 1337,
+      "food": "Käse-Weißbrot-Auflauf",
+      "values": {
+        "Trans Fat (g)": 0.044476
+      }
+    },
+    {
+      "databaseIndex": 1338,
+      "food": "Schokoladenbaiser",
+      "values": {
+        "Trans Fat (g)": 0.090769
+      }
+    },
+    {
+      "databaseIndex": 1339,
+      "food": "Makronenkuchen (Rührmasse)",
+      "values": {
+        "Trans Fat (g)": 0.220247
+      }
+    },
+    {
+      "databaseIndex": 1340,
+      "food": "Hamburger Rauchfleisch (Rind Oberschale) Rohpökelware, geräuchert",
+      "values": {
+        "Trans Fat (g)": 0.062221
+      }
+    },
+    {
+      "databaseIndex": 1341,
+      "food": "Dicke Bohne unreif, tiefgefroren",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1342,
+      "food": "Kekse/Plätzchen (Vollkornmürbeteig)",
+      "values": {
+        "Trans Fat (g)": 0.249972
+      }
+    },
+    {
+      "databaseIndex": 1343,
+      "food": "Quicheboden (Mürbeteig)",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1344,
+      "food": "Getreideflakes gesüßt, mit Schokolade",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1345,
+      "food": "Gemüsemischung asiatische Art, roh",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1346,
+      "food": "Vollkornbrot glutenfrei",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1347,
+      "food": "Hammelfleisch gedünstet mit Weißkraut (Irish Stew)",
+      "values": {
+        "Trans Fat (g)": 0.031111
+      }
+    },
+    {
+      "databaseIndex": 1348,
+      "food": "Roggenmischbrot mit Kümmel",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1349,
+      "food": "Schokoladen-Milchsuppe gebunden mit Grieß",
+      "values": {
+        "Trans Fat (g)": 0.028549
+      }
+    },
+    {
+      "databaseIndex": 1350,
+      "food": "Rehrücken gebacken (Sandmasse)",
+      "values": {
+        "Trans Fat (g)": 0.256773
+      }
+    },
+    {
+      "databaseIndex": 1351,
+      "food": "Kalb Zunge, gekocht",
+      "values": {
+        "Trans Fat (g)": 0.159926
+      }
+    },
+    {
+      "databaseIndex": 1352,
+      "food": "Geflügelbockwurst mit Schweinefleisch",
+      "values": {
+        "Trans Fat (g)": 0.141176
+      }
+    },
+    {
+      "databaseIndex": 1353,
+      "food": "Rind Bratenfleisch (Bug) tiefgefroren",
+      "values": {
+        "Trans Fat (g)": 0.077941,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1354,
+      "food": "Petersilienblatt tiefgefroren",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1355,
+      "food": "Croissant (Hefeblätterteig/Plunderteig)",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1356,
+      "food": "Weizenbrötchen mit Kürbiskernen",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1357,
+      "food": "Rotweinkuchen (Rührmasse)",
+      "values": {
+        "Trans Fat (g)": 0.235194
+      }
+    },
+    {
+      "databaseIndex": 1358,
+      "food": "Schmelzkäsezubereitung 45 - 52 % Fett i. Tr., mit Schinken",
+      "values": {
+        "Trans Fat (g)": 0.78155
+      }
+    },
+    {
+      "databaseIndex": 1359,
+      "food": "Zimtschnecken (Hefeteig)",
+      "values": {
+        "Trans Fat (g)": 0.084723
+      }
+    },
+    {
+      "databaseIndex": 1360,
+      "food": "Pute Innereien, tiefgefroren",
+      "values": {
+        "Omega-6 Fatty Acids (g)": 0.807203,
+        "Trans Fat (g)": 0.135441,
+        "Alpha-Linolenic Acid (ALA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1361,
+      "food": "Gemüsemischung Leipziger Allerlei, tiefgefroren",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1362,
+      "food": "Getreideflakes gesüßt, mit Nüssen",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1363,
+      "food": "Grundsauce dunkel/braun (von Wildbrühe)",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1364,
+      "food": "Frankfurter Würstchen/Schinkenwürstchen",
+      "values": {
+        "Trans Fat (g)": 0.358823
+      }
+    },
+    {
+      "databaseIndex": 1365,
+      "food": "Stachelbeerkuchen (Rührmasse) mit Baiser",
+      "values": {
+        "Trans Fat (g)": 0.10286
+      }
+    },
+    {
+      "databaseIndex": 1366,
+      "food": "Maracujanektar/Passionsfruchtnektar",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1367,
+      "food": "Friesenkekse (Mürbeteig)",
+      "values": {
+        "Trans Fat (g)": 0.229316
+      }
+    },
+    {
+      "databaseIndex": 1368,
+      "food": "Quarkspeise mit Pfirsichen",
+      "values": {
+        "Trans Fat (g)": 0.167329
+      }
+    },
+    {
+      "databaseIndex": 1369,
+      "food": "Kartoffeln geschält, roh gebraten",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1370,
+      "food": "Ratatouille",
+      "values": {
+        "Trans Fat (g)": 0.010667
+      }
+    },
+    {
+      "databaseIndex": 1371,
+      "food": "Weißkraut-Karotten-Eintopf mit weißen Bohnen und Hammelfleisch",
+      "values": {
+        "Trans Fat (g)": 0.02513
+      }
+    },
+    {
+      "databaseIndex": 1372,
+      "food": "Quarkstollen (Rührmasse)",
+      "values": {
+        "Trans Fat (g)": 0.131829,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.068467,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.005556,
+        "Docosahexaenoic Acid (DHA) (g)": 0.005
+      }
+    },
+    {
+      "databaseIndex": 1373,
+      "food": "Paella",
+      "values": {
+        "Trans Fat (g)": 0.010476
+      }
+    },
+    {
+      "databaseIndex": 1374,
+      "food": "Kiwisaft",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1375,
+      "food": "Quarkspeise mit Himbeeren",
+      "values": {
+        "Trans Fat (g)": 0.165629
+      }
+    },
+    {
+      "databaseIndex": 1376,
+      "food": "Quarkspeise mit Erdbeeren",
+      "values": {
+        "Trans Fat (g)": 0.165969
+      }
+    },
+    {
+      "databaseIndex": 1377,
+      "food": "Milchreis gesüßt, mit Milch 3,5 % Fett und Rosinen, aufgezogen, gebacken",
+      "values": {
+        "Trans Fat (g)": 0.036106
+      }
+    },
+    {
+      "databaseIndex": 1378,
+      "food": "Schneckennudeln/Rosenkuchen (Hefeteig)",
+      "values": {
+        "Trans Fat (g)": 0.099922,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.068467,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.005556,
+        "Docosahexaenoic Acid (DHA) (g)": 0.005
+      }
+    },
+    {
+      "databaseIndex": 1379,
+      "food": "Hefeteig (feiner) gebacken",
+      "values": {
+        "Trans Fat (g)": 0.118059
+      }
+    },
+    {
+      "databaseIndex": 1380,
+      "food": "Bitterschokolade gefüllt mit Karamell",
+      "values": {
+        "Trans Fat (g)": 0.315719
+      }
+    },
+    {
+      "databaseIndex": 1381,
+      "food": "Bauernbratwurst/Westfälinger",
+      "values": {
+        "Trans Fat (g)": 0.332059
+      }
+    },
+    {
+      "databaseIndex": 1382,
+      "food": "Hefeteig (einfacher) gebacken",
+      "values": {
+        "Trans Fat (g)": 0.075403
+      }
+    },
+    {
+      "databaseIndex": 1383,
+      "food": "Edelkrebs/Flusskrebs, gesalzen",
+      "values": {
+        "Trans Fat (g)": 0.000767
+      }
+    },
+    {
+      "databaseIndex": 1384,
+      "food": "Gänsezervelatwurst mit Schweinefleisch",
+      "values": {
+        "Trans Fat (g)": 0.446765
+      }
+    },
+    {
+      "databaseIndex": 1385,
+      "food": "Käsefondue (mit Alkohol)",
+      "values": {
+        "Trans Fat (g)": 0.64653
+      }
+    },
+    {
+      "databaseIndex": 1386,
+      "food": "Gugelhupf mit Rosinen (Hefeteig)",
+      "values": {
+        "Trans Fat (g)": 0.141066,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.068467,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.005556,
+        "Docosahexaenoic Acid (DHA) (g)": 0.005
+      }
+    },
+    {
+      "databaseIndex": 1387,
+      "food": "Salami Ungarische Art",
+      "values": {
+        "Trans Fat (g)": 0.48647
+      }
+    },
+    {
+      "databaseIndex": 1388,
+      "food": "Katenrauchwurst",
+      "values": {
+        "Trans Fat (g)": 0.263676
+      }
+    },
+    {
+      "databaseIndex": 1389,
+      "food": "Chinakohl gekocht",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1390,
+      "food": "Nuss-Spritzgebäck (Rührmasse)",
+      "values": {
+        "Trans Fat (g)": 0.340405
+      }
+    },
+    {
+      "databaseIndex": 1391,
+      "food": "Streuselkuchen (Hefeteig)",
+      "values": {
+        "Trans Fat (g)": 0.15089
+      }
+    },
+    {
+      "databaseIndex": 1392,
+      "food": "Kartoffel-Tomaten-Gratin mit Mozzarella",
+      "values": {
+        "Trans Fat (g)": 0.016508,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.05,
+        "Eicosapentaenoic Acid (EPA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1393,
+      "food": "Batate/Süßkartoffel, gebacken",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1394,
+      "food": "Weichkaramelle gefüllt",
+      "values": {
+        "Trans Fat (g)": 0.153073
+      }
+    },
+    {
+      "databaseIndex": 1396,
+      "food": "Rind Filet/Lende, gebraten ohne Fett (Ofen)",
+      "values": {
+        "Trans Fat (g)": 0.058103,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1398,
+      "food": "Grapefruit gezuckert",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1399,
+      "food": "Rote Rübe/Rote Bete, gedünstet",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1400,
+      "food": "Eier-Frischteigwaren, selbstgemacht, roh",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    }
+  ],
+  "changeDetails": [
+    {
+      "databaseIndex": 1301,
+      "food": "Vollkornbrot mit Sonnenblumenkernen",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1302,
+      "food": "Milchmischgetränk 3,5 % Fett, aromatisiert, gesüßt, angereichert mit Vitaminen",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 42,
+          "sampleCount": 42,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1303,
+      "food": "Dinkelvollkornbrötchen mit Ölsamen",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1304,
+      "food": "Hähnchenbrustfilet mit Cornflakes paniert, gebraten",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.119559,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1305,
+      "food": "Rumtopf",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 42,
+          "sampleCount": 42,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1306,
+      "food": "Erdbeersahneeis",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.175325,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1308,
+      "food": "Pute Flügel, mit Haut, tiefgefroren",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.180882,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1309,
+      "food": "Meeresfrüchtemischung roh",
+      "category": "fisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.002068,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "ratio": 0.001369867256637168
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1310,
+      "food": "Bechamelsauce mit Milch 3,5 % Fett",
+      "category": "wuerze",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 30,
+          "sampleCount": 30,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1311,
+      "food": "Omelett gebraten mit Tomaten",
+      "category": "eier",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.032717,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "eier",
+          "peerCount": 11,
+          "sampleCount": 11,
+          "fallbackToGlobal": false,
+          "ratio": 0.0027702547770700634
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1312,
+      "food": "Rindergulasch mit Gemüse",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.058824,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1313,
+      "food": "Kräuterquark (aus Magerquark)",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.091827,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1314,
+      "food": "Weizenmischbrötchen",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1315,
+      "food": "Westfälischer Pfefferpotthast mit Rindfleisch und Sauce",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.019682,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 86,
+          "sampleCount": 86,
+          "fallbackToGlobal": false,
+          "ratio": 0.003174558771851455
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1316,
+      "food": "Fleischkäse fettreduziert",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.119118,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1317,
+      "food": "Brathähnchen gebraten im Ofen",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.227059,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1318,
+      "food": "Müslimischung Bircher Art (mit Trockenfrüchten und Nüssen) ungesüßt",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1319,
+      "food": "Mais gekocht",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1320,
+      "food": "Currybratwurst",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.279559,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1321,
+      "food": "Ganze Tomaten gedünstet, mit Sahne",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.021089,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 86,
+          "sampleCount": 86,
+          "fallbackToGlobal": false,
+          "ratio": 0.003174558771851455
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1322,
+      "food": "Kalb Zunge, Kochpökelware",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.127676,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1323,
+      "food": "Krautgulasch (mit Rindfleisch)",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.022539,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 86,
+          "sampleCount": 86,
+          "fallbackToGlobal": false,
+          "ratio": 0.003174558771851455
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1324,
+      "food": "Dinkelbrot mit Nüssen",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1325,
+      "food": "Raspeli",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.196384,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1326,
+      "food": "Englischer Kuchen (Sandmasse) mit Alkohol",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.186408,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.068467,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.6846666666666666
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.005556,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.05555555555555556
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.005,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.05
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1327,
+      "food": "Schwein Dünner Bug (ohne Fett und Schwarte) gebraten ohne Fett (Ofen)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.096618,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1328,
+      "food": "Stint gedünstet",
+      "category": "fisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.002218,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "ratio": 0.001369867256637168
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1329,
+      "food": "Suppengrün/Suppenkraut, roh",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 153,
+          "sampleCount": 153,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1330,
+      "food": "Kirschenmichel gebacken",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.164608,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1331,
+      "food": "Schaf Kotelett, mariniert, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.429412,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1332,
+      "food": "Weizenvollkornbrot mit Sonnenblumenkernen",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1333,
+      "food": "Kalb Bug/Schulter, gekocht",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.015912,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 206,
+          "sampleCount": 206,
+          "fallbackToGlobal": false,
+          "share": 0.0273775,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 206,
+          "sampleCount": 206,
+          "fallbackToGlobal": false,
+          "share": 0.004267161410018553,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1334,
+      "food": "Dinkeleierteigwaren roh",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1335,
+      "food": "Aprikosensaft",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 42,
+          "sampleCount": 42,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1336,
+      "food": "Johannisbeertorte mit Baiser/Träublestorte (Mürbeteig)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.108318,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1337,
+      "food": "Käse-Weißbrot-Auflauf",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.044476,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 86,
+          "sampleCount": 86,
+          "fallbackToGlobal": false,
+          "ratio": 0.003174558771851455
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1338,
+      "food": "Schokoladenbaiser",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.090769,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1339,
+      "food": "Makronenkuchen (Rührmasse)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.220247,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1340,
+      "food": "Hamburger Rauchfleisch (Rind Oberschale) Rohpökelware, geräuchert",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.062221,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1341,
+      "food": "Dicke Bohne unreif, tiefgefroren",
+      "category": "huelsenfruechte",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "huelsenfruechte",
+          "peerCount": 54,
+          "sampleCount": 54,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1342,
+      "food": "Kekse/Plätzchen (Vollkornmürbeteig)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.249972,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1343,
+      "food": "Quicheboden (Mürbeteig)",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1344,
+      "food": "Getreideflakes gesüßt, mit Schokolade",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1345,
+      "food": "Gemüsemischung asiatische Art, roh",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 153,
+          "sampleCount": 153,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1346,
+      "food": "Vollkornbrot glutenfrei",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1347,
+      "food": "Hammelfleisch gedünstet mit Weißkraut (Irish Stew)",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.031111,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 86,
+          "sampleCount": 86,
+          "fallbackToGlobal": false,
+          "ratio": 0.003174558771851455
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1348,
+      "food": "Roggenmischbrot mit Kümmel",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1349,
+      "food": "Schokoladen-Milchsuppe gebunden mit Grieß",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.028549,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1350,
+      "food": "Rehrücken gebacken (Sandmasse)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.256773,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1351,
+      "food": "Kalb Zunge, gekocht",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.159926,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1352,
+      "food": "Geflügelbockwurst mit Schweinefleisch",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.141176,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1353,
+      "food": "Rind Bratenfleisch (Bug) tiefgefroren",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.077941,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 206,
+          "sampleCount": 206,
+          "fallbackToGlobal": false,
+          "share": 0.0273775,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 206,
+          "sampleCount": 206,
+          "fallbackToGlobal": false,
+          "share": 0.004267161410018553,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1354,
+      "food": "Petersilienblatt tiefgefroren",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 153,
+          "sampleCount": 153,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1355,
+      "food": "Croissant (Hefeblätterteig/Plunderteig)",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1356,
+      "food": "Weizenbrötchen mit Kürbiskernen",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1357,
+      "food": "Rotweinkuchen (Rührmasse)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.235194,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1358,
+      "food": "Schmelzkäsezubereitung 45 - 52 % Fett i. Tr., mit Schinken",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.78155,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1359,
+      "food": "Zimtschnecken (Hefeteig)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.084723,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1360,
+      "food": "Pute Innereien, tiefgefroren",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Omega-6 Fatty Acids (g)",
+          "value": 0.807203,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 224,
+          "sampleCount": 224,
+          "fallbackToGlobal": false,
+          "ratio": 0.08764416386654449
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.135441,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1361,
+      "food": "Gemüsemischung Leipziger Allerlei, tiefgefroren",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 153,
+          "sampleCount": 153,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1362,
+      "food": "Getreideflakes gesüßt, mit Nüssen",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1363,
+      "food": "Grundsauce dunkel/braun (von Wildbrühe)",
+      "category": "wuerze",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 30,
+          "sampleCount": 30,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1364,
+      "food": "Frankfurter Würstchen/Schinkenwürstchen",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.358823,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1365,
+      "food": "Stachelbeerkuchen (Rührmasse) mit Baiser",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.10286,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1366,
+      "food": "Maracujanektar/Passionsfruchtnektar",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 42,
+          "sampleCount": 42,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1367,
+      "food": "Friesenkekse (Mürbeteig)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.229316,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1368,
+      "food": "Quarkspeise mit Pfirsichen",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.167329,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1369,
+      "food": "Kartoffeln geschält, roh gebraten",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 153,
+          "sampleCount": 153,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1370,
+      "food": "Ratatouille",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.010667,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 86,
+          "sampleCount": 86,
+          "fallbackToGlobal": false,
+          "ratio": 0.003174558771851455
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1371,
+      "food": "Weißkraut-Karotten-Eintopf mit weißen Bohnen und Hammelfleisch",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.02513,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 86,
+          "sampleCount": 86,
+          "fallbackToGlobal": false,
+          "ratio": 0.003174558771851455
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1372,
+      "food": "Quarkstollen (Rührmasse)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.131829,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.068467,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.6846666666666666
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.005556,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.05555555555555556
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.005,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.05
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1373,
+      "food": "Paella",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.010476,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 86,
+          "sampleCount": 86,
+          "fallbackToGlobal": false,
+          "ratio": 0.003174558771851455
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1374,
+      "food": "Kiwisaft",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 42,
+          "sampleCount": 42,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1375,
+      "food": "Quarkspeise mit Himbeeren",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.165629,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1376,
+      "food": "Quarkspeise mit Erdbeeren",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.165969,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1377,
+      "food": "Milchreis gesüßt, mit Milch 3,5 % Fett und Rosinen, aufgezogen, gebacken",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.036106,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1378,
+      "food": "Schneckennudeln/Rosenkuchen (Hefeteig)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.099922,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.068467,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.6846666666666666
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.005556,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.05555555555555556
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.005,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.05
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1379,
+      "food": "Hefeteig (feiner) gebacken",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.118059,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1380,
+      "food": "Bitterschokolade gefüllt mit Karamell",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.315719,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1381,
+      "food": "Bauernbratwurst/Westfälinger",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.332059,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1382,
+      "food": "Hefeteig (einfacher) gebacken",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.075403,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1383,
+      "food": "Edelkrebs/Flusskrebs, gesalzen",
+      "category": "fisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.000767,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "ratio": 0.001369867256637168
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1384,
+      "food": "Gänsezervelatwurst mit Schweinefleisch",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.446765,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1385,
+      "food": "Käsefondue (mit Alkohol)",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.64653,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1386,
+      "food": "Gugelhupf mit Rosinen (Hefeteig)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.141066,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.068467,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.6846666666666666
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.005556,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.05555555555555556
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.005,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 79,
+          "sampleCount": 79,
+          "fallbackToGlobal": false,
+          "share": 0.05
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1387,
+      "food": "Salami Ungarische Art",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.48647,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1388,
+      "food": "Katenrauchwurst",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.263676,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1389,
+      "food": "Chinakohl gekocht",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 153,
+          "sampleCount": 153,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1390,
+      "food": "Nuss-Spritzgebäck (Rührmasse)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.340405,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1391,
+      "food": "Streuselkuchen (Hefeteig)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.15089,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1392,
+      "food": "Kartoffel-Tomaten-Gratin mit Mozzarella",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.016508,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 86,
+          "sampleCount": 86,
+          "fallbackToGlobal": false,
+          "ratio": 0.003174558771851455
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.05,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 88,
+          "sampleCount": 88,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 88,
+          "sampleCount": 88,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1393,
+      "food": "Batate/Süßkartoffel, gebacken",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 153,
+          "sampleCount": 153,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1394,
+      "food": "Weichkaramelle gefüllt",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.153073,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 68,
+          "sampleCount": 68,
+          "fallbackToGlobal": false,
+          "ratio": 0.008396774193548387
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1396,
+      "food": "Rind Filet/Lende, gebraten ohne Fett (Ofen)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.058103,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 203,
+          "sampleCount": 203,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705879059350505
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 206,
+          "sampleCount": 206,
+          "fallbackToGlobal": false,
+          "share": 0.0273775,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 206,
+          "sampleCount": 206,
+          "fallbackToGlobal": false,
+          "share": 0.004267161410018553,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1398,
+      "food": "Grapefruit gezuckert",
+      "category": "obst",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "obst",
+          "peerCount": 93,
+          "sampleCount": 93,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1399,
+      "food": "Rote Rübe/Rote Bete, gedünstet",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 153,
+          "sampleCount": 153,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1400,
+      "food": "Eier-Frischteigwaren, selbstgemacht, roh",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 147,
+          "sampleCount": 147,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "invalidValues": 0,
+    "omega3ComponentSumConflicts": 0,
+    "omega3AndOmega6FatConflicts": 0
+  }
+}

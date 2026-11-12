@@ -1,0 +1,648 @@
+{
+  "generatedAt": "2026-10-04T17:06:48.035Z",
+  "timeoutMs": 2500,
+  "datasetCount": 1516,
+  "profiles": [
+    {
+      "id": "balanced_2000",
+      "settings": {
+        "id": "balanced_2000",
+        "diet": "all",
+        "kcal": [
+          1900,
+          2100
+        ],
+        "protein": 80,
+        "fiber": 25
+      },
+      "pool": 1516,
+      "constraints": 11,
+      "lp": {
+        "ms": 13,
+        "cost": 0.5552,
+        "support": 6
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Dietary Fibre (g): min 24.9780 < 25",
+          "Vitamin C (mg): min 0.0000 < 75"
+        ]
+      },
+      "supportMilp": {
+        "ms": 372,
+        "feasible": true,
+        "cost": 0.6035,
+        "foods": 6,
+        "candidates": 6,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 0,
+        "feasible": false,
+        "cost": 0.5485,
+        "foods": 5,
+        "candidates": 19,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "fullMilp": {
+        "ms": 7,
+        "feasible": false,
+        "cost": 0.5485,
+        "foods": 5,
+        "candidates": 1516,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "staged": {
+        "ms": 393,
+        "stage": "support",
+        "feasible": true,
+        "cost": 0.6035,
+        "lowerBoundGapPct": 0.2494,
+        "branchBound": 0.601999
+      }
+    },
+    {
+      "id": "balanced_2800",
+      "settings": {
+        "id": "balanced_2800",
+        "diet": "all",
+        "kcal": [
+          2700,
+          2900
+        ],
+        "protein": 120,
+        "fiber": 30
+      },
+      "pool": 1516,
+      "constraints": 11,
+      "lp": {
+        "ms": 6,
+        "cost": 0.7761,
+        "support": 6
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Energy (cal): min 2699.1260 < 2700",
+          "Protein (g): min 119.8650 < 120",
+          "Dietary Fibre (g): min 29.9760 < 30",
+          "Total Fat (g): min 39.9867 < 40",
+          "Calcium (mg): min 799.9100 < 800",
+          "Vitamin C (mg): min 0.0000 < 75"
+        ]
+      },
+      "supportMilp": {
+        "ms": 447,
+        "feasible": true,
+        "cost": 0.8235,
+        "foods": 6,
+        "candidates": 6,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 0,
+        "feasible": false,
+        "cost": 0.7673,
+        "foods": 5,
+        "candidates": 19,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "fullMilp": {
+        "ms": 3,
+        "feasible": false,
+        "cost": 0.7673,
+        "foods": 5,
+        "candidates": 1516,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "staged": {
+        "ms": 457,
+        "stage": "support",
+        "feasible": true,
+        "cost": 0.8235,
+        "lowerBoundGapPct": 0.0785,
+        "branchBound": 0.822854
+      }
+    },
+    {
+      "id": "high_protein",
+      "settings": {
+        "id": "high_protein",
+        "diet": "all",
+        "kcal": [
+          2400,
+          2600
+        ],
+        "protein": 180,
+        "fiber": 25
+      },
+      "pool": 1516,
+      "constraints": 11,
+      "lp": {
+        "ms": 3,
+        "cost": 0.9281,
+        "support": 6
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Protein (g): min 179.8030 < 180",
+          "Calcium (mg): min 799.4300 < 800",
+          "Vitamin C (mg): min 0.0000 < 75"
+        ]
+      },
+      "supportMilp": {
+        "ms": 1653,
+        "feasible": true,
+        "cost": 0.9763,
+        "foods": 6,
+        "candidates": 6,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 0,
+        "feasible": false,
+        "cost": 0.9198,
+        "foods": 5,
+        "candidates": 19,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "fullMilp": {
+        "ms": 4,
+        "feasible": false,
+        "cost": 0.9198,
+        "foods": 5,
+        "candidates": 1516,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "staged": {
+        "ms": 1660,
+        "stage": "support",
+        "feasible": true,
+        "cost": 0.9763,
+        "lowerBoundGapPct": 0.1492,
+        "branchBound": 0.974845
+      }
+    },
+    {
+      "id": "vegan_2200",
+      "settings": {
+        "id": "vegan_2200",
+        "diet": "vegan",
+        "kcal": [
+          2100,
+          2300
+        ],
+        "protein": 90,
+        "fiber": 30
+      },
+      "pool": 876,
+      "constraints": 11,
+      "lp": {
+        "ms": 2,
+        "cost": 0.6163,
+        "support": 6
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Energy (cal): min 2098.7390 < 2100",
+          "Total Fat (g): min 39.6293 < 40",
+          "Vitamin C (mg): min 0.0000 < 75"
+        ]
+      },
+      "supportMilp": {
+        "ms": 34,
+        "feasible": true,
+        "cost": 0.665,
+        "foods": 6,
+        "candidates": 6,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 0,
+        "feasible": false,
+        "cost": 0.6087,
+        "foods": 5,
+        "candidates": 19,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "fullMilp": {
+        "ms": 2,
+        "feasible": false,
+        "cost": 0.6087,
+        "foods": 5,
+        "candidates": 876,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "staged": {
+        "ms": 38,
+        "stage": "expanded",
+        "feasible": true,
+        "cost": 0.665,
+        "lowerBoundGapPct": 0.3012,
+        "branchBound": 0.663003
+      }
+    },
+    {
+      "id": "vegetarian_2200",
+      "settings": {
+        "id": "vegetarian_2200",
+        "diet": "vegetarisch",
+        "kcal": [
+          2100,
+          2300
+        ],
+        "protein": 100,
+        "fiber": 30
+      },
+      "pool": 1144,
+      "constraints": 11,
+      "lp": {
+        "ms": 2,
+        "cost": 0.6482,
+        "support": 6
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Energy (cal): min 2096.6790 < 2100",
+          "Protein (g): min 99.5810 < 100",
+          "Dietary Fibre (g): min 29.9510 < 30",
+          "Total Fat (g): min 39.9561 < 40",
+          "Calcium (mg): min 798.9300 < 800",
+          "Vitamin C (mg): min 0.0000 < 75"
+        ]
+      },
+      "supportMilp": {
+        "ms": 685,
+        "feasible": true,
+        "cost": 0.6963,
+        "foods": 6,
+        "candidates": 6,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 0,
+        "feasible": false,
+        "cost": 0.6381,
+        "foods": 5,
+        "candidates": 19,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "fullMilp": {
+        "ms": 3,
+        "feasible": false,
+        "cost": 0.6381,
+        "foods": 5,
+        "candidates": 1144,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "staged": {
+        "ms": 689,
+        "stage": "support",
+        "feasible": true,
+        "cost": 0.6963,
+        "lowerBoundGapPct": 0.1936,
+        "branchBound": 0.694955
+      }
+    },
+    {
+      "id": "pescetarian_2600",
+      "settings": {
+        "id": "pescetarian_2600",
+        "diet": "pescetarisch",
+        "kcal": [
+          2500,
+          2700
+        ],
+        "protein": 130,
+        "fiber": 30
+      },
+      "pool": 1232,
+      "constraints": 11,
+      "lp": {
+        "ms": 3,
+        "cost": 0.7867,
+        "support": 6
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Protein (g): min 129.9050 < 130",
+          "Calcium (mg): min 799.6700 < 800",
+          "Vitamin C (mg): min 0.0000 < 75"
+        ]
+      },
+      "supportMilp": {
+        "ms": 29,
+        "feasible": true,
+        "cost": 0.8348,
+        "foods": 6,
+        "candidates": 6,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 0,
+        "feasible": false,
+        "cost": 0.779,
+        "foods": 5,
+        "candidates": 19,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "fullMilp": {
+        "ms": 2,
+        "feasible": false,
+        "cost": 0.779,
+        "foods": 5,
+        "candidates": 1232,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "staged": {
+        "ms": 35,
+        "stage": "support",
+        "feasible": true,
+        "cost": 0.8348,
+        "lowerBoundGapPct": 0.1591,
+        "branchBound": 0.833474
+      }
+    },
+    {
+      "id": "whole_food_2200",
+      "settings": {
+        "id": "whole_food_2200",
+        "diet": "all",
+        "wholeFood": true,
+        "kcal": [
+          2100,
+          2300
+        ],
+        "protein": 90,
+        "fiber": 30
+      },
+      "pool": 499,
+      "constraints": 10,
+      "lp": {
+        "ms": 1,
+        "cost": 0.8054,
+        "support": 5
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Total Fat (g): min 39.8342 < 40"
+        ]
+      },
+      "supportMilp": {
+        "ms": 0,
+        "feasible": true,
+        "cost": 0.8064,
+        "foods": 5,
+        "candidates": 5,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 239,
+        "feasible": true,
+        "cost": 0.806,
+        "foods": 7,
+        "candidates": 18,
+        "violations": []
+      },
+      "fullMilp": {
+        "ms": 1890,
+        "feasible": true,
+        "cost": 0.806,
+        "foods": 7,
+        "candidates": 499,
+        "violations": []
+      },
+      "staged": {
+        "ms": 1,
+        "stage": "support",
+        "feasible": true,
+        "cost": 0.8064,
+        "lowerBoundGapPct": 0.1209,
+        "branchBound": 0.805427
+      }
+    },
+    {
+      "id": "gluten_free_2200",
+      "settings": {
+        "id": "gluten_free_2200",
+        "diet": "all",
+        "noGluten": true,
+        "kcal": [
+          2100,
+          2300
+        ],
+        "protein": 90,
+        "fiber": 25
+      },
+      "pool": 1369,
+      "constraints": 11,
+      "lp": {
+        "ms": 3,
+        "cost": 0.7919,
+        "support": 6
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Dietary Fibre (g): min 24.9900 < 25",
+          "Total Fat (g): max 110.4385 > 110",
+          "Vitamin C (mg): min 0.0000 < 75"
+        ]
+      },
+      "supportMilp": {
+        "ms": 408,
+        "feasible": true,
+        "cost": 0.8408,
+        "foods": 6,
+        "candidates": 6,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 0,
+        "feasible": false,
+        "cost": 0.7858,
+        "foods": 5,
+        "candidates": 18,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "fullMilp": {
+        "ms": 2,
+        "feasible": false,
+        "cost": 0.7858,
+        "foods": 5,
+        "candidates": 1369,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "staged": {
+        "ms": 414,
+        "stage": "support",
+        "feasible": true,
+        "cost": 0.8408,
+        "lowerBoundGapPct": 0.2604,
+        "branchBound": 0.838616
+      }
+    },
+    {
+      "id": "low_sodium_2000",
+      "settings": {
+        "id": "low_sodium_2000",
+        "diet": "all",
+        "kcal": [
+          1900,
+          2100
+        ],
+        "protein": 80,
+        "fiber": 25,
+        "sodiumMax": 1800
+      },
+      "pool": 1516,
+      "constraints": 11,
+      "lp": {
+        "ms": 2,
+        "cost": 0.5552,
+        "support": 6
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Dietary Fibre (g): min 24.9780 < 25",
+          "Vitamin C (mg): min 0.0000 < 75"
+        ]
+      },
+      "supportMilp": {
+        "ms": 350,
+        "feasible": true,
+        "cost": 0.6035,
+        "foods": 6,
+        "candidates": 6,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 0,
+        "feasible": false,
+        "cost": 0.5485,
+        "foods": 5,
+        "candidates": 19,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "fullMilp": {
+        "ms": 3,
+        "feasible": false,
+        "cost": 0.5485,
+        "foods": 5,
+        "candidates": 1516,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "staged": {
+        "ms": 357,
+        "stage": "support",
+        "feasible": true,
+        "cost": 0.6035,
+        "lowerBoundGapPct": 0.2494,
+        "branchBound": 0.601999
+      }
+    },
+    {
+      "id": "tight_energy_2000",
+      "settings": {
+        "id": "tight_energy_2000",
+        "diet": "all",
+        "kcal": [
+          1990,
+          2010
+        ],
+        "protein": 110,
+        "fiber": 30
+      },
+      "pool": 1516,
+      "constraints": 11,
+      "lp": {
+        "ms": 3,
+        "cost": 0.6684,
+        "support": 6
+      },
+      "rounded": {
+        "feasible": false,
+        "violations": [
+          "Protein (g): min 109.8660 < 110",
+          "Calcium (mg): min 799.7600 < 800",
+          "Vitamin C (mg): min 0.0000 < 75"
+        ]
+      },
+      "supportMilp": {
+        "ms": 4,
+        "feasible": true,
+        "cost": 0.7167,
+        "foods": 6,
+        "candidates": 6,
+        "violations": []
+      },
+      "expandedMilp": {
+        "ms": 0,
+        "feasible": false,
+        "cost": 0.6605,
+        "foods": 5,
+        "candidates": 19,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "fullMilp": {
+        "ms": 2,
+        "feasible": false,
+        "cost": 0.6605,
+        "foods": 5,
+        "candidates": 1516,
+        "violations": [
+          "solver infeasible or timeout without incumbent"
+        ]
+      },
+      "staged": {
+        "ms": 9,
+        "stage": "support",
+        "feasible": true,
+        "cost": 0.7167,
+        "lowerBoundGapPct": 0.2134,
+        "branchBound": 0.715174
+      }
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "dashboard": "bitcoin",
+  "candidateOnly": false,
+  "mergedIntoMaster": true,
+  "uploaded": false,
+  "publicRedistributionCleared": false,
+  "privatePersonalUseOnly": true,
+  "cutoffInclusive": "2026-09-28",
+  "output": "bitview-daily-btc-series-import-through-2026-09-28.csv",
+  "observations": 12944,
+  "outputBytes": 2494704,
+  "candidateSha256": "8e667fb07e00afd91643a63bba0068700b64b8f2af41961b8f99141eebe313f2",
+  "rawResearchFile": "bitview-daily-btc-series-research-through-2026-09-28.json",
+  "rawResearchSha256": "cd63749f7076e97c178b142bd605b2f3b617dc962833af143bf3d8847df8526b",
+  "metricIds": [
+    "new_addresses",
+    "block_size_mb"
+  ],
+  "metricCounts": {
+    "new_addresses": 6472,
+    "block_size_mb": 6472
+  },
+  "sourceSlug": "bitview_api_research_only",
+  "source": "https://bitview.space/api",
+  "sourceSeries": {
+    "new_addresses": {
+      "sourceSeries": "new_addr_count_sum_24h",
+      "sourceVersion": 3861042,
+      "sourceIndex": "day1",
+      "sourceStamp": "2026-09-30T03:12:17Z",
+      "sourceType": "StoredU64",
+      "observations": 6472,
+      "firstDate": "2009-01-09",
+      "lastDate": "2026-09-28",
+      "minimum": 4,
+      "maximum": 804574,
+      "zeroValues": 0,
+      "unit": "addresses per rolling 24 hours",
+      "sourceResponseSha256": "9f028a5491ef258a727435cac60df691d17382edf66f23fb98d2c88c7cd1cd79"
+    },
+    "block_size_mb": {
+      "sourceSeries": "block_size_sum_24h",
+      "sourceVersion": 66,
+      "sourceIndex": "day1",
+      "sourceStamp": "2026-09-30T03:12:17Z",
+      "sourceType": "StoredU64",
+      "observations": 6472,
+      "firstDate": "2009-01-09",
+      "lastDate": "2026-09-28",
+      "minimum": 0.00086,
+      "maximum": 456.222972,
+      "zeroValues": 0,
+      "unit": "decimal megabytes per rolling 24 hours",
+      "sourceResponseSha256": "89483989da772161232cd5cb29e2eaaa610b4705152ab8c6286f33192d1c559a"
+    }
+  },
+  "firstObservationDate": "2009-01-09",
+  "lastObservationDate": "2026-09-28",
+  "noMissingDates": true,
+  "noInterpolation": true,
+  "limitations": [
+    "Both source series are rolling 24-hour values sampled at the final block represented by each day1 UTC index.",
+    "new_addr_count_sum_24h counts addresses first observed across all address types; it is not a count of people.",
+    "block_size_sum_24h includes serialized block headers, transaction-count CompactSize fields, and witness data.",
+    "The hosted Bitview measurements have no separately verified reuse license. These rows remain private and local."
+  ],
+  "merge": {
+    "runDate": "2026-09-30",
+    "cutoffInclusive": "2026-09-28",
+    "observationsAdded": 12944,
+    "metricIdsAdded": [
+      "new_addresses",
+      "block_size_mb"
+    ],
+    "firstDate": "2009-01-09",
+    "lastDate": "2026-09-28",
+    "candidate": "bitview-daily-btc-series-import-through-2026-09-28.csv",
+    "candidateManifest": "bitview-daily-btc-series-import-through-2026-09-28.json",
+    "candidateSha256": "8e667fb07e00afd91643a63bba0068700b64b8f2af41961b8f99141eebe313f2",
+    "rawResearchFile": "bitview-daily-btc-series-research-through-2026-09-28.json",
+    "rawResearchSha256": "cd63749f7076e97c178b142bd605b2f3b617dc962833af143bf3d8847df8526b",
+    "backup": "bitcoin-backfill-cointime-cftc-options-before-bitview-daily-metrics-2026-09-30.csv",
+    "previousMasterSha256": "656961a7acbe60d519ed55216e88c367150129c2944377f994827b96824710cd",
+    "mergedMasterSha256": "8d08b0d0a042de9fb4e46e16eb804a6a92c98b244efd621a68d709652ee44fcc",
+    "mergedMasterBytes": 157811519,
+    "uploaded": false,
+    "publicRedistributionCleared": false,
+    "privatePersonalUseOnly": true,
+    "bitcoinOnly": true,
+    "metrics": {
+      "new_addresses": {
+        "sourceSeries": "new_addr_count_sum_24h",
+        "sourceVersion": 3861042,
+        "sourceIndex": "day1",
+        "sourceStamp": "2026-09-30T03:12:17Z",
+        "sourceType": "StoredU64",
+        "observations": 6472,
+        "firstDate": "2009-01-09",
+        "lastDate": "2026-09-28",
+        "minimum": 4,
+        "maximum": 804574,
+        "zeroValues": 0,
+        "unit": "addresses per rolling 24 hours",
+        "sourceResponseSha256": "9f028a5491ef258a727435cac60df691d17382edf66f23fb98d2c88c7cd1cd79"
+      },
+      "block_size_mb": {
+        "sourceSeries": "block_size_sum_24h",
+        "sourceVersion": 66,
+        "sourceIndex": "day1",
+        "sourceStamp": "2026-09-30T03:12:17Z",
+        "sourceType": "StoredU64",
+        "observations": 6472,
+        "firstDate": "2009-01-09",
+        "lastDate": "2026-09-28",
+        "minimum": 0.00086,
+        "maximum": 456.222972,
+        "zeroValues": 0,
+        "unit": "decimal megabytes per rolling 24 hours",
+        "sourceResponseSha256": "89483989da772161232cd5cb29e2eaaa610b4705152ab8c6286f33192d1c559a"
+      }
+    }
+  }
+}

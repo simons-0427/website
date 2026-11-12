@@ -1,0 +1,402 @@
+{
+  "batch": 17,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "V464100",
+      "name": "Ente Fleisch, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Entenfleisch/Entenbrust als aktueller Geflügelanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V335100",
+      "name": "Wildente Schenkel, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 18.5,
+      "sourceProduct": "Wildfleisch Berlin Wildente (Stockente) als aktueller Preisanker, niedrigster klar belegbarer Preisanker 18,50 EUR/kg",
+      "sourceUrl": "https://wildfleisch-berlin.de/wp-content/uploads/2026/01/Preisliste-08.01.2026.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V4A6100",
+      "name": "Hähnchen Brust, ohne Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 8.66,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 8,66 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V486100",
+      "name": "Pute Brust, ohne Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 8.66,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 8,66 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V487100",
+      "name": "Pute Flügel, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 4.35,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 4,35 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V4A5100",
+      "name": "Hähnchen Oberschenkel, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 5.59,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,59 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V4B5100",
+      "name": "Hähnchen Unterschenkel, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 5.59,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,59 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V435100",
+      "name": "Suppenhuhn Schenkel, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Günstiger Schweinefleisch-Grundcut im SB-Kühlregal, niedrigster ausgewiesener Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/sb-frischfleisch-schwein/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V488100",
+      "name": "Pute Innereien, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V468100",
+      "name": "Ente Innereien, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Entenfleisch/Entenbrust als aktueller Geflügelanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V478100",
+      "name": "Gans Innereien, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Gänsefleisch/Gänseschenkel als aktueller Geflügelanker, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V454100",
+      "name": "Perlhuhn Fleisch, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 5.83,
+      "sourceProduct": "Savel Perlhuhn Tiefkühl als niedrigster ausgewiesener Preisanker, niedrigster klar belegbarer Preisanker 5,83 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/perlhuhn-tiefkuehl/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V471100",
+      "name": "Gans Fleisch, ohne Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Gänsefleisch/Gänseschenkel als aktueller Geflügelanker, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V402100",
+      "name": "Baby-Pute Fleisch, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V485100",
+      "name": "Pute Keule, ohne Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 5.59,
+      "sourceProduct": "MEINE METZGEREI Geflügelprodukt als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,59 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V494100",
+      "name": "Taube Fleisch, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.96,
+      "sourceProduct": "Ringeltaube-Premiumfleisch als aktueller Preisanker, niedrigster klar belegbarer Preisanker 19,96 EUR/kg",
+      "sourceUrl": "https://www.ringeltaube.de/media/c7/55/7e/1773749371/Ringeltaube_SF04_2026_low.pdf?ts=1773749371%3Fts%3D1773749371",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V516100",
+      "name": "Hammel Herz, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 14.9,
+      "sourceProduct": "Kaufland AKTION Frenched Racks (Lamm) als aktuell sichtbarer niedrigster Lammfleisch-Preisanker, niedrigster klar belegbarer Preisanker 14,90 EUR/kg",
+      "sourceUrl": "https://filiale.kaufland.de/sortiment/frischewelten/fleisch.html?cid=DE%3Aoff%3Aprint_1676375925750",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V514100",
+      "name": "Schaf Herz, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 14.9,
+      "sourceProduct": "Kaufland AKTION Frenched Racks (Lamm) als aktuell sichtbarer niedrigster Lammfleisch-Preisanker, niedrigster klar belegbarer Preisanker 14,90 EUR/kg",
+      "sourceUrl": "https://filiale.kaufland.de/sortiment/frischewelten/fleisch.html?cid=DE%3Aoff%3Aprint_1676375925750",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V511100",
+      "name": "Rind Herz, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 15.58,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 15,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V534100",
+      "name": "Schaf Leber, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 14.9,
+      "sourceProduct": "Kaufland AKTION Frenched Racks (Lamm) als aktuell sichtbarer niedrigster Lammfleisch-Preisanker, niedrigster klar belegbarer Preisanker 14,90 EUR/kg",
+      "sourceUrl": "https://filiale.kaufland.de/sortiment/frischewelten/fleisch.html?cid=DE%3Aoff%3Aprint_1676375925750",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V536100",
+      "name": "Hammel Leber, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 14.9,
+      "sourceProduct": "Kaufland AKTION Frenched Racks (Lamm) als aktuell sichtbarer niedrigster Lammfleisch-Preisanker, niedrigster klar belegbarer Preisanker 14,90 EUR/kg",
+      "sourceUrl": "https://filiale.kaufland.de/sortiment/frischewelten/fleisch.html?cid=DE%3Aoff%3Aprint_1676375925750",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V552100",
+      "name": "Kalb Magen/Gekröse, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V562100",
+      "name": "Kalb Milz, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V572100",
+      "name": "Kalb Niere, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V582100",
+      "name": "Kalb Bries, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V591100",
+      "name": "Rind Zunge, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 15.58,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 15,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V594100",
+      "name": "Schaf Zunge, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 14.9,
+      "sourceProduct": "Kaufland AKTION Frenched Racks (Lamm) als aktuell sichtbarer niedrigster Lammfleisch-Preisanker, niedrigster klar belegbarer Preisanker 14,90 EUR/kg",
+      "sourceUrl": "https://filiale.kaufland.de/sortiment/frischewelten/fleisch.html?cid=DE%3Aoff%3Aprint_1676375925750",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V596100",
+      "name": "Hammel Zunge, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 14.9,
+      "sourceProduct": "Kaufland AKTION Frenched Racks (Lamm) als aktuell sichtbarer niedrigster Lammfleisch-Preisanker, niedrigster klar belegbarer Preisanker 14,90 EUR/kg",
+      "sourceUrl": "https://filiale.kaufland.de/sortiment/frischewelten/fleisch.html?cid=DE%3Aoff%3Aprint_1676375925750",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "W870200",
+      "name": "Mortadella/Schinkenwurst fein zerkleinert, Konserve",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Koch-/Räucherschinken als aktueller Kühlregalanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wurst-aufschnitt/k/1588161425467075",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "W870600",
+      "name": "Fleischwurst Konserve",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "Günstige Fleischwurst-/Hackfleischzubereitung im aktuellen Kühlregal, niedrigster klar belegbarer Preisanker 7,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wurst-aufschnitt/k/1588161425467075",
+      "priceUnit": "kg"
+    }
+  ]
+}

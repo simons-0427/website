@@ -1,0 +1,427 @@
+{
+  "batch": 20,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "V512100",
+      "name": "Kalb Herz, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V592100",
+      "name": "Kalb Zunge, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M400300",
+      "name": "Schnittkäse mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M810300",
+      "name": "Schmelzkäsezubereitung mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M827400",
+      "name": "Frischkäsezubereitung mind. 30 % Fett i. Tr., mit Gemüse/Kräutern",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "N352000",
+      "name": "Colagetränk koffeinfrei, mit Süßungsmitteln",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P540100",
+      "name": "Mandellikör",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Eigenmarken-Likör bzw. Mischgetränk im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 8,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "T612100",
+      "name": "Schwertfisch roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Günstiges Fischfilet bzw. Tiefkühlfisch im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U235100",
+      "name": "Rind Hochrippe, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 15.58,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 15,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U131100",
+      "name": "Rind Steak (Rücken) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 18.72,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 18,72 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U175100",
+      "name": "Rind Rostbraten, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 15.58,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 15,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U121100",
+      "name": "Rind Kotelett (Rücken) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 15.58,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 15,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U421100",
+      "name": "Kalb Rücken, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V217100",
+      "name": "Hirsch Rücken, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 20,
+      "sourceProduct": "Wildfleisch Tharandt als aktueller Wildfleisch-Preisanker, niedrigster klar belegbarer Preisanker 20,00 EUR/kg",
+      "sourceUrl": "https://wildfleisch-tharandt.de/wild-produkte.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V112100",
+      "name": "Pferd Fleisch, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 10.2,
+      "sourceProduct": "Pferdemetzgerei Beerwart Pferdefleisch roh als niedrigster aktueller Preisanker, niedrigster klar belegbarer Preisanker 10,20 EUR/kg",
+      "sourceUrl": "https://www.pferdemetzgereibeerwart.de/preisliste",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V221100",
+      "name": "Reh Keule, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 20,
+      "sourceProduct": "Wildfleisch Tharandt als aktueller Wildfleisch-Preisanker, niedrigster klar belegbarer Preisanker 20,00 EUR/kg",
+      "sourceUrl": "https://wildfleisch-tharandt.de/wild-produkte.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V222100",
+      "name": "Reh Rücken, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 20,
+      "sourceProduct": "Wildfleisch Tharandt als aktueller Wildfleisch-Preisanker, niedrigster klar belegbarer Preisanker 20,00 EUR/kg",
+      "sourceUrl": "https://wildfleisch-tharandt.de/wild-produkte.html",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V354100",
+      "name": "Wachtel Fleisch, ohne Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 28.5,
+      "sourceProduct": "Hof Janz Wachtelfleisch als aktuell ausgewiesener Preisanker, niedrigster klar belegbarer Preisanker 28,50 EUR/kg",
+      "sourceUrl": "https://www.hof-janz.de/wachtelfleisch/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M500300",
+      "name": "Schnittkäse halbfest mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U255100",
+      "name": "Rind Brustkern/Mittelbrust, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 15.58,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 15,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U401000",
+      "name": "Kalb Muskelfleisch, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U331100",
+      "name": "Kalb Steak (Rücken) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U323100",
+      "name": "Kalb Kotelett (Rücken) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U382100",
+      "name": "Kalb Kochfleisch (Brust) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U452100",
+      "name": "Kalb Brust, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U304100",
+      "name": "Kalb Fleisch, vom Knochen, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbfleisch-Preisanker aus dem SB-Kühlregal, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Y817142",
+      "name": "Rahmnockerln gebraten",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 6.71,
+      "sourceProduct": "MEINE KUCHENWELT bzw. Eigenmarken-Gebäck im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 6,71 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "X556233",
+      "name": "Tomaten gebacken provenzalische Art",
+      "category": "gemuese",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Eigenmarken-Frisch-/Tiefkühlgemüse im Supermarkt, niedrigster ausgewiesener Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/gemuese-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "D0A1000",
+      "name": "Buchweizen-Wasserbiskuitboden",
+      "category": "suessung",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 6.71,
+      "sourceProduct": "MEINE KUCHENWELT bzw. Eigenmarken-Gebäck als aktueller Biskuitanker, niedrigster klar belegbarer Preisanker 6,71 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "X700242",
+      "name": "Eier-Frischteigwaren mit Grieß, grün, selbstgemacht, roh",
+      "category": "getreide",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.78,
+      "sourceProduct": "ALDI Eierspätzle/Eierteigwaren als aktueller Pastaanker, niedrigster klar belegbarer Preisanker 4,78 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/nudeln-reis-huelsenfruechte/reis/k/1588161425467117",
+      "priceUnit": "kg"
+    }
+  ]
+}

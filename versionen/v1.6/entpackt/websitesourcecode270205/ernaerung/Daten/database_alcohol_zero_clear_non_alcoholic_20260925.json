@@ -1,0 +1,142 @@
+{
+  "date": "2026-09-25",
+  "method": "Grouped composition check; zero for ordinary foods with no alcohol ingredient or alcoholic preparation, using nutrition-table zero at practical reporting precision.",
+  "scope": "Alcohol (g) only. No fatty-acid values changed.",
+  "source": "Food identity and preparation in database.json; explicit alcohol-containing drinks were not included.",
+  "count": 22,
+  "changes": [
+    {
+      "number": 503,
+      "name": "Vanilleeis (Milchspeiseeis)",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 504,
+      "name": "Veggie-Burger gegrillt (Handelsware)",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 505,
+      "name": "Vollkornreis gekocht",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 507,
+      "name": "Waffeln (Hausgemacht)",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 508,
+      "name": "Weizenkekse-Frühstückscereal (Weetabix-Typ fortifiziert)",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 511,
+      "name": "Whopper (Takeaway)",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 512,
+      "name": "Wurst im Blätterteig (Handelsware)",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 535,
+      "name": "Tortillachips / Nachos",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 552,
+      "name": "Sojajoghurtalternative, ungesüßt",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 556,
+      "name": "Sojadrink, ungesüßt",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 588,
+      "name": "Weintrauben, roh",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 589,
+      "name": "Weintrauben, rot, roh",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 590,
+      "name": "Weintrauben, weiß, roh",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 611,
+      "name": "Papaya, getrocknet",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 628,
+      "name": "Mangosaft, 100%",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 687,
+      "name": "Nori-Blatt, geröstet",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 709,
+      "name": "Sahneersatz (Mischung aus pflanzlichen Fetten und Milch)",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 740,
+      "name": "Sauerrahm/Creme fraiche, 30 % Fett",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 798,
+      "name": "Kasseler, Rohpökelware, geräuchert",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 1335,
+      "name": "Aprikosensaft",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 1374,
+      "name": "Kiwisaft",
+      "oldValue": null,
+      "value": 0
+    },
+    {
+      "number": 1500,
+      "name": "Weizentortilla",
+      "oldValue": null,
+      "value": 0
+    }
+  ],
+  "applied": true
+}

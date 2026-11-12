@@ -1,0 +1,3772 @@
+{
+  "batch": 13,
+  "checkedOn": "2026-09-24",
+  "range": {
+    "first": 1201,
+    "last": 1300,
+    "count": 100
+  },
+  "status": "partial_research",
+  "fields": [
+    "Omega-3 Fatty Acids (g)",
+    "Omega-6 Fatty Acids (g)",
+    "Trans Fat (g)",
+    "Alcohol (g)"
+  ],
+  "valueBasis": "Per database reference portion: 100 g, 100 ml, or one item where applicable. BLS values are per 100 g. CoFID values are per 100 g except alcoholic beverages, which are per 100 ml. Values are converted only when a documented density or specific gravity is available.",
+  "nullPolicy": "A source blank, dash, N, trace, or below-detection marker is not a numeric zero. It remains null until a reliable numeric value is found.",
+  "coverageNotes": {
+    "BLS_4_0": "BLS 4.0 provides total omega-3, total omega-6, and alcohol, but no total trans-fat component. Total trans fat remains null unless another source reports it; a single trans isomer is not used as a substitute.",
+    "CoFID_2021": "CoFID 2021 values are per 100 g except alcoholic beverages, which are per 100 ml. Tr and N remain nonnumeric markers.",
+    "USDA_and_logical_zero_updates_2026_09_24": "Added per-100-ml Omega values for maple syrup and apple juice using USDA SR Legacy household-portion gram weights and the US cup volume. The total-fat cross-check for both generic USDA matches differs from the database row and is recorded on the source records. Apple-juice trans fat remains null because exact CoFID reports Tr. Added family sums for Greek yogurt from specifically classified n-3/n-6 components while recording the 0.017 g/100 g unassigned PUFA residual. Added explicit composition-based zeros for dry/unfermented foods and selected non-oil plant foods; marker Tr and <LOD values were not converted to numeric zero."
+  },
+  "sources": {
+    "BLS_4_0": {
+      "url": "https://blsdb.de/download",
+      "citation": "Max Rubner-Institut (2025), Bundeslebensmittelschluessel (BLS), Version 4.0, DOI 10.25826/Data20251217-134202-0",
+      "components": {
+        "FAPUN3": "Total n-3 polyunsaturated fatty acids, g/100 g",
+        "FAPUN6": "Total n-6 polyunsaturated fatty acids, g/100 g",
+        "ALC": "Alcohol (ethanol), g/100 g"
+      }
+    },
+    "CoFID_2021": {
+      "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "components": {
+        "TOTn3PFOD": "Total n-3 polyunsaturated fatty acids per 100 g food",
+        "TOTn6PFOD": "Total n-6 polyunsaturated fatty acids per 100 g food",
+        "FODTRANS": "Total trans fatty acids per 100 g food",
+        "ALCO": "Alcohol, g"
+      }
+    },
+    "USDA_SR28": {
+      "adzukiUrl": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/SR/SR28/reports/sr28fg16.pdf",
+      "buttermilkDensityUrl": "https://www.ars.usda.gov/ARSUserFiles/80400525/Data/SR/SR28/reports/sr28fg01.pdf",
+      "balsamicDensityUrl": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/SR/SR28/reports/sr28fg02.pdf",
+      "peanutButterUrl": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/SR/SR28/reports/sr28fg16.pdf"
+    },
+    "DerivedTotalFatZero": {
+      "citation": "Derived from Total Fat (g) in the database, checked against numeric source values in the batch audit.",
+      "rule": "For an exact database value of 0 g total fat, missing Omega-3, Omega-6, and trans-fat values may be derived as 0 g only when no positive numeric source value for that field contradicts the derivation."
+    },
+    "USDA_FoodData_Central_SR_Legacy_2018": {
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "release": "SR Legacy, 2018-04",
+      "citation": "USDA Agricultural Research Service, FoodData Central, SR Legacy, April 2018. Direct records and nutrient amounts per 100 g edible portion.",
+      "directItemUrlPattern": "https://fdc.nal.usda.gov/food-details/{fdcId}/nutrients?type=SR%20Legacy",
+      "nutrientInterpretationUrl": "https://fdc.nal.usda.gov/docs/Foundation_Foods_Documentation_Apr2024.pdf",
+      "totalPUFAComponent": "Nutrient 646",
+      "totalTransComponent": "Nutrient 605",
+      "alcoholComponent": "Nutrient 221",
+      "omegaMethod": "Sum reported n-3/n-6 components without double-counting undifferentiated totals; accept Omega-3/Omega-6 sums only when they reconcile to total polyunsaturated fatty acids within 0.01 g or 1 percent. Foods using ml or other units receive only source zeros until an approved conversion is available."
+    },
+    "FDA_TransFat_Overview": {
+      "url": "https://www.fda.gov/food/food-additives-petitions/trans-fat",
+      "citation": "FDA, Trans Fat. Describes partially hydrogenated oils as the major artificial source and natural trans fat in ruminant foods; used only as context for composition-based zeros on non-oil plant foods."
+    }
+  },
+  "records": [
+    {
+      "databaseIndex": 1269,
+      "databaseName": "Sahnelikör",
+      "source": "McCance_Widdowson_6th_2002",
+      "sourceCode": "1157",
+      "sourceName": "Cream liqueurs",
+      "values": {
+        "Alcohol (g)": 13.5
+      },
+      "basis": "g per 100 ml",
+      "mappingNote": "Direct generic-category match for cream liqueur.",
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1282,
+      "databaseName": "Cocktail, Gin Tonic",
+      "source": "DerivedTotalFatZero",
+      "sourceCode": "TOTAL_FAT_ZERO",
+      "sourceName": "Total Fat (g) = 0",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 0,
+        "Trans Fat (g)": 0
+      },
+      "basis": "g per database reference portion",
+      "mappingNote": "Derived zero only because Total Fat is exactly 0 in the database and no positive numeric source value for this field was found in the batch audits. Positive per-100-g source values block this derivation when the database reference unit differs.",
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1224,
+      "databaseName": "Roquefortsauce",
+      "source": "ExplicitSourceZeroTransfer",
+      "valueBasis": "Explicit source zero; conversion not needed because zero is unit-invariant",
+      "values": {
+        "Alcohol (g)": 0
+      },
+      "sourceEvidence": [
+        {
+          "source": "BLS_4_0",
+          "sourceCode": "X3A4010",
+          "sourceName": "Roquefortsauce",
+          "sourceRowNumber": null,
+          "auditBatch": 13,
+          "amountPerSourceBasis": 0,
+          "sourceBasis": "per 100 g from sourceValuesPer100g"
+        }
+      ],
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1255,
+      "databaseName": "Kokosmilch/Kokosnussmilch",
+      "source": "ExplicitSourceZeroTransfer",
+      "valueBasis": "Explicit source zero; conversion not needed because zero is unit-invariant",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0
+      },
+      "sourceEvidence": [
+        {
+          "source": "BLS_4_0",
+          "sourceCode": "H154000",
+          "sourceName": "Kokosmilch/Kokosnussmilch",
+          "sourceRowNumber": null,
+          "auditBatch": 13,
+          "amountPerSourceBasis": 0,
+          "sourceBasis": "per 100 g from sourceValuesPer100g"
+        }
+      ],
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1255,
+      "databaseName": "Kokosmilch/Kokosnussmilch",
+      "source": "ExplicitSourceZeroTransfer",
+      "valueBasis": "Explicit source zero; conversion not needed because zero is unit-invariant",
+      "values": {
+        "Alcohol (g)": 0
+      },
+      "sourceEvidence": [
+        {
+          "source": "BLS_4_0",
+          "sourceCode": "H154000",
+          "sourceName": "Kokosmilch/Kokosnussmilch",
+          "sourceRowNumber": null,
+          "auditBatch": 13,
+          "amountPerSourceBasis": 0,
+          "sourceBasis": "per 100 g from sourceValuesPer100g"
+        }
+      ],
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1272,
+      "databaseName": "Kaffee (Getränk) mit Kondensmilch 7,5 % Fett und Zucker",
+      "source": "ExplicitSourceZeroTransfer",
+      "valueBasis": "Explicit source zero; conversion not needed because zero is unit-invariant",
+      "values": {
+        "Alcohol (g)": 0
+      },
+      "sourceEvidence": [
+        {
+          "source": "BLS_4_0",
+          "sourceCode": "N410500",
+          "sourceName": "Kaffee (Getränk) mit Kondensmilch 7,5 % Fett und Zucker",
+          "sourceRowNumber": null,
+          "auditBatch": 13,
+          "amountPerSourceBasis": 0,
+          "sourceBasis": "per 100 g from sourceValuesPer100g"
+        }
+      ],
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1205,
+      "databaseName": "Mayonnaise mit Essig",
+      "source": "CoFID_2021_category_crosswalk",
+      "sourceCode": "17-654",
+      "sourceName": "Mayonnaise, standard, retail",
+      "matchMethod": "generic_category_match_with_density_proxy",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0.04
+      },
+      "targetTotalFatPer100g": null,
+      "density": {
+        "gramsPerMl": 0.929886,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 171009,
+        "sourceName": "Salad dressing, mayonnaise, regular",
+        "portion": "1 US cup",
+        "grams": 220,
+        "millilitres": 236.5882365
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "CoFID standard retail mayonnaise trans-fat value per 100 g multiplied by the USDA SR Legacy mayonnaise density proxy.",
+      "values": {
+        "Trans Fat (g)": 0.037195
+      },
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1260,
+      "databaseName": "Senf-Honig-Dressing für Salat",
+      "source": "USDA_FoodData_Central_SR_Legacy_2018",
+      "sourceCode": "171034",
+      "sourceName": "Salad dressing, honey mustard dressing, reduced calorie",
+      "matchMethod": "reduced_calorie_category_analogue_scaled_to_total_fat",
+      "confidence": "low",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0.003,
+        "Total Fat (g)": 10
+      },
+      "targetTotalFatPer100g": 41.3,
+      "density": {
+        "gramsPerMl": 1.014421,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 171043,
+        "sourceName": "Salad dressing, honey mustard, regular",
+        "portion": "2 US tablespoons",
+        "grams": 30,
+        "millilitres": 29.573528
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "Reduced-calorie honey-mustard dressing trans-fat value scaled from 10 g source fat to the target's 41.3 g total fat per 100 g, then multiplied by the regular dressing density proxy. This is an analogue estimate, not an item-specific measurement.",
+      "values": {
+        "Trans Fat (g)": 0.012569
+      },
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1269,
+      "databaseName": "Sahnelikör",
+      "source": "CoFID_2021_category_crosswalk",
+      "sourceCode": "17-768",
+      "sourceName": "Liqueurs, cream",
+      "matchMethod": "direct_generic_category_match",
+      "confidence": "high",
+      "sourceValuesPer100g": {},
+      "targetTotalFatPer100g": null,
+      "density": null,
+      "valueBasis": "g per 100 ml",
+      "conversion": "CoFID food group QI is reported per 100 ml; no unit conversion required.",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.06,
+        "Omega-6 Fatty Acids (g)": 0.16,
+        "Trans Fat (g)": 0.44
+      },
+      "checkedOn": "2026-09-24",
+      "sourceValuesPer100ml": {
+        "Omega-3 Fatty Acids (g)": 0.06,
+        "Omega-6 Fatty Acids (g)": 0.16,
+        "Trans Fat (g)": 0.44,
+        "Alcohol (g)": 13.5
+      }
+    },
+    {
+      "databaseIndex": 1284,
+      "databaseName": "Buttermilch-Dressing mit Honig für Salat",
+      "source": "USDA_FoodData_Central_SR_Legacy_2018",
+      "sourceCode": "169895",
+      "sourceName": "Salad dressing, buttermilk, lite",
+      "matchMethod": "low_fat_buttermilk_dressing_analogue_scaled_to_total_fat",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0.059,
+        "Total Fat (g)": 12.42
+      },
+      "targetTotalFatPer100g": 6.28,
+      "density": {
+        "gramsPerMl": 1.014421,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 169895,
+        "sourceName": "Salad dressing, buttermilk, lite",
+        "portion": "1 US tablespoon",
+        "grams": 15,
+        "millilitres": 14.786764
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "Buttermilk-dressing analogue trans-fat value scaled from 12.42 g source fat to the target's 6.28 g total fat per 100 g, then multiplied by the source density proxy. This is an analogue estimate, not an item-specific measurement.",
+      "values": {
+        "Trans Fat (g)": 0.030263
+      },
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1287,
+      "databaseName": "Stachelbeere gedünstet",
+      "source": "CoFID_2021_category_crosswalk",
+      "sourceCode": "14-102",
+      "sourceName": "Gooseberries, cooking, stewed without sugar",
+      "matchMethod": "exact_food_and_preparation_category_match",
+      "confidence": "high",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0
+      },
+      "targetTotalFatPer100g": null,
+      "density": null,
+      "valueBasis": "g per 100 g",
+      "conversion": "CoFID values copied directly to the matching database gram basis. Numeric zeros are explicit source values, not blanks or trace markers.",
+      "values": {
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0
+      },
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1207,
+      "databaseName": "Frühlingszwiebel/Lauchzwiebel (ohne Laub) gekocht",
+      "source": "CoFID_2021_category_crosswalk",
+      "sourceCode": "13-352",
+      "sourceName": "Spring onions, bulbs and tops, raw",
+      "matchMethod": "raw_to_water_cooked_vegetable_zero_transfer",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Omega-6 Fatty Acids (g)": 0,
+        "Trans Fat (g)": 0
+      },
+      "targetTotalFatPer100g": null,
+      "density": null,
+      "valueBasis": "g per 100 g",
+      "conversion": "CoFID reports explicit numeric zero for raw spring onions. Target is cooked in water without added fat; the zero remains zero on the same gram basis.",
+      "values": {
+        "Omega-6 Fatty Acids (g)": 0,
+        "Trans Fat (g)": 0
+      },
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1220,
+      "databaseName": "Kalb Hirn, gekocht",
+      "source": "BARFLAB_CIQUAL_2025",
+      "sourceCode": "CIQUAL 40006 / USDA FDC 174351",
+      "sourceName": "Veal brain, raw",
+      "matchMethod": "raw_to_cooked_profile_scaled_to_total_fat",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Omega-6 Fatty Acids (g)": 0.272,
+        "Total Fat (g)": 8.21
+      },
+      "targetTotalFatPer100g": 6.706,
+      "density": null,
+      "valueBasis": "g per 100 g",
+      "conversion": "Raw veal-brain omega-6 value scaled by target total fat 6.706 g divided by source total fat 8.21 g. This is a raw-to-cooked analogue estimate.",
+      "values": {
+        "Omega-6 Fatty Acids (g)": 0.222172
+      },
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1220,
+      "databaseName": "Kalb Hirn, gekocht",
+      "source": "USDA_FoodData_Central_SR_Legacy_2018",
+      "sourceCode": "168622",
+      "sourceName": "Beef, variety meats and by-products, brain, raw",
+      "matchMethod": "raw_ruminant_brain_analogue_scaled_to_total_fat",
+      "confidence": "low",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0.61,
+        "Total Fat (g)": 10.3
+      },
+      "targetTotalFatPer100g": 6.706,
+      "density": null,
+      "valueBasis": "g per 100 g",
+      "conversion": "Raw beef-brain trans-fat value scaled by target total fat 6.706 g divided by source total fat 10.3 g. This is a species and cooking analogue estimate, not a direct measurement.",
+      "values": {
+        "Trans Fat (g)": 0.397151
+      },
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1224,
+      "databaseName": "Roquefortsauce",
+      "source": "USDA_FoodData_Central_SR_Legacy_2018",
+      "sourceCode": "173562",
+      "sourceName": "Salad dressing, blue or roquefort cheese dressing, commercial, regular",
+      "matchMethod": "blue_cheese_dressing_analogue_scaled_to_total_fat",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 1.34,
+        "Total Fat (g)": 51.1
+      },
+      "targetTotalFatPer100g": 41.23,
+      "density": {
+        "gramsPerMl": 1.035554,
+        "source": "USDA_FoodData_Central_SR_Legacy_2018",
+        "fdcId": 173562,
+        "sourceName": "Salad dressing, blue or roquefort cheese dressing, commercial, regular",
+        "portion": "1 US cup",
+        "grams": 245,
+        "millilitres": 236.5882365
+      },
+      "valueBasis": "g per 100 ml",
+      "conversion": "Blue-cheese-dressing trans-fat value scaled from 51.1 g source fat to the target's 41.23 g fat per 100 g, then multiplied by the source density proxy. This is an analogue estimate.",
+      "values": {
+        "Trans Fat (g)": 1.119619
+      },
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1255,
+      "databaseName": "Kokosmilch/Kokosnussmilch",
+      "source": "CoFID_2021_category_crosswalk",
+      "sourceCode": "14-889",
+      "sourceName": "Coconut milk, retail",
+      "matchMethod": "direct_generic_category_numeric_zero",
+      "confidence": "medium",
+      "sourceValuesPer100g": {
+        "Trans Fat (g)": 0
+      },
+      "targetTotalFatPer100g": null,
+      "density": null,
+      "valueBasis": "g per 100 g; explicit zero is unit-invariant",
+      "conversion": "CoFID retail coconut milk has an explicit numeric trans-fat zero. The numeric zero is unchanged by volume conversion.",
+      "values": {
+        "Trans Fat (g)": 0
+      },
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1201,
+      "databaseName": "Schwein Hintereisbein/Hinterhaxe, Kochpökelware, geräuchert",
+      "source": "BLS_4_0",
+      "sourceCode": "U693700",
+      "sourceName": "Schwein Hintereisbein/Hinterhaxe, Kochpökelware, geräuchert",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.0867,
+        "Omega-6 Fatty Acids (g)": 0.869,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "8.6699999999999999E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.86899999999999999",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1202,
+      "databaseName": "Nussbiskuitboden",
+      "source": "BLS_4_0",
+      "sourceCode": "D0A3000",
+      "sourceName": "Nussbiskuitboden",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.09,
+        "Omega-6 Fatty Acids (g)": 1.44,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.09",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.44",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1203,
+      "databaseName": "Pfeffernüsse",
+      "source": "BLS_4_0",
+      "sourceCode": "D652300",
+      "sourceName": "Pfeffernüsse",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.04,
+        "Omega-6 Fatty Acids (g)": 0.9,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.04",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.9",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1204,
+      "databaseName": "Weizenvollkornknäckebrot mit Ölsamen, Hartkäse und Möhre",
+      "source": "BLS_4_0",
+      "sourceCode": "B6A1500",
+      "sourceName": "Weizenvollkornknäckebrot mit Ölsamen, Hartkäse und Möhre",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 1.1,
+        "Omega-6 Fatty Acids (g)": 4.2,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.1000000000000001",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "4.2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1205,
+      "databaseName": "Mayonnaise mit Essig",
+      "source": "BLS_4_0",
+      "sourceCode": "X341040",
+      "sourceName": "Mayonnaise mit Essig",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {},
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "6.41",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "14.57",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "8.9999999999999993E-3",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": [],
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 6.41,
+        "Omega-6 Fatty Acids (g)": 14.57,
+        "Alcohol (g)": 0.009
+      },
+      "note": "The BLS values are per 100 g, but the database reference unit is 'ml'. No density or piece-weight conversion was available, so these raw values were not copied into the database."
+    },
+    {
+      "databaseIndex": 1206,
+      "databaseName": "Kathrinchen (Honigteigplätzchen)",
+      "source": "BLS_4_0",
+      "sourceCode": "D657100",
+      "sourceName": "Kathrinchen (Honigteigplätzchen)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.06,
+        "Omega-6 Fatty Acids (g)": 0.47,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.06",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.47",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1207,
+      "databaseName": "Frühlingszwiebel/Lauchzwiebel (ohne Laub) gekocht",
+      "source": "BLS_4_0",
+      "sourceCode": "G486132",
+      "sourceName": "Frühlingszwiebel/Lauchzwiebel (ohne Laub) gekocht",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {
+        "Omega-6 Fatty Acids (g)": "-"
+      },
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "-",
+          "origin": "-",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1208,
+      "databaseName": "Knacker einfach/Schüblinge einfach/Servela einfach",
+      "source": "BLS_4_0",
+      "sourceCode": "W217000",
+      "sourceName": "Knacker einfach/Schüblinge einfach/Servela einfach",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.19,
+        "Omega-6 Fatty Acids (g)": 1.95,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.19",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.95",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1209,
+      "databaseName": "Fleischersatz glutenhaltig (Seitan)",
+      "source": "BLS_4_0",
+      "sourceCode": "C558000",
+      "sourceName": "Fleischersatz glutenhaltig (Seitan)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 1.852,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.8520000000000001",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Nährstoffdatenbank",
+          "reference": "National Food Institute, Food data (frida.fooddata.dk), version 5.2, May 2024"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1210,
+      "databaseName": "Kalbsleber mehliert, gebraten",
+      "source": "BLS_4_0",
+      "sourceCode": "Y273032",
+      "sourceName": "Kalbsleber mehliert, gebraten",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.14,
+        "Omega-6 Fatty Acids (g)": 0.43,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.14000000000000001",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.43",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1211,
+      "databaseName": "Mehrkornbrötchen",
+      "source": "BLS_4_0",
+      "sourceCode": "B591000",
+      "sourceName": "Mehrkornbrötchen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.76,
+        "Omega-6 Fatty Acids (g)": 1.66,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.76",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.66",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1212,
+      "databaseName": "Brötchen glutenfrei",
+      "source": "BLS_4_0",
+      "sourceCode": "B8A2000",
+      "sourceName": "Brötchen glutenfrei",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.026,
+        "Omega-6 Fatty Acids (g)": 0.485,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "2.5999999999999999E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.48499999999999999",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1213,
+      "databaseName": "Grünkohl gedünstet (mit Fett und Salz)",
+      "source": "BLS_4_0",
+      "sourceCode": "X572712",
+      "sourceName": "Grünkohl gedünstet (mit Fett und Salz)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.51,
+        "Omega-6 Fatty Acids (g)": 0.8,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.51",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.8",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1214,
+      "databaseName": "Möhren-Nuss-Kuchen (Rührmasse)",
+      "source": "BLS_4_0",
+      "sourceCode": "D4A8400",
+      "sourceName": "Möhren-Nuss-Kuchen (Rührmasse)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.08,
+        "Omega-6 Fatty Acids (g)": 1.23,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.08",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.23",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1215,
+      "databaseName": "Ottilienkuchen (Rührmasse)",
+      "source": "BLS_4_0",
+      "sourceCode": "D431900",
+      "sourceName": "Ottilienkuchen (Rührmasse)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.11,
+        "Omega-6 Fatty Acids (g)": 1.7,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.11",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.7",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1216,
+      "databaseName": "Putenei gekocht",
+      "source": "BLS_4_0",
+      "sourceCode": "E151132",
+      "sourceName": "Putenei gekocht",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.2,
+        "Omega-6 Fatty Acids (g)": 1.7,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.7",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1217,
+      "databaseName": "Sauerkraut abgetropft, gedünstet",
+      "source": "BLS_4_0",
+      "sourceCode": "G345152",
+      "sourceName": "Sauerkraut abgetropft, gedünstet",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.011,
+        "Omega-6 Fatty Acids (g)": 0.052,
+        "Alcohol (g)": 0.05
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.0999999999999999E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "5.1999999999999998E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0.05",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1218,
+      "databaseName": "Schaf Filetmedaillon, gebraten ohne Fett (Ofen)",
+      "source": "BLS_4_0",
+      "sourceCode": "U711162",
+      "sourceName": "Schaf Filetmedaillon, gebraten ohne Fett (Ofen)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.04,
+        "Omega-6 Fatty Acids (g)": 0.08,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.04",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.08",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1219,
+      "databaseName": "Eiweißbrötchen/Proteinbrötchen",
+      "source": "BLS_4_0",
+      "sourceCode": "B881200",
+      "sourceName": "Eiweißbrötchen/Proteinbrötchen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 1.8,
+        "Omega-6 Fatty Acids (g)": 5,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.8",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "5",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1220,
+      "databaseName": "Kalb Hirn, gekocht",
+      "source": "BLS_4_0",
+      "sourceCode": "V522132",
+      "sourceName": "Kalb Hirn, gekocht",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.485,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {
+        "Omega-6 Fatty Acids (g)": "-"
+      },
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.48499999999999999",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "-",
+          "origin": "-",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1221,
+      "databaseName": "Schwein Kammsteak, mariniert, gegrillt",
+      "source": "BLS_4_0",
+      "sourceCode": "U532072",
+      "sourceName": "Schwein Kammsteak, mariniert, gegrillt",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.75,
+        "Omega-6 Fatty Acids (g)": 2.68,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.75",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.68",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1222,
+      "databaseName": "Weizenvollkornbrot mit Nüssen",
+      "source": "BLS_4_0",
+      "sourceCode": "B111400",
+      "sourceName": "Weizenvollkornbrot mit Nüssen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.274,
+        "Omega-6 Fatty Acids (g)": 1.615,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.27400000000000002",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.615",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1223,
+      "databaseName": "Napfkuchen mit Sultaninen und Zitronat (Rührmasse)",
+      "source": "BLS_4_0",
+      "sourceCode": "D430400",
+      "sourceName": "Napfkuchen mit Sultaninen und Zitronat (Rührmasse)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 1,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.1",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1224,
+      "databaseName": "Roquefortsauce",
+      "source": "BLS_4_0",
+      "sourceCode": "X3A4010",
+      "sourceName": "Roquefortsauce",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {},
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.99",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.04",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": [],
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.99,
+        "Omega-6 Fatty Acids (g)": 2.04,
+        "Alcohol (g)": 0
+      },
+      "note": "The BLS values are per 100 g, but the database reference unit is 'ml'. No density or piece-weight conversion was available, so these raw values were not copied into the database."
+    },
+    {
+      "databaseIndex": 1225,
+      "databaseName": "Haferbrötchen",
+      "source": "BLS_4_0",
+      "sourceCode": "B531000",
+      "sourceName": "Haferbrötchen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 1.04,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.1",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.04",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1226,
+      "databaseName": "Rind Keule, tiefgefroren",
+      "source": "BLS_4_0",
+      "sourceCode": "U281200",
+      "sourceName": "Rind Keule, tiefgefroren",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.012,
+        "Omega-6 Fatty Acids (g)": 0.151,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.2E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.151",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Logische Null",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1227,
+      "databaseName": "Zwetschgenkuchen (Quark-Öl-Teig)",
+      "source": "BLS_4_0",
+      "sourceCode": "D1A3100",
+      "sourceName": "Zwetschgenkuchen (Quark-Öl-Teig)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 3.3,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "3.3",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1228,
+      "databaseName": "Schwein Oberschale (ohne Deckel) gekocht",
+      "source": "BLS_4_0",
+      "sourceCode": "U687032",
+      "sourceName": "Schwein Oberschale (ohne Deckel) gekocht",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.01773,
+        "Omega-6 Fatty Acids (g)": 0.207,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.7729999999999999E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.20699999999999999",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1229,
+      "databaseName": "Sahnejoghurt mind. 10 % Fett, mit Schokoladenzubereitung, gesüßt",
+      "source": "BLS_4_0",
+      "sourceCode": "M2M2400",
+      "sourceName": "Sahnejoghurt mind. 10 % Fett, mit Schokoladenzubereitung, gesüßt",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.04,
+        "Omega-6 Fatty Acids (g)": 0.239,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.04",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.23899999999999999",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1230,
+      "databaseName": "Wiener Tortenboden kakaohaltig (dunkel)",
+      "source": "BLS_4_0",
+      "sourceCode": "D088000",
+      "sourceName": "Wiener Tortenboden kakaohaltig (dunkel)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.11,
+        "Omega-6 Fatty Acids (g)": 0.91,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.11",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.91",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1231,
+      "databaseName": "Sojasprossen gedünstet (mit Fett und Salz)",
+      "source": "BLS_4_0",
+      "sourceCode": "X574112",
+      "sourceName": "Sojasprossen gedünstet (mit Fett und Salz)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.42,
+        "Omega-6 Fatty Acids (g)": 0.94,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.42",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.94",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1232,
+      "databaseName": "Schwein Kotelett (Rücken/cranial) Kochpökelware, geräuchert",
+      "source": "BLS_4_0",
+      "sourceCode": "U622700",
+      "sourceName": "Schwein Kotelett (Rücken/cranial) Kochpökelware, geräuchert",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.0479,
+        "Omega-6 Fatty Acids (g)": 0.5159,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "4.7899999999999998E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.51590000000000003",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1233,
+      "databaseName": "Joghurt-Dip",
+      "source": "BLS_4_0",
+      "sourceCode": "X3A9010",
+      "sourceName": "Joghurt-Dip",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.026,
+        "Omega-6 Fatty Acids (g)": 0.18,
+        "Alcohol (g)": 0.001
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "2.5999999999999999E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.18",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "1E-3",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1234,
+      "databaseName": "Mandelkuchen (Hefeteig)",
+      "source": "BLS_4_0",
+      "sourceCode": "D462700",
+      "sourceName": "Mandelkuchen (Hefeteig)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.07,
+        "Omega-6 Fatty Acids (g)": 2.4,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "7.0000000000000007E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.4",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1235,
+      "databaseName": "Käsewaffeln salzig (Rührmasse)",
+      "source": "BLS_4_0",
+      "sourceCode": "D623500",
+      "sourceName": "Käsewaffeln salzig (Rührmasse)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.18,
+        "Omega-6 Fatty Acids (g)": 1.26,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.18",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.26",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1236,
+      "databaseName": "Fondantkonfekt mit Zartbitterschokolade überzogen",
+      "source": "BLS_4_0",
+      "sourceCode": "S352000",
+      "sourceName": "Fondantkonfekt mit Zartbitterschokolade überzogen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.011,
+        "Omega-6 Fatty Acids (g)": 0.097,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.0999999999999999E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "9.7000000000000003E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1237,
+      "databaseName": "Speisequarkzubereitung mind. 30 % Fett i. Tr., mit Kräutern",
+      "source": "BLS_4_0",
+      "sourceCode": "M8A6000",
+      "sourceName": "Speisequarkzubereitung mind. 30 % Fett i. Tr., mit Kräutern",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.052,
+        "Omega-6 Fatty Acids (g)": 0.161,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "5.1999999999999998E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.161",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1238,
+      "databaseName": "Speisequarkzubereitung mind. 40 % Fett i. Tr., mit Kräutern",
+      "source": "BLS_4_0",
+      "sourceCode": "M837500",
+      "sourceName": "Speisequarkzubereitung mind. 40 % Fett i. Tr., mit Kräutern",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.065,
+        "Omega-6 Fatty Acids (g)": 0.2,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "6.5000000000000002E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1239,
+      "databaseName": "Haselnusszopf (Mürbeteig)",
+      "source": "BLS_4_0",
+      "sourceCode": "D483200",
+      "sourceName": "Haselnusszopf (Mürbeteig)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 1.7,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.1",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.7",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1240,
+      "databaseName": "Bratensoße dunkel, Konserve",
+      "source": "BLS_4_0",
+      "sourceCode": "U990100",
+      "sourceName": "Bratensoße dunkel, Konserve",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.015,
+        "Omega-6 Fatty Acids (g)": 0.165,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.4999999999999999E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.16500000000000001",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1241,
+      "databaseName": "Dorsch/Kabeljau, pochiert",
+      "source": "BLS_4_0",
+      "sourceCode": "T204132",
+      "sourceName": "Dorsch/Kabeljau, pochiert",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.338,
+        "Omega-6 Fatty Acids (g)": 0.028,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.33800000000000002",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.8000000000000001E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1242,
+      "databaseName": "Weißkraut gedünstet (mit Fett und Salz)",
+      "source": "BLS_4_0",
+      "sourceCode": "X537912",
+      "sourceName": "Weißkraut gedünstet (mit Fett und Salz)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.36,
+        "Omega-6 Fatty Acids (g)": 0.69,
+        "Alcohol (g)": 0.001
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.36",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.69",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "1E-3",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1243,
+      "databaseName": "Semmelknödel getrocknet",
+      "source": "BLS_4_0",
+      "sourceCode": "E606200",
+      "sourceName": "Semmelknödel getrocknet",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.16,
+        "Omega-6 Fatty Acids (g)": 1.21,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.16",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.21",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1244,
+      "databaseName": "Schokobiskuitrolle/Schokobiskuitroulade, ungefüllt",
+      "source": "BLS_4_0",
+      "sourceCode": "D089000",
+      "sourceName": "Schokobiskuitrolle/Schokobiskuitroulade, ungefüllt",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.09,
+        "Omega-6 Fatty Acids (g)": 0.91,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.09",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.91",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Logische Null",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1245,
+      "databaseName": "Weizenbrötchen mit Sesam",
+      "source": "BLS_4_0",
+      "sourceCode": "B516300",
+      "sourceName": "Weizenbrötchen mit Sesam",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.09,
+        "Omega-6 Fatty Acids (g)": 0.86,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.09",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.86",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1246,
+      "databaseName": "Schokoladen-Milchkaltschale gebunden mit Stärke",
+      "source": "BLS_4_0",
+      "sourceCode": "X471353",
+      "sourceName": "Schokoladen-Milchkaltschale gebunden mit Stärke",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.023,
+        "Omega-6 Fatty Acids (g)": 0.048,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "2.3E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "4.8000000000000001E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1247,
+      "databaseName": "Schweinekotelett natur, gebraten",
+      "source": "BLS_4_0",
+      "sourceCode": "Y321222",
+      "sourceName": "Schweinekotelett natur, gebraten",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.07,
+        "Omega-6 Fatty Acids (g)": 0.82,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "7.0000000000000007E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.82",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1248,
+      "databaseName": "Roggenbrot mit Nüssen",
+      "source": "BLS_4_0",
+      "sourceCode": "B226800",
+      "sourceName": "Roggenbrot mit Nüssen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.29,
+        "Omega-6 Fatty Acids (g)": 1.45,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.28999999999999998",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.45",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1249,
+      "databaseName": "Tomatenkartoffeln gedünstet",
+      "source": "BLS_4_0",
+      "sourceCode": "X643153",
+      "sourceName": "Tomatenkartoffeln gedünstet",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.35,
+        "Omega-6 Fatty Acids (g)": 0.8,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.35",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.8",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1250,
+      "databaseName": "Weizenvollkornbrötchen mit Ölsamen",
+      "source": "BLS_4_0",
+      "sourceCode": "B416000",
+      "sourceName": "Weizenvollkornbrötchen mit Ölsamen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.39,
+        "Omega-6 Fatty Acids (g)": 1.82,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.39",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.82",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1251,
+      "databaseName": "Kalb Fleisch, sehnenfrei, sichtbarer Fettanteil > 20 % (KA IV) roh",
+      "source": "BLS_4_0",
+      "sourceCode": "U404000",
+      "sourceName": "Kalb Fleisch, sehnenfrei, sichtbarer Fettanteil > 20 % (KA IV) roh",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.0059,
+        "Omega-6 Fatty Acids (g)": 0.684,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "5.8999999999999999E-3",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.68400000000000005",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Logische Null",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1252,
+      "databaseName": "Pfannkuchen/Eierkuchen, ungesüßt, mit Milch 1,5 % Fett, gebraten",
+      "source": "BLS_4_0",
+      "sourceCode": "X925012",
+      "sourceName": "Pfannkuchen/Eierkuchen, ungesüßt, mit Milch 1,5 % Fett, gebraten",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.18,
+        "Omega-6 Fatty Acids (g)": 0.74,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.18",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.74",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1253,
+      "databaseName": "Mandelboden (mit Eiklar zubereitet)",
+      "source": "BLS_4_0",
+      "sourceCode": "D0A2200",
+      "sourceName": "Mandelboden (mit Eiklar zubereitet)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.01,
+        "Omega-6 Fatty Acids (g)": 3.6,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.01",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "3.6",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1254,
+      "databaseName": "Schwein Schnitzel (Oberschale) mariniert, gegrillt",
+      "source": "BLS_4_0",
+      "sourceCode": "U541072",
+      "sourceName": "Schwein Schnitzel (Oberschale) mariniert, gegrillt",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.59,
+        "Omega-6 Fatty Acids (g)": 1.32,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.59",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.32",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1255,
+      "databaseName": "Kokosmilch/Kokosnussmilch",
+      "source": "BLS_4_0",
+      "sourceCode": "H154000",
+      "sourceName": "Kokosmilch/Kokosnussmilch",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {},
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.40799999999999997",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": [],
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 0.408,
+        "Alcohol (g)": 0
+      },
+      "note": "The BLS values are per 100 g, but the database reference unit is 'ml'. No density or piece-weight conversion was available, so these raw values were not copied into the database."
+    },
+    {
+      "databaseIndex": 1256,
+      "databaseName": "Grillhähnchen",
+      "source": "BLS_4_0",
+      "sourceCode": "Y560312",
+      "sourceName": "Grillhähnchen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.49,
+        "Omega-6 Fatty Acids (g)": 2.96,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.49",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.96",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1257,
+      "databaseName": "Honigkuchen",
+      "source": "BLS_4_0",
+      "sourceCode": "D401400",
+      "sourceName": "Honigkuchen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.02,
+        "Omega-6 Fatty Acids (g)": 0.76,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.02",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.76",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1258,
+      "databaseName": "Sojabohnen (Edamame) gedünstet (mit Fett und Salz)",
+      "source": "BLS_4_0",
+      "sourceCode": "X574512",
+      "sourceName": "Sojabohnen (Edamame) gedünstet (mit Fett und Salz)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.68,
+        "Omega-6 Fatty Acids (g)": 3.17,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.68",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "3.17",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1259,
+      "databaseName": "Apfelkuchen (Rührmasse)",
+      "source": "BLS_4_0",
+      "sourceCode": "D131200",
+      "sourceName": "Apfelkuchen (Rührmasse)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.05,
+        "Omega-6 Fatty Acids (g)": 0.37,
+        "Alcohol (g)": 0.003
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.05",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.37",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "3.0000000000000001E-3",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1260,
+      "databaseName": "Senf-Honig-Dressing für Salat",
+      "source": "BLS_4_0",
+      "sourceCode": "X3A8020",
+      "sourceName": "Senf-Honig-Dressing für Salat",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {},
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "3.52",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "7.75",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "3.1E-2",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": [],
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 3.52,
+        "Omega-6 Fatty Acids (g)": 7.75,
+        "Alcohol (g)": 0.031
+      },
+      "note": "The BLS values are per 100 g, but the database reference unit is 'ml'. No density or piece-weight conversion was available, so these raw values were not copied into the database."
+    },
+    {
+      "databaseIndex": 1261,
+      "databaseName": "Mandelkuchen (Rührmasse)",
+      "source": "BLS_4_0",
+      "sourceCode": "D431200",
+      "sourceName": "Mandelkuchen (Rührmasse)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.09,
+        "Omega-6 Fatty Acids (g)": 2.7,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.09",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.7",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1262,
+      "databaseName": "Buttergebäck kakaohaltig (Mürbeteig)",
+      "source": "BLS_4_0",
+      "sourceCode": "D7B1100",
+      "sourceName": "Buttergebäck kakaohaltig (Mürbeteig)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.15,
+        "Omega-6 Fatty Acids (g)": 0.79,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.15",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.79",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1263,
+      "databaseName": "Getreidechips umhüllt mit Milchschokolade",
+      "source": "BLS_4_0",
+      "sourceCode": "S692000",
+      "sourceName": "Getreidechips umhüllt mit Milchschokolade",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.12,
+        "Omega-6 Fatty Acids (g)": 1.663,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.12",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.663",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1264,
+      "databaseName": "Couscous (Hartweizen) gekocht",
+      "source": "BLS_4_0",
+      "sourceCode": "C119232",
+      "sourceName": "Couscous (Hartweizen) gekocht",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.019,
+        "Omega-6 Fatty Acids (g)": 0.31,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.9E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.31",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Logische Null",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1265,
+      "databaseName": "Alaska-Pollack/Alaska-Seelachs, gegrillt",
+      "source": "BLS_4_0",
+      "sourceCode": "T213172",
+      "sourceName": "Alaska-Pollack/Alaska-Seelachs, gegrillt",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.31,
+        "Omega-6 Fatty Acids (g)": 0.017,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.31",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.7000000000000001E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1266,
+      "databaseName": "Schwarzwurzel gedünstet",
+      "source": "BLS_4_0",
+      "sourceCode": "G650152",
+      "sourceName": "Schwarzwurzel gedünstet",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.178,
+        "Omega-6 Fatty Acids (g)": 0.064,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.17799999999999999",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "6.4000000000000001E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1267,
+      "databaseName": "Ingwer kandiert",
+      "source": "BLS_4_0",
+      "sourceCode": "S478100",
+      "sourceName": "Ingwer kandiert",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.018,
+        "Omega-6 Fatty Acids (g)": 0.06,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.7999999999999999E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.06",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1268,
+      "databaseName": "Scheiterhaufen gebacken",
+      "source": "BLS_4_0",
+      "sourceCode": "Y824243",
+      "sourceName": "Scheiterhaufen gebacken",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 0.5,
+        "Alcohol (g)": 0.002
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.1",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.5",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "2E-3",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1269,
+      "databaseName": "Sahnelikör",
+      "source": "BLS_4_0",
+      "sourceCode": "P5A1000",
+      "sourceName": "Sahnelikör",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {},
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "5.8000000000000003E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.19700000000000001",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "13.58",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": [],
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.058,
+        "Omega-6 Fatty Acids (g)": 0.197,
+        "Alcohol (g)": 13.58
+      },
+      "note": "The BLS values are per 100 g, but the database reference unit is 'ml'. No density or piece-weight conversion was available, so these raw values were not copied into the database."
+    },
+    {
+      "databaseIndex": 1270,
+      "databaseName": "Vollkornhefeteig süß roh",
+      "source": "BLS_4_0",
+      "sourceCode": "D9A2000",
+      "sourceName": "Vollkornhefeteig süß roh",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.228,
+        "Omega-6 Fatty Acids (g)": 1.186,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.22800000000000001",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.1859999999999999",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1271,
+      "databaseName": "Grissini",
+      "source": "BLS_4_0",
+      "sourceCode": "X9A3050",
+      "sourceName": "Grissini",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 5.9,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.1",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "5.9",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1272,
+      "databaseName": "Kaffee (Getränk) mit Kondensmilch 7,5 % Fett und Zucker",
+      "source": "BLS_4_0",
+      "sourceCode": "N410500",
+      "sourceName": "Kaffee (Getränk) mit Kondensmilch 7,5 % Fett und Zucker",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {},
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1E-3",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "5.0000000000000001E-3",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": [],
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.001,
+        "Omega-6 Fatty Acids (g)": 0.005,
+        "Alcohol (g)": 0
+      },
+      "note": "The BLS values are per 100 g, but the database reference unit is 'ml'. No density or piece-weight conversion was available, so these raw values were not copied into the database."
+    },
+    {
+      "databaseIndex": 1273,
+      "databaseName": "Kokos-Praline mit Cremefüllung und blanchierter Mandel",
+      "source": "BLS_4_0",
+      "sourceCode": "S581900",
+      "sourceName": "Kokos-Praline mit Cremefüllung und blanchierter Mandel",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.15,
+        "Omega-6 Fatty Acids (g)": 3.5,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.15",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "3.5",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1274,
+      "databaseName": "Birnenkraut",
+      "source": "BLS_4_0",
+      "sourceCode": "S142400",
+      "sourceName": "Birnenkraut",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.049,
+        "Omega-6 Fatty Acids (g)": 0.273,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "4.9000000000000002E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.27300000000000002",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1275,
+      "databaseName": "Mandelgebäck (Mürbeteig)",
+      "source": "BLS_4_0",
+      "sourceCode": "D733800",
+      "sourceName": "Mandelgebäck (Mürbeteig)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.2,
+        "Omega-6 Fatty Acids (g)": 2.1,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.1",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1276,
+      "databaseName": "Schaf Filetmedaillon, gegrillt",
+      "source": "BLS_4_0",
+      "sourceCode": "U711172",
+      "sourceName": "Schaf Filetmedaillon, gegrillt",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.05,
+        "Omega-6 Fatty Acids (g)": 0.09,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.05",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.09",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1277,
+      "databaseName": "Bratensoße aus Instantpulver, zubereitet mit Wasser",
+      "source": "BLS_4_0",
+      "sourceCode": "R910032",
+      "sourceName": "Bratensoße aus Instantpulver, zubereitet mit Wasser",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.001,
+        "Omega-6 Fatty Acids (g)": 0.019,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1E-3",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.9E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1278,
+      "databaseName": "Mehlschmarren (süddeutsche Mehlspeise) gebraten",
+      "source": "BLS_4_0",
+      "sourceCode": "X940112",
+      "sourceName": "Mehlschmarren (süddeutsche Mehlspeise) gebraten",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.61,
+        "Omega-6 Fatty Acids (g)": 1.64,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.61",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.64",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1279,
+      "databaseName": "Fleischsalat-Grundmasse",
+      "source": "BLS_4_0",
+      "sourceCode": "W236000",
+      "sourceName": "Fleischsalat-Grundmasse",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.27,
+        "Omega-6 Fatty Acids (g)": 2.61,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.27",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.61",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1280,
+      "databaseName": "Sacherguss/Schokoladenglasur, für Gebäck/Torten",
+      "source": "BLS_4_0",
+      "sourceCode": "R9A5100",
+      "sourceName": "Sacherguss/Schokoladenglasur, für Gebäck/Torten",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.055,
+        "Omega-6 Fatty Acids (g)": 0.475,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "5.5E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.47499999999999998",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1281,
+      "databaseName": "Graved Lachs",
+      "source": "BLS_4_0",
+      "sourceCode": "T411800",
+      "sourceName": "Graved Lachs",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 1.28,
+        "Omega-6 Fatty Acids (g)": 0.9,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1.28",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.9",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1282,
+      "databaseName": "Cocktail, Gin Tonic",
+      "source": "BLS_4_0",
+      "sourceCode": "P9A4000",
+      "sourceName": "Cocktail, Gin Tonic",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {},
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "4.79",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": [],
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 0,
+        "Alcohol (g)": 4.79
+      },
+      "note": "The BLS values are per 100 g, but the database reference unit is 'ml'. No density or piece-weight conversion was available, so these raw values were not copied into the database."
+    },
+    {
+      "databaseIndex": 1283,
+      "databaseName": "Apfeltaschen (Hefeteig)",
+      "source": "BLS_4_0",
+      "sourceCode": "D7A5000",
+      "sourceName": "Apfeltaschen (Hefeteig)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.009,
+        "Omega-6 Fatty Acids (g)": 0.4,
+        "Alcohol (g)": 0.002
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "8.9999999999999993E-3",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.4",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "2E-3",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1284,
+      "databaseName": "Buttermilch-Dressing mit Honig für Salat",
+      "source": "BLS_4_0",
+      "sourceCode": "X357112",
+      "sourceName": "Buttermilch-Dressing mit Honig für Salat",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {},
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.46",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.01",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "8.9999999999999993E-3",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": [],
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.46,
+        "Omega-6 Fatty Acids (g)": 1.01,
+        "Alcohol (g)": 0.009
+      },
+      "note": "The BLS values are per 100 g, but the database reference unit is 'ml'. No density or piece-weight conversion was available, so these raw values were not copied into the database."
+    },
+    {
+      "databaseIndex": 1285,
+      "databaseName": "Rührei gebraten mit Pfifferlingen",
+      "source": "BLS_4_0",
+      "sourceCode": "Y720443",
+      "sourceName": "Rührei gebraten mit Pfifferlingen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.72,
+        "Omega-6 Fatty Acids (g)": 2.25,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.72",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.25",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1286,
+      "databaseName": "Fruchtmischung gezuckert, roh",
+      "source": "BLS_4_0",
+      "sourceCode": "F090100",
+      "sourceName": "Fruchtmischung gezuckert, roh",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.04,
+        "Omega-6 Fatty Acids (g)": 0.123,
+        "Alcohol (g)": 0.05
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.04",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.123",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0.05",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1287,
+      "databaseName": "Stachelbeere gedünstet",
+      "source": "BLS_4_0",
+      "sourceCode": "F305152",
+      "sourceName": "Stachelbeere gedünstet",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.0228,
+        "Omega-6 Fatty Acids (g)": 0.0661
+      },
+      "sourceMarkers": {
+        "Alcohol (g)": "-"
+      },
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "2.2800000000000001E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "6.6100000000000006E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "-",
+          "origin": "-",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1288,
+      "databaseName": "Debreziner Bohnengulasch (mit Schweinefleisch)",
+      "source": "BLS_4_0",
+      "sourceCode": "Y341313",
+      "sourceName": "Debreziner Bohnengulasch (mit Schweinefleisch)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.29,
+        "Omega-6 Fatty Acids (g)": 0.72,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.28999999999999998",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.72",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1289,
+      "databaseName": "Lamm Bries, gekocht",
+      "source": "BLS_4_0",
+      "sourceCode": "V585132",
+      "sourceName": "Lamm Bries, gekocht",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.106,
+        "Omega-6 Fatty Acids (g)": 0.087,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.106",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "8.6999999999999994E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1290,
+      "databaseName": "Stint gebraten ohne Fett (Pfanne)",
+      "source": "BLS_4_0",
+      "sourceCode": "T402182",
+      "sourceName": "Stint gebraten ohne Fett (Pfanne)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.404,
+        "Omega-6 Fatty Acids (g)": 0.149,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.40400000000000003",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.14899999999999999",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1291,
+      "databaseName": "Weizenvollkornknäckebrot mit Müslizutaten, gesüßt",
+      "source": "BLS_4_0",
+      "sourceCode": "B6A1200",
+      "sourceName": "Weizenvollkornknäckebrot mit Müslizutaten, gesüßt",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.7,
+        "Omega-6 Fatty Acids (g)": 5.1,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.7",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "5.0999999999999996",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1292,
+      "databaseName": "Weizenmischbrot mit Quark",
+      "source": "BLS_4_0",
+      "sourceCode": "B257700",
+      "sourceName": "Weizenmischbrot mit Quark",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.03,
+        "Omega-6 Fatty Acids (g)": 0.35,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.03",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.35",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1293,
+      "databaseName": "Französische Schokoladentorte (Rührmasse)",
+      "source": "BLS_4_0",
+      "sourceCode": "D301300",
+      "sourceName": "Französische Schokoladentorte (Rührmasse)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 0.73,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.1",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.73",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1294,
+      "databaseName": "Früchtekuchen (ohne Fett zubereitet)",
+      "source": "BLS_4_0",
+      "sourceCode": "D432300",
+      "sourceName": "Früchtekuchen (ohne Fett zubereitet)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.01,
+        "Omega-6 Fatty Acids (g)": 1.7,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.01",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.7",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1295,
+      "databaseName": "Blätterteig eifrei, roh",
+      "source": "BLS_4_0",
+      "sourceCode": "D072000",
+      "sourceName": "Blätterteig eifrei, roh",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 1,
+        "Omega-6 Fatty Acids (g)": 3.86,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "1",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "3.86",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1296,
+      "databaseName": "Pralinen gefüllt mit Fruchtcreme",
+      "source": "BLS_4_0",
+      "sourceCode": "S624000",
+      "sourceName": "Pralinen gefüllt mit Fruchtcreme",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.19,
+        "Omega-6 Fatty Acids (g)": 0.8,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.19",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.8",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Logische Null",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1297,
+      "databaseName": "Wildente Fleisch, mit Haut, gebraten ohne Fett (Ofen)",
+      "source": "BLS_4_0",
+      "sourceCode": "V334162",
+      "sourceName": "Wildente Fleisch, mit Haut, gebraten ohne Fett (Ofen)",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.2,
+        "Omega-6 Fatty Acids (g)": 1.8,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "1.8",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1298,
+      "databaseName": "Hammel Keule, geschmort ohne Fett",
+      "source": "BLS_4_0",
+      "sourceCode": "U886142",
+      "sourceName": "Hammel Keule, geschmort ohne Fett",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.279,
+        "Omega-6 Fatty Acids (g)": 0.524,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.27900000000000003",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.52400000000000002",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1299,
+      "databaseName": "Weizenvollkornbrötchen mit Kürbiskernen",
+      "source": "BLS_4_0",
+      "sourceCode": "B416700",
+      "sourceName": "Weizenvollkornbrötchen mit Kürbiskernen",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.104,
+        "Omega-6 Fatty Acids (g)": 2.062,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "0.104",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "2.0619999999999998",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Reskalierung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    },
+    {
+      "databaseIndex": 1300,
+      "databaseName": "Gerste ganzes Korn, gekocht",
+      "source": "BLS_4_0",
+      "sourceCode": "C141032",
+      "sourceName": "Gerste ganzes Korn, gekocht",
+      "matchMethod": "existing_exact_code_crosswalk",
+      "matchedDatabaseFields": {},
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.056,
+        "Omega-6 Fatty Acids (g)": 0.581,
+        "Alcohol (g)": 0
+      },
+      "sourceMarkers": {},
+      "sourceDetails": {
+        "FAPUN3": {
+          "valuePer100g": "5.6000000000000001E-2",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "FAPUN6": {
+          "valuePer100g": "0.58099999999999996",
+          "origin": "Formelberechnung",
+          "reference": "-"
+        },
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Rezeptberechnung",
+          "reference": "-"
+        }
+      },
+      "conflicts": []
+    }
+  ],
+  "uncoveredRecords": [],
+  "ambiguousCoFIDMatches": [],
+  "fieldCoverage": {
+    "Omega-3 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Omega-6 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Trans Fat (g)": {
+      "filled": 10,
+      "missing": 90,
+      "total": 100
+    },
+    "Alcohol (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    }
+  }
+}

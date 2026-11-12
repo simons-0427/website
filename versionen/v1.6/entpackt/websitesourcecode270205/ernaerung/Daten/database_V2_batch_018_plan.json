@@ -1,0 +1,472 @@
+{
+  "batch": 18,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "W880200",
+      "name": "Kalbsleberwurst Konserve",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "Günstige Fleischwurst-/Hackfleischzubereitung im aktuellen Kühlregal, niedrigster klar belegbarer Preisanker 7,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wurst-aufschnitt/k/1588161425467075",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "W440000",
+      "name": "Schwein Kochschinken, Kochpökelware, Konserve (Dosenschinken)",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Koch-/Räucherschinken als aktueller Kühlregalanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wurst-aufschnitt/k/1588161425467075",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C123000",
+      "name": "Roggen Flocken",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.38,
+      "sourceProduct": "Kölln Flocken 500 g als aktueller Flockenanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 2,38 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkt/koelln-flocken-500-g-kernig-000000000183227001",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "C221100",
+      "name": "Roggen Vollkornschrot",
+      "category": "getreide",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Eigenmarken-Getreide-/Mehlprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 1,49 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/teigwaren-mehl-reis/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F504100",
+      "name": "Dattel roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "Trockenfrüchte im Supermarkt, niedrigster ausgewiesener Preisanker 4,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/obst-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F317600",
+      "name": "Traubensaft angereichert mit Eisen",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 1.55,
+      "sourceProduct": "ALDI Bio-Direktsaft bzw. Nektar als aktueller Saft-Preisanker, niedrigster klar belegbarer Preisanker 1,55 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/bio-produkte/k/1588161425467036",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "F602100",
+      "name": "Limette roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.39,
+      "sourceProduct": "NATUR LIEBLINGE Zitronen/Limetten-Preisanker im Frischeangebot, niedrigster klar belegbarer Preisanker 2,39 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F613100",
+      "name": "Kumquat roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Exotisches Frischobst im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 2,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F609100",
+      "name": "Tangerine roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Exotisches Frischobst im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 2,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F608100",
+      "name": "Satsuma roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Exotisches Frischobst im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 2,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "H212800",
+      "name": "Mandelmus",
+      "category": "nuesse_samen",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Eigenmarken-Nuss-/Mandelprodukt im Supermarkt, niedrigster ausgewiesener Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/nuesse/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M1A3100",
+      "name": "H-Milch entrahmt, höchstens 0,5 % Fett, laktosefrei, ultrahocherhitzt",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.85,
+      "sourceProduct": "MILSANI Milch bei ALDI SÜD, niedrigster klar belegbarer Preisanker 0,85 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/milch/k/1588161425467094",
+      "priceUnit": "kg",
+      "fluid": 90
+    },
+    {
+      "code": "M1B1100",
+      "name": "Joghurt aus entrahmter Milch, max. 0,5 % Fett, laktosefrei",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "MILSANI Naturjoghurt als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M148100",
+      "name": "Joghurt aus entrahmter Milch, max. 0,5 % Fett, mit Magermilchpulverzusatz",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "MILSANI Naturjoghurt als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 0,79 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M121100",
+      "name": "Dickmilch/Sauermilch, entrahmt, max. 0,5 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "MILSANI Joghurt-/Milchprodukt bei ALDI SÜD, niedrigster klar belegbarer Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M7A6800",
+      "name": "Mascarpone mind. 80 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M301300",
+      "name": "Appenzeller mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Parmesan/Hartkäse als aktueller Spezialkäseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M300700",
+      "name": "Hartkäse mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Parmesan/Hartkäse als aktueller Spezialkäseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M300400",
+      "name": "Hartkäse mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Parmesan/Hartkäse als aktueller Spezialkäseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M827500",
+      "name": "Frischkäsezubereitung mind. 40 % Fett i. Tr., mit Gemüse/Kräutern",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M741600",
+      "name": "Ricotta, Molkeneiweißkäse, mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M771300",
+      "name": "Schmelzkäse schnittfest, mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M780200",
+      "name": "Kochkäse mind. 10 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "N331000",
+      "name": "Colagetränk koffeinhaltig, mit Süßungsmitteln",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "N340000",
+      "name": "Colagetränk koffeinfrei",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 0.79,
+      "sourceProduct": "COCA-COLA/FLIRTEA bzw. Eigenmarken-Softdrink im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 0,79 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/limonade/k/1588161425467177",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P550000",
+      "name": "Kaffeelikör/Kakaolikör, klar",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Eigenmarken-Likör bzw. Mischgetränk im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 8,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "P560000",
+      "name": "Bitterlikör/Kräuterlikör/Gewürzlikör",
+      "category": "getraenke",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Eigenmarken-Likör bzw. Mischgetränk im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 8,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/alkoholische-getraenke/k/1588161425467197",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "Q4A4000",
+      "name": "Sonnenblumenmargarine Vollfett, angereichert mit Vitamin D",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q4A1000",
+      "name": "Pflanzenmargarine Dreiviertelfett, angereichert mit Vitaminen",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q4C2000",
+      "name": "Pflanzliches Streichfett mit > 41 % und < 60 % Fett, angereichert mit Vitaminen",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.73,
+      "sourceProduct": "RAMA Margarine als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,73 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/butter-margarine/k/1588161425467099",
+      "priceUnit": "kg"
+    }
+  ]
+}

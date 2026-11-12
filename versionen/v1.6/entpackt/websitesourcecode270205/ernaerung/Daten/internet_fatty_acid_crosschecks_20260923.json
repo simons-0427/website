@@ -1,0 +1,78 @@
+{
+  "checkedOn": "2026-09-23",
+  "unitBasis": "Fatty-acid amounts are grams per 100 g edible portion.",
+  "purpose": "Internet cross-checks for selected omega-3-rich foods. These comparisons do not automatically replace a value sourced from an exact BLS 4.0 match.",
+  "transFatNote": "The pages below verify omega-3 and omega-6 values only. They do not provide an aggregate total-trans-fat value for these foods.",
+  "records": [
+    {
+      "databaseIndex": 46,
+      "databaseName": "Chiasamen",
+      "databaseValues": {
+        "Omega-3 Fatty Acids (g)": 19.41,
+        "Omega-6 Fatty Acids (g)": 6.096
+      },
+      "onlineSource": {
+        "name": "BLS 4.0 public item page: Chia-Samen",
+        "code": "H480100",
+        "url": "https://blsdb.de/food?foodId=38567",
+        "values": {
+          "Omega-3 Fatty Acids (g)": 19.41,
+          "Omega-6 Fatty Acids (g)": 6.096
+        }
+      },
+      "assessment": "Direct item match. Online BLS values agree with the database values."
+    },
+    {
+      "databaseIndex": 88,
+      "databaseName": "Forelle (roh)",
+      "databaseValues": {
+        "Omega-3 Fatty Acids (g)": 2.98,
+        "Omega-6 Fatty Acids (g)": 0.539
+      },
+      "onlineSource": {
+        "name": "BLS 4.0 public item page: Forelle roh",
+        "code": "T422100",
+        "url": "https://blsdb.de/food?foodId=38813",
+        "values": {
+          "Omega-3 Fatty Acids (g)": 2.98,
+          "Omega-6 Fatty Acids (g)": 0.539
+        }
+      },
+      "externalComparison": {
+        "name": "Standard Tables of Food Composition in Japan, 2023 supplement: cultured freshwater rainbow trout, skin-on, raw",
+        "url": "https://fooddb.mext.go.jp/details/details.pl?ITEM_NO=10_10148_7&MODE=4",
+        "values": {
+          "Omega-3 Fatty Acids (g)": 0.85,
+          "Omega-6 Fatty Acids (g)": 0.41
+        }
+      },
+      "assessment": "The exact BLS generic trout record agrees with the database. The Japanese comparator is a specified cultured rainbow-trout form and differs materially, so it is retained as a source-variation note rather than substituted for the generic BLS record."
+    },
+    {
+      "databaseIndex": 191,
+      "databaseName": "Leinsamen",
+      "databaseValues": {
+        "Omega-3 Fatty Acids (g)": 19.97,
+        "Omega-6 Fatty Acids (g)": 5.397
+      },
+      "onlineSource": {
+        "name": "BLS 4.0 public item page: Leinsamen",
+        "code": "H410100",
+        "url": "https://blsdb.de/food?foodId=38230",
+        "values": {
+          "Omega-3 Fatty Acids (g)": 19.97,
+          "Omega-6 Fatty Acids (g)": 5.397
+        }
+      },
+      "externalComparison": {
+        "name": "Canadian Food Inspection Agency, Biology of Linum usitatissimum L. (Flax)",
+        "url": "https://inspection.canada.ca/en/plant-varieties/plants-novel-traits/applicants/directive-94-08/biology-documents/linum-usitatissimum-flax",
+        "values": {
+          "Omega-3 Fatty Acids (g)": 22.8,
+          "Omega-6 Fatty Acids (g)": 5.9
+        }
+      },
+      "assessment": "The Canadian reference is also per 100 g but reports a different flaxseed profile. Its page notes compositional variation by variety, environment, and analysis method. Keep the exact German BLS item values in the database and retain this as an external comparison."
+    }
+  ]
+}

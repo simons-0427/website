@@ -1,0 +1,53 @@
+{
+  "master": "var\\bitcoin-backfill-cointime-cftc-options.csv",
+  "masterRowsBefore": 997653,
+  "masterRowsAfter": 997863,
+  "priorMasterSha256": "b5223d3012de96b0c98810977727f25cd76a234a6f27a1230b85b3a16d38c448",
+  "masterSha256": "c36d768a35905033f1fb28ea703a639bdbbe7b9aa2948031b9425d983de6d2d1",
+  "masterBytes": 212717432,
+  "priorMasterPreservedAsBytePrefix": true,
+  "backup": "var\\bitcoin-backfill-cointime-cftc-options-before-bitcoin-only-source-metrics-2026-09-30.csv",
+  "candidate": "var\\bitcoin-only-source-metrics-candidate-through-2026-09-28.csv",
+  "candidateSha256": "83b49e8fd281d723852a3d380116c5f8a5e51bf6416dd5d2c13755500956737c",
+  "addedRows": 210,
+  "sourceCounts": {
+    "bitcoin_etf_holdings_private": 17,
+    "bitcoin_gold_ratio_private": 193
+  },
+  "metrics": {
+    "etf_holdings_btc": {
+      "observations": 17,
+      "firstDate": "2026-09-01",
+      "lastDate": "2026-09-25"
+    },
+    "price_gold_oz": {
+      "observations": 193,
+      "firstDate": "2010-08-31",
+      "lastDate": "2026-08-31"
+    }
+  },
+  "metricIdsWithObservations": 177,
+  "coreMetricIdsWithObservations": 96,
+  "emptyMetricIds": 27,
+  "emptyMetricIdsRemainingForBitcoin": 7,
+  "emptyCoreMetricIds": [
+    "average_spent_output_lifespan_days",
+    "entity_adjusted_transfer_volume_btc",
+    "median_transaction_size_btc",
+    "utxo_set_size"
+  ],
+  "firstObservationDate": "2009-01-03",
+  "lastObservationDate": "2026-09-28",
+  "rowsAfterCutoff": 0,
+  "uploaded": false,
+  "publicRedistributionCleared": false,
+  "remainingEmptyBitcoinMetricIds": [
+    "average_spent_output_lifespan_days",
+    "entity_adjusted_transfer_volume_btc",
+    "median_transaction_size_btc",
+    "mempool_incoming_txs_daily",
+    "transfer_value_average_btc",
+    "transfer_value_median_btc",
+    "utxo_set_size"
+  ]
+}

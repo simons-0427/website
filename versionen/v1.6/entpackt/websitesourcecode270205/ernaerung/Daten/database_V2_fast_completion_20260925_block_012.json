@@ -1,0 +1,662 @@
+{
+  "checkedOn": "2026-09-25",
+  "method": "Fast completion: fill direct audited source values first, then estimate missing values from median ratios in matching food categories. Exact existing values are never overwritten.",
+  "scope": {
+    "firstDatabaseIndex": 1101,
+    "lastDatabaseIndex": 1200,
+    "count": 100,
+    "unitBasis": "g per 100 g; g per 100 ml for liquids"
+  },
+  "sources": [
+    "Daten/database_V2_fatty_acids_alcohol_batch_012_sources.json",
+    "Daten/database_V2_omega3_components_batch_004.json",
+    "Daten/database_V2_omega3_components_batch_005.json",
+    "Daten/database_V2_omega3_components_batch_006.json",
+    "Daten/database_V2_omega3_components_batch_007.json",
+    "Daten/database_V2_omega3_components_batch_008.json",
+    "Daten/database_V2_omega3_components_batch_009.json",
+    "Daten/database_V2_omega3_components_batch_010.json",
+    "Daten/database_V2_omega3_components_batch_011.json",
+    "Daten/database_V2_omega3_components_batch_012.json",
+    "Daten/database_V2_omega3_components_batch_013.json",
+    "Daten/database_V2_omega3_components_batch_014.json",
+    "Daten/database_V2_omega3_components_batch_015.json",
+    "Daten/database_V2_omega3_components_batch_016.json",
+    "Daten/database_V2_omega3_components_batch_017.json",
+    "Daten/database_V2_omega3_components_batch_018.json",
+    "Daten/database_V2_omega3_components_batch_019.json",
+    "Daten/database_V2_omega3_components_cofid_exact.json",
+    "Daten/database_V2_omega3_components_cofid_exact_batch005_20260925.json",
+    "Existing completed database records in the same food category, excluding the target block, used only for median-ratio estimates."
+  ],
+  "coverage": {
+    "Omega-3 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Omega-6 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Trans Fat (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Alcohol (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Alpha-Linolenic Acid (ALA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Eicosapentaenoic Acid (EPA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Docosahexaenoic Acid (DHA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    }
+  },
+  "changes": [
+    {
+      "databaseIndex": 1101,
+      "food": "Rind Brustkern/Mittelbrust, roh",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1102,
+      "food": "Kalb Muskelfleisch, roh",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1103,
+      "food": "Kalb Steak (Rücken) roh",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1104,
+      "food": "Kalb Kotelett (Rücken) roh",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1105,
+      "food": "Kalb Kochfleisch (Brust) roh",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1106,
+      "food": "Kalb Brust, roh",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1107,
+      "food": "Kalb Fleisch, vom Knochen, roh",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1119,
+      "food": "Ente Schenkel, mit Haut, gebraten ohne Fett (Ofen)",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1135,
+      "food": "Schaf Bratenfleisch (Bug, mager) gebraten ohne Fett (Ofen)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1141,
+      "food": "Suppenhuhn Innereien, geschmort ohne Fett",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1154,
+      "food": "Lamm Brust, gebraten ohne Fett (Ofen)",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1161,
+      "food": "Käse-Schinken-Hörnchen (Quark-Öl-Teig)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 1178,
+      "food": "Schokolade weiß, mit Kaffee",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.076607,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.00655
+      }
+    },
+    {
+      "databaseIndex": 1179,
+      "food": "Quarkkrapfen frittiert",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.417857,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.035727,
+        "Docosahexaenoic Acid (DHA) (g)": 0.024
+      }
+    },
+    {
+      "databaseIndex": 1187,
+      "food": "Milchmischgetränk 3,5 % Fett, aromatisiert, gesüßt",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.02288
+      }
+    },
+    {
+      "databaseIndex": 1198,
+      "food": "Schwein Schnitzel (Oberschale) gegrillt",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    }
+  ],
+  "changeDetails": [
+    {
+      "databaseIndex": 1101,
+      "food": "Rind Brustkern/Mittelbrust, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.018786796536796536,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1102,
+      "food": "Kalb Muskelfleisch, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.018786796536796536,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1103,
+      "food": "Kalb Steak (Rücken) roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.018786796536796536,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1104,
+      "food": "Kalb Kotelett (Rücken) roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.018786796536796536,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1105,
+      "food": "Kalb Kochfleisch (Brust) roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.018786796536796536,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1106,
+      "food": "Kalb Brust, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.018786796536796536,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1107,
+      "food": "Kalb Fleisch, vom Knochen, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1119,
+      "food": "Ente Schenkel, mit Haut, gebraten ohne Fett (Ofen)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.018786796536796536,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1135,
+      "food": "Schaf Bratenfleisch (Bug, mager) gebraten ohne Fett (Ofen)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1141,
+      "food": "Suppenhuhn Innereien, geschmort ohne Fett",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1154,
+      "food": "Lamm Brust, gebraten ohne Fett (Ofen)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.018786796536796536,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1161,
+      "food": "Käse-Schinken-Hörnchen (Quark-Öl-Teig)",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.1,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 91,
+          "sampleCount": 91,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 91,
+          "sampleCount": 91,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1178,
+      "food": "Schokolade weiß, mit Kaffee",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.076607,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 74,
+          "sampleCount": 74,
+          "fallbackToGlobal": false,
+          "share": 0.6964285714285714
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.00655,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 74,
+          "sampleCount": 74,
+          "fallbackToGlobal": false,
+          "share": 0.05954545454545454
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1179,
+      "food": "Quarkkrapfen frittiert",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.417857,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 74,
+          "sampleCount": 74,
+          "fallbackToGlobal": false,
+          "share": 0.6964285714285714
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.035727,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 74,
+          "sampleCount": 74,
+          "fallbackToGlobal": false,
+          "share": 0.05954545454545454
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.024,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "suessung",
+          "peerCount": 74,
+          "sampleCount": 74,
+          "fallbackToGlobal": false,
+          "share": 0.04
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1187,
+      "food": "Milchmischgetränk 3,5 % Fett, aromatisiert, gesüßt",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.02288,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 31,
+          "sampleCount": 31,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1198,
+      "food": "Schwein Schnitzel (Oberschale) gegrillt",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.027385584415584415,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 196,
+          "sampleCount": 196,
+          "fallbackToGlobal": false,
+          "share": 0.018786796536796536,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "invalidValues": 0,
+    "omega3ComponentSumConflicts": 0,
+    "omega3AndOmega6FatConflicts": 0
+  }
+}

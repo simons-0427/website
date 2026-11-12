@@ -1,0 +1,38 @@
+{
+  "checkedOn": "2026-09-25",
+  "scope": {
+    "firstDatabaseIndex": 1501,
+    "lastDatabaseIndex": 1516,
+    "count": 16
+  },
+  "update": {
+    "databaseIndex": 1503,
+    "databaseName": "Lachs, Zucht, gedämpft",
+    "field": "Trans Fat (g)",
+    "previous": null,
+    "value": 0,
+    "method": "trace_to_zero_at_database_precision",
+    "note": "Exact CoFID 2021 profile reports Tr (trace, not numeric zero). A same-species farmed-salmon comparator from Matvaretabellen reports 0 g/100 g. Stored as 0 for this planner's numeric field at database precision; this is an approximation, not an analytical zero for the exact steamed item.",
+    "sources": [
+      {
+        "label": "CoFID 2021, Salmon, farmed, flesh only, steamed",
+        "sourceCode": "16-358",
+        "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "reportedMarker": "Tr"
+      },
+      {
+        "label": "Matvaretabellen, farmed salmon, simmered",
+        "sourceFoodId": "04.225",
+        "sourceUrl": "https://www.matvaretabellen.no/en/salmon-farmed-slices-simmered/",
+        "valuePer100g": 0
+      }
+    ]
+  },
+  "verification": {
+    "highOmega3FoodCount": 16,
+    "allHaveOmega3AtLeast1gPer100g": true,
+    "missingTargetFields": 0,
+    "negativeTargetValues": 0,
+    "readBackVerified": true
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "createdAt": "2026-09-29T21:30:04.073Z",
+  "source": {
+    "slug": "bykaranteli_etf_flows_cc0",
+    "url": "https://raw.githubusercontent.com/bykarantelicom/crypto-datasets/main/data/etf-flows.csv",
+    "repository": "https://github.com/bykarantelicom/crypto-datasets",
+    "file": "data/etf-flows.csv",
+    "license": "CC0 1.0 Universal, as stated in the repository README accessed 2026-09-29",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "upstreamDataAttribution": "SoSoValue public data, attributed by the repository."
+  },
+  "rawBitcoinOnlySnapshot": {
+    "path": "bykaranteli-etf-flows-btc-research-through-2026-09-08.csv",
+    "bytes": 25206,
+    "sha256": "50623b1532b274cdea62cfe081a4efe9912bfb6ef218383fd7994645471e60d0",
+    "assetFilter": "BTC",
+    "rows": 327,
+    "firstDate": "2025-05-20",
+    "lastDate": "2026-09-08",
+    "nonBitcoinRowsWritten": 0
+  },
+  "cutoffInclusive": "2026-09-28",
+  "observations": 1308,
+  "metricIds": [
+    "etf_netflow_usd",
+    "etf_aum_usd",
+    "etf_cumulative_netflow_usd",
+    "etf_trading_volume_usd"
+  ],
+  "metricCounts": {
+    "etf_netflow_usd": 327,
+    "etf_aum_usd": 327,
+    "etf_cumulative_netflow_usd": 327,
+    "etf_trading_volume_usd": 327
+  },
+  "sourceCounts": {
+    "bykaranteli_etf_flows_cc0": 1308
+  },
+  "firstObservationDate": "2025-05-20",
+  "lastObservationDate": "2026-09-08",
+  "nativeCalendar": "ETF market dates from the source; weekends and missing source dates were not filled.",
+  "mapping": {
+    "etf_netflow_usd": "net_inflow_usd",
+    "etf_aum_usd": "net_assets_usd",
+    "etf_cumulative_netflow_usd": "cumulative_inflow_usd",
+    "etf_trading_volume_usd": "value_traded_usd"
+  },
+  "candidate": {
+    "path": "bykaranteli-etf-flows-btc-import-through-2026-09-08.csv",
+    "bytes": 272125,
+    "sha256": "620787d0144e873f3e49dddc184ccc10457ccd9ba34fc23b065144e27c1cdaf5"
+  },
+  "dataReuseLicenseConfirmedFromRepository": true,
+  "sourceValuesProvisional": true,
+  "uploaded": false,
+  "mergedIntoMaster": true
+}

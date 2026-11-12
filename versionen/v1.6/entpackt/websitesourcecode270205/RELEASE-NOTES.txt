@@ -1,0 +1,4 @@
+Website source snapshot: websitesourcecode270205
+
+Current public website source, project pages, styles, scripts, images and public application code.
+Production credentials, private data, databases, caches, historical download archives and compiled game builds are excluded. Videos remain in the separate Strato upload package. Existing server configuration and data services are required for a full live installation.

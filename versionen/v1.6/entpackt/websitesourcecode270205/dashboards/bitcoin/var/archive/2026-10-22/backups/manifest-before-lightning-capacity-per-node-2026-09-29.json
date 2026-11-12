@@ -1,0 +1,606 @@
+{
+  "dashboard": "bitcoin",
+  "generatedAt": "2026-09-29",
+  "cutoffInclusive": "2026-09-28",
+  "master": "bitcoin-backfill-cointime-cftc-options.csv",
+  "masterBytes": 147553623,
+  "masterSha256": "d63dcb5438c5942f1fb75f6a7d9cb961ff8d14c833dc60ccc5bcf8456da57daf",
+  "observations": 737119,
+  "metricIdsWithObservations": 143,
+  "catalogMetricIds": 197,
+  "coreMetricIdsWithObservations": 91,
+  "coreMetricIds": 100,
+  "emptyMetricIds": 54,
+  "emptyCoreMetricIds": 9,
+  "firstObservationDate": "2009-01-03",
+  "lastObservationDate": "2026-09-28",
+  "rowsAfterCutoff": 0,
+  "sourceCounts": {
+    "coinmetrics_community_btc": 118399,
+    "ecb_reference_rates": 4285,
+    "open_bitcoin_metrics_obm": 45053,
+    "cftc_cot_legacy": 458,
+    "uwa_deribit_options_cc_by": 1831,
+    "bykaranteli_crypto_datasets_cc0": 2018,
+    "mempool_space_rest_api": 3,
+    "openbitcoin_node_api": 24897,
+    "bitview_api_research_only": 120981,
+    "derived_bitview_research_metrics": 12945,
+    "derived_bitcoin_metrics": 402481,
+    "mempool_space_historical_research_only": 2192,
+    "mempool_space_lightning_research_only": 1576
+  },
+  "scope": {
+    "newObservationsAfterPreviousLocalMaster": 38195,
+    "excludedSeptember29Rows": 96,
+    "newBitcoinSpecificUwaOptionsRows": 1497,
+    "newUwaMetricIds": [
+      "options_put_call_ratio",
+      "options_25d_skew_pct"
+    ],
+    "metricIdsMadeEmptyByCutoff": [
+      "mining_pool_share",
+      "pool_concentration_hhi",
+      "fee_recommendation_fast_sat_vb",
+      "fee_recommendation_economy_sat_vb",
+      "mempool_min_fee_sat_vb"
+    ],
+    "fearGreedRetainedThroughCutoff": true,
+    "existingEcbRowsRetainedForBtcEur": 4285,
+    "newMacroOrCrossMarketRows": 0,
+    "newCoinMetricsBitcoinObservations": 16911,
+    "newCoinMetricsPriceRows": 1,
+    "newCoinMetricsMetricIds": [
+      "exchange_inflow_usd",
+      "exchange_outflow_usd",
+      "exchange_balance_usd"
+    ],
+    "newCoinMetricsExchangeUsdFile": {
+      "path": "coinmetrics-btc-exchange-usd-through-2026-09-28.csv",
+      "rows": 16911,
+      "bytes": 3085598,
+      "sha256": "3a4f52e862e687f5a5d86dee583dff0bcf5b74b233e36c9d84734559750a2cc0",
+      "first": "2011-04-24",
+      "last": "2026-09-28"
+    },
+    "privateBitviewResearchRows": 133926,
+    "privateBitviewDirectRows": 120981,
+    "privateBitviewDerivedRows": 12945,
+    "privateBitviewExcludedZeroRealizedPriceRows": 1406,
+    "privateBitviewSourceThrough": "2026-09-28",
+    "privateBitviewLastIndexedAt": "2026-09-26T03:55:05Z",
+    "privateBitviewCoreMetricIds": [
+      "hodl_supply_10y_btc",
+      "hodl_supply_1y_btc",
+      "hodl_supply_2y_btc",
+      "hodl_supply_3y_btc",
+      "hodl_supply_5y_btc",
+      "long_term_holder_supply_btc",
+      "long_term_holder_supply_pct",
+      "lth_realized_price_usd",
+      "lth_sopr",
+      "net_realized_profit_loss_usd",
+      "realized_loss_usd",
+      "realized_profit_usd",
+      "relative_unrealized_loss_pct",
+      "relative_unrealized_profit_pct",
+      "short_term_holder_supply_btc",
+      "sopr",
+      "sth_mvrv_ratio",
+      "sth_realized_price_usd",
+      "sth_sopr",
+      "supply_in_loss_pct",
+      "supply_in_profit_pct"
+    ],
+    "privateBitviewImportFile": {
+      "path": "bitview-private-research-refresh-2026-09-29.csv",
+      "rows": 133942,
+      "bytes": 28885810,
+      "sha256": "b946e057cd69fcdf6def7442b9a43226b694d23dc6ec710890abc9fd775968e7"
+    },
+    "openbitcoinMonthlyPoolHistory": {
+      "retrievedAt": "2026-09-29T16:29:26.312Z",
+      "completedAt": "2026-09-29T16:31:15.848Z",
+      "poolCount": 91,
+      "completedMonthFirst": "2011-06-01",
+      "completedMonthLast": "2026-08-01",
+      "monthlyPeriods": 183,
+      "poolShareRows": 11208,
+      "hhiRows": 183,
+      "candidateRows": 11391,
+      "candidateSha256": "b3716d3637dc91349991c105a6cba66416fa06a99dc6d1d1b8ef8f9be057f49d",
+      "rawBytes": 321898,
+      "rawSha256": "d21ce0a80c307a495ef4841b27b6f24082661ae2dc0ed0c19ff218e3d13e9c8f",
+      "poolMonthlyTotalsMatchReportedLifetimeBlocks": true,
+      "monthlyPoolSharesSumTo100Within": 5e-12,
+      "unassignedBlocksExcluded": true,
+      "incompleteSeptember2026Excluded": true,
+      "localPrivateUse": true,
+      "uploaded": false
+    },
+    "remainingEmptyBitcoinMetricIds": 41,
+    "remainingEmptyCoreMetricIds": 9,
+    "privateResearchCandidateRowsOutsideMaster": 2370,
+    "privateResearchCandidateMetricIdsOutsideMaster": 2,
+    "privateMempoolDashboardImport": {
+      "path": "mempool-private-bitcoin-dashboard-research-through-2026-09-28.csv",
+      "manifest": "mempool-private-bitcoin-dashboard-research-through-2026-09-28.json",
+      "observations": 5831,
+      "metricIds": [
+        "fees_p10_sat_vb",
+        "fees_p90_sat_vb",
+        "lightning_avg_channel_btc",
+        "lightning_capacity_btc",
+        "lightning_capacity_change_30d_pct",
+        "lightning_channels",
+        "lightning_channels_change_30d_pct",
+        "lightning_median_channel_btc",
+        "lightning_nodes"
+      ],
+      "metricCounts": {
+        "lightning_avg_channel_btc": 787,
+        "lightning_capacity_btc": 787,
+        "lightning_channels": 787,
+        "lightning_capacity_change_30d_pct": 638,
+        "lightning_channels_change_30d_pct": 638,
+        "lightning_median_channel_btc": 1,
+        "lightning_nodes": 1,
+        "fees_p10_sat_vb": 1096,
+        "fees_p90_sat_vb": 1096
+      },
+      "sourceCounts": {
+        "derived_bitcoin_metrics": 2063,
+        "mempool_space_lightning_research_only": 1576,
+        "mempool_space_historical_research_only": 2192
+      },
+      "first": "2023-09-29",
+      "last": "2026-09-28",
+      "candidateSha256": "b60ead3bb9554c70a68a734d6922a5a8973dbef1717e85bcfc6d7ff22a411d32",
+      "candidateBytes": 1391976,
+      "previousMaster": "bitcoin-backfill-cointime-cftc-options-before-private-mempool-research-2026-09-29.csv",
+      "previousMasterSha256": "1c5c0f748139533c6bfd65c491f03ad431cd076d84250e147733a1b8b447e54f",
+      "localPrivateResearchOnly": true,
+      "dataReuseLicenseConfirmed": false,
+      "publicRedistributionCleared": false,
+      "uploaded": false,
+      "excludedMetricIds": [
+        "mining_pool_share",
+        "pool_concentration_hhi"
+      ],
+      "excludedReason": "OpenBitcoin monthly pool history is already in the local master; Mempool pool shares are weekly hashrate estimates and are not mixed into the monthly block-count series."
+    },
+    "openBitcoinUtxoFlowImport": {
+      "path": "openbitcoin-utxo-flow-import-through-2026-09-28.csv",
+      "manifest": "openbitcoin-utxo-flow-import-through-2026-09-28.json",
+      "observations": 12948,
+      "metricIds": [
+        "utxo_created_count",
+        "utxo_spent_count"
+      ],
+      "metricCounts": {
+        "utxo_spent_count": 6474,
+        "utxo_created_count": 6474
+      },
+      "sourceCounts": {
+        "open_bitcoin_metrics_obm": 6474,
+        "derived_bitcoin_metrics": 6474
+      },
+      "first": "2009-01-03",
+      "last": "2026-09-24",
+      "candidateSha256": "aa04d1a49fbecd32f5f3af2e94b1ab208a2d33220510be944a3a4680eeb8be31",
+      "candidateBytes": 2364308,
+      "source": "Open Bitcoin Metrics v0.1.0",
+      "sourceUrl": "https://github.com/diegorllanos/open-bitcoin-metrics/tree/main/metrics/obm_spent_output_count_daily",
+      "license": "CC BY 4.0",
+      "attributionRequired": true,
+      "formula": "utxo_created_count(t) = utxo_count_eod(t) - utxo_count_eod(t-1) + utxo_spent_count(t). On dates without an end-of-day block observation, carry forward only the prior UTXO state; OBM spent count must be zero on those dates. Counts include spendable outputs and exclude provably unspendable outputs under OBM definitions.",
+      "allCreatedCountsNonNegativeIntegers": true,
+      "utxoStockFlowIdentityHolds": true,
+      "noBlockDaysCarriedForward": 5,
+      "uploaded": false,
+      "previousMaster": "bitcoin-backfill-cointime-cftc-options-before-openbitcoin-utxo-flow-2026-09-29.csv",
+      "previousMasterSha256": "f66e8e9eec8c82c6bf544803c9be1f3d935aea85cdc7d79f2373b4a963fcae05",
+      "utxoStateRows": 6469,
+      "derivedCreatedTotal": "3670858791",
+      "spentTotal": "3505630177",
+      "endUtxoCount": "165228614"
+    },
+    "bitviewHodlAgePercentageImport": {
+      "path": "bitview-hodl-age-percentages-import-through-2026-09-28.csv",
+      "manifest": "bitview-hodl-age-percentages-import-through-2026-09-28.json",
+      "observations": 19416,
+      "metricIds": [
+        "supply_last_active_1y_pct",
+        "supply_last_active_5y_pct",
+        "supply_last_active_10y_pct"
+      ],
+      "metricCounts": {
+        "supply_last_active_1y_pct": 6472,
+        "supply_last_active_5y_pct": 6472,
+        "supply_last_active_10y_pct": 6472
+      },
+      "sourceCounts": {
+        "derived_bitcoin_metrics": 19416
+      },
+      "first": "2009-01-09",
+      "last": "2026-09-28",
+      "candidateSha256": "7c8cd7b0364ec55680ed84cfd8816b051f10556d9241c39ad5f5dc08d3051370",
+      "candidateBytes": 4316548,
+      "source": "Private Bitview UTXO age cohorts plus Bitcoin daily supply",
+      "licenseNote": "Private local research only. No separate reuse license for hosted Bitview data was identified; public redistribution and public dashboard display are not cleared.",
+      "formula": "For each UTC day and age threshold: 100 * Bitview spendable UTXO supply above the age threshold / Bitcoin total supply. Exact Bitview cohort methodology is provisional; input series and dates are retained without interpolation.",
+      "uploaded": false,
+      "publicRedistributionCleared": false,
+      "previousMaster": "bitcoin-backfill-cointime-cftc-options-before-bitview-hodl-age-percentages-2026-09-29.csv",
+      "previousMasterSha256": "ca78e09e946361a37898738c7dd164a5f49b030d3b774bb0d48fff13a55c766b",
+      "excludedNoSupplyDates": [
+        "2009-01-03"
+      ],
+      "allValuesWithinZeroAndOneHundred": true
+    }
+  },
+  "uwOptionsRawSha256": "47af56f73630b54a025b554088c03771404af15bbe9091dddee7d1c644c903b2",
+  "previousMasterBackup": {
+    "path": "bitcoin-backfill-cointime-cftc-options-before-openbitcoin-pool-monthly-2026-09-29.csv",
+    "bytes": 136907997,
+    "sha256": "c2de633c922f8a45b74fdb0d958a7bfa69d70569d8483be3d5d59e6959525fe1"
+  },
+  "qualityNotes": [
+    "Master keys were checked for duplicates during each merge.",
+    "The UWA options activity candidate passed the existing observation checker with no duplicate keys and native-period gap handling.",
+    "Five snapshot-only metric IDs have no observations because their only snapshot was dated 2026-09-29.",
+    "The September 29 mining-pool and fee snapshot was excluded to honor the cutoff.",
+    "Coin Metrics Community API requests used assets=btc only. Six new daily Coin Metrics series have continuous coverage and end at the inclusive 2026-09-28 cutoff.",
+    "The three USD exchange series each contain 5,637 consecutive daily BTC observations from 2011-04-24 through 2026-09-28, combining the Coin Metrics BTC archive and the Community API.",
+    "No new non-Bitcoin or macro observations were added. The existing ECB rows remain only as the BTC/EUR conversion reference.",
+    "The single new 2026-09-28 BTC price key from the preceding update was absent before that merge.",
+    "Added 133,882 provisional Bitcoin-only Bitview research values for private local use. Excluded 1,406 zero Realized Price placeholders; left the five no-block genesis dates absent. Public redistribution and public dashboard display are not cleared.",
+    "2026-09-29 refresh added 12 Coin Metrics BTC observations, 6 Open Bitcoin Metrics observations, and 40 new private Bitview observations through the 2026-09-28 cutoff; 20 Bitview values were revised and 20 rows dated September 29 were excluded.",
+    "The master before OpenBitcoin and Mempool research additions had 687,533 rows and SHA-256 c2de633c922f8a45b74fdb0d958a7bfa69d70569d8483be3d5d59e6959525fe1. The general observer checker was not rerun after those additions; each merge rejected duplicate metric/series/date keys.",
+    "Mempool.space Lightning history has 3,639 Bitcoin observations across seven metric IDs, from 2023-09-30 through 2026-08-30. Those rows now appear in the local master for private research only; the documentation does not identify a separate data reuse license and public use is not cleared.",
+    "Bitcoin Lab retrieval is deferred until the user sets BITLAB_API_TOKEN locally.",
+    "The Coin Metrics Community catalog was rechecked with assets=btc and listed 31 BTC fields; the 20 fields mapped by the dashboard importer add no previously empty dashboard metric.",
+    "Mempool.space Bitcoin-only candidates originally contained 8,201 rows across eleven IDs. 5,831 Lightning and fee p10/p90 rows were merged into the local master for private research; 2,370 weekly hashrate pool-share and HHI rows remain outside because the active pool series uses monthly directly counted blocks. Public redistribution is not cleared.",
+    "The Mempool mining-pool candidate derives concentration from weekly hashrate shares, not direct pool block counts; it remains explicitly a proxy and is not in the active master.",
+    "The active master contains 737,119 observations from 143 Bitcoin metric IDs through 2026-09-28. Three provisional Bitcoin supply-age percentages add 19,416 private Bitview-derived observations from 2009-01-09 through 2026-09-28. Public redistribution is not cleared. No upload was performed."
+  ],
+  "preCutoffMasterBackup": {
+    "path": "bitcoin-backfill-cointime-cftc-options-before-2026-09-28-cutoff.csv",
+    "bytes": 101909477,
+    "sha256": "e75e277befef03c3b9a295be56f29bacad36121d866330d82c2ad71d3e00f9ef"
+  },
+  "beforeCoinMetricsMasterBackup": {
+    "path": "bitcoin-backfill-cointime-cftc-options-before-coinmetrics-2026-09-29.csv",
+    "bytes": 102244716,
+    "sha256": "0fd7e43967127ec2730ec80a9834b46823d01b4f4e1fe334f45af9c8b211a4f6"
+  },
+  "prePreviousMasterBeforePrice": {
+    "path": "bitcoin-backfill-cointime-cftc-options-before-price-2026-09-29.csv",
+    "bytes": 104923968,
+    "sha256": "ed706035b8fc92dda1c47f564733e6acac00742bcf3ef9b78583528b75b2eb15"
+  },
+  "beforeBitviewImportMasterBackup": {
+    "path": "bitcoin-backfill-cointime-cftc-options-before-bitview-2026-09-29.csv",
+    "bytes": 108009611,
+    "sha256": "6b0e4211a64c72e5a85e3581b0744334fed6e2fc82dc985824933dcc6058cf75"
+  },
+  "previousRefreshMasterBackup": {
+    "path": "bitcoin-backfill-cointime-cftc-options-before-coinmetrics-exchange-usd-2026-09-29.csv",
+    "bytes": 104924134,
+    "sha256": "c5c0273cbf5dd915753f7ba3eaa749064901b9dac2eaf1f48e9f8764e3ba4987"
+  },
+  "latestRefresh": {
+    "runDate": "2026-09-29",
+    "cutoffInclusive": "2026-09-28",
+    "previousMasterRows": 717703,
+    "masterRows": 737119,
+    "netRowIncrease": 19416,
+    "masterSha256": "d63dcb5438c5942f1fb75f6a7d9cb961ff8d14c833dc60ccc5bcf8456da57daf",
+    "masterBytes": 147553623,
+    "previousMasterBackup": {
+      "path": "bitcoin-backfill-cointime-cftc-options-before-bitview-hodl-age-percentages-2026-09-29.csv",
+      "sha256": "ca78e09e946361a37898738c7dd164a5f49b030d3b774bb0d48fff13a55c766b",
+      "bytes": 143237196
+    },
+    "bitviewHodlAgePercentageImport": {
+      "path": "bitview-hodl-age-percentages-import-through-2026-09-28.csv",
+      "manifest": "bitview-hodl-age-percentages-import-through-2026-09-28.json",
+      "observations": 19416,
+      "metricIds": [
+        "supply_last_active_1y_pct",
+        "supply_last_active_5y_pct",
+        "supply_last_active_10y_pct"
+      ],
+      "metricCounts": {
+        "supply_last_active_1y_pct": 6472,
+        "supply_last_active_5y_pct": 6472,
+        "supply_last_active_10y_pct": 6472
+      },
+      "sourceCounts": {
+        "derived_bitcoin_metrics": 19416
+      },
+      "first": "2009-01-09",
+      "last": "2026-09-28",
+      "candidateSha256": "7c8cd7b0364ec55680ed84cfd8816b051f10556d9241c39ad5f5dc08d3051370",
+      "candidateBytes": 4316548,
+      "source": "Private Bitview UTXO age cohorts plus Bitcoin daily supply",
+      "licenseNote": "Private local research only. No separate reuse license for hosted Bitview data was identified; public redistribution and public dashboard display are not cleared.",
+      "formula": "For each UTC day and age threshold: 100 * Bitview spendable UTXO supply above the age threshold / Bitcoin total supply. Exact Bitview cohort methodology is provisional; input series and dates are retained without interpolation.",
+      "uploaded": false,
+      "publicRedistributionCleared": false
+    },
+    "previousRefresh": {
+      "runDate": "2026-09-29",
+      "cutoffInclusive": "2026-09-28",
+      "previousMasterRows": 704755,
+      "masterRows": 717703,
+      "netRowIncrease": 12948,
+      "masterSha256": "ca78e09e946361a37898738c7dd164a5f49b030d3b774bb0d48fff13a55c766b",
+      "masterBytes": 143237196,
+      "previousMasterBackup": {
+        "path": "bitcoin-backfill-cointime-cftc-options-before-openbitcoin-utxo-flow-2026-09-29.csv",
+        "sha256": "f66e8e9eec8c82c6bf544803c9be1f3d935aea85cdc7d79f2373b4a963fcae05"
+      },
+      "openBitcoinUtxoFlowImport": {
+        "path": "openbitcoin-utxo-flow-import-through-2026-09-28.csv",
+        "manifest": "openbitcoin-utxo-flow-import-through-2026-09-28.json",
+        "observations": 12948,
+        "metricIds": [
+          "utxo_created_count",
+          "utxo_spent_count"
+        ],
+        "metricCounts": {
+          "utxo_spent_count": 6474,
+          "utxo_created_count": 6474
+        },
+        "sourceCounts": {
+          "open_bitcoin_metrics_obm": 6474,
+          "derived_bitcoin_metrics": 6474
+        },
+        "first": "2009-01-03",
+        "last": "2026-09-24",
+        "candidateSha256": "aa04d1a49fbecd32f5f3af2e94b1ab208a2d33220510be944a3a4680eeb8be31",
+        "candidateBytes": 2364308,
+        "source": "Open Bitcoin Metrics v0.1.0",
+        "sourceUrl": "https://github.com/diegorllanos/open-bitcoin-metrics/tree/main/metrics/obm_spent_output_count_daily",
+        "license": "CC BY 4.0",
+        "attributionRequired": true,
+        "formula": "utxo_created_count(t) = utxo_count_eod(t) - utxo_count_eod(t-1) + utxo_spent_count(t). On dates without an end-of-day block observation, carry forward only the prior UTXO state; OBM spent count must be zero on those dates. Counts include spendable outputs and exclude provably unspendable outputs under OBM definitions.",
+        "allCreatedCountsNonNegativeIntegers": true,
+        "utxoStockFlowIdentityHolds": true,
+        "noBlockDaysCarriedForward": 5,
+        "uploaded": false
+      },
+      "previousRefresh": {
+        "runDate": "2026-09-29",
+        "cutoffInclusive": "2026-09-28",
+        "previousMasterRows": 698924,
+        "masterRows": 704755,
+        "netRowIncrease": 5831,
+        "masterSha256": "f66e8e9eec8c82c6bf544803c9be1f3d935aea85cdc7d79f2373b4a963fcae05",
+        "masterBytes": 140873009,
+        "previousMasterBackup": {
+          "path": "bitcoin-backfill-cointime-cftc-options-before-private-mempool-research-2026-09-29.csv",
+          "sha256": "1c5c0f748139533c6bfd65c491f03ad431cd076d84250e147733a1b8b447e54f"
+        },
+        "privateMempoolResearchImport": {
+          "path": "mempool-private-bitcoin-dashboard-research-through-2026-09-28.csv",
+          "manifest": "mempool-private-bitcoin-dashboard-research-through-2026-09-28.json",
+          "observations": 5831,
+          "metricIds": [
+            "fees_p10_sat_vb",
+            "fees_p90_sat_vb",
+            "lightning_avg_channel_btc",
+            "lightning_capacity_btc",
+            "lightning_capacity_change_30d_pct",
+            "lightning_channels",
+            "lightning_channels_change_30d_pct",
+            "lightning_median_channel_btc",
+            "lightning_nodes"
+          ],
+          "metricCounts": {
+            "lightning_avg_channel_btc": 787,
+            "lightning_capacity_btc": 787,
+            "lightning_channels": 787,
+            "lightning_capacity_change_30d_pct": 638,
+            "lightning_channels_change_30d_pct": 638,
+            "lightning_median_channel_btc": 1,
+            "lightning_nodes": 1,
+            "fees_p10_sat_vb": 1096,
+            "fees_p90_sat_vb": 1096
+          },
+          "sourceCounts": {
+            "derived_bitcoin_metrics": 2063,
+            "mempool_space_lightning_research_only": 1576,
+            "mempool_space_historical_research_only": 2192
+          },
+          "first": "2023-09-29",
+          "last": "2026-09-28",
+          "candidateSha256": "b60ead3bb9554c70a68a734d6922a5a8973dbef1717e85bcfc6d7ff22a411d32",
+          "candidateBytes": 1391976,
+          "previousMaster": "bitcoin-backfill-cointime-cftc-options-before-private-mempool-research-2026-09-29.csv",
+          "previousMasterSha256": "1c5c0f748139533c6bfd65c491f03ad431cd076d84250e147733a1b8b447e54f",
+          "localPrivateResearchOnly": true,
+          "dataReuseLicenseConfirmed": false,
+          "publicRedistributionCleared": false,
+          "uploaded": false,
+          "excludedMetricIds": [
+            "mining_pool_share",
+            "pool_concentration_hhi"
+          ],
+          "excludedReason": "OpenBitcoin monthly pool history is already in the local master; Mempool pool shares are weekly hashrate estimates and are not mixed into the monthly block-count series."
+        }
+      }
+    }
+  },
+  "openbitcoinMonthlyPoolHistory": {
+    "retrievedAt": "2026-09-29T16:29:26.312Z",
+    "completedAt": "2026-09-29T16:31:15.848Z",
+    "poolCount": 91,
+    "completedMonthFirst": "2011-06-01",
+    "completedMonthLast": "2026-08-01",
+    "monthlyPeriods": 183,
+    "poolShareRows": 11208,
+    "hhiRows": 183,
+    "candidateRows": 11391,
+    "candidateSha256": "b3716d3637dc91349991c105a6cba66416fa06a99dc6d1d1b8ef8f9be057f49d",
+    "rawBytes": 321898,
+    "rawSha256": "d21ce0a80c307a495ef4841b27b6f24082661ae2dc0ed0c19ff218e3d13e9c8f",
+    "poolMonthlyTotalsMatchReportedLifetimeBlocks": true,
+    "monthlyPoolSharesSumTo100Within": 5e-12,
+    "unassignedBlocksExcluded": true,
+    "incompleteSeptember2026Excluded": true,
+    "localPrivateUse": true,
+    "uploaded": false
+  },
+  "previousLatestRefresh": {
+    "runDate": "2026-09-29",
+    "cutoffInclusive": "2026-09-28",
+    "previousMasterRows": 687533,
+    "masterRows": 698924,
+    "netRowIncrease": 11391,
+    "masterSha256": "1c5c0f748139533c6bfd65c491f03ad431cd076d84250e147733a1b8b447e54f",
+    "coinMetricsCommunityBitcoin": {
+      "path": "coinmetrics-btc-refresh-2026-09-24-28.csv",
+      "rawRows": 100,
+      "newMasterObservations": 12,
+      "sha256": "7bcaba64ee629d02b9b7719a7a69843cdaa14a8ae1ab35b2a952cffacf9711ff"
+    },
+    "openBitcoinMetrics": {
+      "path": "open-bitcoin-metrics-refresh-2026-09-29.csv",
+      "rawRows": 38579,
+      "newMasterObservations": 6,
+      "sha256": "72671374fe226d27614b024d8b17d4d87d83cbb4b33bbf7ab80a0323fa7f8e90"
+    },
+    "bitviewPrivateResearch": {
+      "path": "bitview-private-research-refresh-2026-09-29.csv",
+      "sanitizedRows": 133942,
+      "newObservationsThroughCutoff": 40,
+      "revisedObservations": 20,
+      "excludedSeptember29Rows": 20,
+      "masterSourceRows": 133926,
+      "sha256": "b946e057cd69fcdf6def7442b9a43226b694d23dc6ec710890abc9fd775968e7"
+    },
+    "mempoolLightningPrivateCandidate": {
+      "path": "lightning-history-research-through-2026-09-28.csv",
+      "observations": 3639,
+      "metricIds": [
+        "lightning_capacity_btc",
+        "lightning_channels",
+        "lightning_avg_channel_btc",
+        "lightning_capacity_change_30d_pct",
+        "lightning_channels_change_30d_pct",
+        "lightning_median_channel_btc",
+        "lightning_nodes"
+      ],
+      "first": "2023-09-30",
+      "last": "2026-08-30",
+      "mergedIntoMaster": true,
+      "reason": "Merged into the local private Bitcoin master only; no separate data reuse license was identified and public redistribution is not cleared.",
+      "csv": {
+        "bytes": 876228,
+        "sha256": "6fbb340c455a5904d86767f811be3a300acbc1359bd55c357db3fa6edd65ebf1"
+      },
+      "json": {
+        "bytes": 106925,
+        "sha256": "afab2441df3b5a1ece4adfbdd81b5b3a6803244c63dfb5a64f21d6fe185852f7"
+      },
+      "importedRows": 3639,
+      "publicRedistributionCleared": false
+    },
+    "bitcoinLab": {
+      "deferred": true,
+      "reason": "User will set BITLAB_API_TOKEN locally later; no request was made without the token."
+    },
+    "qualityCheck": {
+      "perMetricAndSeries": true,
+      "status": "passed",
+      "unexplainedFrequencyGaps": 0,
+      "rowsAfterCutoff": 0,
+      "duplicateKeys": 0
+    },
+    "coinMetricsCommunityCatalog": {
+      "path": "coinmetrics-btc-community-catalog-refresh-2026-09-29.json",
+      "assets": [
+        "btc"
+      ],
+      "communityMetrics": 31,
+      "mappedMetrics": 20,
+      "noNewEmptyDashboardMetric": true,
+      "bytes": 13098,
+      "sha256": "8d354a978f584f2a25e154b29fb94e4982a4a269518a85bd1f69fd0c5484f8cb"
+    },
+    "mempoolBitcoinResearchCandidates": {
+      "path": "mempool-bitcoin-history-research-candidates-through-2026-09-28.csv",
+      "rows": 4562,
+      "sha256": "2b3e7fee5d3c247851be0bcf004e23941235551fb745565cd031e64d2e25faca",
+      "mergedIntoMaster": false,
+      "metrics": {
+        "fees_p10_sat_vb": 1096,
+        "fees_p90_sat_vb": 1096,
+        "mining_pool_share": 2213,
+        "pool_concentration_hhi": 157
+      },
+      "miningPoolSeries": 15,
+      "firstFeeDate": "2023-09-29",
+      "lastFeeDate": "2026-09-28",
+      "firstMiningPoolDate": "2023-10-02",
+      "lastMiningPoolDate": "2026-09-28",
+      "rawFiles": [
+        {
+          "path": "mempool-mining-pool-hashrate-3y-through-2026-09-28.json",
+          "bytes": 301622,
+          "sha256": "24778a278c7b971efbb1e627f1806b44dc93eb663e45a1a26eb8137a526013df"
+        },
+        {
+          "path": "mempool-block-fee-rates-3y-through-2026-09-28.json",
+          "bytes": 451786,
+          "sha256": "81457223f6dfee5ae550652fcfd47f7ba31d4d6334c70cc4bb7b62f1cd04ec2e"
+        }
+      ],
+      "dataReuseLicenseConfirmed": false,
+      "reason": "Fee p10/p90 rows were merged for local private research only. Weekly hashrate pool shares and derived HHI remain outside the master because the active OpenBitcoin series uses monthly directly counted blocks. Public redistribution is not cleared.",
+      "manifest": {
+        "path": "mempool-bitcoin-history-research-candidates-through-2026-09-28.json",
+        "bytes": 2568,
+        "sha256": "5752182d666853a99293e430f2ccd6618bd8f96d212aa8aa2a338e1c315a510d"
+      },
+      "poolShareMethodology": "Normalized weekly average hashrate share, a proxy rather than a direct block count.",
+      "partiallyMergedIntoMaster": true,
+      "mergedRows": 2192,
+      "mergedMetricIds": [
+        "fees_p10_sat_vb",
+        "fees_p90_sat_vb"
+      ],
+      "remainingOutsideMasterRows": 2370,
+      "remainingOutsideMasterMetricIds": [
+        "mining_pool_share",
+        "pool_concentration_hhi"
+      ]
+    },
+    "remainingEmptyBitcoinMetricIds": 55,
+    "remainingEmptyCoreMetricIds": 9,
+    "privateResearchCandidateRowsOutsideMaster": 8201,
+    "privateResearchCandidateMetricIdsOutsideMaster": 11,
+    "openbitcoinMonthlyPoolHistory": {
+      "retrievedAt": "2026-09-29T16:29:26.312Z",
+      "completedAt": "2026-09-29T16:31:15.848Z",
+      "poolCount": 91,
+      "completedMonthFirst": "2011-06-01",
+      "completedMonthLast": "2026-08-01",
+      "monthlyPeriods": 183,
+      "poolShareRows": 11208,
+      "hhiRows": 183,
+      "candidateRows": 11391,
+      "candidateSha256": "b3716d3637dc91349991c105a6cba66416fa06a99dc6d1d1b8ef8f9be057f49d",
+      "rawBytes": 321898,
+      "rawSha256": "d21ce0a80c307a495ef4841b27b6f24082661ae2dc0ed0c19ff218e3d13e9c8f",
+      "poolMonthlyTotalsMatchReportedLifetimeBlocks": true,
+      "monthlyPoolSharesSumTo100Within": 5e-12,
+      "unassignedBlocksExcluded": true,
+      "incompleteSeptember2026Excluded": true,
+      "localPrivateUse": true,
+      "uploaded": false
+    }
+  }
+}

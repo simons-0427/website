@@ -1,0 +1,371 @@
+{
+  "batch": 7,
+  "range": {
+    "first": 601,
+    "last": 700,
+    "count": 100
+  },
+  "checkedOn": "2026-09-25",
+  "method": "Fast completion using composition-based zeros for clear plant-only foods and one close-match profile for Spitzkohl. Packaged plant-based foods and generic fried fries are marked as estimates.",
+  "updates": [
+    {
+      "databaseIndex": 603,
+      "databaseName": "Äpfel, getrocknet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Dried fruit without added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 605,
+      "databaseName": "Pfirsiche, getrocknet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Dried fruit without added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 606,
+      "databaseName": "Erdbeeren, getrocknet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Dried fruit without added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 607,
+      "databaseName": "Himbeeren, getrocknet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Dried fruit without added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 608,
+      "databaseName": "Brombeeren, getrocknet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Dried fruit without added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 609,
+      "databaseName": "Bananen, getrocknet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Dried fruit without added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 611,
+      "databaseName": "Papaya, getrocknet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Dried fruit without added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 612,
+      "databaseName": "Korinthen, getrocknet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Dried fruit without added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 613,
+      "databaseName": "Ananas, getrocknet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Dried fruit without added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 614,
+      "databaseName": "Trockenfrucht-Mix",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Fruit mix without named added fat; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 623,
+      "databaseName": "Mehrfruchtsaft, vitaminangereichert",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Fruit juice with no fat ingredient; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 624,
+      "databaseName": "Roter Mehrfruchtsaft",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Fruit juice with no fat ingredient; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 625,
+      "databaseName": "Smoothie purpur",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Fruit smoothie with no fat ingredient; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 626,
+      "databaseName": "Himbeersaft, 100%",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "100% fruit juice; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 628,
+      "databaseName": "Mangosaft, 100%",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "100% fruit juice; composition-based zero.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 638,
+      "databaseName": "Knollensellerie, roh",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Raw plant food; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 643,
+      "databaseName": "Feldsalat, roh",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Raw plant food; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 648,
+      "databaseName": "Brennnessel, roh",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Raw plant food; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 650,
+      "databaseName": "Sauerampfer, roh",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Raw plant food; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 651,
+      "databaseName": "Gartenkresse, roh",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Raw plant food; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 656,
+      "databaseName": "Fenchelblatt, roh",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Raw plant food; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 666,
+      "databaseName": "Dicke Bohne unreif, roh",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Raw legume; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 678,
+      "databaseName": "Spitzkohl, roh",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Raw plant food; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 686,
+      "databaseName": "Wurzelpetersilie, roh",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Raw plant food; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 687,
+      "databaseName": "Nori-Blatt, geröstet",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Seaweed without animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 693,
+      "databaseName": "Hefe Flocken/Nährhefe",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Yeast flakes without animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 695,
+      "databaseName": "Erbse reif",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "composition_based_zero",
+      "confidence": "medium-high",
+      "note": "Plain plant food; no animal or hydrogenated fat source.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 698,
+      "databaseName": "Mandeldrink ungesüßt, angereichert mit Vitaminen und Calcium",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "estimated_zero",
+      "confidence": "medium-low",
+      "note": "Estimated zero for generic plant drink; brand-specific trace amounts are not available.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 699,
+      "databaseName": "Dessert/Puddingalternative, pflanzlich, angereichert mit Vitaminen und Calcium",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "estimated_zero",
+      "confidence": "medium-low",
+      "note": "Estimated zero for generic plant-based dessert; recipe-specific oils are not available.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 700,
+      "databaseName": "Pommes frites tiefgefroren, frittiert",
+      "field": "Trans Fat (g)",
+      "previous": null,
+      "value": 0,
+      "method": "estimated_zero",
+      "confidence": "medium-low",
+      "note": "Estimated zero for generic fried potato with vegetable oil; the exact frying-oil profile is unavailable.",
+      "checkedOn": "2026-09-25"
+    },
+    {
+      "databaseIndex": 678,
+      "databaseName": "Spitzkohl, roh",
+      "field": "Omega-6 Fatty Acids (g)",
+      "previous": null,
+      "value": 0.0265,
+      "method": "near_match_estimate",
+      "confidence": "medium",
+      "source": "BLS 4.0, code G342100, Weißkohl roh, Omega-6 = 0.0265 g/100 g",
+      "sourceUrl": "https://blsdb.de/download",
+      "sourceNote": "The exact BLS Spitzkohl profile (G344100) has a dash for Omega-6, not a numeric zero. Used the closest raw cabbage profile, Weißkohl, because it is a closely related raw cabbage and its recorded total fat (0.19 g/100 g) is close to the Spitzkohl profile (0.18 g/100 g).",
+      "checkedOn": "2026-09-25"
+    }
+  ],
+  "verification": {
+    "databaseFoodCount": 1516,
+    "targetFields": [
+      "Omega-3 Fatty Acids (g)",
+      "Omega-6 Fatty Acids (g)",
+      "Trans Fat (g)",
+      "Alcohol (g)",
+      "Alpha-Linolenic Acid (ALA) (g)",
+      "Eicosapentaenoic Acid (EPA) (g)",
+      "Docosahexaenoic Acid (DHA) (g)"
+    ],
+    "missingTargetFieldsInBlock": 0,
+    "negativeTargetValuesInBlock": 0,
+    "omega3PlusOmega6ExceedsFatByMoreThan0_05g": 0,
+    "readBackVerified": true
+  }
+}

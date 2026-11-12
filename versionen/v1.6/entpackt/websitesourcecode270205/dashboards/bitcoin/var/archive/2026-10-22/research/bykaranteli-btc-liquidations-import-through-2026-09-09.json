@@ -1,0 +1,128 @@
+{
+  "createdAt": "2026-09-29T21:57:52.448Z",
+  "source": {
+    "slug": "bykaranteli_btc_liquidations_cc0",
+    "url": "https://raw.githubusercontent.com/bykarantelicom/crypto-datasets/main/data/liquidations-daily.csv",
+    "repository": "https://github.com/bykarantelicom/crypto-datasets",
+    "file": "data/liquidations-daily.csv",
+    "license": "CC0 1.0 Universal, as stated in the repository README accessed 2026-09-29",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution": "The source CSV labels the upstream source as bykaranteli.com."
+  },
+  "rawBitcoinOnlySnapshot": {
+    "path": "bykaranteli-btc-liquidations-btcusdt-research-through-2026-09-09.csv",
+    "bytes": 13973,
+    "sha256": "68a57a457983c96dc7a43951a9163b211b900754a7cd5b271147e1227bf3b34a",
+    "rows": 210,
+    "symbols": [
+      "BTCUSDT"
+    ],
+    "exchanges": [
+      "aster",
+      "binance",
+      "bybit",
+      "deribit",
+      "dydx",
+      "gate",
+      "htx",
+      "lighter",
+      "okx"
+    ],
+    "firstDate": "2026-07-30",
+    "lastDate": "2026-09-09",
+    "venueCountsByDate": {
+      "2026-07-30": 2,
+      "2026-07-31": 3,
+      "2026-08-01": 3,
+      "2026-08-02": 3,
+      "2026-08-03": 3,
+      "2026-08-04": 3,
+      "2026-08-05": 3,
+      "2026-08-06": 3,
+      "2026-08-07": 3,
+      "2026-08-08": 3,
+      "2026-08-09": 3,
+      "2026-08-10": 3,
+      "2026-08-11": 3,
+      "2026-08-12": 3,
+      "2026-08-13": 3,
+      "2026-08-14": 3,
+      "2026-08-15": 3,
+      "2026-08-16": 3,
+      "2026-08-17": 4,
+      "2026-08-18": 4,
+      "2026-08-19": 4,
+      "2026-08-20": 5,
+      "2026-08-21": 6,
+      "2026-08-22": 6,
+      "2026-08-23": 6,
+      "2026-08-24": 6,
+      "2026-08-25": 6,
+      "2026-08-26": 6,
+      "2026-08-27": 6,
+      "2026-08-28": 6,
+      "2026-08-29": 6,
+      "2026-08-30": 6,
+      "2026-08-31": 6,
+      "2026-09-01": 6,
+      "2026-09-02": 8,
+      "2026-09-03": 9,
+      "2026-09-04": 9,
+      "2026-09-05": 9,
+      "2026-09-06": 9,
+      "2026-09-07": 8,
+      "2026-09-08": 8,
+      "2026-09-09": 8
+    },
+    "fieldsWritten": [
+      "date",
+      "symbol",
+      "exchange",
+      "long_liquidations_usd",
+      "short_liquidations_usd",
+      "events",
+      "max_single_liquidation_usd",
+      "source"
+    ],
+    "nonBitcoinRowsWritten": 0
+  },
+  "observations": 126,
+  "metricIds": [
+    "liquidations_usd",
+    "liquidations_long_usd",
+    "liquidations_short_usd"
+  ],
+  "metricCounts": {
+    "liquidations_usd": 42,
+    "liquidations_long_usd": 42,
+    "liquidations_short_usd": 42
+  },
+  "sourceCounts": {
+    "bykaranteli_btc_liquidations_cc0": 126
+  },
+  "firstObservationDate": "2026-07-30",
+  "lastObservationDate": "2026-09-09",
+  "nativeCalendar": "Reported daily UTC totals; all 42 UTC calendar dates from 2026-07-30 through 2026-09-09 are present. No dates were interpolated.",
+  "mapping": {
+    "liquidations_usd": "sum(long_liquidations_usd + short_liquidations_usd) for symbol BTCUSDT across the exchange rows available for each date",
+    "liquidations_long_usd": "sum(long_liquidations_usd) for symbol BTCUSDT across the exchange rows available for each date",
+    "liquidations_short_usd": "sum(short_liquidations_usd) for symbol BTCUSDT across the exchange rows available for each date"
+  },
+  "coverageNote": "Only the public BTCUSDT exchange rows present in the source were aggregated. Venue coverage varies by date. The source describes its recorded events as a floor, so these sums are a partial lower-bound sample, not total Bitcoin market liquidations.",
+  "candidate": {
+    "path": "bykaranteli-btc-liquidations-import-through-2026-09-09.csv",
+    "bytes": 27254,
+    "sha256": "7f05969eb0649c4d78d8f876ff1c97d08475cd0e5a1f2993043f5ed162550106"
+  },
+  "dataReuseLicenseConfirmedFromRepository": true,
+  "sourceValuesProvisional": true,
+  "uploaded": false,
+  "mergedIntoMaster": true,
+  "mergedAt": "2026-09-29T22:02:24.287Z",
+  "master": {
+    "path": "bitcoin-backfill-cointime-cftc-options.csv",
+    "previousRows": 738478,
+    "addedRows": 126,
+    "expectedRows": 738604
+  }
+}

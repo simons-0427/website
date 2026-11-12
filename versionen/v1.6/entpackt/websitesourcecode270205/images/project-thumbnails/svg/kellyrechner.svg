@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="title">
+  <title id="title">Kelly-Einsatzkurve und simulierte Kapitalverläufe</title>
+  <rect width="512" height="512" fill="#284c36"/>
+  <rect x="74" y="76" width="364" height="360" rx="36" fill="#f8f3db"/>
+  <path d="M111 247C153 234 188 135 252 135S348 202 401 246V259H111Z" fill="#c4e8bf"/>
+  <path d="M111 247C153 234 188 135 252 135S348 202 401 246" fill="none" stroke="#25825b" stroke-width="12" stroke-linecap="round"/>
+  <path d="M111 259H401" stroke="#82968a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M252 149V259" stroke="#7e6ac8" stroke-width="6" stroke-dasharray="9 10"/>
+  <circle cx="252" cy="135" r="15" fill="#ffbd42" stroke="#f8f3db" stroke-width="6"/>
+  <g stroke="#d6d9c8" stroke-width="3">
+    <path d="M111 299H401M111 345H401M111 392H401"/>
+  </g>
+  <g fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M112 379L141 364L165 370L194 340L221 348L249 321L277 330L306 301L335 313L365 285L400 278" stroke="#25825b"/>
+    <path d="M112 379L141 371L165 380L194 361L221 371L249 350L277 362L306 341L335 353L365 331L400 337" stroke="#7e6ac8"/>
+    <path d="M112 379L141 385L165 377L194 390L221 381L249 394L277 387L306 401L335 393L365 405L400 396" stroke="#ed7964"/>
+  </g>
+</svg>

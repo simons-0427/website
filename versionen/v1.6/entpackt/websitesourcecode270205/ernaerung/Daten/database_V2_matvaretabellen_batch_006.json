@@ -1,0 +1,64 @@
+{
+  "checkedOn": "2026-09-25",
+  "method": "Two official Matvaretabellen profiles were used for direct/close food matches. Fat values were within 7%; source values were transferred per 100 g without scaling. All EPA/DHA zeros are explicitly reported on the source pages. Existing alcohol values of 0 g were retained.",
+  "records": [
+    {
+      "index": 412,
+      "food": "Croissant",
+      "targetFat_g_per_100g": 19.7,
+      "sourceName": "Croissant, plain, industrially made",
+      "sourceFat_g_per_100g": 18.4,
+      "fatDifferencePct": 6.6,
+      "sourceUrl": "https://www.matvaretabellen.no/en/croissant-plain-industrially-made/",
+      "basis": "per 100 g",
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "updatedValues": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 0.7,
+        "Trans Fat (g)": 0.4,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "componentsSumToOmega3": true,
+      "alcoholUnchanged_g_per_100g": 0,
+      "confidence": "medium-high: direct food match or close standard variant; fat differs by under 7%; source values retained without scaling"
+    },
+    {
+      "index": 431,
+      "food": "Halloumi",
+      "targetFat_g_per_100g": 23.5,
+      "sourceName": "Cheese, Halloumi",
+      "sourceFat_g_per_100g": 21.9,
+      "fatDifferencePct": 6.8,
+      "sourceUrl": "https://www.matvaretabellen.no/en/cheese-halloumi/",
+      "basis": "per 100 g",
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "updatedValues": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 0.7,
+        "Trans Fat (g)": 0.8,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "componentsSumToOmega3": true,
+      "alcoholUnchanged_g_per_100g": 0,
+      "confidence": "medium-high: direct food match or close standard variant; fat differs by under 7%; source values retained without scaling"
+    }
+  ]
+}

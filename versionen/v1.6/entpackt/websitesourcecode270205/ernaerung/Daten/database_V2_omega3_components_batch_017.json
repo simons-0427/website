@@ -1,0 +1,4911 @@
+{
+  "checkedOn": "2026-09-25",
+  "scope": {
+    "firstDatabaseIndex": 1401,
+    "lastDatabaseIndex": 1500,
+    "count": 100,
+    "unitBasis": "g per 100 g; g per 100 ml for liquids"
+  },
+  "fields": {
+    "ALA": "Alpha-Linolenic Acid (ALA) (g)",
+    "EPA": "Eicosapentaenoic Acid (EPA) (g)",
+    "DHA": "Docosahexaenoic Acid (DHA) (g)"
+  },
+  "fieldCoverage": {
+    "Alpha-Linolenic Acid (ALA) (g)": {
+      "filled": 96,
+      "missing": 4,
+      "total": 100
+    },
+    "Eicosapentaenoic Acid (EPA) (g)": {
+      "filled": 97,
+      "missing": 3,
+      "total": 100
+    },
+    "Docosahexaenoic Acid (DHA) (g)": {
+      "filled": 97,
+      "missing": 3,
+      "total": 100
+    }
+  },
+  "sources": [
+    {
+      "name": "BLS 4.0 2025",
+      "url": "https://blsdb.de/download",
+      "use": "Exact food-code component fields for ALA, EPA and DHA."
+    },
+    {
+      "name": "USDA FoodData Central SR Legacy 2018",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "use": "Mapped item-level component values; close profiles are listed individually and scaled only when the fat ratio is 0.5 to 1.5."
+    },
+    {
+      "name": "Matvaretabellen",
+      "url": "https://matvaretabellen.mattilsynet.io/en/tzatziki/",
+      "use": "Same-named Tzatziki entry for values absent from BLS/USDA matches."
+    }
+  ],
+  "methodNotes": [
+    "No generic food-class split of total Omega-3 was used to estimate ALA, EPA or DHA.",
+    "BLS values are g per 100 g. Positive values are not transferred to ml-based items without a verified density conversion; exact source zeroes remain zero.",
+    "USDA nutrient 619 is used for ALA, 629 for EPA and 621 for DHA. A missing source nutrient is not treated as zero.",
+    "Zeros are used only for explicit source zeroes, exactly zero total fat, or plant-only EPA/DHA exclusion.",
+    "Any source components that would exceed the database total Omega-3 are withheld and recorded as a conflict rather than adjusted.",
+    "Where an exact USDA item profile reports positive Omega-3 but the mapped BLS total was formula-calculated as zero with ALA unreported, the Omega-3 total is corrected to the directly sourced USDA fatty-acid sum and logged below."
+  ],
+  "updatedDatabaseIndices": [
+    1401,
+    1402,
+    1403,
+    1404,
+    1405,
+    1406,
+    1407,
+    1408,
+    1409,
+    1410,
+    1411,
+    1412,
+    1413,
+    1414,
+    1415,
+    1416,
+    1417,
+    1418,
+    1419,
+    1420,
+    1421,
+    1422,
+    1423,
+    1424,
+    1425,
+    1426,
+    1427,
+    1428,
+    1429,
+    1430,
+    1431,
+    1432,
+    1433,
+    1434,
+    1435,
+    1436,
+    1437,
+    1438,
+    1439,
+    1440,
+    1441,
+    1442,
+    1443,
+    1444,
+    1445,
+    1446,
+    1447,
+    1448,
+    1449,
+    1450,
+    1451,
+    1452,
+    1453,
+    1454,
+    1455,
+    1456,
+    1457,
+    1458,
+    1459,
+    1460,
+    1462,
+    1463,
+    1464,
+    1465,
+    1466,
+    1467,
+    1468,
+    1469,
+    1470,
+    1471,
+    1472,
+    1473,
+    1474,
+    1475,
+    1476,
+    1477,
+    1478,
+    1479,
+    1480,
+    1481,
+    1482,
+    1483,
+    1484,
+    1485,
+    1486,
+    1487,
+    1488,
+    1489,
+    1490,
+    1491,
+    1492,
+    1493,
+    1494,
+    1495,
+    1496,
+    1497,
+    1498,
+    1499,
+    1500
+  ],
+  "omega3Corrections": [],
+  "records": [
+    {
+      "databaseIndex": 1401,
+      "databaseArrayIndex": 1400,
+      "food": "Lammfleisch-Zervelatwurst",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.27,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0.01
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 W139100",
+          "sourceName": "Lammfleisch-Zervelatwurst",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.27,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 W139100",
+          "sourceName": "Lammfleisch-Zervelatwurst",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 W139100",
+          "sourceName": "Lammfleisch-Zervelatwurst",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1402,
+      "databaseArrayIndex": 1401,
+      "food": "Rind Steak (Rücken) mariniert, roh",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.27,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 U133100",
+          "sourceName": "Rind Steak (Rücken) mariniert, roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.27,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 U133100",
+          "sourceName": "Rind Steak (Rücken) mariniert, roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 U133100",
+          "sourceName": "Rind Steak (Rücken) mariniert, roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1403,
+      "databaseArrayIndex": 1402,
+      "food": "Schmelzkäsezubereitung 45 - 52 % Fett i. Tr., mit Nüssen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.866,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 M816000",
+          "sourceName": "Schmelzkäsezubereitung 45 - 52 % Fett i. Tr., mit Nüssen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.866,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 M816000",
+          "sourceName": "Schmelzkäsezubereitung 45 - 52 % Fett i. Tr., mit Nüssen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 M816000",
+          "sourceName": "Schmelzkäsezubereitung 45 - 52 % Fett i. Tr., mit Nüssen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1404,
+      "databaseArrayIndex": 1403,
+      "food": "Grießbrei einfach, gesüßt",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.02,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X951113",
+          "sourceName": "Grießbrei einfach, gesüßt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.02,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X951113",
+          "sourceName": "Grießbrei einfach, gesüßt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X951113",
+          "sourceName": "Grießbrei einfach, gesüßt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1405,
+      "databaseArrayIndex": 1404,
+      "food": "Batate/Süßkartoffel, gekocht",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 K420132",
+          "sourceName": "Batate/Süßkartoffel, gekocht",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 K420132",
+          "sourceName": "Batate/Süßkartoffel, gekocht",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 K420132",
+          "sourceName": "Batate/Süßkartoffel, gekocht",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1406,
+      "databaseArrayIndex": 1405,
+      "food": "Rinderkraftbrühe mit Reis",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.002,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X423462",
+          "sourceName": "Rinderkraftbrühe mit Reis",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.002,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X423462",
+          "sourceName": "Rinderkraftbrühe mit Reis",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X423462",
+          "sourceName": "Rinderkraftbrühe mit Reis",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1407,
+      "databaseArrayIndex": 1406,
+      "food": "Weizenfladenbrot",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B782100",
+          "sourceName": "Weizenfladenbrot",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B782100",
+          "sourceName": "Weizenfladenbrot",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B782100",
+          "sourceName": "Weizenfladenbrot",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1408,
+      "databaseArrayIndex": 1407,
+      "food": "Kartoffelgulasch",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.22,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X614213",
+          "sourceName": "Kartoffelgulasch",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.22,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X614213",
+          "sourceName": "Kartoffelgulasch",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X614213",
+          "sourceName": "Kartoffelgulasch",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1409,
+      "databaseArrayIndex": 1408,
+      "food": "Käseklößchen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.006,
+        "Docosahexaenoic Acid (DHA) (g)": 0.013
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X435143",
+          "sourceName": "Käseklößchen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.1,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X435143",
+          "sourceName": "Käseklößchen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.006,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X435143",
+          "sourceName": "Käseklößchen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.013,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1410,
+      "databaseArrayIndex": 1409,
+      "food": "Knoblauch gebacken",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.015,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 G490162",
+          "sourceName": "Knoblauch gebacken",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.015,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 G490162",
+          "sourceName": "Knoblauch gebacken",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 G490162",
+          "sourceName": "Knoblauch gebacken",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1411,
+      "databaseArrayIndex": 1410,
+      "food": "Porridge gesüßt, mit Wasser",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.022,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X9A2090",
+          "sourceName": "Porridge gesüßt, mit Wasser",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.022,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X9A2090",
+          "sourceName": "Porridge gesüßt, mit Wasser",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X9A2090",
+          "sourceName": "Porridge gesüßt, mit Wasser",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1412,
+      "databaseArrayIndex": 1411,
+      "food": "Erdnuss geröstet, gesalzen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.025,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 H110700",
+          "sourceName": "Erdnuss geröstet, gesalzen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.025,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 H110700",
+          "sourceName": "Erdnuss geröstet, gesalzen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 H110700",
+          "sourceName": "Erdnuss geröstet, gesalzen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1413,
+      "databaseArrayIndex": 1412,
+      "food": "Schnittlauchquark (aus Sahnequark)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.057,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 Y771140",
+          "sourceName": "Schnittlauchquark (aus Sahnequark)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.057,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 Y771140",
+          "sourceName": "Schnittlauchquark (aus Sahnequark)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 Y771140",
+          "sourceName": "Schnittlauchquark (aus Sahnequark)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1414,
+      "databaseArrayIndex": 1413,
+      "food": "Frankfurter Würstchen/Schinkenwürstchen, Konserve",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.13,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 W874100",
+          "sourceName": "Frankfurter Würstchen/Schinkenwürstchen, Konserve",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.13,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 W874100",
+          "sourceName": "Frankfurter Würstchen/Schinkenwürstchen, Konserve",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 W874100",
+          "sourceName": "Frankfurter Würstchen/Schinkenwürstchen, Konserve",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1415,
+      "databaseArrayIndex": 1414,
+      "food": "Weizenvollkornbrötchen mit Sonnenblumenkernen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.095,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B416500",
+          "sourceName": "Weizenvollkornbrötchen mit Sonnenblumenkernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.095,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B416500",
+          "sourceName": "Weizenvollkornbrötchen mit Sonnenblumenkernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B416500",
+          "sourceName": "Weizenvollkornbrötchen mit Sonnenblumenkernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1416,
+      "databaseArrayIndex": 1415,
+      "food": "Schwein Zunge, Kochpökelware",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.115,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.005,
+        "Docosahexaenoic Acid (DHA) (g)": 0.005
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 V593800",
+          "sourceName": "Schwein Zunge, Kochpökelware",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.115,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 V593800",
+          "sourceName": "Schwein Zunge, Kochpökelware",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.005,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 V593800",
+          "sourceName": "Schwein Zunge, Kochpökelware",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.005,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1417,
+      "databaseArrayIndex": 1416,
+      "food": "Englische Muffins/Toasties (Hefeteig) gebraten ohne Fett (Pfanne)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.04,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.003,
+        "Docosahexaenoic Acid (DHA) (g)": 0.0006
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D400700",
+          "sourceName": "Englische Muffins/Toasties (Hefeteig) gebraten ohne Fett (Pfanne)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.04,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D400700",
+          "sourceName": "Englische Muffins/Toasties (Hefeteig) gebraten ohne Fett (Pfanne)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.003,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D400700",
+          "sourceName": "Englische Muffins/Toasties (Hefeteig) gebraten ohne Fett (Pfanne)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0006,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1418,
+      "databaseArrayIndex": 1417,
+      "food": "Teewurst fettreduziert",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.004,
+        "Docosahexaenoic Acid (DHA) (g)": 0.004
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 W121500",
+          "sourceName": "Teewurst fettreduziert",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.1,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 W121500",
+          "sourceName": "Teewurst fettreduziert",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.004,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 W121500",
+          "sourceName": "Teewurst fettreduziert",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.004,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1419,
+      "databaseArrayIndex": 1418,
+      "food": "Vollkornbrötchen mit Ölsamen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.393,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B406000",
+          "sourceName": "Vollkornbrötchen mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.393,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B406000",
+          "sourceName": "Vollkornbrötchen mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B406000",
+          "sourceName": "Vollkornbrötchen mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1420,
+      "databaseArrayIndex": 1419,
+      "food": "Lachs tiefgefroren",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.248,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.697,
+        "Docosahexaenoic Acid (DHA) (g)": 1.115
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 T410200",
+          "sourceName": "Lachs tiefgefroren",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.248,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 T410200",
+          "sourceName": "Lachs tiefgefroren",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.697,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 T410200",
+          "sourceName": "Lachs tiefgefroren",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 1.115,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1421,
+      "databaseArrayIndex": 1420,
+      "food": "Gemüsepaprika grün, geschmort ohne Fett",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.041,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 G541042",
+          "sourceName": "Gemüsepaprika grün, geschmort ohne Fett",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.041,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 G541042",
+          "sourceName": "Gemüsepaprika grün, geschmort ohne Fett",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 G541042",
+          "sourceName": "Gemüsepaprika grün, geschmort ohne Fett",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1422,
+      "databaseArrayIndex": 1421,
+      "food": "Haferschleim",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.007,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X454713",
+          "sourceName": "Haferschleim",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.007,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X454713",
+          "sourceName": "Haferschleim",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X454713",
+          "sourceName": "Haferschleim",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1423,
+      "databaseArrayIndex": 1422,
+      "food": "Heidesand (Mürbeteig)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.08,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0.0024
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D750600",
+          "sourceName": "Heidesand (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.08,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D750600",
+          "sourceName": "Heidesand (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D750600",
+          "sourceName": "Heidesand (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0024,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1424,
+      "databaseArrayIndex": 1423,
+      "food": "Mischpilze roh",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 K750100",
+          "sourceName": "Mischpilze roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 K750100",
+          "sourceName": "Mischpilze roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 K750100",
+          "marker": "-",
+          "origin": "-",
+          "reference": "-"
+        }
+      },
+      "confidence": "partially sourced; unresolved values left blank",
+      "conflict": null,
+      "missing": [
+        "Alpha-Linolenic Acid (ALA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1425,
+      "databaseArrayIndex": 1424,
+      "food": "Weizenmischbrot mit Kürbiskernen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.04,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B259000",
+          "sourceName": "Weizenmischbrot mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.04,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B259000",
+          "sourceName": "Weizenmischbrot mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B259000",
+          "sourceName": "Weizenmischbrot mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1426,
+      "databaseArrayIndex": 1425,
+      "food": "Ente Fleisch, ohne Haut, gegrillt",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.112,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.004,
+        "Docosahexaenoic Acid (DHA) (g)": 0.019
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 V463172",
+          "sourceName": "Ente Fleisch, ohne Haut, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.112,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 V463172",
+          "sourceName": "Ente Fleisch, ohne Haut, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.004,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 V463172",
+          "sourceName": "Ente Fleisch, ohne Haut, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.019,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1427,
+      "databaseArrayIndex": 1426,
+      "food": "Schokozwieback",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D034000",
+          "sourceName": "Schokozwieback",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.1,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D034000",
+          "sourceName": "Schokozwieback",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D034000",
+          "sourceName": "Schokozwieback",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1428,
+      "databaseArrayIndex": 1427,
+      "food": "Wachtel Fleisch, ohne Haut, tiefgefroren",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 V351200",
+          "sourceName": "Wachtel Fleisch, ohne Haut, tiefgefroren",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 V351200",
+          "sourceName": "Wachtel Fleisch, ohne Haut, tiefgefroren",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 V351200",
+          "marker": "-",
+          "origin": "-",
+          "reference": "-"
+        }
+      },
+      "confidence": "partially sourced; unresolved values left blank",
+      "conflict": null,
+      "missing": [
+        "Alpha-Linolenic Acid (ALA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1429,
+      "databaseArrayIndex": 1428,
+      "food": "Asia-Dressing",
+      "unitBasis": "g per 100 ml",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 1.915776,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X359640",
+          "sourceName": "Asia-Dressing",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 1.85,
+          "density": {
+            "value": 1.0355544452439418,
+            "unit": "g/ml",
+            "dataset": "USDA_FoodData_Central_SR_Legacy_2018",
+            "fdcId": 171006,
+            "sourceName": "Salad dressing, sesame seed dressing, regular",
+            "portion": "1 US cup",
+            "grams": 245,
+            "volumeMl": 236.5882365,
+            "sourceUrl": "https://fdc.nal.usda.gov/food-details/171006/nutrients?type=SR%20Legacy",
+            "match": "sesame dressing comparator for Asian dressing"
+          },
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; converted using the already-audited density 1.0355544452439418 g/ml."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X359640",
+          "sourceName": "Asia-Dressing",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X359640",
+          "sourceName": "Asia-Dressing",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1430,
+      "databaseArrayIndex": 1429,
+      "food": "Broccoli gebraten ohne Fett (Pfanne)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.3548,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 G312182",
+          "sourceName": "Broccoli gebraten ohne Fett (Pfanne)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.3548,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 G312182",
+          "sourceName": "Broccoli gebraten ohne Fett (Pfanne)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 G312182",
+          "sourceName": "Broccoli gebraten ohne Fett (Pfanne)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1431,
+      "databaseArrayIndex": 1430,
+      "food": "Laugengebäck mit Sesam",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B723300",
+          "sourceName": "Laugengebäck mit Sesam",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.1,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B723300",
+          "sourceName": "Laugengebäck mit Sesam",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B723300",
+          "sourceName": "Laugengebäck mit Sesam",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1432,
+      "databaseArrayIndex": 1431,
+      "food": "Geflügelfleischkäse mit Schweinefleisch",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.177,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0.01
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 W238000",
+          "sourceName": "Geflügelfleischkäse mit Schweinefleisch",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.177,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 W238000",
+          "sourceName": "Geflügelfleischkäse mit Schweinefleisch",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 W238000",
+          "sourceName": "Geflügelfleischkäse mit Schweinefleisch",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1433,
+      "databaseArrayIndex": 1432,
+      "food": "Seezunge gedünstet",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.017,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.044,
+        "Docosahexaenoic Acid (DHA) (g)": 0.22
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 T309152",
+          "sourceName": "Seezunge gedünstet",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.017,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 T309152",
+          "sourceName": "Seezunge gedünstet",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.044,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 T309152",
+          "sourceName": "Seezunge gedünstet",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.22,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1434,
+      "databaseArrayIndex": 1433,
+      "food": "Weizenvollkornbrot mit Buttermilch",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.0342,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B111700",
+          "sourceName": "Weizenvollkornbrot mit Buttermilch",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0342,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B111700",
+          "sourceName": "Weizenvollkornbrot mit Buttermilch",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B111700",
+          "sourceName": "Weizenvollkornbrot mit Buttermilch",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1435,
+      "databaseArrayIndex": 1434,
+      "food": "Käsewindbeutel salzig (Brandmasse) ungefüllt",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.07,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.002,
+        "Docosahexaenoic Acid (DHA) (g)": 0.024
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D720800",
+          "sourceName": "Käsewindbeutel salzig (Brandmasse) ungefüllt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.07,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D720800",
+          "sourceName": "Käsewindbeutel salzig (Brandmasse) ungefüllt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.002,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D720800",
+          "sourceName": "Käsewindbeutel salzig (Brandmasse) ungefüllt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.024,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1436,
+      "databaseArrayIndex": 1435,
+      "food": "Kohlrabi gekocht",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.046,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 G331132",
+          "sourceName": "Kohlrabi gekocht",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.046,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 G331132",
+          "sourceName": "Kohlrabi gekocht",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 G331132",
+          "sourceName": "Kohlrabi gekocht",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1437,
+      "databaseArrayIndex": 1436,
+      "food": "Heidelbeer-Muffins (Rührmasse)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.005,
+        "Docosahexaenoic Acid (DHA) (g)": 0.011
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D400800",
+          "sourceName": "Heidelbeer-Muffins (Rührmasse)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.1,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D400800",
+          "sourceName": "Heidelbeer-Muffins (Rührmasse)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.005,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D400800",
+          "sourceName": "Heidelbeer-Muffins (Rührmasse)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.011,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1438,
+      "databaseArrayIndex": 1437,
+      "food": "Konfitüre extra",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.0522,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 S132000",
+          "sourceName": "Konfitüre extra",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0522,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 S132000",
+          "sourceName": "Konfitüre extra",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 S132000",
+          "sourceName": "Konfitüre extra",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1439,
+      "databaseArrayIndex": 1438,
+      "food": "Schwein Brustspitze, gebraten ohne Fett (Ofen)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.0747,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.0064,
+        "Docosahexaenoic Acid (DHA) (g)": 0.0023
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 U651162",
+          "sourceName": "Schwein Brustspitze, gebraten ohne Fett (Ofen)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0747,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 U651162",
+          "sourceName": "Schwein Brustspitze, gebraten ohne Fett (Ofen)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0064,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 U651162",
+          "sourceName": "Schwein Brustspitze, gebraten ohne Fett (Ofen)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0023,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1440,
+      "databaseArrayIndex": 1439,
+      "food": "Sauerteigbrot mit Ölsamen, glutenfrei",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.71,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B8A6000",
+          "sourceName": "Sauerteigbrot mit Ölsamen, glutenfrei",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.71,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B8A6000",
+          "sourceName": "Sauerteigbrot mit Ölsamen, glutenfrei",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B8A6000",
+          "sourceName": "Sauerteigbrot mit Ölsamen, glutenfrei",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1441,
+      "databaseArrayIndex": 1440,
+      "food": "Zartbitter-/Halbbitterschokolade, gefüllt mit Kokoscreme",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.11,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.02,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 S560600",
+          "sourceName": "Zartbitter-/Halbbitterschokolade, gefüllt mit Kokoscreme",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.11,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 S560600",
+          "sourceName": "Zartbitter-/Halbbitterschokolade, gefüllt mit Kokoscreme",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.02,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 S560600",
+          "sourceName": "Zartbitter-/Halbbitterschokolade, gefüllt mit Kokoscreme",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1442,
+      "databaseArrayIndex": 1441,
+      "food": "Kaffeeeis",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.05,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0.02
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 S220200",
+          "sourceName": "Kaffeeeis",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.05,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 S220200",
+          "sourceName": "Kaffeeeis",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 S220200",
+          "sourceName": "Kaffeeeis",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.02,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1443,
+      "databaseArrayIndex": 1442,
+      "food": "Eiswaffeln/Waffelhörnchen (Rührmasse)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.04,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.003,
+        "Docosahexaenoic Acid (DHA) (g)": 0.005
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D621100",
+          "sourceName": "Eiswaffeln/Waffelhörnchen (Rührmasse)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.04,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D621100",
+          "sourceName": "Eiswaffeln/Waffelhörnchen (Rührmasse)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.003,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D621100",
+          "sourceName": "Eiswaffeln/Waffelhörnchen (Rührmasse)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.005,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1444,
+      "databaseArrayIndex": 1443,
+      "food": "Wildschwein Fleisch, geschmort ohne Fett",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 V256042",
+          "sourceName": "Wildschwein Fleisch, geschmort ohne Fett",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 V256042",
+          "marker": "-",
+          "origin": "-",
+          "reference": "-"
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 V256042",
+          "marker": "-",
+          "origin": "-",
+          "reference": "-"
+        }
+      },
+      "confidence": "partially sourced; unresolved values left blank",
+      "conflict": null,
+      "missing": [
+        "Eicosapentaenoic Acid (EPA) (g)",
+        "Docosahexaenoic Acid (DHA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1445,
+      "databaseArrayIndex": 1444,
+      "food": "Schwein Kochfleisch (Bauch) gekocht",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.16,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0.01
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 U583132",
+          "sourceName": "Schwein Kochfleisch (Bauch) gekocht",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.16,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 U583132",
+          "sourceName": "Schwein Kochfleisch (Bauch) gekocht",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 U583132",
+          "sourceName": "Schwein Kochfleisch (Bauch) gekocht",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1446,
+      "databaseArrayIndex": 1445,
+      "food": "Apfel-Streuselkuchen (Mürbeteig)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.04,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.004,
+        "Docosahexaenoic Acid (DHA) (g)": 0.003
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D187200",
+          "sourceName": "Apfel-Streuselkuchen (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.04,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D187200",
+          "sourceName": "Apfel-Streuselkuchen (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.004,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D187200",
+          "sourceName": "Apfel-Streuselkuchen (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.003,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1447,
+      "databaseArrayIndex": 1446,
+      "food": "Rosinenbrötchen (Hefeteig)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.003,
+        "Docosahexaenoic Acid (DHA) (g)": 0.004
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D7A5500",
+          "sourceName": "Rosinenbrötchen (Hefeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D7A5500",
+          "sourceName": "Rosinenbrötchen (Hefeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.003,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D7A5500",
+          "sourceName": "Rosinenbrötchen (Hefeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.004,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1448,
+      "databaseArrayIndex": 1447,
+      "food": "Orangennektar mit Süßungsmitteln",
+      "unitBasis": "g per 100 ml",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 F614600",
+          "sourceName": "Orangennektar mit Süßungsmitteln",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 F614600",
+          "sourceName": "Orangennektar mit Süßungsmitteln",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 F614600",
+          "sourceName": "Orangennektar mit Süßungsmitteln",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1449,
+      "databaseArrayIndex": 1448,
+      "food": "Böhmische Knödel roh",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.06,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.002,
+        "Docosahexaenoic Acid (DHA) (g)": 0.012
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 E608000",
+          "sourceName": "Böhmische Knödel roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.06,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 E608000",
+          "sourceName": "Böhmische Knödel roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.002,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 E608000",
+          "sourceName": "Böhmische Knödel roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.012,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1450,
+      "databaseArrayIndex": 1449,
+      "food": "Studentenfutter",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.5,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 H810000",
+          "sourceName": "Studentenfutter",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.5,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 H810000",
+          "sourceName": "Studentenfutter",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 H810000",
+          "sourceName": "Studentenfutter",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1451,
+      "databaseArrayIndex": 1450,
+      "food": "Roggenvollkornbrötchen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.11,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B421000",
+          "sourceName": "Roggenvollkornbrötchen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.11,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B421000",
+          "sourceName": "Roggenvollkornbrötchen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B421000",
+          "sourceName": "Roggenvollkornbrötchen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1452,
+      "databaseArrayIndex": 1451,
+      "food": "Buttergebäck (Mürbeteig)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.14,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0.006
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D734600",
+          "sourceName": "Buttergebäck (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.14,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D734600",
+          "sourceName": "Buttergebäck (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D734600",
+          "sourceName": "Buttergebäck (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.006,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1453,
+      "databaseArrayIndex": 1452,
+      "food": "Apfelkraut",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.082,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 S142200",
+          "sourceName": "Apfelkraut",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.082,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 S142200",
+          "sourceName": "Apfelkraut",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 S142200",
+          "sourceName": "Apfelkraut",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1454,
+      "databaseArrayIndex": 1453,
+      "food": "Tortenguss klar (zubereitet mit Wasser und Zucker) für Gebäck/Torten",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 R942000",
+          "sourceName": "Tortenguss klar (zubereitet mit Wasser und Zucker) für Gebäck/Torten",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 R942000",
+          "sourceName": "Tortenguss klar (zubereitet mit Wasser und Zucker) für Gebäck/Torten",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 R942000",
+          "sourceName": "Tortenguss klar (zubereitet mit Wasser und Zucker) für Gebäck/Torten",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1455,
+      "databaseArrayIndex": 1454,
+      "food": "Reiswaffeln schokoliert",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.058,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.02,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 C532900",
+          "sourceName": "Reiswaffeln schokoliert",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.058,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 C532900",
+          "sourceName": "Reiswaffeln schokoliert",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.02,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 C532900",
+          "sourceName": "Reiswaffeln schokoliert",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1456,
+      "databaseArrayIndex": 1455,
+      "food": "Pflanzenfett/Frittierfett, pflanzlich",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 1.8,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 Q960000",
+          "sourceName": "Pflanzenfett/Frittierfett, pflanzlich",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 1.8,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 Q960000",
+          "sourceName": "Pflanzenfett/Frittierfett, pflanzlich",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 Q960000",
+          "sourceName": "Pflanzenfett/Frittierfett, pflanzlich",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1457,
+      "databaseArrayIndex": 1456,
+      "food": "Vollmilchschokolade gefüllt mit Karamell",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.097,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.03,
+        "Docosahexaenoic Acid (DHA) (g)": 0.001
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 S539100",
+          "sourceName": "Vollmilchschokolade gefüllt mit Karamell",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.097,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 S539100",
+          "sourceName": "Vollmilchschokolade gefüllt mit Karamell",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.03,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 S539100",
+          "sourceName": "Vollmilchschokolade gefüllt mit Karamell",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.001,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1458,
+      "databaseArrayIndex": 1457,
+      "food": "Kokosflocken (aus Fondant)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.002,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 S354000",
+          "sourceName": "Kokosflocken (aus Fondant)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 S354000",
+          "sourceName": "Kokosflocken (aus Fondant)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.002,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 S354000",
+          "sourceName": "Kokosflocken (aus Fondant)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1459,
+      "databaseArrayIndex": 1458,
+      "food": "Kalb Hals/Nacken/Kamm, tiefgefroren",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.024,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 U432200",
+          "sourceName": "Kalb Hals/Nacken/Kamm, tiefgefroren",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.024,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 U432200",
+          "marker": "-",
+          "origin": "-",
+          "reference": "-"
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 U432200",
+          "marker": "-",
+          "origin": "-",
+          "reference": "-"
+        }
+      },
+      "confidence": "partially sourced; unresolved values left blank",
+      "conflict": null,
+      "missing": [
+        "Eicosapentaenoic Acid (EPA) (g)",
+        "Docosahexaenoic Acid (DHA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1460,
+      "databaseArrayIndex": 1459,
+      "food": "Lammfleischspieße mit Gemüse, gegrillt",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.41,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 Y436232",
+          "sourceName": "Lammfleischspieße mit Gemüse, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.41,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 Y436232",
+          "sourceName": "Lammfleischspieße mit Gemüse, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 Y436232",
+          "sourceName": "Lammfleischspieße mit Gemüse, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1461,
+      "databaseArrayIndex": 1460,
+      "food": "Tintenfische mehliert, gebraten",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "sources": {},
+      "sourceChecks": {},
+      "confidence": "unresolved, left blank",
+      "conflict": {
+        "type": "component_sum_exceeds_database_omega3",
+        "totalOmega3": 0.41,
+        "existingSum": 0,
+        "proposedSum": 0.41200000000000003,
+        "skippedPositiveFields": [
+          "Alpha-Linolenic Acid (ALA) (g)",
+          "Eicosapentaenoic Acid (EPA) (g)",
+          "Docosahexaenoic Acid (DHA) (g)"
+        ]
+      },
+      "missing": [
+        "Alpha-Linolenic Acid (ALA) (g)",
+        "Eicosapentaenoic Acid (EPA) (g)",
+        "Docosahexaenoic Acid (DHA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1462,
+      "databaseArrayIndex": 1461,
+      "food": "Weizenbrötchen mit Mohn",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.08,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B516400",
+          "sourceName": "Weizenbrötchen mit Mohn",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.08,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B516400",
+          "sourceName": "Weizenbrötchen mit Mohn",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B516400",
+          "sourceName": "Weizenbrötchen mit Mohn",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1463,
+      "databaseArrayIndex": 1462,
+      "food": "Kuchenboden/Tortenboden, kakaohaltig (Mürbeteig, einfacher)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.06,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.006,
+        "Docosahexaenoic Acid (DHA) (g)": 0.014
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D0A6100",
+          "sourceName": "Kuchenboden/Tortenboden, kakaohaltig (Mürbeteig, einfacher)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.06,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D0A6100",
+          "sourceName": "Kuchenboden/Tortenboden, kakaohaltig (Mürbeteig, einfacher)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.006,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D0A6100",
+          "sourceName": "Kuchenboden/Tortenboden, kakaohaltig (Mürbeteig, einfacher)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.014,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1464,
+      "databaseArrayIndex": 1463,
+      "food": "Apfelkuchen gedeckt (Mürbeteig)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.003,
+        "Docosahexaenoic Acid (DHA) (g)": 0.01
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D181300",
+          "sourceName": "Apfelkuchen gedeckt (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D181300",
+          "sourceName": "Apfelkuchen gedeckt (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.003,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D181300",
+          "sourceName": "Apfelkuchen gedeckt (Mürbeteig)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1465,
+      "databaseArrayIndex": 1464,
+      "food": "Pute Flügel, mit Haut, gegrillt",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.3,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 V487172",
+          "sourceName": "Pute Flügel, mit Haut, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.3,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 V487172",
+          "sourceName": "Pute Flügel, mit Haut, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 V487172",
+          "sourceName": "Pute Flügel, mit Haut, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1466,
+      "databaseArrayIndex": 1465,
+      "food": "Barbecuesauce/Grillsauce",
+      "unitBasis": "g per 100 ml",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.719351,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X384143",
+          "sourceName": "Barbecuesauce/Grillsauce",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.61,
+          "density": {
+            "value": 1.1792640417267746,
+            "unit": "g/ml",
+            "dataset": "USDA_FoodData_Central_SR_Legacy_2018",
+            "fdcId": 174523,
+            "sourceName": "Sauce, barbecue",
+            "portion": "1 US cup",
+            "grams": 279,
+            "volumeMl": 236.5882365,
+            "sourceUrl": "https://fdc.nal.usda.gov/food-details/174523/nutrients?type=SR%20Legacy",
+            "match": "USDA SR Legacy household measure for same food or close food-class comparator"
+          },
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; converted using the already-audited density 1.1792640417267746 g/ml."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X384143",
+          "sourceName": "Barbecuesauce/Grillsauce",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X384143",
+          "sourceName": "Barbecuesauce/Grillsauce",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1467,
+      "databaseArrayIndex": 1466,
+      "food": "Käsealternative, Basis Cashewkerne, vegan",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.057,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 H882000",
+          "sourceName": "Käsealternative, Basis Cashewkerne, vegan",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.057,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 H882000",
+          "sourceName": "Käsealternative, Basis Cashewkerne, vegan",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 H882000",
+          "sourceName": "Käsealternative, Basis Cashewkerne, vegan",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1468,
+      "databaseArrayIndex": 1467,
+      "food": "Vollkornbrötchen mit Kürbiskernen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.107,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B406700",
+          "sourceName": "Vollkornbrötchen mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.107,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B406700",
+          "sourceName": "Vollkornbrötchen mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B406700",
+          "sourceName": "Vollkornbrötchen mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1469,
+      "databaseArrayIndex": 1468,
+      "food": "Salatcreme (Fertigprodukt)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 1.6,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 Q998000",
+          "sourceName": "Salatcreme (Fertigprodukt)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 1.6,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 Q998000",
+          "sourceName": "Salatcreme (Fertigprodukt)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 Q998000",
+          "sourceName": "Salatcreme (Fertigprodukt)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1470,
+      "databaseArrayIndex": 1469,
+      "food": "Roggenvollkornknäckebrot mit Kürbiskernen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.104,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B6A2800",
+          "sourceName": "Roggenvollkornknäckebrot mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.104,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B6A2800",
+          "sourceName": "Roggenvollkornknäckebrot mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B6A2800",
+          "sourceName": "Roggenvollkornknäckebrot mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1471,
+      "databaseArrayIndex": 1470,
+      "food": "Rotkohl geschmort ohne Fett",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.0769,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 G341142",
+          "sourceName": "Rotkohl geschmort ohne Fett",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0769,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 G341142",
+          "sourceName": "Rotkohl geschmort ohne Fett",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 G341142",
+          "sourceName": "Rotkohl geschmort ohne Fett",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1472,
+      "databaseArrayIndex": 1471,
+      "food": "Fleischkäse gebraten",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.23,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 Y025022",
+          "sourceName": "Fleischkäse gebraten",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.23,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 Y025022",
+          "sourceName": "Fleischkäse gebraten",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 Y025022",
+          "sourceName": "Fleischkäse gebraten",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1473,
+      "databaseArrayIndex": 1472,
+      "food": "Roggenbrot mit Sonnenblumenkernen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.04,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B226500",
+          "sourceName": "Roggenbrot mit Sonnenblumenkernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.04,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B226500",
+          "sourceName": "Roggenbrot mit Sonnenblumenkernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B226500",
+          "sourceName": "Roggenbrot mit Sonnenblumenkernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1474,
+      "databaseArrayIndex": 1473,
+      "food": "Dinkelvollkornknäckebrot mit Ölsamen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.8,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B6A5100",
+          "sourceName": "Dinkelvollkornknäckebrot mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.8,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B6A5100",
+          "sourceName": "Dinkelvollkornknäckebrot mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B6A5100",
+          "sourceName": "Dinkelvollkornknäckebrot mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1475,
+      "databaseArrayIndex": 1474,
+      "food": "Cornflakes gesüßt, mit Zuckerglasur und Erdnüssen, angereichert mit Vitaminen und Mineralstoffen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.008,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 C515200",
+          "sourceName": "Cornflakes gesüßt, mit Zuckerglasur und Erdnüssen, angereichert mit Vitaminen und Mineralstoffen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.008,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 C515200",
+          "sourceName": "Cornflakes gesüßt, mit Zuckerglasur und Erdnüssen, angereichert mit Vitaminen und Mineralstoffen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 C515200",
+          "sourceName": "Cornflakes gesüßt, mit Zuckerglasur und Erdnüssen, angereichert mit Vitaminen und Mineralstoffen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1476,
+      "databaseArrayIndex": 1475,
+      "food": "Roggenvollkornbrötchen mit Nüssen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.38,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B426800",
+          "sourceName": "Roggenvollkornbrötchen mit Nüssen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.38,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B426800",
+          "sourceName": "Roggenvollkornbrötchen mit Nüssen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B426800",
+          "sourceName": "Roggenvollkornbrötchen mit Nüssen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1477,
+      "databaseArrayIndex": 1476,
+      "food": "Göttinger Schinkenwurst",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.26,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.009,
+        "Docosahexaenoic Acid (DHA) (g)": 0.006
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 W164200",
+          "sourceName": "Göttinger Schinkenwurst",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.26,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 W164200",
+          "sourceName": "Göttinger Schinkenwurst",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.009,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 W164200",
+          "sourceName": "Göttinger Schinkenwurst",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.006,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1478,
+      "databaseArrayIndex": 1477,
+      "food": "Vanilleflammeri/Vanillepudding, mit Eigelb",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.03,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0.01
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 Y862143",
+          "sourceName": "Vanilleflammeri/Vanillepudding, mit Eigelb",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.03,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 Y862143",
+          "sourceName": "Vanilleflammeri/Vanillepudding, mit Eigelb",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 Y862143",
+          "sourceName": "Vanilleflammeri/Vanillepudding, mit Eigelb",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1479,
+      "databaseArrayIndex": 1478,
+      "food": "Cookies mit Schokoladenstückchen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.07,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0.007
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D7A2000",
+          "sourceName": "Cookies mit Schokoladenstückchen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.07,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D7A2000",
+          "sourceName": "Cookies mit Schokoladenstückchen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D7A2000",
+          "sourceName": "Cookies mit Schokoladenstückchen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.007,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1480,
+      "databaseArrayIndex": 1479,
+      "food": "Roggenbrot mit Kürbiskernen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.05,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B226700",
+          "sourceName": "Roggenbrot mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.05,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B226700",
+          "sourceName": "Roggenbrot mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B226700",
+          "sourceName": "Roggenbrot mit Kürbiskernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1481,
+      "databaseArrayIndex": 1480,
+      "food": "Kolbacz",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.33,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.02,
+        "Docosahexaenoic Acid (DHA) (g)": 0.02
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 W171600",
+          "sourceName": "Kolbacz",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.33,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 W171600",
+          "sourceName": "Kolbacz",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.02,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 W171600",
+          "sourceName": "Kolbacz",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.02,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1482,
+      "databaseArrayIndex": 1481,
+      "food": "Weizenvollkornbrot mit Ölsamen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.282,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B111500",
+          "sourceName": "Weizenvollkornbrot mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.282,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B111500",
+          "sourceName": "Weizenvollkornbrot mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B111500",
+          "sourceName": "Weizenvollkornbrot mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1483,
+      "databaseArrayIndex": 1482,
+      "food": "Aufschnitt-Grundbrät",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.16,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 W004000",
+          "sourceName": "Aufschnitt-Grundbrät",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.16,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 W004000",
+          "sourceName": "Aufschnitt-Grundbrät",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 W004000",
+          "sourceName": "Aufschnitt-Grundbrät",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1484,
+      "databaseArrayIndex": 1483,
+      "food": "Schmierwurst fettreich",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.22,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0.01
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 W116000",
+          "sourceName": "Schmierwurst fettreich",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.22,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 W116000",
+          "sourceName": "Schmierwurst fettreich",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 W116000",
+          "sourceName": "Schmierwurst fettreich",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1485,
+      "databaseArrayIndex": 1484,
+      "food": "Schafskopf (Meerbrasse) gedünstet",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.131,
+        "Docosahexaenoic Acid (DHA) (g)": 0.117
+      },
+      "sources": {
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 T617152",
+          "sourceName": "Schafskopf (Meerbrasse) gedünstet",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.131,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 T617152",
+          "sourceName": "Schafskopf (Meerbrasse) gedünstet",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.117,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 T617152",
+          "marker": "-",
+          "origin": "-",
+          "reference": "-"
+        }
+      },
+      "confidence": "partially sourced; unresolved values left blank",
+      "conflict": null,
+      "missing": [
+        "Alpha-Linolenic Acid (ALA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1486,
+      "databaseArrayIndex": 1485,
+      "food": "Rhabarberkaltschale gebunden mit Grieß",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.01,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X4B1010",
+          "sourceName": "Rhabarberkaltschale gebunden mit Grieß",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X4B1010",
+          "sourceName": "Rhabarberkaltschale gebunden mit Grieß",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X4B1010",
+          "sourceName": "Rhabarberkaltschale gebunden mit Grieß",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1487,
+      "databaseArrayIndex": 1486,
+      "food": "Vollkornplunderteig roh",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.355,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0.002
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D9A4000",
+          "sourceName": "Vollkornplunderteig roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.355,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D9A4000",
+          "sourceName": "Vollkornplunderteig roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D9A4000",
+          "sourceName": "Vollkornplunderteig roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.002,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1488,
+      "databaseArrayIndex": 1487,
+      "food": "Schwein Brät, roh",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.21,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0.01
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 U065100",
+          "sourceName": "Schwein Brät, roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.21,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 U065100",
+          "sourceName": "Schwein Brät, roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 U065100",
+          "sourceName": "Schwein Brät, roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1489,
+      "databaseArrayIndex": 1488,
+      "food": "Meerrettichsoße Konserve",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.07,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.003,
+        "Docosahexaenoic Acid (DHA) (g)": 0.0007
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 U990200",
+          "sourceName": "Meerrettichsoße Konserve",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.07,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 U990200",
+          "sourceName": "Meerrettichsoße Konserve",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.003,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 U990200",
+          "sourceName": "Meerrettichsoße Konserve",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0007,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1490,
+      "databaseArrayIndex": 1489,
+      "food": "Roggenbrot mit Ölsamen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.29,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B226000",
+          "sourceName": "Roggenbrot mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.29,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B226000",
+          "sourceName": "Roggenbrot mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B226000",
+          "sourceName": "Roggenbrot mit Ölsamen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1491,
+      "databaseArrayIndex": 1490,
+      "food": "Pralinen gefüllt mit Vanillecreme",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.122,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.02,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 S623600",
+          "sourceName": "Pralinen gefüllt mit Vanillecreme",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.122,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 S623600",
+          "sourceName": "Pralinen gefüllt mit Vanillecreme",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.02,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 S623600",
+          "sourceName": "Pralinen gefüllt mit Vanillecreme",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1492,
+      "databaseArrayIndex": 1491,
+      "food": "Hefeteig für Pizza/Pizzateig, roh",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.55,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 X9A6030",
+          "sourceName": "Hefeteig für Pizza/Pizzateig, roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.55,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 X9A6030",
+          "sourceName": "Hefeteig für Pizza/Pizzateig, roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 X9A6030",
+          "sourceName": "Hefeteig für Pizza/Pizzateig, roh",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1493,
+      "databaseArrayIndex": 1492,
+      "food": "Getränkepulver malzhaltig, angereichert mit Vitaminen und Mineralstoffen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.02,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 S730000",
+          "sourceName": "Getränkepulver malzhaltig, angereichert mit Vitaminen und Mineralstoffen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.02,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 S730000",
+          "sourceName": "Getränkepulver malzhaltig, angereichert mit Vitaminen und Mineralstoffen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 S730000",
+          "sourceName": "Getränkepulver malzhaltig, angereichert mit Vitaminen und Mineralstoffen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1494,
+      "databaseArrayIndex": 1493,
+      "food": "Schokoladen-Mandel-Cookies vegan",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.64,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.01,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D7A2100",
+          "sourceName": "Schokoladen-Mandel-Cookies vegan",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.64,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D7A2100",
+          "sourceName": "Schokoladen-Mandel-Cookies vegan",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.01,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D7A2100",
+          "sourceName": "Schokoladen-Mandel-Cookies vegan",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1495,
+      "databaseArrayIndex": 1494,
+      "food": "Rote Grütze ungesüßt",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.061,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 Y855312",
+          "sourceName": "Rote Grütze ungesüßt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.061,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 Y855312",
+          "sourceName": "Rote Grütze ungesüßt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 Y855312",
+          "sourceName": "Rote Grütze ungesüßt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1496,
+      "databaseArrayIndex": 1495,
+      "food": "Dinkelvollkornbrötchen mit Sonnenblumenkernen",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.095,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B491400",
+          "sourceName": "Dinkelvollkornbrötchen mit Sonnenblumenkernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.095,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B491400",
+          "sourceName": "Dinkelvollkornbrötchen mit Sonnenblumenkernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B491400",
+          "sourceName": "Dinkelvollkornbrötchen mit Sonnenblumenkernen",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Reskalierung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1497,
+      "databaseArrayIndex": 1496,
+      "food": "Schokoladentorte (Rührmasse)",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.06,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.008,
+        "Docosahexaenoic Acid (DHA) (g)": 0.012
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 D330300",
+          "sourceName": "Schokoladentorte (Rührmasse)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.06,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 D330300",
+          "sourceName": "Schokoladentorte (Rührmasse)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.008,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 D330300",
+          "sourceName": "Schokoladentorte (Rührmasse)",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.012,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1498,
+      "databaseArrayIndex": 1497,
+      "food": "Schwein Kamm, gegrillt",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.0777,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.0049,
+        "Docosahexaenoic Acid (DHA) (g)": 0.0027
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 U632172",
+          "sourceName": "Schwein Kamm, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0777,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 U632172",
+          "sourceName": "Schwein Kamm, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0049,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 U632172",
+          "sourceName": "Schwein Kamm, gegrillt",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.0027,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1499,
+      "databaseArrayIndex": 1498,
+      "food": "Pampelmusensaft/Pomelosaft",
+      "unitBasis": "g per 100 ml",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 F605600",
+          "sourceName": "Pampelmusensaft/Pomelosaft",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Rezeptberechnung",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 F605600",
+          "sourceName": "Pampelmusensaft/Pomelosaft",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Logische Null",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 F605600",
+          "sourceName": "Pampelmusensaft/Pomelosaft",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0,
+          "density": null,
+          "origin": "Logische Null",
+          "reference": "-",
+          "method": "BLS source value is zero, so no density conversion is needed."
+        }
+      },
+      "sourceChecks": {},
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    },
+    {
+      "databaseIndex": 1500,
+      "databaseArrayIndex": 1499,
+      "food": "Weizentortilla",
+      "unitBasis": "g per 100 g",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.161,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.001,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "sources": {
+        "Alpha-Linolenic Acid (ALA) (g)": {
+          "source": "BLS 4.0 B783012",
+          "sourceName": "Weizentortilla",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.161,
+          "density": null,
+          "origin": "Analyse",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Eicosapentaenoic Acid (EPA) (g)": {
+          "source": "BLS 4.0 B783012",
+          "sourceName": "Weizentortilla",
+          "sourceUrl": "https://blsdb.de/download",
+          "valuePer100g": 0.001,
+          "density": null,
+          "origin": "Analyse",
+          "reference": "-",
+          "method": "Exact BLS food-code mapping; component copied in g per 100 g."
+        },
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "Food identity",
+          "sourceName": "getreide",
+          "sourceUrl": null,
+          "method": "Plant-only food; EPA/DHA excluded. No total-omega-3 split was used."
+        }
+      },
+      "sourceChecks": {
+        "Docosahexaenoic Acid (DHA) (g)": {
+          "source": "BLS 4.0 B783012",
+          "marker": "<LOD",
+          "origin": "Analyse",
+          "reference": "-"
+        }
+      },
+      "confidence": "source-checked item profile",
+      "conflict": null,
+      "missing": []
+    }
+  ],
+  "missingComponentRows": [
+    {
+      "databaseIndex": 1424,
+      "food": "Mischpilze roh",
+      "missing": [
+        "Alpha-Linolenic Acid (ALA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1428,
+      "food": "Wachtel Fleisch, ohne Haut, tiefgefroren",
+      "missing": [
+        "Alpha-Linolenic Acid (ALA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1444,
+      "food": "Wildschwein Fleisch, geschmort ohne Fett",
+      "missing": [
+        "Eicosapentaenoic Acid (EPA) (g)",
+        "Docosahexaenoic Acid (DHA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1459,
+      "food": "Kalb Hals/Nacken/Kamm, tiefgefroren",
+      "missing": [
+        "Eicosapentaenoic Acid (EPA) (g)",
+        "Docosahexaenoic Acid (DHA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1461,
+      "food": "Tintenfische mehliert, gebraten",
+      "missing": [
+        "Alpha-Linolenic Acid (ALA) (g)",
+        "Eicosapentaenoic Acid (EPA) (g)",
+        "Docosahexaenoic Acid (DHA) (g)"
+      ]
+    },
+    {
+      "databaseIndex": 1485,
+      "food": "Schafskopf (Meerbrasse) gedünstet",
+      "missing": [
+        "Alpha-Linolenic Acid (ALA) (g)"
+      ]
+    }
+  ],
+  "validation": {
+    "negativeValues": 0,
+    "omega3ComponentSumConflicts": 1,
+    "remainingMissingCells": 10,
+    "invalidRows": 0
+  }
+}

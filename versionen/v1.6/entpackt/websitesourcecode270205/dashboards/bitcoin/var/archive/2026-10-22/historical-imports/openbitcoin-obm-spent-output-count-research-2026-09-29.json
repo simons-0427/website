@@ -1,0 +1,20 @@
+{
+  "retrievedAt": "2026-09-29T18:06:49.355Z",
+  "source": "Open Bitcoin Metrics",
+  "sourceUrl": "https://github.com/diegorllanos/open-bitcoin-metrics/tree/main/metrics/obm_spent_output_count_daily",
+  "csvUrl": "https://raw.githubusercontent.com/diegorllanos/open-bitcoin-metrics/main/metrics/obm_spent_output_count_daily/obm_spent_output_count_daily.csv",
+  "license": "CC BY 4.0",
+  "metric": "utxo_spent_count",
+  "sourceMetric": "obm_spent_output_count_daily",
+  "sourceRows": 6476,
+  "sourceFirstDate": "2009-01-01",
+  "sourceLastDate": "2026-09-24",
+  "importRows": 6476,
+  "importFirstDate": "2009-01-01",
+  "importLastDate": "2026-09-24",
+  "excludedAfterCutoff": 0,
+  "cutoffInclusive": "2026-09-28",
+  "bytes": 463268,
+  "sha256": "b55223a7991c314d09eee2a78f1db1c09f350f540688d9a1330d31709a7216ce",
+  "uploaded": false
+}

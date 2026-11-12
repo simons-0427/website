@@ -1,0 +1,19 @@
+{
+  "checkedOn": "2026-10-21",
+  "items": [
+    {"name":"Macadamia","price":2.49,"pack":"125-g-Beutel kg = 19.92","url":"https://www.aldi-nord.de/sortiment/sortiment-highlights/preis-highlights.html","promo":false},
+    {"name":"Bio-Weiße-Bohnen","price":1.65,"pack":"500-g-Packung kg = 3.30","url":"https://www.aldi-nord.de/produkt/bio-huelsenfruechte-8180.html","promo":false},
+    {"name":"Bio-Rote-Linsen","price":1.65,"pack":"500-g-Packung kg = 3.30","url":"https://www.aldi-nord.de/produkt/bio-huelsenfruechte-8180.html","promo":false},
+    {"name":"Bio-Kichererbsen","price":1.65,"pack":"500-g-Packung kg = 3.30","url":"https://www.aldi-nord.de/produkt/bio-huelsenfruechte-8180.html","promo":false},
+    {"name":"Bio-Grüne-Erbsen","price":1.65,"pack":"500-g-Packung kg = 3.30","url":"https://www.aldi-nord.de/produkt/bio-huelsenfruechte-8180.html","promo":false},
+    {"name":"Bio-Berglinsen","price":1.65,"pack":"500-g-Packung kg = 3.30","url":"https://www.aldi-nord.de/produkt/bio-huelsenfruechte-8180.html","promo":false},
+    {"name":"Kichererbsen","price":0.59,"pack":"425-ml-Dose Abtropfgewicht = 265 g kg = 2.23","url":"https://www.aldi-nord.de/produkt/kichererbsen-1006602.html","promo":false},
+    {"name":"Kidneybohnen","price":0.69,"pack":"425-ml-Dose Abtropfgewicht = 255 g kg = 2.71","url":"https://www.aldi-nord.de/produkt/kidneybohnen-4385.html","promo":false},
+    {"name":"Gemüsemais","price":0.89,"pack":"425-ml-Dose Abtropfgewicht = 285 g kg = 3.12","url":"https://www.aldi-nord.de/sortiment/vorraete/gemuesekonserven.html","promo":false},
+    {"name":"Erbsen","price":0.89,"pack":"425-ml-Dose Abtropfgewicht = 280 g kg = 3.18","url":"https://www.aldi-nord.de/sortiment/vorraete/gemuesekonserven.html","promo":false},
+    {"name":"Brechbohnen","price":1.19,"pack":"850-ml-Dose Abtropfgewicht = 455 g kg (ATG) = 2.62","url":"https://www.aldi-nord.de/sortiment/vorraete/gemuesekonserven.html","promo":false},
+    {"name":"Delikatess Rote Bete Kugeln","price":1.19,"pack":"370-ml-Glas Abtropfgewicht = 220 g kg = 5.41","url":"https://www.aldi-nord.de/sortiment/vorraete/gemuesekonserven.html","promo":false},
+    {"name":"Weinsauerkraut","price":0.79,"pack":"520-g-Beutel Abtropfgewicht = 500 g kg (ATG) = 1.58","url":"https://www.aldi-nord.de/sortiment/vorraete/gemuesekonserven.html","promo":false},
+    {"name":"Weiße Riesenbohnen","price":0.99,"pack":"295-g-Glas Abtropfgewicht = 210 g kg (ATG) = 4.71","url":"https://www.aldi-nord.de/sortiment/vorraete/gemuesekonserven.html","promo":false}
+  ]
+}

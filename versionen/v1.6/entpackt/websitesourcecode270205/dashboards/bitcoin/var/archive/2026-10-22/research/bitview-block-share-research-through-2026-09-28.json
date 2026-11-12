@@ -1,0 +1,743 @@
+{
+  "fetchedAtUtc": "2026-09-30T08:01:20.286Z",
+  "dashboard": "bitcoin",
+  "source": "Bitview / Bitcoin Research Kit public per-block series API",
+  "sourceSlug": "bitview_api_research_only",
+  "derivedSource": "derived_bitcoin_metrics",
+  "apiVersion": "v0.12.2",
+  "tipHeight": 969278,
+  "rawDataStartUtc": "2009-01-01",
+  "cutoffInclusive": "2026-09-28",
+  "method": "Each block is assigned by its own UTC header timestamp because Bitcoin block-header timestamps can move backward between consecutive heights. Empty block means exactly one transaction in the block (coinbase only). SegWit share excludes coinbase from numerator and denominator.",
+  "seriesMetadata": {
+    "timestamp": {
+      "type": "Timestamp",
+      "indexes": [
+        "minute10",
+        "minute30",
+        "hour1",
+        "hour4",
+        "hour12",
+        "day1",
+        "day3",
+        "week1",
+        "month1",
+        "month3",
+        "month6",
+        "year1",
+        "year10",
+        "halving",
+        "epoch",
+        "height"
+      ],
+      "description": "Unix timestamp in seconds associated with the indexed block or time period. Block-header timestamps are not guaranteed to increase between consecutive heights."
+    },
+    "tx_count": {
+      "type": "StoredU64",
+      "indexes": [
+        "height"
+      ],
+      "description": "Number of transactions, including the coinbase transaction. Value for the represented block. At time-period indexes, the value is taken from the period's final block."
+    },
+    "segwit_txs": {
+      "type": "StoredU32",
+      "indexes": [
+        "height"
+      ],
+      "description": "Number of non-coinbase transactions using SegWit serialization."
+    }
+  },
+  "chunks": {
+    "timestamp": [
+      {
+        "start": 0,
+        "end": 30000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330112,
+        "responseSha256": "9fe40019c417799653c30ceca8bd4551b6e8bfa41498703bd3267f5409a3e575"
+      },
+      {
+        "start": 30000,
+        "end": 60000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330116,
+        "responseSha256": "176080be651a83f6c203f51ff76c8aebdf132e15d31661df69553877a37c3af8"
+      },
+      {
+        "start": 60000,
+        "end": 90000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330116,
+        "responseSha256": "11aef24a9b94ae3241d7b6d05319b7ef1d258f7e09dd0ab985ac884b4e153673"
+      },
+      {
+        "start": 90000,
+        "end": 120000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330117,
+        "responseSha256": "4a37dc57ff50dd86951a0629e6e1bda20c603fa4f70adc25787046f2d05e4dac"
+      },
+      {
+        "start": 120000,
+        "end": 150000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330118,
+        "responseSha256": "cba6eca95eed00fb2ee95fac4d09fd7803d7d1b9dea8d4da12430213eaca4d96"
+      },
+      {
+        "start": 150000,
+        "end": 180000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330118,
+        "responseSha256": "3127e0e651cf3163e42979faf6d89f0afea76f06474aa9eee2de3b141c455ca4"
+      },
+      {
+        "start": 180000,
+        "end": 210000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330118,
+        "responseSha256": "2cf2e0936a2d1d01d32894dee046edeb190bdd8cfb90331a9ab81dcf04cfec00"
+      },
+      {
+        "start": 210000,
+        "end": 240000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330118,
+        "responseSha256": "900ac30375fe2ce9b0e298df66b6b2a37669bc25ad61bfe97ccbd09e0ff1d5ff"
+      },
+      {
+        "start": 240000,
+        "end": 270000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330118,
+        "responseSha256": "dd1368cf48e602fc9b72a67f66b9ca18da3882df35181f4292a53ddfaabc296f"
+      },
+      {
+        "start": 270000,
+        "end": 300000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330118,
+        "responseSha256": "d888ebbfe971be1ed0c757ffc5617aa562289efde6c935ec3617f8dddac55bed"
+      },
+      {
+        "start": 300000,
+        "end": 330000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330118,
+        "responseSha256": "7e3def445a286f8ae8e4332b24c740029993ee2ae482d52f77096130e7478b7c"
+      },
+      {
+        "start": 330000,
+        "end": 360000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 330118,
+        "responseSha256": "f03b6290df393433053eb11426bbbc3c54d487e28fa42bed9a0f2e4f40c34f4e"
+      },
+      {
+        "start": 360000,
+        "end": 390000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "7ea189530e6462b087fccf964e7cc6acdf6c9e7cdcd9774d67d0f01354fcf01c"
+      },
+      {
+        "start": 390000,
+        "end": 420000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "e578cd4579df0a51a978c3c29a81d1aff223348f1822452c0678165ea95bd6ea"
+      },
+      {
+        "start": 420000,
+        "end": 450000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "431e4f199b97ec49f136695b15391fca4a6955eb28ec6be7fef4dc6bfc47d04d"
+      },
+      {
+        "start": 450000,
+        "end": 480000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "ea33469d4ada2e8de7dbaa56db64097c09184f452ec0644465d847f4b6a48127"
+      },
+      {
+        "start": 480000,
+        "end": 510000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "5b4f08bf09a6329f8da0dcbdd8664c4073ea593e2dca56328951f2e44fca5ead"
+      },
+      {
+        "start": 510000,
+        "end": 540000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "9257ae6b5fee65765c92b3fc1498837e5a019d1b597f2168325045d080b1ceef"
+      },
+      {
+        "start": 540000,
+        "end": 570000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "9d74bf1308af7858669010139c2fab03bd70623ed6644f16a5bad415c9fc86e4"
+      },
+      {
+        "start": 570000,
+        "end": 600000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "db03b7f09a7377bfe4985cf2721ff64f010c4272f7dce9a5c8fca1cb04fde660"
+      },
+      {
+        "start": 600000,
+        "end": 630000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "f892f865ce65779589e8b9b8dbca0da4173c776cfd2311dbfcae9ab05ddb4ce1"
+      },
+      {
+        "start": 630000,
+        "end": 660000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "a591576786c106503a0fb6c0fd3daa5ec844a60e88524b2b20f2c54d54c45087"
+      },
+      {
+        "start": 660000,
+        "end": 690000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "cc2f4ef248a966ed81e5e2b3c1482e3412e73e74294e8db08a939f4e6104ecc8"
+      },
+      {
+        "start": 690000,
+        "end": 720000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "886abec5aeb9d48338aaf190e192fa9935976ae8a31ff076cdd8dce63296741d"
+      },
+      {
+        "start": 720000,
+        "end": 750000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "2258acbc3cf7971bc698568698dadeffa6b12a73d0bee64b5572f70688d4c8e9"
+      },
+      {
+        "start": 750000,
+        "end": 780000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "0af553f6a4c4892afa7258e8e7939f14ce038a478013a39de9852b4f66d80440"
+      },
+      {
+        "start": 780000,
+        "end": 810000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "c39ad17ad4342e7bc8380a0069d37389762d9608cf1ccb490a4e3329b4dc5177"
+      },
+      {
+        "start": 810000,
+        "end": 840000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "1db970d4a8582495b66abbd47557a7d538f04de5b92922a92a1b83a4af3570bd"
+      },
+      {
+        "start": 840000,
+        "end": 870000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "c64f6dab12a59114e99c660d4070473f35ee87b75d0593e5db78d0784b244fcc"
+      },
+      {
+        "start": 870000,
+        "end": 900000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "5c4c9d5c79b10ae7d03aba41c9eb063a6736ae0177a5d40650fafddd1c19e410"
+      },
+      {
+        "start": 900000,
+        "end": 930000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "39e5defc04121b51d4f541725c6756e2d4f2bbc637f6be60ede1947b14d5ae6f"
+      },
+      {
+        "start": 930000,
+        "end": 960000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 330118,
+        "responseSha256": "3bf55f8e95015319b65203735bda300fffcf6a2e7b5644b0236459a0b37c5468"
+      },
+      {
+        "start": 960000,
+        "end": 969279,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 102187,
+        "responseSha256": "9f1360900865cfc8c4535608f0366709e608e23a2ea6f9559ba2cfc8a75a0763"
+      }
+    ],
+    "tx_count": [
+      {
+        "start": 0,
+        "end": 30000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 60112,
+        "responseSha256": "921191295ac701760f058048a72ae21083176e7e46a9e5706d59c5953fbc1f34"
+      },
+      {
+        "start": 30000,
+        "end": 60000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 60147,
+        "responseSha256": "cb74541df12007c2506a5c3edf053c5979b5aa15c880908e360d6aeee318abb6"
+      },
+      {
+        "start": 60000,
+        "end": 90000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 60666,
+        "responseSha256": "281788ae39a9c3b5444c3d5768e66610f2ca3682be361b9fc7269c1a5cf23a41"
+      },
+      {
+        "start": 90000,
+        "end": 120000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 69881,
+        "responseSha256": "11282ec210bedd91c8c626017fad7a9d34e51a533463d8eb3b94fa7ebbae7412"
+      },
+      {
+        "start": 120000,
+        "end": 150000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 88405,
+        "responseSha256": "0208d086f38a067cebce3de73cc46bee9b25bc035dee4160594a168dba7254a1"
+      },
+      {
+        "start": 150000,
+        "end": 180000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 89299,
+        "responseSha256": "978269f5c374570c15f54e5967bd083c67efea3edc769beeaf1e616417768d82"
+      },
+      {
+        "start": 180000,
+        "end": 210000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 107656,
+        "responseSha256": "6f6a34071936a2aa289c171158a0ac2db878b479979c361ddef04f35a1ccc750"
+      },
+      {
+        "start": 210000,
+        "end": 240000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 113723,
+        "responseSha256": "b790e8d75f0f1cb47703712ef5ba6959630a6706771b359a680ff62ee0bb0e62"
+      },
+      {
+        "start": 240000,
+        "end": 270000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 112544,
+        "responseSha256": "61337a6cbeabe11490c7777330d7674e266cc8efbc8fb6ed6773052a4a5681fd"
+      },
+      {
+        "start": 270000,
+        "end": 300000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 115708,
+        "responseSha256": "4b9c8c1bcaac5eb6abf1d98198b6671de0cbbbb9909277406a0cb07a6e34dc0d"
+      },
+      {
+        "start": 300000,
+        "end": 330000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 117100,
+        "responseSha256": "064936b4bee11608c086078a8b480955f68df2a380d1da1198a02be00e15e7d9"
+      },
+      {
+        "start": 330000,
+        "end": 360000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 123767,
+        "responseSha256": "0c7e03388d11650ab0806454565adf17fd93c9b897cc9be6a47f826976d5a523"
+      },
+      {
+        "start": 360000,
+        "end": 390000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 128125,
+        "responseSha256": "4243fd7f66cee781c5915c7950d0730b22adb9357fe57c599fe6a9ef9c292662"
+      },
+      {
+        "start": 390000,
+        "end": 420000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 136255,
+        "responseSha256": "ea806078ca92375298d06c0d9c937780ff32af8538a17383f706785b6e8bfa19"
+      },
+      {
+        "start": 420000,
+        "end": 450000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 140908,
+        "responseSha256": "820b7367b5d52e04d5ac9e17668afc1ac9431049409fa04edbbee78676594fbd"
+      },
+      {
+        "start": 450000,
+        "end": 480000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 145015,
+        "responseSha256": "aebbe8440cdc202dbf0fa99d7a55a9f39d32b59263830586cc8f4be2a6aa1ba3"
+      },
+      {
+        "start": 480000,
+        "end": 510000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 144272,
+        "responseSha256": "e868e4cded5a35fee19895eaa85c65e07cb446554f2a075e2fa54bc08deb5b45"
+      },
+      {
+        "start": 510000,
+        "end": 540000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 135461,
+        "responseSha256": "780116ba8bbefa47c296c00e3c07f29a050648135791ef570275c9122dfac4e2"
+      },
+      {
+        "start": 540000,
+        "end": 570000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 142724,
+        "responseSha256": "f8954f84483df4e169c5102af560465cd243bf291b21501937e2dd7353a21134"
+      },
+      {
+        "start": 570000,
+        "end": 600000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 146604,
+        "responseSha256": "801658c2a1464441ee617722c0d6d506ba082ebcb3abf1186fc5fe69ab26c045"
+      },
+      {
+        "start": 600000,
+        "end": 630000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 144654,
+        "responseSha256": "2c4585d065d80f55087726ec33a5ab45e495d105b1e5b116eeecb50b232a29ff"
+      },
+      {
+        "start": 630000,
+        "end": 660000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 146677,
+        "responseSha256": "8078ec72ae22155c8be3010cd8346570bd6eef36b31cb419bb7f2519626fb64d"
+      },
+      {
+        "start": 660000,
+        "end": 690000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 146526,
+        "responseSha256": "fa76bac2f46a2c96621c800e189af1c918dd8a28f70c044bbbdc9fc85d87b53c"
+      },
+      {
+        "start": 690000,
+        "end": 720000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 140161,
+        "responseSha256": "b51fab2e82d878b05c3b2f0597f0df04184765f488c63ae5c734b4f9412e8fa1"
+      },
+      {
+        "start": 720000,
+        "end": 750000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 141123,
+        "responseSha256": "3211320945c3925214cfff5e5bc91764c256abfaf274b7210da8379a1bf6c14d"
+      },
+      {
+        "start": 750000,
+        "end": 780000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 141602,
+        "responseSha256": "c091bf260d8d47eb7bdea169e825a6fed478bc8adb9698f2628a587053e68830"
+      },
+      {
+        "start": 780000,
+        "end": 810000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 148285,
+        "responseSha256": "f67bee554e30fa9db6d0ae7015d45860a8409a0e38c109198b5040e2a78255b4"
+      },
+      {
+        "start": 810000,
+        "end": 840000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 147876,
+        "responseSha256": "6b08e649bc7db9385cfd939218ee0c1792f3300825916cc6a70757962540b4e8"
+      },
+      {
+        "start": 840000,
+        "end": 870000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 149044,
+        "responseSha256": "f7ad97a36726cb1d5e4386ee56ef392a5699f17a7fae1faf7bd254fee1738e48"
+      },
+      {
+        "start": 870000,
+        "end": 900000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 146849,
+        "responseSha256": "8db089fb1f5ee3f8761b89a2b69a0b651848193d695be6f54818e26216c3aeb7"
+      },
+      {
+        "start": 900000,
+        "end": 930000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 146897,
+        "responseSha256": "7419e5675f9e28557d3e8ec6d7e1c7c1382447d9365921fd8a49de0ea92cbe4f"
+      },
+      {
+        "start": 930000,
+        "end": 960000,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 148075,
+        "responseSha256": "06778ec02f4319398ea9d759f7e1d885aa60496bf3b88c901bbf21d9bd0ffb88"
+      },
+      {
+        "start": 960000,
+        "end": 969279,
+        "version": 91,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 46291,
+        "responseSha256": "ad7b978fc61906600c2dd35ed5ef473386de75909d67d02d1d12b3906d0e421e"
+      }
+    ],
+    "segwit_txs": [
+      {
+        "start": 0,
+        "end": 60000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 120112,
+        "responseSha256": "119b7119d8b3e090474d2efb98702badfd5025603237e2c0e89ff472b3378ac3"
+      },
+      {
+        "start": 60000,
+        "end": 120000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 120117,
+        "responseSha256": "c081c547f28d00e0188cc2a69e4b8bbfe66c382d25b24e315f926ce86f58a264"
+      },
+      {
+        "start": 120000,
+        "end": 180000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 120118,
+        "responseSha256": "56d51f0c115df29bafb13ca6de11464927a91ac221c49721f4f737a06eb8b0d5"
+      },
+      {
+        "start": 180000,
+        "end": 240000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 120118,
+        "responseSha256": "b60041a29b29ef470237b5de676deec84c8ad1dd1e4faacc4046e937755e6c53"
+      },
+      {
+        "start": 240000,
+        "end": 300000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 120118,
+        "responseSha256": "bc1affb23253370e2057ae00e1cd54c6a34d1261ecaef418acc4f64034dfb869"
+      },
+      {
+        "start": 300000,
+        "end": 360000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 120118,
+        "responseSha256": "ca67a95fb7b4f9a7a2a505372ed090b964298eabe30a390401f5ff64fdbce12c"
+      },
+      {
+        "start": 360000,
+        "end": 420000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 120118,
+        "responseSha256": "217cc98eb5c577a9f594413dc6e5f1a6a7667ddefecf186baa039dad14d79c82"
+      },
+      {
+        "start": 420000,
+        "end": 480000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 120118,
+        "responseSha256": "7b5d5860f55cb8f0fe89dce77e0dcb23789f075245cddb0a65d486a4cb32f9d3"
+      },
+      {
+        "start": 480000,
+        "end": 540000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 220396,
+        "responseSha256": "fd37a8ddf74870e927f3d0f9770b111ed51d900dcf8fc143706b2f28c3ee1531"
+      },
+      {
+        "start": 540000,
+        "end": 600000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 258083,
+        "responseSha256": "a66d5d3a5b3ffa8402675c91222b445e50d89654600b481ade06be0fe1a213aa"
+      },
+      {
+        "start": 600000,
+        "end": 660000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 271454,
+        "responseSha256": "1d5295b456c466ff420dc6c211ecc177caca664d1f208151bed274db35a5ccb5"
+      },
+      {
+        "start": 660000,
+        "end": 720000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:18Z",
+        "responseBytes": 272608,
+        "responseSha256": "d34c8be87c07ab3945c299c33e2aed0bbedbe61579b08e086bbe674126921a47"
+      },
+      {
+        "start": 720000,
+        "end": 780000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 278825,
+        "responseSha256": "8f95b3e07b55a4c06dd253f984644d2100262ae0e7d24727e4689d3f2088c4cb"
+      },
+      {
+        "start": 780000,
+        "end": 840000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 295223,
+        "responseSha256": "d430c1799fba6422b466523caecef28952a95bcecb9a4d1f0d303e2b08554241"
+      },
+      {
+        "start": 840000,
+        "end": 900000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 295273,
+        "responseSha256": "6ff2d7e977a68998b060d3bf76c5e24b07228762b416ad0b4c72628522addce1"
+      },
+      {
+        "start": 900000,
+        "end": 960000,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 294348,
+        "responseSha256": "bafa1fcdb29c6db0372b68ada564563a3f7d6c9d0cefd1e213c5227bb8f14a17"
+      },
+      {
+        "start": 960000,
+        "end": 969279,
+        "version": 38,
+        "stampedAtUtc": "2026-09-30T08:01:19Z",
+        "responseBytes": 46280,
+        "responseSha256": "d939cfa60e9717083efd0bfd14c446fb919b84b51c27048a5207829568bee1c5"
+      }
+    ]
+  },
+  "metricCounts": {
+    "empty_blocks_pct": 6473,
+    "segwit_share_pct": 6218
+  },
+  "metricRanges": {
+    "empty_blocks_pct": {
+      "firstDate": "2009-01-03",
+      "lastDate": "2026-09-28",
+      "min": 0,
+      "max": 100
+    },
+    "segwit_share_pct": {
+      "firstDate": "2009-01-12",
+      "lastDate": "2026-09-28",
+      "min": 0,
+      "max": 99.0316562340003
+    }
+  },
+  "licenseNote": "No separate data redistribution license was confirmed. Values remain provisional and local for private research only; not cleared for public display or redistribution.",
+  "uploaded": false,
+  "publicRedistributionCleared": false
+}

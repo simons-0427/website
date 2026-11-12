@@ -1,0 +1,49 @@
+{
+  "createdAt": "2026-09-29T21:12:22.768Z",
+  "cutoffInclusive": "2026-09-28",
+  "observations": 1,
+  "metricIds": [
+    "lightning_capacity_per_node_btc"
+  ],
+  "metricCounts": {
+    "lightning_capacity_per_node_btc": 1
+  },
+  "sourceCounts": {
+    "derived_bitcoin_metrics": 1
+  },
+  "firstObservationDate": "2026-08-30",
+  "lastObservationDate": "2026-08-30",
+  "formula": "lightning_capacity_btc / lightning_nodes",
+  "inputs": {
+    "lightning_capacity_btc": {
+      "value": "3794.5151656",
+      "source": "mempool_space_lightning_research_only",
+      "sourceRevision": "mempool-space-lightning-history-3y:2026-08-30",
+      "rawPayloadHash": "e727711d30c4e4ff3fb1e341b8a70b5886fab754a630dccd390c3a271e770a9c"
+    },
+    "lightning_nodes": {
+      "value": "16237",
+      "source": "mempool_space_lightning_research_only",
+      "sourceRevision": "mempool-space-lightning-statistics-latest:2026-08-30",
+      "rawPayloadHash": "a45169c9b52b83d800e195180800a3d7713ca82ac4a56e6999d88b325fca14b3"
+    }
+  },
+  "output": {
+    "metricId": "lightning_capacity_per_node_btc",
+    "value": "0.233695582041",
+    "source": "derived_bitcoin_metrics",
+    "sourceTimestamp": "2026-08-30T00:00:00Z",
+    "quality": "provisional",
+    "rawPayloadHash": "6c56163eef01e304ee7de8c85cf8c9ace920bdce0fa2697d8e0dbf9e89958869"
+  },
+  "csv": {
+    "path": "lightning-capacity-per-node-private-2026-09-29.csv",
+    "bytes": 359,
+    "sha256": "064bb38424d42028a2ded609909e3a1d1bf72bfc13d8bf7530c845d8f75ff3bc"
+  },
+  "mergedIntoMaster": true,
+  "localPrivateResearchOnly": true,
+  "dataReuseLicenseConfirmed": false,
+  "publicRedistributionCleared": false,
+  "uploaded": false
+}

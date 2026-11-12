@@ -1,0 +1,33 @@
+{
+  "master": "var\\bitcoin-backfill-cointime-cftc-options.csv",
+  "masterRowsBefore": 519701,
+  "masterRowsAfter": 520162,
+  "priorMasterSha256": "faf0807ce22752570a92ef89d9b0f3f1eb29dfbcc64227c8384f007f138fceb1",
+  "priorMasterPreservedAsBytePrefix": true,
+  "backup": "var\\bitcoin-backfill-cointime-cftc-options-before-openbitcoin-snapshots-2026-09-29.csv",
+  "input": "var\\openbitcoin-bitcoin-snapshots-2026-09-29-import.csv",
+  "addedRows": 461,
+  "addedMetricCount": 6,
+  "totalMetricIdsAfter": 103,
+  "metrics": {
+    "fear_greed_index": {
+      "observations": 366
+    },
+    "fee_recommendation_economy_sat_vb": {
+      "observations": 1
+    },
+    "fee_recommendation_fast_sat_vb": {
+      "observations": 1
+    },
+    "mempool_min_fee_sat_vb": {
+      "observations": 1
+    },
+    "mining_pool_share": {
+      "observations": 91
+    },
+    "pool_concentration_hhi": {
+      "observations": 1
+    }
+  },
+  "masterSha256": "e75e277befef03c3b9a295be56f29bacad36121d866330d82c2ad71d3e00f9ef"
+}

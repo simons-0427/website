@@ -1,0 +1,32 @@
+{
+  "fetchedAtUtc": "2026-10-04T09:10:09.916Z",
+  "source": "OpenBitcoin public API, own Bitcoin node",
+  "sourceUrl": "https://openbitcoin.com/api/v1/fee-history?days=10000",
+  "cutoffInclusive": "2026-10-04",
+  "sourceAsOf": "2026-10-04T09:10:10.520Z",
+  "responsePoints": 6734,
+  "responseSha256": "1928c7ddb47fc58e310e4991a214b35b55dd1563457ebde4c41752d9f852ff8f",
+  "responseBytes": 294715,
+  "observations": 12314,
+  "metricCounts": {
+    "fees_median_sat_vb": 6157,
+    "fees_average_sat_vb": 6157
+  },
+  "metricDates": {
+    "fees_median_sat_vb": {
+      "first": "2009-01-11",
+      "last": "2026-10-03"
+    },
+    "fees_average_sat_vb": {
+      "first": "2009-01-11",
+      "last": "2026-10-03"
+    }
+  },
+  "pointsAfterCutoffExcluded": 0,
+  "import": "openbitcoin-fee-history-import-refresh-through-2026-10-04.csv",
+  "importBytes": 2452538,
+  "importSha256": "7e157f6924e6fec8998e91f5cfefa6a4284245748bcf3ab8c04614fb94395228",
+  "providerPermission": "User-confirmed private personal use; no general public redistribution permission recorded.",
+  "uploaded": false,
+  "publicRedistributionCleared": false
+}

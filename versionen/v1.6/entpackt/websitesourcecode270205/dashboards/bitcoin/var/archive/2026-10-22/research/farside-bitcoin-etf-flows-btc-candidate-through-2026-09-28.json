@@ -1,0 +1,177 @@
+{
+  "createdAt": "2026-10-01T04:35:34.667Z",
+  "dashboard": "bitcoin",
+  "cutoffInclusive": "2026-09-28",
+  "source": {
+    "slug": "farside_bitcoin_etf_flow_research_only",
+    "url": "https://farside.co.uk/bitcoin-etf-flow-all-data/",
+    "publisher": "Farside Investors",
+    "measurement": "Daily aggregate net flow across US spot Bitcoin ETFs, in USD millions rounded to 0.1m.",
+    "access": "Read-only public table via browser search/open; local candidate transcribed from rows dated 2026-09-09 through 2026-09-28.",
+    "reuseLicense": "No explicit reuse license verified. Candidate is provisional local research only; public redistribution is not cleared.",
+    "corroboration": [
+      {
+        "source": "Maketo Bitcoin ETF Flows",
+        "url": "https://maketo.com/etf/bitcoin/flows",
+        "date": "2026-09-28",
+        "reportedUsdMillions": "31.07",
+        "matchesFarsideRoundedTo": "31.0"
+      },
+      {
+        "source": "Existing ByKaranteli CC0 snapshot",
+        "date": "2026-09-08",
+        "reportedUsd": "-46646406",
+        "farsideRoundedUsdMillions": "-46.6",
+        "matchesAfterRounding": true
+      }
+    ],
+    "excludedAlternative": {
+      "source": "Bitbo ETF flows",
+      "url": "https://bitbo.io/treasuries/etf-flows/",
+      "date": "2026-09-28",
+      "reportedUsdMillions": "175.8",
+      "reason": "Materially differs from Farside and Maketo; not used without resolving the methodology difference."
+    }
+  },
+  "sourceRows": [
+    {
+      "date": "2026-09-09",
+      "reportedUsdMillions": "-120.2",
+      "flowUsd": "-120200000",
+      "cumulativeUsd": "55450606232",
+      "flowHash": "d3fb5c3fad2379b60bf60c6863eee918fb7b4d421e3afaa074d0ffdbf96664d0"
+    },
+    {
+      "date": "2026-09-10",
+      "reportedUsdMillions": "-282.7",
+      "flowUsd": "-282700000",
+      "cumulativeUsd": "55167906232",
+      "flowHash": "4350ad07e8f6b35b0f1cf80e54dfa885f7f1db9d47e46def0b61febdf4c02d00"
+    },
+    {
+      "date": "2026-09-11",
+      "reportedUsdMillions": "-13.2",
+      "flowUsd": "-13200000",
+      "cumulativeUsd": "55154706232",
+      "flowHash": "1ab583de5fa7173755e594aa6fcef41f44d1f4890fecb176b7a1b0de74d23a3c"
+    },
+    {
+      "date": "2026-09-14",
+      "reportedUsdMillions": "159.9",
+      "flowUsd": "159900000",
+      "cumulativeUsd": "55314606232",
+      "flowHash": "426554226e16ae2658ba0a7fc124b2c5802808f51a29a48ea405efd702940417"
+    },
+    {
+      "date": "2026-09-15",
+      "reportedUsdMillions": "-450.4",
+      "flowUsd": "-450400000",
+      "cumulativeUsd": "54864206232",
+      "flowHash": "6ffa8a9b64801d4099ff95830959fdd20abf3e132fe689da9b2feee7fefb36a1"
+    },
+    {
+      "date": "2026-09-16",
+      "reportedUsdMillions": "-295.9",
+      "flowUsd": "-295900000",
+      "cumulativeUsd": "54568306232",
+      "flowHash": "d20b837ee0593eaa53db30b453351a383a08b3296c2bdb6bc1aa938032d02519"
+    },
+    {
+      "date": "2026-09-17",
+      "reportedUsdMillions": "159.5",
+      "flowUsd": "159500000",
+      "cumulativeUsd": "54727806232",
+      "flowHash": "acb06956ece01641c6608f0d0c83d1cb3ac0f261db38e5865945f4c628ad4c1e"
+    },
+    {
+      "date": "2026-09-18",
+      "reportedUsdMillions": "433.0",
+      "flowUsd": "433000000",
+      "cumulativeUsd": "55160806232",
+      "flowHash": "7dbba099408ee7eb055e68d3de542f595946f7cd1db6e69e94a1cde8bc81656d"
+    },
+    {
+      "date": "2026-09-21",
+      "reportedUsdMillions": "999.0",
+      "flowUsd": "999000000",
+      "cumulativeUsd": "56159806232",
+      "flowHash": "6eb6826bcebdddaa71c0c92c3bcb257a53f7164d1ebaefa05202063b3530ca6d"
+    },
+    {
+      "date": "2026-09-22",
+      "reportedUsdMillions": "714.7",
+      "flowUsd": "714700000",
+      "cumulativeUsd": "56874506232",
+      "flowHash": "c377439760ab423adeb1eb628ca151e7c2a8b5bd34d3c8728e3d35d1f90d2984"
+    },
+    {
+      "date": "2026-09-23",
+      "reportedUsdMillions": "346.9",
+      "flowUsd": "346900000",
+      "cumulativeUsd": "57221406232",
+      "flowHash": "16c2fc25e6d9665b4587d3fb6a1427d191653cb345947f897cc79dfddc01a61d"
+    },
+    {
+      "date": "2026-09-24",
+      "reportedUsdMillions": "190.7",
+      "flowUsd": "190700000",
+      "cumulativeUsd": "57412106232",
+      "flowHash": "b1231c991fc050b103295345d0b95087e2c01896dac00db5d90f92f4f86b0ff6"
+    },
+    {
+      "date": "2026-09-25",
+      "reportedUsdMillions": "134.5",
+      "flowUsd": "134500000",
+      "cumulativeUsd": "57546606232",
+      "flowHash": "76fa4790c375008972cb6e9638d28124b3bac31d489da58b8a3894d7770387f4"
+    },
+    {
+      "date": "2026-09-28",
+      "reportedUsdMillions": "31.0",
+      "flowUsd": "31000000",
+      "cumulativeUsd": "57577606232",
+      "flowHash": "ea4353dad6bbdd22a63c8a07473d40c164974ab7855da5cc563b9790954fa26d"
+    }
+  ],
+  "cumulative": {
+    "baseDate": "2026-09-08",
+    "baseValueUsd": "55570806232",
+    "baseSourceSlug": "bykaranteli_etf_flows_cc0",
+    "baseRawPayloadHash": "0cb6d34b9d410670a8fd5c5a55a6919cba5b1b8c3a4c82d071954f511b737496",
+    "formula": "base cumulative flow + Farside daily total flows rounded to 0.1 million USD",
+    "sourceReconciliation": {
+      "farsidePageAllTimeTotalThrough2026_09_30Usd": 57564000000,
+      "farside2026_09_29Usd": 66200000,
+      "farside2026_09_30Usd": -148700000,
+      "inferredFarsideTotalThrough2026_09_28Usd": "57646500000",
+      "continuousBykaranteliBasePlusFarsideDailyRowsThrough2026_09_28Usd": "57577606232",
+      "differenceUsd": "-68893768",
+      "decision": "Keep the continuous calculation from the stored 2026-09-08 ByKaranteli cumulative value; do not rewrite historical values to force agreement with Farside, whose back history differs."
+    }
+  },
+  "observations": 28,
+  "metricIds": [
+    "etf_netflow_usd",
+    "etf_cumulative_netflow_usd"
+  ],
+  "metricCounts": {
+    "etf_netflow_usd": 14,
+    "etf_cumulative_netflow_usd": 14
+  },
+  "sourceCounts": {
+    "farside_bitcoin_etf_flow_research_only": 14,
+    "derived_bitcoin_metrics": 14
+  },
+  "firstObservationDate": "2026-09-09",
+  "lastObservationDate": "2026-09-28",
+  "candidate": {
+    "path": "farside-bitcoin-etf-flows-btc-candidate-through-2026-09-28.csv",
+    "bytes": 5906,
+    "sha256": "3d811b803e913748dff20ceb51a57deee8c881e7429da98dcdb148a95fb283c0"
+  },
+  "bitcoinRowsOnly": true,
+  "nonBitcoinRowsWritten": 0,
+  "uploaded": false,
+  "databaseImported": false,
+  "publicRedistributionCleared": false
+}

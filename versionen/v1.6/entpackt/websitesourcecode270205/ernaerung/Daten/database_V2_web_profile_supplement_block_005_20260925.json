@@ -1,0 +1,278 @@
+{
+  "checkedOn": "2026-09-25",
+  "block": {
+    "firstIndex": 401,
+    "lastIndex": 500
+  },
+  "sources": [
+    "USDA FoodData Central SR Legacy",
+    "Matvaretabellen, Norwegian Food Composition Table"
+  ],
+  "method": "Exact or close per-100g food profiles; copied without scaling. Existing non-null values are not overwritten. Missing ALA/EPA/DHA keys are normalized to null across the database; unknown values remain null.",
+  "profiles": [
+    {
+      "index": 422,
+      "name": "Fromage frais mager natur",
+      "targetFat": 0.1,
+      "sourceName": "Quark, 1 % fat",
+      "sourceFat": 1,
+      "sourceUrl": "https://www.matvaretabellen.no/en/quark-1-fat/",
+      "confidence": "medium",
+      "values": {
+        "omega3": 0,
+        "omega6": 0,
+        "trans": 0,
+        "ala": 0,
+        "epa": 0,
+        "dha": 0
+      },
+      "note": "Close low-fat fresh-cheese analogue; all six values are reported as 0 g per 100 g at source precision.",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 0,
+        "Trans Fat (g)": 0,
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    },
+    {
+      "index": 429,
+      "name": "Guacamole",
+      "targetFat": 12.7,
+      "sourceName": "Guacamole",
+      "sourceFat": 15.5,
+      "sourceUrl": "https://www.matvaretabellen.no/en/guacamole/",
+      "confidence": "medium",
+      "values": {
+        "omega3": 0.1,
+        "omega6": 1.8,
+        "trans": 0,
+        "ala": 0.1,
+        "epa": 0,
+        "dha": 0
+      },
+      "note": "Exact food-name recipe profile, copied without scaling; source total fat differs by about 22%.",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 1.8,
+        "Trans Fat (g)": 0,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    },
+    {
+      "index": 444,
+      "name": "Kaninchen geschmort nur Fleisch",
+      "targetFat": 3.2,
+      "sourceName": "Game meat, rabbit, wild, cooked, stewed",
+      "sourceFat": 3.51,
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174348/nutrients?type=SR%20Legacy",
+      "confidence": "medium-high",
+      "secondarySourceUrl": "https://www.matvaretabellen.no/en/rabbit-raw/",
+      "values": {
+        "omega3": 0.14,
+        "omega6": 0.54,
+        "trans": 0,
+        "ala": 0.14,
+        "epa": 0,
+        "dha": 0
+      },
+      "note": "USDA preparation and fat content closely match. EPA/DHA are 0; omega-3 is ALA; omega-6 is linoleic acid. Trans 0 comes from the Matvaretabellen rabbit profile.",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.14,
+        "Omega-6 Fatty Acids (g)": 0.54,
+        "Trans Fat (g)": 0,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.14,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    },
+    {
+      "index": 459,
+      "name": "Müesli Swiss-Style ohne Zuckerzusatz",
+      "targetFat": 5.9,
+      "sourceName": "Muesli, with fruit, Fruktmüsli",
+      "sourceFat": 5.7,
+      "sourceUrl": "https://www.matvaretabellen.no/en/muesli-with-fruit-fruktmusli/",
+      "confidence": "medium",
+      "values": {
+        "omega3": 0.1,
+        "omega6": 1.3,
+        "trans": 0,
+        "ala": 0.1,
+        "epa": 0,
+        "dha": 0
+      },
+      "note": "Close total-fat muesli analogue, copied without scaling. EPA/DHA are reported as 0 g at source precision.",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.1,
+        "Omega-6 Fatty Acids (g)": 1.3,
+        "Trans Fat (g)": 0,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    },
+    {
+      "index": 466,
+      "name": "Pfannkuchen süß (Vollmilch Hausgemacht)",
+      "targetFat": 9.7,
+      "sourceName": "Pancakes, plain, prepared from recipe",
+      "sourceFat": 9.7,
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175009/nutrients?type=SR%20Legacy",
+      "confidence": "medium-high",
+      "secondarySourceUrl": "https://www.matvaretabellen.no/en/pancakes-fried-in-fat/",
+      "values": {
+        "omega3": 0.515,
+        "omega6": 3.928,
+        "trans": 0,
+        "ala": 0.51,
+        "epa": 0,
+        "dha": 0.005
+      },
+      "note": "USDA source matches total fat exactly. Omega-3 and omega-6 are sums of listed components; trans 0 is from the close Matvaretabellen pancake profile.",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.515,
+        "Omega-6 Fatty Acids (g)": 3.928,
+        "Trans Fat (g)": 0,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.51,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0.005
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    },
+    {
+      "index": 484,
+      "name": "Rinderhack extra mager geschmort",
+      "targetFat": 4.2,
+      "sourceName": "Beef, ground, 97% lean meat / 3% fat, patty, cooked, broiled",
+      "sourceFat": 4.46,
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173112/nutrients?type=SR%20Legacy",
+      "confidence": "high",
+      "values": {
+        "omega3": 0.04,
+        "omega6": 0.241,
+        "trans": 0.094,
+        "ala": 0.04,
+        "epa": 0,
+        "dha": 0
+      },
+      "note": "Close cooked lean-beef match. Omega-6 sums linoleic (0.186), arachidonic (0.043) and gamma-linolenic (0.012) acids; no scaling.",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.04,
+        "Omega-6 Fatty Acids (g)": 0.241,
+        "Trans Fat (g)": 0.094,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.04,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    },
+    {
+      "index": 453,
+      "name": "Lammherz roh",
+      "targetFat": 6.8,
+      "sourceName": "Heart, raw",
+      "sourceFat": null,
+      "sourceUrl": "https://www.matvaretabellen.no/en/trans-fatty-acids/",
+      "confidence": "medium",
+      "values": {
+        "trans": 0.1
+      },
+      "note": "Matvaretabellen lists raw heart at 0.1 g trans fat per 100 g.",
+      "valuesPer100g": {
+        "Trans Fat (g)": 0.1
+      },
+      "priorValues": {
+        "Trans Fat (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    },
+    {
+      "index": 467,
+      "name": "Pizza Margherita (Handelsware)",
+      "targetFat": 9.8,
+      "sourceName": "Pizza, mozzarella and tomatoes, industrially made",
+      "sourceFat": 12.5,
+      "sourceUrl": "https://www.matvaretabellen.no/en/pizza-mozzarella-and-tomatoes-industrially-made/",
+      "confidence": "medium",
+      "values": {
+        "trans": 0
+      },
+      "note": "Closest industrial Margherita-style profile; only trans fat is transferred, without scaling.",
+      "valuesPer100g": {
+        "Trans Fat (g)": 0
+      },
+      "priorValues": {
+        "Trans Fat (g)": null
+      },
+      "alcoholRetained_g_per_100g": 0
+    }
+  ],
+  "schemaKeysAdded": {
+    "ala": 211,
+    "epa": 216,
+    "dha": 192
+  },
+  "validation": {
+    "rowCount": 1516,
+    "nonnegative": true,
+    "noExistingValuesOverwritten": true,
+    "omega3ComponentsWithinTotal": true,
+    "alcoholUnchanged": true
+  }
+}

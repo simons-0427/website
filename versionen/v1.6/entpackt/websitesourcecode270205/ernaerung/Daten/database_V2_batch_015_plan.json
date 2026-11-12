@@ -1,0 +1,471 @@
+{
+  "batch": 15,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "Q150000",
+      "name": "Palmfett/Palmöl, raffiniert",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Pflanzenfett/Palmfett als aktueller Spezialfett-Vergleichsanker, niedrigster klar belegbarer Preisanker 5,99 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "Q150100",
+      "name": "Palmfett gehärtet",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Pflanzenfett/Palmfett als aktueller Spezialfett-Vergleichsanker, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q530000",
+      "name": "Kakaobutter",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Kakaobutter/Sheabutter als aktueller Spezialfett-Vergleichsanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q520000",
+      "name": "Sheabutter",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Kakaobutter/Sheabutter als aktueller Spezialfett-Vergleichsanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q550200",
+      "name": "Kokosfett gehärtet",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Kokosfett als aktueller Spezialfett-Vergleichsanker, niedrigster klar belegbarer Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q550100",
+      "name": "Kokosöl desodoriert",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 11.96,
+      "sourceProduct": "BELLASAN Kokosöl als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 11,96 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "L",
+      "fluid": 90
+    },
+    {
+      "code": "Q810000",
+      "name": "Entenfett",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Entenfleisch/Entenbrust als aktueller Geflügelanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "Q820000",
+      "name": "Gänsefett/Gänseschmalz",
+      "category": "oele_fette",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.99,
+      "sourceProduct": "Eigenmarken-Öl/Fett im Supermarkt; günstigster klar ausgewiesener Markenanker, niedrigster ausgewiesener Preisanker 5,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/oele/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "R122000",
+      "name": "Branntweinessig",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.98,
+      "sourceProduct": "DELIKATO Essigessenz als niedrigster klarer Essiganker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 1,98 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "kg",
+      "fluid": 90
+    },
+    {
+      "code": "R125000",
+      "name": "Balsamicoessig",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.48,
+      "sourceProduct": "Aceto Balsamico als aktueller Preisanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 4,48 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/essig-oel/k/1588161425467129",
+      "priceUnit": "kg",
+      "fluid": 90
+    },
+    {
+      "code": "R160000",
+      "name": "Tomatenmark",
+      "category": "wuerze",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Eigenmarken-Tomatenprodukt bzw. Sauce im Supermarkt, niedrigster klar belegbarer Preisanker 2,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/saucen-oele-gewuerze/k/1588161425467121",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "R381200",
+      "name": "Zitronat/Sukkade",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "Zitronat/Sukkade als aktueller Backzutaten-Preisanker, niedrigster klar belegbarer Preisanker 7,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S353000",
+      "name": "Fondant mit Pfefferminzgeschmack",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "MEINE KUCHENWELT bzw. Eigenmarken-Gebäck im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 7,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S355000",
+      "name": "Fondantkonfekt",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "MEINE KUCHENWELT bzw. Eigenmarken-Gebäck im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 7,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S356000",
+      "name": "Fondantcreme",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "MEINE KUCHENWELT bzw. Eigenmarken-Gebäck im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 7,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/backwaren-aufstriche-cerealien/fertigkuchen-suessgebaeck/k/1588161425467108",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S740000",
+      "name": "Trinkschokoladenpulver",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "CHOCEUR Kakaogetränk 800 g bei ALDI SÜD, niedrigster klar belegbarer Preisanker 4,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/kakao-milch-kaffeegetraenke/k/1588161425467194",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S723000",
+      "name": "Getränkepulver kakaohaltig",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "CHOCEUR Kakaogetränk 800 g bei ALDI SÜD, niedrigster klar belegbarer Preisanker 4,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/getraenke/kakao-milch-kaffeegetraenke/k/1588161425467194",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S672000",
+      "name": "Schokoladen-Dekor",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 9.9,
+      "sourceProduct": "CHOCEUR Schokolade bzw. Pralinen als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 9,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/schokolade/k/1588161425467171",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S610000",
+      "name": "Pralinen",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 11.9,
+      "sourceProduct": "CHOCEUR Schokolade bzw. Pralinen als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 11,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/schokolade/k/1588161425467171",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S622900",
+      "name": "Sahnepralinen",
+      "category": "suessung",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 11.9,
+      "sourceProduct": "CHOCEUR Schokolade bzw. Pralinen als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 11,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/schokolade/k/1588161425467171",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S560000",
+      "name": "Zartbitter-/Halbbitterschokolade",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 9.9,
+      "sourceProduct": "CHOCEUR Schokolade bzw. Pralinen als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 9,90 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/schokolade/k/1588161425467171",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "S331000",
+      "name": "Toffee/Sahnetoffee",
+      "category": "suessung",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor"
+      ],
+      "basePerKg": 8.32,
+      "sourceProduct": "Eigenmarken-Toffee/Süßware im aktuellen ALDI-Sortiment, niedrigster klar belegbarer Preisanker 8,32 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/suessigkeiten-salzige-snacks/schokolade/k/1588161425467171",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T121902",
+      "name": "Thunfisch im eigenen Saft, Konserve, abgetropft",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Günstiges Fischfilet bzw. Tiefkühlfisch im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg",
+      "fluid": 90
+    },
+    {
+      "code": "T124100",
+      "name": "Gelbflossen-Thun roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Günstiges weißes Fischfilet bzw. Tiefkühlfisch im Supermarkt, niedrigster ausgewiesener Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/sb-fisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T122100",
+      "name": "Weißer Thun roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Günstiges weißes Fischfilet bzw. Tiefkühlfisch im Supermarkt, niedrigster ausgewiesener Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/sb-fisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T120100",
+      "name": "Pelamide roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Günstiges Fischfilet bzw. Tiefkühlfisch im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T121200",
+      "name": "Thunfisch tiefgefroren",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Günstiges Fischfilet bzw. Tiefkühlfisch im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T201100",
+      "name": "Brosme/Lumb, roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 8.99,
+      "sourceProduct": "Günstiges Fischfilet bzw. Tiefkühlfisch im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 8,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T206600",
+      "name": "Schellfisch geräuchert",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Günstiges Fischfilet bzw. Tiefkühlfisch im aktuellen Supermarktangebot, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T213200",
+      "name": "Alaska-Pollack/Alaska-Seelachs, tiefgefroren",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 15.99,
+      "sourceProduct": "GOLDEN SEAFOOD Lachsfilet bei ALDI SÜD, niedrigster klar belegbarer Preisanker 15,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    }
+  ]
+}

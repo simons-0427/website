@@ -1,0 +1,83 @@
+{
+  "checkedOn": "2026-09-25",
+  "scope": {
+    "batch": "005",
+    "databaseIndices": [
+      401,
+      500
+    ],
+    "unit": "g per 100 g food"
+  },
+  "method": "Prefer an exact matching CoFID entry. Where only total PUFA is published, split into estimated fatty acids and label the estimate. Preserve no prior values except the three documented tomato-soup replacements.",
+  "records": [
+    {
+      "databaseIndex": 492,
+      "food": "Softeis im Hörnchen (non-dairy Vanille)",
+      "targetFat_g_per_100g": 7.5,
+      "source": {
+        "dataset": "CoFID 2021",
+        "code": "12-581",
+        "url": "https://www.nutridex.org.uk/foods/407qh7h/ice-cream-with-cone-non-dairy-vanilla",
+        "exactTotalPufa_g_per_100g": 0.46,
+        "method": "Exact total PUFA and trans-fat from CoFID. Omega split is a low-detail estimate: 0.02 g n-3/ALA and 0.44 g n-6, summing to the measured 0.46 g PUFA. EPA/DHA are set to zero because the generic non-dairy vanilla food has no named fish, seafood, or algal ingredient; this assumes no fortification.",
+        "confidence": "medium for total PUFA/trans; low for the estimated split and EPA/DHA exclusion"
+      },
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.02,
+        "Omega-6 Fatty Acids (g)": 0.44,
+        "Trans Fat (g)": 0.04,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.02,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "exactFields": [
+        "Trans Fat (g)"
+      ],
+      "estimatedFields": [
+        "Omega-3 Fatty Acids (g)",
+        "Omega-6 Fatty Acids (g)",
+        "Alpha-Linolenic Acid (ALA) (g)",
+        "Eicosapentaenoic Acid (EPA) (g)",
+        "Docosahexaenoic Acid (DHA) (g)"
+      ],
+      "priorValues": {}
+    },
+    {
+      "databaseIndex": 500,
+      "food": "Tomatensuppe (Kühlregal)",
+      "targetFat_g_per_100g": 1.9,
+      "source": {
+        "dataset": "CoFID 2021",
+        "code": "17-636",
+        "url": "https://www.nutridex.org.uk/foods/34fxr2c/soup-tomato-carton-chilled",
+        "exactTotalPufa_g_per_100g": 0.14,
+        "method": "Exact matching chilled tomato soup with equal total fat. Replaces the earlier higher-fat tomato-bisque comparator values; CoFID omega-3 + omega-6 sum to 0.13 g, within 0.01 g of total PUFA due to rounding.",
+        "confidence": "high"
+      },
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.03,
+        "Omega-6 Fatty Acids (g)": 0.1,
+        "Trans Fat (g)": 0.07,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.03
+      },
+      "exactFields": [
+        "Omega-3 Fatty Acids (g)",
+        "Omega-6 Fatty Acids (g)",
+        "Trans Fat (g)",
+        "Alpha-Linolenic Acid (ALA) (g)"
+      ],
+      "estimatedFields": [],
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": 0.11,
+        "Omega-6 Fatty Acids (g)": 0.75,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.11
+      }
+    }
+  ],
+  "validation": {
+    "rowCountUnchanged": true,
+    "nonnegative": true,
+    "replacementValuesVerifiedBeforeWrite": true,
+    "omega3ComponentsWithinTotal": true
+  }
+}

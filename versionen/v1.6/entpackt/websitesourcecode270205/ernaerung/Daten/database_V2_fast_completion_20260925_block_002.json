@@ -1,0 +1,1644 @@
+{
+  "checkedOn": "2026-09-25",
+  "method": "Fast completion: fill direct audited source values first, then estimate missing values from median ratios in matching food categories. Exact existing values are never overwritten.",
+  "scope": {
+    "firstDatabaseIndex": 101,
+    "lastDatabaseIndex": 200,
+    "count": 100,
+    "unitBasis": "g per 100 g; g per 100 ml for liquids"
+  },
+  "sources": [
+    "Daten/database_V2_fatty_acids_alcohol_batch_002_sources.json",
+    "Daten/database_V2_omega3_components_batch_004.json",
+    "Daten/database_V2_omega3_components_batch_005.json",
+    "Daten/database_V2_omega3_components_batch_006.json",
+    "Daten/database_V2_omega3_components_batch_007.json",
+    "Daten/database_V2_omega3_components_batch_008.json",
+    "Daten/database_V2_omega3_components_batch_009.json",
+    "Daten/database_V2_omega3_components_batch_010.json",
+    "Daten/database_V2_omega3_components_batch_011.json",
+    "Daten/database_V2_omega3_components_batch_012.json",
+    "Daten/database_V2_omega3_components_batch_013.json",
+    "Daten/database_V2_omega3_components_batch_014.json",
+    "Daten/database_V2_omega3_components_batch_015.json",
+    "Daten/database_V2_omega3_components_batch_016.json",
+    "Daten/database_V2_omega3_components_batch_017.json",
+    "Daten/database_V2_omega3_components_batch_018.json",
+    "Daten/database_V2_omega3_components_batch_019.json",
+    "Daten/database_V2_omega3_components_cofid_exact.json",
+    "Daten/database_V2_omega3_components_cofid_exact_batch005_20260925.json",
+    "Existing completed database records in the same food category, excluding the target block, used only for median-ratio estimates."
+  ],
+  "coverage": {
+    "Omega-3 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Omega-6 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Trans Fat (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Alcohol (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Alpha-Linolenic Acid (ALA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Eicosapentaenoic Acid (EPA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Docosahexaenoic Acid (DHA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    }
+  },
+  "changes": [
+    {
+      "databaseIndex": 101,
+      "food": "Grieß, Weichweizen",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.037
+      }
+    },
+    {
+      "databaseIndex": 102,
+      "food": "Grünkohl (roh)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.3
+      }
+    },
+    {
+      "databaseIndex": 104,
+      "food": "H-Milch 3,5%",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.012109,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 105,
+      "food": "Hackfleisch gemischt (Schwein/Rind)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.0577,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.001936,
+        "Docosahexaenoic Acid (DHA) (g)": 0.001363
+      }
+    },
+    {
+      "databaseIndex": 106,
+      "food": "Haferdrink / Hafermilch",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.010555,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 107,
+      "food": "Haferdrink, Barista",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.018911,
+        "Omega-6 Fatty Acids (g)": 0.067665,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.018911,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 108,
+      "food": "Haferdrink, ungesüßt (Discounter)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.010555,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 110,
+      "food": "Haferflocken, instant",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.07
+      }
+    },
+    {
+      "databaseIndex": 111,
+      "food": "Haferflocken, kernig (Discounter)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.117895
+      }
+    },
+    {
+      "databaseIndex": 114,
+      "food": "Hähnchen, ganz (roh)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.155135,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.005205,
+        "Docosahexaenoic Acid (DHA) (g)": 0.003665
+      }
+    },
+    {
+      "databaseIndex": 115,
+      "food": "Hähnchenbrust (roh)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.021229,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.000712,
+        "Docosahexaenoic Acid (DHA) (g)": 0.000502
+      }
+    },
+    {
+      "databaseIndex": 120,
+      "food": "Hefeflocken (Nährhefe, angereichert)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 121,
+      "food": "Heilbutt (roh)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.009885,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.06513,
+        "Docosahexaenoic Acid (DHA) (g)": 0.103672
+      }
+    },
+    {
+      "databaseIndex": 122,
+      "food": "Hering, frisch (roh)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.082302,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.542255,
+        "Docosahexaenoic Acid (DHA) (g)": 0.863153
+      }
+    },
+    {
+      "databaseIndex": 127,
+      "food": "Hirseflocken (trocken)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.09
+      }
+    },
+    {
+      "databaseIndex": 131,
+      "food": "Hummus",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.711
+      }
+    },
+    {
+      "databaseIndex": 132,
+      "food": "Hüttenkäse 20% Fett i.Tr.",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.017,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 135,
+      "food": "Jackfruit, Dose (in Wasser, abgetropft)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.025,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 138,
+      "food": "Joghurt, mager 0,1%",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.00014,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 139,
+      "food": "Joghurt, Natur 3,5%",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.02,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 142,
+      "food": "Kaffee mit Milch (80/20)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.002053,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 144,
+      "food": "Kakao, stark entölt (Pulver)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 145,
+      "food": "Kakao, Trinkschokolade (mit Milch)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.012375,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 146,
+      "food": "Kalbfleisch, Schnitzel (roh)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.002958,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.000099,
+        "Docosahexaenoic Acid (DHA) (g)": 0.00007
+      }
+    },
+    {
+      "databaseIndex": 147,
+      "food": "Kalbsleberwurst",
+      "values": {
+        "Trans Fat (g)": 0.411767
+      }
+    },
+    {
+      "databaseIndex": 150,
+      "food": "Karottensaft 100%",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.009
+      }
+    },
+    {
+      "databaseIndex": 151,
+      "food": "Karpfen (roh)",
+      "values": {
+        "Trans Fat (g)": 0.00836
+      }
+    },
+    {
+      "databaseIndex": 154,
+      "food": "Kartoffelstärke",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.003
+      }
+    },
+    {
+      "databaseIndex": 160,
+      "food": "Kefir 1,5%",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.010603
+      }
+    },
+    {
+      "databaseIndex": 161,
+      "food": "Ketchup",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.00115,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 169,
+      "food": "Knäckebrot, Vollkorn",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.09
+      }
+    },
+    {
+      "databaseIndex": 170,
+      "food": "Knoblauch (roh)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.013
+      }
+    },
+    {
+      "databaseIndex": 172,
+      "food": "Kokosmilch, Dose",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 176,
+      "food": "Kondensmilch 7,5% Fett",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.046011,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 184,
+      "food": "Lachs, Dose (in eigenem Saft)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.08047,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.530183,
+        "Docosahexaenoic Acid (DHA) (g)": 0.843937
+      }
+    },
+    {
+      "databaseIndex": 188,
+      "food": "Lebertran (Kabeljau, flüssig)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 23.857314,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.800521,
+        "Docosahexaenoic Acid (DHA) (g)": 0.563652
+      }
+    },
+    {
+      "databaseIndex": 189,
+      "food": "Leberwurst",
+      "values": {
+        "Trans Fat (g)": 0.397061,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.160935,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.0054,
+        "Docosahexaenoic Acid (DHA) (g)": 0.003802
+      }
+    },
+    {
+      "databaseIndex": 196,
+      "food": "Linsen, Dose (abgetropft)",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.04
+      }
+    },
+    {
+      "databaseIndex": 199,
+      "food": "Lyoner / Fleischwurst",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.184033,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.006175,
+        "Docosahexaenoic Acid (DHA) (g)": 0.004348
+      }
+    }
+  ],
+  "changeDetails": [
+    {
+      "databaseIndex": 101,
+      "food": "Grieß, Weichweizen",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.037,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 177,
+          "sampleCount": 177,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 102,
+      "food": "Grünkohl (roh)",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.3,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 132,
+          "sampleCount": 132,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 104,
+      "food": "H-Milch 3,5%",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.012109,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 105,
+      "food": "Hackfleisch gemischt (Schwein/Rind)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.0577,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.8165
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.001936,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.027397260273972605
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.001363,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.019290603609209707
+        }
+      ]
+    },
+    {
+      "databaseIndex": 106,
+      "food": "Haferdrink / Hafermilch",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.010555,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 107,
+      "food": "Haferdrink, Barista",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.018911,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 165,
+          "sampleCount": 165,
+          "fallbackToGlobal": false,
+          "ratio": 0.006061105263157895
+        },
+        {
+          "field": "Omega-6 Fatty Acids (g)",
+          "value": 0.067665,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 165,
+          "sampleCount": 165,
+          "fallbackToGlobal": false,
+          "ratio": 0.021687500000000002
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.018911,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 108,
+      "food": "Haferdrink, ungesüßt (Discounter)",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.010555,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 110,
+      "food": "Haferflocken, instant",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.07,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 177,
+          "sampleCount": 177,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 111,
+      "food": "Haferflocken, kernig (Discounter)",
+      "category": "nuesse_samen",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.117895,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "nuesse_samen",
+          "peerCount": 27,
+          "sampleCount": 27,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 114,
+      "food": "Hähnchen, ganz (roh)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.155135,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.8165
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.005205,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.027397260273972605
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.003665,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.019290603609209707
+        }
+      ]
+    },
+    {
+      "databaseIndex": 115,
+      "food": "Hähnchenbrust (roh)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.021229,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.8165
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.000712,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.027397260273972605
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.000502,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.019290603609209707
+        }
+      ]
+    },
+    {
+      "databaseIndex": 120,
+      "food": "Hefeflocken (Nährhefe, angereichert)",
+      "category": "supplements",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 121,
+      "food": "Heilbutt (roh)",
+      "category": "fisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.009885,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 71,
+          "sampleCount": 71,
+          "fallbackToGlobal": false,
+          "share": 0.044729344729344735
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.06513,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 71,
+          "sampleCount": 71,
+          "fallbackToGlobal": false,
+          "share": 0.29470404984423676
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.103672,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 71,
+          "sampleCount": 71,
+          "fallbackToGlobal": false,
+          "share": 0.4691047337278107
+        }
+      ]
+    },
+    {
+      "databaseIndex": 122,
+      "food": "Hering, frisch (roh)",
+      "category": "fisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.082302,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 71,
+          "sampleCount": 71,
+          "fallbackToGlobal": false,
+          "share": 0.044729344729344735
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.542255,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 71,
+          "sampleCount": 71,
+          "fallbackToGlobal": false,
+          "share": 0.29470404984423676
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.863153,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 71,
+          "sampleCount": 71,
+          "fallbackToGlobal": false,
+          "share": 0.4691047337278107
+        }
+      ]
+    },
+    {
+      "databaseIndex": 127,
+      "food": "Hirseflocken (trocken)",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.09,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 177,
+          "sampleCount": 177,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 131,
+      "food": "Hummus",
+      "category": "huelsenfruechte",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.711,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "huelsenfruechte",
+          "peerCount": 42,
+          "sampleCount": 42,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 132,
+      "food": "Hüttenkäse 20% Fett i.Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.017,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 135,
+      "food": "Jackfruit, Dose (in Wasser, abgetropft)",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.025,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 132,
+          "sampleCount": 132,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 132,
+          "sampleCount": 132,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 132,
+          "sampleCount": 132,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 138,
+      "food": "Joghurt, mager 0,1%",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.00014,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 139,
+      "food": "Joghurt, Natur 3,5%",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.02,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 142,
+      "food": "Kaffee mit Milch (80/20)",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.002053,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 27,
+          "sampleCount": 27,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 27,
+          "sampleCount": 27,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 27,
+          "sampleCount": 27,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 144,
+      "food": "Kakao, stark entölt (Pulver)",
+      "category": "suessung",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 145,
+      "food": "Kakao, Trinkschokolade (mit Milch)",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.012375,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 27,
+          "sampleCount": 27,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 27,
+          "sampleCount": 27,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 27,
+          "sampleCount": 27,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 146,
+      "food": "Kalbfleisch, Schnitzel (roh)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.002958,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.8165
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.000099,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.027397260273972605
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.00007,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.019290603609209707
+        }
+      ]
+    },
+    {
+      "databaseIndex": 147,
+      "food": "Kalbsleberwurst",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.411767,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 174,
+          "sampleCount": 174,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705957446808509
+        }
+      ]
+    },
+    {
+      "databaseIndex": 150,
+      "food": "Karottensaft 100%",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.009,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 27,
+          "sampleCount": 27,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 151,
+      "food": "Karpfen (roh)",
+      "category": "fisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.00836,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 64,
+          "sampleCount": 64,
+          "fallbackToGlobal": false,
+          "ratio": 0.0014928698752228165
+        }
+      ]
+    },
+    {
+      "databaseIndex": 154,
+      "food": "Kartoffelstärke",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.003,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 177,
+          "sampleCount": 177,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 160,
+      "food": "Kefir 1,5%",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.010603,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 161,
+      "food": "Ketchup",
+      "category": "wuerze",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.00115,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 26,
+          "sampleCount": 26,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 26,
+          "sampleCount": 26,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 26,
+          "sampleCount": 26,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 169,
+      "food": "Knäckebrot, Vollkorn",
+      "category": "getreide",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.09,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "getreide",
+          "peerCount": 177,
+          "sampleCount": 177,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 170,
+      "food": "Knoblauch (roh)",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.013,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 132,
+          "sampleCount": 132,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 172,
+      "food": "Kokosmilch, Dose",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 176,
+      "food": "Kondensmilch 7,5% Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.046011,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 114,
+          "sampleCount": 114,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 184,
+      "food": "Lachs, Dose (in eigenem Saft)",
+      "category": "fisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.08047,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 71,
+          "sampleCount": 71,
+          "fallbackToGlobal": false,
+          "share": 0.044729344729344735
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.530183,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 71,
+          "sampleCount": 71,
+          "fallbackToGlobal": false,
+          "share": 0.29470404984423676
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.843937,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 71,
+          "sampleCount": 71,
+          "fallbackToGlobal": false,
+          "share": 0.4691047337278107
+        }
+      ]
+    },
+    {
+      "databaseIndex": 188,
+      "food": "Lebertran (Kabeljau, flüssig)",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 23.857314,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.8165
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.800521,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.027397260273972605
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.563652,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.019290603609209707
+        }
+      ]
+    },
+    {
+      "databaseIndex": 189,
+      "food": "Leberwurst",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.397061,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 174,
+          "sampleCount": 174,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705957446808509
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.160935,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.8165
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.0054,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.027397260273972605
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.003802,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.019290603609209707
+        }
+      ]
+    },
+    {
+      "databaseIndex": 196,
+      "food": "Linsen, Dose (abgetropft)",
+      "category": "huelsenfruechte",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.04,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "huelsenfruechte",
+          "peerCount": 42,
+          "sampleCount": 42,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 199,
+      "food": "Lyoner / Fleischwurst",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.184033,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.8165
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.006175,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.027397260273972605
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.004348,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 151,
+          "sampleCount": 151,
+          "fallbackToGlobal": false,
+          "share": 0.019290603609209707
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "invalidValues": 0,
+    "omega3ComponentSumConflicts": 0,
+    "omega3AndOmega6FatConflicts": 0
+  }
+}

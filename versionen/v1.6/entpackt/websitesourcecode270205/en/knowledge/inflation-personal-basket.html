@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="index, follow">
+  <title>Inflation and purchasing power: why your own basket matters</title>
+  <link rel="icon" type="image/svg+xml" href="../../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="Official inflation is an average. Use your own spending weights to see how prices and income affect your purchasing power.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://smstark-projekt.de/en/knowledge/inflation-personal-basket">
+  <meta property="og:title" content="Inflation and purchasing power: why your own basket matters">
+  <meta property="og:description" content="Official inflation is an average. Use your own spending weights to see how prices and income affect your purchasing power.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://smstark-projekt.de/en/knowledge/inflation-personal-basket">
+  <link rel="alternate" hreflang="de-DE" href="https://smstark-projekt.de/wissen/inflation-persoenlicher-warenkorb">
+  <link rel="alternate" hreflang="en-GB" href="https://smstark-projekt.de/en/knowledge/inflation-personal-basket">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Inflation and purchasing power: why your own basket matters",
+    "description": "Official inflation is an average. Use your own spending weights to see how prices and income affect your purchasing power.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://smstark-projekt.de/#person",
+      "name": "Simon Stark",
+      "url": "https://smstark-projekt.de/",
+      "sameAs": [
+        "https://github.com/simons-0427"
+      ],
+      "knowsAbout": [
+        "Finance",
+        "Data analysis"
+      ]
+    },
+    "publisher": {
+      "@id": "https://smstark-projekt.de/#person"
+    },
+    "datePublished": "2026-10-21",
+    "dateModified": "2026-10-21",
+    "image": "https://smstark-projekt.de/images/website-home-menu.png",
+    "mainEntityOfPage": "https://smstark-projekt.de/en/knowledge/inflation-personal-basket",
+    "inLanguage": "en-GB"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://smstark-projekt.de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Knowledge",
+        "item": "https://smstark-projekt.de/en/knowledge/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Economic concepts",
+        "item": "https://smstark-projekt.de/en/knowledge/#wirtschaft"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Inflation and purchasing power: why your own basket matters"
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0f; --surface: #13131a; --border: #1e1e2e;
+      --accent: #6ee7b7; --accent2: #818cf8; --text: #e2e8f0;
+      --muted: #64748b; --card: #16161f; --nav-h: 68px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); scrollbar-width: none; -ms-overflow-style: none; max-width: 100%; overflow-x: hidden; }
+    html::-webkit-scrollbar { display: none; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; max-width: 100%; width: 100%; }
+
+    .main-nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(12,12,15,.95); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 0 clamp(1.5rem,5vw,4rem); z-index: 100; gap: 2.2rem; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-github { position: absolute; right: clamp(1.5rem,5vw,4rem); display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 500; color: var(--text); text-decoration: none; border: 1px solid var(--text); padding: .4rem .9rem; border-radius: 8px; transition: border-color .2s, color .2s; }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; position: absolute; left: clamp(1.5rem,5vw,4rem); }
+    .nav-logo span { color: var(--accent); }
+    .main-nav .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: .03em; transition: color .2s; }
+    .main-nav .nav-links a:hover, .main-nav .nav-links a.active { color: var(--accent); }
+    .nav-toggle { display: none; position: absolute; right: clamp(1.5rem,5vw,4rem); width: 40px; height: 40px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; z-index: 101; transition: border-color .2s; }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(12,12,15,.98); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); z-index: 102; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a { display: flex; align-items: center; gap: .6rem; padding: .95rem .2rem; color: var(--text); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color .2s; }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+    @media (max-width: 960px) {
+      .main-nav { justify-content: flex-start; padding: 0 1rem; width: 100%; max-width: 100%; box-sizing: border-box; }
+      .main-nav .nav-links, .main-nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; right: 1rem; width: 44px; height: 44px; }
+      .mobile-menu { display: block; width: 100%; max-width: 100%; }
+    }
+
+    hr.divider { border: none; border-top: 1px solid var(--border); }
+
+    .btn { display: inline-flex; align-items: center; gap: .55rem; padding: .8rem 1.8rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 500; text-decoration: none; cursor: pointer; border: none; transition: transform .15s, box-shadow .15s, background .2s; }
+    .btn-primary { background: var(--accent); color: #0c0c0f; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,231,183,.3); }
+
+    #article-hero { padding: calc(var(--nav-h) + 3rem) clamp(1.5rem,5vw,4rem) 3.5rem; max-width: 1040px; margin: 0 auto; }
+    .breadcrumb { font-size: .78rem; color: var(--muted); margin-bottom: 1.4rem; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; } .breadcrumb a:hover { color: var(--accent); }
+    .article-eyebrow { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .article-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.08; letter-spacing: -.03em; margin-bottom: 1.4rem; }
+    .article-lead { font-size: 1.1rem; font-weight: 300; color: var(--muted); max-width: 76ch; line-height: 1.75; }
+    .article-meta { display: flex; gap: 1.2rem; margin-top: 1.6rem; font-size: .78rem; color: var(--muted); flex-wrap: wrap; }
+
+    section { padding: 3.5rem clamp(1.5rem,5vw,4rem); }
+    .section-label { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: .8rem; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; letter-spacing: -.025em; line-height: 1.15; margin-bottom: 1rem; }
+
+    .chapter-grid { display: grid; grid-template-columns: 80px 1fr; gap: 0 2.5rem; align-items: start; max-width: 960px; margin: 0 auto; }
+    .ch-num { font-family: 'Syne', sans-serif; font-size: .68rem; font-weight: 800; letter-spacing: .2em; color: var(--border); text-transform: uppercase; padding-top: .35rem; position: sticky; top: calc(var(--nav-h) + 2rem); user-select: none; }
+    .ch-text { font-size: 1.02rem; font-weight: 300; color: var(--muted); line-height: 1.85; max-width: 76ch; }
+    .ch-text + .ch-text { margin-top: 1.3rem; }
+    .ch-text strong { color: var(--text); font-weight: 500; }
+    .ch-text a, .ch-list a, .note-box a { color: var(--accent); }
+    .ch-list { margin-top: 1rem; padding-left: 1.2rem; color: var(--muted); }
+    .ch-list li { margin-bottom: .6rem; line-height: 1.7; }
+    .ch-list strong { color: var(--text); }
+    .formula-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; margin-top: 1.2rem; max-width: 68ch; font-family: 'Syne', sans-serif; font-size: 1.05rem; color: var(--accent); }
+    .formula-box span { display: block; font-family: 'DM Sans', sans-serif; font-size: .78rem; color: var(--muted); margin-top: .5rem; font-weight: 400; }
+
+    .bg-surface { background: var(--surface); }
+
+    .cta-box { background: var(--card); border: 1px solid rgba(110,231,183,.25); border-radius: 16px; padding: 2.2rem clamp(1.5rem,4vw,2.6rem); display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; max-width: 960px; margin-left: auto; margin-right: auto; }
+    .cta-box h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; margin-bottom: .5rem; }
+    .cta-box p { color: var(--muted); font-size: .92rem; max-width: 44ch; }
+
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1rem; max-width: 960px; margin-left: auto; margin-right: auto; margin-top: 1rem; width: 100%; box-sizing: border-box; }
+    .related-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.3rem; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; display: block; }
+    .related-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .related-card span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+    .related-card h4 { font-family: 'Syne', sans-serif; font-size: 1rem; margin-top: .5rem; line-height: 1.3; }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem; color: var(--muted); font-size: .82rem; }
+    .footer-inner { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; display: inline-block; margin-bottom: .9rem; }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 { font-family: 'Syne', sans-serif; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--text); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem; }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } .footer-bottom { flex-direction: column; text-align: center; } }
+
+    @media (max-width: 980px) {
+      section { padding: 3rem clamp(1.25rem, 5vw, 3rem); }
+      .chapter-grid { grid-template-columns: 1fr; gap: 1rem; max-width: 760px; }
+      .ch-num { position: static; padding-top: 0; }
+    }
+    @media (max-width: 768px) {
+      #article-hero { padding-top: calc(var(--nav-h) + 2rem); }
+      .cta-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+  <link rel="stylesheet" href="../../wissen/article-responsive.css">
+
+  <style>
+    .article-trust {
+      max-width: 760px;
+      margin: 1.25rem auto 0;
+      padding: .9rem 1rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      background: rgba(110, 231, 183, .06);
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+    .article-trust p { margin: 0; }
+    .article-trust p + p { margin-top: .7rem; }
+    .article-trust a { color: #60a5fa; text-decoration: underline; text-underline-offset: .15em; }
+    .article-trust a:hover { color: #93c5fd; }
+    .article-notes-section { padding-top: 2.5rem; }
+  </style>
+
+  <link rel="stylesheet" href="../../assets/site-header.css?v=20261104-nav64">
+  <script src="../../assets/site-header.js" defer></script>
+  <link rel="stylesheet" href="../../assets/footer-github.css">
+  <link rel="stylesheet" href="../../assets/site-footer.css?v=20261104.3">
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="/en/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li>
+      <li><a href="/en/vision">Vision</a></li>
+      <li><a href="./" class="active">Knowledge</a></li>
+    </ul>
+<div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/wissen/inflation-persoenlicher-warenkorb" data-language-file-target="../../wissen/inflation-persoenlicher-warenkorb.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li>
+      <li><a href="/en/vision">Vision</a></li>
+      <li><a href="./">Knowledge</a></li>
+      <li class="mobile-language-row">
+  <span class="mobile-language-label">Language</span>
+  <button type="button" class="language-switch" data-language-target="/wissen/inflation-persoenlicher-warenkorb" data-language-file-target="../../wissen/inflation-persoenlicher-warenkorb.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+</li>
+      <li><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub</a></li>
+    </ul>
+  </div>
+
+<section id="article-hero"><p class="breadcrumb"><a href="/en/">Home</a> / <a href="./">Knowledge</a> / <a href="./#wirtschaft">Economic concepts</a> / Your own basket</p><p class="article-eyebrow">Economic concepts</p><h1 class="article-title">Inflation and purchasing power: why your own basket matters</h1><p class="article-lead">Germany’s official inflation rate measures the average price change for a weighted basket. Your spending may look different. If rent and food take up a large share of your budget, your own purchasing power can move differently from the headline figure.</p><div class="article-meta"><span>Simon Stark</span><span>|</span><span>Published 21 October 2026</span><span>|</span><span>Approx. 7 min read</span></div></section>
+<hr class="divider">
+<section><div class="chapter-grid"><div class="ch-num">01</div><div class="ch-body"><p class="section-label">The average</p><h2 class="section-title">What the official inflation rate measures</h2>
+<p class="ch-text">Germany’s Federal Statistical Office measures the prices of goods and services bought by private households with the consumer price index. Each category enters the calculation according to its share of spending. The result is an average across households, not a statement for every individual bank account.</p>
+<p class="ch-text">If you do not own a car, higher fuel prices do not affect you directly. If rent takes a large share of your budget, its development matters more to you. That is why Destatis offers a <a href="https://www.destatis.de/DE/Service/Statistik-Visualisiert/persoenlicher-inflationsrechner-uebersicht.html" target="_blank" rel="noopener noreferrer">personal inflation calculator</a>.</p>
+<p class="ch-text">The official rate remains a useful benchmark. To understand what your own money can buy, you also need to look at where you spend it.</p>
+</div></div></section>
+<hr class="divider">
+<section class="bg-surface"><div class="chapter-grid"><div class="ch-num">02</div><div class="ch-body"><p class="section-label">Price level</p><h2 class="section-title">Lower inflation does not restore old prices</h2>
+<p class="ch-text">An inflation rate measures the change in a price index against a comparison period. If the rate falls from 10% to 2%, prices in this example rise more slowly. They do not automatically fall.</p>
+<div class="formula-box">Price index at first: 100<br>After a 10% rise: 110<br>After another 2% rise: 112.2<span>The price level is now 12.2% above the starting point. The second rate is lower, but the index still rises.</span></div>
+<p class="ch-text">A one-off price jump can therefore remain in your budget for years after the current inflation rate has eased. Prices would have to decline for the index to return to its earlier level.</p>
+</div></div></section>
+<hr class="divider">
+<section><div class="chapter-grid"><div class="ch-num">03</div><div class="ch-body"><p class="section-label">Your basket</p><h2 class="section-title">Start with your own spending weights</h2>
+<p class="ch-text">Take a completed twelve-month period and divide your consumption spending into a few groups. In the example, housing and energy make up 40%, food 25%, transport 15% and other goods and services 20%. Together, they add up to 100%.</p>
+<p class="ch-text">Each group needs a price change for the same period. We assume 6% for housing and energy, 5% for food, minus 2% for transport and 2% for the rest. These values are invented to make the calculation clear.</p>
+<div class="formula-box">40% × 6% + 25% × 5% + 15% × (−2%) + 20% × 2% = 3.75%<span>This simplified personal basket becomes 3.75% more expensive. The weights come from spending in the starting period.</span></div>
+<p class="ch-text">It is a weighted approximation, not a fully constructed price index with strict controls for comparable products and quality.</p>
+</div></div></section>
+<hr class="divider">
+<section class="bg-surface"><div class="chapter-grid"><div class="ch-num">04</div><div class="ch-body"><p class="section-label">Purchasing power</p><h2 class="section-title">What a pay rise buys</h2>
+<p class="ch-text">If your disposable income rises by 3% while your example basket costs 3.75% more, the higher income buys slightly less of the same basket. The exact comparison is 1.03 divided by 1.0375, rather than simply subtracting 3.75 from 3.</p>
+<div class="formula-box">1.03 ÷ 1.0375 − 1 ≈ −0.72%<span>Simplified change in purchasing power for this basket. Taxes, changing quantities and other income are left out.</span></div>
+<p class="ch-text">Destatis calculates Germany’s real wage index using the official consumer price index. Your personal estimate can differ because your spending weights differ.</p>
+</div></div></section>
+<hr class="divider">
+<section><div class="chapter-grid"><div class="ch-num">05</div><div class="ch-body"><p class="section-label">Limits</p><h2 class="section-title">A higher bill is not always a higher price</h2>
+<p class="ch-text">A higher electricity bill may mean the price per kilowatt-hour rose. You may also have used more electricity. To measure a price change, compare the same quantity and a comparable service. Moving from a cheaper product to a premium one changes your spending, but does not by itself measure inflation.</p>
+<p class="ch-text">For a homeowner, the mortgage payment matters for the budget. Repaying principal is not a consumer price in the official basket. Track it separately in your cash-flow plan. Taxes and saving are not simply consumer goods either.</p>
+<p class="ch-text">A small homemade basket also struggles with quality changes and new products. It is useful for personal budgeting, but cannot replace official price statistics.</p>
+</div></div></section>
+<hr class="divider">
+<section class="bg-surface"><div class="chapter-grid"><div class="ch-num">06</div><div class="ch-body"><p class="section-label">Use it</p><h2 class="section-title">Keep assumptions consistent in your plan</h2>
+<p class="ch-text">Record your spending weights and the period first. Then use price series for matching product groups or compare identical products and contracts. Combine each weight with its price change and revisit the assumptions regularly.</p>
+<p class="ch-text">This matters over long planning periods. A fixed nominal saving amount buys less when prices rise. When planning for <a href="how-much-money-for-financial-independence">financial independence</a> or <a href="etf-withdrawal-plan-german-taxes">ETF withdrawals</a>, keep needs in today’s euros separate from needs in future euros.</p>
+<p class="ch-text">To apply the example to your household, start with four to six major expense groups. More decimal places will not help while prices and quantities remain uncertain.</p>
+</div></div></section>
+<hr class="divider"><section><div class="cta-box"><div><h3>Check your own basket</h3><p>Destatis lets you change spending weights and compare your personal estimate with the official rate.</p></div><a href="https://www.destatis.de/DE/Service/Statistik-Visualisiert/persoenlicher-inflationsrechner-uebersicht.html" class="btn btn-primary">Open the inflation calculator</a></div></section>
+<hr class="divider"><section><p class="section-label">Read next</p><h2 class="section-title">Related articles</h2><div class="related-grid"><a href="how-much-money-for-financial-independence" class="related-card"><span>Financial foundations</span><h4>How much money do I need for financial independence?</h4></a><a href="etf-withdrawal-plan-german-taxes" class="related-card"><span>Financial foundations</span><h4>ETF withdrawals in Germany</h4></a><a href="30-year-property-projection-cash-flow-debt-taxes" class="related-card"><span>Property investment</span><h4>30-year projection: cash flow and debt</h4></a></div></section>
+<section class="article-notes-section"><p class="section-label">Sources</p><h2 class="section-title">Background and limits</h2><div class="chapter-grid"><div class="ch-num">Q</div><div class="ch-body"><ul class="ch-list"><li><a href="https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Verbraucherpreisindex/_inhalt.html" target="_blank" rel="noopener noreferrer">German Federal Statistical Office: consumer price index and weights (German)</a></li><li><a href="https://www.destatis.de/DE/Service/Statistik-Visualisiert/persoenlicher-inflationsrechner-uebersicht.html" target="_blank" rel="noopener noreferrer">German Federal Statistical Office: personal inflation calculator (German)</a></li><li><a href="https://www.destatis.de/DE/Themen/Arbeit/Verdienste/Realloehne-Nominalloehne/_inhalt.html" target="_blank" rel="noopener noreferrer">German Federal Statistical Office: nominal and real wages (German)</a></li></ul><aside class="article-trust" aria-label="Methodology"><p>Checked 21 October 2026. Spending shares, price changes and the pay rise are invented assumptions. The personal figure is a simplified estimate, not an official inflation rate or a price forecast.</p></aside></div></div></section>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/en/" class="footer-logo">sms<span>.</span></a>
+        <p>Personal finance tools, dashboards and programming projects by Simon Stark. Always a work in progress.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="/en/projects/">Projects</a></li>
+          <li><a href="/en/downloads">Downloads</a></li>
+          <li><a href="/en/project-pipeline">Project pipeline</a></li>
+          <li><a href="/en/vision">Vision</a></li>
+          <li><a href="./">Knowledge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="/en/legal-notice">Legal notice</a></li>
+          <li><a href="/en/privacy">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a class="footer-github-exact" href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        github.com/simons-0427
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Open menu');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

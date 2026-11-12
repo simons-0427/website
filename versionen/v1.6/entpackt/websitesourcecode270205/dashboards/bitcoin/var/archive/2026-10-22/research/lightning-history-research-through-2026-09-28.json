@@ -1,0 +1,4742 @@
+{
+  "source": "Mempool.space REST API, Bitcoin Lightning Network",
+  "sourceLicense": "No separate API-data license confirmed; research candidate only, not cleared for public redistribution.",
+  "fetchedAtUtc": "2026-09-29T13:45:33.046Z",
+  "cutoffDate": "2026-09-28",
+  "historyInterval": "3y",
+  "historyUrl": "https://mempool.space/api/v1/lightning/statistics/3y",
+  "latestUrl": "https://mempool.space/api/v1/lightning/statistics/latest",
+  "history": [
+    {
+      "added": 1696032000,
+      "date": "2023-09-30",
+      "channel_count": 63901,
+      "total_capacity": 450903496486
+    },
+    {
+      "added": 1696118400,
+      "date": "2023-10-01",
+      "channel_count": 63071,
+      "total_capacity": 450422108112
+    },
+    {
+      "added": 1696204800,
+      "date": "2023-10-02",
+      "channel_count": 63068,
+      "total_capacity": 477794211547
+    },
+    {
+      "added": 1696291200,
+      "date": "2023-10-03",
+      "channel_count": 63491,
+      "total_capacity": 503220465800
+    },
+    {
+      "added": 1696377600,
+      "date": "2023-10-04",
+      "channel_count": 63787,
+      "total_capacity": 529991164623
+    },
+    {
+      "added": 1696464000,
+      "date": "2023-10-05",
+      "channel_count": 63834,
+      "total_capacity": 532355932316
+    },
+    {
+      "added": 1696550400,
+      "date": "2023-10-06",
+      "channel_count": 63665,
+      "total_capacity": 533596019264
+    },
+    {
+      "added": 1696636800,
+      "date": "2023-10-07",
+      "channel_count": 63757,
+      "total_capacity": 534680950620
+    },
+    {
+      "added": 1696723200,
+      "date": "2023-10-08",
+      "channel_count": 63754,
+      "total_capacity": 535069041918
+    },
+    {
+      "added": 1696809600,
+      "date": "2023-10-09",
+      "channel_count": 63479,
+      "total_capacity": 529396370156
+    },
+    {
+      "added": 1696896000,
+      "date": "2023-10-10",
+      "channel_count": 63532,
+      "total_capacity": 524109883111
+    },
+    {
+      "added": 1696982400,
+      "date": "2023-10-11",
+      "channel_count": 63449,
+      "total_capacity": 524219785499
+    },
+    {
+      "added": 1697068800,
+      "date": "2023-10-12",
+      "channel_count": 63559,
+      "total_capacity": 527380695899
+    },
+    {
+      "added": 1697155200,
+      "date": "2023-10-13",
+      "channel_count": 63388,
+      "total_capacity": 530683152439
+    },
+    {
+      "added": 1697241600,
+      "date": "2023-10-14",
+      "channel_count": 63482,
+      "total_capacity": 533170426301
+    },
+    {
+      "added": 1697328000,
+      "date": "2023-10-15",
+      "channel_count": 63671,
+      "total_capacity": 534528788701
+    },
+    {
+      "added": 1697414400,
+      "date": "2023-10-16",
+      "channel_count": 63467,
+      "total_capacity": 537214245660
+    },
+    {
+      "added": 1697500800,
+      "date": "2023-10-17",
+      "channel_count": 63497,
+      "total_capacity": 540820756762
+    },
+    {
+      "added": 1697587200,
+      "date": "2023-10-18",
+      "channel_count": 63481,
+      "total_capacity": 542594833235
+    },
+    {
+      "added": 1697673600,
+      "date": "2023-10-19",
+      "channel_count": 63464,
+      "total_capacity": 542422564335
+    },
+    {
+      "added": 1697760000,
+      "date": "2023-10-20",
+      "channel_count": 63329,
+      "total_capacity": 543661411711
+    },
+    {
+      "added": 1697846400,
+      "date": "2023-10-21",
+      "channel_count": 63080,
+      "total_capacity": 539949809952
+    },
+    {
+      "added": 1697932800,
+      "date": "2023-10-22",
+      "channel_count": 62627,
+      "total_capacity": 536204365575
+    },
+    {
+      "added": 1698019200,
+      "date": "2023-10-23",
+      "channel_count": 62428,
+      "total_capacity": 528083340636
+    },
+    {
+      "added": 1698105600,
+      "date": "2023-10-24",
+      "channel_count": 62404,
+      "total_capacity": 529190636051
+    },
+    {
+      "added": 1698192000,
+      "date": "2023-10-25",
+      "channel_count": 62319,
+      "total_capacity": 529138570687
+    },
+    {
+      "added": 1698278400,
+      "date": "2023-10-26",
+      "channel_count": 62218,
+      "total_capacity": 528650095224
+    },
+    {
+      "added": 1698364800,
+      "date": "2023-10-27",
+      "channel_count": 62073,
+      "total_capacity": 530379196911
+    },
+    {
+      "added": 1698451200,
+      "date": "2023-10-28",
+      "channel_count": 62196,
+      "total_capacity": 531210102319
+    },
+    {
+      "added": 1698537600,
+      "date": "2023-10-29",
+      "channel_count": 62301,
+      "total_capacity": 532055096644
+    },
+    {
+      "added": 1698624000,
+      "date": "2023-10-30",
+      "channel_count": 62151,
+      "total_capacity": 533839180306
+    },
+    {
+      "added": 1698710400,
+      "date": "2023-10-31",
+      "channel_count": 62179,
+      "total_capacity": 533928983953
+    },
+    {
+      "added": 1698796800,
+      "date": "2023-11-01",
+      "channel_count": 62198,
+      "total_capacity": 535822263812
+    },
+    {
+      "added": 1698883200,
+      "date": "2023-11-02",
+      "channel_count": 62310,
+      "total_capacity": 536014286681
+    },
+    {
+      "added": 1698969600,
+      "date": "2023-11-03",
+      "channel_count": 62228,
+      "total_capacity": 536695125933
+    },
+    {
+      "added": 1699056000,
+      "date": "2023-11-04",
+      "channel_count": 62337,
+      "total_capacity": 536884505948
+    },
+    {
+      "added": 1699142400,
+      "date": "2023-11-05",
+      "channel_count": 62395,
+      "total_capacity": 538467433613
+    },
+    {
+      "added": 1699228800,
+      "date": "2023-11-06",
+      "channel_count": 62265,
+      "total_capacity": 538273261576
+    },
+    {
+      "added": 1699315200,
+      "date": "2023-11-07",
+      "channel_count": 62290,
+      "total_capacity": 536323859061
+    },
+    {
+      "added": 1699401600,
+      "date": "2023-11-08",
+      "channel_count": 62322,
+      "total_capacity": 536597872235
+    },
+    {
+      "added": 1699488000,
+      "date": "2023-11-09",
+      "channel_count": 62334,
+      "total_capacity": 535694264852
+    },
+    {
+      "added": 1699574400,
+      "date": "2023-11-10",
+      "channel_count": 62209,
+      "total_capacity": 533936024401
+    },
+    {
+      "added": 1699660800,
+      "date": "2023-11-11",
+      "channel_count": 62187,
+      "total_capacity": 534346740843
+    },
+    {
+      "added": 1699747200,
+      "date": "2023-11-12",
+      "channel_count": 62187,
+      "total_capacity": 534251170158
+    },
+    {
+      "added": 1699833600,
+      "date": "2023-11-13",
+      "channel_count": 62027,
+      "total_capacity": 534812617075
+    },
+    {
+      "added": 1699920000,
+      "date": "2023-11-14",
+      "channel_count": 61991,
+      "total_capacity": 535681936709
+    },
+    {
+      "added": 1700006400,
+      "date": "2023-11-15",
+      "channel_count": 61947,
+      "total_capacity": 536356542681
+    },
+    {
+      "added": 1700092800,
+      "date": "2023-11-16",
+      "channel_count": 61963,
+      "total_capacity": 536345017447
+    },
+    {
+      "added": 1700179200,
+      "date": "2023-11-17",
+      "channel_count": 61730,
+      "total_capacity": 535136242510
+    },
+    {
+      "added": 1700265600,
+      "date": "2023-11-18",
+      "channel_count": 61732,
+      "total_capacity": 536498656425
+    },
+    {
+      "added": 1700352000,
+      "date": "2023-11-19",
+      "channel_count": 61766,
+      "total_capacity": 536574067250
+    },
+    {
+      "added": 1700438400,
+      "date": "2023-11-20",
+      "channel_count": 61373,
+      "total_capacity": 539029422178
+    },
+    {
+      "added": 1700524800,
+      "date": "2023-11-21",
+      "channel_count": 61370,
+      "total_capacity": 540077796190
+    },
+    {
+      "added": 1700611200,
+      "date": "2023-11-22",
+      "channel_count": 61438,
+      "total_capacity": 542828819878
+    },
+    {
+      "added": 1700697600,
+      "date": "2023-11-23",
+      "channel_count": 61446,
+      "total_capacity": 542647493270
+    },
+    {
+      "added": 1700784000,
+      "date": "2023-11-24",
+      "channel_count": 60978,
+      "total_capacity": 541938646891
+    },
+    {
+      "added": 1700870400,
+      "date": "2023-11-25",
+      "channel_count": 61012,
+      "total_capacity": 542710610114
+    },
+    {
+      "added": 1700956800,
+      "date": "2023-11-26",
+      "channel_count": 60992,
+      "total_capacity": 541861748787
+    },
+    {
+      "added": 1701043200,
+      "date": "2023-11-27",
+      "channel_count": 60709,
+      "total_capacity": 541546234462
+    },
+    {
+      "added": 1701129600,
+      "date": "2023-11-28",
+      "channel_count": 60551,
+      "total_capacity": 538016782926
+    },
+    {
+      "added": 1701216000,
+      "date": "2023-11-29",
+      "channel_count": 60534,
+      "total_capacity": 539420331996
+    },
+    {
+      "added": 1701302400,
+      "date": "2023-11-30",
+      "channel_count": 60437,
+      "total_capacity": 510325339620
+    },
+    {
+      "added": 1701388800,
+      "date": "2023-12-01",
+      "channel_count": 60131,
+      "total_capacity": 511402755674
+    },
+    {
+      "added": 1701475200,
+      "date": "2023-12-02",
+      "channel_count": 60183,
+      "total_capacity": 514092552676
+    },
+    {
+      "added": 1701561600,
+      "date": "2023-12-03",
+      "channel_count": 60250,
+      "total_capacity": 514802768264
+    },
+    {
+      "added": 1701648000,
+      "date": "2023-12-04",
+      "channel_count": 60065,
+      "total_capacity": 509527054580
+    },
+    {
+      "added": 1701734400,
+      "date": "2023-12-05",
+      "channel_count": 60014,
+      "total_capacity": 508616312589
+    },
+    {
+      "added": 1701820800,
+      "date": "2023-12-06",
+      "channel_count": 60018,
+      "total_capacity": 509407751086
+    },
+    {
+      "added": 1701907200,
+      "date": "2023-12-07",
+      "channel_count": 60036,
+      "total_capacity": 509088461501
+    },
+    {
+      "added": 1701993600,
+      "date": "2023-12-08",
+      "channel_count": 59869,
+      "total_capacity": 509965046647
+    },
+    {
+      "added": 1702080000,
+      "date": "2023-12-09",
+      "channel_count": 59801,
+      "total_capacity": 510225069975
+    },
+    {
+      "added": 1702166400,
+      "date": "2023-12-10",
+      "channel_count": 59838,
+      "total_capacity": 510220758849
+    },
+    {
+      "added": 1702252800,
+      "date": "2023-12-11",
+      "channel_count": 59550,
+      "total_capacity": 506001093505
+    },
+    {
+      "added": 1702339200,
+      "date": "2023-12-12",
+      "channel_count": 59614,
+      "total_capacity": 506346900092
+    },
+    {
+      "added": 1702425600,
+      "date": "2023-12-13",
+      "channel_count": 59655,
+      "total_capacity": 507027756562
+    },
+    {
+      "added": 1702512000,
+      "date": "2023-12-14",
+      "channel_count": 59686,
+      "total_capacity": 507284326510
+    },
+    {
+      "added": 1702598400,
+      "date": "2023-12-15",
+      "channel_count": 59599,
+      "total_capacity": 506818601501
+    },
+    {
+      "added": 1702684800,
+      "date": "2023-12-16",
+      "channel_count": 59590,
+      "total_capacity": 507499061072
+    },
+    {
+      "added": 1702771200,
+      "date": "2023-12-17",
+      "channel_count": 59564,
+      "total_capacity": 507267170697
+    },
+    {
+      "added": 1702857600,
+      "date": "2023-12-18",
+      "channel_count": 59512,
+      "total_capacity": 506628072075
+    },
+    {
+      "added": 1702944000,
+      "date": "2023-12-19",
+      "channel_count": 59549,
+      "total_capacity": 506115811865
+    },
+    {
+      "added": 1703030400,
+      "date": "2023-12-20",
+      "channel_count": 59553,
+      "total_capacity": 505736960942
+    },
+    {
+      "added": 1703116800,
+      "date": "2023-12-21",
+      "channel_count": 59593,
+      "total_capacity": 506466415721
+    },
+    {
+      "added": 1703203200,
+      "date": "2023-12-22",
+      "channel_count": 59399,
+      "total_capacity": 506232891269
+    },
+    {
+      "added": 1703289600,
+      "date": "2023-12-23",
+      "channel_count": 59344,
+      "total_capacity": 501150466956
+    },
+    {
+      "added": 1703376000,
+      "date": "2023-12-24",
+      "channel_count": 59355,
+      "total_capacity": 500676125135
+    },
+    {
+      "added": 1703462400,
+      "date": "2023-12-25",
+      "channel_count": 59235,
+      "total_capacity": 501241725664
+    },
+    {
+      "added": 1703548800,
+      "date": "2023-12-26",
+      "channel_count": 59263,
+      "total_capacity": 501301579537
+    },
+    {
+      "added": 1703635200,
+      "date": "2023-12-27",
+      "channel_count": 59352,
+      "total_capacity": 504369841303
+    },
+    {
+      "added": 1703721600,
+      "date": "2023-12-28",
+      "channel_count": 59385,
+      "total_capacity": 506132843478
+    },
+    {
+      "added": 1703808000,
+      "date": "2023-12-29",
+      "channel_count": 59249,
+      "total_capacity": 504334570870
+    },
+    {
+      "added": 1703894400,
+      "date": "2023-12-30",
+      "channel_count": 59300,
+      "total_capacity": 503412254419
+    },
+    {
+      "added": 1703980800,
+      "date": "2023-12-31",
+      "channel_count": 59320,
+      "total_capacity": 503735754918
+    },
+    {
+      "added": 1704067200,
+      "date": "2024-01-01",
+      "channel_count": 59077,
+      "total_capacity": 502180575587
+    },
+    {
+      "added": 1704153600,
+      "date": "2024-01-02",
+      "channel_count": 58974,
+      "total_capacity": 499632801045
+    },
+    {
+      "added": 1704240000,
+      "date": "2024-01-03",
+      "channel_count": 59005,
+      "total_capacity": 500304498819
+    },
+    {
+      "added": 1704326400,
+      "date": "2024-01-04",
+      "channel_count": 58995,
+      "total_capacity": 501976089140
+    },
+    {
+      "added": 1704412800,
+      "date": "2024-01-05",
+      "channel_count": 59022,
+      "total_capacity": 502614674614
+    },
+    {
+      "added": 1704499200,
+      "date": "2024-01-06",
+      "channel_count": 47028,
+      "total_capacity": 472931103800
+    },
+    {
+      "added": 1704585600,
+      "date": "2024-01-07",
+      "channel_count": 58816,
+      "total_capacity": 503655956633
+    },
+    {
+      "added": 1704672000,
+      "date": "2024-01-08",
+      "channel_count": 58840,
+      "total_capacity": 505855730923
+    },
+    {
+      "added": 1704758400,
+      "date": "2024-01-09",
+      "channel_count": 58812,
+      "total_capacity": 507552619847
+    },
+    {
+      "added": 1704844800,
+      "date": "2024-01-10",
+      "channel_count": 58605,
+      "total_capacity": 508145021104
+    },
+    {
+      "added": 1704931200,
+      "date": "2024-01-11",
+      "channel_count": 58464,
+      "total_capacity": 485486678631
+    },
+    {
+      "added": 1705017600,
+      "date": "2024-01-12",
+      "channel_count": 58394,
+      "total_capacity": 484933251245
+    },
+    {
+      "added": 1705104000,
+      "date": "2024-01-13",
+      "channel_count": 58395,
+      "total_capacity": 484751668535
+    },
+    {
+      "added": 1705190400,
+      "date": "2024-01-14",
+      "channel_count": 58245,
+      "total_capacity": 485011247604
+    },
+    {
+      "added": 1705276800,
+      "date": "2024-01-15",
+      "channel_count": 58303,
+      "total_capacity": 487086118243
+    },
+    {
+      "added": 1705363200,
+      "date": "2024-01-16",
+      "channel_count": 58381,
+      "total_capacity": 490130117550
+    },
+    {
+      "added": 1705449600,
+      "date": "2024-01-17",
+      "channel_count": 58103,
+      "total_capacity": 490179858746
+    },
+    {
+      "added": 1705536000,
+      "date": "2024-01-18",
+      "channel_count": 58162,
+      "total_capacity": 489782999861
+    },
+    {
+      "added": 1705622400,
+      "date": "2024-01-19",
+      "channel_count": 58164,
+      "total_capacity": 492376384338
+    },
+    {
+      "added": 1705708800,
+      "date": "2024-01-20",
+      "channel_count": 46849,
+      "total_capacity": 467587639169
+    },
+    {
+      "added": 1705795200,
+      "date": "2024-01-21",
+      "channel_count": 58151,
+      "total_capacity": 493646556951
+    },
+    {
+      "added": 1705881600,
+      "date": "2024-01-22",
+      "channel_count": 58202,
+      "total_capacity": 495409941511
+    },
+    {
+      "added": 1705968000,
+      "date": "2024-01-23",
+      "channel_count": 58156,
+      "total_capacity": 489950792316
+    },
+    {
+      "added": 1706054400,
+      "date": "2024-01-24",
+      "channel_count": 58018,
+      "total_capacity": 489196978449
+    },
+    {
+      "added": 1706140800,
+      "date": "2024-01-25",
+      "channel_count": 58091,
+      "total_capacity": 490378468868
+    },
+    {
+      "added": 1706227200,
+      "date": "2024-01-26",
+      "channel_count": 57929,
+      "total_capacity": 491038001423
+    },
+    {
+      "added": 1706313600,
+      "date": "2024-01-27",
+      "channel_count": 53360,
+      "total_capacity": 477083882872
+    },
+    {
+      "added": 1706400000,
+      "date": "2024-01-28",
+      "channel_count": 57899,
+      "total_capacity": 493232773501
+    },
+    {
+      "added": 1706486400,
+      "date": "2024-01-29",
+      "channel_count": 58121,
+      "total_capacity": 494689154408
+    },
+    {
+      "added": 1706572800,
+      "date": "2024-01-30",
+      "channel_count": 58211,
+      "total_capacity": 498209378275
+    },
+    {
+      "added": 1706659200,
+      "date": "2024-01-31",
+      "channel_count": 58025,
+      "total_capacity": 498616598197
+    },
+    {
+      "added": 1706745600,
+      "date": "2024-02-01",
+      "channel_count": 58040,
+      "total_capacity": 499813510312
+    },
+    {
+      "added": 1706832000,
+      "date": "2024-02-02",
+      "channel_count": 57972,
+      "total_capacity": 499164035573
+    },
+    {
+      "added": 1706918400,
+      "date": "2024-02-03",
+      "channel_count": 57918,
+      "total_capacity": 499099589542
+    },
+    {
+      "added": 1707004800,
+      "date": "2024-02-04",
+      "channel_count": 57659,
+      "total_capacity": 498470472411
+    },
+    {
+      "added": 1707091200,
+      "date": "2024-02-05",
+      "channel_count": 57633,
+      "total_capacity": 498572197356
+    },
+    {
+      "added": 1707177600,
+      "date": "2024-02-06",
+      "channel_count": 57584,
+      "total_capacity": 498682996357
+    },
+    {
+      "added": 1707264000,
+      "date": "2024-02-07",
+      "channel_count": 57146,
+      "total_capacity": 480432160522
+    },
+    {
+      "added": 1707350400,
+      "date": "2024-02-08",
+      "channel_count": 57035,
+      "total_capacity": 481449070760
+    },
+    {
+      "added": 1707436800,
+      "date": "2024-02-09",
+      "channel_count": 56984,
+      "total_capacity": 482724067532
+    },
+    {
+      "added": 1707523200,
+      "date": "2024-02-10",
+      "channel_count": 46802,
+      "total_capacity": 458078120864
+    },
+    {
+      "added": 1707609600,
+      "date": "2024-02-11",
+      "channel_count": 56069,
+      "total_capacity": 481903054160
+    },
+    {
+      "added": 1707696000,
+      "date": "2024-02-12",
+      "channel_count": 55728,
+      "total_capacity": 480900428923
+    },
+    {
+      "added": 1707782400,
+      "date": "2024-02-13",
+      "channel_count": 55850,
+      "total_capacity": 483142498859
+    },
+    {
+      "added": 1707868800,
+      "date": "2024-02-14",
+      "channel_count": 55714,
+      "total_capacity": 484541177478
+    },
+    {
+      "added": 1707955200,
+      "date": "2024-02-15",
+      "channel_count": 55585,
+      "total_capacity": 484590728513
+    },
+    {
+      "added": 1708041600,
+      "date": "2024-02-16",
+      "channel_count": 55423,
+      "total_capacity": 484676694403
+    },
+    {
+      "added": 1708128000,
+      "date": "2024-02-17",
+      "channel_count": 55228,
+      "total_capacity": 471699210053
+    },
+    {
+      "added": 1708214400,
+      "date": "2024-02-18",
+      "channel_count": 55047,
+      "total_capacity": 470780409956
+    },
+    {
+      "added": 1708300800,
+      "date": "2024-02-19",
+      "channel_count": 54965,
+      "total_capacity": 470503257748
+    },
+    {
+      "added": 1708387200,
+      "date": "2024-02-20",
+      "channel_count": 54907,
+      "total_capacity": 470579210946
+    },
+    {
+      "added": 1708473600,
+      "date": "2024-02-21",
+      "channel_count": 54821,
+      "total_capacity": 473639855098
+    },
+    {
+      "added": 1708560000,
+      "date": "2024-02-22",
+      "channel_count": 54887,
+      "total_capacity": 475312897226
+    },
+    {
+      "added": 1708646400,
+      "date": "2024-02-23",
+      "channel_count": 54846,
+      "total_capacity": 465727451874
+    },
+    {
+      "added": 1708732800,
+      "date": "2024-02-24",
+      "channel_count": 54945,
+      "total_capacity": 464619921900
+    },
+    {
+      "added": 1708819200,
+      "date": "2024-02-25",
+      "channel_count": 54793,
+      "total_capacity": 462110153521
+    },
+    {
+      "added": 1708905600,
+      "date": "2024-02-26",
+      "channel_count": 54844,
+      "total_capacity": 465995715459
+    },
+    {
+      "added": 1708992000,
+      "date": "2024-02-27",
+      "channel_count": 54889,
+      "total_capacity": 467254640138
+    },
+    {
+      "added": 1709078400,
+      "date": "2024-02-28",
+      "channel_count": 54736,
+      "total_capacity": 463303121849
+    },
+    {
+      "added": 1709164800,
+      "date": "2024-02-29",
+      "channel_count": 54620,
+      "total_capacity": 458052603505
+    },
+    {
+      "added": 1709251200,
+      "date": "2024-03-01",
+      "channel_count": 54690,
+      "total_capacity": 461093846605
+    },
+    {
+      "added": 1709337600,
+      "date": "2024-03-02",
+      "channel_count": 54740,
+      "total_capacity": 461569801055
+    },
+    {
+      "added": 1709424000,
+      "date": "2024-03-03",
+      "channel_count": 54688,
+      "total_capacity": 461473719767
+    },
+    {
+      "added": 1709510400,
+      "date": "2024-03-04",
+      "channel_count": 54751,
+      "total_capacity": 462586465818
+    },
+    {
+      "added": 1709596800,
+      "date": "2024-03-05",
+      "channel_count": 54682,
+      "total_capacity": 462821202290
+    },
+    {
+      "added": 1709683200,
+      "date": "2024-03-06",
+      "channel_count": 54357,
+      "total_capacity": 460818037327
+    },
+    {
+      "added": 1709769600,
+      "date": "2024-03-07",
+      "channel_count": 54208,
+      "total_capacity": 456275871051
+    },
+    {
+      "added": 1709856000,
+      "date": "2024-03-08",
+      "channel_count": 54221,
+      "total_capacity": 457974245583
+    },
+    {
+      "added": 1709942400,
+      "date": "2024-03-09",
+      "channel_count": 43361,
+      "total_capacity": 434536085313
+    },
+    {
+      "added": 1710028800,
+      "date": "2024-03-10",
+      "channel_count": 53862,
+      "total_capacity": 457691496928
+    },
+    {
+      "added": 1710115200,
+      "date": "2024-03-11",
+      "channel_count": 53851,
+      "total_capacity": 458341372227
+    },
+    {
+      "added": 1710201600,
+      "date": "2024-03-12",
+      "channel_count": 54007,
+      "total_capacity": 460974011809
+    },
+    {
+      "added": 1710288000,
+      "date": "2024-03-13",
+      "channel_count": 53277,
+      "total_capacity": 459364829082
+    },
+    {
+      "added": 1710374400,
+      "date": "2024-03-14",
+      "channel_count": 53313,
+      "total_capacity": 459229628317
+    },
+    {
+      "added": 1710460800,
+      "date": "2024-03-15",
+      "channel_count": 53408,
+      "total_capacity": 463295485935
+    },
+    {
+      "added": 1710547200,
+      "date": "2024-03-16",
+      "channel_count": 53405,
+      "total_capacity": 465532324405
+    },
+    {
+      "added": 1710633600,
+      "date": "2024-03-17",
+      "channel_count": 53038,
+      "total_capacity": 466285847071
+    },
+    {
+      "added": 1710720000,
+      "date": "2024-03-18",
+      "channel_count": 53149,
+      "total_capacity": 469565951867
+    },
+    {
+      "added": 1710806400,
+      "date": "2024-03-19",
+      "channel_count": 52932,
+      "total_capacity": 461885207017
+    },
+    {
+      "added": 1710892800,
+      "date": "2024-03-20",
+      "channel_count": 52816,
+      "total_capacity": 462653629307
+    },
+    {
+      "added": 1710979200,
+      "date": "2024-03-21",
+      "channel_count": 52920,
+      "total_capacity": 461838779266
+    },
+    {
+      "added": 1711065600,
+      "date": "2024-03-22",
+      "channel_count": 52843,
+      "total_capacity": 460993331280
+    },
+    {
+      "added": 1711152000,
+      "date": "2024-03-23",
+      "channel_count": 52736,
+      "total_capacity": 456950635691
+    },
+    {
+      "added": 1711238400,
+      "date": "2024-03-24",
+      "channel_count": 52621,
+      "total_capacity": 456742193080
+    },
+    {
+      "added": 1711324800,
+      "date": "2024-03-25",
+      "channel_count": 52544,
+      "total_capacity": 457179271746
+    },
+    {
+      "added": 1711411200,
+      "date": "2024-03-26",
+      "channel_count": 52518,
+      "total_capacity": 460694828153
+    },
+    {
+      "added": 1711497600,
+      "date": "2024-03-27",
+      "channel_count": 52362,
+      "total_capacity": 461395199932
+    },
+    {
+      "added": 1711584000,
+      "date": "2024-03-28",
+      "channel_count": 52343,
+      "total_capacity": 461147756213
+    },
+    {
+      "added": 1711670400,
+      "date": "2024-03-29",
+      "channel_count": 52360,
+      "total_capacity": 462382985053
+    },
+    {
+      "added": 1711756800,
+      "date": "2024-03-30",
+      "channel_count": 42180,
+      "total_capacity": 440686626106
+    },
+    {
+      "added": 1711843200,
+      "date": "2024-03-31",
+      "channel_count": 51840,
+      "total_capacity": 464501014546
+    },
+    {
+      "added": 1711929600,
+      "date": "2024-04-01",
+      "channel_count": 51811,
+      "total_capacity": 464426932874
+    },
+    {
+      "added": 1712016000,
+      "date": "2024-04-02",
+      "channel_count": 51662,
+      "total_capacity": 464009769074
+    },
+    {
+      "added": 1712102400,
+      "date": "2024-04-03",
+      "channel_count": 51545,
+      "total_capacity": 464965177687
+    },
+    {
+      "added": 1712188800,
+      "date": "2024-04-04",
+      "channel_count": 51544,
+      "total_capacity": 464677598815
+    },
+    {
+      "added": 1712275200,
+      "date": "2024-04-05",
+      "channel_count": 51527,
+      "total_capacity": 458548984498
+    },
+    {
+      "added": 1712361600,
+      "date": "2024-04-06",
+      "channel_count": 51677,
+      "total_capacity": 460012253357
+    },
+    {
+      "added": 1712448000,
+      "date": "2024-04-07",
+      "channel_count": 51466,
+      "total_capacity": 460979957212
+    },
+    {
+      "added": 1712534400,
+      "date": "2024-04-08",
+      "channel_count": 51524,
+      "total_capacity": 460888365237
+    },
+    {
+      "added": 1712620800,
+      "date": "2024-04-09",
+      "channel_count": 51541,
+      "total_capacity": 461596253192
+    },
+    {
+      "added": 1712707200,
+      "date": "2024-04-10",
+      "channel_count": 51297,
+      "total_capacity": 461613222639
+    },
+    {
+      "added": 1712793600,
+      "date": "2024-04-11",
+      "channel_count": 51320,
+      "total_capacity": 461972922372
+    },
+    {
+      "added": 1712880000,
+      "date": "2024-04-12",
+      "channel_count": 51393,
+      "total_capacity": 463010260894
+    },
+    {
+      "added": 1712966400,
+      "date": "2024-04-13",
+      "channel_count": 44931,
+      "total_capacity": 445032698723
+    },
+    {
+      "added": 1713052800,
+      "date": "2024-04-14",
+      "channel_count": 51238,
+      "total_capacity": 462940125436
+    },
+    {
+      "added": 1713139200,
+      "date": "2024-04-15",
+      "channel_count": 51324,
+      "total_capacity": 463965504860
+    },
+    {
+      "added": 1713225600,
+      "date": "2024-04-16",
+      "channel_count": 51389,
+      "total_capacity": 466591920008
+    },
+    {
+      "added": 1713312000,
+      "date": "2024-04-17",
+      "channel_count": 51317,
+      "total_capacity": 467683670619
+    },
+    {
+      "added": 1713398400,
+      "date": "2024-04-18",
+      "channel_count": 51290,
+      "total_capacity": 467948205860
+    },
+    {
+      "added": 1713484800,
+      "date": "2024-04-19",
+      "channel_count": 51394,
+      "total_capacity": 469701802043
+    },
+    {
+      "added": 1713571200,
+      "date": "2024-04-20",
+      "channel_count": 41240,
+      "total_capacity": 447796622077
+    },
+    {
+      "added": 1713657600,
+      "date": "2024-04-21",
+      "channel_count": 51180,
+      "total_capacity": 469260240942
+    },
+    {
+      "added": 1713744000,
+      "date": "2024-04-22",
+      "channel_count": 51202,
+      "total_capacity": 470219623122
+    },
+    {
+      "added": 1713830400,
+      "date": "2024-04-23",
+      "channel_count": 51320,
+      "total_capacity": 472087380852
+    },
+    {
+      "added": 1713916800,
+      "date": "2024-04-24",
+      "channel_count": 51081,
+      "total_capacity": 470251614269
+    },
+    {
+      "added": 1714003200,
+      "date": "2024-04-25",
+      "channel_count": 51019,
+      "total_capacity": 471620730269
+    },
+    {
+      "added": 1714089600,
+      "date": "2024-04-26",
+      "channel_count": 50964,
+      "total_capacity": 475516219617
+    },
+    {
+      "added": 1714176000,
+      "date": "2024-04-27",
+      "channel_count": 50955,
+      "total_capacity": 475291740876
+    },
+    {
+      "added": 1714262400,
+      "date": "2024-04-28",
+      "channel_count": 51469,
+      "total_capacity": 476339417388
+    },
+    {
+      "added": 1714348800,
+      "date": "2024-04-29",
+      "channel_count": 51364,
+      "total_capacity": 480285112241
+    },
+    {
+      "added": 1714435200,
+      "date": "2024-04-30",
+      "channel_count": 51394,
+      "total_capacity": 480275718824
+    },
+    {
+      "added": 1714521600,
+      "date": "2024-05-01",
+      "channel_count": 51268,
+      "total_capacity": 482074123215
+    },
+    {
+      "added": 1714608000,
+      "date": "2024-05-02",
+      "channel_count": 51316,
+      "total_capacity": 482955942958
+    },
+    {
+      "added": 1714694400,
+      "date": "2024-05-03",
+      "channel_count": 51373,
+      "total_capacity": 484952662802
+    },
+    {
+      "added": 1714780800,
+      "date": "2024-05-04",
+      "channel_count": 51399,
+      "total_capacity": 485231422481
+    },
+    {
+      "added": 1714867200,
+      "date": "2024-05-05",
+      "channel_count": 51256,
+      "total_capacity": 486722399749
+    },
+    {
+      "added": 1714953600,
+      "date": "2024-05-06",
+      "channel_count": 51339,
+      "total_capacity": 487408210275
+    },
+    {
+      "added": 1715040000,
+      "date": "2024-05-07",
+      "channel_count": 51362,
+      "total_capacity": 488686805369
+    },
+    {
+      "added": 1715126400,
+      "date": "2024-05-08",
+      "channel_count": 51239,
+      "total_capacity": 489907539216
+    },
+    {
+      "added": 1715212800,
+      "date": "2024-05-09",
+      "channel_count": 51321,
+      "total_capacity": 490344277597
+    },
+    {
+      "added": 1715299200,
+      "date": "2024-05-10",
+      "channel_count": 51299,
+      "total_capacity": 490337134700
+    },
+    {
+      "added": 1715385600,
+      "date": "2024-05-11",
+      "channel_count": 51235,
+      "total_capacity": 490379869011
+    },
+    {
+      "added": 1715472000,
+      "date": "2024-05-12",
+      "channel_count": 50958,
+      "total_capacity": 491021451317
+    },
+    {
+      "added": 1715558400,
+      "date": "2024-05-13",
+      "channel_count": 51069,
+      "total_capacity": 492760030609
+    },
+    {
+      "added": 1715644800,
+      "date": "2024-05-14",
+      "channel_count": 51053,
+      "total_capacity": 490906910532
+    },
+    {
+      "added": 1715731200,
+      "date": "2024-05-15",
+      "channel_count": 50933,
+      "total_capacity": 493347368965
+    },
+    {
+      "added": 1715817600,
+      "date": "2024-05-16",
+      "channel_count": 50873,
+      "total_capacity": 491344288232
+    },
+    {
+      "added": 1715904000,
+      "date": "2024-05-17",
+      "channel_count": 50845,
+      "total_capacity": 491726045663
+    },
+    {
+      "added": 1715990400,
+      "date": "2024-05-18",
+      "channel_count": 42912,
+      "total_capacity": 473390490594
+    },
+    {
+      "added": 1716076800,
+      "date": "2024-05-19",
+      "channel_count": 51008,
+      "total_capacity": 492060793723
+    },
+    {
+      "added": 1716163200,
+      "date": "2024-05-20",
+      "channel_count": 51050,
+      "total_capacity": 491651428412
+    },
+    {
+      "added": 1716249600,
+      "date": "2024-05-21",
+      "channel_count": 51062,
+      "total_capacity": 491821054045
+    },
+    {
+      "added": 1716336000,
+      "date": "2024-05-22",
+      "channel_count": 50811,
+      "total_capacity": 492723636176
+    },
+    {
+      "added": 1716422400,
+      "date": "2024-05-23",
+      "channel_count": 50894,
+      "total_capacity": 495281056100
+    },
+    {
+      "added": 1716508800,
+      "date": "2024-05-24",
+      "channel_count": 50938,
+      "total_capacity": 496600814003
+    },
+    {
+      "added": 1716595200,
+      "date": "2024-05-25",
+      "channel_count": 40942,
+      "total_capacity": 474952110609
+    },
+    {
+      "added": 1716681600,
+      "date": "2024-05-26",
+      "channel_count": 50876,
+      "total_capacity": 498215396892
+    },
+    {
+      "added": 1716768000,
+      "date": "2024-05-27",
+      "channel_count": 50917,
+      "total_capacity": 500129844284
+    },
+    {
+      "added": 1716854400,
+      "date": "2024-05-28",
+      "channel_count": 50945,
+      "total_capacity": 492606442376
+    },
+    {
+      "added": 1716940800,
+      "date": "2024-05-29",
+      "channel_count": 50756,
+      "total_capacity": 491609047512
+    },
+    {
+      "added": 1717027200,
+      "date": "2024-05-30",
+      "channel_count": 50870,
+      "total_capacity": 491783952906
+    },
+    {
+      "added": 1717113600,
+      "date": "2024-05-31",
+      "channel_count": 50933,
+      "total_capacity": 493681205494
+    },
+    {
+      "added": 1717200000,
+      "date": "2024-06-01",
+      "channel_count": 41673,
+      "total_capacity": 475879363327
+    },
+    {
+      "added": 1717286400,
+      "date": "2024-06-02",
+      "channel_count": 51134,
+      "total_capacity": 495576981084
+    },
+    {
+      "added": 1717372800,
+      "date": "2024-06-03",
+      "channel_count": 51121,
+      "total_capacity": 499866609914
+    },
+    {
+      "added": 1717459200,
+      "date": "2024-06-04",
+      "channel_count": 51159,
+      "total_capacity": 500426600436
+    },
+    {
+      "added": 1717545600,
+      "date": "2024-06-05",
+      "channel_count": 51261,
+      "total_capacity": 501707818917
+    },
+    {
+      "added": 1717632000,
+      "date": "2024-06-06",
+      "channel_count": 51356,
+      "total_capacity": 502906017938
+    },
+    {
+      "added": 1717718400,
+      "date": "2024-06-07",
+      "channel_count": 51433,
+      "total_capacity": 503471411727
+    },
+    {
+      "added": 1717804800,
+      "date": "2024-06-08",
+      "channel_count": 51455,
+      "total_capacity": 505007828018
+    },
+    {
+      "added": 1717891200,
+      "date": "2024-06-09",
+      "channel_count": 51361,
+      "total_capacity": 504218278331
+    },
+    {
+      "added": 1717977600,
+      "date": "2024-06-10",
+      "channel_count": 51425,
+      "total_capacity": 505509367357
+    },
+    {
+      "added": 1718064000,
+      "date": "2024-06-11",
+      "channel_count": 51518,
+      "total_capacity": 507185058389
+    },
+    {
+      "added": 1718150400,
+      "date": "2024-06-12",
+      "channel_count": 51358,
+      "total_capacity": 506998040444
+    },
+    {
+      "added": 1718236800,
+      "date": "2024-06-13",
+      "channel_count": 51480,
+      "total_capacity": 508181281737
+    },
+    {
+      "added": 1718323200,
+      "date": "2024-06-14",
+      "channel_count": 51642,
+      "total_capacity": 509878669568
+    },
+    {
+      "added": 1718409600,
+      "date": "2024-06-15",
+      "channel_count": 50861,
+      "total_capacity": 506262772697
+    },
+    {
+      "added": 1718496000,
+      "date": "2024-06-16",
+      "channel_count": 51442,
+      "total_capacity": 507427709599
+    },
+    {
+      "added": 1718582400,
+      "date": "2024-06-17",
+      "channel_count": 51279,
+      "total_capacity": 508005179549
+    },
+    {
+      "added": 1718668800,
+      "date": "2024-06-18",
+      "channel_count": 51368,
+      "total_capacity": 510623012928
+    },
+    {
+      "added": 1718755200,
+      "date": "2024-06-19",
+      "channel_count": 51162,
+      "total_capacity": 511464055919
+    },
+    {
+      "added": 1718841600,
+      "date": "2024-06-20",
+      "channel_count": 51213,
+      "total_capacity": 512181265423
+    },
+    {
+      "added": 1718928000,
+      "date": "2024-06-21",
+      "channel_count": 51222,
+      "total_capacity": 512999124864
+    },
+    {
+      "added": 1719014400,
+      "date": "2024-06-22",
+      "channel_count": 48964,
+      "total_capacity": 505849017183
+    },
+    {
+      "added": 1719100800,
+      "date": "2024-06-23",
+      "channel_count": 51090,
+      "total_capacity": 512686578219
+    },
+    {
+      "added": 1719187200,
+      "date": "2024-06-24",
+      "channel_count": 51108,
+      "total_capacity": 514919804714
+    },
+    {
+      "added": 1719273600,
+      "date": "2024-06-25",
+      "channel_count": 51155,
+      "total_capacity": 515334653027
+    },
+    {
+      "added": 1719360000,
+      "date": "2024-06-26",
+      "channel_count": 51110,
+      "total_capacity": 515939540032
+    },
+    {
+      "added": 1719446400,
+      "date": "2024-06-27",
+      "channel_count": 51117,
+      "total_capacity": 515638156758
+    },
+    {
+      "added": 1719532800,
+      "date": "2024-06-28",
+      "channel_count": 51167,
+      "total_capacity": 516997986513
+    },
+    {
+      "added": 1719619200,
+      "date": "2024-06-29",
+      "channel_count": 41503,
+      "total_capacity": 496208615874
+    },
+    {
+      "added": 1719705600,
+      "date": "2024-06-30",
+      "channel_count": 51124,
+      "total_capacity": 518079983028
+    },
+    {
+      "added": 1719792000,
+      "date": "2024-07-01",
+      "channel_count": 50992,
+      "total_capacity": 519873799228
+    },
+    {
+      "added": 1719878400,
+      "date": "2024-07-02",
+      "channel_count": 51008,
+      "total_capacity": 520594878223
+    },
+    {
+      "added": 1719964800,
+      "date": "2024-07-03",
+      "channel_count": 50934,
+      "total_capacity": 521065343948
+    },
+    {
+      "added": 1720051200,
+      "date": "2024-07-04",
+      "channel_count": 50879,
+      "total_capacity": 521468539845
+    },
+    {
+      "added": 1720137600,
+      "date": "2024-07-05",
+      "channel_count": 50792,
+      "total_capacity": 520959490567
+    },
+    {
+      "added": 1720224000,
+      "date": "2024-07-06",
+      "channel_count": 40204,
+      "total_capacity": 500074175432
+    },
+    {
+      "added": 1720310400,
+      "date": "2024-07-07",
+      "channel_count": 50679,
+      "total_capacity": 523907885276
+    },
+    {
+      "added": 1720396800,
+      "date": "2024-07-08",
+      "channel_count": 50640,
+      "total_capacity": 523809753868
+    },
+    {
+      "added": 1720483200,
+      "date": "2024-07-09",
+      "channel_count": 50635,
+      "total_capacity": 524462236898
+    },
+    {
+      "added": 1720569600,
+      "date": "2024-07-10",
+      "channel_count": 50581,
+      "total_capacity": 524791633915
+    },
+    {
+      "added": 1720656000,
+      "date": "2024-07-11",
+      "channel_count": 50594,
+      "total_capacity": 525389578580
+    },
+    {
+      "added": 1720742400,
+      "date": "2024-07-12",
+      "channel_count": 50566,
+      "total_capacity": 529116316331
+    },
+    {
+      "added": 1720828800,
+      "date": "2024-07-13",
+      "channel_count": 50623,
+      "total_capacity": 530256552819
+    },
+    {
+      "added": 1720915200,
+      "date": "2024-07-14",
+      "channel_count": 50557,
+      "total_capacity": 530247594467
+    },
+    {
+      "added": 1721001600,
+      "date": "2024-07-15",
+      "channel_count": 50591,
+      "total_capacity": 531645830928
+    },
+    {
+      "added": 1721088000,
+      "date": "2024-07-16",
+      "channel_count": 50608,
+      "total_capacity": 532454080362
+    },
+    {
+      "added": 1721174400,
+      "date": "2024-07-17",
+      "channel_count": 50508,
+      "total_capacity": 533579875071
+    },
+    {
+      "added": 1721260800,
+      "date": "2024-07-18",
+      "channel_count": 50491,
+      "total_capacity": 533584019051
+    },
+    {
+      "added": 1721347200,
+      "date": "2024-07-19",
+      "channel_count": 50508,
+      "total_capacity": 534063567806
+    },
+    {
+      "added": 1721433600,
+      "date": "2024-07-20",
+      "channel_count": 47352,
+      "total_capacity": 522293744226
+    },
+    {
+      "added": 1721520000,
+      "date": "2024-07-21",
+      "channel_count": 50359,
+      "total_capacity": 533940747116
+    },
+    {
+      "added": 1721606400,
+      "date": "2024-07-22",
+      "channel_count": 50409,
+      "total_capacity": 535107033148
+    },
+    {
+      "added": 1721692800,
+      "date": "2024-07-23",
+      "channel_count": 50277,
+      "total_capacity": 528562245380
+    },
+    {
+      "added": 1721779200,
+      "date": "2024-07-24",
+      "channel_count": 50036,
+      "total_capacity": 527039914208
+    },
+    {
+      "added": 1721865600,
+      "date": "2024-07-25",
+      "channel_count": 50041,
+      "total_capacity": 529220499930
+    },
+    {
+      "added": 1721952000,
+      "date": "2024-07-26",
+      "channel_count": 49791,
+      "total_capacity": 528451222282
+    },
+    {
+      "added": 1722038400,
+      "date": "2024-07-27",
+      "channel_count": 49766,
+      "total_capacity": 528357310088
+    },
+    {
+      "added": 1722124800,
+      "date": "2024-07-28",
+      "channel_count": 49683,
+      "total_capacity": 528482501133
+    },
+    {
+      "added": 1722211200,
+      "date": "2024-07-29",
+      "channel_count": 49658,
+      "total_capacity": 529334172326
+    },
+    {
+      "added": 1722297600,
+      "date": "2024-07-30",
+      "channel_count": 49625,
+      "total_capacity": 529060494092
+    },
+    {
+      "added": 1722384000,
+      "date": "2024-07-31",
+      "channel_count": 48970,
+      "total_capacity": 494237654695
+    },
+    {
+      "added": 1722470400,
+      "date": "2024-08-01",
+      "channel_count": 48985,
+      "total_capacity": 495236784793
+    },
+    {
+      "added": 1722556800,
+      "date": "2024-08-02",
+      "channel_count": 49058,
+      "total_capacity": 498921557030
+    },
+    {
+      "added": 1722643200,
+      "date": "2024-08-03",
+      "channel_count": 49038,
+      "total_capacity": 500693749552
+    },
+    {
+      "added": 1722729600,
+      "date": "2024-08-04",
+      "channel_count": 49028,
+      "total_capacity": 500749803740
+    },
+    {
+      "added": 1722816000,
+      "date": "2024-08-05",
+      "channel_count": 49026,
+      "total_capacity": 505113052271
+    },
+    {
+      "added": 1722902400,
+      "date": "2024-08-06",
+      "channel_count": 48955,
+      "total_capacity": 504852171751
+    },
+    {
+      "added": 1722988800,
+      "date": "2024-08-07",
+      "channel_count": 48859,
+      "total_capacity": 504731365694
+    },
+    {
+      "added": 1723075200,
+      "date": "2024-08-08",
+      "channel_count": 48927,
+      "total_capacity": 505822502827
+    },
+    {
+      "added": 1723161600,
+      "date": "2024-08-09",
+      "channel_count": 48983,
+      "total_capacity": 506196763876
+    },
+    {
+      "added": 1723248000,
+      "date": "2024-08-10",
+      "channel_count": 43036,
+      "total_capacity": 490376068712
+    },
+    {
+      "added": 1723334400,
+      "date": "2024-08-11",
+      "channel_count": 48868,
+      "total_capacity": 506889533911
+    },
+    {
+      "added": 1723420800,
+      "date": "2024-08-12",
+      "channel_count": 48884,
+      "total_capacity": 507617787215
+    },
+    {
+      "added": 1723507200,
+      "date": "2024-08-13",
+      "channel_count": 48903,
+      "total_capacity": 508295725453
+    },
+    {
+      "added": 1723593600,
+      "date": "2024-08-14",
+      "channel_count": 48837,
+      "total_capacity": 508383226629
+    },
+    {
+      "added": 1723680000,
+      "date": "2024-08-15",
+      "channel_count": 48801,
+      "total_capacity": 504160056286
+    },
+    {
+      "added": 1723766400,
+      "date": "2024-08-16",
+      "channel_count": 48700,
+      "total_capacity": 504657805314
+    },
+    {
+      "added": 1723852800,
+      "date": "2024-08-17",
+      "channel_count": 46881,
+      "total_capacity": 499948468261
+    },
+    {
+      "added": 1723939200,
+      "date": "2024-08-18",
+      "channel_count": 48561,
+      "total_capacity": 506250739541
+    },
+    {
+      "added": 1724025600,
+      "date": "2024-08-19",
+      "channel_count": 48553,
+      "total_capacity": 504768657142
+    },
+    {
+      "added": 1724112000,
+      "date": "2024-08-20",
+      "channel_count": 48646,
+      "total_capacity": 505577942937
+    },
+    {
+      "added": 1724198400,
+      "date": "2024-08-21",
+      "channel_count": 48640,
+      "total_capacity": 502621967089
+    },
+    {
+      "added": 1724284800,
+      "date": "2024-08-22",
+      "channel_count": 48644,
+      "total_capacity": 500178809460
+    },
+    {
+      "added": 1724371200,
+      "date": "2024-08-23",
+      "channel_count": 48654,
+      "total_capacity": 500289775577
+    },
+    {
+      "added": 1725494400,
+      "date": "2024-09-05",
+      "channel_count": 48841,
+      "total_capacity": 516745277448
+    },
+    {
+      "added": 1725580800,
+      "date": "2024-09-06",
+      "channel_count": 48657,
+      "total_capacity": 516951378693
+    },
+    {
+      "added": 1725667200,
+      "date": "2024-09-07",
+      "channel_count": 48604,
+      "total_capacity": 517727530844
+    },
+    {
+      "added": 1725753600,
+      "date": "2024-09-08",
+      "channel_count": 48510,
+      "total_capacity": 517162365273
+    },
+    {
+      "added": 1725840000,
+      "date": "2024-09-09",
+      "channel_count": 47908,
+      "total_capacity": 516059636545
+    },
+    {
+      "added": 1725926400,
+      "date": "2024-09-10",
+      "channel_count": 47937,
+      "total_capacity": 516943106617
+    },
+    {
+      "added": 1726012800,
+      "date": "2024-09-11",
+      "channel_count": 48023,
+      "total_capacity": 518924985550
+    },
+    {
+      "added": 1726099200,
+      "date": "2024-09-12",
+      "channel_count": 47930,
+      "total_capacity": 520357896563
+    },
+    {
+      "added": 1726185600,
+      "date": "2024-09-13",
+      "channel_count": 47893,
+      "total_capacity": 522707916735
+    },
+    {
+      "added": 1726272000,
+      "date": "2024-09-14",
+      "channel_count": 47974,
+      "total_capacity": 525185201092
+    },
+    {
+      "added": 1726358400,
+      "date": "2024-09-15",
+      "channel_count": 48023,
+      "total_capacity": 524555704692
+    },
+    {
+      "added": 1726444800,
+      "date": "2024-09-16",
+      "channel_count": 47906,
+      "total_capacity": 525476915652
+    },
+    {
+      "added": 1726531200,
+      "date": "2024-09-17",
+      "channel_count": 48076,
+      "total_capacity": 526493998019
+    },
+    {
+      "added": 1726617600,
+      "date": "2024-09-18",
+      "channel_count": 48173,
+      "total_capacity": 527714885333
+    },
+    {
+      "added": 1726704000,
+      "date": "2024-09-19",
+      "channel_count": 48198,
+      "total_capacity": 527884053286
+    },
+    {
+      "added": 1726790400,
+      "date": "2024-09-20",
+      "channel_count": 48090,
+      "total_capacity": 527145092087
+    },
+    {
+      "added": 1726876800,
+      "date": "2024-09-21",
+      "channel_count": 48115,
+      "total_capacity": 527635585801
+    },
+    {
+      "added": 1726963200,
+      "date": "2024-09-22",
+      "channel_count": 48073,
+      "total_capacity": 527887978106
+    },
+    {
+      "added": 1727049600,
+      "date": "2024-09-23",
+      "channel_count": 47893,
+      "total_capacity": 528134627345
+    },
+    {
+      "added": 1727136000,
+      "date": "2024-09-24",
+      "channel_count": 48141,
+      "total_capacity": 529610325934
+    },
+    {
+      "added": 1727222400,
+      "date": "2024-09-25",
+      "channel_count": 48066,
+      "total_capacity": 530342024612
+    },
+    {
+      "added": 1727308800,
+      "date": "2024-09-26",
+      "channel_count": 48107,
+      "total_capacity": 530311246229
+    },
+    {
+      "added": 1727395200,
+      "date": "2024-09-27",
+      "channel_count": 48036,
+      "total_capacity": 530936934142
+    },
+    {
+      "added": 1727481600,
+      "date": "2024-09-28",
+      "channel_count": 48005,
+      "total_capacity": 531208020996
+    },
+    {
+      "added": 1727568000,
+      "date": "2024-09-29",
+      "channel_count": 47953,
+      "total_capacity": 530274494306
+    },
+    {
+      "added": 1727654400,
+      "date": "2024-09-30",
+      "channel_count": 47814,
+      "total_capacity": 530554012030
+    },
+    {
+      "added": 1727740800,
+      "date": "2024-10-01",
+      "channel_count": 47865,
+      "total_capacity": 525729670960
+    },
+    {
+      "added": 1727827200,
+      "date": "2024-10-02",
+      "channel_count": 47915,
+      "total_capacity": 527023915630
+    },
+    {
+      "added": 1727913600,
+      "date": "2024-10-03",
+      "channel_count": 47957,
+      "total_capacity": 527498936449
+    },
+    {
+      "added": 1728000000,
+      "date": "2024-10-04",
+      "channel_count": 47849,
+      "total_capacity": 527793614180
+    },
+    {
+      "added": 1728086400,
+      "date": "2024-10-05",
+      "channel_count": 47862,
+      "total_capacity": 526974870505
+    },
+    {
+      "added": 1728172800,
+      "date": "2024-10-06",
+      "channel_count": 47789,
+      "total_capacity": 526508230764
+    },
+    {
+      "added": 1728259200,
+      "date": "2024-10-07",
+      "channel_count": 47707,
+      "total_capacity": 526576118839
+    },
+    {
+      "added": 1728345600,
+      "date": "2024-10-08",
+      "channel_count": 47730,
+      "total_capacity": 525436780838
+    },
+    {
+      "added": 1728432000,
+      "date": "2024-10-09",
+      "channel_count": 47790,
+      "total_capacity": 526222249192
+    },
+    {
+      "added": 1728518400,
+      "date": "2024-10-10",
+      "channel_count": 47843,
+      "total_capacity": 527601293902
+    },
+    {
+      "added": 1728604800,
+      "date": "2024-10-11",
+      "channel_count": 47729,
+      "total_capacity": 527661758155
+    },
+    {
+      "added": 1728691200,
+      "date": "2024-10-12",
+      "channel_count": 47826,
+      "total_capacity": 528242897766
+    },
+    {
+      "added": 1728777600,
+      "date": "2024-10-13",
+      "channel_count": 47837,
+      "total_capacity": 527552426787
+    },
+    {
+      "added": 1728864000,
+      "date": "2024-10-14",
+      "channel_count": 47676,
+      "total_capacity": 526277044525
+    },
+    {
+      "added": 1728950400,
+      "date": "2024-10-15",
+      "channel_count": 47713,
+      "total_capacity": 530089757317
+    },
+    {
+      "added": 1729036800,
+      "date": "2024-10-16",
+      "channel_count": 47761,
+      "total_capacity": 530430866669
+    },
+    {
+      "added": 1729123200,
+      "date": "2024-10-17",
+      "channel_count": 47786,
+      "total_capacity": 531018599793
+    },
+    {
+      "added": 1729209600,
+      "date": "2024-10-18",
+      "channel_count": 47714,
+      "total_capacity": 531320795062
+    },
+    {
+      "added": 1729296000,
+      "date": "2024-10-19",
+      "channel_count": 47651,
+      "total_capacity": 532649931929
+    },
+    {
+      "added": 1729382400,
+      "date": "2024-10-20",
+      "channel_count": 47648,
+      "total_capacity": 532500043038
+    },
+    {
+      "added": 1729468800,
+      "date": "2024-10-21",
+      "channel_count": 47522,
+      "total_capacity": 522533782787
+    },
+    {
+      "added": 1729555200,
+      "date": "2024-10-22",
+      "channel_count": 47969,
+      "total_capacity": 525619672211
+    },
+    {
+      "added": 1729641600,
+      "date": "2024-10-23",
+      "channel_count": 47929,
+      "total_capacity": 526778544501
+    },
+    {
+      "added": 1729728000,
+      "date": "2024-10-24",
+      "channel_count": 47222,
+      "total_capacity": 527455424570
+    },
+    {
+      "added": 1729814400,
+      "date": "2024-10-25",
+      "channel_count": 47263,
+      "total_capacity": 528009133300
+    },
+    {
+      "added": 1729900800,
+      "date": "2024-10-26",
+      "channel_count": 47282,
+      "total_capacity": 529014007435
+    },
+    {
+      "added": 1729987200,
+      "date": "2024-10-27",
+      "channel_count": 47179,
+      "total_capacity": 528185958267
+    },
+    {
+      "added": 1730073600,
+      "date": "2024-10-28",
+      "channel_count": 47038,
+      "total_capacity": 529864051960
+    },
+    {
+      "added": 1730160000,
+      "date": "2024-10-29",
+      "channel_count": 47124,
+      "total_capacity": 531319834056
+    },
+    {
+      "added": 1730246400,
+      "date": "2024-10-30",
+      "channel_count": 47072,
+      "total_capacity": 526120182125
+    },
+    {
+      "added": 1730332800,
+      "date": "2024-10-31",
+      "channel_count": 47009,
+      "total_capacity": 527476156762
+    },
+    {
+      "added": 1730419200,
+      "date": "2024-11-01",
+      "channel_count": 38787,
+      "total_capacity": 509362020446
+    },
+    {
+      "added": 1730505600,
+      "date": "2024-11-02",
+      "channel_count": 39794,
+      "total_capacity": 513536053685
+    },
+    {
+      "added": 1730592000,
+      "date": "2024-11-03",
+      "channel_count": 41624,
+      "total_capacity": 520838555730
+    },
+    {
+      "added": 1730678400,
+      "date": "2024-11-04",
+      "channel_count": 46626,
+      "total_capacity": 529546721092
+    },
+    {
+      "added": 1730764800,
+      "date": "2024-11-05",
+      "channel_count": 47081,
+      "total_capacity": 532079834608
+    },
+    {
+      "added": 1730851200,
+      "date": "2024-11-06",
+      "channel_count": 47074,
+      "total_capacity": 533033969275
+    },
+    {
+      "added": 1730937600,
+      "date": "2024-11-07",
+      "channel_count": 46846,
+      "total_capacity": 533487766654
+    },
+    {
+      "added": 1731024000,
+      "date": "2024-11-08",
+      "channel_count": 38937,
+      "total_capacity": 513376629439
+    },
+    {
+      "added": 1731110400,
+      "date": "2024-11-09",
+      "channel_count": 40363,
+      "total_capacity": 518354959583
+    },
+    {
+      "added": 1731196800,
+      "date": "2024-11-10",
+      "channel_count": 46783,
+      "total_capacity": 528087363156
+    },
+    {
+      "added": 1731283200,
+      "date": "2024-11-11",
+      "channel_count": 45937,
+      "total_capacity": 522985304939
+    },
+    {
+      "added": 1731369600,
+      "date": "2024-11-12",
+      "channel_count": 46634,
+      "total_capacity": 526176275762
+    },
+    {
+      "added": 1731456000,
+      "date": "2024-11-13",
+      "channel_count": 46647,
+      "total_capacity": 526339251023
+    },
+    {
+      "added": 1734134400,
+      "date": "2024-12-14",
+      "channel_count": 45967,
+      "total_capacity": 513701338873
+    },
+    {
+      "added": 1734220800,
+      "date": "2024-12-15",
+      "channel_count": 45949,
+      "total_capacity": 513865524195
+    },
+    {
+      "added": 1734307200,
+      "date": "2024-12-16",
+      "channel_count": 45933,
+      "total_capacity": 516351664752
+    },
+    {
+      "added": 1734393600,
+      "date": "2024-12-17",
+      "channel_count": 45835,
+      "total_capacity": 515937198786
+    },
+    {
+      "added": 1734480000,
+      "date": "2024-12-18",
+      "channel_count": 45671,
+      "total_capacity": 518357890698
+    },
+    {
+      "added": 1734566400,
+      "date": "2024-12-19",
+      "channel_count": 45711,
+      "total_capacity": 518368065276
+    },
+    {
+      "added": 1734652800,
+      "date": "2024-12-20",
+      "channel_count": 45692,
+      "total_capacity": 518797782394
+    },
+    {
+      "added": 1734739200,
+      "date": "2024-12-21",
+      "channel_count": 38260,
+      "total_capacity": 507283757006
+    },
+    {
+      "added": 1734825600,
+      "date": "2024-12-22",
+      "channel_count": 45639,
+      "total_capacity": 520033283902
+    },
+    {
+      "added": 1734912000,
+      "date": "2024-12-23",
+      "channel_count": 45405,
+      "total_capacity": 511911449691
+    },
+    {
+      "added": 1734998400,
+      "date": "2024-12-24",
+      "channel_count": 45382,
+      "total_capacity": 511131272110
+    },
+    {
+      "added": 1735084800,
+      "date": "2024-12-25",
+      "channel_count": 45359,
+      "total_capacity": 510654036366
+    },
+    {
+      "added": 1735171200,
+      "date": "2024-12-26",
+      "channel_count": 45304,
+      "total_capacity": 511746767795
+    },
+    {
+      "added": 1735257600,
+      "date": "2024-12-27",
+      "channel_count": 45076,
+      "total_capacity": 512767767909
+    },
+    {
+      "added": 1735344000,
+      "date": "2024-12-28",
+      "channel_count": 44832,
+      "total_capacity": 513144280396
+    },
+    {
+      "added": 1735430400,
+      "date": "2024-12-29",
+      "channel_count": 44713,
+      "total_capacity": 512982965897
+    },
+    {
+      "added": 1735516800,
+      "date": "2024-12-30",
+      "channel_count": 44759,
+      "total_capacity": 512057057632
+    },
+    {
+      "added": 1735603200,
+      "date": "2024-12-31",
+      "channel_count": 44762,
+      "total_capacity": 511443158889
+    },
+    {
+      "added": 1735689600,
+      "date": "2025-01-01",
+      "channel_count": 44673,
+      "total_capacity": 511660506632
+    },
+    {
+      "added": 1735776000,
+      "date": "2025-01-02",
+      "channel_count": 44802,
+      "total_capacity": 513081342313
+    },
+    {
+      "added": 1735862400,
+      "date": "2025-01-03",
+      "channel_count": 44772,
+      "total_capacity": 509321002073
+    },
+    {
+      "added": 1735948800,
+      "date": "2025-01-04",
+      "channel_count": 38291,
+      "total_capacity": 497415419033
+    },
+    {
+      "added": 1736035200,
+      "date": "2025-01-05",
+      "channel_count": 39373,
+      "total_capacity": 499463933354
+    },
+    {
+      "added": 1736121600,
+      "date": "2025-01-06",
+      "channel_count": 40730,
+      "total_capacity": 503288660405
+    },
+    {
+      "added": 1736208000,
+      "date": "2025-01-07",
+      "channel_count": 44775,
+      "total_capacity": 508065639675
+    },
+    {
+      "added": 1736294400,
+      "date": "2025-01-08",
+      "channel_count": 44739,
+      "total_capacity": 509689524055
+    },
+    {
+      "added": 1736380800,
+      "date": "2025-01-09",
+      "channel_count": 44684,
+      "total_capacity": 507908269939
+    },
+    {
+      "added": 1736467200,
+      "date": "2025-01-10",
+      "channel_count": 44645,
+      "total_capacity": 510966707042
+    },
+    {
+      "added": 1736553600,
+      "date": "2025-01-11",
+      "channel_count": 39883,
+      "total_capacity": 503437583100
+    },
+    {
+      "added": 1736640000,
+      "date": "2025-01-12",
+      "channel_count": 44601,
+      "total_capacity": 512921769509
+    },
+    {
+      "added": 1736726400,
+      "date": "2025-01-13",
+      "channel_count": 44595,
+      "total_capacity": 513766899257
+    },
+    {
+      "added": 1736812800,
+      "date": "2025-01-14",
+      "channel_count": 44594,
+      "total_capacity": 513411932003
+    },
+    {
+      "added": 1736899200,
+      "date": "2025-01-15",
+      "channel_count": 44607,
+      "total_capacity": 514283170660
+    },
+    {
+      "added": 1736985600,
+      "date": "2025-01-16",
+      "channel_count": 44658,
+      "total_capacity": 512731402548
+    },
+    {
+      "added": 1737072000,
+      "date": "2025-01-17",
+      "channel_count": 44626,
+      "total_capacity": 514008961259
+    },
+    {
+      "added": 1737158400,
+      "date": "2025-01-18",
+      "channel_count": 42827,
+      "total_capacity": 512093213041
+    },
+    {
+      "added": 1737244800,
+      "date": "2025-01-19",
+      "channel_count": 44583,
+      "total_capacity": 514382791896
+    },
+    {
+      "added": 1737331200,
+      "date": "2025-01-20",
+      "channel_count": 44576,
+      "total_capacity": 516813026723
+    },
+    {
+      "added": 1737417600,
+      "date": "2025-01-21",
+      "channel_count": 44533,
+      "total_capacity": 517292252710
+    },
+    {
+      "added": 1737504000,
+      "date": "2025-01-22",
+      "channel_count": 44359,
+      "total_capacity": 516489745851
+    },
+    {
+      "added": 1737590400,
+      "date": "2025-01-23",
+      "channel_count": 44306,
+      "total_capacity": 515496578762
+    },
+    {
+      "added": 1737676800,
+      "date": "2025-01-24",
+      "channel_count": 44281,
+      "total_capacity": 514721889476
+    },
+    {
+      "added": 1737763200,
+      "date": "2025-01-25",
+      "channel_count": 41067,
+      "total_capacity": 508886098542
+    },
+    {
+      "added": 1737849600,
+      "date": "2025-01-26",
+      "channel_count": 44158,
+      "total_capacity": 516409586730
+    },
+    {
+      "added": 1737936000,
+      "date": "2025-01-27",
+      "channel_count": 44128,
+      "total_capacity": 518905037132
+    },
+    {
+      "added": 1738022400,
+      "date": "2025-01-28",
+      "channel_count": 44060,
+      "total_capacity": 517297140658
+    },
+    {
+      "added": 1738108800,
+      "date": "2025-01-29",
+      "channel_count": 44036,
+      "total_capacity": 517102132514
+    },
+    {
+      "added": 1738195200,
+      "date": "2025-01-30",
+      "channel_count": 44112,
+      "total_capacity": 518320088084
+    },
+    {
+      "added": 1738281600,
+      "date": "2025-01-31",
+      "channel_count": 44201,
+      "total_capacity": 519456815517
+    },
+    {
+      "added": 1738368000,
+      "date": "2025-02-01",
+      "channel_count": 39644,
+      "total_capacity": 508350767279
+    },
+    {
+      "added": 1738454400,
+      "date": "2025-02-02",
+      "channel_count": 44070,
+      "total_capacity": 517252734621
+    },
+    {
+      "added": 1738540800,
+      "date": "2025-02-03",
+      "channel_count": 44191,
+      "total_capacity": 520664124045
+    },
+    {
+      "added": 1738627200,
+      "date": "2025-02-04",
+      "channel_count": 44227,
+      "total_capacity": 519599567759
+    },
+    {
+      "added": 1738713600,
+      "date": "2025-02-05",
+      "channel_count": 40319,
+      "total_capacity": 514904448597
+    },
+    {
+      "added": 1738800000,
+      "date": "2025-02-06",
+      "channel_count": 44300,
+      "total_capacity": 521016384352
+    },
+    {
+      "added": 1738886400,
+      "date": "2025-02-07",
+      "channel_count": 44430,
+      "total_capacity": 522150641777
+    },
+    {
+      "added": 1738972800,
+      "date": "2025-02-08",
+      "channel_count": 39906,
+      "total_capacity": 511582645029
+    },
+    {
+      "added": 1739059200,
+      "date": "2025-02-09",
+      "channel_count": 44428,
+      "total_capacity": 522925484309
+    },
+    {
+      "added": 1739145600,
+      "date": "2025-02-10",
+      "channel_count": 44424,
+      "total_capacity": 524766504287
+    },
+    {
+      "added": 1739232000,
+      "date": "2025-02-11",
+      "channel_count": 44478,
+      "total_capacity": 526189526428
+    },
+    {
+      "added": 1739318400,
+      "date": "2025-02-12",
+      "channel_count": 40270,
+      "total_capacity": 522795416829
+    },
+    {
+      "added": 1739404800,
+      "date": "2025-02-13",
+      "channel_count": 44370,
+      "total_capacity": 502811152079
+    },
+    {
+      "added": 1739491200,
+      "date": "2025-02-14",
+      "channel_count": 44303,
+      "total_capacity": 501858637953
+    },
+    {
+      "added": 1739577600,
+      "date": "2025-02-15",
+      "channel_count": 39958,
+      "total_capacity": 493156716446
+    },
+    {
+      "added": 1739664000,
+      "date": "2025-02-16",
+      "channel_count": 44169,
+      "total_capacity": 500918564615
+    },
+    {
+      "added": 1739750400,
+      "date": "2025-02-17",
+      "channel_count": 44259,
+      "total_capacity": 504952091957
+    },
+    {
+      "added": 1739836800,
+      "date": "2025-02-18",
+      "channel_count": 44229,
+      "total_capacity": 500209934734
+    },
+    {
+      "added": 1739923200,
+      "date": "2025-02-19",
+      "channel_count": 40148,
+      "total_capacity": 486957572387
+    },
+    {
+      "added": 1740009600,
+      "date": "2025-02-20",
+      "channel_count": 41286,
+      "total_capacity": 489899716939
+    },
+    {
+      "added": 1740096000,
+      "date": "2025-02-21",
+      "channel_count": 44290,
+      "total_capacity": 493686816685
+    },
+    {
+      "added": 1740182400,
+      "date": "2025-02-22",
+      "channel_count": 39746,
+      "total_capacity": 485169935421
+    },
+    {
+      "added": 1740268800,
+      "date": "2025-02-23",
+      "channel_count": 44124,
+      "total_capacity": 495323785360
+    },
+    {
+      "added": 1740355200,
+      "date": "2025-02-24",
+      "channel_count": 44314,
+      "total_capacity": 498149518549
+    },
+    {
+      "added": 1740441600,
+      "date": "2025-02-25",
+      "channel_count": 44307,
+      "total_capacity": 497394474432
+    },
+    {
+      "added": 1740528000,
+      "date": "2025-02-26",
+      "channel_count": 41224,
+      "total_capacity": 496341093037
+    },
+    {
+      "added": 1740614400,
+      "date": "2025-02-27",
+      "channel_count": 44137,
+      "total_capacity": 473034744959
+    },
+    {
+      "added": 1740700800,
+      "date": "2025-02-28",
+      "channel_count": 44050,
+      "total_capacity": 475297108489
+    },
+    {
+      "added": 1740787200,
+      "date": "2025-03-01",
+      "channel_count": 38632,
+      "total_capacity": 465274760233
+    },
+    {
+      "added": 1740873600,
+      "date": "2025-03-02",
+      "channel_count": 39770,
+      "total_capacity": 471248034712
+    },
+    {
+      "added": 1740960000,
+      "date": "2025-03-03",
+      "channel_count": 43940,
+      "total_capacity": 479331719844
+    },
+    {
+      "added": 1741046400,
+      "date": "2025-03-04",
+      "channel_count": 43962,
+      "total_capacity": 477863634619
+    },
+    {
+      "added": 1741132800,
+      "date": "2025-03-05",
+      "channel_count": 43869,
+      "total_capacity": 479069117332
+    },
+    {
+      "added": 1741219200,
+      "date": "2025-03-06",
+      "channel_count": 43843,
+      "total_capacity": 479191947817
+    },
+    {
+      "added": 1741305600,
+      "date": "2025-03-07",
+      "channel_count": 43823,
+      "total_capacity": 480382205486
+    },
+    {
+      "added": 1741392000,
+      "date": "2025-03-08",
+      "channel_count": 43420,
+      "total_capacity": 480974125447
+    },
+    {
+      "added": 1741478400,
+      "date": "2025-03-09",
+      "channel_count": 42818,
+      "total_capacity": 471598137614
+    },
+    {
+      "added": 1741564800,
+      "date": "2025-03-10",
+      "channel_count": 42667,
+      "total_capacity": 468417529999
+    },
+    {
+      "added": 1741651200,
+      "date": "2025-03-11",
+      "channel_count": 42687,
+      "total_capacity": 468887701779
+    },
+    {
+      "added": 1755388800,
+      "date": "2025-08-17",
+      "channel_count": 41691,
+      "total_capacity": 379512409342
+    },
+    {
+      "added": 1755475200,
+      "date": "2025-08-18",
+      "channel_count": 41675,
+      "total_capacity": 379429005023
+    },
+    {
+      "added": 1755561600,
+      "date": "2025-08-19",
+      "channel_count": 41674,
+      "total_capacity": 379891891377
+    },
+    {
+      "added": 1755648000,
+      "date": "2025-08-20",
+      "channel_count": 41699,
+      "total_capacity": 383295125721
+    },
+    {
+      "added": 1755734400,
+      "date": "2025-08-21",
+      "channel_count": 41678,
+      "total_capacity": 382386639123
+    },
+    {
+      "added": 1755820800,
+      "date": "2025-08-22",
+      "channel_count": 41711,
+      "total_capacity": 385077926675
+    },
+    {
+      "added": 1755907200,
+      "date": "2025-08-23",
+      "channel_count": 41629,
+      "total_capacity": 385369209710
+    },
+    {
+      "added": 1755993600,
+      "date": "2025-08-24",
+      "channel_count": 41714,
+      "total_capacity": 385254512627
+    },
+    {
+      "added": 1756080000,
+      "date": "2025-08-25",
+      "channel_count": 41749,
+      "total_capacity": 388220442434
+    },
+    {
+      "added": 1756166400,
+      "date": "2025-08-26",
+      "channel_count": 41842,
+      "total_capacity": 387781946829
+    },
+    {
+      "added": 1756252800,
+      "date": "2025-08-27",
+      "channel_count": 41428,
+      "total_capacity": 387964413700
+    },
+    {
+      "added": 1756339200,
+      "date": "2025-08-28",
+      "channel_count": 41490,
+      "total_capacity": 390705094513
+    },
+    {
+      "added": 1756425600,
+      "date": "2025-08-29",
+      "channel_count": 41556,
+      "total_capacity": 390425008941
+    },
+    {
+      "added": 1756512000,
+      "date": "2025-08-30",
+      "channel_count": 41520,
+      "total_capacity": 391572331056
+    },
+    {
+      "added": 1756598400,
+      "date": "2025-08-31",
+      "channel_count": 41580,
+      "total_capacity": 392538377320
+    },
+    {
+      "added": 1756684800,
+      "date": "2025-09-01",
+      "channel_count": 41575,
+      "total_capacity": 391415066430
+    },
+    {
+      "added": 1756771200,
+      "date": "2025-09-02",
+      "channel_count": 41593,
+      "total_capacity": 394030416111
+    },
+    {
+      "added": 1756857600,
+      "date": "2025-09-03",
+      "channel_count": 41597,
+      "total_capacity": 395681532377
+    },
+    {
+      "added": 1756944000,
+      "date": "2025-09-04",
+      "channel_count": 41570,
+      "total_capacity": 395638020078
+    },
+    {
+      "added": 1757030400,
+      "date": "2025-09-05",
+      "channel_count": 41615,
+      "total_capacity": 395624890703
+    },
+    {
+      "added": 1757116800,
+      "date": "2025-09-06",
+      "channel_count": 41568,
+      "total_capacity": 397144710213
+    },
+    {
+      "added": 1757203200,
+      "date": "2025-09-07",
+      "channel_count": 41661,
+      "total_capacity": 398238980033
+    },
+    {
+      "added": 1757289600,
+      "date": "2025-09-08",
+      "channel_count": 41529,
+      "total_capacity": 398548040208
+    },
+    {
+      "added": 1757376000,
+      "date": "2025-09-09",
+      "channel_count": 41419,
+      "total_capacity": 399780184159
+    },
+    {
+      "added": 1757462400,
+      "date": "2025-09-10",
+      "channel_count": 41424,
+      "total_capacity": 400390459768
+    },
+    {
+      "added": 1757548800,
+      "date": "2025-09-11",
+      "channel_count": 41086,
+      "total_capacity": 396013896377
+    },
+    {
+      "added": 1757635200,
+      "date": "2025-09-12",
+      "channel_count": 41154,
+      "total_capacity": 398794509971
+    },
+    {
+      "added": 1757721600,
+      "date": "2025-09-13",
+      "channel_count": 41157,
+      "total_capacity": 399723939801
+    },
+    {
+      "added": 1757808000,
+      "date": "2025-09-14",
+      "channel_count": 41255,
+      "total_capacity": 397870397629
+    },
+    {
+      "added": 1757894400,
+      "date": "2025-09-15",
+      "channel_count": 41471,
+      "total_capacity": 399323485034
+    },
+    {
+      "added": 1757980800,
+      "date": "2025-09-16",
+      "channel_count": 41506,
+      "total_capacity": 401501621727
+    },
+    {
+      "added": 1758067200,
+      "date": "2025-09-17",
+      "channel_count": 41554,
+      "total_capacity": 402890235989
+    },
+    {
+      "added": 1758153600,
+      "date": "2025-09-18",
+      "channel_count": 41609,
+      "total_capacity": 403769824634
+    },
+    {
+      "added": 1758240000,
+      "date": "2025-09-19",
+      "channel_count": 41686,
+      "total_capacity": 403313920757
+    },
+    {
+      "added": 1758326400,
+      "date": "2025-09-20",
+      "channel_count": 41644,
+      "total_capacity": 404245821508
+    },
+    {
+      "added": 1758412800,
+      "date": "2025-09-21",
+      "channel_count": 41714,
+      "total_capacity": 403976216774
+    },
+    {
+      "added": 1758499200,
+      "date": "2025-09-22",
+      "channel_count": 41790,
+      "total_capacity": 405568635210
+    },
+    {
+      "added": 1758585600,
+      "date": "2025-09-23",
+      "channel_count": 41728,
+      "total_capacity": 396945078859
+    },
+    {
+      "added": 1758672000,
+      "date": "2025-09-24",
+      "channel_count": 41640,
+      "total_capacity": 397446412759
+    },
+    {
+      "added": 1758758400,
+      "date": "2025-09-25",
+      "channel_count": 41674,
+      "total_capacity": 394328627888
+    },
+    {
+      "added": 1758844800,
+      "date": "2025-09-26",
+      "channel_count": 41529,
+      "total_capacity": 395448918520
+    },
+    {
+      "added": 1758931200,
+      "date": "2025-09-27",
+      "channel_count": 41519,
+      "total_capacity": 396004894046
+    },
+    {
+      "added": 1759017600,
+      "date": "2025-09-28",
+      "channel_count": 41637,
+      "total_capacity": 394974388478
+    },
+    {
+      "added": 1759104000,
+      "date": "2025-09-29",
+      "channel_count": 41771,
+      "total_capacity": 396424293823
+    },
+    {
+      "added": 1759190400,
+      "date": "2025-09-30",
+      "channel_count": 41666,
+      "total_capacity": 389715109704
+    },
+    {
+      "added": 1759276800,
+      "date": "2025-10-01",
+      "channel_count": 41625,
+      "total_capacity": 388895099223
+    },
+    {
+      "added": 1759363200,
+      "date": "2025-10-02",
+      "channel_count": 41676,
+      "total_capacity": 389642192816
+    },
+    {
+      "added": 1759449600,
+      "date": "2025-10-03",
+      "channel_count": 41705,
+      "total_capacity": 390257648752
+    },
+    {
+      "added": 1759536000,
+      "date": "2025-10-04",
+      "channel_count": 41685,
+      "total_capacity": 388898274916
+    },
+    {
+      "added": 1759622400,
+      "date": "2025-10-05",
+      "channel_count": 41885,
+      "total_capacity": 392286333979
+    },
+    {
+      "added": 1759708800,
+      "date": "2025-10-06",
+      "channel_count": 41937,
+      "total_capacity": 392767539629
+    },
+    {
+      "added": 1759795200,
+      "date": "2025-10-07",
+      "channel_count": 41855,
+      "total_capacity": 393202489063
+    },
+    {
+      "added": 1759881600,
+      "date": "2025-10-08",
+      "channel_count": 41785,
+      "total_capacity": 393708099761
+    },
+    {
+      "added": 1759968000,
+      "date": "2025-10-09",
+      "channel_count": 41776,
+      "total_capacity": 392489215990
+    },
+    {
+      "added": 1760054400,
+      "date": "2025-10-10",
+      "channel_count": 41813,
+      "total_capacity": 393165236806
+    },
+    {
+      "added": 1760140800,
+      "date": "2025-10-11",
+      "channel_count": 41794,
+      "total_capacity": 393595189950
+    },
+    {
+      "added": 1760227200,
+      "date": "2025-10-12",
+      "channel_count": 41869,
+      "total_capacity": 394917383486
+    },
+    {
+      "added": 1760313600,
+      "date": "2025-10-13",
+      "channel_count": 41908,
+      "total_capacity": 396982631327
+    },
+    {
+      "added": 1760400000,
+      "date": "2025-10-14",
+      "channel_count": 42011,
+      "total_capacity": 409445342332
+    },
+    {
+      "added": 1760486400,
+      "date": "2025-10-15",
+      "channel_count": 42013,
+      "total_capacity": 410951947984
+    },
+    {
+      "added": 1760572800,
+      "date": "2025-10-16",
+      "channel_count": 42073,
+      "total_capacity": 412581827388
+    },
+    {
+      "added": 1760659200,
+      "date": "2025-10-17",
+      "channel_count": 42135,
+      "total_capacity": 412939394863
+    },
+    {
+      "added": 1760745600,
+      "date": "2025-10-18",
+      "channel_count": 42109,
+      "total_capacity": 412428041630
+    },
+    {
+      "added": 1760832000,
+      "date": "2025-10-19",
+      "channel_count": 42119,
+      "total_capacity": 413445562703
+    },
+    {
+      "added": 1760918400,
+      "date": "2025-10-20",
+      "channel_count": 42150,
+      "total_capacity": 414461095751
+    },
+    {
+      "added": 1761004800,
+      "date": "2025-10-21",
+      "channel_count": 42181,
+      "total_capacity": 414212120768
+    },
+    {
+      "added": 1761091200,
+      "date": "2025-10-22",
+      "channel_count": 42119,
+      "total_capacity": 412666964225
+    },
+    {
+      "added": 1761177600,
+      "date": "2025-10-23",
+      "channel_count": 42058,
+      "total_capacity": 412839751574
+    },
+    {
+      "added": 1761264000,
+      "date": "2025-10-24",
+      "channel_count": 42024,
+      "total_capacity": 413706602960
+    },
+    {
+      "added": 1761350400,
+      "date": "2025-10-25",
+      "channel_count": 42130,
+      "total_capacity": 415368812119
+    },
+    {
+      "added": 1761436800,
+      "date": "2025-10-26",
+      "channel_count": 42272,
+      "total_capacity": 418404936667
+    },
+    {
+      "added": 1761523200,
+      "date": "2025-10-27",
+      "channel_count": 42152,
+      "total_capacity": 412399603792
+    },
+    {
+      "added": 1761609600,
+      "date": "2025-10-28",
+      "channel_count": 42181,
+      "total_capacity": 412612477196
+    },
+    {
+      "added": 1761696000,
+      "date": "2025-10-29",
+      "channel_count": 42110,
+      "total_capacity": 410372149588
+    },
+    {
+      "added": 1761782400,
+      "date": "2025-10-30",
+      "channel_count": 42097,
+      "total_capacity": 411290316148
+    },
+    {
+      "added": 1761868800,
+      "date": "2025-10-31",
+      "channel_count": 42080,
+      "total_capacity": 412845329626
+    },
+    {
+      "added": 1761955200,
+      "date": "2025-11-01",
+      "channel_count": 41923,
+      "total_capacity": 413599601195
+    },
+    {
+      "added": 1762041600,
+      "date": "2025-11-02",
+      "channel_count": 42089,
+      "total_capacity": 417959847481
+    },
+    {
+      "added": 1762128000,
+      "date": "2025-11-03",
+      "channel_count": 41838,
+      "total_capacity": 430623675673
+    },
+    {
+      "added": 1762214400,
+      "date": "2025-11-04",
+      "channel_count": 41960,
+      "total_capacity": 435349071612
+    },
+    {
+      "added": 1762300800,
+      "date": "2025-11-05",
+      "channel_count": 42133,
+      "total_capacity": 449207633497
+    },
+    {
+      "added": 1762387200,
+      "date": "2025-11-06",
+      "channel_count": 42041,
+      "total_capacity": 464094257041
+    },
+    {
+      "added": 1762473600,
+      "date": "2025-11-07",
+      "channel_count": 41959,
+      "total_capacity": 464224986119
+    },
+    {
+      "added": 1762560000,
+      "date": "2025-11-08",
+      "channel_count": 41916,
+      "total_capacity": 466225174442
+    },
+    {
+      "added": 1762646400,
+      "date": "2025-11-09",
+      "channel_count": 42078,
+      "total_capacity": 470826317219
+    },
+    {
+      "added": 1762732800,
+      "date": "2025-11-10",
+      "channel_count": 41909,
+      "total_capacity": 477821011275
+    },
+    {
+      "added": 1762819200,
+      "date": "2025-11-11",
+      "channel_count": 41840,
+      "total_capacity": 483927787155
+    },
+    {
+      "added": 1762905600,
+      "date": "2025-11-12",
+      "channel_count": 41948,
+      "total_capacity": 488601992226
+    },
+    {
+      "added": 1762992000,
+      "date": "2025-11-13",
+      "channel_count": 41896,
+      "total_capacity": 460464968842
+    },
+    {
+      "added": 1763078400,
+      "date": "2025-11-14",
+      "channel_count": 41936,
+      "total_capacity": 466414865873
+    },
+    {
+      "added": 1763164800,
+      "date": "2025-11-15",
+      "channel_count": 41925,
+      "total_capacity": 473963826284
+    },
+    {
+      "added": 1763251200,
+      "date": "2025-11-16",
+      "channel_count": 42066,
+      "total_capacity": 481492368652
+    },
+    {
+      "added": 1763337600,
+      "date": "2025-11-17",
+      "channel_count": 41943,
+      "total_capacity": 480794181838
+    },
+    {
+      "added": 1763424000,
+      "date": "2025-11-18",
+      "channel_count": 42013,
+      "total_capacity": 482067472087
+    },
+    {
+      "added": 1763510400,
+      "date": "2025-11-19",
+      "channel_count": 42077,
+      "total_capacity": 499590073491
+    },
+    {
+      "added": 1763596800,
+      "date": "2025-11-20",
+      "channel_count": 42247,
+      "total_capacity": 499681778893
+    },
+    {
+      "added": 1763683200,
+      "date": "2025-11-21",
+      "channel_count": 42318,
+      "total_capacity": 501494378235
+    },
+    {
+      "added": 1763769600,
+      "date": "2025-11-22",
+      "channel_count": 42294,
+      "total_capacity": 512381513693
+    },
+    {
+      "added": 1763856000,
+      "date": "2025-11-23",
+      "channel_count": 42351,
+      "total_capacity": 512329817493
+    },
+    {
+      "added": 1763942400,
+      "date": "2025-11-24",
+      "channel_count": 42186,
+      "total_capacity": 491124629729
+    },
+    {
+      "added": 1764028800,
+      "date": "2025-11-25",
+      "channel_count": 42141,
+      "total_capacity": 498664915625
+    },
+    {
+      "added": 1764115200,
+      "date": "2025-11-26",
+      "channel_count": 42060,
+      "total_capacity": 493675622933
+    },
+    {
+      "added": 1764201600,
+      "date": "2025-11-27",
+      "channel_count": 42193,
+      "total_capacity": 524849597055
+    },
+    {
+      "added": 1764288000,
+      "date": "2025-11-28",
+      "channel_count": 42312,
+      "total_capacity": 525766416474
+    },
+    {
+      "added": 1764374400,
+      "date": "2025-11-29",
+      "channel_count": 42257,
+      "total_capacity": 536387008203
+    },
+    {
+      "added": 1764460800,
+      "date": "2025-11-30",
+      "channel_count": 42282,
+      "total_capacity": 540691553467
+    },
+    {
+      "added": 1764547200,
+      "date": "2025-12-01",
+      "channel_count": 42188,
+      "total_capacity": 543651702588
+    },
+    {
+      "added": 1764633600,
+      "date": "2025-12-02",
+      "channel_count": 42149,
+      "total_capacity": 536499514886
+    },
+    {
+      "added": 1764720000,
+      "date": "2025-12-03",
+      "channel_count": 42108,
+      "total_capacity": 533434007124
+    },
+    {
+      "added": 1764806400,
+      "date": "2025-12-04",
+      "channel_count": 42074,
+      "total_capacity": 528607434439
+    },
+    {
+      "added": 1764892800,
+      "date": "2025-12-05",
+      "channel_count": 42137,
+      "total_capacity": 528435598674
+    },
+    {
+      "added": 1764979200,
+      "date": "2025-12-06",
+      "channel_count": 42006,
+      "total_capacity": 529025147824
+    },
+    {
+      "added": 1765065600,
+      "date": "2025-12-07",
+      "channel_count": 42152,
+      "total_capacity": 531780181889
+    },
+    {
+      "added": 1765152000,
+      "date": "2025-12-08",
+      "channel_count": 42168,
+      "total_capacity": 531580247885
+    },
+    {
+      "added": 1765238400,
+      "date": "2025-12-09",
+      "channel_count": 42207,
+      "total_capacity": 531609230263
+    },
+    {
+      "added": 1765324800,
+      "date": "2025-12-10",
+      "channel_count": 42241,
+      "total_capacity": 542911865418
+    },
+    {
+      "added": 1765411200,
+      "date": "2025-12-11",
+      "channel_count": 42340,
+      "total_capacity": 546068933910
+    },
+    {
+      "added": 1765497600,
+      "date": "2025-12-12",
+      "channel_count": 42427,
+      "total_capacity": 550258160229
+    },
+    {
+      "added": 1765584000,
+      "date": "2025-12-13",
+      "channel_count": 42224,
+      "total_capacity": 552424449720
+    },
+    {
+      "added": 1765670400,
+      "date": "2025-12-14",
+      "channel_count": 42297,
+      "total_capacity": 557561033813
+    },
+    {
+      "added": 1765756800,
+      "date": "2025-12-15",
+      "channel_count": 42137,
+      "total_capacity": 552727051404
+    },
+    {
+      "added": 1765843200,
+      "date": "2025-12-16",
+      "channel_count": 42205,
+      "total_capacity": 563858227209
+    },
+    {
+      "added": 1765929600,
+      "date": "2025-12-17",
+      "channel_count": 42111,
+      "total_capacity": 549148723459
+    },
+    {
+      "added": 1766016000,
+      "date": "2025-12-18",
+      "channel_count": 42230,
+      "total_capacity": 554468634890
+    },
+    {
+      "added": 1766102400,
+      "date": "2025-12-19",
+      "channel_count": 41865,
+      "total_capacity": 559523993955
+    },
+    {
+      "added": 1766188800,
+      "date": "2025-12-20",
+      "channel_count": 41811,
+      "total_capacity": 558370192014
+    },
+    {
+      "added": 1766275200,
+      "date": "2025-12-21",
+      "channel_count": 41948,
+      "total_capacity": 564657807288
+    },
+    {
+      "added": 1766361600,
+      "date": "2025-12-22",
+      "channel_count": 41977,
+      "total_capacity": 562674388816
+    },
+    {
+      "added": 1766448000,
+      "date": "2025-12-23",
+      "channel_count": 42018,
+      "total_capacity": 568141059485
+    },
+    {
+      "added": 1766534400,
+      "date": "2025-12-24",
+      "channel_count": 42047,
+      "total_capacity": 577269311310
+    },
+    {
+      "added": 1766620800,
+      "date": "2025-12-25",
+      "channel_count": 42090,
+      "total_capacity": 578181361591
+    },
+    {
+      "added": 1767398400,
+      "date": "2026-01-03",
+      "channel_count": 41823,
+      "total_capacity": 575517281364
+    },
+    {
+      "added": 1767484800,
+      "date": "2026-01-04",
+      "channel_count": 41826,
+      "total_capacity": 574565418113
+    },
+    {
+      "added": 1767571200,
+      "date": "2026-01-05",
+      "channel_count": 41916,
+      "total_capacity": 568901367331
+    },
+    {
+      "added": 1767657600,
+      "date": "2026-01-06",
+      "channel_count": 42071,
+      "total_capacity": 570254720690
+    },
+    {
+      "added": 1767744000,
+      "date": "2026-01-07",
+      "channel_count": 42104,
+      "total_capacity": 567779247463
+    },
+    {
+      "added": 1767830400,
+      "date": "2026-01-08",
+      "channel_count": 42163,
+      "total_capacity": 565812799442
+    },
+    {
+      "added": 1767916800,
+      "date": "2026-01-09",
+      "channel_count": 42109,
+      "total_capacity": 567119839041
+    },
+    {
+      "added": 1768003200,
+      "date": "2026-01-10",
+      "channel_count": 41655,
+      "total_capacity": 561252130430
+    },
+    {
+      "added": 1768089600,
+      "date": "2026-01-11",
+      "channel_count": 41527,
+      "total_capacity": 556910544113
+    },
+    {
+      "added": 1768176000,
+      "date": "2026-01-12",
+      "channel_count": 41542,
+      "total_capacity": 556692260834
+    },
+    {
+      "added": 1768262400,
+      "date": "2026-01-13",
+      "channel_count": 41385,
+      "total_capacity": 523558421854
+    },
+    {
+      "added": 1768348800,
+      "date": "2026-01-14",
+      "channel_count": 41459,
+      "total_capacity": 545764443608
+    },
+    {
+      "added": 1768435200,
+      "date": "2026-01-15",
+      "channel_count": 41309,
+      "total_capacity": 550959292439
+    },
+    {
+      "added": 1768608000,
+      "date": "2026-01-17",
+      "channel_count": 41329,
+      "total_capacity": 550994862515
+    },
+    {
+      "added": 1768694400,
+      "date": "2026-01-18",
+      "channel_count": 41378,
+      "total_capacity": 549833650343
+    },
+    {
+      "added": 1768780800,
+      "date": "2026-01-19",
+      "channel_count": 41305,
+      "total_capacity": 531857721887
+    },
+    {
+      "added": 1768867200,
+      "date": "2026-01-20",
+      "channel_count": 41338,
+      "total_capacity": 534043886074
+    },
+    {
+      "added": 1768953600,
+      "date": "2026-01-21",
+      "channel_count": 41226,
+      "total_capacity": 534936101020
+    },
+    {
+      "added": 1769040000,
+      "date": "2026-01-22",
+      "channel_count": 41132,
+      "total_capacity": 532364954946
+    },
+    {
+      "added": 1769126400,
+      "date": "2026-01-23",
+      "channel_count": 41140,
+      "total_capacity": 534251861186
+    },
+    {
+      "added": 1769212800,
+      "date": "2026-01-24",
+      "channel_count": 41040,
+      "total_capacity": 525102872232
+    },
+    {
+      "added": 1769299200,
+      "date": "2026-01-25",
+      "channel_count": 41114,
+      "total_capacity": 526322957546
+    },
+    {
+      "added": 1769385600,
+      "date": "2026-01-26",
+      "channel_count": 40962,
+      "total_capacity": 528141292472
+    },
+    {
+      "added": 1769472000,
+      "date": "2026-01-27",
+      "channel_count": 40998,
+      "total_capacity": 530559743852
+    },
+    {
+      "added": 1769558400,
+      "date": "2026-01-28",
+      "channel_count": 41055,
+      "total_capacity": 533193650165
+    },
+    {
+      "added": 1769644800,
+      "date": "2026-01-29",
+      "channel_count": 41067,
+      "total_capacity": 534952694932
+    },
+    {
+      "added": 1770940800,
+      "date": "2026-02-13",
+      "channel_count": 41062,
+      "total_capacity": 512322764526
+    },
+    {
+      "added": 1771027200,
+      "date": "2026-02-14",
+      "channel_count": 41190,
+      "total_capacity": 514894676763
+    },
+    {
+      "added": 1771113600,
+      "date": "2026-02-15",
+      "channel_count": 41137,
+      "total_capacity": 512186193901
+    },
+    {
+      "added": 1771200000,
+      "date": "2026-02-16",
+      "channel_count": 41177,
+      "total_capacity": 512826217367
+    },
+    {
+      "added": 1771286400,
+      "date": "2026-02-17",
+      "channel_count": 41122,
+      "total_capacity": 510375476445
+    },
+    {
+      "added": 1771372800,
+      "date": "2026-02-18",
+      "channel_count": 41023,
+      "total_capacity": 509980325976
+    },
+    {
+      "added": 1771459200,
+      "date": "2026-02-19",
+      "channel_count": 40977,
+      "total_capacity": 504720802459
+    },
+    {
+      "added": 1771545600,
+      "date": "2026-02-20",
+      "channel_count": 41042,
+      "total_capacity": 507188494803
+    },
+    {
+      "added": 1771632000,
+      "date": "2026-02-21",
+      "channel_count": 41111,
+      "total_capacity": 506721254232
+    },
+    {
+      "added": 1771718400,
+      "date": "2026-02-22",
+      "channel_count": 41128,
+      "total_capacity": 508556545286
+    },
+    {
+      "added": 1771804800,
+      "date": "2026-02-23",
+      "channel_count": 41103,
+      "total_capacity": 506109596493
+    },
+    {
+      "added": 1773014400,
+      "date": "2026-03-09",
+      "channel_count": 40458,
+      "total_capacity": 485762078627
+    },
+    {
+      "added": 1773100800,
+      "date": "2026-03-10",
+      "channel_count": 40457,
+      "total_capacity": 487048969671
+    },
+    {
+      "added": 1773187200,
+      "date": "2026-03-11",
+      "channel_count": 40428,
+      "total_capacity": 485615691007
+    },
+    {
+      "added": 1773273600,
+      "date": "2026-03-12",
+      "channel_count": 40491,
+      "total_capacity": 486633176642
+    },
+    {
+      "added": 1773360000,
+      "date": "2026-03-13",
+      "channel_count": 40553,
+      "total_capacity": 488547453431
+    },
+    {
+      "added": 1773446400,
+      "date": "2026-03-14",
+      "channel_count": 40615,
+      "total_capacity": 486555773764
+    },
+    {
+      "added": 1773532800,
+      "date": "2026-03-15",
+      "channel_count": 40725,
+      "total_capacity": 487563340840
+    },
+    {
+      "added": 1773619200,
+      "date": "2026-03-16",
+      "channel_count": 40661,
+      "total_capacity": 486071999658
+    },
+    {
+      "added": 1773705600,
+      "date": "2026-03-17",
+      "channel_count": 40689,
+      "total_capacity": 487860835796
+    },
+    {
+      "added": 1773792000,
+      "date": "2026-03-18",
+      "channel_count": 40697,
+      "total_capacity": 486663278559
+    },
+    {
+      "added": 1773878400,
+      "date": "2026-03-19",
+      "channel_count": 40697,
+      "total_capacity": 486532488340
+    },
+    {
+      "added": 1773964800,
+      "date": "2026-03-20",
+      "channel_count": 40763,
+      "total_capacity": 486937385373
+    },
+    {
+      "added": 1774051200,
+      "date": "2026-03-21",
+      "channel_count": 40858,
+      "total_capacity": 489903516348
+    },
+    {
+      "added": 1774137600,
+      "date": "2026-03-22",
+      "channel_count": 40903,
+      "total_capacity": 488793145059
+    },
+    {
+      "added": 1774224000,
+      "date": "2026-03-23",
+      "channel_count": 40901,
+      "total_capacity": 489999682697
+    },
+    {
+      "added": 1774310400,
+      "date": "2026-03-24",
+      "channel_count": 40924,
+      "total_capacity": 490252569762
+    },
+    {
+      "added": 1774915200,
+      "date": "2026-03-31",
+      "channel_count": 41210,
+      "total_capacity": 486282000342
+    },
+    {
+      "added": 1775001600,
+      "date": "2026-04-01",
+      "channel_count": 41244,
+      "total_capacity": 490162341321
+    },
+    {
+      "added": 1775088000,
+      "date": "2026-04-02",
+      "channel_count": 41270,
+      "total_capacity": 490114227289
+    },
+    {
+      "added": 1775174400,
+      "date": "2026-04-03",
+      "channel_count": 41242,
+      "total_capacity": 490118311821
+    },
+    {
+      "added": 1775260800,
+      "date": "2026-04-04",
+      "channel_count": 41287,
+      "total_capacity": 491220551857
+    },
+    {
+      "added": 1775347200,
+      "date": "2026-04-05",
+      "channel_count": 41282,
+      "total_capacity": 490877878810
+    },
+    {
+      "added": 1775433600,
+      "date": "2026-04-06",
+      "channel_count": 41288,
+      "total_capacity": 491308012594
+    },
+    {
+      "added": 1775779200,
+      "date": "2026-04-10",
+      "channel_count": 41355,
+      "total_capacity": 488859698508
+    },
+    {
+      "added": 1775865600,
+      "date": "2026-04-11",
+      "channel_count": 41254,
+      "total_capacity": 487607741166
+    },
+    {
+      "added": 1775952000,
+      "date": "2026-04-12",
+      "channel_count": 41268,
+      "total_capacity": 487587106776
+    },
+    {
+      "added": 1776038400,
+      "date": "2026-04-13",
+      "channel_count": 40934,
+      "total_capacity": 486319702274
+    },
+    {
+      "added": 1776124800,
+      "date": "2026-04-14",
+      "channel_count": 41093,
+      "total_capacity": 487100422128
+    },
+    {
+      "added": 1776211200,
+      "date": "2026-04-15",
+      "channel_count": 41099,
+      "total_capacity": 485569102485
+    },
+    {
+      "added": 1776297600,
+      "date": "2026-04-16",
+      "channel_count": 41117,
+      "total_capacity": 484029322886
+    },
+    {
+      "added": 1776384000,
+      "date": "2026-04-17",
+      "channel_count": 41051,
+      "total_capacity": 482778150913
+    },
+    {
+      "added": 1776816000,
+      "date": "2026-04-22",
+      "channel_count": 41125,
+      "total_capacity": 487717446778
+    },
+    {
+      "added": 1776902400,
+      "date": "2026-04-23",
+      "channel_count": 41126,
+      "total_capacity": 485505395441
+    },
+    {
+      "added": 1776988800,
+      "date": "2026-04-24",
+      "channel_count": 41011,
+      "total_capacity": 483400136970
+    },
+    {
+      "added": 1777075200,
+      "date": "2026-04-25",
+      "channel_count": 41075,
+      "total_capacity": 484178174745
+    },
+    {
+      "added": 1777161600,
+      "date": "2026-04-26",
+      "channel_count": 41213,
+      "total_capacity": 486030747752
+    },
+    {
+      "added": 1777248000,
+      "date": "2026-04-27",
+      "channel_count": 41024,
+      "total_capacity": 485129268019
+    },
+    {
+      "added": 1777334400,
+      "date": "2026-04-28",
+      "channel_count": 41060,
+      "total_capacity": 483757534990
+    },
+    {
+      "added": 1777420800,
+      "date": "2026-04-29",
+      "channel_count": 41092,
+      "total_capacity": 485013910782
+    },
+    {
+      "added": 1777507200,
+      "date": "2026-04-30",
+      "channel_count": 41074,
+      "total_capacity": 483757633914
+    },
+    {
+      "added": 1777593600,
+      "date": "2026-05-01",
+      "channel_count": 41017,
+      "total_capacity": 484357761917
+    },
+    {
+      "added": 1777680000,
+      "date": "2026-05-02",
+      "channel_count": 41112,
+      "total_capacity": 486589119718
+    },
+    {
+      "added": 1777766400,
+      "date": "2026-05-03",
+      "channel_count": 41089,
+      "total_capacity": 486437276534
+    },
+    {
+      "added": 1777852800,
+      "date": "2026-05-04",
+      "channel_count": 41017,
+      "total_capacity": 482824039945
+    },
+    {
+      "added": 1777939200,
+      "date": "2026-05-05",
+      "channel_count": 41085,
+      "total_capacity": 483301560412
+    },
+    {
+      "added": 1778025600,
+      "date": "2026-05-06",
+      "channel_count": 41108,
+      "total_capacity": 484989688976
+    },
+    {
+      "added": 1778112000,
+      "date": "2026-05-07",
+      "channel_count": 41101,
+      "total_capacity": 486881403360
+    },
+    {
+      "added": 1778198400,
+      "date": "2026-05-08",
+      "channel_count": 41040,
+      "total_capacity": 489823369063
+    },
+    {
+      "added": 1778284800,
+      "date": "2026-05-09",
+      "channel_count": 41012,
+      "total_capacity": 488128882508
+    },
+    {
+      "added": 1778371200,
+      "date": "2026-05-10",
+      "channel_count": 40985,
+      "total_capacity": 487537004435
+    },
+    {
+      "added": 1778457600,
+      "date": "2026-05-11",
+      "channel_count": 40879,
+      "total_capacity": 486320299850
+    },
+    {
+      "added": 1778544000,
+      "date": "2026-05-12",
+      "channel_count": 40960,
+      "total_capacity": 487848719476
+    },
+    {
+      "added": 1778630400,
+      "date": "2026-05-13",
+      "channel_count": 41004,
+      "total_capacity": 488502869384
+    },
+    {
+      "added": 1778716800,
+      "date": "2026-05-14",
+      "channel_count": 41032,
+      "total_capacity": 488763507765
+    },
+    {
+      "added": 1778803200,
+      "date": "2026-05-15",
+      "channel_count": 41005,
+      "total_capacity": 490345533621
+    },
+    {
+      "added": 1779840000,
+      "date": "2026-05-27",
+      "channel_count": 41187,
+      "total_capacity": 486200384324
+    },
+    {
+      "added": 1779926400,
+      "date": "2026-05-28",
+      "channel_count": 41082,
+      "total_capacity": 487613284105
+    },
+    {
+      "added": 1780012800,
+      "date": "2026-05-29",
+      "channel_count": 41089,
+      "total_capacity": 487939422592
+    },
+    {
+      "added": 1780099200,
+      "date": "2026-05-30",
+      "channel_count": 41030,
+      "total_capacity": 488475198871
+    },
+    {
+      "added": 1780185600,
+      "date": "2026-05-31",
+      "channel_count": 40988,
+      "total_capacity": 485181156580
+    },
+    {
+      "added": 1780272000,
+      "date": "2026-06-01",
+      "channel_count": 40887,
+      "total_capacity": 482408088768
+    },
+    {
+      "added": 1780358400,
+      "date": "2026-06-02",
+      "channel_count": 40830,
+      "total_capacity": 482743237053
+    },
+    {
+      "added": 1780444800,
+      "date": "2026-06-03",
+      "channel_count": 40869,
+      "total_capacity": 484778244536
+    },
+    {
+      "added": 1780531200,
+      "date": "2026-06-04",
+      "channel_count": 40790,
+      "total_capacity": 485616204228
+    },
+    {
+      "added": 1780617600,
+      "date": "2026-06-05",
+      "channel_count": 40850,
+      "total_capacity": 487415787701
+    },
+    {
+      "added": 1780704000,
+      "date": "2026-06-06",
+      "channel_count": 40858,
+      "total_capacity": 486716622540
+    },
+    {
+      "added": 1781049600,
+      "date": "2026-06-10",
+      "channel_count": 41022,
+      "total_capacity": 487540466014
+    },
+    {
+      "added": 1781136000,
+      "date": "2026-06-11",
+      "channel_count": 41079,
+      "total_capacity": 486328358719
+    },
+    {
+      "added": 1781222400,
+      "date": "2026-06-12",
+      "channel_count": 40875,
+      "total_capacity": 484293280384
+    },
+    {
+      "added": 1782432000,
+      "date": "2026-06-26",
+      "channel_count": 40655,
+      "total_capacity": 473744046924
+    },
+    {
+      "added": 1782518400,
+      "date": "2026-06-27",
+      "channel_count": 40672,
+      "total_capacity": 475214016313
+    },
+    {
+      "added": 1782604800,
+      "date": "2026-06-28",
+      "channel_count": 40578,
+      "total_capacity": 473386144346
+    },
+    {
+      "added": 1782691200,
+      "date": "2026-06-29",
+      "channel_count": 40501,
+      "total_capacity": 463967064320
+    },
+    {
+      "added": 1782777600,
+      "date": "2026-06-30",
+      "channel_count": 40509,
+      "total_capacity": 462140115951
+    },
+    {
+      "added": 1782864000,
+      "date": "2026-07-01",
+      "channel_count": 40396,
+      "total_capacity": 460020151866
+    },
+    {
+      "added": 1782950400,
+      "date": "2026-07-02",
+      "channel_count": 40442,
+      "total_capacity": 462036558777
+    },
+    {
+      "added": 1783036800,
+      "date": "2026-07-03",
+      "channel_count": 40455,
+      "total_capacity": 459812715742
+    },
+    {
+      "added": 1783123200,
+      "date": "2026-07-04",
+      "channel_count": 40390,
+      "total_capacity": 457376946919
+    },
+    {
+      "added": 1783209600,
+      "date": "2026-07-05",
+      "channel_count": 40224,
+      "total_capacity": 454869985091
+    },
+    {
+      "added": 1783296000,
+      "date": "2026-07-06",
+      "channel_count": 40245,
+      "total_capacity": 453773927153
+    },
+    {
+      "added": 1783382400,
+      "date": "2026-07-07",
+      "channel_count": 40284,
+      "total_capacity": 454389169832
+    },
+    {
+      "added": 1783468800,
+      "date": "2026-07-08",
+      "channel_count": 40021,
+      "total_capacity": 452063921637
+    },
+    {
+      "added": 1783555200,
+      "date": "2026-07-09",
+      "channel_count": 39949,
+      "total_capacity": 448925332328
+    },
+    {
+      "added": 1783900800,
+      "date": "2026-07-13",
+      "channel_count": 39815,
+      "total_capacity": 448353646312
+    },
+    {
+      "added": 1783987200,
+      "date": "2026-07-14",
+      "channel_count": 39712,
+      "total_capacity": 446353691782
+    },
+    {
+      "added": 1784073600,
+      "date": "2026-07-15",
+      "channel_count": 39671,
+      "total_capacity": 445496197489
+    },
+    {
+      "added": 1784160000,
+      "date": "2026-07-16",
+      "channel_count": 39398,
+      "total_capacity": 447605790655
+    },
+    {
+      "added": 1784246400,
+      "date": "2026-07-17",
+      "channel_count": 39380,
+      "total_capacity": 446908574787
+    },
+    {
+      "added": 1784332800,
+      "date": "2026-07-18",
+      "channel_count": 39361,
+      "total_capacity": 446397126118
+    },
+    {
+      "added": 1784419200,
+      "date": "2026-07-19",
+      "channel_count": 39304,
+      "total_capacity": 448465081270
+    },
+    {
+      "added": 1784505600,
+      "date": "2026-07-20",
+      "channel_count": 39324,
+      "total_capacity": 447983059096
+    },
+    {
+      "added": 1784592000,
+      "date": "2026-07-21",
+      "channel_count": 39263,
+      "total_capacity": 446149637887
+    },
+    {
+      "added": 1784678400,
+      "date": "2026-07-22",
+      "channel_count": 39211,
+      "total_capacity": 447760964889
+    },
+    {
+      "added": 1784764800,
+      "date": "2026-07-23",
+      "channel_count": 39107,
+      "total_capacity": 447655347037
+    },
+    {
+      "added": 1784851200,
+      "date": "2026-07-24",
+      "channel_count": 39155,
+      "total_capacity": 448202861878
+    },
+    {
+      "added": 1784937600,
+      "date": "2026-07-25",
+      "channel_count": 39138,
+      "total_capacity": 445407994568
+    },
+    {
+      "added": 1785024000,
+      "date": "2026-07-26",
+      "channel_count": 39154,
+      "total_capacity": 447306651714
+    },
+    {
+      "added": 1785110400,
+      "date": "2026-07-27",
+      "channel_count": 38853,
+      "total_capacity": 434010512159
+    },
+    {
+      "added": 1785196800,
+      "date": "2026-07-28",
+      "channel_count": 39050,
+      "total_capacity": 447637766124
+    },
+    {
+      "added": 1785283200,
+      "date": "2026-07-29",
+      "channel_count": 38902,
+      "total_capacity": 450640245660
+    },
+    {
+      "added": 1785369600,
+      "date": "2026-07-30",
+      "channel_count": 38864,
+      "total_capacity": 444532288537
+    },
+    {
+      "added": 1785456000,
+      "date": "2026-07-31",
+      "channel_count": 38450,
+      "total_capacity": 435717226668
+    },
+    {
+      "added": 1785542400,
+      "date": "2026-08-01",
+      "channel_count": 38291,
+      "total_capacity": 430114200214
+    },
+    {
+      "added": 1785628800,
+      "date": "2026-08-02",
+      "channel_count": 38277,
+      "total_capacity": 431172886144
+    },
+    {
+      "added": 1785715200,
+      "date": "2026-08-03",
+      "channel_count": 37876,
+      "total_capacity": 425120203391
+    },
+    {
+      "added": 1785801600,
+      "date": "2026-08-04",
+      "channel_count": 37612,
+      "total_capacity": 422532697919
+    },
+    {
+      "added": 1785888000,
+      "date": "2026-08-05",
+      "channel_count": 37597,
+      "total_capacity": 421070532472
+    },
+    {
+      "added": 1785974400,
+      "date": "2026-08-06",
+      "channel_count": 36854,
+      "total_capacity": 420154400848
+    },
+    {
+      "added": 1786060800,
+      "date": "2026-08-07",
+      "channel_count": 35622,
+      "total_capacity": 412602758551
+    },
+    {
+      "added": 1786147200,
+      "date": "2026-08-08",
+      "channel_count": 34386,
+      "total_capacity": 403153402296
+    },
+    {
+      "added": 1786233600,
+      "date": "2026-08-09",
+      "channel_count": 34148,
+      "total_capacity": 400418287300
+    },
+    {
+      "added": 1786320000,
+      "date": "2026-08-10",
+      "channel_count": 34370,
+      "total_capacity": 402335016509
+    },
+    {
+      "added": 1786406400,
+      "date": "2026-08-11",
+      "channel_count": 34433,
+      "total_capacity": 402059461392
+    },
+    {
+      "added": 1786492800,
+      "date": "2026-08-12",
+      "channel_count": 33274,
+      "total_capacity": 378563513569
+    },
+    {
+      "added": 1786579200,
+      "date": "2026-08-13",
+      "channel_count": 33266,
+      "total_capacity": 380904489285
+    },
+    {
+      "added": 1786665600,
+      "date": "2026-08-14",
+      "channel_count": 33298,
+      "total_capacity": 381978316670
+    },
+    {
+      "added": 1786752000,
+      "date": "2026-08-15",
+      "channel_count": 33348,
+      "total_capacity": 383414170339
+    },
+    {
+      "added": 1786838400,
+      "date": "2026-08-16",
+      "channel_count": 33382,
+      "total_capacity": 385961099170
+    },
+    {
+      "added": 1786924800,
+      "date": "2026-08-17",
+      "channel_count": 33285,
+      "total_capacity": 385209386029
+    },
+    {
+      "added": 1787011200,
+      "date": "2026-08-18",
+      "channel_count": 33254,
+      "total_capacity": 382174254201
+    },
+    {
+      "added": 1787097600,
+      "date": "2026-08-19",
+      "channel_count": 33316,
+      "total_capacity": 384125852604
+    },
+    {
+      "added": 1787184000,
+      "date": "2026-08-20",
+      "channel_count": 33253,
+      "total_capacity": 380508171664
+    },
+    {
+      "added": 1787270400,
+      "date": "2026-08-21",
+      "channel_count": 33364,
+      "total_capacity": 384331047509
+    },
+    {
+      "added": 1787356800,
+      "date": "2026-08-22",
+      "channel_count": 33302,
+      "total_capacity": 385431066278
+    },
+    {
+      "added": 1787443200,
+      "date": "2026-08-23",
+      "channel_count": 33365,
+      "total_capacity": 384886245410
+    },
+    {
+      "added": 1787529600,
+      "date": "2026-08-24",
+      "channel_count": 33301,
+      "total_capacity": 387168516763
+    },
+    {
+      "added": 1787616000,
+      "date": "2026-08-25",
+      "channel_count": 33350,
+      "total_capacity": 389838245349
+    },
+    {
+      "added": 1787702400,
+      "date": "2026-08-26",
+      "channel_count": 33127,
+      "total_capacity": 386718228781
+    },
+    {
+      "added": 1787788800,
+      "date": "2026-08-27",
+      "channel_count": 32971,
+      "total_capacity": 387457104936
+    },
+    {
+      "added": 1787875200,
+      "date": "2026-08-28",
+      "channel_count": 32922,
+      "total_capacity": 383240458581
+    },
+    {
+      "added": 1787961600,
+      "date": "2026-08-29",
+      "channel_count": 32873,
+      "total_capacity": 382788309907
+    },
+    {
+      "added": 1788048000,
+      "date": "2026-08-30",
+      "channel_count": 32674,
+      "total_capacity": 379451516560
+    }
+  ],
+  "latest": {
+    "added": 1788048000,
+    "date": "2026-08-30",
+    "node_count": 16237,
+    "med_capacity": 2042066,
+    "avg_capacity": 11613256,
+    "channel_count": 32674,
+    "total_capacity": 379451516560
+  }
+}

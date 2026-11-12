@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Artikelideen | Wissen</title>
+  <meta name="description" content="Redaktionsplanung für neue Wissenartikel zu Finance, Wirtschaftskonzepten und Datenanalyse.">
+  <link rel="icon" type="image/svg+xml" href="../../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0f;
+      --surface: #13131a;
+      --border: #1e1e2e;
+      --accent: #6ee7b7;
+      --accent2: #818cf8;
+      --text: #e2e8f0;
+      --muted: #8893a5;
+      --card: #16161f;
+      --nav-h: 68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); scrollbar-width: none; -ms-overflow-style: none; }
+    html::-webkit-scrollbar { display: none; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; }
+
+    .main-nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(12,12,15,.95); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 0 clamp(1.5rem,5vw,4rem); z-index: 100; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a, .nav-github { font-size: .9rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: .03em; transition: color .2s, border-color .2s; }
+    .nav-links a:hover, .nav-links a.active, .nav-github:hover { color: var(--accent); }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; position: absolute; left: clamp(1.5rem,5vw,4rem); }
+    .nav-logo span { color: var(--accent); }
+    .nav-github { position: absolute; right: clamp(1.5rem,5vw,4rem); display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; border: 1px solid var(--text); padding: .4rem .9rem; border-radius: 8px; }
+    .nav-github svg { width: 15px; height: 15px; }
+    .nav-toggle { display: none; position: absolute; right: clamp(1.5rem,5vw,4rem); width: 40px; height: 40px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; z-index: 101; }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(12,12,15,.98); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); z-index: 102; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a { display: flex; align-items: center; gap: .6rem; padding: .95rem .2rem; color: var(--text); text-decoration: none; font-size: 1rem; font-weight: 500; }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+
+    @media (max-width: 960px) {
+      .main-nav { justify-content: flex-start; padding: 0 1.5rem; }
+      .main-nav .nav-links, .main-nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; }
+      .mobile-menu { display: block; }
+    }
+
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    .hero { padding: calc(var(--nav-h) + 4rem) clamp(1.5rem,8vw,8rem) 2rem; max-width: 980px; }
+    .eyebrow { color: var(--accent); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1rem; }
+    h1, h2, h3 { font-family: 'Syne', sans-serif; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.4rem); line-height: 1.03; letter-spacing: -.04em; margin-bottom: 1.4rem; }
+    .lead { color: var(--muted); font-size: 1.05rem; font-weight: 300; max-width: 66ch; }
+    .notice { margin-top: 1.8rem; padding: 1rem 1.2rem; max-width: 760px; border: 1px solid rgba(110,231,183,.22); border-left: 3px solid var(--accent); border-radius: 10px; background: rgba(110,231,183,.05); color: #b8c4d2; font-size: .9rem; }
+    .month { padding: 1.2rem clamp(1.5rem,8vw,8rem) 3.8rem; }
+    .month-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+    .month-heading h2 { font-size: 1.65rem; letter-spacing: -.02em; }
+    .month-heading span { color: var(--muted); font-size: .8rem; }
+    .idea-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
+    .idea-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; padding: 1.5rem 1.6rem; background: var(--card); border: 1px solid var(--border); border-radius: 14px; text-decoration: none; transition: border-color .2s, transform .2s, background .2s; }
+    .idea-card:hover { border-color: rgba(110,231,183,.45); background: #191923; transform: translateY(-3px); }
+    .card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; margin-bottom: .8rem; color: var(--accent); font-size: .68rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .card-date { color: var(--muted); letter-spacing: .04em; font-weight: 400; }
+    .idea-card h3 { font-size: 1.18rem; line-height: 1.25; margin-bottom: .65rem; }
+    .idea-card p { color: var(--muted); font-size: .9rem; line-height: 1.6; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.4rem; padding-top: .9rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .78rem; }
+    .card-footer strong { color: var(--accent); font-weight: 500; }
+    .card-arrow { color: var(--accent); font-size: 1.1rem; transition: transform .2s; }
+    .idea-card:hover .card-arrow { transform: translateX(4px); }
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem; color: var(--muted); font-size: .82rem; }
+    .footer-inner { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+    .footer-logo { display: inline-block; color: var(--text); font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; text-decoration: none; margin-bottom: .9rem; }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; }
+    .footer-col h5 { color: var(--text); font-family: 'Syne', sans-serif; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer-col ul { display: flex; flex-direction: column; gap: .65rem; list-style: none; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .6rem; padding-top: 1.6rem; }
+    @media (max-width: 760px) {
+      .idea-grid, .footer-inner { grid-template-columns: 1fr; }
+      .month-heading { align-items: flex-start; flex-direction: column; gap: .2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+  <link rel="stylesheet" href="../../assets/site-header.css">
+  <script src="../../assets/site-header.js" defer></script>
+</head>
+<body>
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../projekte/">Projekte</a></li>
+      <li><a href="../../downloads">Downloads</a></li>
+      <li><a href="../../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../../vision">Vision</a></li>
+      <li><a href="../" class="active">Wissen</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/en/knowledge/" data-language-file-target="../../en/knowledge/index.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="nav-github">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../projekte/">Projekte</a></li>
+      <li><a href="../../downloads">Downloads</a></li>
+      <li><a href="../../projekt-pipeline">Projekt-Pipeline</a></li>
+      <li><a href="../../vision">Vision</a></li>
+      <li><a href="../">Wissen</a></li>
+      <li class="mobile-language-row">
+  <span class="mobile-language-label">Sprache</span>
+  <button type="button" class="language-switch" data-language-target="/en/knowledge/" data-language-file-target="../../en/knowledge/index.html" aria-label="Zur englischen Version wechseln" title="Zur englischen Version wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></button>
+</li>
+<li><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub</a></li>
+    </ul>
+  </div>
+
+  <header class="hero">
+    <p class="eyebrow fade-in">Redaktionsplanung</p>
+    <h1 class="fade-in">Artikelideen, die<br>weiterführen.</h1>
+    <p class="lead fade-in">Ausgearbeitete Themen für die nächsten Wissenartikel. Die Sammlung verbindet die bisherigen Finance-Themen mit neuen Beiträgen zu Wirtschaftskonzepten und Datenanalyse.</p>
+    <p class="notice fade-in">Die Texte in den Monatsordnern sind redaktionelle Briefs. Sie sind noch nicht als veröffentlichte Artikel in der öffentlichen Wissen-Übersicht eingetragen.</p>
+  </header>
+
+  <main>
+    <section class="month" id="september">
+      <div class="month-heading fade-in"><h2>September 2026</h2><span>Vier geplante Artikel</span></div>
+      <div class="idea-grid">
+        <a class="idea-card fade-in" href="../reverse-dcf-erwartungen-im-kurs">
+          <div><div class="card-meta">Unternehmensbewertung <span class="card-date">2. September</span></div><h3>Reverse DCF: Welche Erwartungen stecken schon im Aktienkurs?</h3><p>Den Marktpreis umdrehen und sichtbar machen, welches Wachstum und welche Marge ein Kurs bereits voraussetzt.</p></div>
+          <div class="card-footer"><strong>Zum Artikel</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="September/datenqualitaet-vor-dashboard.md">
+          <div><div class="card-meta">Datenanalyse <span class="card-date">11. September</span></div><h3>Datenqualität vor Dashboard: Was muss stimmen?</h3><p>Warum fehlende Werte, doppelte Zeilen und falsche Einheiten wichtiger sind als die schönste Grafik.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="September/opportunitaetskosten-im-alltag.md">
+          <div><div class="card-meta">Wirtschaftskonzepte <span class="card-date">18. September</span></div><h3>Opportunitätskosten im Alltag</h3><p>Die beste Alternative, auf die du verzichtest, gehört zu den Kosten einer Entscheidung dazu.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="September/etf-entnahmeplan-deutsche-steuern.md">
+          <div><div class="card-meta">Finanzielle Grundlagen <span class="card-date">28. September</span></div><h3>ETF-Entnahmeplan mit deutschen Steuern</h3><p>Was von einer geplanten Entnahme nach Gewinnanteil, Kosten und Steuern tatsächlich übrig bleibt.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="month" id="oktober">
+      <div class="month-heading fade-in"><h2>Oktober 2026</h2><span>Vier geplante Artikel</span></div>
+      <div class="idea-grid">
+        <a class="idea-card fade-in" href="Oktober/anschlussfinanzierung-stresstest.md">
+          <div><div class="card-meta">Immobilien-Investition <span class="card-date">5. Oktober</span></div><h3>Anschlussfinanzierung realistisch stress-testen</h3><p>Restschuld, Zinsbindung, Rate und Reserve in mehreren realistischen Szenarien prüfen.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="Oktober/korrelation-vs-diversifikation.md">
+          <div><div class="card-meta">Datenanalyse <span class="card-date">13. Oktober</span></div><h3>Korrelation ist nicht Diversifikation</h3><p>Warum eine niedrige Korrelation aus der Vergangenheit kein Schutzversprechen für die nächste Krise ist.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="Oktober/inflation-kaufkraft-persoenlicher-warenkorb.md">
+          <div><div class="card-meta">Wirtschaftskonzepte <span class="card-date">21. Oktober</span></div><h3>Inflation und der persönliche Warenkorb</h3><p>Wie Kaufkraft wirklich sinkt und warum die offizielle Rate nicht jeden Haushalt gleich trifft.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="Oktober/sparrate-oder-rendite.md">
+          <div><div class="card-meta">Finanzielle Unabhängigkeit <span class="card-date">29. Oktober</span></div><h3>Sparrate oder Rendite?</h3><p>Welche Stellschraube in welcher Phase mehr verändert und warum höhere Rendite nie kostenlos ist.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="month" id="november">
+      <div class="month-heading fade-in"><h2>November 2026</h2><span>Vier geplante Artikel</span></div>
+      <div class="idea-grid">
+        <a class="idea-card fade-in" href="November/mietrendite-gegen-eigenkapitalrendite.md">
+          <div><div class="card-meta">Immobilien-Investition <span class="card-date">4. November</span></div><h3>Mietrendite gegen Eigenkapitalrendite</h3><p>Zwei Kennzahlen, zwei Fragen und ein Beispiel, das Finanzierung nicht als Gratishebel verkauft.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="November/prognose-validieren-mae-mape.md">
+          <div><div class="card-meta">Datenanalyse <span class="card-date">12. November</span></div><h3>Prognosen validieren</h3><p>Trainings- und Testdaten, MAE, MAPE und einfache Baselines gegen scheinbar kluge Modelle.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="November/produktivitaet-messen.md">
+          <div><div class="card-meta">Wirtschaftskonzepte <span class="card-date">19. November</span></div><h3>Produktivität messen</h3><p>Mehr Output ist nur dann Fortschritt, wenn Qualität, Nacharbeit und Ergebnis mitgemessen werden.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="November/prognosen-kalibrieren-wahrscheinlichkeiten.md">
+          <div><div class="card-meta">Datenanalyse <span class="card-date">27. November</span></div><h3>Prognosen kalibrieren</h3><p>Wie Wahrscheinlichkeiten überprüfbar werden und warum Selbstsicherheit nicht dasselbe wie Genauigkeit ist.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="month" id="dezember">
+      <div class="month-heading fade-in"><h2>Dezember 2026</h2><span>Vier geplante Artikel</span></div>
+      <div class="idea-grid">
+        <a class="idea-card fade-in" href="Dezember/positive-rendite-schlechte-investment.md">
+          <div><div class="card-meta">Einsatzgröße &amp; Risiko <span class="card-date">3. Dezember</span></div><h3>Positive Rendite, schlechtes Investment</h3><p>Warum ein Gewinn allein noch nicht zeigt, dass Risiko, Aufwand und Vergleichsmaßstab gepasst haben.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="Dezember/backtest-fehler.md">
+          <div><div class="card-meta">Datenanalyse <span class="card-date">11. Dezember</span></div><h3>Backtests, die zu gut aussehen</h3><p>Look-ahead Bias, Survivorship Bias, Overfitting und Kosten als praktische Prüfpunkte.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="Dezember/konjunkturzyklus-im-depot.md">
+          <div><div class="card-meta">Wirtschaftskonzepte <span class="card-date">18. Dezember</span></div><h3>Konjunkturzyklus verstehen</h3><p>Was BIP, Zinsen, Inflation und Arbeitsmarkt gemeinsam erzählen und was sie nicht vorhersagen können.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+        <a class="idea-card fade-in" href="Dezember/median-oder-mittelwert-finanzdaten.md">
+          <div><div class="card-meta">Datenanalyse <span class="card-date">29. Dezember</span></div><h3>Median oder Mittelwert?</h3><p>Welche Kennzahl bei Ausgaben, Renditen und ungleich verteilten Daten die ehrlichere Perspektive liefert.</p></div>
+          <div class="card-footer"><strong>Zur Idee</strong><span class="card-arrow">→</span></div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../../" class="footer-logo">sms<span>.</span></a>
+        <p>Redaktionsplanung für die Wissenartikel von Simon Stark. Stetig im Aufbau.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="../../projekte/">Projekte</a></li>
+          <li><a href="../../downloads">Downloads</a></li>
+          <li><a href="../../projekt-pipeline">Projekt-Pipeline</a></li>
+          <li><a href="../../vision">Vision</a></li>
+          <li><a href="../">Wissen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Arbeitsstand</h5>
+        <ul>
+          <li><a href="#september">September</a></li>
+          <li><a href="#oktober">Oktober</a></li>
+          <li><a href="#november">November</a></li>
+          <li><a href="#dezember">Dezember</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">github.com/simons-0427</a>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(element => observer.observe(element));
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

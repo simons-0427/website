@@ -1,0 +1,102 @@
+{
+  "checkedOn": "2026-09-25",
+  "sourceDataset": "USDA FoodData Central, SR Legacy, April 2018",
+  "sourceDatasetUrl": "https://fdc.nal.usda.gov/download-datasets/",
+  "sourceBasis": "Per 100 g edible portion. Comparator values transferred without scaling.",
+  "method": "Only close prepared-food profiles with target total-fat difference at or below 10% were accepted. Source identity and target fat are preserved per record; existing alcohol values were not changed.",
+  "records": [
+    {
+      "databaseIndex": 409,
+      "food": "Coleslaw / Krautsalat (Handelsware)",
+      "targetFat_g_per_100g": 16.3,
+      "sourceName": "DENNY'S, coleslaw",
+      "sourceId": 169023,
+      "sourceFat_g_per_100g": 15,
+      "fatDifferencePct": 8,
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169023/nutrients?type=SR%20Legacy",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 1.103,
+        "Omega-6 Fatty Acids (g)": 7.285,
+        "Trans Fat (g)": 0.046,
+        "Alpha-Linolenic Acid (ALA) (g)": 1.1,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0.003
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "componentsDoNotExceedOmega3": true,
+      "alcoholRetained_g_per_100g": 0,
+      "confidence": "medium: USDA prepared-food comparator with under 10% total-fat difference; published values copied without scaling"
+    },
+    {
+      "databaseIndex": 432,
+      "food": "Hamburger (Takeaway)",
+      "targetFat_g_per_100g": 8.3,
+      "sourceName": "WENDY'S, Jr. Hamburger, without cheese",
+      "sourceId": 170323,
+      "sourceFat_g_per_100g": 8.75,
+      "fatDifferencePct": 5.4,
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170323/nutrients?type=SR%20Legacy",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.123,
+        "Omega-6 Fatty Acids (g)": 0.955,
+        "Trans Fat (g)": 0.269,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.103,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "componentsDoNotExceedOmega3": true,
+      "alcoholRetained_g_per_100g": 0,
+      "confidence": "medium: USDA prepared-food comparator with under 10% total-fat difference; published values copied without scaling"
+    },
+    {
+      "databaseIndex": 471,
+      "food": "Pommes frites (Fast Food)",
+      "targetFat_g_per_100g": 14.2,
+      "sourceName": "WENDY'S, french fries",
+      "sourceId": 170726,
+      "sourceFat_g_per_100g": 14.1,
+      "fatDifferencePct": 0.7,
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170726/nutrients?type=SR%20Legacy",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.641,
+        "Omega-6 Fatty Acids (g)": 6.754,
+        "Trans Fat (g)": 0.062,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.639,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.001,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Trans Fat (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null,
+        "Eicosapentaenoic Acid (EPA) (g)": null,
+        "Docosahexaenoic Acid (DHA) (g)": null
+      },
+      "componentsDoNotExceedOmega3": true,
+      "alcoholRetained_g_per_100g": 0,
+      "confidence": "medium: USDA prepared-food comparator with under 10% total-fat difference; published values copied without scaling"
+    }
+  ],
+  "validation": {
+    "rowCountUnchanged": true,
+    "nonnegativeValues": true,
+    "componentSumWithinTotalOmega3": true,
+    "sourceFatDifferenceAtMostPct": 10
+  }
+}

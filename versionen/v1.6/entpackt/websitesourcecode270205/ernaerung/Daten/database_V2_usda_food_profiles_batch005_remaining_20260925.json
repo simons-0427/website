@@ -1,0 +1,78 @@
+{
+  "checkedOn": "2026-09-25",
+  "sourceDataset": "USDA FoodData Central, SR Legacy, April 2018",
+  "sourceDatasetUrl": "https://fdc.nal.usda.gov/download-datasets/",
+  "sourceBasis": "Per 100 g edible portion; FDC nutrient amounts copied without scaling.",
+  "method": "Close soup profiles chosen by food identity and total-fat agreement. Low-fat source accepted within 0.1 g/100 g absolute difference. Omega-6 from reported 18:2; Omega-3/ALA from reported 18:3. Existing alcohol and EPA/DHA values preserved.",
+  "records": [
+    {
+      "databaseIndex": 427,
+      "food": "Gemüsesuppe (Dose)",
+      "targetFat_g_per100g": 0.6,
+      "sourceName": "Soup, chunky vegetable, reduced sodium, canned, ready-to-serve",
+      "sourceId": 174071,
+      "sourceFat_g_per100g": 0.51,
+      "fatDifference_g_per100g": 0.09,
+      "fatDifferencePct": 15,
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174071/nutrients?type=SR%20Legacy",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.013,
+        "Omega-6 Fatty Acids (g)": 0.084,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.013
+      },
+      "sourceNutrients": {
+        "PUFA 18:2 (618)": 0.084,
+        "PUFA 18:3 (619)": 0.013,
+        "EPA (629)": 0,
+        "DHA (621)": 0,
+        "Total PUFA (646)": 0.097
+      },
+      "note": "Close canned vegetable soup profile; source fat is 0.09 g/100 g lower. Omega-6 uses reported 18:2; Omega-3/ALA uses reported 18:3. EPA/DHA zeros already present and unchanged.",
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null
+      },
+      "alcoholRetained_g_per100g": 0,
+      "componentsDoNotExceedOmega3": true,
+      "confidence": "medium: close USDA SR Legacy soup profile; no scaling; fatty acids derived from listed 18:2 and 18:3 values"
+    },
+    {
+      "databaseIndex": 500,
+      "food": "Tomatensuppe (Kühlregal)",
+      "targetFat_g_per100g": 1.9,
+      "sourceName": "Soup, tomato bisque, canned, condensed",
+      "sourceId": 172881,
+      "sourceFat_g_per100g": 1.95,
+      "fatDifference_g_per100g": 0.05,
+      "fatDifferencePct": 2.6,
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172881/nutrients?type=SR%20Legacy",
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.11,
+        "Omega-6 Fatty Acids (g)": 0.75,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.11
+      },
+      "sourceNutrients": {
+        "PUFA 18:2 (618)": 0.75,
+        "PUFA 18:3 (619)": 0.11,
+        "Total PUFA (646)": 0.87
+      },
+      "note": "Very close tomato-soup profile by total fat. Omega-6 uses the reported 18:2; Omega-3/ALA uses reported 18:3. Existing EPA/DHA zeros remain unchanged.",
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": null,
+        "Omega-6 Fatty Acids (g)": null,
+        "Alpha-Linolenic Acid (ALA) (g)": null
+      },
+      "alcoholRetained_g_per100g": 0,
+      "componentsDoNotExceedOmega3": true,
+      "confidence": "medium: close USDA SR Legacy soup profile; no scaling; fatty acids derived from listed 18:2 and 18:3 values"
+    }
+  ],
+  "validation": {
+    "rowCountUnchanged": true,
+    "nonnegativeValues": true,
+    "componentSumWithinTotalOmega3": true,
+    "alcoholUnchanged": true,
+    "noExistingValuesOverwritten": true
+  }
+}

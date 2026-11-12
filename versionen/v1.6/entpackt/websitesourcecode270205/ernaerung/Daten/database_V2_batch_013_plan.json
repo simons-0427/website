@@ -1,0 +1,458 @@
+{
+  "batch": 13,
+  "checkedOn": "2026-08-14",
+  "selection": "Relevante, noch nicht verwendete BLS-4.0-Datensätze aus den Bereichen Getreide, Obst, Gemüse, Hülsenfrüchte, Nüsse, Milchprodukte, Getränke, Öle, Süßwaren, Fisch, Fleisch und zubereitete Alltagsgerichte; vorhandene Namen und BLS-Codes wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten. Für jede Warengruppe ist der konkrete Händler-/Kategorieanker in sourceProduct und sourceUrl dokumentiert; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Nährwerte werden ausschließlich aus dem BLS-Datensatz übernommen; keine Nährwertschätzung. Nachaudit: Fehlzuordnungen und zu niedrige Preisanker wurden gegen aktuelle Händler-Produktseiten (geprüft 14.08.2026) abgeglichen.",
+  "items": [
+    {
+      "code": "M172900",
+      "name": "Sauerrahm/Creme fraiche, 40 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "MILSANI Joghurt-/Milchprodukt bei ALDI SÜD, niedrigster klar belegbarer Preisanker 4,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M172700",
+      "name": "Sauerrahm/Schmand, mind. 20 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "MILSANI Joghurt-/Milchprodukt bei ALDI SÜD, niedrigster klar belegbarer Preisanker 4,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M301700",
+      "name": "Appenzeller mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Parmesan/Hartkäse als aktueller Spezialkäseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M305700",
+      "name": "Greyerzer mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 11.93,
+      "sourceProduct": "CASTELLO Höhlenkäse als aktueller Hart-/Schnittkäseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 11,93 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M306400",
+      "name": "Parmesan mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 12.99,
+      "sourceProduct": "Parmesan/Hartkäse als aktueller Spezialkäseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 12,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M402400",
+      "name": "Gouda mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M403400",
+      "name": "Tilsiter mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M400400",
+      "name": "Schnittkäse mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M403500",
+      "name": "Tilsiter mind. 40 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M402500",
+      "name": "Gouda mind. 40 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M400500",
+      "name": "Schnittkäse mind. 40 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M400700",
+      "name": "Schnittkäse mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M508600",
+      "name": "Havarti mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.45,
+      "sourceProduct": "Französischer Weichkäse als aktueller günstiger Käseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 9,45 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M400800",
+      "name": "Schnittkäse mind. 60 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M404700",
+      "name": "Wilstermarschkäse mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Eigenmarken-Milchprodukt im Kühlregal, niedrigster ausgewiesener Preisanker 2,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/joghurt/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M619700",
+      "name": "Bel Paese mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.45,
+      "sourceProduct": "Französischer Weichkäse als aktueller günstiger Käseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 9,45 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M500800",
+      "name": "Schnittkäse halbfest mind. 60 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M512400",
+      "name": "Steppenkäse mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Eigenmarken-Milchprodukt im Kühlregal, niedrigster ausgewiesener Preisanker 2,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/joghurt/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M500400",
+      "name": "Schnittkäse halbfest mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M512600",
+      "name": "Steppenkäse mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Eigenmarken-Milchprodukt im Kühlregal, niedrigster ausgewiesener Preisanker 2,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/joghurt/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M500500",
+      "name": "Schnittkäse halbfest mind. 40 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M500700",
+      "name": "Schnittkäse halbfest mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M600400",
+      "name": "Weichkäse mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.45,
+      "sourceProduct": "Französischer Weichkäse als aktueller günstiger Käseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 9,45 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M600300",
+      "name": "Weichkäse mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.45,
+      "sourceProduct": "Französischer Weichkäse als aktueller günstiger Käseanker bei ALDI SÜD, niedrigster klar belegbarer Preisanker 9,45 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M713500",
+      "name": "Speisequark Fettstufe, 40 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "MILSANI Joghurt-/Milchprodukt bei ALDI SÜD, niedrigster klar belegbarer Preisanker 1,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/k/1588161425467093",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M827700",
+      "name": "Frischkäsezubereitung mind. 50 % Fett i. Tr., mit Gemüse/Kräutern",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M712500",
+      "name": "Schichtkäse mind. 40 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M820200",
+      "name": "Frischkäsezubereitung Natur, mind. 10 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M820100",
+      "name": "Frischkäsezubereitung Natur < 10 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M820600",
+      "name": "Frischkäsezubereitung Natur, mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.56,
+      "sourceProduct": "MILSANI Käse-Aufschnitt/Käsewürfel bei ALDI SÜD, niedrigster klar belegbarer Preisanker 7,56 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/kaese/k/1588161425467083",
+      "priceUnit": "kg"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="title">
+  <title id="title">Dungeon mit quadratischen Steinblöcken, Spielfiguren, Münzen und Goldschatz</title>
+  <defs>
+    <g id="stone">
+      <rect width="40" height="40" fill="#15101f"/>
+      <rect x="2" y="2" width="36" height="36" fill="#5d556e"/>
+      <path d="M4 36V4H36" fill="none" stroke="#8a809b" stroke-width="3"/>
+      <path d="M36 4V36H4" fill="none" stroke="#3b344b" stroke-width="3"/>
+    </g>
+  </defs>
+  <rect width="512" height="512" fill="#34274e"/>
+  <rect x="56" y="56" width="400" height="400" fill="#241e33"/>
+  <path d="M96 56V456M56 96H456M136 56V456M56 136H456M176 56V456M56 176H456M216 56V456M56 216H456M256 56V456M56 256H456M296 56V456M56 296H456M336 56V456M56 336H456M376 56V456M56 376H456M416 56V456M56 416H456" fill="none" stroke="#141020" stroke-width="2"/>
+  <g>
+    <use href="#stone" x="56" y="56"/>
+    <use href="#stone" x="96" y="56"/>
+    <use href="#stone" x="136" y="56"/>
+    <use href="#stone" x="176" y="56"/>
+    <use href="#stone" x="216" y="56"/>
+    <use href="#stone" x="256" y="56"/>
+    <use href="#stone" x="296" y="56"/>
+    <use href="#stone" x="336" y="56"/>
+    <use href="#stone" x="376" y="56"/>
+    <use href="#stone" x="416" y="56"/>
+    <use href="#stone" x="56" y="96"/>
+    <use href="#stone" x="416" y="96"/>
+    <use href="#stone" x="56" y="136"/>
+    <use href="#stone" x="416" y="136"/>
+    <use href="#stone" x="56" y="176"/>
+    <use href="#stone" x="416" y="176"/>
+    <use href="#stone" x="56" y="216"/>
+    <use href="#stone" x="416" y="216"/>
+    <use href="#stone" x="56" y="256"/>
+    <use href="#stone" x="416" y="256"/>
+    <use href="#stone" x="56" y="296"/>
+    <use href="#stone" x="416" y="296"/>
+    <use href="#stone" x="56" y="336"/>
+    <use href="#stone" x="416" y="336"/>
+    <use href="#stone" x="56" y="376"/>
+    <use href="#stone" x="416" y="376"/>
+    <use href="#stone" x="56" y="416"/>
+    <use href="#stone" x="96" y="416"/>
+    <use href="#stone" x="136" y="416"/>
+    <use href="#stone" x="176" y="416"/>
+    <use href="#stone" x="216" y="416"/>
+    <use href="#stone" x="256" y="416"/>
+    <use href="#stone" x="296" y="416"/>
+    <use href="#stone" x="336" y="416"/>
+    <use href="#stone" x="376" y="416"/>
+    <use href="#stone" x="416" y="416"/>
+    <use href="#stone" x="136" y="136"/>
+    <use href="#stone" x="176" y="136"/>
+    <use href="#stone" x="256" y="176"/>
+    <use href="#stone" x="376" y="176"/>
+    <use href="#stone" x="216" y="216"/>
+    <use href="#stone" x="256" y="216"/>
+    <use href="#stone" x="256" y="256"/>
+    <use href="#stone" x="176" y="296"/>
+    <use href="#stone" x="336" y="296"/>
+    <use href="#stone" x="256" y="336"/>
+  </g>
+  <circle cx="156" cy="276" r="24" fill="#57e383" opacity=".13"/>
+  <circle cx="156" cy="276" r="20" fill="#65e58c" stroke="#a5f4b4" stroke-width="2"/>
+  <g fill="#153b2c"><circle cx="149" cy="273" r="3.5"/><circle cx="163" cy="273" r="3.5"/></g>
+  <g fill="#fa594f" opacity=".22"><circle cx="356" cy="356" r="24"/><circle cx="236" cy="156" r="23"/></g>
+  <g fill="#f65c50" stroke="#ff9074" stroke-width="2"><circle cx="356" cy="356" r="18"/><circle cx="236" cy="156" r="17"/></g>
+  <g fill="#ffe23b"><circle cx="350" cy="353" r="3.5"/><circle cx="362" cy="353" r="3.5"/><circle cx="230" cy="153" r="3.5"/><circle cx="242" cy="153" r="3.5"/></g>
+  <g fill="#ffdc3b" stroke="#fff1a1" stroke-width="3"><circle cx="156" cy="356" r="10"/><circle cx="196" cy="356" r="9"/><circle cx="316" cy="236" r="10"/></g>
+  <g fill="none" stroke="#e3a831" stroke-width="2"><path d="M156 351V361M196 352V360M316 231V241"/></g>
+  <ellipse cx="356" cy="180" rx="39" ry="10" fill="#0f0c1a" opacity=".5"/>
+  <g fill="#ffcf38" stroke="#d99526" stroke-width="2">
+    <path d="M343 149V177C343 184 371 184 371 177V149Z"/>
+    <path d="M323 165V184C323 190 349 190 349 184V165Z"/>
+    <path d="M365 168V185C365 191 391 191 391 185V168Z"/>
+  </g>
+  <g fill="#ffe77c" stroke="#e6b231" stroke-width="2"><ellipse cx="357" cy="149" rx="14" ry="5"/><ellipse cx="336" cy="165" rx="13" ry="5"/><ellipse cx="378" cy="168" rx="13" ry="5"/></g>
+  <g fill="none" stroke="#e5a12b" stroke-width="2"><path d="M345 157Q357 163 369 157M345 165Q357 171 369 165M325 173Q336 178 347 173M325 180Q336 185 347 180M367 176Q378 181 389 176M367 183Q378 188 389 183"/></g>
+  <g fill="#ffe96e" stroke="#e6b231" stroke-width="2"><ellipse cx="320" cy="187" rx="8" ry="4" transform="rotate(-20 320 187)"/><ellipse cx="359" cy="190" rx="8" ry="4" transform="rotate(16 359 190)"/></g>
+  <path d="M394 137L397 144L404 147L397 150L394 157L391 150L384 147L391 144Z" fill="#ffe96e"/>
+</svg>

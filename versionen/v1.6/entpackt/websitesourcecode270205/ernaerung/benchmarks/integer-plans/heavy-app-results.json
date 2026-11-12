@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-10-10T11:45:46.065Z",
+  "source": "benchmark",
+  "algorithm": "hybrid",
+  "repeat": 1,
+  "profiles": [
+    {
+      "id": "default",
+      "activeConstraints": 56,
+      "pool": 1516,
+      "ms": 170,
+      "feasible": true,
+      "valid": true,
+      "method": "mixed-repair",
+      "approx": true,
+      "cost": 1.4155739999999999,
+      "reason": null,
+      "solverCalls": [
+        {
+          "ms": 25,
+          "integer": false,
+          "variables": 1516,
+          "feasible": true
+        },
+        {
+          "ms": 9,
+          "integer": true,
+          "variables": 19,
+          "feasible": true
+        },
+        {
+          "ms": 21,
+          "integer": false,
+          "variables": 1516,
+          "feasible": true
+        },
+        {
+          "ms": 22,
+          "integer": false,
+          "variables": 1516,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 170,
+          "feasible": true,
+          "valid": true,
+          "method": "mixed-repair",
+          "approx": true,
+          "cost": 1.4155739999999999,
+          "reason": null,
+          "solverCalls": [
+            {
+              "ms": 25,
+              "integer": false,
+              "variables": 1516,
+              "feasible": true
+            },
+            {
+              "ms": 9,
+              "integer": true,
+              "variables": 19,
+              "feasible": true
+            },
+            {
+              "ms": 21,
+              "integer": false,
+              "variables": 1516,
+              "feasible": true
+            },
+            {
+              "ms": 22,
+              "integer": false,
+              "variables": 1516,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

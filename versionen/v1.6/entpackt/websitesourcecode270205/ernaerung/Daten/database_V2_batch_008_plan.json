@@ -1,0 +1,500 @@
+{
+  "batch": 8,
+  "checkedOn": "2026-08-14",
+  "selection": "30 relevante BLS-4.0-Datensätze aus Joghurt, Molke, Sahne und häufig verwendeten Käseprodukten. Bereits verwendete BLS-Codes und bestehende Namen wurden ausgeschlossen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg bzw. je L aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten; danach +10 % und Umrechnung auf EUR/100 g bzw. EUR/100 ml. Wenn kein exakt gleiches Handelsprodukt zum BLS-Namen vorlag, ist der verwendete Preisanker derselben klar benannten Produktart im sourceProduct dokumentiert; keine Nährwertschätzung. Kritischer Nachaudit: besonders niedrige historische Preisanker wurden mit aktuellen Händlerseiten vom 14.08.2026 abgeglichen.",
+  "items": [
+    {
+      "code": "M149500",
+      "name": "Schafjoghurt",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 5.82,
+      "sourceProduct": "Kri Kri griechischer Schafmilchjoghurt 10 %, niedrigster ausgewiesener Preisanker 5,82 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/schafsmilch-joghurt/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M161000",
+      "name": "Süßmolke",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "priceUnit": "L",
+      "fluid": 90,
+      "basePerKg": 1.3,
+      "sourceProduct": "Molkeprodukte, niedrigster ausgewiesener Preisanker 1,30 EUR/L",
+      "sourceUrl": "https://www.supermarktcheck.de/molkeprodukte/produkte/"
+    },
+    {
+      "code": "M173800",
+      "name": "Schlagsahne mind. 30 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "laktose"
+      ],
+      "basePerKg": 4.45,
+      "sourceProduct": "ja! Schlagsahne 200 g, zuletzt gemeldeter Preis 0,89 EUR bei Rewe = 4,45 EUR/kg am 16.05.2026",
+      "sourceUrl": "https://www.supermarktcheck.de/product/5351-ja-schlagsahne-200g",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M171500",
+      "name": "Kaffeesahne mind. 10 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "laktose"
+      ],
+      "basePerKg": 2.85,
+      "sourceProduct": "Gutes Land Kaffeesahne, niedrigster ausgewiesener Preisanker 2,85 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/kaffeesahne/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M2J7100",
+      "name": "Trinkjoghurt aus entrahmter Milch, max. 0,5 % Fett, mit Fruchtzubereitung, gesüßt",
+      "category": "getraenke",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "priceUnit": "L",
+      "fluid": 90,
+      "basePerKg": 1.38,
+      "sourceProduct": "Trinkjoghurt als niedrigster aktuell ausgewiesener Joghurt-Drink-Preisanker, niedrigster klar belegbarer Preisanker 1,38 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097"
+    },
+    {
+      "code": "M2A3300",
+      "name": "Joghurt mild, max. 3,8 % Fett, mit Fruchtzubereitung, gesüßt, laktosefrei",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 1.98,
+      "sourceProduct": "Milsani laktosefreier Joghurt mild Erdbeere, 500 g zu 0,99 EUR = 1,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/aldi-sued/sortiment/frucht-joghurt-1/?page=1",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M2L2300",
+      "name": "Trinkjoghurt mind. 3,5 % Fett, mit Fruchtzubereitung, gesüßt",
+      "category": "getraenke",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "priceUnit": "L",
+      "fluid": 90,
+      "basePerKg": 1.8,
+      "sourceProduct": "Bauer Joghurt Drink als aktueller Joghurt-Drink-Preisanker, niedrigster klar belegbarer Preisanker 1,80 EUR/L",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/milchprodukte-eier/naturjoghurt-skyr/k/1588161425467097"
+    },
+    {
+      "code": "M303700",
+      "name": "Chester (Cheddar) mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 8.95,
+      "sourceProduct": "Gut & günstig Cheddar am Stück, niedrigster ausgewiesener Preisanker 8,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/cheddar/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M302600",
+      "name": "Bergkäse mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 6.99,
+      "sourceProduct": "Alpenmark österreichischer Bergkäse am Stück, niedrigster ausgewiesener Preisanker 6,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/bergkaese-am-stueck/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M303600",
+      "name": "Chester (Cheddar) mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 3.16,
+      "sourceProduct": "Tenery Chester Scheibenkäse würzig-pikant, ausgewiesener Preisanker 3,16 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/chester/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M401600",
+      "name": "Edamer mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.73,
+      "sourceProduct": "Tip Edamer in Scheiben 40 %, niedrigster ausgewiesener Preisanker 4,73 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/edamer-geschnitten/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M401400",
+      "name": "Edamer mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.48,
+      "sourceProduct": "K Classic Edamer in Scheiben 400 g, 2,19 EUR = 5,48 EUR/kg; niedrigster klar belegbarer Edamer-Preisanker für die fettärmere BLS-Variante",
+      "sourceUrl": "https://www.supermarktcheck.de/kaufland/sortiment/edamer-geschnitten/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M524500",
+      "name": "Halloumi Grillkäse",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 7.99,
+      "sourceProduct": "Christis Halloumi Grillkäse aus Kuh-, Ziegen- und Schafmilch, ausgewiesener Preisanker 7,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/halloumi/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M501700",
+      "name": "Butterkäse mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 6.13,
+      "sourceProduct": "Ja! Butterkäse 400 g, 2,45 EUR = 6,13 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/rewe/sortiment/kaese-und-kaeseersatz-sb/?page=2",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M602700",
+      "name": "Camembert mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 7.12,
+      "sourceProduct": "K Classic Camembert rund, niedrigster ausgewiesener Preisanker 7,12 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/camembert/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M601600",
+      "name": "Brie mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 5.95,
+      "sourceProduct": "Le Chene D'argent Brie 60 %, niedrigster ausgewiesener Preisanker 5,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/brie-spitzen/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M032100",
+      "name": "Mozzarella mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 3.95,
+      "sourceProduct": "Gut & Günstig Mozzarella 125 g, ausgewiesener Preisanker 3,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/mozzarella-kuhmilch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M176800",
+      "name": "Sauerrahm/Creme fraiche, 30 % Fett",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet",
+        "laktose"
+      ],
+      "basePerKg": 2.95,
+      "sourceProduct": "REWE Beste Wahl Creme Fraiche 30 %, niedrigster ausgewiesener Preisanker 2,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/creme-fraiche/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M711100",
+      "name": "Körniger Frischkäse < 10 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 2.25,
+      "sourceProduct": "Goldessa körniger Frischkäse Cottage Cheese, ausgewiesener Preisanker 2,25 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/koerniger-frischkaese/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M711300",
+      "name": "Körniger Frischkäse mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 5.95,
+      "sourceProduct": "Ja! Körniger Frischkäse Halbfettstufe 20 %, ausgewiesener Preisanker 5,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/koerniger-frischkaese/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M713200",
+      "name": "Speisequark Viertelfettstufe, 10 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 2.2,
+      "sourceProduct": "REWE Beste Wahl Speisequark 10 %, ausgewiesener Preisanker 2,20 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/speisequark-10-f-i-tr/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M713300",
+      "name": "Speisequark Halbfettstufe, 20 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 2.58,
+      "sourceProduct": "Milbona Speisequark 20 %, XXL-Becher 500 g zu 1,29 EUR = 2,58 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/product/10629-milbona-speisequark-",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M730100",
+      "name": "Sauermilchkäse < 10 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.2,
+      "sourceProduct": "Hexe/Penny Harzer Käse 200 g zu 0,84 EUR = 4,20 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/penny-markt/sortiment/harzer-kaese/?sort=default",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M710100",
+      "name": "Skyr, Frischkäse < 10 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food",
+        "laktose"
+      ],
+      "basePerKg": 1.89,
+      "sourceProduct": "Sigurdsson Skyr Nature, 1-kg-Eimer zu 1,89 EUR = 1,89 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/netto-marken-discount/sortiment/skyr-natur/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M827200",
+      "name": "Frischkäsezubereitung mind. 10 % Fett i. Tr., mit Gemüse/Kräutern",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet",
+        "laktose"
+      ],
+      "basePerKg": 2.95,
+      "sourceProduct": "Gut & Günstig Frischkäse mit Kräutern, niedrigster ausgewiesener Preisanker 2,95 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/frischkaese-mit-kraeutern/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M772800",
+      "name": "Schmelzkäse aus Frischkäse, streichfähig, mind. 60 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet",
+        "laktose"
+      ],
+      "basePerKg": 7.45,
+      "sourceProduct": "MIlkana Schmelzkäse Sahne 50 %, niedrigster ausgewiesener Preisanker 7,45 EUR/kg für streichfähigen Schmelzkäse",
+      "sourceUrl": "https://www.supermarktcheck.de/schmelzkaese/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M780100",
+      "name": "Kochkäse < 10 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet",
+        "laktose"
+      ],
+      "basePerKg": 5.45,
+      "sourceProduct": "Der kleine Strolch Kochkäse, niedrigster ausgewiesener Preisanker 5,45 EUR/kg innerhalb der Kochkäse-Kategorie",
+      "sourceUrl": "https://www.supermarktcheck.de/kochkaese/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M771400",
+      "name": "Schmelzkäse schnittfest, mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 3.56,
+      "sourceProduct": "Leckerrom Schmelzkäse-Scheiben Emmentaler 35 %, ausgewiesener Preisanker 3,56 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/schmelzkaesescheiben/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M771600",
+      "name": "Schmelzkäse schnittfest, mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet"
+      ],
+      "basePerKg": 4.6,
+      "sourceProduct": "K Classic Schmelzkäsescheiben Allgäuer 45 %, 250 g zu 1,15 EUR = 4,60 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/kaufland/sortiment/allgaeuer-schmelzkaesescheiben/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "M810500",
+      "name": "Schmelzkäsezubereitung mind. 40 % Fett i. Tr.",
+      "category": "milch",
+      "tags": [
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "verarbeitet",
+        "laktose"
+      ],
+      "basePerKg": 3.45,
+      "sourceProduct": "Lisani Schmelzkäsezubereitung Creme, ausgewiesener Preisanker 3,45 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/schmelzkaese/produkte/",
+      "priceUnit": "kg"
+    }
+  ]
+}

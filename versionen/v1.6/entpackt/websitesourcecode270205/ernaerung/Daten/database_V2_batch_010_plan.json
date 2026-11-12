@@ -1,0 +1,403 @@
+{
+  "batch": 10,
+  "checkedOn": "2026-08-14",
+  "selection": "30 relevante BLS-4.0-Datensätze aus Fisch, Rind, Kalb und Schwein sowie zwei häufigen Geflügelprodukten. Bereits verwendete BLS-Codes und bestehende Namen wurden ausgeschlossen; unklare Wild- und Spezialprodukte wurden zugunsten belegbarer Grundprodukte nicht aufgenommen.",
+  "priceMethod": "Niedrigster am Prüftag belegbarer Preis je kg aus deutschen Händlerseiten, Supermarkt-/Discounter-Preislisten oder aktuellen Preisvergleichsseiten; auffällige Ausreißer und nicht vergleichbare marinierte Fertigprodukte wurden nicht als Preisanker verwendet. Danach +10 % und Umrechnung auf EUR/100 g. Der Preisanker und die Verkaufseinheit stehen je Datensatz in sourceProduct und sourceUrl; die Nährwerte stammen ausschließlich aus dem BLS-Datensatz, ohne Schätzung. Kritischer Nachaudit: besonders niedrige historische Preisanker wurden mit aktuellen Händlerseiten vom 14.08.2026 abgeglichen.",
+  "items": [
+    {
+      "code": "T415100",
+      "name": "Königslachs roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 19.98,
+      "sourceProduct": "K Blue Bay Lachsfilet Portionen bei Kaufland, niedrigster ausgewiesener Preisanker 19,98 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/lachs-am-stueck-frisch/produkte/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T422100",
+      "name": "Forelle roh",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Ganze Lachsforelle bei Lidl, ausgewiesener Preisanker 9,99 EUR/kg; als frische ganze Forelle der passende niedrigste klar belegbare Händleranker",
+      "sourceUrl": "https://www.supermarktcheck.de/lidl/sortiment/sb-fisch/?page=3",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "T103100",
+      "name": "Matjeshering mild gesalzen",
+      "category": "fisch",
+      "tags": [
+        "pescetarisch",
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 8.4,
+      "sourceProduct": "ALMARE Matjesfilets als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 8,40 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/fisch-meeresfruechte/k/1588161425467055",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U291100",
+      "name": "Rind Hinterhesse, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 16.98,
+      "sourceProduct": "MEINE METZGEREI Suppenfleisch vom Rind als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 16,98 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U261100",
+      "name": "Rind Bug/Schulter, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 15.58,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 15,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U201000",
+      "name": "Rind Muskelfleisch, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 15.58,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 15,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U284100",
+      "name": "Rind Hüfte, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 18.72,
+      "sourceProduct": "MEINE METZGEREI Rind-Minutensteaks als aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 18,72 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U482100",
+      "name": "Kalb Keule, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 19.99,
+      "sourceProduct": "Kalbskeule/Minutensteak bei Kaufland, ausgewiesener Preisanker 19,99 EUR/kg",
+      "sourceUrl": "https://www.supermarktcheck.de/kaufland/sortiment/sb-frischfleisch-kalb/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U287100",
+      "name": "Rind Oberschale, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 15.58,
+      "sourceProduct": "MEINE METZGEREI Rindergulasch als niedrigster aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 15,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/rindfleisch/k/1588161425467064",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U602100",
+      "name": "Schwein Fleisch, sehnenfrei, sichtbarer Fettanteil max. 5 % (S II) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.18,
+      "sourceProduct": "MEINE METZGEREI Schnitzel vom Schwein als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 9,18 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U511100",
+      "name": "Schwein Filetmedaillon, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.59,
+      "sourceProduct": "Gut & Günstig Schweinefilet bei NP Discount, ausgewiesener Preisanker 9,59 EUR/kg; Medaillon aus demselben Filetsegment",
+      "sourceUrl": "https://www.supermarktcheck.de/np-discount-edeka-partner/sortiment/sb-frischfleisch-schwein/",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U602200",
+      "name": "Schwein Fleisch, geringer Feinsehnenanteil, sichtbarer Fettanteil max. 3 - 5 % (S II/III) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.18,
+      "sourceProduct": "MEINE METZGEREI Schnitzel vom Schwein als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 9,18 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U602000",
+      "name": "Schwein Fleisch, fett- und sehnenfrei (S I) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.18,
+      "sourceProduct": "MEINE METZGEREI Schnitzel vom Schwein als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 9,18 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U522100",
+      "name": "Schwein Stielkotelett, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 5.41,
+      "sourceProduct": "MEINE METZGEREI Schweinekoteletts als niedrigster aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 5,41 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U578100",
+      "name": "Schwein Lachsbraten, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.58,
+      "sourceProduct": "MEINE METZGEREI Schweine-Nackensteak natur als aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 9,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "W510000",
+      "name": "Kasseler, Rohpökelware, geräuchert",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Koch-/Räucherschinken als aktueller ALDI-Kühlregalanker, niedrigster klar belegbarer Preisanker 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wurst-aufschnitt/k/1588161425467075",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U533100",
+      "name": "Schwein Schmetterlingssteak, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.58,
+      "sourceProduct": "MEINE METZGEREI Schweine-Nackensteak natur als aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 9,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U577100",
+      "name": "Schwein Kammbraten, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 9.58,
+      "sourceProduct": "MEINE METZGEREI Schweine-Nackensteak natur als aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 9,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U532100",
+      "name": "Schwein Kammsteak, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.48,
+      "sourceProduct": "BBQ Schweine-Nackensteak als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,48 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U57B100",
+      "name": "Schwein Ladenbauch, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.58,
+      "sourceProduct": "BBQ Schweine-Grillbauchscheiben als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U603100",
+      "name": "Schwein Bauch, mager, sichtbarer Fettanteil max. 25 % (S IV) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.58,
+      "sourceProduct": "BBQ Schweine-Grillbauchscheiben als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U604000",
+      "name": "Schwein Bauch, kernig, sichtbarer Fettanteil max. 60 % (S V) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.58,
+      "sourceProduct": "BBQ Schweine-Grillbauchscheiben als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U583100",
+      "name": "Schwein Kochfleisch (Bauch) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.58,
+      "sourceProduct": "BBQ Schweine-Grillbauchscheiben als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U57A100",
+      "name": "Schwein Grillbauch, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.58,
+      "sourceProduct": "BBQ Schweine-Grillbauchscheiben als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U564100",
+      "name": "Schwein Dicke Rippe roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.58,
+      "sourceProduct": "BBQ Schweine-Grillbauchscheiben als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U603000",
+      "name": "Schwein Fleisch, höherer Sehnenanteil, sichtbarer Fettanteil max. 7 - 10 % (S III) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.58,
+      "sourceProduct": "MEINE METZGEREI Gulasch vom Schwein als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U571100",
+      "name": "Schwein Bratenfleisch (Bug mit Fett und Schwarte) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.58,
+      "sourceProduct": "MEINE METZGEREI Gulasch vom Schwein als aktueller ALDI-Vergleichsanker, niedrigster klar belegbarer Preisanker 7,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "U554100",
+      "name": "Schwein Gulasch (Restbug) roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 7.58,
+      "sourceProduct": "MEINE METZGEREI Gulasch vom Schwein als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 7,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/schweinefleisch/k/1588161425467066",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V416100",
+      "name": "Hähnchen Brustfilet, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 8.66,
+      "sourceProduct": "MEINE METZGEREI Hähnchen Brustfilet als aktueller ALDI-Preisanker, niedrigster klar belegbarer Preisanker 8,66 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "V417100",
+      "name": "Hähnchen Flügel, mit Haut, roh",
+      "category": "fleisch",
+      "tags": [
+        "omnivor",
+        "carnivor"
+      ],
+      "basePerKg": 4.35,
+      "sourceProduct": "Hähnchenflügel als aktueller ALDI-Geflügelpreisanker, niedrigster klar belegbarer Preisanker 4,35 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/fleisch-fisch/gefluegel/k/1588161425467059",
+      "priceUnit": "kg"
+    }
+  ]
+}

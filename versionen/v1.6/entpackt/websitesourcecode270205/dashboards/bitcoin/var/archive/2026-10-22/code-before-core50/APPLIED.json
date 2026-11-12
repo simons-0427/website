@@ -1,0 +1,294 @@
+{
+  "project": "C:\\Users\\simon\\Desktop\\Project DoubleUp\\smstark-projekt.de\\dashboards\\bitcoin",
+  "files": [
+    {
+      "path": "api/bitcoin/metrics.php",
+      "sha256": "083d88a1852a6624f67f689491cac1c16892357fbc0c423ffd5acbb32d8fd43a",
+      "beforeSha256": "0ab567e84e35ab39798d3b4a70cb86389e07372f26c871c7845e13f9c38ad135",
+      "kind": "code",
+      "bytes": 4945
+    },
+    {
+      "path": "api/bitcoin/series.php",
+      "sha256": "086f37143beed8def29baa501dc35b285493db160b1ddbe0ef35c266279db846",
+      "beforeSha256": "f0622b87917f448dd216966b3529600fc1f02c97a3a77f67770982419677efeb",
+      "kind": "code",
+      "bytes": 4212
+    },
+    {
+      "path": "assets/css/bitcoin.css",
+      "sha256": "5e598017b4b619ad9669ff7de9074c3da0b328c536b915c477f3404c11aa35f8",
+      "beforeSha256": "568085c901b763a44c02113d83e85f49ca07d2ca9a1b333116454dc64b1d0693",
+      "kind": "code",
+      "bytes": 19766
+    },
+    {
+      "path": "assets/js/bitcoin.js",
+      "sha256": "1aba16c8291d3435476b8af90e5a80aebe1a3a64de663a03108397a9b630350b",
+      "beforeSha256": "d2ed052c4e8f621dacca65c9008922c46e1029cc87cde9b5e7a10215238b32d8",
+      "kind": "code",
+      "bytes": 36023
+    },
+    {
+      "path": "assets/js/chart-interaction.js",
+      "sha256": "f1b7387dbf986a65d43b2ebf67e793dd3a447c628ad70eff743b38a0c29aae85",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 3604
+    },
+    {
+      "path": "assets/vendor/chart.umd.min.js",
+      "sha256": "d2af8974e95271638772e9e9524db5b9a6f58d6ec2d5d781400447b4a31c681e",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 205399
+    },
+    {
+      "path": "CORE-DASHBOARD-UPDATE.md",
+      "sha256": "afb1c8990a06d2696c3ea8e6c7a5b3826d19bd730a00e59faa17e5103d001188",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 8199
+    },
+    {
+      "path": "CORE-SERIES-UPDATE.md",
+      "sha256": "b7426e4ff2c25363a8653dc9e76608a01f9dbbf441f34bd863a8194352547364",
+      "beforeSha256": "dcdae22989f09f17960159007864b52ee805ae044f26dd29f520dfd6b506cbe6",
+      "kind": "code",
+      "bytes": 6827
+    },
+    {
+      "path": "cron/derive-metrics.php",
+      "sha256": "9f3dcff03b96f567cb101e1846ab43c65c2ce09bc017acc7f944726eb9d9bfed",
+      "beforeSha256": "a711a087b179b66afdd7cb90a30afca1759ef17726d4cbb1166c94c447d5d809",
+      "kind": "code",
+      "bytes": 39158
+    },
+    {
+      "path": "cron/import-observations.php",
+      "sha256": "58124bd1d5bebbc1c6272bb81c50cb1387f29de37714bf9ef30584456f4fb41d",
+      "beforeSha256": "5430f9d13fe5ab94321f4144b1e2c1c68e6d54de9953872685e6772d793887e7",
+      "kind": "code",
+      "bytes": 17296
+    },
+    {
+      "path": "data/active-metrics.json",
+      "sha256": "7cc5d778d3c06c2d95f58ee73a71f283c0ce9a169b9495f18535a1f243ad0812",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 1388
+    },
+    {
+      "path": "data/catalog.json",
+      "sha256": "591bec1bedd94cc06886615f6feee98407f93c57bb6b3ebfda60386f42443da8",
+      "beforeSha256": "bb23d3a6d2805c9f380a4229b4433b2c4077eaf3465f9bb55c3d22877cc6fa67",
+      "kind": "code",
+      "bytes": 98750
+    },
+    {
+      "path": "includes/bitcoin/bootstrap.php",
+      "sha256": "e7d4b6144bf8f21bb5b94f11b908592affeeca2dfd91602213f11cdbf306d768",
+      "beforeSha256": "e1b4cefa5e6bf8d1629f74d4e12e32a0ada55e0f9461ec2419150efb406448cb",
+      "kind": "code",
+      "bytes": 3332
+    },
+    {
+      "path": "includes/bitcoin/core-calculations.php",
+      "sha256": "437d6c13763e7436f4d450923bf97c0dc818df2f566611a6626106c046f64237",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 613
+    },
+    {
+      "path": "includes/bitcoin/core-revisions.php",
+      "sha256": "c48e0b8f3504f1e71a3699c880c4c84d73f0eefd61c63759655928f1eedd6886",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 3394
+    },
+    {
+      "path": "index.html",
+      "sha256": "e6b707ad234ebf7b3adff9942918f417489dabb607c80f56f6b909db29c143ca",
+      "beforeSha256": "ded5dff9841b90adc842134811b4b1f0001c6c87153746c082865136117843b6",
+      "kind": "code",
+      "bytes": 9665
+    },
+    {
+      "path": "README.md",
+      "sha256": "45fccab5ff88d1b563099877e91e1713ad7dbc5408fc12a5e58b9ed53da2308b",
+      "beforeSha256": "093bb97e440d880c14d1106f8c67e84b02ce570b97e915e844d1bd413e4ecdb4",
+      "kind": "code",
+      "bytes": 76354
+    },
+    {
+      "path": "sql/046_active_core50.sql",
+      "sha256": "7da6a9103d956f52cb9f1e32d4a66339284f81768c5765e9c16b9f9fe8ca5096",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 42819
+    },
+    {
+      "path": "tools/build-core-dashboard.js",
+      "sha256": "dd6e1e97348d96369573b2beea613f5003e0221532536e2b2d6e408574dfeaba",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 9893
+    },
+    {
+      "path": "tools/derive-coinmetrics.js",
+      "sha256": "df113bb1931bea446b8550dcc7289418a8c8b8401ba88d92a2a0d1c2489d868e",
+      "beforeSha256": "693b299da3af9df9926a7bd47633023ec8f8e8b9d2b56555b1bd00fcb92d0d4f",
+      "kind": "code",
+      "bytes": 25190
+    },
+    {
+      "path": "tools/generate-core-migration.js",
+      "sha256": "42dcfee69712645b1de65086ab45e802a220be7af483f59eaa6787dc749ec5ca",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 7459
+    },
+    {
+      "path": "tools/preview-bitcoin-master.js",
+      "sha256": "482705294d2034916a6c90c1613ddaf26653894876b261ab8f39795a1dfe79b9",
+      "beforeSha256": "50ba2156bf672c17c50149f7bc196f132de9b124a512d1cdd96e6e21989aff56",
+      "kind": "code",
+      "bytes": 15765
+    },
+    {
+      "path": "tools/test-core-revisions.php",
+      "sha256": "e4230e4ea653d31180d5c4aab8b601f149cd4a85d0630bc3bce6fc5ff2aa86d2",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 4131
+    },
+    {
+      "path": "tools/validate-core-dashboard.py",
+      "sha256": "bd84f4430f8a300c0b13854585dc070f76d473bc7b63e47358ec2dbca43d009b",
+      "beforeSha256": null,
+      "kind": "code",
+      "bytes": 6878
+    },
+    {
+      "path": "UPLOAD-STRATO.md",
+      "sha256": "d43cd1530e306dd254bfba11e0c197b57b8740bca05fa9aa4cf5a2aa2908204a",
+      "beforeSha256": "52dc44313f4080ebdd8c124e1d0100a67eb71f17064221ae93ce0c8e51dec819",
+      "kind": "code",
+      "bytes": 23889
+    },
+    {
+      "path": "var/archive/revisions/core-revisions-2026-10-22T14-52-54-238Z.json",
+      "sha256": "3f66573c014b3891c16e42ade164bc1c6d0647adc3f1eba4c002a1a940bd7180",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 3502355
+    },
+    {
+      "path": "var/archive/revisions/core-revisions-2026-10-22T15-05-23-883Z.json",
+      "sha256": "de26ff41cdb6f37be2063e5f48c2933f5e183881b7931566884184781abb6633",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 3416659
+    },
+    {
+      "path": "var/bitcoin-core-inputs.csv",
+      "sha256": "b9a01b8ca48c4571db82ca6da578fec543f0dc42eddcb9810ff305516a4f3ceb",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 30050428
+    },
+    {
+      "path": "var/bitcoin-core-manifest.json",
+      "sha256": "9c1603b77674dbe576f3a91c80a88269d88a7d8d2404d65be11077c59cf76365",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 10583
+    },
+    {
+      "path": "var/bitcoin-core-master.csv",
+      "sha256": "30c440fef0dfd7b8e6da4c4b2234658122871f9af7dd5ab2ba2f38b754cf33f7",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 53802183
+    },
+    {
+      "path": "var/cftc-core-latest.csv",
+      "sha256": "520c6d40acf80a0e1947f933de0935c19e168ec336066f3482dda7321d862027",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 92353
+    },
+    {
+      "path": "var/coinmetrics-core-latest.csv",
+      "sha256": "4824b5c04c8ff68634eff80b58ecaf7f91e43829b38776a12b4cfaf39657e284",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 79456
+    },
+    {
+      "path": "var/core-series-latest.csv",
+      "sha256": "14a5c776c0645d3190747aefd47e90eebe5404a0258f7cede6a001b35d49ef7e",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 1744186
+    },
+    {
+      "path": "var/ecb-core-latest.csv",
+      "sha256": "6d16c95ea8511d338fb2ad87b794c0917095e3bc9304181af80f5130e959cc86",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 2756
+    },
+    {
+      "path": "var/obm-core-latest.csv",
+      "sha256": "6a351d759fb31185cd846cc13c1eac726c536f510841b2fd9cba4278e5ae2eb7",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 7261660
+    },
+    {
+      "path": "var/open-bitcoin-metrics-obm/obm_block_weight_wu_daily.csv",
+      "sha256": "6061199dc3f92595aef5b45a6a0187ba8bbaf25a6a56eceba30b8c398d793bd9",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 438281
+    },
+    {
+      "path": "var/open-bitcoin-metrics-obm/obm_cdd_btcxdays_daily.csv",
+      "sha256": "a3cd8b74b78803d5339e98bfd4ef2d3273d2be3a1b473775354d96fe067d2729",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 506040
+    },
+    {
+      "path": "var/open-bitcoin-metrics-obm/obm_dormancy_days_daily.csv",
+      "sha256": "09398ffce4b1554b2cb7dfa873d4544131519d59fbf9bd0e4066d06dc31e0c03",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 473244
+    },
+    {
+      "path": "var/open-bitcoin-metrics-obm/obm_liveliness_ratio_daily.csv",
+      "sha256": "da0558dd097a0fc106a5fcebf389b71d5b81ad108fdfc527bc08336400978e0e",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 500322
+    },
+    {
+      "path": "var/open-bitcoin-metrics-obm/obm_raw_output_value_btc_daily.csv",
+      "sha256": "e15adb4a6ceca5dc8924a2fbd1cf18bc3d8066d08772e0199f5c067aa70a4426",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 520855
+    },
+    {
+      "path": "var/open-bitcoin-metrics-obm/obm_utxo_eod_count_daily.csv",
+      "sha256": "4082826cdb6153e835e4084c559bda063622f214d483c65e8de4cd2eee64444f",
+      "beforeSha256": null,
+      "kind": "data",
+      "bytes": 458790
+    }
+  ],
+  "fileCount": 41,
+  "bytes": 103535100
+}

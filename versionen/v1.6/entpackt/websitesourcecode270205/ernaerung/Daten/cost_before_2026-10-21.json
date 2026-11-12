@@ -1,0 +1,2256 @@
+{
+  "generatedAt": "2026-10-21T08:19:16.289Z",
+  "method": "continuous LP, remove one constraint at a time",
+  "results": [
+    {
+      "id": "default",
+      "pool": 1516,
+      "baselineCost": 1.32324,
+      "drivers": [
+        {
+          "key": "Creatine (mg)",
+          "saving": 0.11954,
+          "total": 4800.00013,
+          "min": 4800
+        },
+        {
+          "key": "Protein (g)",
+          "saving": 0.10005,
+          "total": 160,
+          "min": 160
+        },
+        {
+          "key": "Potassium (mg)",
+          "saving": 0.08856,
+          "total": 4000,
+          "min": 4000
+        },
+        {
+          "key": "Energy (cal)",
+          "saving": 0.03831,
+          "total": 2850,
+          "min": 2850,
+          "max": 3050
+        },
+        {
+          "key": "Total Fat (g)",
+          "saving": 0.0322,
+          "total": 63,
+          "min": 63,
+          "max": 102
+        },
+        {
+          "key": "Vitamin C (mg)",
+          "saving": 0.01131,
+          "total": 105,
+          "min": 105,
+          "max": 3000
+        },
+        {
+          "key": "Iodine (µg)",
+          "saving": 0.01083,
+          "total": 150.00001,
+          "min": 150,
+          "max": 1100
+        },
+        {
+          "key": "Choline (mg)",
+          "saving": 0.00909,
+          "total": 400,
+          "min": 400
+        },
+        {
+          "key": "Sodium (mg)",
+          "saving": 0.00889,
+          "total": 3000.00013,
+          "min": 1500,
+          "max": 3000
+        },
+        {
+          "key": "Vitamin B5 (Pantothenic Acid) (mg)",
+          "saving": 0.00579,
+          "total": 5,
+          "min": 5
+        },
+        {
+          "key": "Manganese (mg)",
+          "saving": 0.00501,
+          "total": 12,
+          "min": 2,
+          "max": 12
+        },
+        {
+          "key": "Vitamin D (µg)",
+          "saving": 0.005,
+          "total": 20,
+          "min": 20,
+          "max": 100
+        },
+        {
+          "key": "Fluid (ml)",
+          "saving": 0.00493,
+          "total": 3200,
+          "min": 3200
+        },
+        {
+          "key": "Total Vitamin A (µg)",
+          "saving": 0.00207,
+          "total": 949.99999,
+          "min": 950
+        },
+        {
+          "key": "Total Vitamin K (µg)",
+          "saving": 0.00148,
+          "total": 70,
+          "min": 70
+        },
+        {
+          "key": "Vitamin B3 (Niacin) (mg)",
+          "saving": 0.00119,
+          "total": 17,
+          "min": 17,
+          "max": 900
+        },
+        {
+          "key": "Vitamin B6 (mg)",
+          "saving": 0.00092,
+          "total": 1.6,
+          "min": 1.6,
+          "max": 1000
+        },
+        {
+          "key": "Biotin (µg)",
+          "saving": 0.00016,
+          "total": 40.00002,
+          "min": 40
+        },
+        {
+          "key": "Saturated Fat (g)",
+          "saving": 0,
+          "total": 6.96014,
+          "max": 40
+        },
+        {
+          "key": "Trans Fat (g)",
+          "saving": 0,
+          "total": 0,
+          "max": 1.5
+        },
+        {
+          "key": "Omega-3 Fatty Acids (g)",
+          "saving": 0,
+          "total": 4.29274,
+          "min": 1.6
+        },
+        {
+          "key": "Total Carbohydrate (g)",
+          "saving": 0,
+          "total": 418.44487,
+          "min": 321
+        },
+        {
+          "key": "Total sugars (g)",
+          "saving": 0,
+          "total": 16.03735,
+          "max": 60
+        },
+        {
+          "key": "Dietary Fibre (g)",
+          "saving": 0,
+          "total": 59.96715,
+          "min": 30,
+          "max": 60
+        },
+        {
+          "key": "Alcohol (g)",
+          "saving": 0,
+          "total": 0,
+          "max": 0
+        },
+        {
+          "key": "Calcium (mg)",
+          "saving": 0,
+          "total": 2131.24271,
+          "min": 1200,
+          "max": 3000
+        },
+        {
+          "key": "Chloride (mg)",
+          "saving": 0,
+          "total": 4097.33611,
+          "min": 2300
+        },
+        {
+          "key": "Iron (mg)",
+          "saving": 0,
+          "total": 38.16146,
+          "min": 11,
+          "max": 50
+        },
+        {
+          "key": "Copper (mg)",
+          "saving": 0,
+          "total": 4.351,
+          "min": 1,
+          "max": 10
+        },
+        {
+          "key": "Magnesium (mg)",
+          "saving": 0,
+          "total": 1048.13526,
+          "min": 330
+        },
+        {
+          "key": "Molybdenum (µg)",
+          "saving": 0,
+          "total": 344.66035,
+          "min": 50
+        },
+        {
+          "key": "Phosphorus (mg)",
+          "saving": 0,
+          "total": 2333.82642,
+          "min": 660,
+          "max": 5000
+        },
+        {
+          "key": "Selenium (µg)",
+          "saving": 0,
+          "total": 70,
+          "min": 70,
+          "max": 400
+        },
+        {
+          "key": "Zinc (mg)",
+          "saving": 0,
+          "total": 16.39266,
+          "min": 14,
+          "max": 40
+        },
+        {
+          "key": "Vitamin A [Retinol] (µg)",
+          "saving": 0,
+          "total": 948.52622,
+          "max": 3000
+        },
+        {
+          "key": "Vitamin B1 (Thiamin) (mg)",
+          "saving": 0,
+          "total": 2.68752,
+          "min": 1.4
+        },
+        {
+          "key": "Vitamin B2 (Riboflavin) (mg)",
+          "saving": 0,
+          "total": 1.79574,
+          "min": 1.6
+        },
+        {
+          "key": "Folate (Vitamin B9) (µg)",
+          "saving": 0,
+          "total": 942.22168,
+          "min": 300
+        },
+        {
+          "key": "Vitamin B12 (µg)",
+          "saving": 0,
+          "total": 4.06511,
+          "min": 4
+        },
+        {
+          "key": "Vitamin E (mg)",
+          "saving": 0,
+          "total": 10.96135,
+          "min": 8,
+          "max": 1000
+        },
+        {
+          "key": "Cadmium (µg)",
+          "saving": 0,
+          "total": 8.50702,
+          "max": 28.8
+        },
+        {
+          "key": "Lead (µg)",
+          "saving": 0,
+          "total": 6.75053,
+          "max": 40
+        },
+        {
+          "key": "Mercury (µg)",
+          "saving": 0,
+          "total": 0,
+          "max": 15.2
+        },
+        {
+          "key": "Arsenic (µg)",
+          "saving": 0,
+          "total": 5.36886,
+          "max": 24
+        },
+        {
+          "key": "Aluminium (mg)",
+          "saving": 0,
+          "total": 0.98991,
+          "max": 11.2
+        },
+        {
+          "key": "Nitrate (mg)",
+          "saving": 0,
+          "total": 51.78589,
+          "max": 296
+        },
+        {
+          "key": "PFAS-4 (ng)",
+          "saving": 0,
+          "total": 56.08791,
+          "max": 251.4
+        },
+        {
+          "key": "aaRatio:His",
+          "saving": 0,
+          "total": 1604.10802,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Ile",
+          "saving": 0,
+          "total": 2087.43083,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Leu",
+          "saving": 0,
+          "total": 2304.8175,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Lys",
+          "saving": 0,
+          "total": 1090.50963,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:SAA",
+          "saving": 0,
+          "total": 1256.81054,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:AAA",
+          "saving": 0,
+          "total": 7099.48543,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Thr",
+          "saving": 0,
+          "total": 1893.04769,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Trp",
+          "saving": 0,
+          "total": 980.64538,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Val",
+          "saving": 0,
+          "total": 1117.60871,
+          "min": 0
+        }
+      ],
+      "support": [
+        {
+          "food": "Sojabohnen (trocken)",
+          "amount": 1.0651,
+          "cost": 0.327
+        },
+        {
+          "food": "Weizenmehl Type 405",
+          "amount": 3.7526,
+          "cost": 0.2852
+        },
+        {
+          "food": "Sojaproteinisolat",
+          "amount": 0.5003,
+          "cost": 0.1641
+        },
+        {
+          "food": "Erbsen, gelb (trocken, getrocknet)",
+          "amount": 0.6888,
+          "cost": 0.1281
+        },
+        {
+          "food": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "amount": 0.0546,
+          "cost": 0.1195
+        },
+        {
+          "food": "Rapsöl",
+          "amount": 0.3417,
+          "cost": 0.0653
+        },
+        {
+          "food": "Weizenmehl Type 1050",
+          "amount": 0.6722,
+          "cost": 0.0625
+        },
+        {
+          "food": "Weizenkleie",
+          "amount": 0.3114,
+          "cost": 0.0514
+        },
+        {
+          "food": "Hühnerleber gebraten",
+          "amount": 0.0903,
+          "cost": 0.0352
+        },
+        {
+          "food": "Rote Linsen gekocht",
+          "amount": 0.3256,
+          "cost": 0.0261
+        },
+        {
+          "food": "Erbse reif",
+          "amount": 0.071,
+          "cost": 0.0155
+        },
+        {
+          "food": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "amount": 0.2056,
+          "cost": 0.0113
+        },
+        {
+          "food": "Leitungswasser",
+          "amount": 32,
+          "cost": 0.0096
+        },
+        {
+          "food": "Jodid-ratiopharm 100 µg (Tablette)",
+          "amount": 0.2619,
+          "cost": 0.0086
+        },
+        {
+          "food": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "amount": 0.8,
+          "cost": 0.005
+        },
+        {
+          "food": "Reis Kleie",
+          "amount": 0.0218,
+          "cost": 0.0043
+        },
+        {
+          "food": "Speisesalz jodiert/Jodsalz",
+          "amount": 0.0606,
+          "cost": 0.0039
+        },
+        {
+          "food": "Niacinamid 50 mg (Tablette, flush-frei)",
+          "amount": 0.0066,
+          "cost": 0.0005
+        },
+        {
+          "food": "Biotin 5 mg / 5000 µg (Tablette)",
+          "amount": 0.0029,
+          "cost": 0.0001
+        }
+      ]
+    },
+    {
+      "id": "female",
+      "pool": 1516,
+      "baselineCost": 1.135,
+      "drivers": [
+        {
+          "key": "Potassium (mg)",
+          "saving": 0.09828,
+          "total": 3999.99999,
+          "min": 4000
+        },
+        {
+          "key": "Creatine (mg)",
+          "saving": 0.09698,
+          "total": 3899.99965,
+          "min": 3900
+        },
+        {
+          "key": "Protein (g)",
+          "saving": 0.05741,
+          "total": 130,
+          "min": 130
+        },
+        {
+          "key": "Choline (mg)",
+          "saving": 0.02609,
+          "total": 400,
+          "min": 400
+        },
+        {
+          "key": "Energy (cal)",
+          "saving": 0.02568,
+          "total": 2149.99999,
+          "min": 2150,
+          "max": 2350
+        },
+        {
+          "key": "Total Fat (g)",
+          "saving": 0.0171,
+          "total": 48,
+          "min": 48,
+          "max": 78
+        },
+        {
+          "key": "Vitamin B5 (Pantothenic Acid) (mg)",
+          "saving": 0.01205,
+          "total": 5,
+          "min": 5
+        },
+        {
+          "key": "Vitamin C (mg)",
+          "saving": 0.00971,
+          "total": 90,
+          "min": 90,
+          "max": 3000
+        },
+        {
+          "key": "Iodine (µg)",
+          "saving": 0.00643,
+          "total": 150,
+          "min": 150,
+          "max": 1100
+        },
+        {
+          "key": "Manganese (mg)",
+          "saving": 0.0054,
+          "total": 12,
+          "min": 2,
+          "max": 12
+        },
+        {
+          "key": "Vitamin D (µg)",
+          "saving": 0.00499,
+          "total": 20,
+          "min": 20,
+          "max": 100
+        },
+        {
+          "key": "Sodium (mg)",
+          "saving": 0.00459,
+          "total": 2999.99999,
+          "min": 1500,
+          "max": 3000
+        },
+        {
+          "key": "Dietary Fibre (g)",
+          "saving": 0.00377,
+          "total": 60,
+          "min": 30,
+          "max": 60
+        },
+        {
+          "key": "Fluid (ml)",
+          "saving": 0.00317,
+          "total": 2600,
+          "min": 2600
+        },
+        {
+          "key": "Vitamin B6 (mg)",
+          "saving": 0.00177,
+          "total": 1.4,
+          "min": 1.4,
+          "max": 1000
+        },
+        {
+          "key": "Total Vitamin K (µg)",
+          "saving": 0.0016,
+          "total": 60,
+          "min": 60
+        },
+        {
+          "key": "Vitamin E (mg)",
+          "saving": 0.001,
+          "total": 8,
+          "min": 8,
+          "max": 1000
+        },
+        {
+          "key": "Total Vitamin A (µg)",
+          "saving": 0.00044,
+          "total": 800.00002,
+          "min": 800
+        },
+        {
+          "key": "Biotin (µg)",
+          "saving": 0.00014,
+          "total": 39.99998,
+          "min": 40
+        },
+        {
+          "key": "Saturated Fat (g)",
+          "saving": 0,
+          "total": 5.96811,
+          "max": 40
+        },
+        {
+          "key": "Trans Fat (g)",
+          "saving": 0,
+          "total": 0.00485,
+          "max": 1.5
+        },
+        {
+          "key": "Omega-3 Fatty Acids (g)",
+          "saving": 0,
+          "total": 3.06851,
+          "min": 1.2
+        },
+        {
+          "key": "Total Carbohydrate (g)",
+          "saving": 0,
+          "total": 306.98448,
+          "min": 242
+        },
+        {
+          "key": "Total sugars (g)",
+          "saving": 0,
+          "total": 15.16573,
+          "max": 60
+        },
+        {
+          "key": "Alcohol (g)",
+          "saving": 0,
+          "total": 0,
+          "max": 0
+        },
+        {
+          "key": "Calcium (mg)",
+          "saving": 0,
+          "total": 1785.671,
+          "min": 1200,
+          "max": 3000
+        },
+        {
+          "key": "Chloride (mg)",
+          "saving": 0,
+          "total": 4299.33844,
+          "min": 2300
+        },
+        {
+          "key": "Iron (mg)",
+          "saving": 0,
+          "total": 36.73642,
+          "min": 16,
+          "max": 50
+        },
+        {
+          "key": "Copper (mg)",
+          "saving": 0,
+          "total": 4.22982,
+          "min": 1,
+          "max": 10
+        },
+        {
+          "key": "Magnesium (mg)",
+          "saving": 0,
+          "total": 1039.88586,
+          "min": 260
+        },
+        {
+          "key": "Molybdenum (µg)",
+          "saving": 0,
+          "total": 218.69561,
+          "min": 50
+        },
+        {
+          "key": "Phosphorus (mg)",
+          "saving": 0,
+          "total": 2246.4919,
+          "min": 660,
+          "max": 5000
+        },
+        {
+          "key": "Selenium (µg)",
+          "saving": 0,
+          "total": 71.13901,
+          "min": 60,
+          "max": 400
+        },
+        {
+          "key": "Zinc (mg)",
+          "saving": 0,
+          "total": 15.15876,
+          "min": 11,
+          "max": 40
+        },
+        {
+          "key": "Vitamin A [Retinol] (µg)",
+          "saving": 0,
+          "total": 796.31388,
+          "max": 3000
+        },
+        {
+          "key": "Vitamin B1 (Thiamin) (mg)",
+          "saving": 0,
+          "total": 2.5639,
+          "min": 1.1
+        },
+        {
+          "key": "Vitamin B2 (Riboflavin) (mg)",
+          "saving": 0,
+          "total": 1.77501,
+          "min": 1.2
+        },
+        {
+          "key": "Vitamin B3 (Niacin) (mg)",
+          "saving": 0,
+          "total": 18.25844,
+          "min": 13,
+          "max": 900
+        },
+        {
+          "key": "Folate (Vitamin B9) (µg)",
+          "saving": 0,
+          "total": 839.0886,
+          "min": 300
+        },
+        {
+          "key": "Vitamin B12 (µg)",
+          "saving": 0,
+          "total": 4.49636,
+          "min": 4
+        },
+        {
+          "key": "Cadmium (µg)",
+          "saving": 0,
+          "total": 6.8831,
+          "max": 23.4
+        },
+        {
+          "key": "Lead (µg)",
+          "saving": 0,
+          "total": 5.41823,
+          "max": 32.5
+        },
+        {
+          "key": "Mercury (µg)",
+          "saving": 0,
+          "total": 0,
+          "max": 12.4
+        },
+        {
+          "key": "Arsenic (µg)",
+          "saving": 0,
+          "total": 4.32645,
+          "max": 19.5
+        },
+        {
+          "key": "Aluminium (mg)",
+          "saving": 0,
+          "total": 0.79521,
+          "max": 9.1
+        },
+        {
+          "key": "Nitrate (mg)",
+          "saving": 0,
+          "total": 42.24176,
+          "max": 240.5
+        },
+        {
+          "key": "PFAS-4 (ng)",
+          "saving": 0,
+          "total": 43.46977,
+          "max": 204.3
+        },
+        {
+          "key": "aaRatio:His",
+          "saving": 0,
+          "total": 1333.27588,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Ile",
+          "saving": 0,
+          "total": 1762.73132,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Leu",
+          "saving": 0,
+          "total": 1955.22836,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Lys",
+          "saving": 0,
+          "total": 1304.05282,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:SAA",
+          "saving": 0,
+          "total": 957.05373,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:AAA",
+          "saving": 0,
+          "total": 5783.67447,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Thr",
+          "saving": 0,
+          "total": 1668.82622,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Trp",
+          "saving": 0,
+          "total": 785.04258,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Val",
+          "saving": 0,
+          "total": 1010.6382,
+          "min": 0
+        }
+      ],
+      "support": [
+        {
+          "food": "Sojabohnen (trocken)",
+          "amount": 1.0994,
+          "cost": 0.3375
+        },
+        {
+          "food": "Weizenmehl Type 405",
+          "amount": 2.7107,
+          "cost": 0.206
+        },
+        {
+          "food": "Erbsen, gelb (trocken, getrocknet)",
+          "amount": 0.5717,
+          "cost": 0.1063
+        },
+        {
+          "food": "Sojaproteinisolat",
+          "amount": 0.3108,
+          "cost": 0.1019
+        },
+        {
+          "food": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "amount": 0.0443,
+          "cost": 0.097
+        },
+        {
+          "food": "Rote Linsen gekocht",
+          "amount": 0.8692,
+          "cost": 0.0695
+        },
+        {
+          "food": "Weizenkleie",
+          "amount": 0.3166,
+          "cost": 0.0522
+        },
+        {
+          "food": "Erbse reif",
+          "amount": 0.1541,
+          "cost": 0.0336
+        },
+        {
+          "food": "Rapsöl",
+          "amount": 0.1699,
+          "cost": 0.0325
+        },
+        {
+          "food": "Reis Kleie",
+          "amount": 0.1523,
+          "cost": 0.03
+        },
+        {
+          "food": "Hühnerleber gebraten",
+          "amount": 0.0624,
+          "cost": 0.0243
+        },
+        {
+          "food": "Rinderleber (roh)",
+          "amount": 0.0285,
+          "cost": 0.0119
+        },
+        {
+          "food": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "amount": 0.1766,
+          "cost": 0.0097
+        },
+        {
+          "food": "Leitungswasser",
+          "amount": 26,
+          "cost": 0.0078
+        },
+        {
+          "food": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "amount": 0.7986,
+          "cost": 0.005
+        },
+        {
+          "food": "Jodid-ratiopharm 100 µg (Tablette)",
+          "amount": 0.1293,
+          "cost": 0.0043
+        },
+        {
+          "food": "Speisesalz jodiert/Jodsalz",
+          "amount": 0.0664,
+          "cost": 0.0042
+        },
+        {
+          "food": "Vitamin E Tropfen (12 mg/Tropfen, in Öl)",
+          "amount": 0.0914,
+          "cost": 0.001
+        },
+        {
+          "food": "Biotin 5 mg / 5000 µg (Tablette)",
+          "amount": 0.0028,
+          "cost": 0.0001
+        }
+      ]
+    },
+    {
+      "id": "vegan",
+      "pool": 876,
+      "baselineCost": 1.7338,
+      "drivers": [
+        {
+          "key": "Vitamin D (µg)",
+          "saving": 0.34758,
+          "total": 20,
+          "min": 20,
+          "max": 100
+        },
+        {
+          "key": "Potassium (mg)",
+          "saving": 0.18989,
+          "total": 4000,
+          "min": 4000
+        },
+        {
+          "key": "Protein (g)",
+          "saving": 0.16743,
+          "total": 160,
+          "min": 160
+        },
+        {
+          "key": "Creatine (mg)",
+          "saving": 0.11954,
+          "total": 4800.00013,
+          "min": 4800
+        },
+        {
+          "key": "Iodine (µg)",
+          "saving": 0.03332,
+          "total": 150,
+          "min": 150,
+          "max": 1100
+        },
+        {
+          "key": "Sodium (mg)",
+          "saving": 0.03086,
+          "total": 2999.99994,
+          "min": 1500,
+          "max": 3000
+        },
+        {
+          "key": "Dietary Fibre (g)",
+          "saving": 0.02024,
+          "total": 60,
+          "min": 30,
+          "max": 60
+        },
+        {
+          "key": "Selenium (µg)",
+          "saving": 0.01462,
+          "total": 70.00001,
+          "min": 70,
+          "max": 400
+        },
+        {
+          "key": "Choline (mg)",
+          "saving": 0.01244,
+          "total": 400,
+          "min": 400
+        },
+        {
+          "key": "Iron (mg)",
+          "saving": 0.01197,
+          "total": 50,
+          "min": 11,
+          "max": 50
+        },
+        {
+          "key": "Vitamin C (mg)",
+          "saving": 0.01155,
+          "total": 105,
+          "min": 105,
+          "max": 3000
+        },
+        {
+          "key": "Omega-3 Fatty Acids (g)",
+          "saving": 0.00993,
+          "total": 1.6,
+          "min": 1.6
+        },
+        {
+          "key": "Total Fat (g)",
+          "saving": 0.0021,
+          "total": 102,
+          "min": 63,
+          "max": 102
+        },
+        {
+          "key": "Fluid (ml)",
+          "saving": 0.00101,
+          "total": 3200,
+          "min": 3200
+        },
+        {
+          "key": "Biotin (µg)",
+          "saving": 0.00029,
+          "total": 39.99999,
+          "min": 40
+        },
+        {
+          "key": "Vitamin B12 (µg)",
+          "saving": 0.00029,
+          "total": 4,
+          "min": 4
+        },
+        {
+          "key": "Total Carbohydrate (g)",
+          "saving": 0.00021,
+          "total": 321,
+          "min": 321
+        },
+        {
+          "key": "Energy (cal)",
+          "saving": 0,
+          "total": 2859.6449,
+          "min": 2850,
+          "max": 3050
+        },
+        {
+          "key": "Saturated Fat (g)",
+          "saving": 0,
+          "total": 24.47912,
+          "max": 40
+        },
+        {
+          "key": "Trans Fat (g)",
+          "saving": 0,
+          "total": 0.08311,
+          "max": 1.5
+        },
+        {
+          "key": "Total sugars (g)",
+          "saving": 0,
+          "total": 24.79153,
+          "max": 60
+        },
+        {
+          "key": "Alcohol (g)",
+          "saving": 0,
+          "total": 0,
+          "max": 0
+        },
+        {
+          "key": "Calcium (mg)",
+          "saving": 0,
+          "total": 2954.12734,
+          "min": 1200,
+          "max": 3000
+        },
+        {
+          "key": "Chloride (mg)",
+          "saving": 0,
+          "total": 3537.44975,
+          "min": 2300
+        },
+        {
+          "key": "Copper (mg)",
+          "saving": 0,
+          "total": 3.90058,
+          "min": 1,
+          "max": 10
+        },
+        {
+          "key": "Magnesium (mg)",
+          "saving": 0,
+          "total": 915.51569,
+          "min": 330
+        },
+        {
+          "key": "Manganese (mg)",
+          "saving": 0,
+          "total": 10.90297,
+          "min": 2,
+          "max": 12
+        },
+        {
+          "key": "Molybdenum (µg)",
+          "saving": 0,
+          "total": 378.4962,
+          "min": 50
+        },
+        {
+          "key": "Phosphorus (mg)",
+          "saving": 0,
+          "total": 2266.08107,
+          "min": 660,
+          "max": 5000
+        },
+        {
+          "key": "Zinc (mg)",
+          "saving": 0,
+          "total": 25.86525,
+          "min": 14,
+          "max": 40
+        },
+        {
+          "key": "Vitamin A [Retinol] (µg)",
+          "saving": 0,
+          "total": 0,
+          "max": 3000
+        },
+        {
+          "key": "Total Vitamin A (µg)",
+          "saving": 0,
+          "total": 1022.27211,
+          "min": 950
+        },
+        {
+          "key": "Vitamin B1 (Thiamin) (mg)",
+          "saving": 0,
+          "total": 4.20195,
+          "min": 1.4
+        },
+        {
+          "key": "Vitamin B2 (Riboflavin) (mg)",
+          "saving": 0,
+          "total": 2.84951,
+          "min": 1.6
+        },
+        {
+          "key": "Vitamin B3 (Niacin) (mg)",
+          "saving": 0,
+          "total": 24.89359,
+          "min": 17,
+          "max": 900
+        },
+        {
+          "key": "Vitamin B5 (Pantothenic Acid) (mg)",
+          "saving": 0,
+          "total": 9.01088,
+          "min": 5
+        },
+        {
+          "key": "Vitamin B6 (mg)",
+          "saving": 0,
+          "total": 2.61722,
+          "min": 1.6,
+          "max": 1000
+        },
+        {
+          "key": "Folate (Vitamin B9) (µg)",
+          "saving": 0,
+          "total": 1569.93823,
+          "min": 300
+        },
+        {
+          "key": "Vitamin E (mg)",
+          "saving": 0,
+          "total": 29.88866,
+          "min": 8,
+          "max": 1000
+        },
+        {
+          "key": "Total Vitamin K (µg)",
+          "saving": 0,
+          "total": 118.62472,
+          "min": 70
+        },
+        {
+          "key": "Cadmium (µg)",
+          "saving": 0,
+          "total": 4.97542,
+          "max": 28.8
+        },
+        {
+          "key": "Lead (µg)",
+          "saving": 0,
+          "total": 4.38828,
+          "max": 40
+        },
+        {
+          "key": "Mercury (µg)",
+          "saving": 0,
+          "total": 0.00062,
+          "max": 15.2
+        },
+        {
+          "key": "Arsenic (µg)",
+          "saving": 0,
+          "total": 4.45724,
+          "max": 24
+        },
+        {
+          "key": "Aluminium (mg)",
+          "saving": 0,
+          "total": 0.7286,
+          "max": 11.2
+        },
+        {
+          "key": "Nitrate (mg)",
+          "saving": 0,
+          "total": 50.91067,
+          "max": 296
+        },
+        {
+          "key": "PFAS-4 (ng)",
+          "saving": 0,
+          "total": 33.02876,
+          "max": 251.4
+        },
+        {
+          "key": "aaRatio:His",
+          "saving": 0,
+          "total": 1748.42051,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Ile",
+          "saving": 0,
+          "total": 2427.19161,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Leu",
+          "saving": 0,
+          "total": 2642.94835,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Lys",
+          "saving": 0,
+          "total": 1977.7976,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:SAA",
+          "saving": 0,
+          "total": 724.32785,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:AAA",
+          "saving": 0,
+          "total": 7325.41052,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Thr",
+          "saving": 0,
+          "total": 2028.60715,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Trp",
+          "saving": 0,
+          "total": 920.47035,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Val",
+          "saving": 0,
+          "total": 1391.36207,
+          "min": 0
+        }
+      ],
+      "support": [
+        {
+          "food": "Bohnen, weiß (trocken)",
+          "amount": 1.8898,
+          "cost": 0.4139
+        },
+        {
+          "food": "Getreideflakes gesüßt, angereichert mit Vitaminen und Mineralstoffen",
+          "amount": 1.3678,
+          "cost": 0.3584
+        },
+        {
+          "food": "Margarine, classic",
+          "amount": 1.1348,
+          "cost": 0.286
+        },
+        {
+          "food": "Sojaproteinisolat",
+          "amount": 0.8462,
+          "cost": 0.2776
+        },
+        {
+          "food": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "amount": 0.0546,
+          "cost": 0.1195
+        },
+        {
+          "food": "Weizenvollkornmehl",
+          "amount": 0.824,
+          "cost": 0.0808
+        },
+        {
+          "food": "Erbsen, gelb (trocken, getrocknet)",
+          "amount": 0.3375,
+          "cost": 0.0628
+        },
+        {
+          "food": "Weizenmehl Type 405",
+          "amount": 0.482,
+          "cost": 0.0366
+        },
+        {
+          "food": "Jodid-ratiopharm 100 µg (Tablette)",
+          "amount": 0.9854,
+          "cost": 0.0325
+        },
+        {
+          "food": "Rote Linsen gekocht",
+          "amount": 0.3312,
+          "cost": 0.0265
+        },
+        {
+          "food": "Leinsamen",
+          "amount": 0.03,
+          "cost": 0.0115
+        },
+        {
+          "food": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "amount": 0.21,
+          "cost": 0.0115
+        },
+        {
+          "food": "Leitungswasser",
+          "amount": 32,
+          "cost": 0.0096
+        },
+        {
+          "food": "Paranüsse",
+          "amount": 0.0031,
+          "cost": 0.0047
+        },
+        {
+          "food": "Speisesalz jodiert/Jodsalz",
+          "amount": 0.0214,
+          "cost": 0.0014
+        },
+        {
+          "food": "Biotin 5 mg / 5000 µg (Tablette)",
+          "amount": 0.0059,
+          "cost": 0.0003
+        },
+        {
+          "food": "Vitamin B12 350 µg Depot (Tablette)",
+          "amount": 0.0032,
+          "cost": 0.0003
+        }
+      ]
+    },
+    {
+      "id": "whole_food",
+      "pool": 609,
+      "baselineCost": 4.40271,
+      "drivers": [
+        {
+          "key": "Creatine (mg)",
+          "saving": 1.98888,
+          "total": 4800,
+          "min": 4800
+        },
+        {
+          "key": "PFAS-4 (ng)",
+          "saving": 0.19947,
+          "total": 251.4,
+          "max": 251.4
+        },
+        {
+          "key": "Vitamin C (mg)",
+          "saving": 0.08527,
+          "total": 105,
+          "min": 105,
+          "max": 3000
+        },
+        {
+          "key": "Chloride (mg)",
+          "saving": 0.06666,
+          "total": 2300,
+          "min": 2300
+        },
+        {
+          "key": "Vitamin B2 (Riboflavin) (mg)",
+          "saving": 0.03482,
+          "total": 1.6,
+          "min": 1.6
+        },
+        {
+          "key": "Biotin (µg)",
+          "saving": 0.02904,
+          "total": 40,
+          "min": 40
+        },
+        {
+          "key": "Total Carbohydrate (g)",
+          "saving": 0.02704,
+          "total": 321,
+          "min": 321
+        },
+        {
+          "key": "Total Vitamin A (µg)",
+          "saving": 0.01278,
+          "total": 950,
+          "min": 950
+        },
+        {
+          "key": "Fluid (ml)",
+          "saving": 0.01122,
+          "total": 3200,
+          "min": 3200
+        },
+        {
+          "key": "Vitamin B5 (Pantothenic Acid) (mg)",
+          "saving": 0.01048,
+          "total": 5,
+          "min": 5
+        },
+        {
+          "key": "Potassium (mg)",
+          "saving": 0.00533,
+          "total": 4000,
+          "min": 4000
+        },
+        {
+          "key": "Energy (cal)",
+          "saving": 0.00061,
+          "total": 2850,
+          "min": 2850,
+          "max": 3050
+        },
+        {
+          "key": "Total Fat (g)",
+          "saving": 0,
+          "total": 86.72919,
+          "min": 63,
+          "max": 102
+        },
+        {
+          "key": "Saturated Fat (g)",
+          "saving": 0,
+          "total": 21.09212,
+          "max": 40
+        },
+        {
+          "key": "Trans Fat (g)",
+          "saving": 0,
+          "total": 0.15038,
+          "max": 1.5
+        },
+        {
+          "key": "Omega-3 Fatty Acids (g)",
+          "saving": 0,
+          "total": 10.11505,
+          "min": 1.6
+        },
+        {
+          "key": "Total sugars (g)",
+          "saving": 0,
+          "total": 11.41124,
+          "max": 60
+        },
+        {
+          "key": "Dietary Fibre (g)",
+          "saving": 0,
+          "total": 41.10352,
+          "min": 30,
+          "max": 60
+        },
+        {
+          "key": "Protein (g)",
+          "saving": 0,
+          "total": 187.89597,
+          "min": 160
+        },
+        {
+          "key": "Alcohol (g)",
+          "saving": 0,
+          "total": 0,
+          "max": 0
+        },
+        {
+          "key": "Calcium (mg)",
+          "saving": 0,
+          "total": 2189.99456,
+          "min": 1200,
+          "max": 3000
+        },
+        {
+          "key": "Iron (mg)",
+          "saving": 0,
+          "total": 23.11775,
+          "min": 11,
+          "max": 50
+        },
+        {
+          "key": "Iodine (µg)",
+          "saving": 0,
+          "total": 205.36789,
+          "min": 150,
+          "max": 1100
+        },
+        {
+          "key": "Copper (mg)",
+          "saving": 0,
+          "total": 2.47915,
+          "min": 1,
+          "max": 10
+        },
+        {
+          "key": "Magnesium (mg)",
+          "saving": 0,
+          "total": 915.5395,
+          "min": 330
+        },
+        {
+          "key": "Manganese (mg)",
+          "saving": 0,
+          "total": 8.88225,
+          "min": 2,
+          "max": 12
+        },
+        {
+          "key": "Molybdenum (µg)",
+          "saving": 0,
+          "total": 153.54373,
+          "min": 50
+        },
+        {
+          "key": "Sodium (mg)",
+          "saving": 0,
+          "total": 1858.94025,
+          "min": 1500,
+          "max": 3000
+        },
+        {
+          "key": "Phosphorus (mg)",
+          "saving": 0,
+          "total": 2541.75643,
+          "min": 660,
+          "max": 5000
+        },
+        {
+          "key": "Selenium (µg)",
+          "saving": 0,
+          "total": 308.75613,
+          "min": 70,
+          "max": 400
+        },
+        {
+          "key": "Zinc (mg)",
+          "saving": 0,
+          "total": 17.23967,
+          "min": 14,
+          "max": 40
+        },
+        {
+          "key": "Vitamin A [Retinol] (µg)",
+          "saving": 0,
+          "total": 765.2639,
+          "max": 3000
+        },
+        {
+          "key": "Vitamin B1 (Thiamin) (mg)",
+          "saving": 0,
+          "total": 2.5725,
+          "min": 1.4
+        },
+        {
+          "key": "Vitamin B3 (Niacin) (mg)",
+          "saving": 0,
+          "total": 46.95778,
+          "min": 17,
+          "max": 900
+        },
+        {
+          "key": "Vitamin B6 (mg)",
+          "saving": 0,
+          "total": 3.54683,
+          "min": 1.6,
+          "max": 1000
+        },
+        {
+          "key": "Folate (Vitamin B9) (µg)",
+          "saving": 0,
+          "total": 402.18155,
+          "min": 300
+        },
+        {
+          "key": "Vitamin B12 (µg)",
+          "saving": 0,
+          "total": 75.33889,
+          "min": 4
+        },
+        {
+          "key": "Vitamin D (µg)",
+          "saving": 0,
+          "total": 21.2911,
+          "min": 20,
+          "max": 100
+        },
+        {
+          "key": "Vitamin E (mg)",
+          "saving": 0,
+          "total": 11.405,
+          "min": 8,
+          "max": 1000
+        },
+        {
+          "key": "Total Vitamin K (µg)",
+          "saving": 0,
+          "total": 315.53713,
+          "min": 70
+        },
+        {
+          "key": "Choline (mg)",
+          "saving": 0,
+          "total": 518.3749,
+          "min": 400
+        },
+        {
+          "key": "Cadmium (µg)",
+          "saving": 0,
+          "total": 12.40694,
+          "max": 28.8
+        },
+        {
+          "key": "Lead (µg)",
+          "saving": 0,
+          "total": 9.74518,
+          "max": 40
+        },
+        {
+          "key": "Mercury (µg)",
+          "saving": 0,
+          "total": 10.09376,
+          "max": 15.2
+        },
+        {
+          "key": "Arsenic (µg)",
+          "saving": 0,
+          "total": 9.06303,
+          "max": 24
+        },
+        {
+          "key": "Aluminium (mg)",
+          "saving": 0,
+          "total": 1.10017,
+          "max": 11.2
+        },
+        {
+          "key": "Nitrate (mg)",
+          "saving": 0,
+          "total": 53.75245,
+          "max": 296
+        },
+        {
+          "key": "aaRatio:His",
+          "saving": 0,
+          "total": 2350.53452,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Ile",
+          "saving": 0,
+          "total": 2383.14578,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Leu",
+          "saving": 0,
+          "total": 3081.88364,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Lys",
+          "saving": 0,
+          "total": 4876.34365,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:SAA",
+          "saving": 0,
+          "total": 3144.68798,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:AAA",
+          "saving": 0,
+          "total": 6727.32624,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Thr",
+          "saving": 0,
+          "total": 3070.21562,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Trp",
+          "saving": 0,
+          "total": 990.44933,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Val",
+          "saving": 0,
+          "total": 1908.32123,
+          "min": 0
+        }
+      ],
+      "support": [
+        {
+          "food": "Hering, frisch (roh)",
+          "amount": 5.0469,
+          "cost": 2.7707
+        },
+        {
+          "food": "Hähnchen, ganz (roh)",
+          "amount": 1.3636,
+          "cost": 0.5236
+        },
+        {
+          "food": "Roggenbrot",
+          "amount": 1.7611,
+          "cost": 0.3276
+        },
+        {
+          "food": "Schweinenacken (roh)",
+          "amount": 0.4328,
+          "cost": 0.2138
+        },
+        {
+          "food": "Broccoli gebraten ohne Fett (Pfanne)",
+          "amount": 0.7895,
+          "cost": 0.1729
+        },
+        {
+          "food": "Weizenmehl Type 1050",
+          "amount": 1.5163,
+          "cost": 0.141
+        },
+        {
+          "food": "Weizenmehl Type 405",
+          "amount": 1.5345,
+          "cost": 0.1166
+        },
+        {
+          "food": "Hühnerleber (roh)",
+          "amount": 0.13,
+          "cost": 0.047
+        },
+        {
+          "food": "Weizenkleie",
+          "amount": 0.2766,
+          "cost": 0.0456
+        },
+        {
+          "food": "Rinderleber (roh)",
+          "amount": 0.0568,
+          "cost": 0.0237
+        },
+        {
+          "food": "Karotte/Möhre, roh",
+          "amount": 0.108,
+          "cost": 0.0105
+        },
+        {
+          "food": "Leitungswasser",
+          "amount": 32,
+          "cost": 0.0096
+        }
+      ]
+    },
+    {
+      "id": "high_micro",
+      "pool": 1516,
+      "baselineCost": 1.63934,
+      "drivers": [
+        {
+          "key": "Potassium (mg)",
+          "saving": 0.18042,
+          "total": 6000.00001,
+          "min": 6000
+        },
+        {
+          "key": "Creatine (mg)",
+          "saving": 0.11781,
+          "total": 4799.99986,
+          "min": 4800
+        },
+        {
+          "key": "Dietary Fibre (g)",
+          "saving": 0.03166,
+          "total": 60,
+          "min": 30,
+          "max": 60
+        },
+        {
+          "key": "Choline (mg)",
+          "saving": 0.03086,
+          "total": 600,
+          "min": 600
+        },
+        {
+          "key": "Vitamin B5 (Pantothenic Acid) (mg)",
+          "saving": 0.02557,
+          "total": 7.5,
+          "min": 7.5
+        },
+        {
+          "key": "Iodine (µg)",
+          "saving": 0.0249,
+          "total": 225.00001,
+          "min": 225,
+          "max": 1100
+        },
+        {
+          "key": "Sodium (mg)",
+          "saving": 0.02243,
+          "total": 3000.00018,
+          "min": 2250,
+          "max": 3000
+        },
+        {
+          "key": "Energy (cal)",
+          "saving": 0.01851,
+          "total": 2850,
+          "min": 2850,
+          "max": 3050
+        },
+        {
+          "key": "Vitamin C (mg)",
+          "saving": 0.01717,
+          "total": 157.5,
+          "min": 157.5,
+          "max": 3000
+        },
+        {
+          "key": "Vitamin B3 (Niacin) (mg)",
+          "saving": 0.01213,
+          "total": 25.5,
+          "min": 25.5,
+          "max": 900
+        },
+        {
+          "key": "Total Vitamin K (µg)",
+          "saving": 0.01002,
+          "total": 105,
+          "min": 105
+        },
+        {
+          "key": "Total Fat (g)",
+          "saving": 0.00748,
+          "total": 63,
+          "min": 63,
+          "max": 102
+        },
+        {
+          "key": "Vitamin D (µg)",
+          "saving": 0.00739,
+          "total": 30,
+          "min": 30,
+          "max": 100
+        },
+        {
+          "key": "Zinc (mg)",
+          "saving": 0.00681,
+          "total": 21,
+          "min": 21,
+          "max": 40
+        },
+        {
+          "key": "Vitamin B6 (mg)",
+          "saving": 0.00658,
+          "total": 2.4,
+          "min": 2.4,
+          "max": 1000
+        },
+        {
+          "key": "Vitamin E (mg)",
+          "saving": 0.00588,
+          "total": 12,
+          "min": 12,
+          "max": 1000
+        },
+        {
+          "key": "Protein (g)",
+          "saving": 0.00505,
+          "total": 160,
+          "min": 160
+        },
+        {
+          "key": "Fluid (ml)",
+          "saving": 0.00216,
+          "total": 3200,
+          "min": 3200
+        },
+        {
+          "key": "Iron (mg)",
+          "saving": 0.00174,
+          "total": 50,
+          "min": 16.5,
+          "max": 50
+        },
+        {
+          "key": "Selenium (µg)",
+          "saving": 0.00128,
+          "total": 105,
+          "min": 105,
+          "max": 400
+        },
+        {
+          "key": "Biotin (µg)",
+          "saving": 0.00012,
+          "total": 60.00001,
+          "min": 60
+        },
+        {
+          "key": "Saturated Fat (g)",
+          "saving": 0,
+          "total": 9.33441,
+          "max": 40
+        },
+        {
+          "key": "Trans Fat (g)",
+          "saving": 0,
+          "total": 0.05893,
+          "max": 1.5
+        },
+        {
+          "key": "Omega-3 Fatty Acids (g)",
+          "saving": 0,
+          "total": 4.06116,
+          "min": 1.6
+        },
+        {
+          "key": "Total Carbohydrate (g)",
+          "saving": 0,
+          "total": 409.58789,
+          "min": 321
+        },
+        {
+          "key": "Total sugars (g)",
+          "saving": 0,
+          "total": 24.74077,
+          "max": 60
+        },
+        {
+          "key": "Alcohol (g)",
+          "saving": 0,
+          "total": 0,
+          "max": 0
+        },
+        {
+          "key": "Calcium (mg)",
+          "saving": 0,
+          "total": 2393.20363,
+          "min": 1800,
+          "max": 3000
+        },
+        {
+          "key": "Chloride (mg)",
+          "saving": 0,
+          "total": 4747.39195,
+          "min": 3450
+        },
+        {
+          "key": "Copper (mg)",
+          "saving": 0,
+          "total": 8.63045,
+          "min": 1.5,
+          "max": 10
+        },
+        {
+          "key": "Magnesium (mg)",
+          "saving": 0,
+          "total": 1237.08759,
+          "min": 495
+        },
+        {
+          "key": "Manganese (mg)",
+          "saving": 0,
+          "total": 11.58691,
+          "min": 3,
+          "max": 12
+        },
+        {
+          "key": "Molybdenum (µg)",
+          "saving": 0,
+          "total": 193.47193,
+          "min": 75
+        },
+        {
+          "key": "Phosphorus (mg)",
+          "saving": 0,
+          "total": 2686.51075,
+          "min": 990,
+          "max": 5000
+        },
+        {
+          "key": "Vitamin A [Retinol] (µg)",
+          "saving": 0,
+          "total": 1730.43451,
+          "max": 3000
+        },
+        {
+          "key": "Total Vitamin A (µg)",
+          "saving": 0,
+          "total": 1737.56134,
+          "min": 1425
+        },
+        {
+          "key": "Vitamin B1 (Thiamin) (mg)",
+          "saving": 0,
+          "total": 3.44263,
+          "min": 2.1
+        },
+        {
+          "key": "Vitamin B2 (Riboflavin) (mg)",
+          "saving": 0,
+          "total": 3.50725,
+          "min": 2.4
+        },
+        {
+          "key": "Folate (Vitamin B9) (µg)",
+          "saving": 0,
+          "total": 1182.29778,
+          "min": 450
+        },
+        {
+          "key": "Vitamin B12 (µg)",
+          "saving": 0,
+          "total": 21.32923,
+          "min": 6
+        },
+        {
+          "key": "Cadmium (µg)",
+          "saving": 0,
+          "total": 10.79291,
+          "max": 28.8
+        },
+        {
+          "key": "Lead (µg)",
+          "saving": 0,
+          "total": 7.92944,
+          "max": 40
+        },
+        {
+          "key": "Mercury (µg)",
+          "saving": 0,
+          "total": 0,
+          "max": 15.2
+        },
+        {
+          "key": "Arsenic (µg)",
+          "saving": 0,
+          "total": 5.59511,
+          "max": 24
+        },
+        {
+          "key": "Aluminium (mg)",
+          "saving": 0,
+          "total": 1.05876,
+          "max": 11.2
+        },
+        {
+          "key": "Nitrate (mg)",
+          "saving": 0,
+          "total": 53.05272,
+          "max": 296
+        },
+        {
+          "key": "PFAS-4 (ng)",
+          "saving": 0,
+          "total": 80.27008,
+          "max": 251.4
+        },
+        {
+          "key": "aaRatio:His",
+          "saving": 0,
+          "total": 1654.7838,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Ile",
+          "saving": 0,
+          "total": 2151.54081,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Leu",
+          "saving": 0,
+          "total": 2563.47792,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Lys",
+          "saving": 0,
+          "total": 1677.1478,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:SAA",
+          "saving": 0,
+          "total": 1317.83213,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:AAA",
+          "saving": 0,
+          "total": 7104.73404,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Thr",
+          "saving": 0,
+          "total": 2171.79659,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Trp",
+          "saving": 0,
+          "total": 1022.31286,
+          "min": 0
+        },
+        {
+          "key": "aaRatio:Val",
+          "saving": 0,
+          "total": 1299.87912,
+          "min": 0
+        }
+      ],
+      "support": [
+        {
+          "food": "Sojabohnen (trocken)",
+          "amount": 2.3312,
+          "cost": 0.7157
+        },
+        {
+          "food": "Weizenmehl Type 405",
+          "amount": 3.8507,
+          "cost": 0.2927
+        },
+        {
+          "food": "Rinderleber (roh)",
+          "amount": 0.3466,
+          "cost": 0.1445
+        },
+        {
+          "food": "Erbse reif",
+          "amount": 0.5636,
+          "cost": 0.1229
+        },
+        {
+          "food": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "amount": 0.0538,
+          "cost": 0.1178
+        },
+        {
+          "food": "Rote Linsen gekocht",
+          "amount": 0.9924,
+          "cost": 0.0794
+        },
+        {
+          "food": "Weizenkleie",
+          "amount": 0.2014,
+          "cost": 0.0332
+        },
+        {
+          "food": "Jodid-ratiopharm 100 µg (Tablette)",
+          "amount": 0.678,
+          "cost": 0.0224
+        },
+        {
+          "food": "Pfannkuchen süß (Vollmilch Hausgemacht)",
+          "amount": 0.2046,
+          "cost": 0.0205
+        },
+        {
+          "food": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "amount": 0.3119,
+          "cost": 0.0172
+        },
+        {
+          "food": "Rapsöl",
+          "amount": 0.0765,
+          "cost": 0.0146
+        },
+        {
+          "food": "Niacinamid 50 mg (Tablette, flush-frei)",
+          "amount": 0.1655,
+          "cost": 0.0121
+        },
+        {
+          "food": "Leitungswasser",
+          "amount": 32,
+          "cost": 0.0096
+        },
+        {
+          "food": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "amount": 1.1801,
+          "cost": 0.0074
+        },
+        {
+          "food": "Zink 15 mg Depot (Tablette)",
+          "amount": 0.08,
+          "cost": 0.0066
+        },
+        {
+          "food": "Folsäure 800 µg + B1/B6/B12 (Tablette)",
+          "amount": 0.0787,
+          "cost": 0.0065
+        },
+        {
+          "food": "Vitamin E Tropfen (12 mg/Tropfen, in Öl)",
+          "amount": 0.505,
+          "cost": 0.0056
+        },
+        {
+          "food": "Sojaproteinisolat",
+          "amount": 0.0172,
+          "cost": 0.0056
+        },
+        {
+          "food": "Speisesalz jodiert/Jodsalz",
+          "amount": 0.0724,
+          "cost": 0.0046
+        },
+        {
+          "food": "Weizenvollkornmehl",
+          "amount": 0.0044,
+          "cost": 0.0004
+        },
+        {
+          "food": "Biotin 5 mg / 5000 µg (Tablette)",
+          "amount": 0.0026,
+          "cost": 0.0001
+        }
+      ]
+    }
+  ]
+}

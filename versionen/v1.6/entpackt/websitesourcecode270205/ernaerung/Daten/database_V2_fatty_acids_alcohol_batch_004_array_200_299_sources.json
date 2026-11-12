@@ -1,0 +1,1328 @@
+{
+  "checkedOn": "2026-09-24",
+  "scope": "database.json array indexes 200-299; only researched null cells are filled, existing values are never overwritten",
+  "sources": {
+    "Matvaretabellen_2026": {
+      "url": "https://www.matvaretabellen.no/en/",
+      "checkedOn": "2026-09-24",
+      "note": "Official Norwegian Food Composition Table; direct matches and explicitly marked nearest-food estimates."
+    },
+    "USDA_FoodData_Central_SR_Legacy": {
+      "url": "https://fdc.nal.usda.gov/",
+      "checkedOn": "2026-09-24",
+      "note": "SR Legacy fatty-acid components summed by omega family for Brazil nuts and ricotta."
+    }
+  },
+  "estimatesAndLimitations": [
+    "Values transferred from close food-class matches are estimates when target macros differ; proportional fat scaling is recorded per item.",
+    "Source values rounded to 0.0 may hide very small traces; a reported zero is not claimed to prove chemical absence unless the note says logical exclusion.",
+    "USDA Brazil-nut omega components do not reconcile fully to reported total PUFA and conflict with a rounded Matvaretabellen omega-6 value; the exact-macro USDA profile was selected and the conflict retained."
+  ],
+  "internetResearchUpdates": [
+    {
+      "databaseIndex": 216,
+      "databaseArrayIndex": 215,
+      "databaseName": "Matjeshering",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 3.375,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Herring, cured, soaked in water",
+      "sourceUrl": "https://www.matvaretabellen.no/en/herring-cured-soaked-in-water/",
+      "sourceValue": 3.6,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_cured_herring_fat_scaled",
+      "sourceMacros": {
+        "fat": 16,
+        "protein": 16.5,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 15,
+        "protein": 18,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 0.9375,
+      "note": "Naeherer Matjes-Abgleich ueber gesalzenen, gewasserten Atlantikhering. Omegas proportional zum Fettverhaeltnis 15/16 skaliert; Protein weicht ab. Daher Schaetzung. Transfett und Alkohol stammen als Quellenwerte aus dem passenden Heringseintrag."
+    },
+    {
+      "databaseIndex": 216,
+      "databaseArrayIndex": 215,
+      "databaseName": "Matjeshering",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 0.375,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Herring, cured, soaked in water",
+      "sourceUrl": "https://www.matvaretabellen.no/en/herring-cured-soaked-in-water/",
+      "sourceValue": 0.4,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_cured_herring_fat_scaled",
+      "sourceMacros": {
+        "fat": 16,
+        "protein": 16.5,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 15,
+        "protein": 18,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 0.9375,
+      "note": "Naeherer Matjes-Abgleich ueber gesalzenen, gewasserten Atlantikhering. Omegas proportional zum Fettverhaeltnis 15/16 skaliert; Protein weicht ab. Daher Schaetzung. Transfett und Alkohol stammen als Quellenwerte aus dem passenden Heringseintrag."
+    },
+    {
+      "databaseIndex": 216,
+      "databaseArrayIndex": 215,
+      "databaseName": "Matjeshering",
+      "field": "Trans Fat (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Herring, cured, soaked in water",
+      "sourceUrl": "https://www.matvaretabellen.no/en/herring-cured-soaked-in-water/",
+      "sourceValue": 0,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_cured_herring_fat_scaled",
+      "sourceMacros": {
+        "fat": 16,
+        "protein": 16.5,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 15,
+        "protein": 18,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 0.9375,
+      "note": "Naeherer Matjes-Abgleich ueber gesalzenen, gewasserten Atlantikhering. Omegas proportional zum Fettverhaeltnis 15/16 skaliert; Protein weicht ab. Daher Schaetzung. Transfett und Alkohol stammen als Quellenwerte aus dem passenden Heringseintrag."
+    },
+    {
+      "databaseIndex": 216,
+      "databaseArrayIndex": 215,
+      "databaseName": "Matjeshering",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Herring, cured, soaked in water",
+      "sourceUrl": "https://www.matvaretabellen.no/en/herring-cured-soaked-in-water/",
+      "sourceValue": 0,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_cured_herring_fat_scaled",
+      "sourceMacros": {
+        "fat": 16,
+        "protein": 16.5,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 15,
+        "protein": 18,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 0.9375,
+      "note": "Naeherer Matjes-Abgleich ueber gesalzenen, gewasserten Atlantikhering. Omegas proportional zum Fettverhaeltnis 15/16 skaliert; Protein weicht ab. Daher Schaetzung. Transfett und Alkohol stammen als Quellenwerte aus dem passenden Heringseintrag."
+    },
+    {
+      "databaseIndex": 226,
+      "databaseArrayIndex": 225,
+      "databaseName": "Mischbrot (Roggen-Weizen)",
+      "field": "Trans Fat (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Bread, wholemeal flour, wheat and rye, home-made",
+      "sourceUrl": "https://www.matvaretabellen.no/en/trans-fatty-acids/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; exact wheat-rye bread class listed with trans fat 0; alcohol treated as naturally absent in baked bread",
+      "match": "same_wheat_rye_bread_trans_zero_alcohol_zero",
+      "sourceMacros": null,
+      "targetMacros": null,
+      "conversionFactor": null,
+      "note": "Die offizielle Transfetttabelle weist Roggen-Weizenbrot mit 0 g aus. Das Ziel ist gebackenes Brot, nicht Teig; Ethanol ist im fertigen Brot fuer diesen Standard-Eintrag nicht enthalten."
+    },
+    {
+      "databaseIndex": 226,
+      "databaseArrayIndex": 225,
+      "databaseName": "Mischbrot (Roggen-Weizen)",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Bread, wholemeal flour, wheat and rye, home-made",
+      "sourceUrl": "https://www.matvaretabellen.no/en/trans-fatty-acids/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; exact wheat-rye bread class listed with trans fat 0; alcohol treated as naturally absent in baked bread",
+      "match": "same_wheat_rye_bread_trans_zero_alcohol_zero",
+      "sourceMacros": null,
+      "targetMacros": null,
+      "conversionFactor": null,
+      "note": "Die offizielle Transfetttabelle weist Roggen-Weizenbrot mit 0 g aus. Das Ziel ist gebackenes Brot, nicht Teig; Ethanol ist im fertigen Brot fuer diesen Standard-Eintrag nicht enthalten."
+    },
+    {
+      "databaseIndex": 228,
+      "databaseArrayIndex": 227,
+      "databaseName": "Molkeprotein, Isolat (Pulver)",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Unflavoured dry whey protein isolate, logical exclusion",
+      "sourceUrl": null,
+      "sourceValue": 0,
+      "sourceValueType": "logical exclusion",
+      "sourceValueUnitBasis": "dry powder per 100 g; no alcoholic beverage or solvent ingredient indicated",
+      "match": "logical_exclusion_dry_isolate",
+      "sourceMacros": null,
+      "targetMacros": null,
+      "conversionFactor": null,
+      "note": "Trockenes Molkenproteinisolat-Pulver ohne Hinweis auf alkoholische Zutaten. Ethanol ist fuer den reinen Pulver-Eintrag ausgeschlossen; 0 g."
+    },
+    {
+      "databaseIndex": 231,
+      "databaseArrayIndex": 230,
+      "databaseName": "Multivitaminsaft",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Juice, mixed fruits",
+      "sourceUrl": "https://www.matvaretabellen.no/en/juice-mixed-fruits/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_fruit_juice_zero_profile",
+      "sourceMacros": {
+        "fat": 0.1,
+        "protein": 0.2,
+        "carbohydrate": 10.3
+      },
+      "targetMacros": {
+        "fat": 0.105,
+        "protein": 0.315,
+        "carbohydrate": 12.08
+      },
+      "conversionFactor": null,
+      "note": "Naeherer Fruchtsaft-Abgleich; Fett und Protein liegen sehr nahe, Kohlenhydrate etwas hoeher im Ziel. Die Quelle weist alle vier Werte als 0 g aus. Volumen- zu Gewichtsbasis ist bei Saft fuer diese Nullen unerheblich."
+    },
+    {
+      "databaseIndex": 231,
+      "databaseArrayIndex": 230,
+      "databaseName": "Multivitaminsaft",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Juice, mixed fruits",
+      "sourceUrl": "https://www.matvaretabellen.no/en/juice-mixed-fruits/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_fruit_juice_zero_profile",
+      "sourceMacros": {
+        "fat": 0.1,
+        "protein": 0.2,
+        "carbohydrate": 10.3
+      },
+      "targetMacros": {
+        "fat": 0.105,
+        "protein": 0.315,
+        "carbohydrate": 12.08
+      },
+      "conversionFactor": null,
+      "note": "Naeherer Fruchtsaft-Abgleich; Fett und Protein liegen sehr nahe, Kohlenhydrate etwas hoeher im Ziel. Die Quelle weist alle vier Werte als 0 g aus. Volumen- zu Gewichtsbasis ist bei Saft fuer diese Nullen unerheblich."
+    },
+    {
+      "databaseIndex": 231,
+      "databaseArrayIndex": 230,
+      "databaseName": "Multivitaminsaft",
+      "field": "Trans Fat (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Juice, mixed fruits",
+      "sourceUrl": "https://www.matvaretabellen.no/en/juice-mixed-fruits/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_fruit_juice_zero_profile",
+      "sourceMacros": {
+        "fat": 0.1,
+        "protein": 0.2,
+        "carbohydrate": 10.3
+      },
+      "targetMacros": {
+        "fat": 0.105,
+        "protein": 0.315,
+        "carbohydrate": 12.08
+      },
+      "conversionFactor": null,
+      "note": "Naeherer Fruchtsaft-Abgleich; Fett und Protein liegen sehr nahe, Kohlenhydrate etwas hoeher im Ziel. Die Quelle weist alle vier Werte als 0 g aus. Volumen- zu Gewichtsbasis ist bei Saft fuer diese Nullen unerheblich."
+    },
+    {
+      "databaseIndex": 231,
+      "databaseArrayIndex": 230,
+      "databaseName": "Multivitaminsaft",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Juice, mixed fruits",
+      "sourceUrl": "https://www.matvaretabellen.no/en/juice-mixed-fruits/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_fruit_juice_zero_profile",
+      "sourceMacros": {
+        "fat": 0.1,
+        "protein": 0.2,
+        "carbohydrate": 10.3
+      },
+      "targetMacros": {
+        "fat": 0.105,
+        "protein": 0.315,
+        "carbohydrate": 12.08
+      },
+      "conversionFactor": null,
+      "note": "Naeherer Fruchtsaft-Abgleich; Fett und Protein liegen sehr nahe, Kohlenhydrate etwas hoeher im Ziel. Die Quelle weist alle vier Werte als 0 g aus. Volumen- zu Gewichtsbasis ist bei Saft fuer diese Nullen unerheblich."
+    },
+    {
+      "databaseIndex": 235,
+      "databaseArrayIndex": 234,
+      "databaseName": "Müsli, Basis (ohne Zucker)",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Plain dry cereal and grain muesli, logical exclusion",
+      "sourceUrl": null,
+      "sourceValue": 0,
+      "sourceValueType": "logical exclusion",
+      "sourceValueUnitBasis": "per 100 g; dry non-alcoholic cereal food",
+      "match": "logical_exclusion_dry_cereal",
+      "sourceMacros": null,
+      "targetMacros": null,
+      "conversionFactor": null,
+      "note": "Trockenes, ungesuesstes Getreidemuesli ohne alkoholische Zutat; Ethanol ist fuer diesen Basiseintrag ausgeschlossen, daher 0 g."
+    },
+    {
+      "databaseIndex": 249,
+      "databaseArrayIndex": 248,
+      "databaseName": "Paranüsse",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0.018,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Nuts, brazilnuts, dried, unblanched",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170569/nutrients?type=SR%20Legacy",
+      "sourceValue": 0.018,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "exact_food_exact_macro_match_usda",
+      "sourceMacros": {
+        "fat": 67.1,
+        "protein": 14.3,
+        "carbohydrate": 11.7
+      },
+      "targetMacros": {
+        "fat": 67.1,
+        "protein": 14.3,
+        "carbohydrate": 11.7
+      },
+      "conversionFactor": null,
+      "note": "USDA SR Legacy passt exakt zu den Zielmakros. Die n-3/n-6-Summe wird aus ausgewiesenen spezifischen Komponenten gebildet. Die Summe weicht um 0.464 g von Gesamt-PUFA ab und Matvaretabellen rundet Omega-6 anders; dieser Quellenkonflikt ist dokumentiert. USDA-Wert wegen exaktem Makroprofil uebernommen."
+    },
+    {
+      "databaseIndex": 249,
+      "databaseArrayIndex": 248,
+      "databaseName": "Paranüsse",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 23.918,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Nuts, brazilnuts, dried, unblanched",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170569/nutrients?type=SR%20Legacy",
+      "sourceValue": 23.918,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "exact_food_exact_macro_match_usda",
+      "sourceMacros": {
+        "fat": 67.1,
+        "protein": 14.3,
+        "carbohydrate": 11.7
+      },
+      "targetMacros": {
+        "fat": 67.1,
+        "protein": 14.3,
+        "carbohydrate": 11.7
+      },
+      "conversionFactor": null,
+      "note": "USDA SR Legacy passt exakt zu den Zielmakros. Die n-3/n-6-Summe wird aus ausgewiesenen spezifischen Komponenten gebildet. Die Summe weicht um 0.464 g von Gesamt-PUFA ab und Matvaretabellen rundet Omega-6 anders; dieser Quellenkonflikt ist dokumentiert. USDA-Wert wegen exaktem Makroprofil uebernommen."
+    },
+    {
+      "databaseIndex": 253,
+      "databaseArrayIndex": 252,
+      "databaseName": "Pesto, grün (Glas)",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0.226006,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Pesto, green, industrially made",
+      "sourceUrl": "https://www.matvaretabellen.no/en/pesto-green-industrially-made/",
+      "sourceValue": 0.3,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_industrial_green_pesto_fat_scaled",
+      "sourceMacros": {
+        "fat": 53.1,
+        "protein": 4.9,
+        "carbohydrate": 4.5
+      },
+      "targetMacros": {
+        "fat": 40,
+        "protein": 5,
+        "carbohydrate": 6
+      },
+      "conversionFactor": 0.7532956685499058,
+      "note": "Gleiche Produktklasse; Protein fast identisch, Ziel-Fett niedriger. Omegas und Transfett proportional zum Fettverhaeltnis 40/53.1 skaliert. Werte sind Schaetzungen, kein exaktes Markenprofil. Alkohol aus dem passenden Pesto-Eintrag."
+    },
+    {
+      "databaseIndex": 253,
+      "databaseArrayIndex": 252,
+      "databaseName": "Pesto, grün (Glas)",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 20.263653,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Pesto, green, industrially made",
+      "sourceUrl": "https://www.matvaretabellen.no/en/pesto-green-industrially-made/",
+      "sourceValue": 26.9,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_industrial_green_pesto_fat_scaled",
+      "sourceMacros": {
+        "fat": 53.1,
+        "protein": 4.9,
+        "carbohydrate": 4.5
+      },
+      "targetMacros": {
+        "fat": 40,
+        "protein": 5,
+        "carbohydrate": 6
+      },
+      "conversionFactor": 0.7532956685499058,
+      "note": "Gleiche Produktklasse; Protein fast identisch, Ziel-Fett niedriger. Omegas und Transfett proportional zum Fettverhaeltnis 40/53.1 skaliert. Werte sind Schaetzungen, kein exaktes Markenprofil. Alkohol aus dem passenden Pesto-Eintrag."
+    },
+    {
+      "databaseIndex": 253,
+      "databaseArrayIndex": 252,
+      "databaseName": "Pesto, grün (Glas)",
+      "field": "Trans Fat (g)",
+      "value": 0.07533,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Pesto, green, industrially made",
+      "sourceUrl": "https://www.matvaretabellen.no/en/pesto-green-industrially-made/",
+      "sourceValue": 0.1,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_industrial_green_pesto_fat_scaled",
+      "sourceMacros": {
+        "fat": 53.1,
+        "protein": 4.9,
+        "carbohydrate": 4.5
+      },
+      "targetMacros": {
+        "fat": 40,
+        "protein": 5,
+        "carbohydrate": 6
+      },
+      "conversionFactor": 0.7532956685499058,
+      "note": "Gleiche Produktklasse; Protein fast identisch, Ziel-Fett niedriger. Omegas und Transfett proportional zum Fettverhaeltnis 40/53.1 skaliert. Werte sind Schaetzungen, kein exaktes Markenprofil. Alkohol aus dem passenden Pesto-Eintrag."
+    },
+    {
+      "databaseIndex": 253,
+      "databaseArrayIndex": 252,
+      "databaseName": "Pesto, grün (Glas)",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Pesto, green, industrially made",
+      "sourceUrl": "https://www.matvaretabellen.no/en/pesto-green-industrially-made/",
+      "sourceValue": 0,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_industrial_green_pesto_fat_scaled",
+      "sourceMacros": {
+        "fat": 53.1,
+        "protein": 4.9,
+        "carbohydrate": 4.5
+      },
+      "targetMacros": {
+        "fat": 40,
+        "protein": 5,
+        "carbohydrate": 6
+      },
+      "conversionFactor": 0.7532956685499058,
+      "note": "Gleiche Produktklasse; Protein fast identisch, Ziel-Fett niedriger. Omegas und Transfett proportional zum Fettverhaeltnis 40/53.1 skaliert. Werte sind Schaetzungen, kein exaktes Markenprofil. Alkohol aus dem passenden Pesto-Eintrag."
+    },
+    {
+      "databaseIndex": 262,
+      "databaseArrayIndex": 261,
+      "databaseName": "Popcorn-Mais (trocken, ungesalzen)",
+      "field": "Trans Fat (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Unseasoned dry maize kernels, logical exclusion",
+      "sourceUrl": null,
+      "sourceValue": 0,
+      "sourceValueType": "logical exclusion",
+      "sourceValueUnitBasis": "per 100 g dry unprocessed kernels",
+      "match": "logical_exclusion_plain_dry_maize",
+      "sourceMacros": null,
+      "targetMacros": null,
+      "conversionFactor": null,
+      "note": "Trockene, ungesalzene und unverarbeitete Maiskoerner ohne Fettzutat oder Gaerung. Transfett und Ethanol sind fuer diesen Eintrag ausgeschlossen; beide 0 g."
+    },
+    {
+      "databaseIndex": 262,
+      "databaseArrayIndex": 261,
+      "databaseName": "Popcorn-Mais (trocken, ungesalzen)",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Unseasoned dry maize kernels, logical exclusion",
+      "sourceUrl": null,
+      "sourceValue": 0,
+      "sourceValueType": "logical exclusion",
+      "sourceValueUnitBasis": "per 100 g dry unprocessed kernels",
+      "match": "logical_exclusion_plain_dry_maize",
+      "sourceMacros": null,
+      "targetMacros": null,
+      "conversionFactor": null,
+      "note": "Trockene, ungesalzene und unverarbeitete Maiskoerner ohne Fettzutat oder Gaerung. Transfett und Ethanol sind fuer diesen Eintrag ausgeschlossen; beide 0 g."
+    },
+    {
+      "databaseIndex": 269,
+      "databaseArrayIndex": 268,
+      "databaseName": "Quark, mager 0,2%",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Quark, 1 % fat",
+      "sourceUrl": "https://www.matvaretabellen.no/en/quark-1-fat/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_low_fat_quark_reported_zeros",
+      "sourceMacros": {
+        "fat": 1,
+        "protein": 10,
+        "carbohydrate": 4.3
+      },
+      "targetMacros": {
+        "fat": 0.2,
+        "protein": 12,
+        "carbohydrate": 4
+      },
+      "conversionFactor": null,
+      "note": "Gleiche Quark-Kategorie; Makros liegen nahe und der Ziel-Fettgehalt ist noch niedriger. Quelle fuehrt alle vier Werte mit 0 g, teils gerundet auf 0.1 g. Uebernommene Tabellenwerte koennen geringe Spuren unterhalb der Quellenrundung nicht ausschliessen."
+    },
+    {
+      "databaseIndex": 269,
+      "databaseArrayIndex": 268,
+      "databaseName": "Quark, mager 0,2%",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Quark, 1 % fat",
+      "sourceUrl": "https://www.matvaretabellen.no/en/quark-1-fat/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_low_fat_quark_reported_zeros",
+      "sourceMacros": {
+        "fat": 1,
+        "protein": 10,
+        "carbohydrate": 4.3
+      },
+      "targetMacros": {
+        "fat": 0.2,
+        "protein": 12,
+        "carbohydrate": 4
+      },
+      "conversionFactor": null,
+      "note": "Gleiche Quark-Kategorie; Makros liegen nahe und der Ziel-Fettgehalt ist noch niedriger. Quelle fuehrt alle vier Werte mit 0 g, teils gerundet auf 0.1 g. Uebernommene Tabellenwerte koennen geringe Spuren unterhalb der Quellenrundung nicht ausschliessen."
+    },
+    {
+      "databaseIndex": 269,
+      "databaseArrayIndex": 268,
+      "databaseName": "Quark, mager 0,2%",
+      "field": "Trans Fat (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Quark, 1 % fat",
+      "sourceUrl": "https://www.matvaretabellen.no/en/quark-1-fat/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_low_fat_quark_reported_zeros",
+      "sourceMacros": {
+        "fat": 1,
+        "protein": 10,
+        "carbohydrate": 4.3
+      },
+      "targetMacros": {
+        "fat": 0.2,
+        "protein": 12,
+        "carbohydrate": 4
+      },
+      "conversionFactor": null,
+      "note": "Gleiche Quark-Kategorie; Makros liegen nahe und der Ziel-Fettgehalt ist noch niedriger. Quelle fuehrt alle vier Werte mit 0 g, teils gerundet auf 0.1 g. Uebernommene Tabellenwerte koennen geringe Spuren unterhalb der Quellenrundung nicht ausschliessen."
+    },
+    {
+      "databaseIndex": 269,
+      "databaseArrayIndex": 268,
+      "databaseName": "Quark, mager 0,2%",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Quark, 1 % fat",
+      "sourceUrl": "https://www.matvaretabellen.no/en/quark-1-fat/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_low_fat_quark_reported_zeros",
+      "sourceMacros": {
+        "fat": 1,
+        "protein": 10,
+        "carbohydrate": 4.3
+      },
+      "targetMacros": {
+        "fat": 0.2,
+        "protein": 12,
+        "carbohydrate": 4
+      },
+      "conversionFactor": null,
+      "note": "Gleiche Quark-Kategorie; Makros liegen nahe und der Ziel-Fettgehalt ist noch niedriger. Quelle fuehrt alle vier Werte mit 0 g, teils gerundet auf 0.1 g. Uebernommene Tabellenwerte koennen geringe Spuren unterhalb der Quellenrundung nicht ausschliessen."
+    },
+    {
+      "databaseIndex": 273,
+      "databaseArrayIndex": 272,
+      "databaseName": "Räucherlachs",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0.702041,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Salmon, smoked",
+      "sourceUrl": "https://www.matvaretabellen.no/en/salmon-smoked/",
+      "sourceValue": 2.4,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_named_smoked_salmon_fat_scaled",
+      "sourceMacros": {
+        "fat": 14.7,
+        "protein": 23.2,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 4.3,
+        "protein": 18.3,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 0.2925170068027211,
+      "note": "Gleicher benannter Raeucherlachs-Eintrag, aber deutlich fettere Quelle. Omegas proportional zum Fettverhaeltnis 4.3/14.7 skaliert und daher nur Schaetzung. Transfett und Alkohol als stabile Nullwerte der passenden Quelle uebernommen."
+    },
+    {
+      "databaseIndex": 273,
+      "databaseArrayIndex": 272,
+      "databaseName": "Räucherlachs",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 0.702041,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Salmon, smoked",
+      "sourceUrl": "https://www.matvaretabellen.no/en/salmon-smoked/",
+      "sourceValue": 2.4,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_named_smoked_salmon_fat_scaled",
+      "sourceMacros": {
+        "fat": 14.7,
+        "protein": 23.2,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 4.3,
+        "protein": 18.3,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 0.2925170068027211,
+      "note": "Gleicher benannter Raeucherlachs-Eintrag, aber deutlich fettere Quelle. Omegas proportional zum Fettverhaeltnis 4.3/14.7 skaliert und daher nur Schaetzung. Transfett und Alkohol als stabile Nullwerte der passenden Quelle uebernommen."
+    },
+    {
+      "databaseIndex": 273,
+      "databaseArrayIndex": 272,
+      "databaseName": "Räucherlachs",
+      "field": "Trans Fat (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Salmon, smoked",
+      "sourceUrl": "https://www.matvaretabellen.no/en/salmon-smoked/",
+      "sourceValue": 0,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_named_smoked_salmon_fat_scaled",
+      "sourceMacros": {
+        "fat": 14.7,
+        "protein": 23.2,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 4.3,
+        "protein": 18.3,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 0.2925170068027211,
+      "note": "Gleicher benannter Raeucherlachs-Eintrag, aber deutlich fettere Quelle. Omegas proportional zum Fettverhaeltnis 4.3/14.7 skaliert und daher nur Schaetzung. Transfett und Alkohol als stabile Nullwerte der passenden Quelle uebernommen."
+    },
+    {
+      "databaseIndex": 273,
+      "databaseArrayIndex": 272,
+      "databaseName": "Räucherlachs",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Salmon, smoked",
+      "sourceUrl": "https://www.matvaretabellen.no/en/salmon-smoked/",
+      "sourceValue": 0,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_named_smoked_salmon_fat_scaled",
+      "sourceMacros": {
+        "fat": 14.7,
+        "protein": 23.2,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 4.3,
+        "protein": 18.3,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 0.2925170068027211,
+      "note": "Gleicher benannter Raeucherlachs-Eintrag, aber deutlich fettere Quelle. Omegas proportional zum Fettverhaeltnis 4.3/14.7 skaliert und daher nur Schaetzung. Transfett und Alkohol als stabile Nullwerte der passenden Quelle uebernommen."
+    },
+    {
+      "databaseIndex": 278,
+      "databaseArrayIndex": 277,
+      "databaseName": "Reiswaffeln",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Rice cake, with salt",
+      "sourceUrl": "https://www.matvaretabellen.no/en/rice-cake-with-salt/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_rice_cake_close_macro_match",
+      "sourceMacros": {
+        "fat": 3,
+        "protein": 8,
+        "carbohydrate": 67.9
+      },
+      "targetMacros": {
+        "fat": 2.8,
+        "protein": 8,
+        "carbohydrate": 81.5
+      },
+      "conversionFactor": null,
+      "note": "Gleiche Reiswaffel-Kategorie; Fett und Protein stimmen nahezu. Kohlenhydrate unterscheiden sich wegen Gesamt- versus verfuegbaren Kohlenhydraten. Die drei Zielwerte direkt uebernommen."
+    },
+    {
+      "databaseIndex": 278,
+      "databaseArrayIndex": 277,
+      "databaseName": "Reiswaffeln",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 1.1,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Rice cake, with salt",
+      "sourceUrl": "https://www.matvaretabellen.no/en/rice-cake-with-salt/",
+      "sourceValue": 1.1,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_rice_cake_close_macro_match",
+      "sourceMacros": {
+        "fat": 3,
+        "protein": 8,
+        "carbohydrate": 67.9
+      },
+      "targetMacros": {
+        "fat": 2.8,
+        "protein": 8,
+        "carbohydrate": 81.5
+      },
+      "conversionFactor": null,
+      "note": "Gleiche Reiswaffel-Kategorie; Fett und Protein stimmen nahezu. Kohlenhydrate unterscheiden sich wegen Gesamt- versus verfuegbaren Kohlenhydraten. Die drei Zielwerte direkt uebernommen."
+    },
+    {
+      "databaseIndex": 278,
+      "databaseArrayIndex": 277,
+      "databaseName": "Reiswaffeln",
+      "field": "Trans Fat (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Rice cake, with salt",
+      "sourceUrl": "https://www.matvaretabellen.no/en/rice-cake-with-salt/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_rice_cake_close_macro_match",
+      "sourceMacros": {
+        "fat": 3,
+        "protein": 8,
+        "carbohydrate": 67.9
+      },
+      "targetMacros": {
+        "fat": 2.8,
+        "protein": 8,
+        "carbohydrate": 81.5
+      },
+      "conversionFactor": null,
+      "note": "Gleiche Reiswaffel-Kategorie; Fett und Protein stimmen nahezu. Kohlenhydrate unterscheiden sich wegen Gesamt- versus verfuegbaren Kohlenhydraten. Die drei Zielwerte direkt uebernommen."
+    },
+    {
+      "databaseIndex": 281,
+      "databaseArrayIndex": 280,
+      "databaseName": "Ricotta",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0.054,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Cheese, ricotta, whole milk",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170851/nutrients?type=SR%20Legacy",
+      "sourceValue": 0.054,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "exact_food_exact_macro_match_usda_components",
+      "sourceMacros": {
+        "fat": 13,
+        "protein": 11.3,
+        "carbohydrate": 3
+      },
+      "targetMacros": {
+        "fat": 13,
+        "protein": 11.3,
+        "carbohydrate": 3
+      },
+      "conversionFactor": null,
+      "note": "USDA SR Legacy Komponentenprofil passt exakt zu den Zielmakros. n-3/n-6 aus den spezifisch ausgewiesenen USDA-Komponenten summiert. Der ausgewiesene Gesamt-PUFA-Rest wird keiner Omega-Gruppe zugeschlagen."
+    },
+    {
+      "databaseIndex": 281,
+      "databaseArrayIndex": 280,
+      "databaseName": "Ricotta",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 0.279,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Cheese, ricotta, whole milk",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170851/nutrients?type=SR%20Legacy",
+      "sourceValue": 0.279,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "exact_food_exact_macro_match_usda_components",
+      "sourceMacros": {
+        "fat": 13,
+        "protein": 11.3,
+        "carbohydrate": 3
+      },
+      "targetMacros": {
+        "fat": 13,
+        "protein": 11.3,
+        "carbohydrate": 3
+      },
+      "conversionFactor": null,
+      "note": "USDA SR Legacy Komponentenprofil passt exakt zu den Zielmakros. n-3/n-6 aus den spezifisch ausgewiesenen USDA-Komponenten summiert. Der ausgewiesene Gesamt-PUFA-Rest wird keiner Omega-Gruppe zugeschlagen."
+    },
+    {
+      "databaseIndex": 282,
+      "databaseArrayIndex": 281,
+      "databaseName": "Rinderbrust / Tafelspitz (roh)",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, meat, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-meat-raw/",
+      "sourceValue": 0,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "generic_raw_beef_fat_scaled_estimate",
+      "sourceMacros": {
+        "fat": 4.7,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 10,
+        "protein": 21,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 2.127659574468085,
+      "note": "Kein exakter Schnittprofil gefunden. Generisches rohes Rind liegt beim Protein nahe; Omega- und Transfett proportional zum Fettverhaeltnis 10/4.7 skaliert, daher Schaetzung mit groesserer Unsicherheit. Alkohol direkt aus dem Roh-Rind-Eintrag."
+    },
+    {
+      "databaseIndex": 282,
+      "databaseArrayIndex": 281,
+      "databaseName": "Rinderbrust / Tafelspitz (roh)",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 0.212766,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, meat, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-meat-raw/",
+      "sourceValue": 0.1,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "generic_raw_beef_fat_scaled_estimate",
+      "sourceMacros": {
+        "fat": 4.7,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 10,
+        "protein": 21,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 2.127659574468085,
+      "note": "Kein exakter Schnittprofil gefunden. Generisches rohes Rind liegt beim Protein nahe; Omega- und Transfett proportional zum Fettverhaeltnis 10/4.7 skaliert, daher Schaetzung mit groesserer Unsicherheit. Alkohol direkt aus dem Roh-Rind-Eintrag."
+    },
+    {
+      "databaseIndex": 282,
+      "databaseArrayIndex": 281,
+      "databaseName": "Rinderbrust / Tafelspitz (roh)",
+      "field": "Trans Fat (g)",
+      "value": 0.425532,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, meat, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-meat-raw/",
+      "sourceValue": 0.2,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "generic_raw_beef_fat_scaled_estimate",
+      "sourceMacros": {
+        "fat": 4.7,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 10,
+        "protein": 21,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 2.127659574468085,
+      "note": "Kein exakter Schnittprofil gefunden. Generisches rohes Rind liegt beim Protein nahe; Omega- und Transfett proportional zum Fettverhaeltnis 10/4.7 skaliert, daher Schaetzung mit groesserer Unsicherheit. Alkohol direkt aus dem Roh-Rind-Eintrag."
+    },
+    {
+      "databaseIndex": 282,
+      "databaseArrayIndex": 281,
+      "databaseName": "Rinderbrust / Tafelspitz (roh)",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, meat, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-meat-raw/",
+      "sourceValue": 0,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "generic_raw_beef_fat_scaled_estimate",
+      "sourceMacros": {
+        "fat": 4.7,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 10,
+        "protein": 21,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 2.127659574468085,
+      "note": "Kein exakter Schnittprofil gefunden. Generisches rohes Rind liegt beim Protein nahe; Omega- und Transfett proportional zum Fettverhaeltnis 10/4.7 skaliert, daher Schaetzung mit groesserer Unsicherheit. Alkohol direkt aus dem Roh-Rind-Eintrag."
+    },
+    {
+      "databaseIndex": 283,
+      "databaseArrayIndex": 282,
+      "databaseName": "Rinderfilet (roh)",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0.1,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, tenderloin, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-tenderloin-raw/",
+      "sourceValue": 0.1,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_named_raw_beef_cut_close_macro_match",
+      "sourceMacros": {
+        "fat": 5.2,
+        "protein": 21.8,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 5,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "conversionFactor": null,
+      "note": "Gleicher roher Rinderfilet-Schnitt; Makros stimmen sehr nahe. Alle vier Zielwerte direkt aus dem Matvaretabellen-Eintrag uebernommen."
+    },
+    {
+      "databaseIndex": 283,
+      "databaseArrayIndex": 282,
+      "databaseName": "Rinderfilet (roh)",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 0.1,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, tenderloin, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-tenderloin-raw/",
+      "sourceValue": 0.1,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_named_raw_beef_cut_close_macro_match",
+      "sourceMacros": {
+        "fat": 5.2,
+        "protein": 21.8,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 5,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "conversionFactor": null,
+      "note": "Gleicher roher Rinderfilet-Schnitt; Makros stimmen sehr nahe. Alle vier Zielwerte direkt aus dem Matvaretabellen-Eintrag uebernommen."
+    },
+    {
+      "databaseIndex": 283,
+      "databaseArrayIndex": 282,
+      "databaseName": "Rinderfilet (roh)",
+      "field": "Trans Fat (g)",
+      "value": 0.2,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, tenderloin, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-tenderloin-raw/",
+      "sourceValue": 0.2,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_named_raw_beef_cut_close_macro_match",
+      "sourceMacros": {
+        "fat": 5.2,
+        "protein": 21.8,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 5,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "conversionFactor": null,
+      "note": "Gleicher roher Rinderfilet-Schnitt; Makros stimmen sehr nahe. Alle vier Zielwerte direkt aus dem Matvaretabellen-Eintrag uebernommen."
+    },
+    {
+      "databaseIndex": 283,
+      "databaseArrayIndex": 282,
+      "databaseName": "Rinderfilet (roh)",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, tenderloin, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-tenderloin-raw/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_named_raw_beef_cut_close_macro_match",
+      "sourceMacros": {
+        "fat": 5.2,
+        "protein": 21.8,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 5,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "conversionFactor": null,
+      "note": "Gleicher roher Rinderfilet-Schnitt; Makros stimmen sehr nahe. Alle vier Zielwerte direkt aus dem Matvaretabellen-Eintrag uebernommen."
+    },
+    {
+      "databaseIndex": 286,
+      "databaseArrayIndex": 285,
+      "databaseName": "Rinderhüftsteak (roh)",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, top sirloin butt, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-top-sirloin-butt-raw/",
+      "sourceValue": 0,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_hip_cut_fat_scaled_estimate",
+      "sourceMacros": {
+        "fat": 2.8,
+        "protein": 21.8,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 5,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 1.7857142857142858,
+      "note": "Top-sirloin butt ist ein passender Hueft-/Sirloin-Schnitt; Protein stimmt nahe, Ziel-Fett ist hoeher. Omegas und Transfett proportional zum Fettverhaeltnis 5/2.8 skaliert und als Schaetzung markiert. Alkohol direkt aus der Quelle."
+    },
+    {
+      "databaseIndex": 286,
+      "databaseArrayIndex": 285,
+      "databaseName": "Rinderhüftsteak (roh)",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 0.178571,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, top sirloin butt, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-top-sirloin-butt-raw/",
+      "sourceValue": 0.1,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_hip_cut_fat_scaled_estimate",
+      "sourceMacros": {
+        "fat": 2.8,
+        "protein": 21.8,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 5,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 1.7857142857142858,
+      "note": "Top-sirloin butt ist ein passender Hueft-/Sirloin-Schnitt; Protein stimmt nahe, Ziel-Fett ist hoeher. Omegas und Transfett proportional zum Fettverhaeltnis 5/2.8 skaliert und als Schaetzung markiert. Alkohol direkt aus der Quelle."
+    },
+    {
+      "databaseIndex": 286,
+      "databaseArrayIndex": 285,
+      "databaseName": "Rinderhüftsteak (roh)",
+      "field": "Trans Fat (g)",
+      "value": 0.178571,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, top sirloin butt, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-top-sirloin-butt-raw/",
+      "sourceValue": 0.1,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_hip_cut_fat_scaled_estimate",
+      "sourceMacros": {
+        "fat": 2.8,
+        "protein": 21.8,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 5,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 1.7857142857142858,
+      "note": "Top-sirloin butt ist ein passender Hueft-/Sirloin-Schnitt; Protein stimmt nahe, Ziel-Fett ist hoeher. Omegas und Transfett proportional zum Fettverhaeltnis 5/2.8 skaliert und als Schaetzung markiert. Alkohol direkt aus der Quelle."
+    },
+    {
+      "databaseIndex": 286,
+      "databaseArrayIndex": 285,
+      "databaseName": "Rinderhüftsteak (roh)",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Beef, top sirloin butt, raw",
+      "sourceUrl": "https://www.matvaretabellen.no/en/beef-top-sirloin-butt-raw/",
+      "sourceValue": 0,
+      "sourceValueType": "fat-ratio estimate",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "same_hip_cut_fat_scaled_estimate",
+      "sourceMacros": {
+        "fat": 2.8,
+        "protein": 21.8,
+        "carbohydrate": 0
+      },
+      "targetMacros": {
+        "fat": 5,
+        "protein": 22,
+        "carbohydrate": 0
+      },
+      "conversionFactor": 1.7857142857142858,
+      "note": "Top-sirloin butt ist ein passender Hueft-/Sirloin-Schnitt; Protein stimmt nahe, Ziel-Fett ist hoeher. Omegas und Transfett proportional zum Fettverhaeltnis 5/2.8 skaliert und als Schaetzung markiert. Alkohol direkt aus der Quelle."
+    },
+    {
+      "databaseIndex": 288,
+      "databaseArrayIndex": 287,
+      "databaseName": "Roggenbrot",
+      "field": "Trans Fat (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Bread, rye, coarse (50-75 %), industrially made",
+      "sourceUrl": "https://www.matvaretabellen.no/en/trans-fatty-acids/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_rye_bread_trans_zero",
+      "sourceMacros": {
+        "fat": 2.9,
+        "protein": 7.5,
+        "carbohydrate": 46
+      },
+      "targetMacros": {
+        "fat": 3.3,
+        "protein": 8.5,
+        "carbohydrate": 48.3
+      },
+      "conversionFactor": null,
+      "note": "Nahe industrielle Roggenbrot-Kategorie mit vergleichbaren Makros; offizielle Transfetttabelle weist 0 g aus."
+    },
+    {
+      "databaseIndex": 295,
+      "databaseArrayIndex": 294,
+      "databaseName": "Rote-Bete-Saft",
+      "field": "Omega-3 Fatty Acids (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Juice, with beetroot, carrot and ginger, from cafe/bakery",
+      "sourceUrl": "https://www.matvaretabellen.no/en/juice-with-beetroot-carrot-and-ginger-from-cafe-bakery/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_vegetable_juice_zero_profile",
+      "sourceMacros": {
+        "fat": 0.1,
+        "protein": 0.4,
+        "carbohydrate": 9
+      },
+      "targetMacros": {
+        "fat": 0.1,
+        "protein": 1,
+        "carbohydrate": 7.5
+      },
+      "conversionFactor": null,
+      "note": "Naeherer Gemuesesaft-Abgleich mit gleichem Fett, niedrigerem Protein und hoeheren Kohlenhydraten. Quelle weist die vier Felder als 0 g aus; Saft-Volumenbasis aendert diese Nullwerte nicht."
+    },
+    {
+      "databaseIndex": 295,
+      "databaseArrayIndex": 294,
+      "databaseName": "Rote-Bete-Saft",
+      "field": "Omega-6 Fatty Acids (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Juice, with beetroot, carrot and ginger, from cafe/bakery",
+      "sourceUrl": "https://www.matvaretabellen.no/en/juice-with-beetroot-carrot-and-ginger-from-cafe-bakery/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_vegetable_juice_zero_profile",
+      "sourceMacros": {
+        "fat": 0.1,
+        "protein": 0.4,
+        "carbohydrate": 9
+      },
+      "targetMacros": {
+        "fat": 0.1,
+        "protein": 1,
+        "carbohydrate": 7.5
+      },
+      "conversionFactor": null,
+      "note": "Naeherer Gemuesesaft-Abgleich mit gleichem Fett, niedrigerem Protein und hoeheren Kohlenhydraten. Quelle weist die vier Felder als 0 g aus; Saft-Volumenbasis aendert diese Nullwerte nicht."
+    },
+    {
+      "databaseIndex": 295,
+      "databaseArrayIndex": 294,
+      "databaseName": "Rote-Bete-Saft",
+      "field": "Trans Fat (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Juice, with beetroot, carrot and ginger, from cafe/bakery",
+      "sourceUrl": "https://www.matvaretabellen.no/en/juice-with-beetroot-carrot-and-ginger-from-cafe-bakery/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_vegetable_juice_zero_profile",
+      "sourceMacros": {
+        "fat": 0.1,
+        "protein": 0.4,
+        "carbohydrate": 9
+      },
+      "targetMacros": {
+        "fat": 0.1,
+        "protein": 1,
+        "carbohydrate": 7.5
+      },
+      "conversionFactor": null,
+      "note": "Naeherer Gemuesesaft-Abgleich mit gleichem Fett, niedrigerem Protein und hoeheren Kohlenhydraten. Quelle weist die vier Felder als 0 g aus; Saft-Volumenbasis aendert diese Nullwerte nicht."
+    },
+    {
+      "databaseIndex": 295,
+      "databaseArrayIndex": 294,
+      "databaseName": "Rote-Bete-Saft",
+      "field": "Alcohol (g)",
+      "value": 0,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Juice, with beetroot, carrot and ginger, from cafe/bakery",
+      "sourceUrl": "https://www.matvaretabellen.no/en/juice-with-beetroot-carrot-and-ginger-from-cafe-bakery/",
+      "sourceValue": 0,
+      "sourceValueType": "reported source value",
+      "sourceValueUnitBasis": "per 100 g; source values shown per 100 g unless noted",
+      "match": "close_vegetable_juice_zero_profile",
+      "sourceMacros": {
+        "fat": 0.1,
+        "protein": 0.4,
+        "carbohydrate": 9
+      },
+      "targetMacros": {
+        "fat": 0.1,
+        "protein": 1,
+        "carbohydrate": 7.5
+      },
+      "conversionFactor": null,
+      "note": "Naeherer Gemuesesaft-Abgleich mit gleichem Fett, niedrigerem Protein und hoeheren Kohlenhydraten. Quelle weist die vier Felder als 0 g aus; Saft-Volumenbasis aendert diese Nullwerte nicht."
+    },
+    {
+      "databaseIndex": 207,
+      "databaseArrayIndex": 206,
+      "databaseName": "Makrele (roh)",
+      "field": "Omega-3 Fatty Acids (g)",
+      "previousValue": 1.867,
+      "value": 2.948,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Atlantic mackerel raw, USDA SR Legacy FDC 175119",
+      "sourceUrl": "https://whatyoueat.io/foods/175119-atlantic-mackerel",
+      "sourceValueType": "sum of reported components",
+      "note": "18:3 .159 + EPA .898 + DHA 1.401 + DPA .212 + 18:4 .278 = 2.948 g/100 g."
+    },
+    {
+      "databaseIndex": 207,
+      "databaseArrayIndex": 206,
+      "databaseName": "Makrele (roh)",
+      "field": "Omega-6 Fatty Acids (g)",
+      "previousValue": 0.339,
+      "value": 0.402,
+      "checkedOn": "2026-09-24",
+      "sourceFood": "Atlantic mackerel raw, USDA SR Legacy FDC 175119",
+      "sourceUrl": "https://whatyoueat.io/foods/175119-atlantic-mackerel",
+      "sourceValueType": "sum of reported components",
+      "note": "Linoleic acid .219 + arachidonic acid .183 = .402 g/100 g."
+    }
+  ],
+  "coverageNotes": {
+    "Batch004_FasterResearch_2026_09_24": "Filled direct online matches and clearly labeled closest-profile estimates for herring, wheat-rye bread, fruit juice, Brazil nuts, green pesto, quark, smoked salmon, rice cakes, ricotta, raw beef cuts, rye bread and beetroot juice. Only null cells were changed. Scaled values are explicitly marked as estimates; source rounding and nutrient conflicts are noted.",
+    "Batch004_Omega3Components_2026_09_24": "ALA, EPA and DHA added for all 100 records. Methods and estimates are documented in database_V2_omega3_components_batch_004.json. Atlantic mackerel aggregate Omega-3/Omega-6 totals were corrected from the matching USDA component profile."
+  },
+  "fieldCoverage": {
+    "Omega-3 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Omega-6 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Trans Fat (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Alcohol (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    }
+  },
+  "remainingNulls": []
+}

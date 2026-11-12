@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-10-04T20:44:44.392Z",
+  "algorithm": "support-milp",
+  "repeat": 1,
+  "profiles": [
+    {
+      "id": "default",
+      "activeConstraints": 55,
+      "pool": 1516,
+      "ms": 1554,
+      "feasible": false,
+      "valid": false,
+      "method": "support-milp",
+      "approx": null,
+      "cost": null,
+      "reason": "integer-unresolved",
+      "solverCalls": [
+        {
+          "ms": 27,
+          "integer": false,
+          "variables": 1516,
+          "feasible": true
+        },
+        {
+          "ms": 1500,
+          "integer": true,
+          "variables": 19,
+          "feasible": true
+        }
+      ],
+      "runs": [
+        {
+          "ms": 1554,
+          "feasible": false,
+          "valid": false,
+          "method": "support-milp",
+          "approx": null,
+          "cost": null,
+          "reason": "integer-unresolved",
+          "solverCalls": [
+            {
+              "ms": 27,
+              "integer": false,
+              "variables": 1516,
+              "feasible": true
+            },
+            {
+              "ms": 1500,
+              "integer": true,
+              "variables": 19,
+              "feasible": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

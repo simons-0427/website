@@ -1,0 +1,813 @@
+{
+  "batch": 16,
+  "checkedOn": "2026-09-25",
+  "range": {
+    "first": 1501,
+    "last": 1516,
+    "count": 16
+  },
+  "status": "complete_with_documented_close_matches",
+  "fields": [
+    "Alpha-Linolenic Acid (ALA) (g)",
+    "Eicosapentaenoic Acid (EPA) (g)",
+    "Docosahexaenoic Acid (DHA) (g)"
+  ],
+  "valueBasis": "g per 100 g edible food",
+  "nullPolicy": "Trace, blank, and nonnumeric source markers are not converted to zero; close-match values are used only where documented and checked against total Omega-3.",
+  "sources": {
+    "CoFID_2021": {
+      "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "sheets": "1.3 Proximates (total fat) and 1.12 PUFA per 100 g food (ALA, EPA, DHA)."
+    },
+    "USDA_SR_Legacy": {
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "profile": 175139,
+      "itemUrl": "https://fdc.nal.usda.gov/food-details/175139/nutrients?type=SR%20Legacy"
+    }
+  },
+  "fieldCoverage": {
+    "Alpha-Linolenic Acid (ALA) (g)": {
+      "filled": 16,
+      "missing": 0,
+      "total": 16
+    },
+    "Eicosapentaenoic Acid (EPA) (g)": {
+      "filled": 16,
+      "missing": 0,
+      "total": 16
+    },
+    "Docosahexaenoic Acid (DHA) (g)": {
+      "filled": 16,
+      "missing": 0,
+      "total": 16
+    }
+  },
+  "records": [
+    {
+      "databaseIndex": 1501,
+      "databaseName": "Makrele, geräuchert",
+      "sourceCode": "16-414",
+      "sourceName": "Mackerel, flesh only, smoked",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-414",
+        "name": "Mackerel, flesh only, smoked",
+        "row": "1604",
+        "proxRow": "1604",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 24.1,
+        "targetFat": 24.1,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.35,
+        "Eicosapentaenoic Acid (EPA) (g)": 1.35,
+        "Docosahexaenoic Acid (DHA) (g)": 2.3
+      },
+      "totalOmega3": 5.57,
+      "componentSum": 4,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1502,
+      "databaseName": "Kippers, gegrillt",
+      "sourceCode": "16-397",
+      "sourceName": "Kippers, flesh only, grilled",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-397",
+        "name": "Kippers, flesh only, grilled",
+        "row": "1386",
+        "proxRow": "1386",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 17.6,
+        "targetFat": 17.6,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.18,
+        "Eicosapentaenoic Acid (EPA) (g)": 1.1,
+        "Docosahexaenoic Acid (DHA) (g)": 1.28
+      },
+      "totalOmega3": 3.35,
+      "componentSum": 2.56,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1503,
+      "databaseName": "Lachs, Zucht, gedämpft",
+      "sourceCode": "16-358",
+      "sourceName": "Salmon, farmed, flesh only, steamed",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-358",
+        "name": "Salmon, farmed, flesh only, steamed",
+        "row": "2423",
+        "proxRow": "2423",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 18.5,
+        "targetFat": 18.5,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.2,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.93,
+        "Docosahexaenoic Acid (DHA) (g)": 1.78
+      },
+      "totalOmega3": 3.93,
+      "componentSum": 2.91,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1504,
+      "databaseName": "Wildlachs, gebacken",
+      "sourceCode": "16-485",
+      "sourceName": "Salmon, wild, baked",
+      "matchMethod": "CoFID 2021 close food match",
+      "confidence": "medium",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 close food match",
+        "code": "16-360",
+        "name": "Salmon, wild, flesh only, raw",
+        "row": "2431",
+        "proxRow": "2431",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 10.1,
+        "targetFat": 12.1,
+        "scale": 1.198019801980198,
+        "note": "Wild salmon, flesh only, raw; same named species, close source, scaled by total fat for baking.",
+        "confidence": "medium"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.071881,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.682871,
+        "Docosahexaenoic Acid (DHA) (g)": 1.281881
+      },
+      "totalOmega3": 2.64,
+      "componentSum": 2.036633,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1505,
+      "databaseName": "Wildlachs, gegrillt",
+      "sourceCode": "16-486",
+      "sourceName": "Salmon, wild, grilled",
+      "matchMethod": "CoFID 2021 close food match",
+      "confidence": "medium",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 close food match",
+        "code": "16-360",
+        "name": "Salmon, wild, flesh only, raw",
+        "row": "2431",
+        "proxRow": "2431",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 10.1,
+        "targetFat": 11.8,
+        "scale": 1.1683168316831685,
+        "note": "Wild salmon, flesh only, raw; same named species, close source, scaled by total fat for grilling.",
+        "confidence": "medium"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.070099,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.665941,
+        "Docosahexaenoic Acid (DHA) (g)": 1.250099
+      },
+      "totalOmega3": 2.58,
+      "componentSum": 1.986139,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1506,
+      "databaseName": "Wildlachs, gedämpft",
+      "sourceCode": "16-487",
+      "sourceName": "Salmon, wild, steamed",
+      "matchMethod": "CoFID 2021 close food match",
+      "confidence": "medium",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 close food match",
+        "code": "16-360",
+        "name": "Salmon, wild, flesh only, raw",
+        "row": "2431",
+        "proxRow": "2431",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 10.1,
+        "targetFat": 11.6,
+        "scale": 1.1485148514851484,
+        "note": "Wild salmon, flesh only, raw; same named species, close source, scaled by total fat for steaming.",
+        "confidence": "medium"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.068911,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.654653,
+        "Docosahexaenoic Acid (DHA) (g)": 1.228911
+      },
+      "totalOmega3": 2.52,
+      "componentSum": 1.952475,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1507,
+      "databaseName": "Sardinen, Dose in Tomatensauce",
+      "sourceCode": "16-422",
+      "sourceName": "Sardines, canned in tomato sauce, whole contents",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-422",
+        "name": "Sardines, canned in tomato sauce, whole contents",
+        "row": "2452",
+        "proxRow": "2452",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 10.8,
+        "targetFat": 10.8,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.06,
+        "Eicosapentaenoic Acid (EPA) (g)": 1.54,
+        "Docosahexaenoic Acid (DHA) (g)": 0.9
+      },
+      "totalOmega3": 2.98,
+      "componentSum": 2.5,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1508,
+      "databaseName": "Sardinen, Dose in Salzlake, abgetropft",
+      "sourceCode": "16-424",
+      "sourceName": "Sardines, canned in brine, drained",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-424",
+        "name": "Sardines, canned in brine, drained",
+        "row": "2449",
+        "proxRow": "2449",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 9.1,
+        "targetFat": 9.1,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.06,
+        "Eicosapentaenoic Acid (EPA) (g)": 1.1,
+        "Docosahexaenoic Acid (DHA) (g)": 0.92
+      },
+      "totalOmega3": 2.5,
+      "componentSum": 2.08,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1509,
+      "databaseName": "Sardinen, Dose in Olivenöl, abgetropft",
+      "sourceCode": "16-440",
+      "sourceName": "Sardines, canned in olive oil, drained",
+      "matchMethod": "USDA FoodData Central SR Legacy close food match",
+      "confidence": "medium-low",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "USDA FoodData Central SR Legacy close food match",
+        "code": "FDC 175139",
+        "name": "Fish, sardine, Atlantic, canned in oil, drained solids with bone",
+        "url": "https://fdc.nal.usda.gov/food-details/175139/nutrients?type=SR%20Legacy",
+        "sourceFat": 11.4,
+        "targetFat": 14.1,
+        "scale": 1,
+        "note": "Atlantic sardines, canned in oil, drained; closest SR Legacy profile. Oil type differs, so no total-fat scaling was applied.",
+        "confidence": "medium-low"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.498,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.473,
+        "Docosahexaenoic Acid (DHA) (g)": 0.509
+      },
+      "totalOmega3": 2.54,
+      "componentSum": 1.48,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1510,
+      "databaseName": "Sardinen, Dose in Sonnenblumenöl, abgetropft",
+      "sourceCode": "16-439",
+      "sourceName": "Sardines, canned in sunflower oil, drained",
+      "matchMethod": "USDA FoodData Central SR Legacy close food match",
+      "confidence": "medium-low",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "USDA FoodData Central SR Legacy close food match",
+        "code": "FDC 175139",
+        "name": "Fish, sardine, Atlantic, canned in oil, drained solids with bone",
+        "url": "https://fdc.nal.usda.gov/food-details/175139/nutrients?type=SR%20Legacy",
+        "sourceFat": 11.4,
+        "targetFat": 14.1,
+        "scale": 1,
+        "note": "Atlantic sardines, canned in oil, drained; closest SR Legacy profile. Oil type differs, so no total-fat scaling was applied.",
+        "confidence": "medium-low"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.498,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.473,
+        "Docosahexaenoic Acid (DHA) (g)": 0.509
+      },
+      "totalOmega3": 2.51,
+      "componentSum": 1.48,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1511,
+      "databaseName": "Sprotten, roh",
+      "sourceCode": "16-218",
+      "sourceName": "Sprats, raw",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-218",
+        "name": "Sprats, raw",
+        "row": "2594",
+        "proxRow": "2594",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 11,
+        "targetFat": 11,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.08,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.93,
+        "Docosahexaenoic Acid (DHA) (g)": 1.35
+      },
+      "totalOmega3": 2.68,
+      "componentSum": 2.36,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1512,
+      "databaseName": "Seebarsch, roh",
+      "sourceCode": "16-385",
+      "sourceName": "Bass, sea, flesh only, raw",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-385",
+        "name": "Bass, sea, flesh only, raw",
+        "row": "116",
+        "proxRow": "116",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 9.8,
+        "targetFat": 9.8,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.21,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.48,
+        "Docosahexaenoic Acid (DHA) (g)": 0.72
+      },
+      "totalOmega3": 1.71,
+      "componentSum": 1.41,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1513,
+      "databaseName": "Seebarsch, gebacken",
+      "sourceCode": "16-386",
+      "sourceName": "Bass, sea, flesh only, baked",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-386",
+        "name": "Bass, sea, flesh only, baked",
+        "row": "114",
+        "proxRow": "114",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 6.8,
+        "targetFat": 6.8,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.15,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.35,
+        "Docosahexaenoic Acid (DHA) (g)": 0.52
+      },
+      "totalOmega3": 1.23,
+      "componentSum": 1.02,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1514,
+      "databaseName": "Braunes Krabbenfleisch, gekocht",
+      "sourceCode": "16-391",
+      "sourceName": "Crab, brown meat, purchased cooked",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-391",
+        "name": "Crab, brown meat, purchased cooked",
+        "row": "869",
+        "proxRow": "869",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 7.8,
+        "targetFat": 7.8,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.03,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.57,
+        "Docosahexaenoic Acid (DHA) (g)": 0.54
+      },
+      "totalOmega3": 1.3,
+      "componentSum": 1.14,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1515,
+      "databaseName": "Sardinen, gegrillt",
+      "sourceCode": "16-438",
+      "sourceName": "Sardines, flesh only, grilled",
+      "matchMethod": "CoFID 2021 close food match",
+      "confidence": "medium",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 close food match",
+        "code": "16-401",
+        "name": "Sardines, flesh only, raw",
+        "row": "2455",
+        "proxRow": "2455",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 6.1,
+        "targetFat": 7.8,
+        "scale": 1.278688524590164,
+        "note": "Sardines, flesh only, raw; same fish and edible-part basis, scaled by total fat for grilling.",
+        "confidence": "medium"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.063934,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.626557,
+        "Docosahexaenoic Acid (DHA) (g)": 0.792787
+      },
+      "totalOmega3": 1.69,
+      "componentSum": 1.483278,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    },
+    {
+      "databaseIndex": 1516,
+      "databaseName": "Sardinen, roh",
+      "sourceCode": "16-401",
+      "sourceName": "Sardines, flesh only, raw",
+      "matchMethod": "CoFID 2021 exact food code",
+      "confidence": "high",
+      "valueBasis": "g per 100 g edible food",
+      "sourceDetails": {
+        "kind": "CoFID 2021 exact food code",
+        "code": "16-401",
+        "name": "Sardines, flesh only, raw",
+        "row": "2455",
+        "proxRow": "2455",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "sourceFat": 6.1,
+        "targetFat": 6.1,
+        "note": "Exact CoFID 2021 food-code values from the PUFA-per-100-g-food worksheet.",
+        "confidence": "high"
+      },
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.05,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.49,
+        "Docosahexaenoic Acid (DHA) (g)": 0.62
+      },
+      "totalOmega3": 1.32,
+      "componentSum": 1.16,
+      "sumCheck": "ALA + EPA + DHA does not exceed stored total Omega-3."
+    }
+  ],
+  "databaseApplication": {
+    "appliedOn": "2026-09-25",
+    "appliedCount": 48,
+    "updates": [
+      {
+        "databaseIndex": 1501,
+        "databaseName": "Makrele, geräuchert",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.35
+      },
+      {
+        "databaseIndex": 1501,
+        "databaseName": "Makrele, geräuchert",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 1.35
+      },
+      {
+        "databaseIndex": 1501,
+        "databaseName": "Makrele, geräuchert",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 2.3
+      },
+      {
+        "databaseIndex": 1502,
+        "databaseName": "Kippers, gegrillt",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.18
+      },
+      {
+        "databaseIndex": 1502,
+        "databaseName": "Kippers, gegrillt",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 1.1
+      },
+      {
+        "databaseIndex": 1502,
+        "databaseName": "Kippers, gegrillt",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 1.28
+      },
+      {
+        "databaseIndex": 1503,
+        "databaseName": "Lachs, Zucht, gedämpft",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.2
+      },
+      {
+        "databaseIndex": 1503,
+        "databaseName": "Lachs, Zucht, gedämpft",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.93
+      },
+      {
+        "databaseIndex": 1503,
+        "databaseName": "Lachs, Zucht, gedämpft",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 1.78
+      },
+      {
+        "databaseIndex": 1504,
+        "databaseName": "Wildlachs, gebacken",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.071881
+      },
+      {
+        "databaseIndex": 1504,
+        "databaseName": "Wildlachs, gebacken",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.682871
+      },
+      {
+        "databaseIndex": 1504,
+        "databaseName": "Wildlachs, gebacken",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 1.281881
+      },
+      {
+        "databaseIndex": 1505,
+        "databaseName": "Wildlachs, gegrillt",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.070099
+      },
+      {
+        "databaseIndex": 1505,
+        "databaseName": "Wildlachs, gegrillt",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.665941
+      },
+      {
+        "databaseIndex": 1505,
+        "databaseName": "Wildlachs, gegrillt",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 1.250099
+      },
+      {
+        "databaseIndex": 1506,
+        "databaseName": "Wildlachs, gedämpft",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.068911
+      },
+      {
+        "databaseIndex": 1506,
+        "databaseName": "Wildlachs, gedämpft",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.654653
+      },
+      {
+        "databaseIndex": 1506,
+        "databaseName": "Wildlachs, gedämpft",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 1.228911
+      },
+      {
+        "databaseIndex": 1507,
+        "databaseName": "Sardinen, Dose in Tomatensauce",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.06
+      },
+      {
+        "databaseIndex": 1507,
+        "databaseName": "Sardinen, Dose in Tomatensauce",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 1.54
+      },
+      {
+        "databaseIndex": 1507,
+        "databaseName": "Sardinen, Dose in Tomatensauce",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 0.9
+      },
+      {
+        "databaseIndex": 1508,
+        "databaseName": "Sardinen, Dose in Salzlake, abgetropft",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.06
+      },
+      {
+        "databaseIndex": 1508,
+        "databaseName": "Sardinen, Dose in Salzlake, abgetropft",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 1.1
+      },
+      {
+        "databaseIndex": 1508,
+        "databaseName": "Sardinen, Dose in Salzlake, abgetropft",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 0.92
+      },
+      {
+        "databaseIndex": 1509,
+        "databaseName": "Sardinen, Dose in Olivenöl, abgetropft",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.498
+      },
+      {
+        "databaseIndex": 1509,
+        "databaseName": "Sardinen, Dose in Olivenöl, abgetropft",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.473
+      },
+      {
+        "databaseIndex": 1509,
+        "databaseName": "Sardinen, Dose in Olivenöl, abgetropft",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 0.509
+      },
+      {
+        "databaseIndex": 1510,
+        "databaseName": "Sardinen, Dose in Sonnenblumenöl, abgetropft",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.498
+      },
+      {
+        "databaseIndex": 1510,
+        "databaseName": "Sardinen, Dose in Sonnenblumenöl, abgetropft",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.473
+      },
+      {
+        "databaseIndex": 1510,
+        "databaseName": "Sardinen, Dose in Sonnenblumenöl, abgetropft",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 0.509
+      },
+      {
+        "databaseIndex": 1511,
+        "databaseName": "Sprotten, roh",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.08
+      },
+      {
+        "databaseIndex": 1511,
+        "databaseName": "Sprotten, roh",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.93
+      },
+      {
+        "databaseIndex": 1511,
+        "databaseName": "Sprotten, roh",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 1.35
+      },
+      {
+        "databaseIndex": 1512,
+        "databaseName": "Seebarsch, roh",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.21
+      },
+      {
+        "databaseIndex": 1512,
+        "databaseName": "Seebarsch, roh",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.48
+      },
+      {
+        "databaseIndex": 1512,
+        "databaseName": "Seebarsch, roh",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 0.72
+      },
+      {
+        "databaseIndex": 1513,
+        "databaseName": "Seebarsch, gebacken",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.15
+      },
+      {
+        "databaseIndex": 1513,
+        "databaseName": "Seebarsch, gebacken",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.35
+      },
+      {
+        "databaseIndex": 1513,
+        "databaseName": "Seebarsch, gebacken",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 0.52
+      },
+      {
+        "databaseIndex": 1514,
+        "databaseName": "Braunes Krabbenfleisch, gekocht",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.03
+      },
+      {
+        "databaseIndex": 1514,
+        "databaseName": "Braunes Krabbenfleisch, gekocht",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.57
+      },
+      {
+        "databaseIndex": 1514,
+        "databaseName": "Braunes Krabbenfleisch, gekocht",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 0.54
+      },
+      {
+        "databaseIndex": 1515,
+        "databaseName": "Sardinen, gegrillt",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.063934
+      },
+      {
+        "databaseIndex": 1515,
+        "databaseName": "Sardinen, gegrillt",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.626557
+      },
+      {
+        "databaseIndex": 1515,
+        "databaseName": "Sardinen, gegrillt",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 0.792787
+      },
+      {
+        "databaseIndex": 1516,
+        "databaseName": "Sardinen, roh",
+        "field": "Alpha-Linolenic Acid (ALA) (g)",
+        "value": 0.05
+      },
+      {
+        "databaseIndex": 1516,
+        "databaseName": "Sardinen, roh",
+        "field": "Eicosapentaenoic Acid (EPA) (g)",
+        "value": 0.49
+      },
+      {
+        "databaseIndex": 1516,
+        "databaseName": "Sardinen, roh",
+        "field": "Docosahexaenoic Acid (DHA) (g)",
+        "value": 0.62
+      }
+    ]
+  },
+  "unresolvedRows": [],
+  "validation": {
+    "allNonnegative": true,
+    "allComponentSumsWithinOmega3": true,
+    "validatedFoodCount": 16
+  }
+}

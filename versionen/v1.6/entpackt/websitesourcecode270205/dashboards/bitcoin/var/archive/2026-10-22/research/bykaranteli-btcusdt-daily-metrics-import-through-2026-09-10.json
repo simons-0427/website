@@ -1,0 +1,95 @@
+{
+  "createdAt": "2026-09-29T23:52:43.953Z",
+  "dashboard": "bitcoin",
+  "source": {
+    "slug": "bykaranteli_btcusdt_daily_symbols_cc0",
+    "url": "https://github.com/bykarantelicom/crypto-datasets/blob/66d8542392067be14e2eb8ca962ffbdafcbc51ef/data/daily-symbols.csv",
+    "file": "data/daily-symbols.csv",
+    "commit": "66d8542392067be14e2eb8ca962ffbdafcbc51ef",
+    "commitDate": "2026-09-10",
+    "license": "CC0 1.0 Universal, as stated in the repository README accessed 2026-09-30",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution": "ByKaranteli Crypto Datasets, BTCUSDT rows only."
+  },
+  "sourceSnapshot": {
+    "inputFile": "bykaranteli-daily-symbols-cc0.csv",
+    "inputBytes": 88663,
+    "inputSha256": "e274ee6d18642067149ca66346469d8649e108884f0d39f784ac0637a889e01e",
+    "selectedRows": 49,
+    "selectedSymbol": "BTCUSDT",
+    "otherSymbolsWritten": 0
+  },
+  "rawBitcoinOnlySnapshot": {
+    "path": "bykaranteli-btcusdt-daily-symbols-research-through-2026-09-10.csv",
+    "bytes": 2900,
+    "sha256": "46638d68237a647761df32f18fef05a95bd7e0e9c8583417f25c9b506b52b969",
+    "rows": 49,
+    "symbol": "BTCUSDT",
+    "firstDate": "2026-07-23",
+    "lastDate": "2026-09-10",
+    "missingDates": [
+      "2026-07-26"
+    ],
+    "fieldsWritten": [
+      "date",
+      "symbol",
+      "funding_rate_pct",
+      "oi_24h_pct",
+      "source"
+    ],
+    "nonBitcoinRowsWritten": 0
+  },
+  "observations": 98,
+  "metricIds": [
+    "binance_perpetual_funding_rate_pct",
+    "perpetual_open_interest_change_24h_pct"
+  ],
+  "metricCounts": {
+    "binance_perpetual_funding_rate_pct": 49,
+    "perpetual_open_interest_change_24h_pct": 49
+  },
+  "metricQuality": {
+    "binance_perpetual_funding_rate_pct": {
+      "rows": 49,
+      "minimum": 0.000379,
+      "maximum": 0.01,
+      "adjacentRepeatedValuePairs": 2,
+      "adjacentPairsChecked": 48
+    },
+    "perpetual_open_interest_change_24h_pct": {
+      "rows": 49,
+      "minimum": -4.26287673317,
+      "maximum": 4.70542027606,
+      "adjacentRepeatedValuePairs": 11,
+      "adjacentPairsChecked": 48
+    }
+  },
+  "firstObservationDate": "2026-07-23",
+  "lastObservationDate": "2026-09-10",
+  "missingDates": [
+    "2026-07-26"
+  ],
+  "method": {
+    "binance_perpetual_funding_rate_pct": "Use daily_symbols.csv funding_rate_pct unchanged for BTCUSDT; retain the source percentage unit, with no interval normalization or interpolation.",
+    "perpetual_open_interest_change_24h_pct": "Use daily_symbols.csv oi_24h_pct unchanged for BTCUSDT; retain the provider-reported 24-hour percentage change, with no interpolation."
+  },
+  "sourceFreshness": "The pinned source file commit is dated 2026-09-10 and no newer update was visible in the repository at review time 2026-09-30.",
+  "candidate": {
+    "path": "bykaranteli-btcusdt-daily-metrics-import-through-2026-09-10.csv",
+    "bytes": 24779,
+    "sha256": "c95fa6a9d92fc4ba8c14b76c62d0bdb90d74d1fcb8c888fb36d829147b4e6b71"
+  },
+  "dataReuseLicenseConfirmedFromRepository": true,
+  "sourceValuesProvisional": true,
+  "uploaded": false,
+  "mergedIntoMaster": true,
+  "mergedAt": "2026-09-29T23:53:07.501Z",
+  "master": {
+    "path": "bitcoin-backfill-cointime-cftc-options.csv",
+    "previousRows": 738641,
+    "addedRows": 98,
+    "expectedRows": 738739,
+    "sha256": "fa3e584a0f2c1b47c411351679a35c9db343d3f50a5ed76e9afdffe0d8f538ac",
+    "bytes": 147896732
+  }
+}

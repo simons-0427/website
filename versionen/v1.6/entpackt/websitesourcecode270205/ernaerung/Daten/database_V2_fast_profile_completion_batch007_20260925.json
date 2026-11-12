@@ -1,0 +1,756 @@
+{
+  "checkedOn": "2026-09-25",
+  "scope": {
+    "batch": "007",
+    "firstDatabaseIndex": 501,
+    "lastDatabaseIndex": 600,
+    "unit": "g per 100 g food"
+  },
+  "method": "Exact same-food CoFID/BLS/USDA values are preferred. Close profiles are scaled only when total-fat difference is small. Remaining plant-only foods receive a documented composition-based trans-fat zero only when no animal fat or partially hydrogenated fat is named. Estimates and replacements are explicit below.",
+  "changedRecords": [
+    {
+      "databaseIndex": 502,
+      "food": "Tzatziki",
+      "targetFat_g": 5.5,
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 0.15
+      },
+      "priorValues": {},
+      "source": {
+        "exact": {
+          "dataset": "CoFID 2021",
+          "code": "12-547",
+          "totalPufa_g": 0.15,
+          "url": "https://www.nutridex.org.uk/foods/9b7abf5/tzatziki"
+        },
+        "comparator": {
+          "dataset": "Matvaretabellen",
+          "food": "Tzatziki",
+          "url": "https://matvaretabellen.mattilsynet.io/en/tzatziki/",
+          "ALA_g": 0,
+          "EPA_g": 0,
+          "DHA_g": 0
+        },
+        "method": "Exact CoFID total PUFA is 0.15 g. The close tzatziki source reports ALA/EPA/DHA as zero, so the total is assigned to n-6.",
+        "confidence": "medium-high"
+      }
+    },
+    {
+      "databaseIndex": 503,
+      "food": "Vanilleeis (Milchspeiseeis)",
+      "targetFat_g": 8.2,
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.08,
+        "Omega-6 Fatty Acids (g)": 0.24,
+        "Trans Fat (g)": 0.18,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.06
+      },
+      "priorValues": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.0292
+      },
+      "source": {
+        "dataset": "CoFID 2021",
+        "code": "12-508",
+        "url": "https://www.nutridex.org.uk/foods/81d4m9x/ice-cream-dairy-vanilla-soft-scoop",
+        "exactValues": {
+          "fat_g": 8.2,
+          "omega3_g": 0.08,
+          "omega6_g": 0.24,
+          "totalPufa_g": 0.32,
+          "trans_g": 0.18,
+          "ALA_g": 0.06,
+          "EPA_marker": "Tr",
+          "DHA_marker": "Tr"
+        },
+        "method": "Exact same-style CoFID entry with identical total fat. It replaces the lower-match BLS ALA value 0.0292 with the exact-profile ALA value 0.06; EPA/DHA trace markers remain stored as zero at database precision.",
+        "confidence": "high"
+      }
+    },
+    {
+      "databaseIndex": 504,
+      "food": "Veggie-Burger gegrillt (Handelsware)",
+      "targetFat_g": 7.2,
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 2.218,
+        "Trans Fat (g)": 0.1
+      },
+      "priorValues": {},
+      "source": {
+        "exact": {
+          "dataset": "CoFID 2021",
+          "code": "15-656",
+          "fat_g": 7.2,
+          "transMarker": "N",
+          "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid"
+        },
+        "comparator": {
+          "dataset": "USDA FoodData Central SR Legacy",
+          "fdcId": 174287,
+          "food": "Veggie burgers or soyburgers, unprepared",
+          "fat_g": 6.3,
+          "LA_g": 1.94,
+          "arachidonic_g": 0.001,
+          "ALA_g": 0,
+          "EPA_g": 0,
+          "DHA_g": 0,
+          "url": "https://fdc.nal.usda.gov/food-details/174287/nutrients?type=SR%20Legacy"
+        },
+        "method": "Scale the close USDA n-6 profile by target/source fat (7.2/6.3). CoFID reports trans marker N, meaning present but not reliably quantified; 0.10 g is a coarse estimate, not zero.",
+        "confidence": "medium-low for omega-6; low for trans"
+      }
+    },
+    {
+      "databaseIndex": 505,
+      "food": "Vollkornreis gekocht",
+      "targetFat_g": 0.9,
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.010206,
+        "Omega-6 Fatty Acids (g)": 0.329381,
+        "Trans Fat (g)": 0
+      },
+      "priorValues": {},
+      "source": {
+        "dataset": "USDA FoodData Central SR Legacy",
+        "fdcId": 169704,
+        "food": "Rice, brown, long-grain, cooked",
+        "sourceFat_g": 0.97,
+        "url": "https://fdc.nal.usda.gov/food-details/169704/nutrients?type=SR%20Legacy",
+        "method": "Close exact-grain and preparation match, scaled by total fat ratio 0.9/0.97. USDA directly reports trans fat as 0.",
+        "confidence": "high"
+      }
+    },
+    {
+      "databaseIndex": 506,
+      "food": "Vollmilchschokolade",
+      "targetFat_g": 31.1,
+      "valuesPer100g": {
+        "Trans Fat (g)": 0.16
+      },
+      "priorValues": {},
+      "source": {
+        "dataset": "CoFID 2021",
+        "code": "17-648",
+        "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+        "trans_g": 0.16,
+        "method": "Exact same-food and total-fat match. Existing BLS omega values are preserved; CoFID is used only to fill the missing trans-fat value.",
+        "confidence": "high"
+      }
+    },
+    {
+      "databaseIndex": 507,
+      "food": "Waffeln (Hausgemacht)",
+      "targetFat_g": 15.3,
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.856149,
+        "Omega-6 Fatty Acids (g)": 6.51166,
+        "Trans Fat (g)": 0.47
+      },
+      "priorValues": {},
+      "source": {
+        "exact": {
+          "dataset": "CoFID 2021",
+          "code": "11-1130",
+          "fat_g": 15.3,
+          "trans_g": 0.47,
+          "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid"
+        },
+        "comparator": {
+          "dataset": "USDA FoodData Central SR Legacy",
+          "fdcId": 175039,
+          "food": "Waffles, plain, prepared from recipe",
+          "fat_g": 14.1,
+          "LA_g": 5.98,
+          "arachidonic_g": 0.021,
+          "ALA_g": 0.782,
+          "EPA_g": 0.001,
+          "DHA_g": 0.006,
+          "url": "https://fdc.nal.usda.gov/food-details/175039/nutrients?type=SR%20Legacy"
+        },
+        "method": "Use exact CoFID trans fat and scale the USDA omega profile by total-fat ratio 15.3/14.1. Omega-3 equals the sum of the already stored ALA, EPA and DHA values.",
+        "confidence": "medium-high"
+      }
+    },
+    {
+      "databaseIndex": 508,
+      "food": "Weizenkekse-Frühstückscereal (Weetabix-Typ fortifiziert)",
+      "targetFat_g": 1.9,
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.07,
+        "Omega-6 Fatty Acids (g)": 0.87,
+        "Trans Fat (g)": 0,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.07
+      },
+      "priorValues": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.037867
+      },
+      "source": {
+        "dataset": "CoFID 2021",
+        "code": "11-773",
+        "url": "https://www.nutridex.org.uk/foods/3xwsvem/breakfast-cereal-wheat-biscuits-weetabix-type-fortified",
+        "exactValues": {
+          "fat_g": 1.9,
+          "omega3_g": 0.07,
+          "omega6_g": 0.87,
+          "ALA_g": 0.07,
+          "transMarker": "Tr"
+        },
+        "method": "Exact same cereal-type and fat profile; the CoFID trace trans marker is stored as zero at database precision. Exact CoFID ALA replaces the lower-match USDA comparator value.",
+        "confidence": "high"
+      }
+    },
+    {
+      "databaseIndex": 511,
+      "food": "Whopper (Takeaway)",
+      "targetFat_g": 12.1,
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.275,
+        "Omega-6 Fatty Acids (g)": 1.725,
+        "Trans Fat (g)": 0.3
+      },
+      "priorValues": {},
+      "source": {
+        "exact": {
+          "dataset": "CoFID 2021",
+          "code": "19-514",
+          "fat_g": 12.1,
+          "totalPufa_g": 2,
+          "trans_g": 0.3,
+          "url": "https://www.nutridex.org.uk/foods/7z1gwbh/burger-whopper-takeaway"
+        },
+        "comparator": {
+          "dataset": "USDA FoodData Central SR Legacy",
+          "fdcId": 170727,
+          "food": "BURGER KING, WHOPPER, no cheese",
+          "ALA_g": 0.275,
+          "EPA_g": 0,
+          "DHA_g": 0,
+          "url": "https://fdc.nal.usda.gov/food-details/170727/nutrients?type=SR%20Legacy"
+        },
+        "method": "Retain USDA ALA as n-3 and derive n-6 as the remaining CoFID total PUFA (2.0 - 0.275). EPA/DHA are zero in the close USDA profile. This resolves an internal mismatch in the USDA record between total PUFA and its listed individual fatty acids.",
+        "confidence": "medium"
+      }
+    },
+    {
+      "databaseIndex": 512,
+      "food": "Wurst im Blätterteig (Handelsware)",
+      "targetFat_g": 24.1,
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.34,
+        "Omega-6 Fatty Acids (g)": 2.73,
+        "Trans Fat (g)": 0.03,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.3,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      },
+      "priorValues": {},
+      "source": {
+        "dataset": "CoFID 2021",
+        "code": "19-468",
+        "url": "https://www.nutridex.org.uk/foods/51zj7ph/sausage-roll-flaky-pastry-ready-to-eat-retail",
+        "exactValues": {
+          "fat_g": 24.1,
+          "omega3_g": 0.34,
+          "omega6_g": 2.73,
+          "totalPufa_g": 3.07,
+          "trans_g": 0.03,
+          "ALA_g": 0.3,
+          "EPA_marker": "Tr",
+          "DHA_marker": "Tr"
+        },
+        "method": "Exact matching retail sausage roll with identical total fat. Trace EPA/DHA markers are stored as zero at database precision.",
+        "confidence": "high"
+      }
+    },
+    {
+      "databaseIndex": 517,
+      "food": "Reis, Parboiled (poliert, roh)",
+      "targetFat_g": 1.03,
+      "valuesPer100g": {
+        "Omega-6 Fatty Acids (g)": 0.305,
+        "Trans Fat (g)": 0
+      },
+      "priorValues": {},
+      "source": {
+        "dataset": "USDA FoodData Central SR Legacy",
+        "fdcId": 169707,
+        "food": "Rice, white, long-grain, parboiled, enriched, dry",
+        "fat_g": 1.03,
+        "LA_g": 0.305,
+        "transMarker": "not reported; logical plant-grain zero",
+        "url": "https://fdc.nal.usda.gov/food-details/169707/nutrients?type=SR%20Legacy",
+        "method": "Exact parboiled-rice profile; add the measured linoleic acid as Omega-6. Trans fat is set to zero for the unprocessed grain.",
+        "confidence": "high"
+      }
+    },
+    {
+      "databaseIndex": 543,
+      "food": "Augenbohnen (trocken)",
+      "targetFat_g": 1.26,
+      "valuesPer100g": {
+        "Omega-6 Fatty Acids (g)": 0.343,
+        "Trans Fat (g)": 0
+      },
+      "priorValues": {},
+      "source": {
+        "dataset": "USDA FoodData Central SR Legacy",
+        "fdcId": 173758,
+        "food": "Cowpeas, common (blackeyes), mature seeds, raw",
+        "fat_g": 1.26,
+        "LA_g": 0.343,
+        "trans_g": 0,
+        "url": "https://fdc.nal.usda.gov/food-details/173758/nutrients?type=SR%20Legacy",
+        "method": "Exact food and total-fat match; directly reported linoleic acid and trans-fat zero.",
+        "confidence": "high"
+      }
+    },
+    {
+      "databaseIndex": 545,
+      "food": "Gartenbohnen (trocken)",
+      "targetFat_g": 1.6,
+      "valuesPer100g": {
+        "Omega-3 Fatty Acids (g)": 0.048,
+        "Omega-6 Fatty Acids (g)": 0.607,
+        "Trans Fat (g)": 0,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.048
+      },
+      "priorValues": {
+        "Omega-3 Fatty Acids (g)": 0
+      },
+      "source": {
+        "dataset": "USDA FoodData Central SR Legacy",
+        "fdcId": 175205,
+        "food": "Broadbeans (fava beans), mature seeds, raw",
+        "fat_g": 1.53,
+        "ALA_g": 0.046,
+        "LA_g": 0.581,
+        "trans_g": 0,
+        "url": "https://fdc.nal.usda.gov/food-details/175205/nutrients?type=SR%20Legacy",
+        "method": "Close dry mature-bean profile with 4.6% total-fat difference. Replaces the prior BLS formula-zero with the USDA profile; scale ALA and LA by 1.6/1.53.",
+        "confidence": "medium"
+      }
+    }
+  ],
+  "compositionallyExcludedTransZeros": [
+    {
+      "databaseIndex": 513,
+      "food": "Gerste, ganzes Korn (roh)",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 514,
+      "food": "Gerstenmehl",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 515,
+      "food": "Maismehl",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 516,
+      "food": "Reis, poliert (roh)",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 519,
+      "food": "Vollkornteigwaren, eifrei (trocken)",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 520,
+      "food": "Weizenmehl Type 550",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 521,
+      "food": "Weizenmehl Type 1050",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 524,
+      "food": "Dinkelmehl Type 1050",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 525,
+      "food": "Dinkelmehl Type 812",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 526,
+      "food": "Grünkern (ganzes Korn, roh)",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 527,
+      "food": "Emmervollkornmehl",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 528,
+      "food": "Einkornvollkornmehl",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 529,
+      "food": "Hartweizengrieß",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 530,
+      "food": "Hirseschrot",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 532,
+      "food": "Cornflakes, gesüßt",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 533,
+      "food": "Puffreis, ungesüßt",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 534,
+      "food": "Popcorn-Mais, ungesüßt",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 535,
+      "food": "Tortillachips / Nachos",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 536,
+      "food": "Quinoa tricolor",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 537,
+      "food": "Quinoa, gepufft",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 538,
+      "food": "Weizen, gepufft, ungesüßt",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 539,
+      "food": "Maisstärke",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 540,
+      "food": "Weizenstärke",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 541,
+      "food": "Reisstärke",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 542,
+      "food": "Reismehl",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 546,
+      "food": "Limabohnen (trocken)",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 548,
+      "food": "Linsenmehl",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 549,
+      "food": "Erbsenmehl",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 550,
+      "food": "Lupinenmehl",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 552,
+      "food": "Sojajoghurtalternative, ungesüßt",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 553,
+      "food": "Sojajoghurtalternative, ungesüßt, angereichert",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 554,
+      "food": "Soja-Kochcreme",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 556,
+      "food": "Sojadrink, ungesüßt",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 557,
+      "food": "Sojadrink, ungesüßt, angereichert",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 558,
+      "food": "Sojadrink, gesüßt, aromatisiert",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 559,
+      "food": "Sojajoghurtalternative, gesüßt, angereichert",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 560,
+      "food": "Sojadrink, gesüßt, aromatisiert, angereichert",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 561,
+      "food": "Seidentofu",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 566,
+      "food": "Mandeln, gemahlen",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 567,
+      "food": "Cashews, geröstet ohne Fett",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 568,
+      "food": "Walnüsse, gemahlen",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 569,
+      "food": "Haselnüsse, gemahlen",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 570,
+      "food": "Paranüsse, natur",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 571,
+      "food": "Macadamianüsse, roh",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 572,
+      "food": "Pekannüsse, natur",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 573,
+      "food": "Apfel, roh",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 588,
+      "food": "Weintrauben, roh",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 589,
+      "food": "Weintrauben, rot, roh",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    },
+    {
+      "databaseIndex": 590,
+      "food": "Weintrauben, weiß, roh",
+      "value": 0,
+      "source": "Composition-based exclusion at reporting precision",
+      "method": "Plant-only grain, legume, soy, nut, or raw-fruit identity with no animal fat or partially hydrogenated fat named. Logical zero; not a laboratory measurement.",
+      "confidence": "medium for raw foods and grains; medium-low for processed foods"
+    }
+  ],
+  "replacementsApplied": [
+    {
+      "index": 503,
+      "key": "Alpha-Linolenic Acid (ALA) (g)",
+      "prior": 0.0292,
+      "replacement": 0.06
+    },
+    {
+      "index": 508,
+      "key": "Alpha-Linolenic Acid (ALA) (g)",
+      "prior": 0.037867,
+      "replacement": 0.07
+    },
+    {
+      "index": 545,
+      "key": "Omega-3 Fatty Acids (g)",
+      "prior": 0,
+      "replacement": 0.048
+    }
+  ],
+  "validation": {
+    "rowCountUnchanged": true,
+    "changedValuesNonnegative": true,
+    "plantZeroRowsVerifiedNullBeforeWrite": true,
+    "replacementsVerifiedBeforeWrite": true,
+    "omega3ComponentsWithinTotal": true
+  }
+}

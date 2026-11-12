@@ -1,0 +1,63 @@
+{
+  "fetchedAtUtc": "2026-09-30T07:54:18.064Z",
+  "dashboard": "bitcoin",
+  "cutoffInclusive": "2026-09-28",
+  "source": "Bitview / Bitcoin Research Kit public series API",
+  "sourceSlug": "bitview_api_research_only",
+  "apiVersion": "v0.12.2",
+  "candidatePath": "bitview-core-metrics-import-through-2026-09-28.csv",
+  "candidateSha256": "ff46f13d306e58d8855de7c65fd98cf738f07972bfa398d69d1024780d9c7c72",
+  "candidateBytes": 4314616,
+  "observations": 19419,
+  "metricCounts": {
+    "asopr": 6473,
+    "transfer_value_btc": 6473,
+    "transfer_value_usd": 6473
+  },
+  "series": [
+    {
+      "sourceSeries": "asopr_24h",
+      "metricId": "asopr",
+      "version": 11521906,
+      "stampedAtUtc": "2026-09-30T07:53:58Z",
+      "responseSha256": "9df9e4dad6076d85ed6dfdd2cac38ac20c255f267d186a8083eae1e0ad7c28cf",
+      "responseBytes": 61541,
+      "firstDate": "2009-01-03",
+      "lastDate": "2026-09-28",
+      "observations": 6473,
+      "nullValuesThroughCutoff": 7,
+      "minimum": 0.5993506,
+      "maximum": 12.570438
+    },
+    {
+      "sourceSeries": "transfer_volume_sum_24h",
+      "metricId": "transfer_value_btc",
+      "version": 1053470797,
+      "stampedAtUtc": "2026-09-30T07:54:18Z",
+      "responseSha256": "3209f58a143774c2dd324b646b82e19e508315a2f593678abe767a59db7f8469",
+      "responseBytes": 99652,
+      "firstDate": "2009-01-03",
+      "lastDate": "2026-09-28",
+      "observations": 6473,
+      "nullValuesThroughCutoff": 7,
+      "minimum": 0,
+      "maximum": 67350028.37141944
+    },
+    {
+      "sourceSeries": "transfer_volume_sum_24h_usd",
+      "metricId": "transfer_value_usd",
+      "version": 1053470797,
+      "stampedAtUtc": "2026-09-30T07:54:18Z",
+      "responseSha256": "1e902c1b1239b4a2fe980f3f29977ba2c381449e75b9093abc14354633264d63",
+      "responseBytes": 83130,
+      "firstDate": "2009-01-03",
+      "lastDate": "2026-09-28",
+      "observations": 6473,
+      "nullValuesThroughCutoff": 7,
+      "minimum": 0,
+      "maximum": 747425651038.46
+    }
+  ],
+  "uploaded": false,
+  "publicRedistributionCleared": false
+}

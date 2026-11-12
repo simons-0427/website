@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-29",
+  "rows": 461,
+  "metrics": {
+    "fear_greed_index": {
+      "observations": 366,
+      "firstDate": "2025-09-29",
+      "lastDate": "2026-09-29",
+      "sourceSha256": "cce77207eaf3d000ee5ef24e0b5ed7940bcb01d65e34247d231fab5b4414ca70"
+    },
+    "mining_pool_share": {
+      "series": 91,
+      "observations": 91,
+      "identifiedBlocks7d": 1001,
+      "unknownBlocks7d": 2,
+      "sharesTotalPct": 100,
+      "sourceSha256": "2659770feb143eb602de8db9e1683aee939f4d18487a2efccd454cfdec9111cd"
+    },
+    "pool_concentration_hhi": {
+      "observations": 1,
+      "value": "1540.986486041431",
+      "sourceSha256": "2659770feb143eb602de8db9e1683aee939f4d18487a2efccd454cfdec9111cd"
+    },
+    "fee_recommendation_fast_sat_vb": {
+      "observations": 1,
+      "value": 1,
+      "sourceSha256": "742f88a21bb92a73e5295276c98d46372278de5ff26ca06971c714a275c14d13"
+    },
+    "fee_recommendation_economy_sat_vb": {
+      "observations": 1,
+      "value": 1,
+      "sourceSha256": "742f88a21bb92a73e5295276c98d46372278de5ff26ca06971c714a275c14d13"
+    },
+    "mempool_min_fee_sat_vb": {
+      "observations": 1,
+      "value": 0.1,
+      "sourceSha256": "ddc257965b50cc481ea0018d99f5bc932b7fb27fc3d8250f5b988c1528c8b4f7"
+    }
+  },
+  "inputs": {
+    "pools-2026-09-29.json": "2659770feb143eb602de8db9e1683aee939f4d18487a2efccd454cfdec9111cd",
+    "fear-greed-2026-09-29.json": "cce77207eaf3d000ee5ef24e0b5ed7940bcb01d65e34247d231fab5b4414ca70",
+    "fees-2026-09-29.json": "742f88a21bb92a73e5295276c98d46372278de5ff26ca06971c714a275c14d13",
+    "mempool-2026-09-29.json": "ddc257965b50cc481ea0018d99f5bc932b7fb27fc3d8250f5b988c1528c8b4f7"
+  },
+  "output": "var\\openbitcoin-bitcoin-snapshots-2026-09-29-import.csv",
+  "migration": "sql\\013_openbitcoin_bitcoin_only_snapshots.sql"
+}

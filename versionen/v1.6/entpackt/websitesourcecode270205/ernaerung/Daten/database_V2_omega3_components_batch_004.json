@@ -1,0 +1,1340 @@
+{
+  "checkedOn": "2026-09-24",
+  "scope": {
+    "firstDatabaseArrayIndex": 200,
+    "lastDatabaseArrayIndex": 299,
+    "count": 100,
+    "unitBasis": "grams per 100 grams edible food"
+  },
+  "fields": {
+    "ALA": "Alpha-Linolenic Acid (ALA) (g)",
+    "EPA": "Eicosapentaenoic Acid (EPA) (g)",
+    "DHA": "Docosahexaenoic Acid (DHA) (g)"
+  },
+  "fieldCoverage": {
+    "Alpha-Linolenic Acid (ALA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Eicosapentaenoic Acid (EPA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Docosahexaenoic Acid (DHA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    }
+  },
+  "sources": {
+    "Matvaretabellen": "https://www.matvaretabellen.no/en/api/",
+    "USDA_FoodData_Central": "https://fdc.nal.usda.gov/",
+    "USDA_food_profiles": "https://whatyoueat.io/"
+  },
+  "methodNotes": [
+    "Direct component profiles were used where available. Closest-food values are scaled by fat ratio and identified in the row method.",
+    "For plant foods lacking a direct component split, total omega-3 is used as an ALA proxy and EPA/DHA are zero when no marine ingredient exists. These rows are estimates, not direct assays.",
+    "For plain dairy lacking a direct component split, ALA is estimated at 90% of total omega-3; EPA/DHA are zero at source precision.",
+    "Reported source zeros are kept for plain supplements, water, starch powder and foods where the checked profile supports zero at table precision."
+  ],
+  "legacyFieldUpdates": [
+    {
+      "databaseArrayIndex": 200,
+      "food": "Magermilchpulver",
+      "values": {
+        "Trans Fat (g)": 0.02284
+      }
+    },
+    {
+      "databaseArrayIndex": 209,
+      "food": "Mandelmus, natur",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 213,
+      "food": "Margarine, classic",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.35,
+        "Omega-6 Fatty Acids (g)": 34.96,
+        "Trans Fat (g)": 0.073243,
+        "Alcohol (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 216,
+      "food": "Mayonnaise 80%",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 5.459416,
+        "Omega-6 Fatty Acids (g)": 14.25,
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 219,
+      "food": "Milch, fettarm 1,5%",
+      "values": {
+        "Trans Fat (g)": 0.04425
+      }
+    },
+    {
+      "databaseArrayIndex": 221,
+      "food": "Milchkaffee / Latte (50/50)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.003098,
+        "Omega-6 Fatty Acids (g)": 0.0209115,
+        "Trans Fat (g)": 0.02213
+      }
+    },
+    {
+      "databaseArrayIndex": 225,
+      "food": "Mischbrot (Roggen-Weizen)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.0625,
+        "Omega-6 Fatty Acids (g)": 0.5
+      }
+    },
+    {
+      "databaseArrayIndex": 227,
+      "food": "Molkeprotein, Isolat (Pulver)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.002586,
+        "Omega-6 Fatty Acids (g)": 0.015517,
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 228,
+      "food": "Mortadella",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.243,
+        "Omega-6 Fatty Acids (g)": 3.209,
+        "Trans Fat (g)": 0.168,
+        "Alcohol (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 229,
+      "food": "Mozzarella, Kugel",
+      "values": {
+        "Trans Fat (g)": 0.5625
+      }
+    },
+    {
+      "databaseArrayIndex": 233,
+      "food": "Muscheln, gekocht",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.936,
+        "Omega-6 Fatty Acids (g)": 0.176
+      }
+    },
+    {
+      "databaseArrayIndex": 234,
+      "food": "Müsli, Basis (ohne Zucker)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.171053,
+        "Omega-6 Fatty Acids (g)": 2.223684,
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 238,
+      "food": "Nori-Algen (getrocknet)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.2,
+        "Omega-6 Fatty Acids (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 244,
+      "food": "Pangasius (roh)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 0.1
+      }
+    },
+    {
+      "databaseArrayIndex": 260,
+      "food": "Pizzateig, frisch",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.323054,
+        "Omega-6 Fatty Acids (g)": 0.816446,
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 261,
+      "food": "Popcorn-Mais (trocken, ungesalzen)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.057273,
+        "Omega-6 Fatty Acids (g)": 1.956818
+      }
+    },
+    {
+      "databaseArrayIndex": 262,
+      "food": "Protein-Drink, Molke (fertig gemixt)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.001293,
+        "Omega-6 Fatty Acids (g)": 0.007758,
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 263,
+      "food": "Puddingpulver Vanille (ohne Zucker)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0,
+        "Omega-6 Fatty Acids (g)": 0,
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0
+      }
+    },
+    {
+      "databaseArrayIndex": 266,
+      "food": "Putenkeule (roh, ohne Haut)",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.0476,
+        "Omega-6 Fatty Acids (g)": 0.784
+      }
+    }
+  ],
+  "legacyCorrections": [
+    {
+      "databaseArrayIndex": 206,
+      "field": "Omega-3 Fatty Acids (g)",
+      "previousValue": 1.867,
+      "newValue": 2.948,
+      "source": "https://whatyoueat.io/foods/175119-atlantic-mackerel"
+    },
+    {
+      "databaseArrayIndex": 206,
+      "field": "Omega-6 Fatty Acids (g)",
+      "previousValue": 0.339,
+      "newValue": 0.402,
+      "source": "https://whatyoueat.io/foods/175119-atlantic-mackerel"
+    }
+  ],
+  "records": [
+    {
+      "databaseArrayIndex": 200,
+      "food": "Magermilchpulver",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.00198,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plain dairy estimate: ALA set to 90% of reported omega-3; EPA/DHA zero at source precision.",
+      "source": "USDA whole-milk profile: https://whatyoueat.io/foods/171265-whole-milk",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 201,
+      "food": "Magnesium 188 mg (Tablette)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 202,
+      "food": "Magnesium 300 mg (Tablette)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 203,
+      "food": "Mais, Dose (abgetropft)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.02,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 204,
+      "food": "Mais, gefroren (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.011,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 205,
+      "food": "Maisgrieß / Polenta (trocken)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 206,
+      "food": "Makrele (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.159,
+      "EPA": 0.898,
+      "DHA": 1.401,
+      "method": "USDA FDC 175119, direct fatty-acid profile",
+      "source": "https://whatyoueat.io/foods/175119-atlantic-mackerel",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 207,
+      "food": "Mandarine / Clementine",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.018,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 208,
+      "food": "Mandeldrink, ungesüßt",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.000664,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 209,
+      "food": "Mandelmus, natur",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.007,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 210,
+      "food": "Mandeln",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.003,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 211,
+      "food": "Mango",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.051,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 212,
+      "food": "Mangold (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.125,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 213,
+      "food": "Margarine, classic",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.35,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Nearest local margarine, matched fat profile",
+      "source": "local database record 1048",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 214,
+      "food": "Mascarpone",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.2,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Matvaretabellen mascarpone component profile",
+      "source": "https://www.matvaretabellen.no/en/cheese-mascarpone/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 215,
+      "food": "Matjeshering",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.1875,
+      "EPA": 1.03125,
+      "DHA": 1.3125,
+      "method": "Matvaretabellen cured herring, scaled by fat ratio",
+      "source": "https://www.matvaretabellen.no/en/herring-cured-soaked-in-water/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 216,
+      "food": "Mayonnaise 80%",
+      "unitBasis": "g per 100 g",
+      "ALA": 5.366883,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Matvaretabellen full-fat mayonnaise, scaled by fat ratio",
+      "source": "https://www.matvaretabellen.no/en/mayonnaise-full-fat-80-fat/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 217,
+      "food": "Meerrettich (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.116,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 218,
+      "food": "Milch, entrahmte 0,1%",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.000927,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plain dairy estimate: ALA set to 90% of reported omega-3; EPA/DHA zero at source precision.",
+      "source": "USDA whole-milk profile: https://whatyoueat.io/foods/171265-whole-milk",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 219,
+      "food": "Milch, fettarm 1,5%",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.005576,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plain dairy estimate: ALA set to 90% of reported omega-3; EPA/DHA zero at source precision.",
+      "source": "USDA whole-milk profile: https://whatyoueat.io/foods/171265-whole-milk",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 220,
+      "food": "Milch, Vollmilch 3,5%",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.075019,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plain dairy estimate: ALA set to 90% of reported omega-3; EPA/DHA zero at source precision.",
+      "source": "USDA whole-milk profile: https://whatyoueat.io/foods/171265-whole-milk",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 221,
+      "food": "Milchkaffee / Latte (50/50)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.002788,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plain dairy estimate: ALA set to 90% of reported omega-3; EPA/DHA zero at source precision.",
+      "source": "USDA whole-milk profile: https://whatyoueat.io/foods/171265-whole-milk",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 222,
+      "food": "Milchreis (trocken)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 223,
+      "food": "Mineralwasser, medium",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 224,
+      "food": "Mineralwasser, still",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 225,
+      "food": "Mischbrot (Roggen-Weizen)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.0625,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 226,
+      "food": "Miso, hell",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.405,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 227,
+      "food": "Molkeprotein, Isolat (Pulver)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.002586,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "USDA FDC whey isolate, scaled by fat ratio",
+      "source": "https://whatyoueat.io/foods/173177",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 228,
+      "food": "Mortadella",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.242615,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "USDA mortadella profile, scaled by fat ratio",
+      "source": "https://whatyoueat.io/foods/174573",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 229,
+      "food": "Mozzarella, Kugel",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.1,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Matvaretabellen imported mozzarella profile",
+      "source": "https://www.matvaretabellen.no/en/cheese-mozzarella-in-brine-imported/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 230,
+      "food": "Multivitaminsaft",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 231,
+      "food": "Mungobohnen (trocken)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.027,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 232,
+      "food": "Muscheln, Dose (abgetropft)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0.4,
+      "DHA": 0.2,
+      "method": "Matvaretabellen drained mussels component profile",
+      "source": "https://www.matvaretabellen.no/en/mussel-blue-in-brine-drained/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 233,
+      "food": "Muscheln, gekocht",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.04,
+      "EPA": 0.276,
+      "DHA": 0.506,
+      "method": "USDA FDC 174217, direct fatty-acid profile",
+      "source": "https://whatyoueat.io/foods/174217",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 234,
+      "food": "Müsli, Basis (ohne Zucker)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.171053,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Matvaretabellen muesli profile, scaled by fat ratio",
+      "source": "https://www.matvaretabellen.no/en/muesli-with-fruit-nuts-sweetened/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 235,
+      "food": "Natto (fermentierte Sojabohnen)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.734,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 236,
+      "food": "Nektarine",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.002,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 237,
+      "food": "Niacinamid 50 mg (Tablette, flush-frei)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 238,
+      "food": "Nori-Algen (getrocknet)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0.2,
+      "DHA": 0,
+      "method": "Matvaretabellen dried nori component profile",
+      "source": "https://www.matvaretabellen.no/en/nori-seaweed-dried/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 239,
+      "food": "Nudeln, Hartweizen (trocken)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 240,
+      "food": "Oliven, grün (eingelegt, abgetropft)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.1,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 241,
+      "food": "Olivenöl, nativ extra",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.547787,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 242,
+      "food": "Orange",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.007,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 243,
+      "food": "Orangensaft, 100%",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 244,
+      "food": "Pangasius (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Matvaretabellen raw pangasius reported components",
+      "source": "https://www.matvaretabellen.no/en/pangasius-raw/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 245,
+      "food": "Paprika, gelb (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 246,
+      "food": "Paprika, grün (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.008,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 247,
+      "food": "Paprika, rot (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.056,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 248,
+      "food": "Paranüsse",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.018,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 249,
+      "food": "Parmesan",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.2,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Matvaretabellen ALA index, Parmesan value",
+      "source": "https://www.matvaretabellen.no/en/c18-3n-3-alpha-linolenic-acid/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 250,
+      "food": "Pastinake (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.021,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 251,
+      "food": "Pekannüsse",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.986,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 252,
+      "food": "Pesto, grün (Glas)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.226006,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 253,
+      "food": "Petersilie, glatt (frisch)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.008,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 254,
+      "food": "Pfirsich",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.002,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 255,
+      "food": "Pfirsiche, Dose (in Saft, abgetropft)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 256,
+      "food": "Pflaume",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 257,
+      "food": "Pflaumen, getrocknet (Backpflaumen)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.017,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 258,
+      "food": "Pinienkerne",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.112,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 259,
+      "food": "Pistazien, ungesalzen",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.289,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 260,
+      "food": "Pizzateig, frisch",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.323054,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Nearest local raw pizza dough, scaled by fat ratio",
+      "source": "local database record 1491",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 261,
+      "food": "Popcorn-Mais (trocken, ungesalzen)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.057273,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Nearest local plain popcorn maize, scaled by fat ratio",
+      "source": "local database record 533",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 262,
+      "food": "Protein-Drink, Molke (fertig gemixt)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.001293,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "USDA FDC whey isolate, scaled to ready drink",
+      "source": "https://whatyoueat.io/foods/173177",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 263,
+      "food": "Puddingpulver Vanille (ohne Zucker)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 264,
+      "food": "Pumpernickel",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.03,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 265,
+      "food": "Putenbrust (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 266,
+      "food": "Putenkeule (roh, ohne Haut)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.0476,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 267,
+      "food": "Putenschnitzel (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 268,
+      "food": "Quark, mager 0,2%",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 269,
+      "food": "Quinoa (trocken)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.307,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 270,
+      "food": "Radieschen (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.046,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 271,
+      "food": "Rapsöl",
+      "unitBasis": "g per 100 g",
+      "ALA": 7.095027,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 272,
+      "food": "Räucherlachs",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.263265,
+      "EPA": 0.117007,
+      "DHA": 0.17551,
+      "method": "Matvaretabellen smoked salmon profile, scaled by fat ratio",
+      "source": "https://www.matvaretabellen.no/en/salmon-smoked/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 273,
+      "food": "Reis, Vollkorn (trocken)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.032,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 274,
+      "food": "Reis, weiß (trocken)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.031,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 275,
+      "food": "Reisdrink",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 276,
+      "food": "Reisnudeln (trocken)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.026,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 277,
+      "food": "Reiswaffeln",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 278,
+      "food": "Rettich (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.055,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 279,
+      "food": "Rhabarber (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.017,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 280,
+      "food": "Ricotta",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.039,
+      "EPA": 0.004,
+      "DHA": 0.001,
+      "method": "USDA FDC 170851 ricotta components",
+      "source": "https://whatyoueat.io/foods/170851-whole-milk-ricotta-cheese",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 281,
+      "food": "Rinderbrust / Tafelspitz (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 282,
+      "food": "Rinderfilet (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.1,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Matvaretabellen raw beef tenderloin component profile",
+      "source": "https://www.matvaretabellen.no/en/beef-tenderloin-raw/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 283,
+      "food": "Rinderhackfleisch (roh, 20% Fett)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.051,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "USDA FDC 174036, 80/20 ground beef",
+      "source": "https://whatyoueat.io/foods/174036-ground-beef-80-lean",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 284,
+      "food": "Rinderhackfleisch, mager (5% Fett)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.029,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "USDA FDC 171790, 95/5 ground beef",
+      "source": "https://whatyoueat.io/foods/171790-ground-beef-95-lean",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 285,
+      "food": "Rinderhüftsteak (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 286,
+      "food": "Rinderleber (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.007,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "USDA FDC 169451 raw beef liver, matching fat/protein",
+      "source": "https://whatyoueat.io/foods/169451",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 287,
+      "food": "Roggenbrot",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.04,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 288,
+      "food": "Roggenmehl Type 1150",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.07,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 289,
+      "food": "Roggenvollkornmehl",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.0763,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 290,
+      "food": "Rosenkohl (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.156,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 291,
+      "food": "Rosinen",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.014,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 292,
+      "food": "Rote Bete (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.0041,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 293,
+      "food": "Rote Bete, Dose (abgetropft)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.004,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 294,
+      "food": "Rote-Bete-Saft",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    },
+    {
+      "databaseArrayIndex": 295,
+      "food": "Rotkohl (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.0435,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 296,
+      "food": "Rucola (roh)",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.136,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "estimate"
+    },
+    {
+      "databaseArrayIndex": 297,
+      "food": "Sahne 30%",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.080595,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Matvaretabellen whipping cream profile, scaled and bounded by total omega-3",
+      "source": "https://www.matvaretabellen.no/en/cream-whipping-37-fat/",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 298,
+      "food": "Salami",
+      "unitBasis": "g per 100 g",
+      "ALA": 0.293,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "USDA salami 18:3 profile, ALA estimated from existing total omega-3",
+      "source": "https://whatyoueat.io/foods/174598",
+      "confidence": "source value or close-match estimate"
+    },
+    {
+      "databaseArrayIndex": 299,
+      "food": "Salz, Speisesalz jodiert",
+      "unitBasis": "g per 100 g",
+      "ALA": 0,
+      "EPA": 0,
+      "DHA": 0,
+      "method": "Plant/non-marine profile proxy: reported omega-3 assigned to ALA; EPA/DHA zero where no marine ingredient is present.",
+      "source": "Existing checked omega-3 value and food-class profile",
+      "confidence": "reported zero"
+    }
+  ],
+  "sourceConflicts": [
+    {
+      "databaseArrayIndex": 286,
+      "food": "Rinderleber (roh)",
+      "field": "Omega-3 Fatty Acids (g)",
+      "existingValueRetained": 0.103,
+      "selectedComponentSource": "https://whatyoueat.io/foods/169451",
+      "selectedComponents": {
+        "ALA": 0.007,
+        "EPA": 0,
+        "DHA": 0
+      },
+      "otherCheckedSource": "https://www.matvaretabellen.no/en/liver-beef-raw/",
+      "note": "Sources disagree substantially: USDA has the closer fat/protein match and reports ALA 0.007 with EPA/DHA 0; Matvaretabellen reports rounded components and total Omega-3 0.4. The populated aggregate was not overwritten; the conflict remains flagged."
+    }
+  ]
+}

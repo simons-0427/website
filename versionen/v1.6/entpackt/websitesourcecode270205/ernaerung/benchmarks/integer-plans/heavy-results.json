@@ -1,0 +1,1561 @@
+{
+  "generatedAt": "2026-10-04T18:50:58.036Z",
+  "timeout": 5000,
+  "profiles": [
+    {
+      "id": "default",
+      "pool": 1516,
+      "activeConstraints": 55,
+      "lp": {
+        "ms": 25,
+        "feasible": true,
+        "cost": 1.32324324
+      },
+      "variants": [],
+      "support": 19,
+      "lpSupport": [
+        {
+          "name": "Biotin 5 mg / 5000 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.00291898
+        },
+        {
+          "name": "Erbsen, gelb (trocken, getrocknet)",
+          "unit": "g",
+          "amount": 68.87953399999999
+        },
+        {
+          "name": "Jodid-ratiopharm 100 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.26193365
+        },
+        {
+          "name": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "unit": "g",
+          "amount": 5.460751
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 3200
+        },
+        {
+          "name": "Niacinamid 50 mg (Tablette, flush-frei)",
+          "unit": "stk",
+          "amount": 0.00657706
+        },
+        {
+          "name": "Rapsöl",
+          "unit": "ml",
+          "amount": 34.171867999999996
+        },
+        {
+          "name": "Sojabohnen (trocken)",
+          "unit": "g",
+          "amount": 106.50799099999999
+        },
+        {
+          "name": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "unit": "stk",
+          "amount": 0.2056174
+        },
+        {
+          "name": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "unit": "tr",
+          "amount": 0.8
+        },
+        {
+          "name": "Weizenkleie",
+          "unit": "g",
+          "amount": 31.143822999999998
+        },
+        {
+          "name": "Weizenmehl Type 405",
+          "unit": "g",
+          "amount": 375.259898
+        },
+        {
+          "name": "Hühnerleber gebraten",
+          "unit": "g",
+          "amount": 9.033583
+        },
+        {
+          "name": "Rote Linsen gekocht",
+          "unit": "g",
+          "amount": 32.563041999999996
+        },
+        {
+          "name": "Weizenmehl Type 1050",
+          "unit": "g",
+          "amount": 67.218125
+        },
+        {
+          "name": "Erbse reif",
+          "unit": "g",
+          "amount": 7.098407
+        },
+        {
+          "name": "Speisesalz jodiert/Jodsalz",
+          "unit": "g",
+          "amount": 6.055042
+        },
+        {
+          "name": "Reis Kleie",
+          "unit": "g",
+          "amount": 2.1830789999999998
+        },
+        {
+          "name": "Sojaproteinisolat",
+          "unit": "g",
+          "amount": 50.029437
+        }
+      ],
+      "roundRepair": {
+        "ms": 3,
+        "valid": true,
+        "cost": 1.5327800000000003
+      },
+      "fastRepair": {
+        "ms": 3,
+        "valid": true,
+        "cost": 1.5327800000000003,
+        "violations": []
+      },
+      "enumerated": {
+        "ms": 768,
+        "valid": true,
+        "cost": 1.53119,
+        "checked": 262144
+      },
+      "expandedCount": 65,
+      "expandedFast": {
+        "ms": 6,
+        "valid": true,
+        "cost": 1.5327800000000003,
+        "violations": []
+      },
+      "mixed": {
+        "ms": 5,
+        "repairMs": 15,
+        "solverFeasible": true,
+        "valid": true,
+        "cost": 1.4155739999999999,
+        "pieceVars": 5
+      },
+      "mixedFast": {
+        "ms": 17,
+        "valid": true,
+        "cost": 1.4155739999999999,
+        "violations": []
+      },
+      "fixedPieces": {
+        "ms": 1,
+        "repairMs": 6,
+        "valid": true,
+        "cost": 1.531863
+      }
+    },
+    {
+      "id": "normal_protein",
+      "pool": 1516,
+      "activeConstraints": 55,
+      "lp": {
+        "ms": 17,
+        "feasible": true,
+        "cost": 1.22319814
+      },
+      "variants": [],
+      "support": 17,
+      "lpSupport": [
+        {
+          "name": "Biotin 5 mg / 5000 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.00227059
+        },
+        {
+          "name": "Bohnen, weiß (trocken)",
+          "unit": "g",
+          "amount": 22.956607
+        },
+        {
+          "name": "Erbsen, gelb (trocken, getrocknet)",
+          "unit": "g",
+          "amount": 0.49913300000000005
+        },
+        {
+          "name": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "unit": "g",
+          "amount": 5.460751
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 3200
+        },
+        {
+          "name": "Rapsöl",
+          "unit": "ml",
+          "amount": 36.481089
+        },
+        {
+          "name": "Salz, Speisesalz jodiert",
+          "unit": "g",
+          "amount": 6.564291
+        },
+        {
+          "name": "Sojabohnen (trocken)",
+          "unit": "g",
+          "amount": 94.02210199999999
+        },
+        {
+          "name": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "unit": "stk",
+          "amount": 0.20500582
+        },
+        {
+          "name": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "unit": "tr",
+          "amount": 0.8
+        },
+        {
+          "name": "Weizenkleie",
+          "unit": "g",
+          "amount": 36.498293
+        },
+        {
+          "name": "Weizenmehl Type 405",
+          "unit": "g",
+          "amount": 493.89955199999997
+        },
+        {
+          "name": "Hühnerleber gebraten",
+          "unit": "g",
+          "amount": 8.987295
+        },
+        {
+          "name": "Rote Linsen gekocht",
+          "unit": "g",
+          "amount": 148.423244
+        },
+        {
+          "name": "Erbse reif",
+          "unit": "g",
+          "amount": 26.875760999999997
+        },
+        {
+          "name": "Speisesalz jodiert/Jodsalz",
+          "unit": "g",
+          "amount": 0.696283
+        },
+        {
+          "name": "Reis Kleie",
+          "unit": "g",
+          "amount": 8.56525
+        }
+      ],
+      "roundRepair": {
+        "ms": 17,
+        "valid": false,
+        "cost": null
+      },
+      "fastRepair": {
+        "ms": 15,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Iodine (µg): 144.852 < 150",
+          "Vitamin B5 (Pantothenic Acid) (mg): 4.995 < 5",
+          "Vitamin B6 (mg): 1.594 < 1.6",
+          "Choline (mg): 399.236 < 400"
+        ]
+      },
+      "enumerated": {
+        "ms": 111,
+        "valid": false,
+        "cost": null,
+        "checked": 65536
+      },
+      "expandedCount": 65,
+      "expandedFast": {
+        "ms": 6,
+        "valid": true,
+        "cost": 1.3893,
+        "violations": []
+      },
+      "mixed": {
+        "ms": 1,
+        "repairMs": 2,
+        "solverFeasible": true,
+        "valid": false,
+        "cost": null,
+        "pieceVars": 3
+      },
+      "mixedFast": {
+        "ms": 2,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Iodine (µg): 144.828 < 150"
+        ]
+      },
+      "fixedPieces": {
+        "ms": 0,
+        "repairMs": 16,
+        "valid": false,
+        "cost": null
+      }
+    },
+    {
+      "id": "very_active",
+      "pool": 1516,
+      "activeConstraints": 55,
+      "lp": {
+        "ms": 12,
+        "feasible": true,
+        "cost": 1.36016981
+      },
+      "variants": [],
+      "support": 18,
+      "lpSupport": [
+        {
+          "name": "Biotin 5 mg / 5000 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.00299131
+        },
+        {
+          "name": "Erbsen, gelb (trocken, getrocknet)",
+          "unit": "g",
+          "amount": 48.472269000000004
+        },
+        {
+          "name": "Jodid-ratiopharm 100 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.22086008
+        },
+        {
+          "name": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "unit": "g",
+          "amount": 5.460751
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 3200
+        },
+        {
+          "name": "Rapsöl",
+          "unit": "ml",
+          "amount": 40.446857
+        },
+        {
+          "name": "Sojabohnen (trocken)",
+          "unit": "g",
+          "amount": 108.87051100000001
+        },
+        {
+          "name": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "unit": "stk",
+          "amount": 0.20560245
+        },
+        {
+          "name": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "unit": "tr",
+          "amount": 0.8
+        },
+        {
+          "name": "Weizenkleie",
+          "unit": "g",
+          "amount": 29.500247
+        },
+        {
+          "name": "Weizenmehl Type 405",
+          "unit": "g",
+          "amount": 504.486202
+        },
+        {
+          "name": "Hühnerleber gebraten",
+          "unit": "g",
+          "amount": 9.028155
+        },
+        {
+          "name": "Rote Linsen gekocht",
+          "unit": "g",
+          "amount": 50.28762
+        },
+        {
+          "name": "Weizenmehl Type 1050",
+          "unit": "g",
+          "amount": 29.100168
+        },
+        {
+          "name": "Erbse reif",
+          "unit": "g",
+          "amount": 7.643848
+        },
+        {
+          "name": "Speisesalz jodiert/Jodsalz",
+          "unit": "g",
+          "amount": 6.240982
+        },
+        {
+          "name": "Reis Kleie",
+          "unit": "g",
+          "amount": 4.757906
+        },
+        {
+          "name": "Sojaproteinisolat",
+          "unit": "g",
+          "amount": 42.984123000000004
+        }
+      ],
+      "roundRepair": {
+        "ms": 11,
+        "valid": true,
+        "cost": 1.501433
+      },
+      "fastRepair": {
+        "ms": 9,
+        "valid": true,
+        "cost": 1.501433,
+        "violations": []
+      },
+      "enumerated": {
+        "ms": 234,
+        "valid": true,
+        "cost": 1.49632,
+        "checked": 131072
+      },
+      "expandedCount": 65,
+      "expandedFast": {
+        "ms": 26,
+        "valid": true,
+        "cost": 1.570833,
+        "violations": []
+      },
+      "mixed": {
+        "ms": 1,
+        "repairMs": 34,
+        "solverFeasible": true,
+        "valid": false,
+        "cost": null,
+        "pieceVars": 4
+      },
+      "mixedFast": {
+        "ms": 29,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Potassium (mg): 3989.874 < 4000",
+          "Vitamin B5 (Pantothenic Acid) (mg): 4.990 < 5"
+        ]
+      },
+      "fixedPieces": {
+        "ms": 0,
+        "repairMs": 34,
+        "valid": false,
+        "cost": null
+      }
+    },
+    {
+      "id": "female",
+      "pool": 1516,
+      "activeConstraints": 55,
+      "lp": {
+        "ms": 14,
+        "feasible": true,
+        "cost": 1.13499752
+      },
+      "variants": [],
+      "support": 19,
+      "lpSupport": [
+        {
+          "name": "Biotin 5 mg / 5000 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.00283988
+        },
+        {
+          "name": "Erbsen, gelb (trocken, getrocknet)",
+          "unit": "g",
+          "amount": 57.171839000000006
+        },
+        {
+          "name": "Jodid-ratiopharm 100 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.12933912
+        },
+        {
+          "name": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "unit": "g",
+          "amount": 4.430373
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 2600
+        },
+        {
+          "name": "Rapsöl",
+          "unit": "ml",
+          "amount": 16.99119
+        },
+        {
+          "name": "Rinderleber (roh)",
+          "unit": "g",
+          "amount": 2.850891
+        },
+        {
+          "name": "Sojabohnen (trocken)",
+          "unit": "g",
+          "amount": 109.937096
+        },
+        {
+          "name": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "unit": "stk",
+          "amount": 0.17656464
+        },
+        {
+          "name": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "unit": "tr",
+          "amount": 0.79863157
+        },
+        {
+          "name": "Vitamin E Tropfen (12 mg/Tropfen, in Öl)",
+          "unit": "tr",
+          "amount": 0.09144357
+        },
+        {
+          "name": "Weizenkleie",
+          "unit": "g",
+          "amount": 31.659539
+        },
+        {
+          "name": "Weizenmehl Type 405",
+          "unit": "g",
+          "amount": 271.07153
+        },
+        {
+          "name": "Hühnerleber gebraten",
+          "unit": "g",
+          "amount": 6.235062999999999
+        },
+        {
+          "name": "Rote Linsen gekocht",
+          "unit": "g",
+          "amount": 86.91561399999999
+        },
+        {
+          "name": "Erbse reif",
+          "unit": "g",
+          "amount": 15.409592
+        },
+        {
+          "name": "Speisesalz jodiert/Jodsalz",
+          "unit": "g",
+          "amount": 6.63531
+        },
+        {
+          "name": "Reis Kleie",
+          "unit": "g",
+          "amount": 15.226588999999999
+        },
+        {
+          "name": "Sojaproteinisolat",
+          "unit": "g",
+          "amount": 31.077941
+        }
+      ],
+      "roundRepair": {
+        "ms": 8,
+        "valid": true,
+        "cost": 1.2878979999999998
+      },
+      "fastRepair": {
+        "ms": 6,
+        "valid": true,
+        "cost": 1.2878979999999998,
+        "violations": []
+      },
+      "enumerated": {
+        "ms": 351,
+        "valid": true,
+        "cost": 1.2892100000000002,
+        "checked": 262144
+      },
+      "expandedCount": 65,
+      "expandedFast": {
+        "ms": 19,
+        "valid": true,
+        "cost": 1.386988,
+        "violations": []
+      },
+      "mixed": {
+        "ms": 1,
+        "repairMs": 19,
+        "solverFeasible": true,
+        "valid": true,
+        "cost": 1.2841210000000003,
+        "pieceVars": 5
+      },
+      "mixedFast": {
+        "ms": 16,
+        "valid": true,
+        "cost": 1.2841210000000003,
+        "violations": []
+      },
+      "fixedPieces": {
+        "ms": 0,
+        "repairMs": 17,
+        "valid": true,
+        "cost": 1.286789
+      }
+    },
+    {
+      "id": "vegan",
+      "pool": 876,
+      "activeConstraints": 55,
+      "lp": {
+        "ms": 8,
+        "feasible": true,
+        "cost": 1.73379695
+      },
+      "variants": [],
+      "support": 17,
+      "lpSupport": [
+        {
+          "name": "Biotin 5 mg / 5000 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.00585902
+        },
+        {
+          "name": "Bohnen, weiß (trocken)",
+          "unit": "g",
+          "amount": 188.975704
+        },
+        {
+          "name": "Erbsen, gelb (trocken, getrocknet)",
+          "unit": "g",
+          "amount": 33.752797
+        },
+        {
+          "name": "Jodid-ratiopharm 100 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.98542533
+        },
+        {
+          "name": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "unit": "g",
+          "amount": 5.460751
+        },
+        {
+          "name": "Leinsamen",
+          "unit": "g",
+          "amount": 2.998363
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 3200
+        },
+        {
+          "name": "Margarine, classic",
+          "unit": "g",
+          "amount": 113.47540199999999
+        },
+        {
+          "name": "Paranüsse",
+          "unit": "g",
+          "amount": 0.307919
+        },
+        {
+          "name": "Vitamin B12 350 µg Depot (Tablette)",
+          "unit": "stk",
+          "amount": 0.0032219
+        },
+        {
+          "name": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "unit": "stk",
+          "amount": 0.21
+        },
+        {
+          "name": "Weizenmehl Type 405",
+          "unit": "g",
+          "amount": 48.199577
+        },
+        {
+          "name": "Weizenvollkornmehl",
+          "unit": "g",
+          "amount": 82.399179
+        },
+        {
+          "name": "Rote Linsen gekocht",
+          "unit": "g",
+          "amount": 33.116322999999994
+        },
+        {
+          "name": "Speisesalz jodiert/Jodsalz",
+          "unit": "g",
+          "amount": 2.142538
+        },
+        {
+          "name": "Sojaproteinisolat",
+          "unit": "g",
+          "amount": 84.621842
+        },
+        {
+          "name": "Getreideflakes gesüßt, angereichert mit Vitaminen und Mineralstoffen",
+          "unit": "g",
+          "amount": 136.777915
+        }
+      ],
+      "roundRepair": {
+        "ms": 7,
+        "valid": false,
+        "cost": null
+      },
+      "fastRepair": {
+        "ms": 6,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Omega-3 Fatty Acids (g): 1.598 < 1.6",
+          "Total Carbohydrate (g): 320.879 < 321",
+          "Protein (g): 159.411 < 160",
+          "Selenium (µg): 63.832 < 70",
+          "Vitamin D (µg): 19.983 < 20",
+          "Choline (mg): 398.725 < 400"
+        ]
+      },
+      "enumerated": {
+        "ms": 94,
+        "valid": false,
+        "cost": null,
+        "checked": 65536
+      },
+      "expandedCount": 67,
+      "expandedFast": {
+        "ms": 24,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Protein (g): 159.657 < 160",
+          "Creatine (mg): 4395.000 < 4800",
+          "Iodine (µg): 148.582 < 150",
+          "Selenium (µg): 63.832 < 70",
+          "Biotin (µg): 10.701 < 40",
+          "Vitamin B12 (µg): 2.877 < 4",
+          "Vitamin C (mg): 0.000 < 105",
+          "Vitamin D (µg): 19.983 < 20",
+          "Choline (mg): 398.725 < 400"
+        ]
+      },
+      "mixed": {
+        "ms": 0,
+        "repairMs": 1,
+        "solverFeasible": true,
+        "valid": false,
+        "cost": null,
+        "pieceVars": 4
+      },
+      "mixedFast": {
+        "ms": 1,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Omega-3 Fatty Acids (g): 1.403 < 1.6",
+          "Protein (g): 159.706 < 160",
+          "Selenium (µg): 64.934 < 70",
+          "Choline (mg): 398.782 < 400"
+        ]
+      },
+      "fixedPieces": {
+        "ms": 0,
+        "repairMs": 1,
+        "valid": false,
+        "cost": null
+      }
+    },
+    {
+      "id": "whole_food",
+      "pool": 499,
+      "activeConstraints": 55,
+      "lp": {
+        "ms": 4,
+        "feasible": true,
+        "cost": 4.45572911
+      },
+      "variants": [],
+      "support": 12,
+      "lpSupport": [
+        {
+          "name": "Hering, frisch (roh)",
+          "unit": "g",
+          "amount": 600
+        },
+        {
+          "name": "Karotte (roh)",
+          "unit": "g",
+          "amount": 125.85260000000001
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 4535.03618
+        },
+        {
+          "name": "Roggenbrot",
+          "unit": "g",
+          "amount": 156.935943
+        },
+        {
+          "name": "Sojabohnen (trocken)",
+          "unit": "g",
+          "amount": 18.420033999999998
+        },
+        {
+          "name": "Tee, grün (aufgebrüht)",
+          "unit": "ml",
+          "amount": 301.926194
+        },
+        {
+          "name": "Weizenkleie",
+          "unit": "g",
+          "amount": 0.400686
+        },
+        {
+          "name": "Weizenmehl Type 405",
+          "unit": "g",
+          "amount": 243.122398
+        },
+        {
+          "name": "Linse reif",
+          "unit": "g",
+          "amount": 44.175237
+        },
+        {
+          "name": "Erbse reif",
+          "unit": "g",
+          "amount": 51.443054
+        },
+        {
+          "name": "Reis Kleie",
+          "unit": "g",
+          "amount": 44.729612
+        },
+        {
+          "name": "Broccoli gebraten ohne Fett (Pfanne)",
+          "unit": "g",
+          "amount": 72.312648
+        }
+      ],
+      "roundRepair": {
+        "ms": 2,
+        "valid": false,
+        "cost": null
+      },
+      "fastRepair": {
+        "ms": 2,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Vitamin B2 (Riboflavin) (mg): 1.599 < 1.6",
+          "Vitamin B5 (Pantothenic Acid) (mg): 4.987 < 5",
+          "Biotin (µg): 39.940 < 40",
+          "Vitamin C (mg): 104.584 < 105"
+        ]
+      },
+      "enumerated": {
+        "ms": 6,
+        "valid": false,
+        "cost": null,
+        "checked": 2048
+      },
+      "expandedCount": 52,
+      "expandedFast": {
+        "ms": 7,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Vitamin C (mg): 104.584 < 105"
+        ]
+      },
+      "mixed": {
+        "ms": 0,
+        "repairMs": 2,
+        "solverFeasible": true,
+        "valid": false,
+        "cost": null,
+        "pieceVars": 0
+      },
+      "mixedFast": {
+        "ms": 2,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Vitamin B2 (Riboflavin) (mg): 1.599 < 1.6",
+          "Vitamin B5 (Pantothenic Acid) (mg): 4.987 < 5",
+          "Biotin (µg): 39.940 < 40",
+          "Vitamin C (mg): 104.584 < 105"
+        ]
+      },
+      "fixedPieces": {
+        "ms": 0,
+        "repairMs": 2,
+        "valid": false,
+        "cost": null
+      }
+    },
+    {
+      "id": "high_micro",
+      "pool": 1516,
+      "activeConstraints": 55,
+      "lp": {
+        "ms": 16,
+        "feasible": true,
+        "cost": 1.63934105
+      },
+      "variants": [],
+      "support": 21,
+      "lpSupport": [
+        {
+          "name": "Biotin 5 mg / 5000 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.00255419
+        },
+        {
+          "name": "Folsäure 800 µg + B1/B6/B12 (Tablette)",
+          "unit": "stk",
+          "amount": 0.07867861
+        },
+        {
+          "name": "Jodid-ratiopharm 100 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.6780386
+        },
+        {
+          "name": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "unit": "g",
+          "amount": 5.381882
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 3200
+        },
+        {
+          "name": "Niacinamid 50 mg (Tablette, flush-frei)",
+          "unit": "stk",
+          "amount": 0.16554656
+        },
+        {
+          "name": "Rapsöl",
+          "unit": "ml",
+          "amount": 7.651179
+        },
+        {
+          "name": "Rinderleber (roh)",
+          "unit": "g",
+          "amount": 34.662789
+        },
+        {
+          "name": "Sojabohnen (trocken)",
+          "unit": "g",
+          "amount": 233.12190099999998
+        },
+        {
+          "name": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "unit": "stk",
+          "amount": 0.31188622
+        },
+        {
+          "name": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "unit": "tr",
+          "amount": 1.18008883
+        },
+        {
+          "name": "Vitamin E Tropfen (12 mg/Tropfen, in Öl)",
+          "unit": "tr",
+          "amount": 0.50495532
+        },
+        {
+          "name": "Weizenkleie",
+          "unit": "g",
+          "amount": 20.136795
+        },
+        {
+          "name": "Weizenmehl Type 405",
+          "unit": "g",
+          "amount": 385.074671
+        },
+        {
+          "name": "Weizenvollkornmehl",
+          "unit": "g",
+          "amount": 0.436834
+        },
+        {
+          "name": "Zink 15 mg Depot (Tablette)",
+          "unit": "stk",
+          "amount": 0.08000522
+        },
+        {
+          "name": "Pfannkuchen süß (Vollmilch Hausgemacht)",
+          "unit": "g",
+          "amount": 20.456461
+        },
+        {
+          "name": "Rote Linsen gekocht",
+          "unit": "g",
+          "amount": 99.24319700000001
+        },
+        {
+          "name": "Erbse reif",
+          "unit": "g",
+          "amount": 56.356773000000004
+        },
+        {
+          "name": "Speisesalz jodiert/Jodsalz",
+          "unit": "g",
+          "amount": 7.242221
+        },
+        {
+          "name": "Sojaproteinisolat",
+          "unit": "g",
+          "amount": 1.721296
+        }
+      ],
+      "roundRepair": {
+        "ms": 21,
+        "valid": false,
+        "cost": null
+      },
+      "fastRepair": {
+        "ms": 16,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Potassium (mg): 5997.060 < 6000",
+          "Selenium (µg): 104.749 < 105",
+          "Zinc (mg): 19.788 < 21",
+          "Vitamin B3 (Niacin) (mg): 17.225 < 25.5",
+          "Vitamin B6 (mg): 2.070 < 2.4",
+          "Biotin (µg): 47.483 < 60",
+          "Vitamin C (mg): 1.551 < 157.5",
+          "Vitamin D (µg): 25.500 < 30",
+          "Total Vitamin K (µg): 104.840 < 105"
+        ]
+      },
+      "enumerated": {
+        "ms": 2080,
+        "valid": false,
+        "cost": null,
+        "checked": 1048576
+      },
+      "expandedCount": 65,
+      "expandedFast": {
+        "ms": 53,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Potassium (mg): 5997.060 < 6000",
+          "Selenium (µg): 104.749 < 105",
+          "Zinc (mg): 19.788 < 21",
+          "Vitamin B3 (Niacin) (mg): 17.225 < 25.5",
+          "Vitamin B6 (mg): 2.070 < 2.4",
+          "Biotin (µg): 47.483 < 60",
+          "Vitamin C (mg): 1.551 < 157.5",
+          "Vitamin D (µg): 25.500 < 30",
+          "Total Vitamin K (µg): 104.840 < 105"
+        ]
+      },
+      "mixed": {
+        "ms": 2,
+        "repairMs": 3,
+        "solverFeasible": true,
+        "valid": true,
+        "cost": 1.999588,
+        "pieceVars": 8
+      },
+      "mixedFast": {
+        "ms": 4,
+        "valid": true,
+        "cost": 1.999588,
+        "violations": []
+      },
+      "fixedPieces": {
+        "ms": 0,
+        "repairMs": 24,
+        "valid": true,
+        "cost": 1.9743969999999993
+      }
+    },
+    {
+      "id": "omega_ratio",
+      "pool": 1516,
+      "activeConstraints": 56,
+      "lp": {
+        "ms": 13,
+        "feasible": true,
+        "cost": 1.32324324
+      },
+      "variants": [],
+      "support": 19,
+      "lpSupport": [
+        {
+          "name": "Biotin 5 mg / 5000 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.00291898
+        },
+        {
+          "name": "Erbsen, gelb (trocken, getrocknet)",
+          "unit": "g",
+          "amount": 68.87953399999999
+        },
+        {
+          "name": "Jodid-ratiopharm 100 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.26193365
+        },
+        {
+          "name": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "unit": "g",
+          "amount": 5.460751
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 3200
+        },
+        {
+          "name": "Niacinamid 50 mg (Tablette, flush-frei)",
+          "unit": "stk",
+          "amount": 0.00657706
+        },
+        {
+          "name": "Rapsöl",
+          "unit": "ml",
+          "amount": 34.171867999999996
+        },
+        {
+          "name": "Sojabohnen (trocken)",
+          "unit": "g",
+          "amount": 106.50799099999999
+        },
+        {
+          "name": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "unit": "stk",
+          "amount": 0.2056174
+        },
+        {
+          "name": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "unit": "tr",
+          "amount": 0.8
+        },
+        {
+          "name": "Weizenkleie",
+          "unit": "g",
+          "amount": 31.143822999999998
+        },
+        {
+          "name": "Weizenmehl Type 405",
+          "unit": "g",
+          "amount": 375.259898
+        },
+        {
+          "name": "Hühnerleber gebraten",
+          "unit": "g",
+          "amount": 9.033583
+        },
+        {
+          "name": "Rote Linsen gekocht",
+          "unit": "g",
+          "amount": 32.563041999999996
+        },
+        {
+          "name": "Weizenmehl Type 1050",
+          "unit": "g",
+          "amount": 67.218125
+        },
+        {
+          "name": "Erbse reif",
+          "unit": "g",
+          "amount": 7.098407
+        },
+        {
+          "name": "Speisesalz jodiert/Jodsalz",
+          "unit": "g",
+          "amount": 6.055042
+        },
+        {
+          "name": "Reis Kleie",
+          "unit": "g",
+          "amount": 2.1830789999999998
+        },
+        {
+          "name": "Sojaproteinisolat",
+          "unit": "g",
+          "amount": 50.029437
+        }
+      ],
+      "roundRepair": {
+        "ms": 3,
+        "valid": true,
+        "cost": 1.5327800000000003
+      },
+      "fastRepair": {
+        "ms": 3,
+        "valid": true,
+        "cost": 1.5327800000000003,
+        "violations": []
+      },
+      "enumerated": {
+        "ms": 793,
+        "valid": true,
+        "cost": 1.53119,
+        "checked": 262144
+      },
+      "expandedCount": 65,
+      "expandedFast": {
+        "ms": 7,
+        "valid": true,
+        "cost": 1.5327800000000003,
+        "violations": []
+      },
+      "mixed": {
+        "ms": 1,
+        "repairMs": 2,
+        "solverFeasible": true,
+        "valid": true,
+        "cost": 1.53992,
+        "pieceVars": 5
+      },
+      "mixedFast": {
+        "ms": 3,
+        "valid": true,
+        "cost": 1.53992,
+        "violations": []
+      },
+      "fixedPieces": {
+        "ms": 0,
+        "repairMs": 6,
+        "valid": true,
+        "cost": 1.531863
+      }
+    },
+    {
+      "id": "epa_dha",
+      "pool": 1516,
+      "activeConstraints": 56,
+      "lp": {
+        "ms": 15,
+        "feasible": true,
+        "cost": 1.37791085
+      },
+      "variants": [],
+      "support": 20,
+      "lpSupport": [
+        {
+          "name": "Biotin 5 mg / 5000 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.00289685
+        },
+        {
+          "name": "Erbsen, gelb (trocken, getrocknet)",
+          "unit": "g",
+          "amount": 67.55967000000001
+        },
+        {
+          "name": "Jodid-ratiopharm 100 µg (Tablette)",
+          "unit": "stk",
+          "amount": 0.25382665
+        },
+        {
+          "name": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "unit": "g",
+          "amount": 5.460751
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 3200
+        },
+        {
+          "name": "Niacinamid 50 mg (Tablette, flush-frei)",
+          "unit": "stk",
+          "amount": 0.00696744
+        },
+        {
+          "name": "Rapsöl",
+          "unit": "ml",
+          "amount": 32.049648
+        },
+        {
+          "name": "Sojabohnen (trocken)",
+          "unit": "g",
+          "amount": 106.980728
+        },
+        {
+          "name": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "unit": "stk",
+          "amount": 0.20556857
+        },
+        {
+          "name": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "unit": "tr",
+          "amount": 0.8
+        },
+        {
+          "name": "Weizenkleie",
+          "unit": "g",
+          "amount": 31.705041
+        },
+        {
+          "name": "Weizenmehl Type 405",
+          "unit": "g",
+          "amount": 378.313829
+        },
+        {
+          "name": "Hühnerleber gebraten",
+          "unit": "g",
+          "amount": 9.034523
+        },
+        {
+          "name": "Rote Linsen gekocht",
+          "unit": "g",
+          "amount": 25.745338
+        },
+        {
+          "name": "Weizenmehl Type 1050",
+          "unit": "g",
+          "amount": 65.060795
+        },
+        {
+          "name": "Erbse reif",
+          "unit": "g",
+          "amount": 8.61083
+        },
+        {
+          "name": "Speisesalz jodiert/Jodsalz",
+          "unit": "g",
+          "amount": 6.098095
+        },
+        {
+          "name": "Reis Kleie",
+          "unit": "g",
+          "amount": 2.1762070000000002
+        },
+        {
+          "name": "Sojaproteinisolat",
+          "unit": "g",
+          "amount": 48.363943
+        },
+        {
+          "name": "Makrele, geräuchert",
+          "unit": "g",
+          "amount": 8.049626
+        }
+      ],
+      "roundRepair": {
+        "ms": 10,
+        "valid": true,
+        "cost": 1.5980509999999999
+      },
+      "fastRepair": {
+        "ms": 9,
+        "valid": true,
+        "cost": 1.5980509999999999,
+        "violations": []
+      },
+      "enumerated": {
+        "ms": 1612,
+        "valid": false,
+        "cost": null,
+        "checked": 524288
+      },
+      "expandedCount": 68,
+      "expandedFast": {
+        "ms": 26,
+        "valid": true,
+        "cost": 1.7393509999999999,
+        "violations": []
+      },
+      "mixed": {
+        "ms": 1,
+        "repairMs": 35,
+        "solverFeasible": true,
+        "valid": false,
+        "cost": null,
+        "pieceVars": 5
+      },
+      "mixedFast": {
+        "ms": 28,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Potassium (mg): 3999.548 < 4000",
+          "Vitamin B5 (Pantothenic Acid) (mg): 4.966 < 5",
+          "Vitamin B6 (mg): 1.599 < 1.6",
+          "Biotin (µg): 38.929 < 40"
+        ]
+      },
+      "fixedPieces": {
+        "ms": 0,
+        "repairMs": 2,
+        "valid": true,
+        "cost": 1.59361
+      }
+    },
+    {
+      "id": "gluten_free",
+      "pool": 1369,
+      "activeConstraints": 55,
+      "lp": {
+        "ms": 10,
+        "feasible": true,
+        "cost": 1.54037041
+      },
+      "variants": [],
+      "support": 18,
+      "lpSupport": [
+        {
+          "name": "Bohnen, weiß (trocken)",
+          "unit": "g",
+          "amount": 16.593688
+        },
+        {
+          "name": "Erbsen, gelb (trocken, getrocknet)",
+          "unit": "g",
+          "amount": 112.02559299999999
+        },
+        {
+          "name": "Folsäure 800 µg + B1/B6/B12 (Tablette)",
+          "unit": "stk",
+          "amount": 0.123298
+        },
+        {
+          "name": "Grünkohl (roh)",
+          "unit": "g",
+          "amount": 0.636971
+        },
+        {
+          "name": "Haferflocken, kernig (Discounter)",
+          "unit": "g",
+          "amount": 93.069198
+        },
+        {
+          "name": "Kreatin-Monohydrat ProFuel (Pulver)",
+          "unit": "g",
+          "amount": 5.460751
+        },
+        {
+          "name": "Leitungswasser",
+          "unit": "ml",
+          "amount": 3200
+        },
+        {
+          "name": "Paranüsse",
+          "unit": "g",
+          "amount": 0.560442
+        },
+        {
+          "name": "Rapsöl",
+          "unit": "ml",
+          "amount": 26.732297
+        },
+        {
+          "name": "Salz, Speisesalz jodiert",
+          "unit": "g",
+          "amount": 2.0390200000000003
+        },
+        {
+          "name": "Sojabohnen (trocken)",
+          "unit": "g",
+          "amount": 66.022789
+        },
+        {
+          "name": "Vitamin C 500 mg (Tablette, Ascorbinsäure)",
+          "unit": "stk",
+          "amount": 0.20059687
+        },
+        {
+          "name": "Vitamin D3 Tropfen, natural elements (1000 I.E./Tropfen, MCT)",
+          "unit": "tr",
+          "amount": 0.7106383
+        },
+        {
+          "name": "Zucker, weiß",
+          "unit": "g",
+          "amount": 34.016692
+        },
+        {
+          "name": "Hühnerleber gebraten",
+          "unit": "g",
+          "amount": 3.2422109999999997
+        },
+        {
+          "name": "Waffeln (Hausgemacht)",
+          "unit": "g",
+          "amount": 319.148936
+        },
+        {
+          "name": "Reis Kleie",
+          "unit": "g",
+          "amount": 21.536068
+        },
+        {
+          "name": "Sojaproteinisolat",
+          "unit": "g",
+          "amount": 67.171087
+        }
+      ],
+      "roundRepair": {
+        "ms": 2,
+        "valid": false,
+        "cost": null
+      },
+      "fastRepair": {
+        "ms": 2,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Iodine (µg): 149.195 < 150"
+        ]
+      },
+      "enumerated": {
+        "ms": 202,
+        "valid": false,
+        "cost": null,
+        "checked": 131072
+      },
+      "expandedCount": 65,
+      "expandedFast": {
+        "ms": 5,
+        "valid": true,
+        "cost": 1.75436,
+        "violations": []
+      },
+      "mixed": {
+        "ms": 0,
+        "repairMs": 2,
+        "solverFeasible": true,
+        "valid": false,
+        "cost": null,
+        "pieceVars": 3
+      },
+      "mixedFast": {
+        "ms": 2,
+        "valid": false,
+        "cost": null,
+        "violations": [
+          "Iodine (µg): 146.167 < 150",
+          "Total Vitamin A (µg): 904.000 < 950",
+          "Vitamin B3 (Niacin) (mg): 16.795 < 17"
+        ]
+      },
+      "fixedPieces": {
+        "ms": 0,
+        "repairMs": 2,
+        "valid": false,
+        "cost": null
+      }
+    }
+  ]
+}

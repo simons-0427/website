@@ -1,0 +1,1120 @@
+{
+  "batch": 16,
+  "checkedOn": "2026-09-24",
+  "range": {
+    "first": 1501,
+    "last": 1516,
+    "count": 16
+  },
+  "status": "partial_research",
+  "fields": [
+    "Omega-3 Fatty Acids (g)",
+    "Omega-6 Fatty Acids (g)",
+    "Trans Fat (g)",
+    "Alcohol (g)"
+  ],
+  "valueBasis": "Values are per 100 g edible food. CoFID alcoholic beverages are per 100 ml; this batch contains only foods with unit g.",
+  "nullPolicy": "A source blank, dash, N, trace, or below-detection marker is not a numeric zero. It remains null until a reliable numeric value is found.",
+  "coverageNotes": {
+    "BLS_4_0": "BLS 4.0 provides total omega-3, total omega-6, and alcohol, but no total trans-fat component. Total trans fat remains null unless another source reports it; a single trans isomer is not used as a substitute.",
+    "CoFID_2021": "CoFID 2021 values are per 100 g except alcoholic beverages, which are per 100 ml. Tr and N remain nonnumeric markers."
+  },
+  "sources": {
+    "BLS_4_0": {
+      "url": "https://blsdb.de/download",
+      "citation": "Max Rubner-Institut (2025), Bundeslebensmittelschluessel (BLS), Version 4.0, DOI 10.25826/Data20251217-134202-0",
+      "components": {
+        "FAPUN3": "Total n-3 polyunsaturated fatty acids, g/100 g",
+        "FAPUN6": "Total n-6 polyunsaturated fatty acids, g/100 g",
+        "ALC": "Alcohol (ethanol), g/100 g"
+      }
+    },
+    "CoFID_2021": {
+      "url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "components": {
+        "TOTn3PFOD": "Total n-3 polyunsaturated fatty acids per 100 g food",
+        "TOTn6PFOD": "Total n-6 polyunsaturated fatty acids per 100 g food",
+        "FODTRANS": "Total trans fatty acids per 100 g food",
+        "ALCO": "Alcohol, g"
+      }
+    },
+    "USDA_SR28": {
+      "adzukiUrl": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/SR/SR28/reports/sr28fg16.pdf",
+      "buttermilkDensityUrl": "https://www.ars.usda.gov/ARSUserFiles/80400525/Data/SR/SR28/reports/sr28fg01.pdf",
+      "balsamicDensityUrl": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/SR/SR28/reports/sr28fg02.pdf",
+      "peanutButterUrl": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/SR/SR28/reports/sr28fg16.pdf"
+    },
+    "DerivedTotalFatZero": {
+      "citation": "Derived from Total Fat (g) in the database, checked against numeric source values in the batch audit.",
+      "rule": "For an exact database value of 0 g total fat, missing Omega-3, Omega-6, and trans-fat values may be derived as 0 g only when no positive numeric source value for that field contradicts the derivation."
+    }
+  },
+  "records": [
+    {
+      "databaseIndex": 1501,
+      "databaseName": "Makrele, geräuchert",
+      "source": "CoFID_2021",
+      "sourceCode": "16-414",
+      "sourceRowNumber": "1604",
+      "sourceName": "Mackerel, flesh only, smoked",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 5.57,
+        "Omega-6 Fatty Acids (g)": 0.58,
+        "Trans Fat (g)": 0.02,
+        "Energy (cal)": 301,
+        "Total Fat (g)": 24.1,
+        "Saturated Fat (g)": 5.04,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 21.1,
+        "Cholesterol (mg)": 63
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "5.57",
+        "Omega-6 Fatty Acids (g)": "0.58",
+        "Trans Fat (g)": "0.02",
+        "Alcohol (g)": "",
+        "Energy (cal)": "301",
+        "Total Fat (g)": "24.1",
+        "Saturated Fat (g)": "5.04",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "21.1",
+        "Cholesterol (mg)": "63.0"
+      },
+      "sourceMarkers": {
+        "Alcohol (g)": "blank"
+      },
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 123,
+        "referenceDatabaseName": "Hering, geräuchert",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.824,
+          "UK": 0.861,
+          "US": 0.997
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1502,
+      "databaseName": "Kippers, gegrillt",
+      "source": "CoFID_2021",
+      "sourceCode": "16-397",
+      "sourceRowNumber": "1386",
+      "sourceName": "Kippers, flesh only, grilled",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 3.35,
+        "Omega-6 Fatty Acids (g)": 0.32,
+        "Trans Fat (g)": 0.01,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 245,
+        "Total Fat (g)": 17.6,
+        "Saturated Fat (g)": 3.74,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 21.7,
+        "Cholesterol (mg)": 65
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "3.35",
+        "Omega-6 Fatty Acids (g)": "0.32",
+        "Trans Fat (g)": "0.01",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "245",
+        "Total Fat (g)": "17.6",
+        "Saturated Fat (g)": "3.74",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "21.7",
+        "Cholesterol (mg)": "65.0"
+      },
+      "sourceMarkers": {},
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 123,
+        "referenceDatabaseName": "Hering, geräuchert",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.824,
+          "UK": 0.861,
+          "US": 0.997
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1503,
+      "databaseName": "Lachs, Zucht, gedämpft",
+      "source": "CoFID_2021",
+      "sourceCode": "16-358",
+      "sourceRowNumber": "2423",
+      "sourceName": "Salmon, farmed, flesh only, steamed",
+      "sourceGroup": "J",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 3.93,
+        "Omega-6 Fatty Acids (g)": 0.94,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 261,
+        "Total Fat (g)": 18.5,
+        "Saturated Fat (g)": 3.5,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Protein (g)": 23.6,
+        "Cholesterol (mg)": 85.2
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "3.93",
+        "Omega-6 Fatty Acids (g)": "0.94",
+        "Trans Fat (g)": "Tr",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "261",
+        "Total Fat (g)": "18.5",
+        "Saturated Fat (g)": "3.50",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "Tr",
+        "Protein (g)": "23.6",
+        "Cholesterol (mg)": "85.2"
+      },
+      "sourceMarkers": {
+        "Trans Fat (g)": "Tr",
+        "Dietary Fibre (g)": "Tr"
+      },
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 451,
+        "referenceDatabaseName": "Lachs Zucht gegrillt",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 1.21,
+          "UK": 1.331,
+          "US": 1.464
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23",
+      "internetCrossChecks": [
+        {
+          "source": "Matvaretabellen, Norwegian Food Composition Table",
+          "sourceUrl": "https://www.matvaretabellen.no/en/salmon-farmed-slices-simmered/",
+          "sourceName": "Salmon, farmed, slices, simmered",
+          "sourceFoodId": "04.225",
+          "field": "Trans Fat (g)",
+          "valuePer100g": 0,
+          "sourceMethod": "MI0002, EuroFIR recipe calculation procedure",
+          "comparison": "Same farmed Atlantic salmon, simmered rather than steamed.",
+          "assessment": "Numeric zero from a close official comparator conflicts with the exact CoFID target marker Tr. Retain null in the database until a numeric value for the exact steamed food or a justified trace conversion is available.",
+          "checkedOn": "2026-09-24"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 1504,
+      "databaseName": "Wildlachs, gebacken",
+      "source": "CoFID_2021",
+      "sourceCode": "16-485",
+      "sourceRowNumber": "2430",
+      "sourceName": "Salmon, wild, baked",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 2.64,
+        "Omega-6 Fatty Acids (g)": 0.31,
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 215,
+        "Total Fat (g)": 12.1,
+        "Saturated Fat (g)": 2.53,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 26.5,
+        "Cholesterol (mg)": 61.1
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "2.64",
+        "Omega-6 Fatty Acids (g)": "0.31",
+        "Trans Fat (g)": "0.00",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "215",
+        "Total Fat (g)": "12.1",
+        "Saturated Fat (g)": "2.53",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "26.5",
+        "Cholesterol (mg)": "61.1"
+      },
+      "sourceMarkers": {},
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 963,
+        "referenceDatabaseName": "Wildlachs roh",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 1.759,
+          "UK": 2.128,
+          "US": 2.515
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1505,
+      "databaseName": "Wildlachs, gegrillt",
+      "source": "CoFID_2021",
+      "sourceCode": "16-486",
+      "sourceRowNumber": "2432",
+      "sourceName": "Salmon, wild, grilled",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 2.58,
+        "Omega-6 Fatty Acids (g)": 0.3,
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 210,
+        "Total Fat (g)": 11.8,
+        "Saturated Fat (g)": 2.47,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 25.9,
+        "Cholesterol (mg)": 59.7
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "2.58",
+        "Omega-6 Fatty Acids (g)": "0.30",
+        "Trans Fat (g)": "0.00",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "210",
+        "Total Fat (g)": "11.8",
+        "Saturated Fat (g)": "2.47",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "25.9",
+        "Cholesterol (mg)": "59.7"
+      },
+      "sourceMarkers": {},
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 963,
+        "referenceDatabaseName": "Wildlachs roh",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 1.759,
+          "UK": 2.128,
+          "US": 2.515
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1506,
+      "databaseName": "Wildlachs, gedämpft",
+      "source": "CoFID_2021",
+      "sourceCode": "16-487",
+      "sourceRowNumber": "2433",
+      "sourceName": "Salmon, wild, steamed",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 2.52,
+        "Omega-6 Fatty Acids (g)": 0.3,
+        "Trans Fat (g)": 0,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 206,
+        "Total Fat (g)": 11.6,
+        "Saturated Fat (g)": 2.42,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 25.3,
+        "Cholesterol (mg)": 58.3
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "2.52",
+        "Omega-6 Fatty Acids (g)": "0.30",
+        "Trans Fat (g)": "0.00",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "206",
+        "Total Fat (g)": "11.6",
+        "Saturated Fat (g)": "2.42",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "25.3",
+        "Cholesterol (mg)": "58.3"
+      },
+      "sourceMarkers": {},
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 963,
+        "referenceDatabaseName": "Wildlachs roh",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 1.759,
+          "UK": 2.128,
+          "US": 2.515
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1507,
+      "databaseName": "Sardinen, Dose in Tomatensauce",
+      "source": "CoFID_2021",
+      "sourceCode": "16-422",
+      "sourceRowNumber": "2452",
+      "sourceName": "Sardines, canned in tomato sauce, whole contents",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 2.98,
+        "Omega-6 Fatty Acids (g)": 0.51,
+        "Trans Fat (g)": 0.01,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 175,
+        "Total Fat (g)": 10.8,
+        "Saturated Fat (g)": 2.89,
+        "Total Carbohydrate (g)": 0.9,
+        "Total sugars (g)": 0.9,
+        "Protein (g)": 18.5,
+        "Cholesterol (mg)": 71
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "2.98",
+        "Omega-6 Fatty Acids (g)": "0.51",
+        "Trans Fat (g)": "0.01",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "175",
+        "Total Fat (g)": "10.8",
+        "Saturated Fat (g)": "2.89",
+        "Total Carbohydrate (g)": "0.9",
+        "Total sugars (g)": "0.9",
+        "Dietary Fibre (g)": "Tr",
+        "Protein (g)": "18.5",
+        "Cholesterol (mg)": "71.0"
+      },
+      "sourceMarkers": {
+        "Dietary Fibre (g)": "Tr"
+      },
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 302,
+        "referenceDatabaseName": "Sardinen, Dose (in Öl, abgetropft)",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.604,
+          "UK": 0.465,
+          "US": 0.664
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1508,
+      "databaseName": "Sardinen, Dose in Salzlake, abgetropft",
+      "source": "CoFID_2021",
+      "sourceCode": "16-424",
+      "sourceRowNumber": "2449",
+      "sourceName": "Sardines, canned in brine, drained",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 2.5,
+        "Omega-6 Fatty Acids (g)": 0.23,
+        "Trans Fat (g)": 0.01,
+        "Energy (cal)": 170,
+        "Total Fat (g)": 9.1,
+        "Saturated Fat (g)": 2.61,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 22.1,
+        "Cholesterol (mg)": 66
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "2.50",
+        "Omega-6 Fatty Acids (g)": "0.23",
+        "Trans Fat (g)": "0.01",
+        "Alcohol (g)": "",
+        "Energy (cal)": "170",
+        "Total Fat (g)": "9.1",
+        "Saturated Fat (g)": "2.61",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "22.1",
+        "Cholesterol (mg)": "66.0"
+      },
+      "sourceMarkers": {
+        "Alcohol (g)": "blank"
+      },
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 302,
+        "referenceDatabaseName": "Sardinen, Dose (in Öl, abgetropft)",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.604,
+          "UK": 0.465,
+          "US": 0.664
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1509,
+      "databaseName": "Sardinen, Dose in Olivenöl, abgetropft",
+      "source": "CoFID_2021",
+      "sourceCode": "16-440",
+      "sourceRowNumber": "2450",
+      "sourceName": "Sardines, canned in olive oil, drained",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 2.54,
+        "Omega-6 Fatty Acids (g)": 0.6,
+        "Trans Fat (g)": 0.01,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 220,
+        "Total Fat (g)": 14.1,
+        "Saturated Fat (g)": 3.33,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 23.3,
+        "Cholesterol (mg)": 66
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "2.54",
+        "Omega-6 Fatty Acids (g)": "0.60",
+        "Trans Fat (g)": "0.01",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "220",
+        "Total Fat (g)": "14.1",
+        "Saturated Fat (g)": "3.33",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "23.3",
+        "Cholesterol (mg)": "66.0"
+      },
+      "sourceMarkers": {},
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 302,
+        "referenceDatabaseName": "Sardinen, Dose (in Öl, abgetropft)",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.604,
+          "UK": 0.465,
+          "US": 0.664
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1510,
+      "databaseName": "Sardinen, Dose in Sonnenblumenöl, abgetropft",
+      "source": "CoFID_2021",
+      "sourceCode": "16-439",
+      "sourceRowNumber": "2451",
+      "sourceName": "Sardines, canned in sunflower oil, drained",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 2.51,
+        "Omega-6 Fatty Acids (g)": 3.39,
+        "Trans Fat (g)": 0.01,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 220,
+        "Total Fat (g)": 14.1,
+        "Saturated Fat (g)": 3.21,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 23.3,
+        "Cholesterol (mg)": 66
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "2.51",
+        "Omega-6 Fatty Acids (g)": "3.39",
+        "Trans Fat (g)": "0.01",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "220",
+        "Total Fat (g)": "14.1",
+        "Saturated Fat (g)": "3.21",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "23.3",
+        "Cholesterol (mg)": "66.0"
+      },
+      "sourceMarkers": {},
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 302,
+        "referenceDatabaseName": "Sardinen, Dose (in Öl, abgetropft)",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.604,
+          "UK": 0.465,
+          "US": 0.664
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1511,
+      "databaseName": "Sprotten, roh",
+      "source": "CoFID_2021",
+      "sourceCode": "16-218",
+      "sourceRowNumber": "2594",
+      "sourceName": "Sprats, raw",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 2.68,
+        "Omega-6 Fatty Acids (g)": 0.31,
+        "Trans Fat (g)": 0,
+        "Energy (cal)": 172,
+        "Total Fat (g)": 11,
+        "Saturated Fat (g)": 2.2,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Protein (g)": 18.3,
+        "Cholesterol (mg)": 93
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "2.68",
+        "Omega-6 Fatty Acids (g)": "0.31",
+        "Trans Fat (g)": "0.00",
+        "Alcohol (g)": "",
+        "Energy (cal)": "172",
+        "Total Fat (g)": "11.0",
+        "Saturated Fat (g)": "2.20",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "",
+        "Protein (g)": "18.3",
+        "Cholesterol (mg)": "93.0"
+      },
+      "sourceMarkers": {
+        "Alcohol (g)": "blank",
+        "Dietary Fibre (g)": "blank"
+      },
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 207,
+        "referenceDatabaseName": "Makrele (roh)",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.714,
+          "UK": 0.746,
+          "US": 0.864
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1512,
+      "databaseName": "Seebarsch, roh",
+      "source": "CoFID_2021",
+      "sourceCode": "16-385",
+      "sourceRowNumber": "116",
+      "sourceName": "Bass, sea, flesh only, raw",
+      "sourceGroup": "JA",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 1.71,
+        "Omega-6 Fatty Acids (g)": 1.2,
+        "Trans Fat (g)": 0.02,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 168,
+        "Total Fat (g)": 9.8,
+        "Saturated Fat (g)": 2.16,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 20,
+        "Cholesterol (mg)": 71
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "1.71",
+        "Omega-6 Fatty Acids (g)": "1.20",
+        "Trans Fat (g)": "0.02",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "168",
+        "Total Fat (g)": "9.8",
+        "Saturated Fat (g)": "2.16",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "20.0",
+        "Cholesterol (mg)": "71.0"
+      },
+      "sourceMarkers": {},
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 88,
+        "referenceDatabaseName": "Forelle (roh)",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.989,
+          "UK": 1.034,
+          "US": 1.197
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1513,
+      "databaseName": "Seebarsch, gebacken",
+      "source": "CoFID_2021",
+      "sourceCode": "16-386",
+      "sourceRowNumber": "114",
+      "sourceName": "Bass, sea, flesh only, baked",
+      "sourceGroup": "JA",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 1.23,
+        "Omega-6 Fatty Acids (g)": 0.85,
+        "Trans Fat (g)": 0.01,
+        "Energy (cal)": 154,
+        "Total Fat (g)": 6.8,
+        "Saturated Fat (g)": 1.47,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 23.2,
+        "Cholesterol (mg)": 49
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "1.23",
+        "Omega-6 Fatty Acids (g)": "0.85",
+        "Trans Fat (g)": "0.01",
+        "Alcohol (g)": "",
+        "Energy (cal)": "154",
+        "Total Fat (g)": "6.8",
+        "Saturated Fat (g)": "1.47",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "23.2",
+        "Cholesterol (mg)": "49.0"
+      },
+      "sourceMarkers": {
+        "Alcohol (g)": "blank"
+      },
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 88,
+        "referenceDatabaseName": "Forelle (roh)",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.989,
+          "UK": 1.034,
+          "US": 1.197
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1514,
+      "databaseName": "Braunes Krabbenfleisch, gekocht",
+      "source": "CoFID_2021",
+      "sourceCode": "16-391",
+      "sourceRowNumber": "869",
+      "sourceName": "Crab, brown meat, purchased cooked",
+      "sourceGroup": "JK",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 1.3,
+        "Omega-6 Fatty Acids (g)": 0.29,
+        "Trans Fat (g)": 0.04,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 145,
+        "Total Fat (g)": 7.8,
+        "Saturated Fat (g)": 1.26,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 18.8,
+        "Cholesterol (mg)": 271
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "1.30",
+        "Omega-6 Fatty Acids (g)": "0.29",
+        "Trans Fat (g)": "0.04",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "145",
+        "Total Fat (g)": "7.8",
+        "Saturated Fat (g)": "1.26",
+        "Total Carbohydrate (g)": "Tr",
+        "Total sugars (g)": "Tr",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "18.8",
+        "Cholesterol (mg)": "271.0"
+      },
+      "sourceMarkers": {
+        "Total Carbohydrate (g)": "Tr",
+        "Total sugars (g)": "Tr"
+      },
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 449,
+        "referenceDatabaseName": "Krabbenfleisch Dose abgetropft",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 1.29,
+          "UK": 0.993,
+          "US": 1.419
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1515,
+      "databaseName": "Sardinen, gegrillt",
+      "source": "CoFID_2021",
+      "sourceCode": "16-438",
+      "sourceRowNumber": "2453",
+      "sourceName": "Sardines, flesh only, grilled",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 1.69,
+        "Omega-6 Fatty Acids (g)": 0.31,
+        "Trans Fat (g)": 0.01,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 172,
+        "Total Fat (g)": 7.8,
+        "Saturated Fat (g)": 2.35,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 25.4,
+        "Cholesterol (mg)": 65.1
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "1.69",
+        "Omega-6 Fatty Acids (g)": "0.31",
+        "Trans Fat (g)": "0.01",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "172",
+        "Total Fat (g)": "7.8",
+        "Saturated Fat (g)": "2.35",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "25.4",
+        "Cholesterol (mg)": "65.1"
+      },
+      "sourceMarkers": {},
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 457,
+        "referenceDatabaseName": "Makrele gegrillt",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.87,
+          "UK": 0.909,
+          "US": 1.053
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1516,
+      "databaseName": "Sardinen, roh",
+      "source": "CoFID_2021",
+      "sourceCode": "16-401",
+      "sourceRowNumber": "2455",
+      "sourceName": "Sardines, flesh only, raw",
+      "sourceGroup": "JC",
+      "matchMethod": "direct_food_code_for_new_food",
+      "valueBasis": "per 100 g edible food",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 1.32,
+        "Omega-6 Fatty Acids (g)": 0.24,
+        "Trans Fat (g)": 0.01,
+        "Alcohol (g)": 0,
+        "Energy (cal)": 134,
+        "Total Fat (g)": 6.1,
+        "Saturated Fat (g)": 1.83,
+        "Total Carbohydrate (g)": 0,
+        "Total sugars (g)": 0,
+        "Dietary Fibre (g)": 0,
+        "Protein (g)": 19.8,
+        "Cholesterol (mg)": 51
+      },
+      "sourceValuesPer100g": {
+        "Omega-3 Fatty Acids (g)": "1.32",
+        "Omega-6 Fatty Acids (g)": "0.24",
+        "Trans Fat (g)": "0.01",
+        "Alcohol (g)": "0.0",
+        "Energy (cal)": "134",
+        "Total Fat (g)": "6.1",
+        "Saturated Fat (g)": "1.83",
+        "Total Carbohydrate (g)": "0.0",
+        "Total sugars (g)": "0.0",
+        "Dietary Fibre (g)": "0.0",
+        "Protein (g)": "19.8",
+        "Cholesterol (mg)": "51.0"
+      },
+      "sourceMarkers": {},
+      "sourceUrl": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+      "priceProxy": {
+        "referenceDatabaseIndex": 207,
+        "referenceDatabaseName": "Makrele (roh)",
+        "method": "Copied current DE, UK and US prices from a similar existing food; price is an estimate, not a CoFID value.",
+        "prices": {
+          "DE": 0.714,
+          "UK": 0.746,
+          "US": 0.864
+        }
+      },
+      "nonSourceDefault": {
+        "Fluid (ml)": 0
+      },
+      "checkedOn": "2026-09-23"
+    },
+    {
+      "databaseIndex": 1511,
+      "databaseName": "Sprotten, roh",
+      "source": "BLS_4_0",
+      "sourceCode": "T106100",
+      "sourceName": "Sprotte roh",
+      "matchMethod": "exact_food_identity",
+      "valueBasis": "g per 100 g edible portion; database reference unit is g",
+      "sourceUrl": "https://blsdb.de/food?foodId=38020",
+      "values": {
+        "Alcohol (g)": 0
+      },
+      "sourceDetails": {
+        "ALC": {
+          "valuePer100g": "0.0",
+          "origin": "Logische Null",
+          "reference": "-"
+        }
+      },
+      "mappingNote": "Exact BLS raw-sprat record T106100 reports 0.0 g ethanol per 100 g as a logical zero.",
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1508,
+      "databaseName": "Sardinen, Dose in Salzlake, abgetropft",
+      "source": "BLS_4_0_Identity_Transfer",
+      "sourceCode": "T105702",
+      "sourceName": "Sardine in Öl, Konserve, abgetropft",
+      "sourceUrl": "https://blsdb.de/food?foodId=46023",
+      "matchMethod": "same_species_processed_food_zero_transfer",
+      "valueBasis": "g per 100 g edible portion; database reference unit is g",
+      "values": {
+        "Alcohol (g)": 0
+      },
+      "sourceDetails": {
+        "ALC": {
+          "valuePer100g": "0",
+          "origin": "Logische Null",
+          "reference": "-"
+        }
+      },
+      "sourceEvidence": [
+        {
+          "source": "BLS_4_0",
+          "sourceCode": "T105702",
+          "sourceName": "Sardine in Öl, Konserve, abgetropft",
+          "sourceUrl": "https://blsdb.de/food?foodId=46023",
+          "amountPer100g": 0,
+          "origin": "Logische Null"
+        },
+        {
+          "source": "CoFID_2021",
+          "sourceCode": "16-424",
+          "sourceName": "Sardines, canned in brine, drained",
+          "amountPer100g": null,
+          "marker": "blank"
+        }
+      ],
+      "mappingNote": "BLS 4.0 reports a logical zero for ethanol in the same sardine species, canned and drained. The target is the same fish canned in brine; no alcoholic ingredient is present. The exact CoFID target record has a blank alcohol marker, which was not treated as numeric evidence.",
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1513,
+      "databaseName": "Seebarsch, gebacken",
+      "source": "USDA_FoodData_Central_SR_Legacy_2018_Identity_Transfer",
+      "sourceCode": "FDC 175142, nutrient 221",
+      "sourceName": "Fish, sea bass, mixed species, raw",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175142/nutrients?type=SR%20Legacy",
+      "matchMethod": "same_species_unseasoned_cooking_zero_transfer",
+      "valueBasis": "g per 100 g edible portion; database reference unit is g",
+      "values": {
+        "Alcohol (g)": 0
+      },
+      "sourceEvidence": [
+        {
+          "source": "USDA_FoodData_Central_SR_Legacy_2018",
+          "sourceCode": "FDC 175142",
+          "sourceName": "Fish, sea bass, mixed species, raw",
+          "nutrientNumber": "221",
+          "amountPer100g": 0
+        },
+        {
+          "source": "CoFID_2021",
+          "sourceCode": "16-386",
+          "sourceName": "Sea bass, baked",
+          "amountPer100g": null,
+          "marker": "blank"
+        }
+      ],
+      "mappingNote": "USDA SR Legacy reports 0 g alcohol for raw sea bass (FDC 175142, nutrient 221). The target is plain baked sea bass with no alcoholic sauce or ingredient; dry-heat cooking adds no ethanol.",
+      "checkedOn": "2026-09-24"
+    },
+    {
+      "databaseIndex": 1501,
+      "databaseName": "Makrele, geräuchert",
+      "source": "USDA_FoodData_Central_SR_Legacy_2018_Identity_Transfer",
+      "sourceCode": "FDC 168149, nutrient 221",
+      "sourceName": "Fish, mackerel, salted",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168149/nutrients?type=SR%20Legacy",
+      "matchMethod": "same_species_processed_food_zero_transfer",
+      "valueBasis": "g per 100 g edible portion; database reference unit is g",
+      "values": {
+        "Alcohol (g)": 0
+      },
+      "sourceEvidence": [
+        {
+          "source": "USDA_FoodData_Central_SR_Legacy_2018",
+          "sourceCode": "FDC 168149",
+          "sourceName": "Fish, mackerel, salted",
+          "nutrientNumber": "221",
+          "amountPer100g": 0
+        },
+        {
+          "source": "BLS_4_0",
+          "sourceCode": "T107600",
+          "sourceName": "Makrele geräuchert",
+          "marker": "<LOD",
+          "amountPer100g": null
+        },
+        {
+          "source": "CoFID_2021",
+          "sourceCode": "16-414",
+          "sourceName": "Smoked mackerel",
+          "marker": "blank",
+          "amountPer100g": null
+        }
+      ],
+      "mappingNote": "USDA SR Legacy reports 0 g alcohol for salted mackerel, the same species in a closely related preservation form. The exact BLS smoked-mackerel record reports alcohol below its limit of detection and CoFID is blank; neither marker was converted to zero. The numeric zero is transferred from the same-species USDA comparator and is not an exact smoked-product measurement.",
+      "confidence": "medium",
+      "checkedOn": "2026-09-24"
+    }
+  ],
+  "uncoveredRecords": [],
+  "ambiguousCoFIDMatches": [],
+  "fieldCoverage": {
+    "Omega-3 Fatty Acids (g)": {
+      "filled": 16,
+      "missing": 0,
+      "total": 16
+    },
+    "Omega-6 Fatty Acids (g)": {
+      "filled": 16,
+      "missing": 0,
+      "total": 16
+    },
+    "Trans Fat (g)": {
+      "filled": 15,
+      "missing": 1,
+      "total": 16
+    },
+    "Alcohol (g)": {
+      "filled": 16,
+      "missing": 0,
+      "total": 16
+    }
+  },
+  "priceNote": "All three market prices are estimates copied from analogous foods already in the database. CoFID is the source only for nutrient values.",
+  "unresolvedFields": [
+    {
+      "databaseIndex": 1503,
+      "databaseName": "Lachs, Zucht, gedämpft",
+      "field": "Trans Fat (g)",
+      "reason": "Exact CoFID source code 16-358 reports Tr, not a numeric amount. Matvaretabellen reports 0 g for a closely related farmed, simmered Atlantic salmon, but its recipe-calculated value does not resolve the exact-source trace marker.",
+      "checkedOn": "2026-09-24"
+    }
+  ]
+}

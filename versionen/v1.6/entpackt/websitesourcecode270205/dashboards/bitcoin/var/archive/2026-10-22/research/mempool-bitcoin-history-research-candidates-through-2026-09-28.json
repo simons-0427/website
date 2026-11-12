@@ -1,0 +1,82 @@
+{
+  "dashboard": "bitcoin",
+  "candidateOnly": true,
+  "mergedIntoMaster": false,
+  "cutoffInclusive": "2026-09-28",
+  "output": "mempool-bitcoin-history-research-candidates-through-2026-09-28.csv",
+  "rows": 4562,
+  "outputBytes": 1115127,
+  "outputSha256": "3f510a12f536948ef94fbd952febeee98b27fb629e94a817e24f300afa4dcb08",
+  "sources": {
+    "mempool_space_historical_research_only": {
+      "endpoints": [
+        "/api/v1/mining/blocks/fee-rates/3y"
+      ],
+      "attribution": "Mempool.space REST API",
+      "dataReuseLicenseConfirmed": false,
+      "rawFiles": [
+        {
+          "path": "mempool-block-fee-rates-3y-through-2026-09-28.json",
+          "bytes": 451786,
+          "sha256": "81457223f6dfee5ae550652fcfd47f7ba31d4d6334c70cc4bb7b62f1cd04ec2e"
+        }
+      ]
+    },
+    "mempool_space_pool_hashrate_research_only": {
+      "endpoints": [
+        "/api/v1/mining/hashrate/pools/3y"
+      ],
+      "attribution": "Mempool.space REST API",
+      "dataReuseLicenseConfirmed": false,
+      "rawFiles": [
+        {
+          "path": "mempool-mining-pool-hashrate-3y-through-2026-09-28.json",
+          "bytes": 301622,
+          "sha256": "24778a278c7b971efbb1e627f1806b44dc93eb663e45a1a26eb8137a526013df"
+        }
+      ]
+    },
+    "derived_bitcoin_metrics": {
+      "methodology": "Weekly pool hashrate shares are renormalized over the identified pools to 100 percent. Pool concentration is the sum of the squared normalized percentage shares. The input is estimated weekly average hashrate, a proxy for block share rather than a direct count of blocks."
+    }
+  },
+  "metricCoverage": {
+    "mining_pool_hashrate_share_pct": {
+      "rows": 2213,
+      "series": 15,
+      "first": "2023-10-02",
+      "last": "2026-09-28"
+    },
+    "pool_hashrate_concentration_hhi": {
+      "rows": 157,
+      "first": "2023-10-02",
+      "last": "2026-09-28"
+    },
+    "fees_p10_sat_vb": {
+      "rows": 1096,
+      "first": "2023-09-29",
+      "last": "2026-09-28",
+      "sampleCounts": {
+        "1": 1,
+        "2": 1095
+      }
+    },
+    "fees_p90_sat_vb": {
+      "rows": 1096,
+      "first": "2023-09-29",
+      "last": "2026-09-28",
+      "sampleCounts": {
+        "1": 1,
+        "2": 1095
+      }
+    }
+  },
+  "limitations": [
+    "Only Bitcoin mainnet endpoints were queried.",
+    "Unknown mining-pool attribution is excluded, matching the dashboard metric definition.",
+    "Pool shares are renormalized among identified pools before local HHI calculation.",
+    "Pool shares come from weekly average hashrate and are a proxy, not a direct block count.",
+    "Fee-rate daily values are the mean of the endpoint 12-hour percentile aggregates available on that UTC date.",
+    "The API documents endpoints and rate limits but no separate data reuse license; keep this file private and do not upload it."
+  ]
+}

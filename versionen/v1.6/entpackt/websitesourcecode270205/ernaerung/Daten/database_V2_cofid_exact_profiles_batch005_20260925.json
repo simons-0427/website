@@ -1,0 +1,588 @@
+{
+    "checkedOn":  "2026-09-25",
+    "scope":  {
+                  "firstDatabaseIndex":  401,
+                  "lastDatabaseIndex":  500,
+                  "count":  100
+              },
+    "source":  "CoFID 2021, sheet 4; nutrient values per 100 g food.",
+    "sourceFile":  "Daten/CoFID_2021.xlsx",
+    "method":  "Exact/near-exact CoFID profiles selected by food identity and total-fat match. Numeric Omega-3, Omega-6 and trans-fat values were copied without scaling. CoFID trace marker Tr is stored as 0 at database reporting precision and is explicitly recorded below; N or blank source markers were not converted to zero.",
+    "records":  [
+                    {
+                        "databaseIndex":  402,
+                        "databaseName":  "Chicken Balti (Handelsware)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "19-449",
+                        "sourceName":  "Curry, chicken balti, retail",
+                        "sourceGroup":  "MR",
+                        "sourceFat_g_per_100g":  5,
+                        "targetFat_g_per_100g":  5,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0.01
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  403,
+                        "databaseName":  "Chicken Korma (Hausgemacht)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "19-565",
+                        "sourceName":  "Curry, chicken korma, homemade",
+                        "sourceGroup":  "MR",
+                        "sourceFat_g_per_100g":  5.1,
+                        "targetFat_g_per_100g":  5.1,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0.03
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  404,
+                        "databaseName":  "Chicken Tikka Masala (Handelsware)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "19-296",
+                        "sourceName":  "Curry, chicken tikka masala, retail, reheated",
+                        "sourceGroup":  "MIG",
+                        "sourceFat_g_per_100g":  9.8,
+                        "targetFat_g_per_100g":  9.8,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Omega-3 Fatty Acids (g)":  0.42,
+                                              "Omega-6 Fatty Acids (g)":  1.58,
+                                              "Trans Fat (g)":  0.29
+                                          },
+                        "priorValues":  {
+                                            "Omega-3 Fatty Acids (g)":  null,
+                                            "Omega-6 Fatty Acids (g)":  null,
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  420,
+                        "databaseName":  "Fleisch-Samosa (Takeaway)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "19-326",
+                        "sourceName":  "Meat samosas, takeaway",
+                        "sourceGroup":  "MR",
+                        "sourceFat_g_per_100g":  17.3,
+                        "targetFat_g_per_100g":  17.3,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Omega-3 Fatty Acids (g)":  0.89,
+                                              "Omega-6 Fatty Acids (g)":  3.85,
+                                              "Trans Fat (g)":  0.22
+                                          },
+                        "priorValues":  {
+                                            "Omega-3 Fatty Acids (g)":  null,
+                                            "Omega-6 Fatty Acids (g)":  null,
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  421,
+                        "databaseName":  "Fleischpastete (Handelsware)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "18-506",
+                        "sourceName":  "Pie, beef, puff or shortcrust pastry, individual, retail",
+                        "sourceGroup":  "MR",
+                        "sourceFat_g_per_100g":  17.7,
+                        "targetFat_g_per_100g":  17.8,
+                        "fatDifference_g_per_100g":  0.1,
+                        "confidence":  "medium-high",
+                        "valuesPer100g":  {
+                                              "Omega-3 Fatty Acids (g)":  0.21,
+                                              "Omega-6 Fatty Acids (g)":  1.67,
+                                              "Trans Fat (g)":  0.13
+                                          },
+                        "priorValues":  {
+                                            "Omega-3 Fatty Acids (g)":  null,
+                                            "Omega-6 Fatty Acids (g)":  null,
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  423,
+                        "databaseName":  "Frühlingsrolle mit Fleisch (Takeaway)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "19-327",
+                        "sourceName":  "Spring rolls, meat, takeaway",
+                        "sourceGroup":  "MR",
+                        "sourceFat_g_per_100g":  16.4,
+                        "targetFat_g_per_100g":  16.4,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Omega-3 Fatty Acids (g)":  1,
+                                              "Omega-6 Fatty Acids (g)":  3.74,
+                                              "Trans Fat (g)":  0.03
+                                          },
+                        "priorValues":  {
+                                            "Omega-3 Fatty Acids (g)":  null,
+                                            "Omega-6 Fatty Acids (g)":  null,
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  424,
+                        "databaseName":  "Gammon / Schinkenscheibe gegrillt",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "19-505",
+                        "sourceName":  "Ham, gammon rashers, grilled",
+                        "sourceGroup":  "MAA",
+                        "sourceFat_g_per_100g":  9.9,
+                        "targetFat_g_per_100g":  9.9,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Omega-3 Fatty Acids (g)":  0.19,
+                                              "Omega-6 Fatty Acids (g)":  1.23,
+                                              "Trans Fat (g)":  0.06
+                                          },
+                        "priorValues":  {
+                                            "Omega-3 Fatty Acids (g)":  0.172952,
+                                            "Omega-6 Fatty Acids (g)":  1.035325,
+                                            "Trans Fat (g)":  0
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  "Exact CoFID food profile replaces a prior lower-confidence estimate only for the explicitly allowed fields.",
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  425,
+                        "databaseName":  "Gemüse-Samosa (Handelsware)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "15-305",
+                        "sourceName":  "Samosas, vegetable, retail",
+                        "sourceGroup":  "DR",
+                        "sourceFat_g_per_100g":  9.3,
+                        "targetFat_g_per_100g":  9.3,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Omega-3 Fatty Acids (g)":  0.77,
+                                              "Omega-6 Fatty Acids (g)":  2.48,
+                                              "Trans Fat (g)":  0.32
+                                          },
+                        "priorValues":  {
+                                            "Omega-3 Fatty Acids (g)":  null,
+                                            "Omega-6 Fatty Acids (g)":  null,
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  434,
+                        "databaseName":  "Hirschfleisch / Wildbraten",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "18-491",
+                        "sourceName":  "Venison, roast",
+                        "sourceGroup":  "MEE",
+                        "sourceFat_g_per_100g":  2.5,
+                        "targetFat_g_per_100g":  2.5,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+                                                          "Trans Fat (g)"
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  454,
+                        "databaseName":  "Lammniere gebraten",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "18-493",
+                        "sourceName":  "Kidney, lamb, fried in corn oil",
+                        "sourceGroup":  "MG",
+                        "sourceFat_g_per_100g":  10.3,
+                        "targetFat_g_per_100g":  10.3,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+                                                          "Trans Fat (g)"
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  465,
+                        "databaseName":  "Papadam (Takeaway)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "11-998",
+                        "sourceName":  "Papadums, takeaway",
+                        "sourceGroup":  "AF",
+                        "sourceFat_g_per_100g":  38.8,
+                        "targetFat_g_per_100g":  38.8,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Omega-3 Fatty Acids (g)":  2.33,
+                                              "Omega-6 Fatty Acids (g)":  10.19,
+                                              "Trans Fat (g)":  0.07
+                                          },
+                        "priorValues":  {
+                                            "Omega-3 Fatty Acids (g)":  null,
+                                            "Omega-6 Fatty Acids (g)":  null,
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  472,
+                        "databaseName":  "Pommes frites (Fish-and-Chips-Laden)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "13-485",
+                        "sourceName":  "Potato chips, fried in commercial oil, from takeaway fish and chip shops",
+                        "sourceGroup":  "DAP",
+                        "sourceFat_g_per_100g":  8.4,
+                        "targetFat_g_per_100g":  8.4,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "medium-high",
+                        "valuesPer100g":  {
+                                              "Omega-3 Fatty Acids (g)":  0.02,
+                                              "Omega-6 Fatty Acids (g)":  0.44,
+                                              "Trans Fat (g)":  0.16
+                                          },
+                        "priorValues":  {
+                                            "Omega-3 Fatty Acids (g)":  null,
+                                            "Omega-6 Fatty Acids (g)":  null,
+                                            "Trans Fat (g)":  0
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  "Exact CoFID food profile replaces a prior lower-confidence estimate only for the explicitly allowed fields.",
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  476,
+                        "databaseName":  "Quiche Lorraine",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "12-952",
+                        "sourceName":  "Quiche, Lorraine, homemade",
+                        "sourceGroup":  "CD",
+                        "sourceFat_g_per_100g":  26,
+                        "targetFat_g_per_100g":  26,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0.33
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  0.2
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  "Exact CoFID food profile replaces a prior lower-confidence estimate only for the explicitly allowed fields.",
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  481,
+                        "databaseName":  "Rinder-Patty gegrillt (ca. 98% Rind)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "19-491",
+                        "sourceName":  "Burger, beef, 98-99% beef, grilled",
+                        "sourceGroup":  "MBG",
+                        "sourceFat_g_per_100g":  24.4,
+                        "targetFat_g_per_100g":  24.4,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  1.4
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  485,
+                        "databaseName":  "Risotto mit Hähnchen",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "19-566",
+                        "sourceName":  "Risotto, chicken, homemade",
+                        "sourceGroup":  "MR",
+                        "sourceFat_g_per_100g":  3.3,
+                        "targetFat_g_per_100g":  3.3,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0.07
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  489,
+                        "databaseName":  "Sandwich BLT (Weißbrot)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "11-955",
+                        "sourceName":  "Sandwich, white bread, bacon, lettuce and tomato",
+                        "sourceGroup":  "AB",
+                        "sourceFat_g_per_100g":  11.9,
+                        "targetFat_g_per_100g":  11.9,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0.01
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  490,
+                        "databaseName":  "Sandwich Cheddar und Pickles",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "11-963",
+                        "sourceName":  "Sandwich, white bread, cheddar cheese and pickle",
+                        "sourceGroup":  "AB",
+                        "sourceFat_g_per_100g":  14.4,
+                        "targetFat_g_per_100g":  14.4,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0.45
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  495,
+                        "databaseName":  "Spareribs BBQ nur Fleisch (Handelsware aufgewärmt)",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "19-264",
+                        "sourceName":  "Pork, spare ribs, \u0027barbecue style\u0027, meat only, retail, reheated",
+                        "sourceGroup":  "MR",
+                        "sourceFat_g_per_100g":  17.1,
+                        "targetFat_g_per_100g":  17.1,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Omega-3 Fatty Acids (g)":  0.31,
+                                              "Omega-6 Fatty Acids (g)":  2.41,
+                                              "Trans Fat (g)":  0.12
+                                          },
+                        "priorValues":  {
+                                            "Omega-3 Fatty Acids (g)":  null,
+                                            "Omega-6 Fatty Acids (g)":  null,
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  497,
+                        "databaseName":  "Tempeh-Burger gebraten",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "15-886",
+                        "sourceName":  "Tempeh burgers, fried in vegetable oil",
+                        "sourceGroup":  "DR",
+                        "sourceFat_g_per_100g":  7.9,
+                        "targetFat_g_per_100g":  7.9,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+                                                          "Trans Fat (g)"
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    },
+                    {
+                        "databaseIndex":  499,
+                        "databaseName":  "Tofu-Burger gebacken",
+                        "source":  "CoFID_2021",
+                        "sourceCode":  "15-887",
+                        "sourceName":  "Tofu burger, baked",
+                        "sourceGroup":  "DR",
+                        "sourceFat_g_per_100g":  4,
+                        "targetFat_g_per_100g":  4,
+                        "fatDifference_g_per_100g":  0,
+                        "confidence":  "high",
+                        "valuesPer100g":  {
+                                              "Trans Fat (g)":  0
+                                          },
+                        "priorValues":  {
+                                            "Trans Fat (g)":  null
+                                        },
+                        "sourceMarkersForUnmappedFields":  {
+                                                               "Omega-3 Fatty Acids (g)":  "blank",
+                                                               "Omega-6 Fatty Acids (g)":  "blank"
+                                                           },
+                        "traceMarkersRoundedToZero":  [
+                                                          "Trans Fat (g)"
+                                                      ],
+                        "replacementReason":  null,
+                        "alcoholRetained_g_per_100g":  0
+                    }
+                ],
+    "validation":  {
+                       "rowCountUnchanged":  true,
+                       "totalFatMatchWithin_0_11g":  true,
+                       "valuesNonnegative":  true,
+                       "preexistingValuesPreservedExceptExplicitReplacements":  true,
+                       "alcoholUnchanged":  true,
+                       "omega3ComponentsWithinTotal":  true
+                   }
+}

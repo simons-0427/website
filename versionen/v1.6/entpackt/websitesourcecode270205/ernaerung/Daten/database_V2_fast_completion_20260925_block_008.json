@@ -1,0 +1,2781 @@
+{
+  "checkedOn": "2026-09-25",
+  "method": "Fast completion: fill direct audited source values first, then estimate missing values from median ratios in matching food categories. Exact existing values are never overwritten.",
+  "scope": {
+    "firstDatabaseIndex": 701,
+    "lastDatabaseIndex": 800,
+    "count": 100,
+    "unitBasis": "g per 100 g; g per 100 ml for liquids"
+  },
+  "sources": [
+    "Daten/database_V2_fatty_acids_alcohol_batch_008_sources.json",
+    "Daten/database_V2_omega3_components_batch_004.json",
+    "Daten/database_V2_omega3_components_batch_005.json",
+    "Daten/database_V2_omega3_components_batch_006.json",
+    "Daten/database_V2_omega3_components_batch_007.json",
+    "Daten/database_V2_omega3_components_batch_008.json",
+    "Daten/database_V2_omega3_components_batch_009.json",
+    "Daten/database_V2_omega3_components_batch_010.json",
+    "Daten/database_V2_omega3_components_batch_011.json",
+    "Daten/database_V2_omega3_components_batch_012.json",
+    "Daten/database_V2_omega3_components_batch_013.json",
+    "Daten/database_V2_omega3_components_batch_014.json",
+    "Daten/database_V2_omega3_components_batch_015.json",
+    "Daten/database_V2_omega3_components_batch_016.json",
+    "Daten/database_V2_omega3_components_batch_017.json",
+    "Daten/database_V2_omega3_components_batch_018.json",
+    "Daten/database_V2_omega3_components_batch_019.json",
+    "Daten/database_V2_omega3_components_cofid_exact.json",
+    "Daten/database_V2_omega3_components_cofid_exact_batch005_20260925.json",
+    "Existing completed database records in the same food category, excluding the target block, used only for median-ratio estimates."
+  ],
+  "coverage": {
+    "Omega-3 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Omega-6 Fatty Acids (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Trans Fat (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Alcohol (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Alpha-Linolenic Acid (ALA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Eicosapentaenoic Acid (EPA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    },
+    "Docosahexaenoic Acid (DHA) (g)": {
+      "filled": 100,
+      "missing": 0,
+      "total": 100
+    }
+  },
+  "changes": [
+    {
+      "databaseIndex": 702,
+      "food": "Pommes frites tiefgefroren, gebacken",
+      "values": {
+        "Trans Fat (g)": 0.013746,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 703,
+      "food": "Pommes frites tiefgefroren",
+      "values": {
+        "Trans Fat (g)": 0.010222,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 704,
+      "food": "Kartoffelchips energiereduziert",
+      "values": {
+        "Trans Fat (g)": 0.068252
+      }
+    },
+    {
+      "databaseIndex": 705,
+      "food": "Kartoffelsticks",
+      "values": {
+        "Trans Fat (g)": 0.099998
+      }
+    },
+    {
+      "databaseIndex": 706,
+      "food": "Steinpilz roh",
+      "values": {
+        "Trans Fat (g)": 0,
+        "Alpha-Linolenic Acid (ALA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 707,
+      "food": "Milch entrahmt, frisch, höchstens 0,1 % Fett, pasteurisiert",
+      "values": {
+        "Trans Fat (g)": 0.002381,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 708,
+      "food": "Milch fettarm, 1,5 % Fett, laktosefrei, pasteurisiert",
+      "values": {
+        "Trans Fat (g)": 0.052375
+      }
+    },
+    {
+      "databaseIndex": 709,
+      "food": "Sahneersatz (Mischung aus pflanzlichen Fetten und Milch)",
+      "values": {
+        "Trans Fat (g)": 0.61218,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 710,
+      "food": "Vollmilch 3,5 % Fett, laktosefrei, pasteurisiert",
+      "values": {
+        "Trans Fat (g)": 0.118695
+      }
+    },
+    {
+      "databaseIndex": 711,
+      "food": "Ziegenmilch mind. 3 % Fett",
+      "values": {
+        "Trans Fat (g)": 0.133319
+      }
+    },
+    {
+      "databaseIndex": 712,
+      "food": "Schafmilch mind. 4,5 % Fett",
+      "values": {
+        "Trans Fat (g)": 0.202938
+      }
+    },
+    {
+      "databaseIndex": 713,
+      "food": "Joghurt fettarm, mind. 1,5 % bis max. 1,8 % Fett",
+      "values": {
+        "Trans Fat (g)": 0.054416,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 714,
+      "food": "H-Milch fettarm, 1,5 % Fett, laktosefrei, ultrahocherhitzt",
+      "values": {
+        "Trans Fat (g)": 0.049315
+      }
+    },
+    {
+      "databaseIndex": 715,
+      "food": "H-Vollmilch 3,5 % Fett, laktosefrei, ultrahocherhitzt",
+      "values": {
+        "Trans Fat (g)": 0.118695
+      }
+    },
+    {
+      "databaseIndex": 716,
+      "food": "Kondensmilch teilentrahmt, mind. 1 % bis < 7,5 % Fett",
+      "values": {
+        "Trans Fat (g)": 0.139441
+      }
+    },
+    {
+      "databaseIndex": 717,
+      "food": "Sahnejoghurt mind. 10 % Fett",
+      "values": {
+        "Trans Fat (g)": 0.3401
+      }
+    },
+    {
+      "databaseIndex": 718,
+      "food": "Kefir mind. 3,5 % Fett",
+      "values": {
+        "Trans Fat (g)": 0.119035
+      }
+    },
+    {
+      "databaseIndex": 719,
+      "food": "Joghurt mind. 3,5 % Fett, mit Magermilchpulverzusatz",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.021214,
+        "Trans Fat (g)": 0.119035,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.021214,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 720,
+      "food": "Joghurt mind. 3,5 % Fett, laktosefrei",
+      "values": {
+        "Trans Fat (g)": 0.117675
+      }
+    },
+    {
+      "databaseIndex": 721,
+      "food": "Dickmilch/Sauermilch, mind. 3,5 % Fett",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.021214,
+        "Trans Fat (g)": 0.119035,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.021214,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 722,
+      "food": "Kondensmilch mind. 7,5 % Fett",
+      "values": {
+        "Trans Fat (g)": 0.257456,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 723,
+      "food": "Schafjoghurt",
+      "values": {
+        "Trans Fat (g)": 0.210862
+      }
+    },
+    {
+      "databaseIndex": 724,
+      "food": "Süßmolke",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.001455,
+        "Omega-6 Fatty Acids (g)": 0.005205,
+        "Trans Fat (g)": 0.008162,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.001455
+      }
+    },
+    {
+      "databaseIndex": 725,
+      "food": "Schlagsahne mind. 30 % Fett",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.18,
+        "Eicosapentaenoic Acid (EPA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 726,
+      "food": "Kaffeesahne mind. 10 % Fett",
+      "values": {
+        "Trans Fat (g)": 0.357105,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 727,
+      "food": "Trinkjoghurt aus entrahmter Milch, max. 0,5 % Fett, mit Fruchtzubereitung, gesüßt",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 728,
+      "food": "Joghurt mild, max. 3,8 % Fett, mit Fruchtzubereitung, gesüßt, laktosefrei",
+      "values": {
+        "Trans Fat (g)": 0.10067
+      }
+    },
+    {
+      "databaseIndex": 729,
+      "food": "Trinkjoghurt mind. 3,5 % Fett, mit Fruchtzubereitung, gesüßt",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 730,
+      "food": "Chester (Cheddar) mind. 50 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 1.095122,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.251,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 731,
+      "food": "Bergkäse mind. 45 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 1.047678,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 732,
+      "food": "Chester (Cheddar) mind. 45 % Fett i. Tr.",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.125,
+        "Trans Fat (g)": 0.979488
+      }
+    },
+    {
+      "databaseIndex": 733,
+      "food": "Edamer mind. 45 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.962483
+      }
+    },
+    {
+      "databaseIndex": 734,
+      "food": "Edamer mind. 30 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.550962
+      }
+    },
+    {
+      "databaseIndex": 735,
+      "food": "Halloumi Grillkäse",
+      "values": {
+        "Trans Fat (g)": 0.852291,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 736,
+      "food": "Butterkäse mind. 50 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.979488,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 737,
+      "food": "Camembert mind. 50 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.874057
+      }
+    },
+    {
+      "databaseIndex": 738,
+      "food": "Brie mind. 45 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.674078
+      }
+    },
+    {
+      "databaseIndex": 739,
+      "food": "Mozzarella mind. 45 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.71387
+      }
+    },
+    {
+      "databaseIndex": 740,
+      "food": "Sauerrahm/Creme fraiche, 30 % Fett",
+      "values": {
+        "Trans Fat (g)": 0.91929
+      }
+    },
+    {
+      "databaseIndex": 741,
+      "food": "Körniger Frischkäse < 10 % Fett i. Tr.",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.01,
+        "Eicosapentaenoic Acid (EPA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 742,
+      "food": "Körniger Frischkäse mind. 20 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.146243
+      }
+    },
+    {
+      "databaseIndex": 743,
+      "food": "Speisequark Viertelfettstufe, 10 % Fett i. Tr.",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.012122,
+        "Trans Fat (g)": 0.06802,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.012122,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 744,
+      "food": "Speisequark Halbfettstufe, 20 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.173451,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 745,
+      "food": "Sauermilchkäse < 10 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.016087
+      }
+    },
+    {
+      "databaseIndex": 746,
+      "food": "Skyr, Frischkäse < 10 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.028568
+      }
+    },
+    {
+      "databaseIndex": 747,
+      "food": "Frischkäsezubereitung mind. 10 % Fett i. Tr., mit Gemüse/Kräutern",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.018183,
+        "Trans Fat (g)": 0.10203,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.018183,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 748,
+      "food": "Schmelzkäse aus Frischkäse, streichfähig, mind. 60 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 1.006696,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 749,
+      "food": "Kochkäse < 10 % Fett i. Tr.",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.003031,
+        "Trans Fat (g)": 0.017005,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.003031,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 750,
+      "food": "Schmelzkäse schnittfest, mind. 30 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.462536
+      }
+    },
+    {
+      "databaseIndex": 751,
+      "food": "Schmelzkäse schnittfest, mind. 45 % Fett i. Tr.",
+      "values": {
+        "Trans Fat (g)": 0.802636,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 752,
+      "food": "Schmelzkäsezubereitung mind. 40 % Fett i. Tr.",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.115161,
+        "Trans Fat (g)": 0.64619,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.115161,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 759,
+      "food": "Olivenöl",
+      "values": {
+        "Trans Fat (g)": 0.089915
+      }
+    },
+    {
+      "databaseIndex": 760,
+      "food": "Erdnussöl",
+      "values": {
+        "Trans Fat (g)": 0.089915
+      }
+    },
+    {
+      "databaseIndex": 761,
+      "food": "Rapsöl/Rüböl",
+      "values": {
+        "Trans Fat (g)": 0.090005
+      }
+    },
+    {
+      "databaseIndex": 762,
+      "food": "Maiskeimöl",
+      "values": {
+        "Trans Fat (g)": 0.090005
+      }
+    },
+    {
+      "databaseIndex": 763,
+      "food": "Sojaöl",
+      "values": {
+        "Trans Fat (g)": 0.090005
+      }
+    },
+    {
+      "databaseIndex": 764,
+      "food": "Schweinefett/Schweineschmalz",
+      "values": {
+        "Trans Fat (g)": 0.090005
+      }
+    },
+    {
+      "databaseIndex": 765,
+      "food": "Halbfettbutter",
+      "values": {
+        "Trans Fat (g)": 0.035822,
+        "Eicosapentaenoic Acid (EPA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 766,
+      "food": "Butterschmalz",
+      "values": {
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 767,
+      "food": "Mischfett mit überwiegend Milchfett, ungesalzen",
+      "values": {
+        "Trans Fat (g)": 0.064156
+      }
+    },
+    {
+      "databaseIndex": 776,
+      "food": "Senf extra scharf",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 777,
+      "food": "Senf scharf",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 778,
+      "food": "Senf süß",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 779,
+      "food": "Curry-Gewürzketchup",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 782,
+      "food": "Mayonnaise (Fertigprodukt)",
+      "values": {
+        "Trans Fat (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 783,
+      "food": "Königslachs roh",
+      "values": {
+        "Trans Fat (g)": 0.015342
+      }
+    },
+    {
+      "databaseIndex": 785,
+      "food": "Matjeshering mild gesalzen",
+      "values": {
+        "Trans Fat (g)": 0.030959
+      }
+    },
+    {
+      "databaseIndex": 786,
+      "food": "Rind Hinterhesse, roh",
+      "values": {
+        "Trans Fat (g)": 0.088235,
+        "Eicosapentaenoic Acid (EPA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 787,
+      "food": "Rind Bug/Schulter, roh",
+      "values": {
+        "Alpha-Linolenic Acid (ALA) (g)": 0.04899,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.001655
+      }
+    },
+    {
+      "databaseIndex": 788,
+      "food": "Rind Muskelfleisch, roh",
+      "values": {
+        "Trans Fat (g)": 0.027941,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.000728,
+        "Docosahexaenoic Acid (DHA) (g)": 0.000518
+      }
+    },
+    {
+      "databaseIndex": 789,
+      "food": "Rind Hüfte, roh",
+      "values": {
+        "Trans Fat (g)": 0.034559,
+        "Eicosapentaenoic Acid (EPA) (g)": 0,
+        "Docosahexaenoic Acid (DHA) (g)": 0
+      }
+    },
+    {
+      "databaseIndex": 791,
+      "food": "Rind Oberschale, roh",
+      "values": {
+        "Omega-3 Fatty Acids (g)": 0.046856,
+        "Trans Fat (g)": 0.066574,
+        "Alpha-Linolenic Acid (ALA) (g)": 0.038258,
+        "Eicosapentaenoic Acid (EPA) (g)": 0.001293,
+        "Docosahexaenoic Acid (DHA) (g)": 0.000919
+      }
+    },
+    {
+      "databaseIndex": 797,
+      "food": "Schwein Lachsbraten, roh",
+      "values": {
+        "Trans Fat (g)": 0.034559
+      }
+    },
+    {
+      "databaseIndex": 798,
+      "food": "Kasseler, Rohpökelware, geräuchert",
+      "values": {
+        "Trans Fat (g)": 0.031912
+      }
+    }
+  ],
+  "changeDetails": [
+    {
+      "databaseIndex": 702,
+      "food": "Pommes frites tiefgefroren, gebacken",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.013746,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 78,
+          "sampleCount": 78,
+          "fallbackToGlobal": false,
+          "ratio": 0.00317452380952381
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 91,
+          "sampleCount": 91,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 91,
+          "sampleCount": 91,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 703,
+      "food": "Pommes frites tiefgefroren",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.010222,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 78,
+          "sampleCount": 78,
+          "fallbackToGlobal": false,
+          "ratio": 0.00317452380952381
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 91,
+          "sampleCount": 91,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 91,
+          "sampleCount": 91,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 704,
+      "food": "Kartoffelchips energiereduziert",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.068252,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 78,
+          "sampleCount": 78,
+          "fallbackToGlobal": false,
+          "ratio": 0.00317452380952381
+        }
+      ]
+    },
+    {
+      "databaseIndex": 705,
+      "food": "Kartoffelsticks",
+      "category": "verarbeitet",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.099998,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "verarbeitet",
+          "peerCount": 78,
+          "sampleCount": 78,
+          "fallbackToGlobal": false,
+          "ratio": 0.00317452380952381
+        }
+      ]
+    },
+    {
+      "databaseIndex": 706,
+      "food": "Steinpilz roh",
+      "category": "gemuese",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "gemuese",
+          "peerCount": 146,
+          "sampleCount": 146,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 707,
+      "food": "Milch entrahmt, frisch, höchstens 0,1 % Fett, pasteurisiert",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.002381,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 708,
+      "food": "Milch fettarm, 1,5 % Fett, laktosefrei, pasteurisiert",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.052375,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 709,
+      "food": "Sahneersatz (Mischung aus pflanzlichen Fetten und Milch)",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.61218,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 710,
+      "food": "Vollmilch 3,5 % Fett, laktosefrei, pasteurisiert",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.118695,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 711,
+      "food": "Ziegenmilch mind. 3 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.133319,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 712,
+      "food": "Schafmilch mind. 4,5 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.202938,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 713,
+      "food": "Joghurt fettarm, mind. 1,5 % bis max. 1,8 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.054416,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 714,
+      "food": "H-Milch fettarm, 1,5 % Fett, laktosefrei, ultrahocherhitzt",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.049315,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 715,
+      "food": "H-Vollmilch 3,5 % Fett, laktosefrei, ultrahocherhitzt",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.118695,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 716,
+      "food": "Kondensmilch teilentrahmt, mind. 1 % bis < 7,5 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.139441,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 717,
+      "food": "Sahnejoghurt mind. 10 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.3401,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 718,
+      "food": "Kefir mind. 3,5 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.119035,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 719,
+      "food": "Joghurt mind. 3,5 % Fett, mit Magermilchpulverzusatz",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.021214,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 134,
+          "sampleCount": 134,
+          "fallbackToGlobal": false,
+          "ratio": 0.006061089582858445
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.119035,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.021214,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 720,
+      "food": "Joghurt mind. 3,5 % Fett, laktosefrei",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.117675,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 721,
+      "food": "Dickmilch/Sauermilch, mind. 3,5 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.021214,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 134,
+          "sampleCount": 134,
+          "fallbackToGlobal": false,
+          "ratio": 0.006061089582858445
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.119035,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.021214,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 722,
+      "food": "Kondensmilch mind. 7,5 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.257456,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 723,
+      "food": "Schafjoghurt",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.210862,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 724,
+      "food": "Süßmolke",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.001455,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 134,
+          "sampleCount": 134,
+          "fallbackToGlobal": false,
+          "ratio": 0.006061089582858445
+        },
+        {
+          "field": "Omega-6 Fatty Acids (g)",
+          "value": 0.005205,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 134,
+          "sampleCount": 134,
+          "fallbackToGlobal": false,
+          "ratio": 0.0216890243902439
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.008162,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.001455,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        }
+      ]
+    },
+    {
+      "databaseIndex": 725,
+      "food": "Schlagsahne mind. 30 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.18,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 726,
+      "food": "Kaffeesahne mind. 10 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.357105,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 727,
+      "food": "Trinkjoghurt aus entrahmter Milch, max. 0,5 % Fett, mit Fruchtzubereitung, gesüßt",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 39,
+          "sampleCount": 39,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 728,
+      "food": "Joghurt mild, max. 3,8 % Fett, mit Fruchtzubereitung, gesüßt, laktosefrei",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.10067,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 729,
+      "food": "Trinkjoghurt mind. 3,5 % Fett, mit Fruchtzubereitung, gesüßt",
+      "category": "getraenke",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "getraenke",
+          "peerCount": 39,
+          "sampleCount": 39,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 730,
+      "food": "Chester (Cheddar) mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 1.095122,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.251,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 731,
+      "food": "Bergkäse mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 1.047678,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 732,
+      "food": "Chester (Cheddar) mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.125,
+          "method": "sum of available ALA/EPA/DHA values",
+          "confidence": "derived"
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.979488,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 733,
+      "food": "Edamer mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.962483,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 734,
+      "food": "Edamer mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.550962,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 735,
+      "food": "Halloumi Grillkäse",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.852291,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 736,
+      "food": "Butterkäse mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.979488,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 737,
+      "food": "Camembert mind. 50 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.874057,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 738,
+      "food": "Brie mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.674078,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 739,
+      "food": "Mozzarella mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.71387,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 740,
+      "food": "Sauerrahm/Creme fraiche, 30 % Fett",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.91929,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 741,
+      "food": "Körniger Frischkäse < 10 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.01,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 742,
+      "food": "Körniger Frischkäse mind. 20 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.146243,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 743,
+      "food": "Speisequark Viertelfettstufe, 10 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.012122,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 134,
+          "sampleCount": 134,
+          "fallbackToGlobal": false,
+          "ratio": 0.006061089582858445
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.06802,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.012122,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 744,
+      "food": "Speisequark Halbfettstufe, 20 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.173451,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 745,
+      "food": "Sauermilchkäse < 10 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.016087,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 746,
+      "food": "Skyr, Frischkäse < 10 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.028568,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 747,
+      "food": "Frischkäsezubereitung mind. 10 % Fett i. Tr., mit Gemüse/Kräutern",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.018183,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 134,
+          "sampleCount": 134,
+          "fallbackToGlobal": false,
+          "ratio": 0.006061089582858445
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.10203,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.018183,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 748,
+      "food": "Schmelzkäse aus Frischkäse, streichfähig, mind. 60 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 1.006696,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 749,
+      "food": "Kochkäse < 10 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.003031,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 134,
+          "sampleCount": 134,
+          "fallbackToGlobal": false,
+          "ratio": 0.006061089582858445
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.017005,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.003031,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 750,
+      "food": "Schmelzkäse schnittfest, mind. 30 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.462536,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        }
+      ]
+    },
+    {
+      "databaseIndex": 751,
+      "food": "Schmelzkäse schnittfest, mind. 45 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.802636,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 752,
+      "food": "Schmelzkäsezubereitung mind. 40 % Fett i. Tr.",
+      "category": "milch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.115161,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 134,
+          "sampleCount": 134,
+          "fallbackToGlobal": false,
+          "ratio": 0.006061089582858445
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.64619,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 121,
+          "sampleCount": 121,
+          "fallbackToGlobal": false,
+          "ratio": 0.03401
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.115161,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 1
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "milch",
+          "peerCount": 77,
+          "sampleCount": 77,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 759,
+      "food": "Olivenöl",
+      "category": "oele_fette",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.089915,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 36,
+          "sampleCount": 36,
+          "fallbackToGlobal": false,
+          "ratio": 0.00090005375
+        }
+      ]
+    },
+    {
+      "databaseIndex": 760,
+      "food": "Erdnussöl",
+      "category": "oele_fette",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.089915,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 36,
+          "sampleCount": 36,
+          "fallbackToGlobal": false,
+          "ratio": 0.00090005375
+        }
+      ]
+    },
+    {
+      "databaseIndex": 761,
+      "food": "Rapsöl/Rüböl",
+      "category": "oele_fette",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.090005,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 36,
+          "sampleCount": 36,
+          "fallbackToGlobal": false,
+          "ratio": 0.00090005375
+        }
+      ]
+    },
+    {
+      "databaseIndex": 762,
+      "food": "Maiskeimöl",
+      "category": "oele_fette",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.090005,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 36,
+          "sampleCount": 36,
+          "fallbackToGlobal": false,
+          "ratio": 0.00090005375
+        }
+      ]
+    },
+    {
+      "databaseIndex": 763,
+      "food": "Sojaöl",
+      "category": "oele_fette",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.090005,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 36,
+          "sampleCount": 36,
+          "fallbackToGlobal": false,
+          "ratio": 0.00090005375
+        }
+      ]
+    },
+    {
+      "databaseIndex": 764,
+      "food": "Schweinefett/Schweineschmalz",
+      "category": "oele_fette",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.090005,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 36,
+          "sampleCount": 36,
+          "fallbackToGlobal": false,
+          "ratio": 0.00090005375
+        }
+      ]
+    },
+    {
+      "databaseIndex": 765,
+      "food": "Halbfettbutter",
+      "category": "oele_fette",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.035822,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 36,
+          "sampleCount": 36,
+          "fallbackToGlobal": false,
+          "ratio": 0.00090005375
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 22,
+          "sampleCount": 22,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 766,
+      "food": "Butterschmalz",
+      "category": "oele_fette",
+      "changes": [
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 22,
+          "sampleCount": 22,
+          "fallbackToGlobal": false,
+          "share": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 22,
+          "sampleCount": 22,
+          "fallbackToGlobal": false,
+          "share": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 767,
+      "food": "Mischfett mit überwiegend Milchfett, ungesalzen",
+      "category": "oele_fette",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.064156,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "oele_fette",
+          "peerCount": 36,
+          "sampleCount": 36,
+          "fallbackToGlobal": false,
+          "ratio": 0.00090005375
+        }
+      ]
+    },
+    {
+      "databaseIndex": 776,
+      "food": "Senf extra scharf",
+      "category": "wuerze",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 21,
+          "sampleCount": 21,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 777,
+      "food": "Senf scharf",
+      "category": "wuerze",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 21,
+          "sampleCount": 21,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 778,
+      "food": "Senf süß",
+      "category": "wuerze",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 21,
+          "sampleCount": 21,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 779,
+      "food": "Curry-Gewürzketchup",
+      "category": "wuerze",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 21,
+          "sampleCount": 21,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 782,
+      "food": "Mayonnaise (Fertigprodukt)",
+      "category": "wuerze",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "wuerze",
+          "peerCount": 21,
+          "sampleCount": 21,
+          "fallbackToGlobal": false,
+          "ratio": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 783,
+      "food": "Königslachs roh",
+      "category": "fisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.015342,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 69,
+          "sampleCount": 69,
+          "fallbackToGlobal": false,
+          "ratio": 0.0013698648648648648
+        }
+      ]
+    },
+    {
+      "databaseIndex": 785,
+      "food": "Matjeshering mild gesalzen",
+      "category": "fisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.030959,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fisch",
+          "peerCount": 69,
+          "sampleCount": 69,
+          "fallbackToGlobal": false,
+          "ratio": 0.0013698648648648648
+        }
+      ]
+    },
+    {
+      "databaseIndex": 786,
+      "food": "Rind Hinterhesse, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.088235,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705882352941178
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "derived zero from zero total Omega-3",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "databaseIndex": 787,
+      "food": "Rind Bug/Schulter, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.04899,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 142,
+          "sampleCount": 142,
+          "fallbackToGlobal": false,
+          "share": 0.8164983164983164
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.001655,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 142,
+          "sampleCount": 142,
+          "fallbackToGlobal": false,
+          "share": 0.027587519025875192
+        }
+      ]
+    },
+    {
+      "databaseIndex": 788,
+      "food": "Rind Muskelfleisch, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.027941,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705882352941178
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.000728,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 142,
+          "sampleCount": 142,
+          "fallbackToGlobal": false,
+          "share": 0.027587519025875192
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.000518,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 142,
+          "sampleCount": 142,
+          "fallbackToGlobal": false,
+          "share": 0.0196078431372549
+        }
+      ]
+    },
+    {
+      "databaseIndex": 789,
+      "food": "Rind Hüfte, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.034559,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705882352941178
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 142,
+          "sampleCount": 142,
+          "fallbackToGlobal": false,
+          "share": 0.027587519025875192,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 142,
+          "sampleCount": 142,
+          "fallbackToGlobal": false,
+          "share": 0.0196078431372549,
+          "scaledToOmega3Total": true,
+          "scaleFactor": 0
+        }
+      ]
+    },
+    {
+      "databaseIndex": 791,
+      "food": "Rind Oberschale, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Omega-3 Fatty Acids (g)",
+          "value": 0.046856,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 231,
+          "sampleCount": 231,
+          "fallbackToGlobal": false,
+          "ratio": 0.010350318471337579
+        },
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.066574,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705882352941178
+        },
+        {
+          "field": "Alpha-Linolenic Acid (ALA) (g)",
+          "value": 0.038258,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 142,
+          "sampleCount": 142,
+          "fallbackToGlobal": false,
+          "share": 0.8164983164983164
+        },
+        {
+          "field": "Eicosapentaenoic Acid (EPA) (g)",
+          "value": 0.001293,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 142,
+          "sampleCount": 142,
+          "fallbackToGlobal": false,
+          "share": 0.027587519025875192
+        },
+        {
+          "field": "Docosahexaenoic Acid (DHA) (g)",
+          "value": 0.000919,
+          "method": "same-category median share of total Omega-3",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 142,
+          "sampleCount": 142,
+          "fallbackToGlobal": false,
+          "share": 0.0196078431372549
+        }
+      ]
+    },
+    {
+      "databaseIndex": 797,
+      "food": "Schwein Lachsbraten, roh",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.034559,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705882352941178
+        }
+      ]
+    },
+    {
+      "databaseIndex": 798,
+      "food": "Kasseler, Rohpökelware, geräuchert",
+      "category": "fleisch",
+      "changes": [
+        {
+          "field": "Trans Fat (g)",
+          "value": 0.031912,
+          "method": "same-category median ratio to total fat",
+          "confidence": "estimate",
+          "category": "fleisch",
+          "peerCount": 169,
+          "sampleCount": 169,
+          "fallbackToGlobal": false,
+          "ratio": 0.014705882352941178
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "invalidValues": 0,
+    "omega3ComponentSumConflicts": 0,
+    "omega3AndOmega6FatConflicts": 0
+  }
+}

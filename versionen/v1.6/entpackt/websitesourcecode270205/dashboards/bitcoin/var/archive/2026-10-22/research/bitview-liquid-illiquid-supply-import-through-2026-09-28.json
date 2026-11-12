@@ -1,0 +1,53 @@
+{
+  "fetchedAtUtc": "2026-09-30T19:46:42.804Z",
+  "dashboard": "bitcoin",
+  "cutoffInclusive": "2026-09-28",
+  "source": "Bitview / Bitcoin Research Kit public series API",
+  "sourceSlug": "bitview_api_research_only",
+  "apiVersion": "v0.12.2",
+  "candidatePath": "bitview-liquid-illiquid-supply-import-through-2026-09-28.csv",
+  "candidateSha256": "ac33699f5d95aa41a0fd763673cb9827303ae19ad193c2b33693c8dc6bffc5de",
+  "candidateBytes": 2924120,
+  "observations": 12946,
+  "metricCounts": {
+    "liquid_supply_btc": 6473,
+    "illiquid_supply_btc": 6473
+  },
+  "series": [
+    {
+      "sourceSeries": "mobile_supply",
+      "metricId": "liquid_supply_btc",
+      "unit": "BTC",
+      "mappingNote": "Provisional semantic mapping from Bitview mobile supply to the catalog liquid-supply ID. The source uses age-range spending probabilities, not entity labels.",
+      "responseVersion": 832454418,
+      "stampedAtUtc": "2026-09-30T19:46:43Z",
+      "responseSha256": "bb6b18535cadc0b8baa580aa8f1986b65105a668eb9f740d0b72d99a1f26077a",
+      "responseBytes": 111012,
+      "firstDate": "2009-01-03",
+      "lastDate": "2026-09-28",
+      "observations": 6473,
+      "nullValues": 5,
+      "minimum": 0,
+      "maximum": 12180942.07599837
+    },
+    {
+      "sourceSeries": "immobile_supply",
+      "metricId": "illiquid_supply_btc",
+      "unit": "BTC",
+      "mappingNote": "Provisional semantic mapping from Bitview immobile supply to the catalog illiquid-supply ID. The source uses age-range spending probabilities, not entity labels.",
+      "responseVersion": 832454418,
+      "stampedAtUtc": "2026-09-30T19:46:43Z",
+      "responseSha256": "d91f13eb0ce0410763065fb03303b09519cd64012bd974fa8f3c06de997b5255",
+      "responseBytes": 109063,
+      "firstDate": "2009-01-03",
+      "lastDate": "2026-09-28",
+      "observations": 6473,
+      "nullValues": 5,
+      "minimum": 0,
+      "maximum": 9258684.56441658
+    }
+  ],
+  "uploaded": false,
+  "databaseImported": false,
+  "publicRedistributionCleared": false
+}

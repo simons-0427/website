@@ -1,0 +1,488 @@
+{
+  "batch": 3,
+  "checkedOn": "2026-08-14",
+  "selection": "30 relevante rohe Obstsorten und klar getrennte Fruchtzustände aus BLS 4.0; bestehende generische Datenbanknamen wurden durch den Zustand roh, geschält oder die Sorte eindeutig ergänzt.",
+  "priceMethod": "Niedrigster am Prüftag in aktuellen deutschen Verbraucherangeboten belegbarer Lebensmittelpreis je kg; bei saisonalem Frischobst wurden die niedrigsten ausgewiesenen ALDI-SÜD-Frischepreise der geprüften Angebotsseiten verwendet; anschließend +10 % und Umrechnung auf EUR/100 g. Pfand und Versand nicht als Lebensmittelpreis eingerechnet. Quellenlink-Nachaudit: Offensichtlich unpassende alte Angebotslinks wurden am 14.08.2026 auf aktuelle, passende Händler-Kategorieseiten normalisiert.",
+  "items": [
+    {
+      "code": "F110100",
+      "name": "Apfel, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1,
+      "sourceProduct": "NATUR LIEBLINGE Äpfel Krumme Dinger 2 kg, 1,00 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F120100",
+      "name": "Apfel, geschält, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1,
+      "sourceProduct": "NATUR LIEBLINGE Äpfel Krumme Dinger 2 kg, 1,00 EUR/kg; geschälter Zustand ohne Aufpreis",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F130100",
+      "name": "Birne, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.32,
+      "sourceProduct": "NATUR LIEBLINGE Birnen, rot 600 g, 3,32 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F201100",
+      "name": "Aprikose, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.7,
+      "sourceProduct": "NATUR LIEBLINGE Aprikosen 500 g, 2,70 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F202100",
+      "name": "Nektarine, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.69,
+      "sourceProduct": "NATUR LIEBLINGE Nektarinen 1 kg, 1,69 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F203100",
+      "name": "Pfirsich, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.79,
+      "sourceProduct": "NATUR LIEBLINGE Pfirsiche 1 kg, 1,79 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F211100",
+      "name": "Süßkirschen, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 4.4,
+      "sourceProduct": "NATUR LIEBLINGE Kirschen lose, 4,40 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F212100",
+      "name": "Sauerkirschen, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 4.4,
+      "sourceProduct": "NATUR LIEBLINGE Kirschen lose, 4,40 EUR/kg; BLS-Zustand Sauerkirsche roh",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F220100",
+      "name": "Pflaumen, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Zwetschgen/Pflaumen lose, 1,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F223100",
+      "name": "Zwetschgen, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.99,
+      "sourceProduct": "Zwetschgen lose, niedrigster ausgewiesener Preis 1,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F301100",
+      "name": "Erdbeeren, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.98,
+      "sourceProduct": "Erdbeeren 500 g, 5,98 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F302100",
+      "name": "Himbeeren, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 14.32,
+      "sourceProduct": "BESTES AUS DER REGION Himbeeren 125 g, 14,32 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F303100",
+      "name": "Brombeeren, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 14.32,
+      "sourceProduct": "Brombeeren Klasse I 125 g, 14,32 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F304100",
+      "name": "Heidelbeeren, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.98,
+      "sourceProduct": "NATUR LIEBLINGE Heidelbeeren 500 g, 5,98 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F305100",
+      "name": "Stachelbeeren, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.96,
+      "sourceProduct": "Stachelbeeren frisch, niedrigster aktueller Kategoriepreis 5,96 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F310100",
+      "name": "Weintrauben, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.58,
+      "sourceProduct": "NATUR LIEBLINGE Trauben hell, kernlos 500 g, 2,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F311100",
+      "name": "Weintrauben, rot, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.58,
+      "sourceProduct": "NATUR LIEBLINGE Trauben hell, kernlos 500 g, 2,58 EUR/kg; Traubensorte rot getrennt im BLS",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F312100",
+      "name": "Weintrauben, weiß, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.58,
+      "sourceProduct": "NATUR LIEBLINGE Trauben hell, kernlos 500 g, 2,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F321100",
+      "name": "Johannisbeeren, rot, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.58,
+      "sourceProduct": "Johannisbeeren rot frisch, niedrigster gelisteter Kategoriepreis 3,58 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F322100",
+      "name": "Johannisbeeren, weiß, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.58,
+      "sourceProduct": "Johannisbeeren rot frisch, niedrigster gelisteter Kategoriepreis 3,58 EUR/kg; BLS-Farbvariante weiß",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F323100",
+      "name": "Johannisbeeren, schwarz, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 3.58,
+      "sourceProduct": "Johannisbeeren rot frisch, niedrigster gelisteter Kategoriepreis 3,58 EUR/kg; BLS-Farbvariante schwarz",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F503100",
+      "name": "Banane, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.49,
+      "sourceProduct": "Bananen, regulärer Discounterpreis 1,49 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F508100",
+      "name": "Maracuja/Passionsfrucht, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 9.99,
+      "sourceProduct": "Passionsfrucht, aktueller Lebensmittelangebotspreis 9,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F514100",
+      "name": "Kiwi, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 5.98,
+      "sourceProduct": "Kiwi grün/Sungold, niedrigster ausgewiesener Preisanker 5,98 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F516100",
+      "name": "Mango, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 2.99,
+      "sourceProduct": "Mango, aktueller Lebensmittelangebotspreis 2,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F517100",
+      "name": "Papaya, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 4.99,
+      "sourceProduct": "Papaya, aktueller Lebensmittelangebotspreis 4,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F603100",
+      "name": "Orange, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 0.95,
+      "sourceProduct": "Orangen 2 kg, 0,95 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F501100",
+      "name": "Ananas, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.29,
+      "sourceProduct": "Ananas lose, 1,29 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F533100",
+      "name": "Honigmelone, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 1.25,
+      "sourceProduct": "Honigmelone lose, 1,25 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    },
+    {
+      "code": "F535100",
+      "name": "Wassermelone, roh",
+      "category": "obst",
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "pescetarisch",
+        "omnivor",
+        "whole_food"
+      ],
+      "basePerKg": 0.99,
+      "sourceProduct": "Wassermelone kernarm lose, 0,99 EUR/kg",
+      "sourceUrl": "https://www.aldi-sued.de/produkte/wochenangebote/frischeprodukte-im-angebot/k/1588161427299187",
+      "priceUnit": "kg"
+    }
+  ]
+}
