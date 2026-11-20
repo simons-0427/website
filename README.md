@@ -27,3 +27,11 @@ Website-Quellcode mit deutschen und englischen Seiten, CSS, JavaScript, Bildern 
 
 - [ZIP herunterladen](versionen/v1.6/websitesourcecode270205.zip)
 - [Dateien ansehen](versionen/v1.6/entpackt/websitesourcecode270205/)
+
+## v1.7
+
+Ausgabe vom 20.03.2027. Die Volltextsuche durchsucht die deutschen und
+englischen Seiten. Auf mehreren Projektseiten gibt es neue Vorschauvideos.
+
+- [ZIP herunterladen](versionen/v1.7/websitesourcecode270320.zip)
+- [Dateien ansehen](versionen/v1.7/entpackt/websitesourcecode270320/)

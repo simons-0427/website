@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>Website durchsuchen | Simon Stark</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap">
+  <link rel="stylesheet" href="/assets/site-header.css?v=20261104-nav64">
+  <link rel="stylesheet" href="/assets/footer-github.css">
+  <link rel="stylesheet" href="/assets/site-footer.css?v=20261104.3">
+  <link rel="stylesheet" href="site-search.css?v=8">
+  <script type="module" src="nav.js?v=6"></script>
+  <script type="module" src="results.mjs?v=6"></script>
+</head>
+<body class="search-page">
+  <nav class="main-nav">
+    <a href="/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/projekte/index.html">Projekte</a></li>
+      <li><a href="/downloads.html">Downloads</a></li>
+      <li><a href="/projekt-pipeline.html">Projekt-Pipeline</a></li>
+      <li><a href="/vision.html">Vision</a></li>
+      <li><a href="/wissen/index.html">Wissen</a></li>
+    </ul>
+    <div class="site-search-actions">
+      <form class="site-search-nav" action="./" method="get" role="search" aria-label="Website durchsuchen">
+        <button type="submit" class="site-search-nav-submit" aria-label="Suche starten" title="Suche starten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m15.3 15.3 4.3 4.3"></path>
+          </svg>
+        </button>
+        <input id="site-search-nav-query" class="site-search-nav-input" type="search" name="q"
+          role="combobox" aria-label="Website durchsuchen" aria-autocomplete="list"
+          aria-expanded="false" aria-controls="site-search-suggestions"
+          autocomplete="off" enterkeyhint="search" placeholder="Suchen …" maxlength="160" required>
+        <ul class="site-search-suggestions" id="site-search-suggestions" role="listbox"
+          aria-label="Passende Seiten" hidden></ul>
+      </form>
+      <div class="nav-actions">
+        <a class="language-switch" data-search-language-switch href="./en.html" aria-label="Zur englischen Suche wechseln" title="Zur englischen Suche wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></a>
+      </div>
+      <button class="nav-toggle" data-search-menu type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+<div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/projekte/index.html">Projekte</a></li>
+      <li><a href="/downloads.html">Downloads</a></li>
+      <li><a href="/projekt-pipeline.html">Projekt-Pipeline</a></li>
+      <li><a href="/vision.html">Vision</a></li>
+      <li><a href="/wissen/index.html">Wissen</a></li>
+
+      <li class="mobile-language-row">
+        <span class="mobile-language-label">Sprache</span>
+          <a class="language-switch" data-search-language-switch href="./en.html" aria-label="Zur englischen Suche wechseln" title="Zur englischen Suche wechseln"><span class="language-option language-option-active" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option" aria-hidden="true">EN</span></a>
+      </li>
+
+      <li>
+        <a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </li>
+    </ul>
+  </div>
+  <main class="search-shell">
+    <h1>Website durchsuchen</h1>
+    <form class="site-search-form" action="./" method="get" role="search" aria-label="Suchergebnisse">
+      <input class="site-search-input" id="search-query" name="q" type="search"
+        placeholder="Suchbegriff eingeben" aria-label="Suchbegriff" maxlength="160" required>
+      <button class="site-search-submit" type="submit">Suchen</button>
+    </form>
+    <p class="search-status" id="search-status" role="status">Gib einen Suchbegriff ein.</p>
+    <ol class="search-results" id="search-results" aria-label="Suchergebnisse"></ol>
+    <button class="site-search-submit search-more" id="search-more" type="button" hidden>Weitere Treffer</button>
+    <noscript>Die Website-Suche benötigt JavaScript.</noscript>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">sms<span>.</span></a>
+        <p>Persönliche Finance-Tools, Dashboards und Programmierprojekte von Simon Stark. Stetig im Aufbau.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="/projekte/index.html">Projekte</a></li>
+          <li><a href="/downloads.html">Downloads</a></li>
+          <li><a href="/projekt-pipeline.html">Projekt-Pipeline</a></li>
+          <li><a href="/vision.html">Vision</a></li>
+          <li><a href="/wissen/index.html">Wissen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a class="footer-github-exact" href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        github.com/simons-0427
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

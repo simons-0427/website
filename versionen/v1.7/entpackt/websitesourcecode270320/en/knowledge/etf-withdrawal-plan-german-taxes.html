@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="index, follow">
+  <title>ETF Withdrawals in Germany: What Reaches Your Account?</title>
+  <link rel="icon" type="image/svg+xml" href="../../images/favicons/favicon-1g-dotgrid.svg">
+  <link rel="alternate icon" type="image/png" href="../../images/favicons/favicon-1g-dotgrid-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicons/favicon-1g-dotgrid-180.png">
+  <meta name="description" content="A worked example of German taxes on ETF withdrawals, including capital gains, the partial exemption, the saver allowance and the Vorabpauschale.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://smstark-projekt.de/en/knowledge/etf-withdrawal-plan-german-taxes">
+  <meta property="og:title" content="ETF Withdrawals in Germany: What Reaches Your Account?">
+  <meta property="og:description" content="A worked example of German taxes on ETF withdrawals, including capital gains, the partial exemption, the saver allowance and the Vorabpauschale.">
+  <meta property="og:image" content="https://smstark-projekt.de/images/website-home-menu.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://smstark-projekt.de/en/knowledge/etf-withdrawal-plan-german-taxes">
+  <link rel="alternate" hreflang="de-DE" href="https://smstark-projekt.de/wissen/etf-entnahmeplan-deutsche-steuern">
+  <link rel="alternate" hreflang="en-GB" href="https://smstark-projekt.de/en/knowledge/etf-withdrawal-plan-german-taxes">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ETF Withdrawals in Germany: What Reaches Your Account?",
+    "description": "A worked example of German taxes on ETF withdrawals, including capital gains, the partial exemption, the saver allowance and the Vorabpauschale.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://smstark-projekt.de/#person",
+      "name": "Simon Stark",
+      "url": "https://smstark-projekt.de/",
+      "sameAs": [
+        "https://github.com/simons-0427"
+      ],
+      "knowsAbout": [
+        "Finance",
+        "Data analysis"
+      ]
+    },
+    "publisher": {
+      "@id": "https://smstark-projekt.de/#person"
+    },
+    "datePublished": "2026-09-28",
+    "dateModified": "2026-09-28",
+    "image": "https://smstark-projekt.de/images/website-home-menu.png",
+    "mainEntityOfPage": "https://smstark-projekt.de/en/knowledge/etf-withdrawal-plan-german-taxes",
+    "inLanguage": "en-GB"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://smstark-projekt.de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Knowledge",
+        "item": "https://smstark-projekt.de/en/knowledge/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Financial foundations",
+        "item": "https://smstark-projekt.de/en/knowledge/#fire-basics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "ETF Withdrawals in Germany: What Reaches Your Account?"
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0f; --surface: #13131a; --border: #1e1e2e;
+      --accent: #6ee7b7; --accent2: #818cf8; --text: #e2e8f0;
+      --muted: #64748b; --card: #16161f; --nav-h: 68px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); scrollbar-width: none; -ms-overflow-style: none; max-width: 100%; overflow-x: hidden; }
+    html::-webkit-scrollbar { display: none; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; max-width: 100%; width: 100%; }
+
+    .main-nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(12,12,15,.95); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 0 clamp(1.5rem,5vw,4rem); z-index: 100; gap: 2.2rem; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-github { position: absolute; right: clamp(1.5rem,5vw,4rem); display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 500; color: var(--text); text-decoration: none; border: 1px solid var(--text); padding: .4rem .9rem; border-radius: 8px; transition: border-color .2s, color .2s; }
+    .nav-github:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-github svg { width:15px; height:15px; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; position: absolute; left: clamp(1.5rem,5vw,4rem); }
+    .nav-logo span { color: var(--accent); }
+    .main-nav .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: .03em; transition: color .2s; }
+    .main-nav .nav-links a:hover, .main-nav .nav-links a.active { color: var(--accent); }
+    .nav-toggle { display: none; position: absolute; right: clamp(1.5rem,5vw,4rem); width: 40px; height: 40px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; z-index: 101; transition: border-color .2s; }
+    .nav-toggle:hover { border-color: var(--accent); }
+    .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(12,12,15,.98); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); z-index: 102; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .mobile-menu.open { max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .mobile-menu ul { list-style: none; padding: .4rem 1.5rem 1.4rem; }
+    .mobile-menu li + li { border-top: 1px solid var(--border); }
+    .mobile-menu a { display: flex; align-items: center; gap: .6rem; padding: .95rem .2rem; color: var(--text); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color .2s; }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-github { color: var(--accent); }
+    .mobile-menu .mobile-github svg { width: 17px; height: 17px; }
+    @media (max-width: 960px) {
+      .main-nav { justify-content: flex-start; padding: 0 1rem; width: 100%; max-width: 100%; box-sizing: border-box; }
+      .main-nav .nav-links, .main-nav .nav-github { display: none; }
+      .nav-logo { position: static; }
+      .nav-toggle { display: flex; right: 1rem; width: 44px; height: 44px; }
+      .mobile-menu { display: block; width: 100%; max-width: 100%; }
+    }
+
+    hr.divider { border: none; border-top: 1px solid var(--border); }
+
+    .btn { display: inline-flex; align-items: center; gap: .55rem; padding: .8rem 1.8rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 500; text-decoration: none; cursor: pointer; border: none; transition: transform .15s, box-shadow .15s, background .2s; }
+    .btn-primary { background: var(--accent); color: #0c0c0f; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,231,183,.3); }
+
+    #article-hero { padding: calc(var(--nav-h) + 3rem) clamp(1.5rem,5vw,4rem) 3.5rem; max-width: 1040px; margin: 0 auto; }
+    .breadcrumb { font-size: .78rem; color: var(--muted); margin-bottom: 1.4rem; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; } .breadcrumb a:hover { color: var(--accent); }
+    .article-eyebrow { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+    .article-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.08; letter-spacing: -.03em; margin-bottom: 1.4rem; }
+    .article-lead { font-size: 1.1rem; font-weight: 300; color: var(--muted); max-width: 76ch; line-height: 1.75; }
+    .article-meta { display: flex; gap: 1.2rem; margin-top: 1.6rem; font-size: .78rem; color: var(--muted); flex-wrap: wrap; }
+
+    section { padding: 3.5rem clamp(1.5rem,5vw,4rem); }
+    .section-label { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: .8rem; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; letter-spacing: -.025em; line-height: 1.15; margin-bottom: 1rem; }
+
+    .chapter-grid { display: grid; grid-template-columns: 80px 1fr; gap: 0 2.5rem; align-items: start; max-width: 960px; margin: 0 auto; }
+    .ch-num { font-family: 'Syne', sans-serif; font-size: .68rem; font-weight: 800; letter-spacing: .2em; color: var(--border); text-transform: uppercase; padding-top: .35rem; position: sticky; top: calc(var(--nav-h) + 2rem); user-select: none; }
+    .ch-text { font-size: 1.02rem; font-weight: 300; color: var(--muted); line-height: 1.85; max-width: 76ch; }
+    .ch-text + .ch-text { margin-top: 1.3rem; }
+    .ch-text strong { color: var(--text); font-weight: 500; }
+    .ch-text a, .ch-list a, .note-box a { color: var(--accent); }
+    .ch-list { margin-top: 1rem; padding-left: 1.2rem; color: var(--muted); }
+    .ch-list li { margin-bottom: .6rem; line-height: 1.7; }
+    .ch-list strong { color: var(--text); }
+    .formula-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; margin-top: 1.2rem; max-width: 68ch; font-family: 'Syne', sans-serif; font-size: 1.05rem; color: var(--accent); }
+    .formula-box span { display: block; font-family: 'DM Sans', sans-serif; font-size: .78rem; color: var(--muted); margin-top: .5rem; font-weight: 400; }
+
+    .bg-surface { background: var(--surface); }
+
+    .cta-box { background: var(--card); border: 1px solid rgba(110,231,183,.25); border-radius: 16px; padding: 2.2rem clamp(1.5rem,4vw,2.6rem); display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; max-width: 960px; margin-left: auto; margin-right: auto; }
+    .cta-box h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; margin-bottom: .5rem; }
+    .cta-box p { color: var(--muted); font-size: .92rem; max-width: 44ch; }
+
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1rem; max-width: 960px; margin-left: auto; margin-right: auto; margin-top: 1rem; width: 100%; box-sizing: border-box; }
+    .related-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.3rem; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s; display: block; }
+    .related-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .related-card span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+    .related-card h4 { font-family: 'Syne', sans-serif; font-size: 1rem; margin-top: .5rem; line-height: 1.3; }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3.5rem clamp(1.5rem,8vw,8rem) 2rem; color: var(--muted); font-size: .82rem; }
+    .footer-inner { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+    .footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--text); text-decoration: none; display: inline-block; margin-bottom: .9rem; }
+    .footer-logo span { color: var(--accent); }
+    .footer-brand p { max-width: 34ch; line-height: 1.6; color: var(--muted); }
+    .footer-col h5 { font-family: 'Syne', sans-serif; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--text); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--accent); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 1.6rem; flex-wrap: wrap; gap: .6rem; }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } .footer-bottom { flex-direction: column; text-align: center; } }
+
+    @media (max-width: 980px) {
+      section { padding: 3rem clamp(1.25rem, 5vw, 3rem); }
+      .chapter-grid { grid-template-columns: 1fr; gap: 1rem; max-width: 760px; }
+      .ch-num { position: static; padding-top: 0; }
+    }
+    @media (max-width: 768px) {
+      #article-hero { padding-top: calc(var(--nav-h) + 2rem); }
+      .cta-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+  <link rel="stylesheet" href="../../wissen/article-responsive.css">
+
+  <style>
+    .article-trust {
+      max-width: 760px;
+      margin: 1.25rem auto 0;
+      padding: .9rem 1rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      background: rgba(110, 231, 183, .06);
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+    .article-trust p { margin: 0; }
+    .article-trust p + p { margin-top: .7rem; }
+    .article-trust a { color: #60a5fa; text-decoration: underline; text-underline-offset: .15em; }
+    .article-trust a:hover { color: #93c5fd; }
+    .article-notes-section { padding-top: 2.5rem; }
+  </style>
+
+  <link rel="stylesheet" href="../../assets/site-header.css?v=20261104-nav64">
+  <script src="../../assets/site-header.js" defer></script>
+  <link rel="stylesheet" href="../../assets/footer-github.css">
+  <link rel="stylesheet" href="../../assets/site-footer.css?v=20261104.3">
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="/en/" class="nav-logo">sms<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li>
+      <li><a href="/en/vision">Vision</a></li>
+      <li><a href="./" class="active">Knowledge</a></li>
+    </ul>
+<div class="nav-actions">
+      <button type="button" class="language-switch" data-language-target="/wissen/etf-entnahmeplan-deutsche-steuern" data-language-file-target="../../wissen/etf-entnahmeplan-deutsche-steuern.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="/en/downloads">Downloads</a></li>
+      <li><a href="/en/project-pipeline">Project pipeline</a></li>
+      <li><a href="/en/vision">Vision</a></li>
+      <li><a href="./">Knowledge</a></li>
+      <li class="mobile-language-row">
+  <span class="mobile-language-label">Language</span>
+  <button type="button" class="language-switch" data-language-target="/wissen/etf-entnahmeplan-deutsche-steuern" data-language-file-target="../../wissen/etf-entnahmeplan-deutsche-steuern.html" aria-label="Switch to German" title="Switch to German"><span class="language-option" aria-hidden="true">DE</span><span class="language-separator" aria-hidden="true">/</span><span class="language-option language-option-active" aria-hidden="true">EN</span></button>
+</li>
+      <li><a href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer" class="mobile-github"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> GitHub</a></li>
+    </ul>
+  </div>
+
+  <section id="article-hero">
+    <p class="breadcrumb"><a href="/en/">Home</a> / <a href="./">Knowledge</a> / <a href="./#fire-basics">Financial foundations</a> / ETF withdrawals in Germany</p>
+    <p class="article-eyebrow">Financial foundations</p>
+    <h1 class="article-title">ETF Withdrawals in Germany: What Reaches Your Account?</h1>
+    <p class="article-lead">The cash you withdraw from an ETF is not automatically taxable profit. The result depends on the units you sell, their purchase cost, any Vorabpauschale already assessed and the fund's tax classification. You need those details before estimating what will reach your account.</p>
+    <div class="article-meta"><span>Simon Stark</span><span>|</span><span>Published 28 September 2026</span><span>|</span><span>Approx. 9 min read</span></div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid"><div class="ch-num">01</div><div class="ch-body">
+      <p class="section-label">Sale and gain</p><h2 class="section-title">A withdrawal sells units, not just profit</h2>
+      <p class="ch-text">When you need cash from an ETF, you normally sell units. The sale proceeds include the money you first invested and, if the price has risen, a gain. German tax generally applies to the gain on the units sold. It does not treat the whole cash amount as profit.</p>
+      <p class="ch-text">In simplified terms, the gain starts with the sale proceeds, less the purchase cost and costs directly related to the sale. For fund units, assessed Vorabpauschalen also affect the calculation. Your broker uses the actual units in the account. For fungible securities held in collective custody, the rule is generally first in, first out. If you bought units over many years, the tax gain can differ from a calculation based on your average purchase price.</p>
+      <div class="formula-box">Taxable gain = sale proceeds − purchase cost − sale costs − relevant Vorabpauschalen<span>This is a guide, not a broker statement. The actual calculation depends on your holdings and their tax treatment.</span></div>
+      <p class="ch-text">Distributions and sales are separate events. Distributions can create taxable investment income while you are still accumulating. This article looks at the additional sale of ETF units to fund spending.</p>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid"><div class="ch-num">02</div><div class="ch-body">
+      <p class="section-label">German tax rules</p><h2 class="section-title">What changes the tax calculation</h2>
+      <p class="ch-text">For investment income from fund units held as private assets, the general flat tax rate is 25 percent. A solidarity surcharge is added to that tax. Church tax may also apply. Germany's saver allowance, the Sparer-Pauschbetrag, reduces taxable investment income if it is still available: €1,000 for one person and €2,000 for spouses assessed jointly. A Freistellungsauftrag lets a bank apply an available allowance when withholding tax.</p>
+      <p class="ch-text">Individuals receive a 30 percent partial exemption on income from an eligible equity fund under German tax rules. An ETF is not automatically an equity fund for tax purposes just because it trades on an exchange. Its tax classification and the required equity quota matter. Other fund categories have different partial exemptions.</p>
+      <p class="ch-text">An accumulating fund can also generate a Vorabpauschale in some years. It is treated as received on the first working day of the following year. Vorabpauschalen already assessed during the holding period reduce the gain used when units are later sold. This prevents the same increase in value from being fully counted a second time.</p>
+      <p class="ch-text">If your personal income tax rate is lower, a Günstigerprüfung through your tax return may reduce the final tax. Church tax, losses, other investment income and foreign tax can also change the result.</p>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid"><div class="ch-num">03</div><div class="ch-body">
+      <p class="section-label">Worked example</p><h2 class="section-title">How much of a €12,000 sale do you keep?</h2>
+      <p class="ch-text">Assume you sell units in an ETF classified as an equity fund under German tax rules for €12,000. Their purchase cost was €8,000, so the gain before exemptions and allowances is €4,000. For this example, there are no sale costs and no earlier Vorabpauschalen to deduct.</p>
+      <p class="ch-text">After the 30 percent partial exemption, €2,800 remains for tax purposes. The full €1,000 saver allowance is unused and applies only to this sale in the example. That leaves €1,800 to tax.</p>
+      <div class="formula-box">Sale proceeds: €12,000<br>Purchase cost: − €8,000<br>Gain: €4,000<br>After 30% partial exemption: €2,800<br>After €1,000 saver allowance: €1,800<br>25% capital income tax: €450<br>5.5% solidarity surcharge on €450: €24.75<br>Simplified tax in this example: €474.75<br>Amount left: €11,525.25<span>Excludes church tax, other investment income, loss offsets, sale costs and assessed Vorabpauschalen. The saver allowance is fully unused.</span></div>
+      <p class="ch-text">The tax here applies to the calculated gain, not to €12,000 of proceeds. The result changes if the units sold have different purchase costs, the allowance has already been used or the fund does not qualify for a 30 percent partial exemption.</p>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid"><div class="ch-num">04</div><div class="ch-body">
+      <p class="section-label">Withdrawal rules</p><h2 class="section-title">Three ways to set the amount</h2>
+      <p class="ch-text">The tax calculation does not tell you how much to sell each year. Three common rules produce different cash flows:</p>
+      <ul class="ch-list">
+        <li><strong>Fixed euro amount:</strong> You plan, for example, €1,000 a month. The nominal payment is easy to follow. After a market fall, you have to sell more units to raise the same amount. Inflation also reduces the buying power of an unchanged payment.</li>
+        <li><strong>Fixed percentage of the current balance:</strong> You sell a set share of the portfolio each year. The payment falls after weak years and rises after strong ones, so your spending income moves with the account.</li>
+        <li><strong>Flexible withdrawals:</strong> You set a target and limits. After a sharp fall, you temporarily reduce withdrawals. If the portfolio recovers, you can raise them again. This requires room in your budget and cannot prevent every bad outcome.</li>
+      </ul>
+      <p class="ch-text">No rule makes returns predictable. Each one distributes market swings differently between your portfolio and your spending. Your model should show the net amount you need and the pre-tax sale proceeds required to fund it.</p>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid"><div class="ch-num">05</div><div class="ch-body">
+      <p class="section-label">Sequence risk</p><h2 class="section-title">The same average return can end differently</h2>
+      <p class="ch-text">Return order matters once you withdraw money regularly. Start with €100,000 and take €10,000 at the end of each year. In both cases, the two annual returns are minus 20 percent and plus 25 percent. Without withdrawals, either order would leave the portfolio back at €100,000.</p>
+      <div class="formula-box">Bad year first: €100,000 × 0.80 − €10,000 = €70,000; then × 1.25 − €10,000 = €77,500<br>Good year first: €100,000 × 1.25 − €10,000 = €115,000; then × 0.80 − €10,000 = €82,000<span>Before tax, costs and inflation. The two returns are the same; only their order changes.</span></div>
+      <p class="ch-text">After a loss, you have to sell more units to withdraw the same amount. A long-term average does not show this pressure at the start of retirement. That is why an income plan should include several return sequences, not only one average return.</p>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="bg-surface">
+    <div class="chapter-grid"><div class="ch-num">06</div><div class="ch-body">
+      <p class="section-label">The model</p><h2 class="section-title">Keep tax and portfolio growth separate</h2>
+      <p class="ch-text">A useful withdrawal model should track at least four things separately:</p>
+      <ul class="ch-list">
+        <li>The amount you want to spend each year after tax and costs.</li>
+        <li>The ETF units sold to raise it and the purchase cost attached to those units.</li>
+        <li>The partial exemption, Vorabpauschalen, available allowances, losses and surcharges that apply that year.</li>
+        <li>When sales happen and which returns occur before or after them.</li>
+      </ul>
+      <p class="ch-text">If you apply one tax rate to the gross sale, you treat your own invested capital as profit. If you use only one average return, you hide sequence risk. Either shortcut can make a plan look more generous than it is.</p>
+      <p class="ch-text">A first model does not have to recreate every tax statement. Mark its assumptions, compare several cases and update purchase costs and assessed Vorabpauschalen from your broker records. For large sums or a personal tax question, ask a tax adviser.</p>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="chapter-grid"><div class="ch-num">07</div><div class="ch-body">
+      <p class="section-label">Next step</p><h2 class="section-title">Work back from net income to gross sales</h2>
+      <p class="ch-text">Start with the amount you need to spend each year after tax. Work out the sale proceeds required, then estimate the taxable gain on the actual units you would sell. Only then apply the partial exemption, any unused allowance and the other tax factors.</p>
+      <p class="ch-text">Run the model with fixed euro payments and flexible withdrawals. Move the weak market years to the beginning and then to the end of the period. You will see how much the portfolio has to absorb when returns fall at the worst time.</p>
+      <p class="ch-text">For the rest of the plan, read about the <a href="four-percent-rule-explained">4% rule</a>, <a href="retirement-ruin-risk-monte-carlo">Monte Carlo retirement risk</a> and <a href="how-much-money-for-financial-independence">how much money financial independence may require</a>. They answer different planning questions. Your tax estimate still has to come from your own holding data.</p>
+    </div></div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="cta-box"><div><h3>Continue with the 4% rule</h3><p>The rule describes one possible annual withdrawal. Read what it measures and where its limits are.</p></div><a href="four-percent-rule-explained" class="btn btn-primary">Understand the 4% rule <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <p class="section-label">Read next</p><h2 class="section-title">Related articles</h2>
+    <div class="related-grid"><a href="retirement-ruin-risk-monte-carlo" class="related-card"><span>Financial foundations</span><h4>Retirement ruin risk: how likely is it that your money runs out?</h4></a><a href="how-much-money-for-financial-independence" class="related-card"><span>Financial foundations</span><h4>How much money do I need for financial independence?</h4></a><a href="opportunity-costs-everyday-life" class="related-card"><span>Economics</span><h4>Opportunity costs in everyday life</h4></a></div>
+  </section>
+
+  <section class="article-notes-section">
+    <p class="section-label">Sources</p>
+    <h2 class="section-title">Legal references and date</h2>
+    <div class="chapter-grid"><div class="ch-num">Q</div><div class="ch-body">
+      <ul class="ch-list">
+        <li><a href="https://www.gesetze-im-internet.de/estg/__20.html" target="_blank" rel="noopener noreferrer">Section 20 EStG: gain calculation, FIFO and the saver allowance</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/estg/__32d.html" target="_blank" rel="noopener noreferrer">Section 32d EStG: tax rate and Günstigerprüfung</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/estg/__43a.html" target="_blank" rel="noopener noreferrer">Section 43a EStG: withholding tax</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/invstg_2018/__18.html" target="_blank" rel="noopener noreferrer">Section 18 InvStG: Vorabpauschale</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/invstg_2018/__19.html" target="_blank" rel="noopener noreferrer">Section 19 InvStG: gains from selling fund units</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/invstg_2018/__20.html" target="_blank" rel="noopener noreferrer">Section 20 InvStG: partial exemptions</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/invstg_2018/__2.html" target="_blank" rel="noopener noreferrer">Section 2(6) InvStG: definition of an equity fund</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/solzg_1995/__4.html" target="_blank" rel="noopener noreferrer">Section 4 SolzG 1995: solidarity surcharge</a></li>
+      </ul>
+      <aside class="article-trust" aria-label="Methodology"><p>Tax information checked on 28 September 2026. This is a calculation model for fund units held as private assets, not individual tax advice. Other income, account records, church tax and future law changes can alter the result.</p></aside>
+    </div></div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/en/" class="footer-logo">sms<span>.</span></a>
+        <p>Personal finance tools, dashboards and programming projects by Simon Stark. Always a work in progress.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="/en/projects/">Projects</a></li>
+          <li><a href="/en/downloads">Downloads</a></li>
+          <li><a href="/en/project-pipeline">Project pipeline</a></li>
+          <li><a href="/en/vision">Vision</a></li>
+          <li><a href="./">Knowledge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="/en/legal-notice">Legal notice</a></li>
+          <li><a href="/en/privacy">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Simon Stark</span>
+      <a class="footer-github-exact" href="https://github.com/simons-0427" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        github.com/simons-0427
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Open menu');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

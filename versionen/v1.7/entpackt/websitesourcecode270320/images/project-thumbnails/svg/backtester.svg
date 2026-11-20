@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="title">
+  <title id="title">Historischer Vergleich von Anlageklassen und Portfolioaufteilung</title>
+  <defs><clipPath id="allocation"><rect x="204" y="378" width="216" height="34" rx="8"/></clipPath></defs>
+  <rect width="512" height="512" fill="#123d45"/>
+  <g fill="none" stroke="#2d5960" stroke-width="3">
+    <path d="M104 146H420M104 210H420M104 274H420M166 106V334M230 106V334M294 106V334M358 106V334"/>
+  </g>
+  <path d="M104 106V334H420" fill="none" stroke="#b8d5ce" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M108 304L138 286L166 296L196 234L224 250L252 216L280 230L310 169L338 185L369 134L401 150L420 114" stroke="#56e1b5"/>
+    <path d="M108 304L138 312L166 280L196 292L224 265L252 282L280 246L310 252L338 226L369 244L401 203L420 213" stroke="#ffd166"/>
+    <path d="M108 304L138 293L166 313L196 287L224 310L252 300L280 323L310 286L338 297L369 268L401 281L420 263" stroke="#a99bff"/>
+  </g>
+  <circle cx="139" cy="395" r="32" fill="none" stroke="#e9fff7" stroke-width="7"/>
+  <path d="M139 376V395L153 403" fill="none" stroke="#e9fff7" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g clip-path="url(#allocation)">
+    <rect x="204" y="378" width="130" height="34" fill="#56e1b5"/>
+    <rect x="334" y="378" width="54" height="34" fill="#ffd166"/>
+    <rect x="388" y="378" width="32" height="34" fill="#a99bff"/>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="title">
+  <title id="title">Ernährungsteller mit drei gleich großen Segmenten</title>
+  <rect width="512" height="512" fill="#145648"/>
+  <circle cx="256" cy="256" r="169" fill="#f7f5dd"/>
+  <g stroke="#f7f5dd" stroke-width="8" stroke-linejoin="round">
+    <path d="M256 256V116A140 140 0 0 1 377.24355653 326Z" fill="#68d58c"/>
+    <path d="M256 256L377.24355653 326A140 140 0 0 1 134.75644347 326Z" fill="#ffcd65"/>
+    <path d="M256 256L134.75644347 326A140 140 0 0 1 256 116Z" fill="#ff8170"/>
+  </g>
+  <ellipse cx="190" cy="221" rx="29" ry="37" fill="#fff9e9" transform="rotate(-25 190 221)"/>
+  <circle cx="190" cy="224" r="15" fill="#ffbf38"/>
+  <path d="M312 243V215M312 228L297 216M312 225L325 213" fill="none" stroke="#277b43" stroke-width="12" stroke-linecap="round"/>
+  <g fill="#277b43">
+    <circle cx="295" cy="207" r="16"/>
+    <circle cx="313" cy="194" r="18"/>
+    <circle cx="329" cy="208" r="16"/>
+    <circle cx="311" cy="212" r="17"/>
+  </g>
+  <g fill="#fff9e9">
+    <ellipse cx="226" cy="324" rx="7" ry="15" transform="rotate(-38 226 324)"/>
+    <ellipse cx="250" cy="318" rx="7" ry="15" transform="rotate(28 250 318)"/>
+    <ellipse cx="278" cy="324" rx="7" ry="15" transform="rotate(43 278 324)"/>
+    <ellipse cx="237" cy="349" rx="7" ry="15" transform="rotate(40 237 349)"/>
+    <ellipse cx="267" cy="350" rx="7" ry="15" transform="rotate(-35 267 350)"/>
+    <ellipse cx="290" cy="349" rx="7" ry="15" transform="rotate(25 290 349)"/>
+  </g>
+</svg>

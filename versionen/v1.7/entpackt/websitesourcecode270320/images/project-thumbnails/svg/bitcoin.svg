@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="title">
+  <title id="title">Bitcoin</title>
+  <rect width="512" height="512" fill="#542e28"/>
+  <circle cx="256" cy="256" r="164" fill="#ffc43d"/>
+  <circle cx="256" cy="256" r="141" fill="#f3951e"/>
+  <g transform="translate(256 256) scale(.94) translate(-250.5 -256.7679273739671)" fill="#fff8df">
+    <path fill-rule="evenodd" d="M194 160H263C303 160 326 180 326 210C326 229 316 243 300 251C322 258 336 274 336 298C336 333 311 352 267 352H194V328H211V184H194ZM241 185V238H261C283 238 295 229 295 211C295 194 283 185 261 185ZM241 263V327H266C291 327 305 316 305 295C305 274 290 263 266 263Z"/>
+    <path d="M228 130H241V165H228ZM260 130H273V165H260ZM228 347H241V382H228ZM260 347H273V382H260Z"/>
+  </g>
+</svg>

@@ -1,0 +1,79 @@
+.site-footer {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  background: var(--surface, #13131a);
+  border-top: 1px solid var(--border, #1e1e2e);
+  padding: 3rem clamp(1.25rem, 5vw, 4rem) 1.75rem;
+  color: var(--muted, #8b9bb4);
+  font: 0.85rem/1.65 'DM Sans', sans-serif;
+}
+
+.site-footer .footer-inner {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr !important;
+  gap: 2.5rem !important;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 2rem;
+  border-bottom: 1px solid var(--border, #1e1e2e);
+}
+
+.site-footer .footer-logo {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  color: var(--text, #e2e8f0);
+  font-family: 'Syne', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.site-footer .footer-logo span { color: var(--accent, #6ee7b7); }
+.site-footer .footer-brand p { margin: 0; max-width: 34ch; line-height: 1.6; }
+.site-footer .footer-col h5 {
+  margin: 0 0 0.85rem;
+  color: var(--text, #e2e8f0);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.site-footer .footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer .footer-col ul:has(li:nth-child(6)) { gap: 0.16rem; }
+.site-footer .footer-col a { color: var(--muted, #8b9bb4); font-size: inherit; text-decoration: none; }
+.site-footer .footer-col a:hover { color: var(--accent, #6ee7b7); }
+.site-footer .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  width: auto;
+  margin: 0;
+  padding: 1.35rem 0 0;
+  border: 0;
+  text-align: left;
+  font-size: inherit;
+}
+
+@media (max-width: 640px) {
+  .site-footer .footer-inner { grid-template-columns: 1fr !important; gap: 1.75rem !important; }
+  .site-footer .footer-brand p { min-height: 4.8em; }
+  .site-footer .footer-bottom { flex-direction: column !important; text-align: center; }
+}
